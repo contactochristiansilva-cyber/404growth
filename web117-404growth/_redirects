@@ -1,5 +1,6 @@
-/book /vsl 200
-/book/ /vsl 200
+/vsl /book 301
+/vsl/ /book 301
+/vsl.html /book 301
 /llamada / 301
 /llamada/ / 301
 /llamada.html / 301

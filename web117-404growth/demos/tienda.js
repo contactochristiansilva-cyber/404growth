@@ -20,7 +20,7 @@
     function stars(n){var s='';for(var i=1;i<=5;i++)s+='<i class="'+(i<=Math.round(n)?'on':'')+'">★</i>';return '<span class="tc-stars" aria-label="'+n+' de 5">'+s+'</span>'}
 
     /* ---------- aviso de demo ---------- */
-    var bn=d.createElement('div');bn.className='tc-demo';bn.innerHTML='<span>'+(cfg.banner||'Tienda de demostración · Proyecto conceptual de 404 Growth')+'</span><a href="/vsl" class="tc-demo-a">Quiero una así →</a>';
+    var bn=d.createElement('div');bn.className='tc-demo';bn.innerHTML='<span>'+(cfg.banner||'Tienda de demostración · Proyecto conceptual de 404 Growth')+'</span><a href="/book" class="tc-demo-a">Quiero una así →</a>';
     d.body.insertBefore(bn,d.body.firstChild);
 
     /* ---------- cesta ---------- */
@@ -28,7 +28,7 @@
     dr.innerHTML='<div class="tc-ov" data-close-cart></div><div class="tc-panel" role="dialog" aria-modal="true" aria-labelledby="tc-ct"><header><h2 id="tc-ct">Tu cesta</h2><button type="button" class="tc-x" data-close-cart aria-label="Cerrar">×</button></header><div class="tc-ship"></div><div class="tc-lines"></div><footer><div class="tc-sub"><span>Subtotal</span><b></b></div><p class="tc-note">Impuestos incluidos. Envío calculado en el pago.</p><button type="button" class="tc-go">Finalizar compra</button></footer></div>';
     d.body.appendChild(dr);
     var md=d.createElement('div');md.className='tc-modal';md.hidden=true;
-    md.innerHTML='<div class="tc-ov" data-close-modal></div><div class="tc-mbox" role="dialog" aria-modal="true"><b>Esto es una tienda de demostración</b><p>El pago está desactivado. Así de fácil sería comprar en tu tienda: tarjeta, Bizum o Apple Pay en un paso.</p><a href="/vsl" class="tc-go">Quiero una tienda así</a><button type="button" class="tc-link" data-close-modal>Seguir mirando</button></div>';
+    md.innerHTML='<div class="tc-ov" data-close-modal></div><div class="tc-mbox" role="dialog" aria-modal="true"><b>Esto es una tienda de demostración</b><p>El pago está desactivado. Así de fácil sería comprar en tu tienda: tarjeta, Bizum o Apple Pay en un paso.</p><a href="/book" class="tc-go">Quiero una tienda así</a><button type="button" class="tc-link" data-close-modal>Seguir mirando</button></div>';
     d.body.appendChild(md);
     function save(){try{localStorage.setItem(KEY,JSON.stringify(cart))}catch(e){}}
     function count(){return cart.reduce(function(a,l){return a+l.q},0)}
