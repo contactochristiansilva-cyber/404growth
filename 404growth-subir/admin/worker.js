@@ -2858,7 +2858,7 @@ const LL_DDL = [
   "CREATE TABLE IF NOT EXISTS ll (id TEXT PRIMARY KEY, ts INTEGER NOT NULL, k TEXT, ih TEXT, n TEXT, name TEXT NOT NULL, email TEXT NOT NULL, phone TEXT NOT NULL, biz TEXT, sedes TEXT, ans TEXT, score INTEGER NOT NULL DEFAULT 0, grade TEXT, fit INTEGER NOT NULL DEFAULT 0, bk INTEGER NOT NULL DEFAULT 0, bk_at INTEGER, ev TEXT, inv TEXT, att INTEGER, qual INTEGER, won INTEGER NOT NULL DEFAULT 0, amount INTEGER NOT NULL DEFAULT 0, note TEXT, src TEXT, utm TEXT, upd INTEGER)",
   "CREATE INDEX IF NOT EXISTS ll_ts ON ll (ts)",
 ];
-const LL_N = { dental: "Clínicas dentales", estetica: "Medicina estética", inmo: "Inmobiliarias", gym: "Gimnasios", tienda: "Tiendas (VSL)", moda: "Tiendas · moda", joyeria: "Tiendas · joyería", deporte: "Tiendas · deporte", obrador: "Tiendas · obrador", optica: "Tiendas · óptica", deco: "Tiendas · decoración", "": "General" };
+const LL_N = { dental: "Clínicas dentales", estetica: "Medicina estética", inmo: "Inmobiliarias", gym: "Gimnasios", tienda: "Tiendas (VSL)", moda: "Tiendas · moda", joyeria: "Tiendas · joyería", deporte: "Tiendas · deporte", obrador: "Tiendas · obrador", optica: "Tiendas · óptica", calzado: "Tiendas · calzado", cosmetica: "Tiendas · cosmética", deco: "Tiendas · decoración", "": "General" };
 const LL_Q = {
   goal: ["¿Qué quiere conseguir?", { g0: "Más clientes nuevos", g1: "Contestar a todos", g2: "Que le conozcan en redes", g3: "Todo, con un sistema" }],
   now: ["Situación", { s0: "Contestan ellos cuando pueden", s1: "Agencia o community sin resultados", s2: "Casi sin web ni redes", s3: "Funciona, quiere crecer" }],
@@ -2911,7 +2911,8 @@ function llAns(raw) {
    and sends the confirmation from hola@404growth.com (Resend, the key of Settings) with Chris's photo, the Meet link and an .ics. */
 const VSL_ET = "https://api.calendly.com/event_types/58ec126e-0cb8-4d2b-81d3-f0e531c7e072";
 const VSL_FROM = "Christian · 404 Growth <hola@404growth.com>", VSL_REPLY = "hola@404growth.com", VSL_PHOTO = SITE + "/christian-hola.jpg";
-const VSL_REV = { r0: "Menos de 30.000 €", r1: "30.000 – 60.000 €", r2: "60.000 – 100.000 €", r3: "Más de 100.000 €" };
+const VSL_BUD = { b0: "Menos de 1.500 €", b1: "1.500 – 3.000 €", b2: "3.000 – 6.000 €", b3: "Más de 6.000 €", b4: "Aún no lo sabe" };
+const VSL_SEC = { moda: "Moda", calzado: "Calzado", joyeria: "Joyería", cosmetica: "Cosmética", deporte: "Deporte", deco: "Hogar y deco", otro: "Otra cosa" };
 async function vslSlots(env, fresh) {
   const now = Date.now();
   if (!fresh) { const c = parse(await getMeta(env, "vsl_slots"), null); if (c && now - c.at < 90000) return c.slots; }
@@ -2961,8 +2962,8 @@ function vslMail(l, whenTxt, join, gcal, resched) {
 async function vslBook(req, env, b, k) {
   const now = Date.now(), DBq = env.DB;
   const name = str(b.name, 80), email = str(b.email, 160).toLowerCase(), phone = str(b.phone, 24).replace(/[^\d+]/g, ""), biz = str(b.biz, 140);
-  const rev = Object.prototype.hasOwnProperty.call(VSL_REV, b.rev) ? b.rev : "", tz = CalCore.okTz(b.tz) ? b.tz : CAL_TZ, start = typeof b.start === "string" ? b.start : "";
-  if (name.length < 2 || !okEmail(email) || !/^\+?\d{9,15}$/.test(phone) || biz.length < 2 || !rev || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/.test(start)) return bad("fields");
+  const bud = Object.prototype.hasOwnProperty.call(VSL_BUD, b.bud) ? b.bud : "", sec = Object.prototype.hasOwnProperty.call(VSL_SEC, b.sec) ? b.sec : "otro", tz = CalCore.okTz(b.tz) ? b.tz : CAL_TZ, start = typeof b.start === "string" ? b.start : "";
+  if (name.length < 2 || !okEmail(email) || !/^\+?\d{9,15}$/.test(phone) || biz.length < 2 || !bud || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/.test(start)) return bad("fields");
   const ih = (await sha("l404ip|" + (req.headers.get("cf-connecting-ip") || "local"))).slice(0, 22);
   const many = await DBq.prepare("SELECT COUNT(*) AS n FROM ll WHERE ih = ?1 AND ts > ?2").bind(ih, now - 3600000).first();
   if (many && many.n >= 5) return bad("slow", 429);
@@ -2975,18 +2976,18 @@ async function vslBook(req, env, b, k) {
     inv = await clyFetch(env, st.tok, "/invitees", { method: "POST", body: JSON.stringify({
       event_type: VSL_ET, start_time: start, location: { kind: "google_conference" },
       invitee: { name: name, email: email, timezone: tz },
-      questions_and_answers: [{ question: "Cuéntenos algo que nos ayude a prepararnos para la reunión.", answer: "Tienda: " + biz + " · Factura: " + VSL_REV[rev] + " · WhatsApp: " + tel, position: 0 }],
+      questions_and_answers: [{ question: "Cuéntenos algo que nos ayude a prepararnos para la reunión.", answer: "Tienda: " + biz + " · Vende: " + VSL_SEC[sec] + " · Inversión: " + VSL_BUD[bud] + " · WhatsApp: " + tel, position: 0 }],
       tracking: { utm_source: utm.utm_source || "404growth.com", utm_medium: utm.utm_medium || "vsl", utm_campaign: utm.utm_campaign || "vsl-tiendas", utm_content: utm.utm_content || null, utm_term: utm.utm_term || null, salesforce_uuid: null } }) });
   } catch (e) { return json({ error: e.code === "clyplan" ? "plan" : "book", detail: e.detail || "" }, 502); }
   const r0 = inv.resource || inv, evUri = str(r0.event, 200), invUri = str(r0.uri, 200), resched = okUrl(r0.reschedule_url) ? r0.reschedule_url : "";
   let join = "", end = startMs + 15 * 60000;
   try { const ev = await clyFetch(env, st.tok, evUri); const e2 = ev.resource || {}; if (e2.end_time) end = Date.parse(e2.end_time); if (e2.location && okUrl(e2.location.join_url)) join = e2.location.join_url; } catch (e) {}
   let vis = null; if (k) vis = await DBq.prepare("SELECT n, src FROM lv WHERE k = ?1").bind(k).first();
-  const n = vis && vis.n ? vis.n : llNiche(b.n) || "tienda", src = vis ? vis.src : llSrc(utm, "");
-  const fit = rev === "r0" ? 0 : 1, grade = rev === "r3" || rev === "r2" ? "A" : rev === "r1" ? "B" : "C";
+  const n = llNiche(b.n) || (vis && vis.n) || "tienda", src = vis ? vis.src : llSrc(utm, "");
+  const fit = bud === "b0" ? 0 : 1, grade = bud === "b3" || bud === "b2" ? "A" : bud === "b1" || bud === "b4" ? "B" : "C";
   const id = rid("L").slice(0, 13);
   await DBq.prepare("INSERT INTO ll (id, ts, k, ih, n, name, email, phone, biz, sedes, ans, score, grade, fit, bk, bk_at, ev, inv, src, utm, upd, start, join_url) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, 1, ?2, ?15, ?16, ?17, ?18, ?2, ?19, ?20)")
-    .bind(id, now, k || null, ih, n, name, email, tel, biz, VSL_REV[rev], JSON.stringify({ rev: rev }), fit * 2 + (grade === "A" ? 3 : grade === "B" ? 1 : 0), grade, fit, evUri, invUri, src, JSON.stringify(utm), startMs, join).run();
+    .bind(id, now, k || null, ih, n, name, email, tel, biz, VSL_BUD[bud], JSON.stringify({ bud: bud, sec: sec }), fit * 2 + (grade === "A" ? 3 : grade === "B" ? 1 : 0), grade, fit, evUri, invUri, src, JSON.stringify(utm), startMs, join).run();
   if (k) await DBq.prepare("UPDATE lv SET fs = 1, fd = 1, bk = 1, ct = 1, cd = 1, cv = 1, lead = ?2, last = ?3 WHERE k = ?1").bind(k, id, now).run();
   await setMeta(env, "vsl_slots", "");                                                     // the time just taken is no longer offered
   const whenTxt = vslWhen(start, CAL_TZ);
@@ -3002,7 +3003,7 @@ async function vslBook(req, env, b, k) {
     } catch (e) {}
     if (mailed) await DBq.prepare("UPDATE ll SET mailed = 1 WHERE id = ?1").bind(id).run();
   }
-  try { await pushAll(env, { title: "Llamada reservada · " + name, body: biz + " · factura " + VSL_REV[rev] + " · " + whenTxt + ". " + (mailed ? "Confirmación enviada desde hola@." : "No se pudo enviar el email de confirmación."), tag: "lb" + id, url: "/admin/llamadas#l=" + id }); } catch (e) {}
+  try { await pushAll(env, { title: "Llamada reservada · " + name, body: biz + " (" + VSL_SEC[sec] + ") · invierte " + VSL_BUD[bud] + " · " + whenTxt + ". " + (mailed ? "Confirmación enviada desde hola@." : "No se pudo enviar el email de confirmación."), tag: "lb" + id, url: "/admin/llamadas#l=" + id }); } catch (e) {}
   return json({ ok: true, id: id, start: start, end: new Date(end).toISOString(), join: join, gcal: gcal, mailed: !!mailed, resched: resched });
 }
 

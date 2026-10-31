@@ -151,7 +151,8 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .bk-me ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14.5px}
 .bk-me li{display:flex;align-items:center;gap:10px}.bk-me li svg{width:17px;height:17px;color:var(--t2)}
 .bk-sel{margin:0;padding:12px 14px;border-radius:14px;background:rgba(111,194,166,.14);font-size:14px;line-height:1.4}.bk-sel b{display:block;font-size:15px}
-.bk-main{padding:26px 26px 28px;min-height:440px}
+.bk-main{padding:26px 26px 28px}
+.bk-hrs{animation:bkIn .35s cubic-bezier(.2,.8,.2,1)}
 .bk-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:12px}.bk-h b{font-size:17px;font-weight:600}.bk-h span{font-size:13px;color:var(--mute)}
 .bk-days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .bk-day{display:grid;gap:2px;justify-items:center;padding:12px 4px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--ink);cursor:pointer;font:inherit;transition:background .2s,border-color .2s,transform .2s}
@@ -161,8 +162,7 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .bk-times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;min-height:60px}
 .bk-time{height:46px;border-radius:12px;border:1px solid rgba(111,194,166,.4);background:transparent;color:var(--ink);font:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:background .2s,color .2s}
 .bk-time:hover{background:rgba(111,194,166,.16)}
-.bk-time.busy{border-color:rgba(255,255,255,.07);background:rgba(255,255,255,.025);color:rgba(255,255,255,.3);cursor:not-allowed;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;line-height:1.1}.bk-time.busy:hover{background:rgba(255,255,255,.025)}
-.bk-time.busy s{font-size:14px;text-decoration-thickness:1px}.bk-time.busy small{font-size:10.5px;letter-spacing:.02em}.bk-time[aria-selected=true]{background:var(--t);border-color:var(--t);color:#04110D}
+.bk-time[aria-selected=true]{background:var(--t);border-color:var(--t);color:#04110D}
 .bk-load,.bk-none{grid-column:1/-1;color:var(--mute);font-size:14.5px;padding:10px 0}
 .bk-back{border:0;background:none;color:var(--t2);font:inherit;font-size:14px;cursor:pointer;padding:0;margin-bottom:14px}
 .bk-f{display:grid;gap:6px;margin-bottom:12px}.bk-f label{font-size:13.5px;color:var(--mute)}
@@ -171,6 +171,16 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .bk-f input:focus,.bk-f select:focus{outline:0;border-color:var(--t2);box-shadow:0 0 0 3px rgba(111,194,166,.2)}
 .bk-f .bad{border-color:var(--bad)}
 .bk-2c{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bk-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.bk-top .bk-back{margin:0}.bk-pn{font-size:13px;color:var(--mute)}
+.bk-bar{height:4px;border-radius:4px;background:rgba(255,255,255,.08);margin-bottom:22px;overflow:hidden}.bk-bar i{display:block;height:100%;width:25%;background:var(--t);border-radius:4px;transition:width .4s cubic-bezier(.2,.8,.2,1)}
+.bk-q{border:0;margin:0;padding:0;min-width:0;animation:bkIn .35s cubic-bezier(.2,.8,.2,1)}@keyframes bkIn{from{opacity:0;transform:translateY(8px)}}
+.bk-q legend{padding:0;font-size:21px;font-weight:600;letter-spacing:-.02em;line-height:1.25;margin-bottom:18px;max-width:30ch}
+.bk-ch{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.bk-ch.one{grid-template-columns:1fr}
+.bk-ch button{min-height:52px;padding:10px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:var(--ink);font:inherit;font-size:15.5px;font-weight:500;text-align:left;cursor:pointer;transition:background .2s,border-color .2s,transform .15s}
+.bk-ch:not(.one) button{text-align:center}.bk-ch button.w{grid-column:1/-1}
+@media (hover:hover){.bk-ch button:hover{border-color:var(--t2);background:rgba(111,194,166,.1)}}.bk-ch button:active{transform:scale(.98)}
+.bk-ch button[aria-pressed=true]{background:var(--t);border-color:var(--t);color:#04110D}
+.bk-trust{list-style:none;margin:2px 0 14px;padding:0;display:grid;gap:8px;font-size:13.5px;color:var(--mute)}.bk-trust li{display:flex;gap:9px;align-items:center}.bk-trust svg{width:16px;height:16px;flex:none;color:var(--t2)}
 .bk-err{margin:4px 0 10px;color:var(--bad);font-size:14px}
 .bk-go{width:100%;justify-content:space-between;margin-top:6px}.bk-go[disabled]{opacity:.6;pointer-events:none}
 .bk-legal{font-size:12.5px;color:var(--mute);margin:12px 0 0}.bk-legal a{color:var(--t2)}
@@ -181,7 +191,7 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .bk-ok .when::first-letter{text-transform:uppercase}
 .bk-ok p{color:var(--mute);margin:0 auto 18px;max-width:440px}
 .bk-ok .acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-@media (max-width:820px){.bk{grid-template-columns:1fr}.bk-me{border-right:0;border-bottom:1px solid rgba(255,255,255,.1);flex-direction:row;flex-wrap:wrap;align-items:center}.bk-me ul{display:none}.bk-days{grid-template-columns:repeat(3,1fr)}.bk-times{grid-template-columns:repeat(3,1fr)}.bk-2c{grid-template-columns:1fr}.bk-main{padding:20px 16px 22px}}
+@media (max-width:820px){.bk{grid-template-columns:1fr}.bk-me{border-right:0;border-bottom:1px solid rgba(255,255,255,.1);flex-direction:row;flex-wrap:wrap;align-items:center}.bk-me ul{display:none}.bk-days{grid-template-columns:repeat(3,1fr)}.bk-times{grid-template-columns:repeat(3,1fr)}.bk-2c{grid-template-columns:1fr}.bk-ch{grid-template-columns:1fr 1fr}.bk-q legend{font-size:19px}.bk-main{padding:20px 16px 22px}}
 /* reserva */
 .steps{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:30px auto 0}
 .step{display:flex;align-items:center;gap:10px;padding:8px 18px 8px 8px;border-radius:99px;font-size:14.5px;font-weight:500}
@@ -544,20 +554,27 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
           <div class="bk-st" id="bk-1">
             <div class="bk-h"><b>Elige un día</b><span id="bk-tz">Hora de España</span></div>
             <div class="bk-days" id="bk-days" role="listbox" aria-label="Días disponibles"><span class="bk-load">Cargando huecos libres…</span></div>
-            <div class="bk-h" style="margin-top:22px"><b id="bk-dl">Elige una hora</b></div>
-            <div class="bk-times" id="bk-times" role="listbox" aria-label="Horas disponibles"></div>
+            <div class="bk-hrs" id="bk-hrs" hidden><div class="bk-h" style="margin-top:22px"><b id="bk-dl">Elige una hora</b></div>
+            <div class="bk-times" id="bk-times" role="listbox" aria-label="Horas disponibles"></div></div>
           </div>
           <form class="bk-st" id="bk-2" hidden novalidate>
-            <button type="button" class="bk-back" id="bk-back">‹ Cambiar hora</button>
-            <div class="bk-h"><b>Tus datos</b><span>Último paso</span></div>
-            <div class="bk-f"><label for="f-name">Nombre</label><input id="f-name" name="name" autocomplete="name" required maxlength="80"></div>
-            <div class="bk-2c"><div class="bk-f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>
-              <div class="bk-f"><label for="f-phone">WhatsApp</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="24" placeholder="600 000 000"></div></div>
-            <div class="bk-f"><label for="f-biz">Tu tienda (web o Instagram)</label><input id="f-biz" name="biz" required maxlength="140" placeholder="mitienda.es o @mitienda"></div>
-            <div class="bk-f"><label for="f-rev">¿Cuánto factura tu tienda al mes?</label><select id="f-rev" name="rev" required><option value="">Elige una opción</option><option value="r0">Menos de 30.000 €</option><option value="r1">30.000 – 60.000 €</option><option value="r2">60.000 – 100.000 €</option><option value="r3">Más de 100.000 €</option></select></div>
-            <p class="bk-err" id="bk-err" role="alert" hidden></p>
-            <button class="btn bk-go" type="submit" id="bk-go">Confirmar llamada <span class="ar"><svg><use href="#i-ne"/></svg></span></button>
-            <p class="bk-legal">Usamos tus datos solo para preparar y hacer la llamada. <a href="/legal" target="_blank" rel="noopener">Privacidad</a>.</p>
+            <div class="bk-top"><button type="button" class="bk-back" id="bk-back">‹ Atrás</button><span class="bk-pn" id="bk-pn">1 de 4</span></div>
+            <div class="bk-bar"><i id="bk-pb"></i></div>
+            <fieldset class="bk-q" data-q="1"><legend>¿Qué vendes en tu tienda?</legend>
+              <div class="bk-ch" data-name="sec"><button type="button" data-v="moda">Moda</button><button type="button" data-v="calzado">Calzado</button><button type="button" data-v="joyeria">Joyería</button><button type="button" data-v="cosmetica">Cosmética</button><button type="button" data-v="deporte">Deporte</button><button type="button" data-v="deco">Hogar y deco</button><button type="button" data-v="otro" class="w">Otra cosa</button></div></fieldset>
+            <fieldset class="bk-q" data-q="2" hidden><legend>¿Cuánto tienes pensado invertir para convertir tu tienda física en un canal de ventas online?</legend>
+              <div class="bk-ch one" data-name="bud"><button type="button" data-v="b0">Menos de 1.500 €</button><button type="button" data-v="b1">1.500 – 3.000 €</button><button type="button" data-v="b2">3.000 – 6.000 €</button><button type="button" data-v="b3">Más de 6.000 €</button><button type="button" data-v="b4">Aún no lo sé, quiero que me orientes</button></div></fieldset>
+            <fieldset class="bk-q" data-q="3" hidden><legend>¿Cómo se llama tu tienda?</legend>
+              <div class="bk-f"><label for="f-biz">Nombre, web o Instagram</label><input id="f-biz" name="biz" maxlength="140" placeholder="Ej.: Calzados Lucía o @calzadoslucia" enterkeyhint="next"></div>
+              <div class="bk-f"><label for="f-name">¿Y tú cómo te llamas?</label><input id="f-name" name="name" autocomplete="given-name" maxlength="80" placeholder="Tu nombre" enterkeyhint="next"></div>
+              <button class="btn bk-go" type="button" id="bk-nx">Continuar <span class="ar"><svg><use href="#i-ne"/></svg></span></button></fieldset>
+            <fieldset class="bk-q" data-q="4" hidden><legend id="bk-q4">¿Dónde te mando el enlace de la llamada?</legend>
+              <div class="bk-f"><label for="f-email">Email · aquí te llega la invitación con el enlace de Meet</label><input id="f-email" name="email" type="email" autocomplete="email" maxlength="160" placeholder="tu@email.com"></div>
+              <div class="bk-f"><label for="f-phone">WhatsApp · por si te surge algo y hay que mover la hora</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="600 000 000"></div>
+              <ul class="bk-trust"><li><svg><use href="#i-chat"/></svg>Solo te escribo yo, Christian. Nada de llamadas comerciales.</li><li><svg><use href="#i-tag"/></svg>No compartimos tus datos con nadie.</li></ul>
+              <p class="bk-err" id="bk-err" role="alert" hidden></p>
+              <button class="btn bk-go" type="submit" id="bk-go">Confirmar llamada <span class="ar"><svg><use href="#i-ne"/></svg></span></button>
+              <p class="bk-legal">Al confirmar aceptas la <a href="/legal" target="_blank" rel="noopener">política de privacidad</a>.</p></fieldset>
           </form>
         </div>
       </div>
@@ -861,41 +878,53 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   function load(){if(!PROD){SL=demoSlots();drawDays();return}
     fetch(API+'slots',{method:'POST',body:'{}',headers:{'content-type':'application/json'}}).then(function(r){return r.json()}).then(function(j){SL=(j&&j.slots)||[];drawDays()})
       .catch(function(){$('bk-days').innerHTML='<span class="bk-none">No se ha podido cargar la agenda. <a href="https://wa.me/34610594450" target="_blank" rel="noopener" style="color:var(--t2)">Escríbeme por WhatsApp</a> y te doy hueco.</span>'})}
-  /* Algunos huecos se muestran como ocupados (y no se ofrecen): ~1 de cada 3, siempre los mismos, dejando al menos 3 libres por día */
+  /* Algunos huecos no se ofrecen (la agenda no se ve vacía): ~1 de cada 3, siempre los mismos, dejando al menos 3 libres por día */
   function held(iso){var h=7;for(var i=0;i<iso.length;i++)h=(h*31+iso.charCodeAt(i))|0;return Math.abs(h)%10<4}
   function groups(){var all={},g={},order=[];SL.forEach(function(iso){var k=fK.format(new Date(iso));if(!all[k]){all[k]=[];order.push(k)}all[k].push(iso)});
     order.forEach(function(k){var f=all[k].filter(function(iso){return !held(iso)});g[k]=f.length>=3?f:all[k].slice()});
     return {g:g,all:all,order:order}}
-  function grid(G,k){var a=G.all[k]||[],free={};(G.g[k]||[]).forEach(function(x){free[x]=1});if(!a.length)return [];
-    var ts=a.map(function(x){return new Date(x).getTime()}),st=30*6e4;for(var i=1;i<ts.length;i++){var d=ts[i]-ts[i-1];if(d>0&&d<st)st=d}
-    var out=[];for(var t=ts[0];t<=ts[ts.length-1];t+=st){var iso=new Date(t).toISOString().replace('.000Z','Z');var hit=a.filter(function(x){return new Date(x).getTime()===t})[0];out.push({iso:hit||iso,free:!!(hit&&free[hit])})}
-    return out}
+  function grid(G,k){return G.g[k]||[]}
   function drawDays(){var G=groups(),box=$('bk-days');if(!G.order.length){box.innerHTML='<span class="bk-none">Ahora mismo no hay huecos libres. <a href="https://wa.me/34610594450" target="_blank" rel="noopener" style="color:var(--t2)">Escríbeme por WhatsApp</a>.</span>';return}
     var show=G.order.slice(0,innerWidth<820?6:10);
     box.innerHTML=show.map(function(k){var dt=new Date(G.g[k][0]),p=fD.formatToParts(dt),wd=(p.find(function(x){return x.type==='weekday'})||{}).value||'',dn=(p.find(function(x){return x.type==='day'})||{}).value||'',mo=(p.find(function(x){return x.type==='month'})||{}).value||'';
       return '<button type="button" class="bk-day" role="option" aria-selected="false" data-k="'+k+'"><small>'+esc(wd.replace('.',''))+'</small><b>'+esc(dn)+'</b><small>'+esc(mo.replace('.',''))+'</small><i>'+G.g[k].length+' libres</i></button>'}).join('');
-    [].forEach.call(box.children,function(b){b.onclick=function(){choose(b.getAttribute('data-k'))}});choose(show[0],true)}
-  function choose(k,auto){day=k;var G=groups();[].forEach.call($('bk-days').children,function(b){b.setAttribute('aria-selected',b.getAttribute('data-k')===k)});
+    [].forEach.call(box.children,function(b){b.onclick=function(){choose(b.getAttribute('data-k'))}});$('bk-hrs').hidden=true}
+  function choose(k,auto){day=k;var hr=$('bk-hrs'),first=hr.hidden;hr.hidden=false;var G=groups();[].forEach.call($('bk-days').children,function(b){b.setAttribute('aria-selected',b.getAttribute('data-k')===k)});
     var t=G.g[k]||[];$('bk-dl').textContent='Horas libres · '+fD.format(new Date(t[0]||Date.now())).replace('.','');
-    $('bk-times').innerHTML=grid(G,k).map(function(o){var h=fT.format(new Date(o.iso));return o.free?'<button type="button" class="bk-time" role="option" aria-selected="false" data-t="'+o.iso+'">'+h+'</button>':'<button type="button" class="bk-time busy" disabled aria-disabled="true" title="Ocupado"><s>'+h+'</s><small>Ocupado</small></button>'}).join('');
+    $('bk-times').innerHTML=grid(G,k).map(function(iso){return '<button type="button" class="bk-time" role="option" aria-selected="false" data-t="'+iso+'">'+fT.format(new Date(iso))+'</button>'}).join('');
     [].forEach.call($('bk-times').querySelectorAll('[data-t]'),function(b){b.onclick=function(){time(b.getAttribute('data-t'))}});
-    if(!auto)step('cd','EligeDia')}
+    if(!auto)step('cd','EligeDia');if(first)setTimeout(function(){var r=hr.getBoundingClientRect();if(r.bottom>innerHeight)scrollBy({top:Math.min(r.bottom-innerHeight+24,r.top-80),behavior:'smooth'})},60)}
   function time(iso){pick=iso;step('ct','EligeHora');
     var txt=fL.format(new Date(iso));$('bk-sel').innerHTML='<b>'+esc(txt)+'</b>15 min · Google Meet · hora de España';$('bk-sel').hidden=false;
-    $('bk-1').hidden=true;$('bk-2').hidden=false;try{$('f-name').focus({preventScroll:true})}catch(e){}send('fs',{});px('FormEmpezado',{},true)}
-  $('bk-back').onclick=function(){$('bk-2').hidden=true;$('bk-1').hidden=false};
+    $('bk-1').hidden=true;$('bk-2').hidden=false;q(1);send('fs',{});px('FormEmpezado',{},true)}
+  /* formulario por pasos: primero lo fácil (qué vende, inversión, su tienda) y el email y el WhatsApp al final */
+  var Q=1,A={};
+  function q(n){Q=n;[].forEach.call(d.querySelectorAll('.bk-q'),function(x){x.hidden=+x.getAttribute('data-q')!==n});
+    $('bk-pn').textContent=n+' de 4';$('bk-pb').style.width=(n*25)+'%';
+    if(n>1)px('FormPaso'+n,{},true);
+    if(n===4){var nm=($('f-name').value.trim().split(' ')[0]||'');$('bk-q4').textContent=(nm?'Perfecto, '+nm.charAt(0).toUpperCase()+nm.slice(1)+'. ':'Perfecto. ')+'¿Dónde te mando el enlace de la llamada?'}
+    var f=d.querySelector('.bk-q[data-q="'+n+'"] input');if(f&&innerWidth>820)try{f.focus({preventScroll:true})}catch(e){}}
+  [].forEach.call(d.querySelectorAll('.bk-ch'),function(g){var nm=g.getAttribute('data-name');[].forEach.call(g.children,function(b){b.setAttribute('aria-pressed','false');b.onclick=function(){
+    [].forEach.call(g.children,function(x){x.setAttribute('aria-pressed',x===b)});A[nm]=b.getAttribute('data-v');setTimeout(function(){q(Q+1)},220)}})});
+  function nx3(){var b=$('f-biz'),n=$('f-name'),okb=b.value.trim().length>=2,okn=n.value.trim().length>=2;b.classList.toggle('bad',!okb);n.classList.toggle('bad',!okn);
+    if(!okb)return b.focus();if(!okn)return n.focus();q(4)}
+  $('bk-nx').onclick=nx3;
+  $('f-biz').onkeydown=function(e){if(e.key==='Enter'){e.preventDefault();$('f-name').focus()}};
+  $('f-name').onkeydown=function(e){if(e.key==='Enter'){e.preventDefault();nx3()}};
+  $('bk-back').onclick=function(){if(Q>1)q(Q-1);else{$('bk-2').hidden=true;$('bk-1').hidden=false}};
   if('IntersectionObserver' in window){var cio=new IntersectionObserver(function(es){if(es[0].isIntersecting){load();step('cv');cio.disconnect()}},{rootMargin:'600px 0px'});cio.observe($('bk'))}else load();
   $('bk-2').addEventListener('input',function(e){if(e.target.classList)e.target.classList.remove('bad');if(!this.querySelector('.bad'))$('bk-err').hidden=true});
   $('bk-2').onsubmit=function(e){e.preventDefault();var f=this,err=$('bk-err');
-    var v={name:f.name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),biz:f.biz.value.trim(),rev:f.rev.value};var tel=v.phone.replace(/[^\d+]/g,'');
-    var ok={name:v.name.length>=2,email:/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email),phone:/^\+?\d{9,15}$/.test(tel),biz:v.biz.length>=2,rev:!!v.rev},all=true;
+    if(Q<4){if(Q===3)nx3();return}var v={name:f.name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),biz:f.biz.value.trim(),bud:A.bud||'',sec:A.sec||''};var tel=v.phone.replace(/[^\d+]/g,'');
+    var ok={name:v.name.length>=2,email:/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email),phone:/^\+?\d{9,15}$/.test(tel),biz:v.biz.length>=2},all=true;
     Object.keys(ok).forEach(function(k){f[k].classList.toggle('bad',!ok[k]);if(!ok[k])all=false});
-    if(!all){err.textContent=!ok.email&&v.email?'Revisa el email.':!ok.phone&&v.phone?'Revisa el número de WhatsApp.':'Rellena todos los campos, por favor.';err.hidden=false;return}
+    if(!v.bud||!v.sec)return q(!v.sec?1:2);if(!ok.biz||!ok.name)return q(3);
+    if(!all){err.textContent=!ok.email&&v.email?'Revisa el email.':!ok.phone&&v.phone?'Revisa el número de WhatsApp.':'Rellena el email y el WhatsApp, por favor.';err.hidden=false;return}
     err.hidden=true;var go=$('bk-go');go.disabled=true;go.firstChild.textContent='Reservando… ';
-    px('Lead',{content_name:v.rev});
-    var body={k:key||'',start:pick,name:v.name,email:v.email,phone:tel,biz:v.biz,rev:v.rev,n:N||'tienda',utm:UTM,tz:(Intl.DateTimeFormat().resolvedOptions().timeZone||TZ)};
+    px('Lead',{content_name:v.bud,content_category:v.sec});
+    var body={k:key||'',start:pick,name:v.name,email:v.email,phone:tel,biz:v.biz,bud:v.bud,sec:v.sec,n:(v.sec&&v.sec!=='otro'?v.sec:N||'tienda'),utm:UTM,tz:(Intl.DateTimeFormat().resolvedOptions().timeZone||TZ)};
     var done=function(j){go.disabled=false;go.firstChild.textContent='Confirmar llamada ';
-      if(j&&j.ok){px('Schedule',{content_name:v.rev,value:v.rev==='r3'?4:v.rev==='r2'?3:v.rev==='r1'?2:1,currency:'EUR'});ok2(v,j);return}
+      if(j&&j.ok){px('Schedule',{content_name:v.bud,content_category:v.sec,value:{b0:1,b1:2,b2:3,b3:4,b4:2}[v.bud]||1,currency:'EUR'});ok2(v,j);return}
       if(j&&j.error==='taken'){SL=j.slots||SL;err.textContent='Esa hora se acaba de ocupar. Elige otra, por favor.';err.hidden=false;setTimeout(function(){$('bk-2').hidden=true;$('bk-1').hidden=false;drawDays()},1400);return}
       err.innerHTML='No se ha podido reservar. <a href="https://wa.me/34610594450?text='+encodeURIComponent('Hola Christian, quiero reservar la llamada para '+fL.format(new Date(pick)))+'" target="_blank" rel="noopener" style="color:var(--t2)">Escríbeme por WhatsApp</a> y te la dejo hecha.';err.hidden=false};
     if(!PROD){setTimeout(function(){done({ok:true,demo:1,join:'',gcal:'#',mailed:true})},700);return}
