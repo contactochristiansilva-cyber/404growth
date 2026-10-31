@@ -6,7 +6,7 @@
 <title>Tu tienda cierra a las 20:00. Tus ventas, ya no. | 404 Growth</title>
 <meta name="description" content="Para dueños de tiendas físicas: en 21 días convertimos tu tienda en una tienda online que vende en toda España, con tu stock y tu marca. Mira el vídeo y reserva 15 minutos.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0C1412">
+<meta name="theme-color" content="#0A1210">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="404 Growth">
 <meta property="og:locale" content="es_ES">
@@ -15,392 +15,448 @@
 <meta property="og:image" content="https://404growth.com/og-404-tiendas.jpg">
 <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" href="/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="preconnect" href="https://calendly.com">
 <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
 <style>
-@font-face{font-family:"Inter Tight";src:url(/inter-tight.woff2) format("woff2");font-weight:100 900;font-display:swap}
-:root{--bg:#0C1412;--sf:#13201C;--sf2:#182A25;--ink:#E9E4D8;--mute:#9EAAA4;--line:#22342F;--t:#7FB8A4;--td:#5E9884;--tl:#2A4A41;--sand:#C9B98A;--bad:#D98C7A;
---f:"Inter Tight",Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+/* Layout: una sola columna centrada; las secciones se encadenan con un hilo de luz vertical, sin separadores. */
+:root{color-scheme:dark;
+--bg:#0A1210;--ink:#EEE9DE;--mute:#A3AFA9;--t:#7FB8A4;--t2:#A9DCC9;--td:#3D786F;--sand:#D7C79A;--bad:#E09A88;
+--gl:rgba(255,255,255,.07);--gl2:rgba(255,255,255,.12);--gb:rgba(255,255,255,.14);--gh:rgba(255,255,255,.32);
+--f:"Inter Tight",Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+--s:"Instrument Serif","Iowan Old Style",Georgia,serif}
 *{box-sizing:border-box}html,body{margin:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--f);letter-spacing:-.011em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--f);letter-spacing:-.011em;-webkit-font-smoothing:antialiased;overflow-x:hidden;text-align:center}
 a{color:inherit}img{max-width:100%;display:block}
-.wrap{max-width:1080px;margin:0 auto;padding:0 40px}
-.nar{max-width:760px}
-h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.04em;line-height:1.05}
-h2{font-size:clamp(32px,4.4vw,54px)}
-.t{color:var(--t)}
-.lb{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
-.chap{display:flex;align-items:center;gap:14px;margin-bottom:24px}
-.chap .num{font-size:12px;font-weight:600;color:var(--t);border:1px solid currentColor;padding:5px 10px;border-radius:5px}
-.sec{padding:110px 0;border-top:1px solid var(--line)}
-.lead{font-size:20px;line-height:1.5;color:var(--mute);margin:22px 0 0;letter-spacing:-.015em;max-width:640px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.045em;line-height:1;text-wrap:balance}
 
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--t);color:#0C1412;text-decoration:none;font-weight:650;font-size:18px;padding:18px 30px;border-radius:99px;letter-spacing:-.01em;transition:background .2s,transform .2s;white-space:nowrap;border:0;cursor:pointer;font-family:inherit}
-.btn span{transition:transform .2s}.btn:hover{background:#93C7B5}.btn:hover span{transform:translateX(3px)}
+/* fondo líquido: manchas que cambian de forma detrás del cristal */
+.blobs{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.blobs i{position:absolute;width:46vmax;height:46vmax;filter:blur(70px);opacity:.42;will-change:transform,border-radius;animation:morph 22s ease-in-out infinite alternate}
+.blobs i:nth-child(1){left:-14vmax;top:-12vmax;background:radial-gradient(circle at 40% 40%,#2F6E5E,transparent 70%)}
+.blobs i:nth-child(2){right:-16vmax;top:30vh;background:radial-gradient(circle at 50% 50%,#55452A,transparent 70%);animation-duration:28s;animation-delay:-8s;opacity:.34}
+.blobs i:nth-child(3){left:20vw;bottom:-22vmax;background:radial-gradient(circle at 50% 50%,#1F5A50,transparent 70%);animation-duration:25s;animation-delay:-14s}
+@keyframes morph{
+ 0%{border-radius:42% 58% 63% 37%/41% 44% 56% 59%;transform:translate(0,0) rotate(0)}
+ 50%{border-radius:63% 37% 38% 62%/58% 62% 38% 42%;transform:translate(6vw,8vh) rotate(40deg)}
+ 100%{border-radius:38% 62% 55% 45%/62% 35% 65% 38%;transform:translate(-4vw,14vh) rotate(-30deg)}}
+
+/* cristal */
+.glass{position:relative;background:linear-gradient(145deg,var(--gl2),var(--gl) 55%,rgba(255,255,255,.04));-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);
+ border:1px solid var(--gb);box-shadow:inset 0 1px 0 var(--gh),inset 0 -1px 0 rgba(255,255,255,.06),0 30px 70px -30px rgba(0,0,0,.7)}
+.glass:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(120% 60% at 20% -10%,rgba(255,255,255,.16),transparent 55%)}
+
+/* botón de cristal líquido */
+.btn{--x:50%;--y:50%;position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:12px;
+ color:#08110F;text-decoration:none;font-weight:650;font-size:18px;letter-spacing:-.01em;padding:19px 34px;border-radius:99px;white-space:nowrap;cursor:pointer;font-family:inherit;border:1px solid rgba(255,255,255,.5);
+ background:radial-gradient(140px 80px at var(--x) var(--y),rgba(255,255,255,.55),transparent 70%),linear-gradient(180deg,rgba(176,226,208,.96),rgba(110,170,148,.92));
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.85),inset 0 -6px 14px rgba(20,70,58,.35),0 0 0 6px rgba(127,184,164,.12),0 18px 40px -12px rgba(127,184,164,.55);
+ transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.btn:before{content:"";position:absolute;left:8%;right:8%;top:2px;height:46%;border-radius:99px;background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,0));z-index:-1;pointer-events:none}
+.btn:after{content:"";position:absolute;top:-20%;bottom:-20%;width:38%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);animation:sheen 4.5s ease-in-out infinite;pointer-events:none;z-index:-1}
+@keyframes sheen{0%,62%{left:-60%}100%{left:130%}}
+.btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -6px 14px rgba(20,70,58,.35),0 0 0 8px rgba(127,184,164,.16),0 26px 50px -14px rgba(127,184,164,.7)}
 .btn:active{transform:scale(.98)}
-.btn.sm{font-size:14px;padding:10px 18px}
-.ctab{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:40px;text-align:center}
-.ctab small{font-size:14px;color:var(--mute)}
-.ctaband{text-align:center;padding:90px 0;border-top:1px solid var(--line);background:radial-gradient(60% 120% at 50% 0%,rgba(127,184,164,.10),transparent 70%)}
-.ctaband h2{font-size:clamp(28px,3.6vw,44px);max-width:20ch;margin:0 auto}
-.ctaband .ctab{margin-top:30px}
+.btn:focus-visible,.arr:focus-visible,.faq summary:focus-visible,.links a:focus-visible{outline:2px solid var(--t2);outline-offset:4px}
+.btn .ar{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:rgba(8,17,15,.12);transition:transform .3s}
+.btn:hover .ar{transform:translateY(2px)}
+.btn.go:hover .ar{transform:translateX(3px)}
+.cta{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:40px}
+.chips{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--ink);padding:9px 15px;border-radius:99px}
+.chip svg{width:16px;height:16px;color:var(--t2)}
 
-/* top */
-.top{position:sticky;top:0;z-index:50;background:rgba(12,20,18,.82);backdrop-filter:saturate(160%) blur(18px);-webkit-backdrop-filter:saturate(160%) blur(18px);border-bottom:1px solid transparent;transition:border-color .2s}
-.top.solid{border-bottom-color:var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:center;height:62px}
-.w404{font-weight:800;font-size:16px;letter-spacing:.02em;text-decoration:none}.w404 sup{font-size:9px;font-weight:500;margin-left:2px;color:var(--mute)}
+/* hilo que une las secciones */
+.thread{display:flex;flex-direction:column;align-items:center;height:120px;position:relative}
+.thread:before{content:"";width:1px;height:100%;background:linear-gradient(180deg,transparent,rgba(127,184,164,.55),transparent)}
+.thread:after{content:"";position:absolute;top:0;left:50%;width:7px;height:7px;margin-left:-3.5px;border-radius:50%;background:var(--t2);box-shadow:0 0 14px 3px rgba(127,184,164,.7);animation:drop 2.8s cubic-bezier(.6,0,.4,1) infinite}
+@keyframes drop{0%{top:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{top:100%;opacity:0}}
+
+/* títulos de sección */
+.hd{max-width:880px;margin:0 auto}
+.hd h2{font-size:clamp(40px,6vw,76px);line-height:.98}
+.sf{font-family:var(--s);font-style:italic;font-weight:400;letter-spacing:-.02em;color:var(--t2);padding-right:.06em}
+.sec{padding:20px 0 0}
+
+/* cabecera */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;display:flex;justify-content:center;padding:14px 16px 0;pointer-events:none}
+.logo{pointer-events:auto;display:inline-flex;align-items:center;padding:10px 20px;border-radius:99px;text-decoration:none;font-weight:800;font-size:15px;letter-spacing:.03em}
+.logo sup{font-size:9px;font-weight:500;margin-left:2px;color:var(--mute)}
+body:before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
 
 /* hero */
-.hero{position:relative;padding:56px 0 72px;text-align:center;overflow:hidden}
-.hero:before{content:"";position:absolute;left:50%;top:40%;width:1400px;height:900px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(127,184,164,.14),transparent);pointer-events:none}
-.hero .wrap{position:relative}
-.hero h1{margin:0 auto;max-width:1000px}
-.hero h1 .big{display:block;font-size:clamp(44px,7.4vw,92px);letter-spacing:-.05em;line-height:.98}
-.hero h1 .big em{font-style:normal;color:var(--t);display:block}
-
-/* vsl */
-.vsl{--ar:16/9;position:relative;max-width:900px;margin:44px auto 0;aspect-ratio:var(--ar);border-radius:18px;overflow:hidden;background:var(--sf);box-shadow:0 60px 120px -50px rgba(0,0,0,.8),0 0 0 1px var(--line)}
+.hero{padding:56px 0 0}
+.hero h1{font-size:clamp(48px,8.4vw,112px);line-height:.95;letter-spacing:-.055em;max-width:12ch;margin:0 auto}
+.hero h1 .sf{display:block;font-size:1.04em;line-height:1;margin-top:.04em}
+.vsl{--ar:16/9;position:relative;max-width:940px;margin:48px auto 0;aspect-ratio:var(--ar);border-radius:26px;padding:10px}
+.vsl .in{position:relative;width:100%;height:100%;border-radius:18px;overflow:hidden;background:#0E1A17}
 .vsl video{width:100%;height:100%;display:block;object-fit:cover;background:#000}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+.vsl:after{content:"";position:absolute;inset:-2px;border-radius:28px;z-index:-1;background:conic-gradient(from var(--a),rgba(127,184,164,0),rgba(127,184,164,.6),rgba(215,199,154,.45),rgba(127,184,164,0) 60%);filter:blur(14px);opacity:.7;animation:spin 9s linear infinite}
+@keyframes spin{to{--a:360deg}}
 .slot{position:absolute;inset:0;width:100%;border:0;padding:0;cursor:pointer;color:var(--ink);font-family:inherit;background:
-  radial-gradient(120% 90% at 78% 30%,rgba(127,184,164,.22),transparent 60%),
-  radial-gradient(90% 80% at 10% 100%,rgba(201,185,138,.14),transparent 60%),
-  linear-gradient(160deg,#182A25,#0F1916)}
-.slot .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
-.slot .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:96px;height:96px;border-radius:50%;background:var(--t);display:grid;place-items:center;box-shadow:0 0 0 14px rgba(127,184,164,.18),0 20px 50px -10px rgba(0,0,0,.6);transition:transform .25s}
-.slot:hover .play{transform:translate(-50%,-50%) scale(1.06)}
-.slot .play:after{content:"";margin-left:7px;border-style:solid;border-width:16px 0 16px 26px;border-color:transparent transparent transparent #0C1412}
-.slot .play:before{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px solid rgba(127,184,164,.5);animation:pulse 2.4s ease-out infinite}
-@keyframes pulse{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.45);opacity:0}}
-.slot .cap{position:absolute;left:24px;bottom:22px;right:24px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;text-align:left}
-.slot .cap b{display:block;font-size:19px;letter-spacing:-.02em}.slot .cap span{font-size:14px;color:var(--mute)}
-.slot .dur{font-size:13px;font-weight:600;background:rgba(12,20,18,.7);border:1px solid var(--line);padding:7px 12px;border-radius:99px;white-space:nowrap}
-.slot .snd{position:absolute;top:20px;left:24px;font-size:13px;font-weight:600;color:var(--sand)}
-.vmsg{max-width:900px;margin:16px auto 0;font-size:15px;color:var(--sand);background:var(--sf);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
-.trust{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 26px;margin-top:22px;font-size:14px;color:var(--mute)}
-.trust span:before{content:"✓";color:var(--t);font-weight:700;margin-right:8px}
+ radial-gradient(120% 90% at 78% 30%,rgba(127,184,164,.28),transparent 60%),radial-gradient(90% 80% at 10% 100%,rgba(215,199,154,.16),transparent 60%),linear-gradient(160deg,#16302A,#0D1916)}
+.slot .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:104px;height:104px;border-radius:50%;display:grid;place-items:center;
+ background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,.08));-webkit-backdrop-filter:blur(14px) saturate(180%);backdrop-filter:blur(14px) saturate(180%);
+ border:1px solid rgba(255,255,255,.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 50px -10px rgba(0,0,0,.6);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.play:after{content:"";margin-left:8px;border-style:solid;border-width:17px 0 17px 28px;border-color:transparent transparent transparent #fff}
+.play:before{content:"";position:absolute;inset:-12px;border-radius:50%;border:1.5px solid rgba(169,220,201,.55);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.92);opacity:1}100%{transform:scale(1.5);opacity:0}}
+.slot:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+.vtag{position:absolute;top:16px;left:50%;transform:translateX(-50%);font-size:13px;font-weight:600;padding:8px 14px;border-radius:99px;white-space:nowrap;color:var(--ink)}
+.vdur{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:13px;font-weight:600;padding:7px 13px;border-radius:99px;white-space:nowrap;color:var(--ink)}
+.vmsg{max-width:640px;margin:18px auto 0;font-size:15px;color:var(--sand);padding:14px 18px;border-radius:16px}
 
-/* book */
-.book{padding:90px 0 110px;border-top:1px solid var(--line);background:linear-gradient(180deg,#0F1A17,var(--bg))}
-.bk{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
-.bk .side{position:sticky;top:96px}
-.bk h2{font-size:clamp(30px,3.6vw,44px)}
-.steps{list-style:none;padding:0;margin:28px 0 0}
-.steps li{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:12px 0;font-size:16px;color:var(--mute)}
-.steps li b{color:var(--ink);display:block;font-weight:600}
-.steps i{font-style:normal;width:28px;height:28px;border-radius:50%;border:1px solid var(--t);color:var(--t);display:grid;place-items:center;font-size:13px;font-weight:700}
-.me{display:flex;align-items:center;gap:14px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
-.av{width:52px;height:52px;border-radius:50%;background:var(--tl) center/cover;display:grid;place-items:center;font-weight:700;color:var(--t);flex:none}
-.me b{display:block}.me span{font-size:14px;color:var(--mute)}
-.cal{position:relative;min-height:720px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 0 0 1px var(--line),0 40px 90px -40px rgba(0,0,0,.8)}
+/* reserva */
+.steps3{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:34px auto 0;max-width:900px}
+.st{display:flex;align-items:center;gap:12px;padding:12px 20px 12px 12px;border-radius:99px;font-size:15px;font-weight:600;text-align:left}
+.st .ic{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(127,184,164,.16);color:var(--t2);flex:none}
+.st .ic svg{width:19px;height:19px}
+.st small{display:block;font-size:12px;font-weight:500;color:var(--mute)}
+.calw{max-width:860px;margin:30px auto 0;border-radius:28px;padding:10px}
+.cal{position:relative;min-height:700px;background:#fff;border-radius:20px;overflow:hidden}
 .cal iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .cal.ready .cal-wait{display:none}
 .cal-wait{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#4c5653;font-size:15px;z-index:1;background:#fff}
-.cal-wait i{width:30px;height:30px;border-radius:50%;border:3px solid #dfe7e4;border-top-color:var(--td);animation:spin 1s linear infinite}
+.cal-wait i{width:30px;height:30px;border-radius:50%;border:3px solid #dfe7e4;border-top-color:var(--td);animation:rot 1s linear infinite}
 .cal-wait a{font-size:14px;color:#2f5e57}
-@keyframes spin{to{transform:rotate(360deg)}}
-.ok{background:var(--sf);border:1px solid #2C4C42;border-radius:18px;padding:34px}
-.ok h3{font-size:28px;letter-spacing:-.03em;margin-bottom:8px}
-.ok ol{margin:22px 0 0;padding-left:20px;color:var(--mute)}.ok li{padding:6px 0}.ok li b{color:var(--ink)}
-.alt{margin-top:16px;font-size:14px;color:var(--mute)}.alt a{color:var(--t)}
+@keyframes rot{to{transform:rotate(360deg)}}
+.byme{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:8px 20px 8px 8px;border-radius:99px;font-size:14px;color:var(--mute);text-align:left}
+.byme b{color:var(--ink);display:block;font-size:15px}
+.av{width:42px;height:42px;border-radius:50%;background:linear-gradient(160deg,#2B5247,#16302A) center/cover;display:grid;place-items:center;font-weight:700;color:var(--t2);flex:none}
+.alt{margin:14px 0 0;font-size:14px;color:var(--mute)}.alt a{color:var(--t2)}
+.ok{max-width:640px;margin:30px auto 0;border-radius:24px;padding:36px}
+.ok h3{font-size:30px;margin-bottom:10px}
+.ok p{color:var(--mute);margin:0}
+.ok ol{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:10px;text-align:left}
+.ok li{padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.05);color:var(--mute)}.ok li b{color:var(--ink)}
 
-/* cases */
-.cases{list-style:none;padding:0;margin:56px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.case{border:1px solid var(--line);border-radius:18px;background:var(--sf);overflow:hidden;display:flex;flex-direction:column}
-.case .ph{aspect-ratio:4/3;background:linear-gradient(160deg,#1C302A,#13201C) center/cover;position:relative}
-.case .ph span{position:absolute;left:16px;top:16px;font-size:12px;font-weight:600;background:rgba(12,20,18,.75);border:1px solid var(--line);padding:6px 11px;border-radius:99px}
-.case .bd{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
-.case .kpi{font-size:40px;font-weight:700;letter-spacing:-.05em;line-height:1;color:var(--t)}
-.case .kl{font-size:15px;color:var(--mute);margin-top:-4px}
-.case blockquote{margin:0;font-size:16px;line-height:1.5}
-.case cite{font-style:normal;font-size:14px;color:var(--mute);margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+/* casos: carrusel horizontal */
+.rail{position:relative;margin-top:44px}
+.cases{list-style:none;margin:0;padding:10px max(24px,calc((100vw - 1072px)/2)) 30px;display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab;scroll-padding:0 max(24px,calc((100vw - 1072px)/2))}
+.cases::-webkit-scrollbar{display:none}
+.cases.drag{cursor:grabbing;scroll-snap-type:none}
+.case{flex:0 0 min(360px,82vw);scroll-snap-align:start;border-radius:26px;padding:10px;text-align:left;user-select:none;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.case:hover{transform:translateY(-6px)}
+.case .ph{aspect-ratio:4/3;border-radius:18px;background:linear-gradient(150deg,#1E3A33,#12221E) center/cover;position:relative;overflow:hidden;display:grid;place-items:center}
+.case .ph svg{width:54px;height:54px;color:rgba(169,220,201,.35)}
+.case .tag{position:absolute;left:12px;top:12px;font-size:12px;font-weight:600;padding:7px 12px;border-radius:99px;color:var(--ink)}
+.case .bd{padding:20px 14px 14px}
+.case .kpi{font-size:56px;font-weight:700;letter-spacing:-.06em;line-height:1;color:var(--t2)}
+.case .kl{font-size:15px;color:var(--mute);margin-top:6px}
+.case blockquote{margin:16px 0 0;font-family:var(--s);font-style:italic;font-size:22px;line-height:1.25;letter-spacing:-.01em}
+.case cite{display:flex;align-items:center;gap:10px;font-style:normal;font-size:14px;color:var(--mute);margin-top:18px}
 .case cite b{color:var(--ink);display:block}
-.case.pend{border-style:dashed;background:transparent}
-.case.pend .ph{background:repeating-linear-gradient(135deg,#13201C 0 12px,#101B18 12px 24px)}
-.case.pend .kpi{color:var(--line)}
-.case.pend blockquote,.case.pend cite{color:var(--mute)}
-.pendnote{margin-top:18px;font-size:14px;color:var(--sand)}
+.case cite .av{width:34px;height:34px;font-size:13px}
+.case.pend .kpi{color:rgba(169,220,201,.35)}
+.case.pend blockquote{color:var(--mute)}
+.arrows{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:6px}
+.arr{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:var(--ink);cursor:pointer;font:inherit;transition:transform .3s,opacity .3s}
+.arr:hover{transform:scale(1.08)}.arr[disabled]{opacity:.35;cursor:default;transform:none}
+.arr svg{width:20px;height:20px}
+.dots{display:flex;gap:6px}.dots i{width:7px;height:7px;border-radius:99px;background:rgba(255,255,255,.22);transition:width .3s,background .3s}.dots i.on{width:24px;background:var(--t2)}
+.pendnote{margin:18px auto 0;font-size:14px;color:var(--sand);max-width:620px}
 
-/* method */
-.plan{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);position:relative}
-.plan:before{content:"";position:absolute;left:0;right:0;top:15px;height:2px;background:linear-gradient(90deg,var(--t),var(--t) 78%,var(--line) 78%)}
-.plan li{position:relative;padding:44px 18px 0 0}
-.plan li:before{content:"";position:absolute;top:8px;left:0;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--t)}
-.plan li:last-child:before{border-color:var(--line)}
-.plan small{font-size:13px;font-weight:700;color:var(--t)}
-.plan li:last-child small{color:var(--mute)}
-.plan b{display:block;font-size:19px;letter-spacing:-.02em;margin:6px 0}
-.plan span{font-size:14.5px;color:var(--mute);line-height:1.45;display:block}
-.pil{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:64px}
-.pil>div{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--sf)}
-.pil .n{font-size:12px;font-weight:700;color:var(--t);letter-spacing:.08em}
-.pil h3{font-size:20px;letter-spacing:-.025em;margin:12px 0 8px;line-height:1.15}
-.pil p{margin:0;color:var(--mute);font-size:15px;line-height:1.5}
-.who2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-.who2>div{border:1px solid var(--line);border-radius:16px;padding:24px}
-.who2 h3{font-size:17px;letter-spacing:-.02em;margin-bottom:10px}
-.who2 ul{margin:0;padding:0;list-style:none}
-.who2 li{padding:6px 0 6px 24px;position:relative;font-size:15px;color:var(--mute)}
-.who2 li:before{content:"";position:absolute;left:4px;top:14px;width:7px;height:7px;border-radius:50%;background:var(--t)}
-.who2 .yo li:before{background:var(--sand)}
-.note{font-size:13px;color:var(--mute);margin-top:16px}
-.disc{margin-top:22px;font-size:14px;line-height:1.55;color:var(--mute);border-left:2px solid var(--sand);padding-left:14px;max-width:760px}
+/* metodología */
+.road{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:52px auto 0;max-width:1080px}
+.road:before{content:"";position:absolute;left:12%;right:12%;top:47px;height:2px;background:linear-gradient(90deg,transparent,var(--t) 15%,var(--t) 85%,transparent);opacity:.5}
+.stp{border-radius:24px;padding:26px 20px 24px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.stp .ic{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#08110F;background:linear-gradient(180deg,#B5E4D3,#76AF9A);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 0 0 6px rgba(127,184,164,.14);margin-bottom:12px}
+.stp .ic svg{width:21px;height:21px}
+.stp small{font-size:13px;font-weight:700;color:var(--t2);letter-spacing:.04em}
+.stp b{font-size:22px;letter-spacing:-.03em;line-height:1.1}
+.stp span{font-size:15px;color:var(--mute);line-height:1.4}
+.inc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px auto 0;max-width:1080px}
+.tile{border-radius:20px;padding:22px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:15px;font-weight:600;line-height:1.25;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.tile:hover{transform:translateY(-4px)}
+.tile svg{width:26px;height:26px;color:var(--t2)}
+.note{font-size:13px;color:var(--mute);margin:16px 0 0}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:18px auto 0}
+.side2{border-radius:24px;padding:26px}
+.side2 h3{font-size:20px;letter-spacing:-.025em;margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:10px}
+.side2 h3 em{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.06em;padding:5px 10px;border-radius:99px;background:rgba(127,184,164,.18);color:var(--t2)}
+.side2.you h3 em{background:rgba(215,199,154,.18);color:var(--sand)}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.pills span{font-size:14px;padding:8px 13px;border-radius:99px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
 
-/* fit */
-.fit{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:56px}
-.fit>div{border-radius:18px;padding:30px;border:1px solid var(--line)}
-.fit .si{background:var(--sf)}
-.fit h3{font-size:22px;letter-spacing:-.025em;margin-bottom:16px}
-.fit ul{list-style:none;margin:0;padding:0}
-.fit li{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:11px 0;border-top:1px solid var(--line);font-size:16px;line-height:1.45}
-.fit li:before{font-weight:700}
-.fit .si li:before{content:"✓";color:var(--t)}
-.fit .no li:before{content:"✕";color:var(--bad)}
-.fit .no li{color:var(--mute)}
+/* encaje */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:48px auto 0}
+.fc{border-radius:26px;padding:30px 26px}
+.fc .big{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;font-size:26px;font-weight:700}
+.fc.si .big{background:linear-gradient(180deg,#B5E4D3,#76AF9A);color:#08110F;box-shadow:0 0 0 8px rgba(127,184,164,.12)}
+.fc.no .big{background:rgba(224,154,136,.14);color:var(--bad);box-shadow:0 0 0 8px rgba(224,154,136,.06)}
+.fc h3{font-size:26px;margin-bottom:18px}
+.fc ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.fc li{padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.05);font-size:15.5px;line-height:1.35}
+.fc.no li{color:var(--mute)}
 
-/* faq */
-.faq{margin-top:48px;border-top:1px solid var(--line)}
-.faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.35;position:relative}
+/* preguntas */
+.faq{max-width:760px;margin:44px auto 0;display:grid;gap:10px;text-align:left}
+.faq details{border-radius:20px;padding:0 22px;transition:background .3s}
+.faq details[open]{background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.06))}
+.faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-size:18px;font-weight:600;letter-spacing:-.02em;line-height:1.35;position:relative}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary:after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:26px;font-weight:300;color:var(--t);transition:transform .2s}
-.faq details[open] summary:after{transform:translateY(-50%) rotate(45deg)}
-.faq p{margin:0 0 24px;color:var(--mute);font-size:16.5px;max-width:720px}
+.faq summary:after{content:"+";position:absolute;right:0;top:50%;width:28px;height:28px;margin-top:-14px;border-radius:50%;display:grid;place-items:center;font-size:20px;font-weight:400;color:var(--t2);background:rgba(127,184,164,.14);transition:transform .3s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq p{margin:0 0 20px;color:var(--mute);font-size:16px}
 
-/* about */
-.about{display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:start;margin-top:8px}
-.pic{aspect-ratio:4/5;border-radius:18px;background:linear-gradient(160deg,#1C302A,#13201C) center/cover;border:1px solid var(--line);display:grid;place-items:center;font-size:64px;font-weight:700;color:var(--t)}
-.about .tx p{font-size:18px;line-height:1.6;color:var(--mute);margin:0 0 18px}
-.about .tx p b{color:var(--ink);font-weight:600}
-.vals{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.vals li{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--sf)}
-.vals b{display:block;font-size:16px;letter-spacing:-.02em;margin-bottom:4px}
-.vals span{font-size:14px;color:var(--mute);line-height:1.45;display:block}
-.links{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:26px;font-size:15px}
-.links a{color:var(--t);text-decoration:none;border-bottom:1px solid rgba(127,184,164,.35);padding-bottom:2px}
+/* cta intermedio */
+.mid{max-width:880px;margin:0 auto;border-radius:34px;padding:56px 28px;overflow:hidden}
+.mid h2{font-size:clamp(34px,4.6vw,58px)}
+.mid .cta{margin-top:30px}
 
-/* footer, bar, cookies */
-footer{border-top:1px solid var(--line);padding:34px 0 120px;font-size:14px;color:var(--mute)}
-footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+/* quién está detrás */
+.me{max-width:760px;margin:44px auto 0;border-radius:32px;padding:44px 32px}
+.me .pic{width:132px;height:132px;border-radius:50%;margin:0 auto;background:linear-gradient(160deg,#2B5247,#16302A) center/cover;display:grid;place-items:center;font-size:48px;font-weight:700;color:var(--t2);box-shadow:0 0 0 8px rgba(127,184,164,.12),0 0 0 1px rgba(255,255,255,.2)}
+.me .nm{font-size:22px;font-weight:700;margin-top:18px;letter-spacing:-.02em}
+.me .rl{font-size:15px;color:var(--mute)}
+.me p{font-size:18px;line-height:1.55;color:var(--mute);margin:22px auto 0;max-width:560px}
+.me p b{color:var(--ink);font-weight:600}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.vals div{border-radius:18px;padding:18px 12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.vals svg{width:24px;height:24px;color:var(--t2);margin:0 auto 8px;display:block}
+.vals b{display:block;font-size:16px}.vals span{font-size:13.5px;color:var(--mute)}
+.links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:26px}
+.links a{font-size:14px;font-weight:600;text-decoration:none;padding:10px 16px;border-radius:99px}
+
+/* pie, barra móvil, cookies */
+footer{padding:80px 0 130px;font-size:14px;color:var(--mute)}
+footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin-top:10px}
 footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
-footer nav{display:flex;gap:20px;flex-wrap:wrap}
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:55;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(12,20,18,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.8,.2,1);display:none}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:55;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));transform:translateY(120%);transition:transform .4s cubic-bezier(.2,.8,.2,1);display:none}
 .bar.on{transform:none}
 .bar .btn{width:100%}
-.ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;max-width:440px;background:var(--sf2);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
-.ck p{margin:0 0 14px;font-size:14px;color:var(--mute)}.ck p a{color:var(--t)}
-.ck .row{display:flex;gap:10px}
-.pill{font:inherit;font-size:14px;font-weight:600;padding:10px 16px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
-.pill.solid{background:var(--t);border-color:var(--t);color:#0C1412}
+.ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;max-width:440px;margin:0 auto;border-radius:20px;padding:18px;background:rgba(18,32,28,.85)}
+.ck p{margin:0 0 14px;font-size:14px;color:var(--mute)}.ck p a{color:var(--t2)}
+.ck .row{display:flex;gap:10px;justify-content:center}
+.pill{font:inherit;font-size:14px;font-weight:600;padding:10px 16px;border-radius:99px;border:1px solid var(--gb);background:transparent;color:var(--ink);cursor:pointer}
+.pill.solid{background:var(--t);border-color:var(--t);color:#08110F}
 
-/* reveal */
-.rv{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.slot .play:before{animation:none}html{scroll-behavior:auto}}
+/* apariciones */
+.rv{opacity:0;transform:translateY(24px) scale(.985);filter:blur(6px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1),filter .9s ease}
+.rv.in{opacity:1;transform:none;filter:none}
+.st.rv:nth-child(2),.stp.rv:nth-child(2),.tile.rv:nth-child(2){transition-delay:.08s}
+.st.rv:nth-child(3),.stp.rv:nth-child(3),.tile.rv:nth-child(3){transition-delay:.16s}
+.stp.rv:nth-child(4),.tile.rv:nth-child(4){transition-delay:.24s}
+.tile.rv:nth-child(5){transition-delay:.06s}.tile.rv:nth-child(6){transition-delay:.14s}.tile.rv:nth-child(7){transition-delay:.22s}.tile.rv:nth-child(8){transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){
+ .rv{opacity:1;transform:none;filter:none;transition:none}
+ .blobs i,.btn:after,.play:before,.thread:after,.vsl:after{animation:none}
+ html{scroll-behavior:auto}}
 
-@media (max-width:960px){
-  .wrap{padding:0 20px}
-  .sec{padding:80px 0}
-  .bk,.fit,.who2,.about{grid-template-columns:1fr}
-  .bk{gap:28px}.bk .side{position:static}.bk .steps,.bk .me{display:none}
-  .cases{grid-template-columns:1fr}
-  .pil{grid-template-columns:1fr 1fr}
-  .plan{grid-template-columns:1fr}
-  .plan:before{left:7px;right:auto;top:8px;bottom:8px;width:2px;height:auto;background:linear-gradient(180deg,var(--t),var(--t) 80%,var(--line) 80%)}
-  .plan li{padding:0 0 26px 40px}.plan li:before{top:3px}
-  .about{gap:28px}.pic{max-width:240px;aspect-ratio:1}
-  .vals{grid-template-columns:1fr}
-  .bar{display:block}
+@media (max-width:900px){
+ .road{grid-template-columns:1fr 1fr}.road:before{display:none}
+ .inc{grid-template-columns:1fr 1fr}
+ .duo,.fit{grid-template-columns:1fr}
+ .bar{display:block}
+ .thread{height:90px}
 }
 @media (max-width:560px){
-  body{font-size:16px}
-  .hero{padding:36px 0 56px}
-  .lead{font-size:18px}
-  .vsl{margin-top:28px;border-radius:14px}
-  .slot .play{width:72px;height:72px}.slot .play:after{border-width:12px 0 12px 20px;margin-left:5px}
-  .slot .cap{left:14px;right:14px;bottom:12px}.slot .cap b{font-size:15px}.slot .cap>span:first-child{display:none}.slot .cap{justify-content:flex-end}.slot .snd{top:12px;left:14px;font-size:12px}
-  .pil{grid-template-columns:1fr}
-  .btn{font-size:17px;padding:17px 24px;width:100%}
-  .btn.sm{width:auto}
-  .ctab{margin-top:28px}
-  .trust{gap:8px 18px;font-size:13px}
-  .fit>div{padding:22px}
-  .book{padding:64px 0 80px}
-  .cal{min-height:960px;margin:0 -8px;border-radius:14px}
-  .ctaband{padding:70px 0}
-  .top .wrap{height:56px}
+ body{font-size:16px}
+ .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+ .hero{padding-top:40px}
+ .vsl{margin-top:30px;padding:6px;border-radius:20px}.vsl .in{border-radius:15px}
+ .play{width:76px;height:76px}.play:after{border-width:13px 0 13px 21px;margin-left:6px}
+ .vtag{top:10px;font-size:12px;padding:6px 11px}.vdur{display:none}
+ .btn{font-size:17px;padding:18px 22px;width:100%}
+ .steps3{flex-direction:column;align-items:stretch}
+ .st{border-radius:18px}
+ .calw{padding:6px;border-radius:22px;margin-left:-6px;margin-right:-6px}
+ .cal{min-height:960px;border-radius:16px}
+ .road{grid-template-columns:1fr}
+ .vals{grid-template-columns:1fr}
+ .me,.mid{padding:36px 18px;border-radius:26px}
+ .fc{padding:24px 16px}
 }
 </style>
 </head>
 <body>
 
-<header class="top" id="top">
-  <div class="wrap">
-    <a class="w404" href="/" aria-label="404 Growth">404/GROWTH<sup>®</sup></a>
-  </div>
-</header>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c1-4 4.5-9 13-9 0 8.5-5 12-9 13z"/><circle cx="15" cy="9" r="1.5"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h13v11H1zM14 9h4l4 4v3h-8"/><circle cx="5.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></symbol>
+  <symbol id="i-sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5M3 21v-5h5"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M8 16v-4M13 16V8M18 16v-7"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 1.5-.8 1.5-1.5 0-1.2-1-1.5-1-2.5S13.3 15 14.5 15H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+ </defs>
+</svg>
+
+<div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="top" id="top"><a class="logo glass" href="/" aria-label="404 Growth">404/GROWTH<sup>®</sup></a></header>
 
 <main>
-<!-- 1 · H1 + vídeo + CTA -->
+<!-- H1 + vídeo + CTA -->
 <section class="hero" id="inicio">
   <div class="wrap">
-    <h1><span class="big">Tu tienda cierra a las&nbsp;20:00. <em>Tus ventas, ya&nbsp;no.</em></span></h1>
-
-    <figure class="vsl" id="vsl" style="margin-bottom:0">
-      <button class="slot" id="slot" type="button" aria-label="Ver el vídeo de Christian">
-        <span class="snd" aria-hidden="true">🔊 Dale al play con sonido</span>
-        <span class="play" aria-hidden="true"></span>
-        <span class="cap"><span><b>Cómo tu tienda puede vender en toda España</b><span>Christian · fundador de 404 Growth</span></span><span class="dur">4 min</span></span>
-      </button>
+    <h1>Tu tienda cierra a las&nbsp;20:00. <span class="sf">Tus ventas, ya&nbsp;no.</span></h1>
+    <figure class="vsl glass" id="vsl" style="margin-bottom:0">
+      <div class="in" id="vsl-in">
+        <button class="slot" id="slot" type="button" aria-label="Ver el vídeo de Christian">
+          <span class="vtag glass">🔊 Dale al play con sonido</span>
+          <span class="play" aria-hidden="true"></span>
+          <span class="vdur glass">Christian · 4 min</span>
+        </button>
+      </div>
     </figure>
-    <p class="vmsg" id="vsl-msg" hidden>El vídeo llega en unos días. Mientras, reserva tu llamada justo aquí abajo y te lo cuento en directo.</p>
-
-    <div class="ctab">
-      <a class="btn" href="#reservar" data-cta="hero">Quiero mi tienda online: elegir hora <span>↓</span></a>
+    <p class="vmsg glass" id="vsl-msg" hidden>El vídeo llega en unos días. Mientras, elige tu hora aquí abajo y te lo cuento en directo.</p>
+    <div class="cta">
+      <a class="btn" href="#reservar" data-cta="hero">Quiero mi tienda online <span class="ar"><svg width="16" height="16"><use href="#i-down"/></svg></span></a>
+      <div class="chips"><span class="chip glass"><svg><use href="#i-check"/></svg>15 minutos</span><span class="chip glass"><svg><use href="#i-check"/></svg>Gratis</span><span class="chip glass"><svg><use href="#i-check"/></svg>Precio cerrado</span></div>
     </div>
-    <div class="trust"><span>Llamada de 15 min</span><span>Gratis y sin compromiso</span><span>Sales con un precio cerrado</span></div>
   </div>
 </section>
 
-<!-- 2 · calendario -->
-<section class="book" id="reservar">
-  <div class="wrap bk">
-    <div class="side">
-      <div class="chap"><span class="num">01</span><span class="lb">Reserva tu llamada</span></div>
-      <h2>Elige día y hora.<br><span class="t">15 minutos, por videollamada.</span></h2>
-      <ol class="steps">
-        <li><i>1</i><div><b>Me cuentas tu tienda</b>Qué vendes, cómo vendes hoy y qué te gustaría.</div></li>
-        <li><i>2</i><div><b>Te enseño cómo se vería online</b>Con tu catálogo y una tienda de ejemplo de tu sector.</div></li>
-        <li><i>3</i><div><b>Te doy precio y plazos</b>Cerrados, con los costes externos detallados. Decides tú, sin presión.</div></li>
-      </ol>
-      <div class="me"><span class="av" data-av aria-hidden="true">C</span><div><b>Christian Silva</b><span>Fundador de 404 Growth · Te atiendo yo</span></div></div>
+<!-- calendario -->
+<section class="sec" id="reservar">
+  <div class="thread" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hd rv"><h2>Elige tu hora. <span class="sf">Hablamos 15&nbsp;minutos.</span></h2></div>
+    <div class="steps3">
+      <div class="st glass rv"><span class="ic"><svg><use href="#i-chat"/></svg></span><span>Me cuentas tu tienda<small>Qué vendes y cómo</small></span></div>
+      <div class="st glass rv"><span class="ic"><svg><use href="#i-eye"/></svg></span><span>Te la enseño online<small>Con tu catálogo</small></span></div>
+      <div class="st glass rv"><span class="ic"><svg><use href="#i-tag"/></svg></span><span>Precio y plazos<small>Cerrados, sin presión</small></span></div>
     </div>
     <div id="book-box">
-      <div class="cal" id="cal"><div class="cal-wait"><i></i><span>Cargando la agenda…</span><a id="cal-out" href="https://calendly.com/hola-404growth/llamada-404-growth" target="_blank" rel="noopener">¿Tarda? Ábrela aquí</a></div></div>
+      <div class="calw glass rv"><div class="cal" id="cal"><div class="cal-wait"><i></i><span>Cargando la agenda…</span><a id="cal-out" href="https://calendly.com/hola-404growth/llamada-404-growth" target="_blank" rel="noopener">¿Tarda? Ábrela aquí</a></div></div></div>
+      <div class="byme glass"><span class="av" data-av aria-hidden="true">C</span><span><b>Christian Silva</b>Te atiendo yo, sin comerciales</span></div>
       <p class="alt">¿Prefieres escribir? <a href="https://wa.me/34610594450?text=Hola%20Christian%2C%20he%20visto%20el%20v%C3%ADdeo%20y%20quiero%20pasar%20mi%20tienda%20f%C3%ADsica%20a%20tienda%20online." target="_blank" rel="noopener" data-cta="whatsapp">Háblame por WhatsApp</a></p>
     </div>
   </div>
 </section>
 
-<!-- 3 · casos de éxito -->
+<!-- casos de éxito -->
 <section class="sec" id="casos">
-  <div class="wrap">
-    <div class="rv">
-      <div class="chap"><span class="num">02</span><span class="lb">Casos de éxito</span></div>
-      <h2>Tiendas como la tuya,<br><span class="t">vendiendo también online.</span></h2>
-    </div>
-    <ul class="cases rv" id="cases"></ul>
-    <p class="pendnote" id="cases-note" hidden>Vista previa: estas tarjetas son huecos. Rellena CASES en el código con casos reales; en 404growth.com los huecos vacíos no se muestran.</p>
+  <div class="thread" aria-hidden="true"></div>
+  <div class="wrap"><div class="hd rv"><h2>Tiendas que ya venden <span class="sf">con la persiana bajada.</span></h2></div></div>
+  <div class="rail rv">
+    <ul class="cases" id="cases" aria-label="Casos de éxito"></ul>
+    <div class="arrows"><button class="arr glass" type="button" id="prev" aria-label="Anterior"><svg><use href="#i-l"/></svg></button><span class="dots" id="dots"></span><button class="arr glass" type="button" id="next" aria-label="Siguiente"><svg><use href="#i-r"/></svg></button></div>
   </div>
+  <div class="wrap"><p class="pendnote" id="cases-note" hidden>Vista previa: son huecos. Rellena CASES en el código con casos reales; en 404growth.com los huecos vacíos no se muestran.</p></div>
 </section>
 
-<!-- 4 · metodología -->
+<!-- metodología -->
 <section class="sec" id="metodo">
+  <div class="thread" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="rv">
-      <div class="chap"><span class="num">03</span><span class="lb">Metodología</span></div>
-      <h2>De tu mostrador a toda España<br><span class="t">en 21 días naturales.</span></h2>
-      <p class="lead">Un proceso cerrado, con fechas. Nos encargamos de todo lo técnico; tú sigues con tu tienda.</p>
+    <div class="hd rv"><h2>De tu mostrador a toda España <span class="sf">en 21&nbsp;días.</span></h2></div>
+    <div class="road">
+      <div class="stp glass rv"><span class="ic"><svg><use href="#i-chat"/></svg></span><small>DÍA 1</small><b>Llamada</b><span>Vemos tu tienda y tu catálogo</span></div>
+      <div class="stp glass rv"><span class="ic"><svg><use href="#i-camera"/></svg></span><small>DÍAS 1–7</small><b>Catálogo</b><span>Fotos, fichas, precios y stock</span></div>
+      <div class="stp glass rv"><span class="ic"><svg><use href="#i-store"/></svg></span><small>DÍAS 8–18</small><b>Tienda</b><span>Tu marca, pagos y envíos</span></div>
+      <div class="stp glass rv"><span class="ic"><svg><use href="#i-rocket"/></svg></span><small>DÍA 21</small><b>¡Abierta!</b><span>Y después, captación y mejora</span></div>
     </div>
-    <ol class="plan rv">
-      <li><small>Día 1</small><b>Llamada de 15 min</b><span>Me cuentas tu tienda y te enseño cómo se vería online.</span></li>
-      <li><small>Días 1–7</small><b>Catálogo</b><span>Fotos, fichas, precios y stock de los primeros productos.</span></li>
-      <li><small>Días 8–18</small><b>Tienda</b><span>Diseño con tu marca, pagos, envíos y stock.</span></li>
-      <li><small>Día 21</small><b>Abres online</b><span>Tienda abierta, Instagram Shopping y medición activa.</span></li>
-      <li><small>Después</small><b>Captación y mejora</b><span>Anuncios, email marketing y más de lo que funciona.</span></li>
-    </ol>
-    <div class="pil rv">
-      <div><span class="n">TIENDA</span><h3>Con tu marca y tu dominio</h3><p>Fichas con talla, precio y stock a la vista, y un pago en tres pasos.</p></div>
-      <div><span class="n">PAGOS Y ENVÍOS</span><h3>Cobrar y enviar, resuelto</h3><p>Tarjeta, Bizum y Apple Pay. Envío a toda España o recogida en tienda.</p></div>
-      <div><span class="n">CONECTADA</span><h3>Unida a tu tienda física</h3><p>El mismo stock en la tienda y en la web*, e Instagram donde se puede comprar.</p></div>
-      <div><span class="n">CAPTACIÓN</span><h3>Clientes que llegan y vuelven</h3><p>Anuncios en Meta, cestas abandonadas recuperadas y emails de recompra.</p></div>
+    <div class="inc">
+      <div class="tile glass rv"><svg><use href="#i-palette"/></svg>Tu marca y tu dominio</div>
+      <div class="tile glass rv"><svg><use href="#i-card"/></svg>Bizum, tarjeta y Apple Pay</div>
+      <div class="tile glass rv"><svg><use href="#i-truck"/></svg>Envíos a toda España</div>
+      <div class="tile glass rv"><svg><use href="#i-store"/></svg>Recogida en tienda</div>
+      <div class="tile glass rv"><svg><use href="#i-sync"/></svg>Stock con tu TPV*</div>
+      <div class="tile glass rv"><svg><use href="#i-insta"/></svg>Instagram Shopping</div>
+      <div class="tile glass rv"><svg><use href="#i-mega"/></svg>Anuncios en Meta</div>
+      <div class="tile glass rv"><svg><use href="#i-chart"/></svg>Ventas medidas</div>
     </div>
-    <div class="who2 rv">
-      <div><h3>Lo que hacemos nosotros</h3><ul><li>Diseño y desarrollo de la tienda</li><li>Catálogo, fichas y pago</li><li>Pagos, envíos y recogida configurados</li><li>Formación para gestionar pedidos y productos</li></ul></div>
-      <div class="yo"><h3>Lo que aportas tú</h3><ul><li>Tus productos, precios y stock</li><li>Las fotos que ya tienes (si faltan, lo vemos contigo)</li><li>Acceso a tu dominio y redes, si los tienes</li><li>Una persona que prepare los pedidos</li></ul></div>
+    <div class="duo">
+      <div class="side2 glass rv"><h3><em>NOSOTROS</em>Lo hacemos todo</h3><div class="pills"><span>Diseño</span><span>Desarrollo</span><span>Fichas</span><span>Pagos</span><span>Envíos</span><span>Formación</span></div></div>
+      <div class="side2 you glass rv"><h3><em>TÚ</em>Solo pones</h3><div class="pills"><span>Productos</span><span>Precios y stock</span><span>Tus fotos</span><span>Quien prepare pedidos</span></div></div>
     </div>
-    <p class="note">* El stock se sincroniza si tu TPV o programa lo permite. Lo revisamos en la llamada.</p>
+    <p class="note">* Si tu TPV lo permite. Lo revisamos en la llamada.</p>
   </div>
 </section>
 
-<section class="ctaband">
-  <div class="wrap rv">
-    <h2>¿Quieres ver cómo quedaría <span class="t">tu tienda</span>?</h2>
-    <div class="ctab"><a class="btn" href="#reservar" data-cta="metodo">Reservar mi llamada de 15 min <span>→</span></a><small>Te la enseño con tu catálogo · Gratis</small></div>
+<section class="sec">
+  <div class="thread" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="mid glass rv">
+      <h2>¿Cómo quedaría <span class="sf">la tuya?</span></h2>
+      <div class="cta"><a class="btn go" href="#reservar" data-cta="metodo">Enséñamela en 15 min <span class="ar"><svg width="16" height="16"><use href="#i-right"/></svg></span></a></div>
+    </div>
   </div>
 </section>
 
-<!-- 5 · para quién es -->
+<!-- para quién es -->
 <section class="sec" id="encaje">
+  <div class="thread" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="rv">
-      <div class="chap"><span class="num">04</span><span class="lb">Para quién es</span></div>
-      <h2>Prefiero decírtelo antes<br><span class="t">que hacerte perder el tiempo.</span></h2>
-    </div>
-    <div class="fit rv">
-      <div class="si"><h3>Es para ti si…</h3><ul>
-        <li id="fy1">Tienes una tienda física independiente que vende producto: moda, joyería, deporte, obrador, óptica, decoración…</li>
-        <li>Tienes catálogo propio y alguien que pueda preparar los pedidos.</li>
-        <li>Quieres vender fuera de tu zona y fuera de tu horario.</li>
-        <li>Te gusta decidir con datos, no con suposiciones.</li>
+    <div class="hd rv"><h2>¿Es para <span class="sf">tu tienda?</span></h2></div>
+    <div class="fit">
+      <div class="fc si glass rv"><div class="big">✓</div><h3>Sí, si…</h3><ul>
+        <li id="fy1">Tienes tienda física y vendes producto</li>
+        <li>Tienes catálogo y alguien para los pedidos</li>
+        <li>Quieres vender fuera de tu zona y de tu horario</li>
       </ul></div>
-      <div class="no"><h3>No es para ti si…</h3><ul>
-        <li>Buscas ventas garantizadas desde el primer día.</li>
-        <li>Nadie en tu equipo puede preparar un pedido.</li>
-        <li>Vendes servicios o citas, no producto.</li>
-        <li>Solo quieres una web de escaparate, sin vender.</li>
+      <div class="fc no glass rv"><div class="big">✕</div><h3>No, si…</h3><ul>
+        <li>Buscas ventas garantizadas desde el día 1</li>
+        <li>Vendes servicios o citas, no producto</li>
+        <li>Solo quieres una web escaparate</li>
       </ul></div>
     </div>
   </div>
 </section>
 
-<!-- 6 · preguntas -->
+<!-- preguntas -->
 <section class="sec" id="dudas">
-  <div class="wrap nar">
-    <div class="rv">
-      <div class="chap"><span class="num">05</span><span class="lb">Preguntas frecuentes</span></div>
-      <h2>Lo que suelen preguntarme.</h2>
-    </div>
-    <div class="faq rv">
-      <details><summary>¿Cuánto cuesta?</summary><p>No publicamos un precio fijo porque depende de cuántos productos tienes, si se conecta tu TPV y si incluye anuncios y email marketing. En la llamada te damos un precio cerrado, sin sorpresas.</p></details>
-      <details><summary>¿Hay costes aparte?</summary><p>Pueden existir: el dominio si no tienes, la comisión de la pasarela de pago por cada venta, los envíos y el presupuesto de anuncios si haces campañas. Te los detallamos antes de empezar.</p></details>
-      <details><summary>¿Se conecta con el stock de mi tienda?</summary><p>Depende del TPV o programa que uses. Muchos permiten sincronizar el stock con la web; otros no. Lo revisamos en la llamada y te decimos qué se puede conectar.</p></details>
-      <details><summary>¿Tengo que cerrar mi tienda física?</summary><p>No. La tienda online es un segundo canal que trabaja con tu mismo stock. Y cuando el online funciona, decides con datos si abrir otra tienda física y dónde.</p></details>
-      <details><summary>Ya tengo web. ¿La perdemos?</summary><p>La rehacemos en tu dominio y redirigimos las direcciones antiguas, para no perder lo que ya tienes en Google.</p></details>
-      <details><summary>¿Quién mantiene la tienda después?</summary><p>Te enseñamos a gestionar pedidos y productos tú mismo. El mantenimiento técnico y la captación continua se acuerdan en la propuesta, según lo que necesites.</p></details>
-      <details><summary>¿Me garantizáis ventas?</summary><p>No. Dejamos la tienda lista para vender y la captación en marcha, pero las ventas dependen de tu producto, tus precios y el mercado. Lo que sí hacemos es medir desde el primer día y mejorar lo que funciona.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="ctaband">
-  <div class="wrap rv">
-    <h2>Tu persiana baja a las 20:00. <span class="t">Que tu tienda siga vendiendo.</span></h2>
-    <div class="ctab"><a class="btn" href="#reservar" data-cta="faq">Elegir hora para mi llamada <span>→</span></a><small>15 minutos · Gratis · Sin compromiso</small></div>
-  </div>
-</section>
-
-<!-- 7 · quiénes somos -->
-<section class="sec" id="nosotros">
+  <div class="thread" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="rv">
-      <div class="chap"><span class="num">06</span><span class="lb">Quiénes somos</span></div>
+    <div class="hd rv"><h2>Lo que <span class="sf">todos preguntan.</span></h2></div>
+    <div class="faq rv">
+      <details class="glass"><summary>¿Cuánto cuesta?</summary><p>Depende de cuántos productos tienes, si se conecta tu TPV y si incluye anuncios y email marketing. En la llamada te damos un precio cerrado, sin sorpresas.</p></details>
+      <details class="glass"><summary>¿Hay costes aparte?</summary><p>Pueden existir: el dominio si no tienes, la comisión de la pasarela por venta, los envíos y el presupuesto de anuncios. Te los detallamos antes de empezar.</p></details>
+      <details class="glass"><summary>¿Se conecta con el stock de mi tienda?</summary><p>Depende de tu TPV o programa. Muchos permiten sincronizar el stock con la web; otros no. Lo revisamos en la llamada.</p></details>
+      <details class="glass"><summary>¿Tengo que cerrar mi tienda física?</summary><p>No. La tienda online es un segundo canal con tu mismo stock.</p></details>
+      <details class="glass"><summary>Ya tengo web. ¿La perdemos?</summary><p>La rehacemos en tu dominio y redirigimos las direcciones antiguas para no perder lo que ya tienes en Google.</p></details>
+      <details class="glass"><summary>¿Quién la mantiene después?</summary><p>Te enseñamos a gestionar pedidos y productos tú mismo. El mantenimiento técnico y la captación se acuerdan en la propuesta.</p></details>
+      <details class="glass"><summary>¿Me garantizáis ventas?</summary><p>No. Dejamos la tienda lista para vender y la captación en marcha, pero las ventas dependen de tu producto, tus precios y el mercado. Medimos desde el primer día y mejoramos lo que funciona.</p></details>
     </div>
-    <div class="about rv">
-      <div class="pic" data-av data-pic aria-hidden="true">C</div>
-      <div class="tx">
-        <h2 style="margin-bottom:24px">Soy Christian.<br><span class="t">Y te atiendo yo.</span></h2>
-        <p>Fundé <b>404 Growth</b> para que las tiendas físicas independientes puedan vender online igual de bien que las grandes, sin abrir otro local ni contratar a más personal.</p>
-        <p>Hablas directamente conmigo, desde la primera llamada hasta que tu tienda está abierta. Sin comerciales en medio y sin letra pequeña: <b>te digo lo que cuesta, lo que haces tú y lo que no puedo prometerte.</b></p>
-        <ul class="vals">
-          <li><b>Precio cerrado</b><span>Antes de empezar, con los costes externos detallados.</span></li>
-          <li><b>Fechas claras</b><span>21 días naturales desde que tenemos tu catálogo.</span></li>
-          <li><b>Todo medido</b><span>Ves qué vende, a quién y desde dónde.</span></li>
-        </ul>
-        <div class="links"><a href="/#nichos" target="_blank" rel="noopener">Ver tiendas de ejemplo por sector</a><a href="mailto:hola@404growth.com">hola@404growth.com</a><a href="https://wa.me/34610594450" target="_blank" rel="noopener" data-cta="whatsapp-nosotros">WhatsApp</a></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="thread" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="mid glass rv">
+      <h2>Tu persiana baja. <span class="sf">Tu tienda, no.</span></h2>
+      <div class="cta"><a class="btn go" href="#reservar" data-cta="faq">Elegir mi hora <span class="ar"><svg width="16" height="16"><use href="#i-right"/></svg></span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- quién está detrás -->
+<section class="sec" id="nosotros">
+  <div class="thread" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hd rv"><h2>Quién está <span class="sf">detrás.</span></h2></div>
+    <div class="me glass rv">
+      <div class="pic" data-av aria-hidden="true">C</div>
+      <div class="nm">Christian Silva</div>
+      <div class="rl">Fundador de 404 Growth</div>
+      <p>Ayudo a <b>tiendas físicas independientes</b> a vender online como las grandes, sin abrir otro local. Hablas conmigo desde la llamada hasta que tu tienda abre.</p>
+      <div class="vals">
+        <div><svg><use href="#i-tag"/></svg><b>Precio cerrado</b><span>Antes de empezar</span></div>
+        <div><svg><use href="#i-cal"/></svg><b>21 días</b><span>Con fechas claras</span></div>
+        <div><svg><use href="#i-chart"/></svg><b>Todo medido</b><span>Qué vende y dónde</span></div>
       </div>
+      <div class="links"><a class="glass" href="/#nichos" target="_blank" rel="noopener">Ver tiendas de ejemplo</a><a class="glass" href="https://wa.me/34610594450" target="_blank" rel="noopener" data-cta="whatsapp-nosotros">WhatsApp</a><a class="glass" href="mailto:hola@404growth.com">hola@404growth.com</a></div>
     </div>
   </div>
 </section>
@@ -413,9 +469,9 @@ footer nav{display:flex;gap:20px;flex-wrap:wrap}
   </div>
 </footer>
 
-<div class="bar" id="bar"><a class="btn" href="#reservar" data-cta="barra">Reservar mi llamada de 15 min <span>→</span></a></div>
+<div class="bar" id="bar"><a class="btn" href="#reservar" data-cta="barra">Reservar mi llamada <span class="ar"><svg width="16" height="16"><use href="#i-right"/></svg></span></a></div>
 
-<div class="ck" id="ck" hidden role="dialog" aria-label="Cookies de medición">
+<div class="ck glass" id="ck" hidden role="dialog" aria-label="Cookies de medición">
   <p>¿Nos dejas usar la cookie de Meta? Solo sirve para saber qué anuncio te trajo hasta aquí. <a href="/legal#cookies" target="_blank" rel="noopener">Más información</a></p>
   <div class="row"><button class="pill solid" type="button" id="ck-yes">Aceptar</button><button class="pill" type="button" id="ck-no">No, gracias</button></div>
 </div>
@@ -425,10 +481,10 @@ footer nav{display:flex;gap:20px;flex-wrap:wrap}
   /* ---------- lo que hay que rellenar ----------
      PIXEL:  id del píxel de Meta (15–16 cifras). Vacío = sin píxel y sin aviso de cookies.
      VSL:    src = mp4 con subtítulos quemados; poster = foto fija; ratio "16/9" o "9/16". src vacío = el hueco con el botón de play.
-     AVATAR: foto de Christian (reserva y «quiénes somos»).
+     AVATAR: foto de Christian (reserva y «quién está detrás»).
      CASES:  SOLO casos reales, con permiso del cliente:
-             {tienda:'Nombre', sector:'Moda · Valencia', img:'/casos/x.webp', kpi:'+38 %', kpil:'qué mide ese número y en cuánto tiempo', q:'cita literal', who:'Nombre Apellido, dueña'}
-             Vacío = en 404growth.com la sección se oculta; en la vista previa salen 3 huecos.
+             {tienda:'Nombre', sector:'Moda · Valencia', img:'/casos/x.webp', kpi:'+38 %', kpil:'qué mide y en cuánto tiempo', q:'cita literal', who:'Nombre, dueña'}
+             Vacío = en 404growth.com la sección se oculta; en la vista previa salen huecos.
      Sector desde el anuncio: ?n=moda | joyeria | deporte | obrador | optica | deco (o utm_content con ese valor). */
   var PIXEL='';
   var VSL={src:'',poster:'/ind-me.webp',ratio:'16/9'};
@@ -441,38 +497,50 @@ footer nav{display:flex;gap:20px;flex-wrap:wrap}
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   $('yr').textContent=new Date().getFullYear();
   var PROD=/(^|\.)404growth\.com$/.test(location.hostname);
+  var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- sector, desde el enlace del anuncio ---------- */
   var ALIAS={moda:'moda',ropa:'moda',boutique:'moda',joyeria:'joyeria','joyería':'joyeria',bisuteria:'joyeria',deporte:'deporte',running:'deporte',
     obrador:'obrador',pasteleria:'obrador','pastelería':'obrador',panaderia:'obrador',optica:'optica','óptica':'optica',deco:'deco',decoracion:'deco','decoración':'deco',hogar:'deco'};
   var N=ALIAS[(qs.get('n')||qs.get('utm_content')||'').toLowerCase().trim()]||'';
-  var T={
-    moda:{w:'Si tienes una boutique o una tienda de moda…',fy:'Tienes una boutique o tienda de moda independiente, con colección propia o de marcas.'},
-    joyeria:{w:'Si tienes una joyería…',fy:'Tienes una joyería o tienda de bisutería independiente.'},
-    deporte:{w:'Si tienes una tienda de deporte o running…',fy:'Tienes una tienda de deporte o running independiente.'},
-    obrador:{w:'Si tienes un obrador o una pastelería…',fy:'Tienes un obrador o una pastelería y quieres vender encargos y cajas regalo online.'},
-    optica:{w:'Si tienes una óptica…',fy:'Tienes una óptica independiente con monturas y gafas de sol.'},
-    deco:{w:'Si tienes una tienda de decoración o de hogar…',fy:'Tienes una tienda de decoración, hogar o regalo independiente.'}
-  };
-  if(N){$('fy1').textContent=T[N].fy}
+  var FY={moda:'Tienes una boutique o tienda de moda',joyeria:'Tienes una joyería o bisutería',deporte:'Tienes una tienda de deporte o running',obrador:'Tienes un obrador o una pastelería',optica:'Tienes una óptica',deco:'Tienes una tienda de decoración u hogar'};
+  if(N)$('fy1').textContent=FY[N];
 
-  /* ---------- fotos opcionales (si no existen, se queda el diseño sin foto) ---------- */
+  /* ---------- fotos opcionales ---------- */
   if(VSL.poster&&!VSL.src){var pi=new Image();pi.className='poster';pi.alt='';pi.onload=function(){$('slot').insertBefore(pi,$('slot').firstChild)};pi.src=VSL.poster}
   if(AVATAR){var im=new Image();im.onload=function(){[].forEach.call(d.querySelectorAll('[data-av]'),function(a){a.style.backgroundImage='url("'+AVATAR+'")';a.textContent=''})};im.src=AVATAR}
 
-  /* ---------- casos de éxito ---------- */
+  /* ---------- casos de éxito (carrusel) ---------- */
   var cl=$('cases');
   if(CASES.length){
-    cl.innerHTML=CASES.map(function(c){return '<li class="case"><div class="ph"'+(c.img?' style="background-image:url(\''+esc(c.img)+'\')"':'')+'><span>'+esc(c.sector)+'</span></div><div class="bd">'+
+    cl.innerHTML=CASES.map(function(c){return '<li class="case glass"><div class="ph"'+(c.img?' style="background-image:url(\''+esc(c.img)+'\')"':'')+'>'+(c.img?'':'<svg><use href="#i-store"/></svg>')+'<span class="tag glass">'+esc(c.sector)+'</span></div><div class="bd">'+
       (c.kpi?'<div class="kpi">'+esc(c.kpi)+'</div><div class="kl">'+esc(c.kpil)+'</div>':'')+
-      (c.q?'<blockquote>«'+esc(c.q)+'»</blockquote>':'')+'<cite><b>'+esc(c.tienda)+'</b>'+esc(c.who)+'</cite></div></li>'}).join('');
+      (c.q?'<blockquote>«'+esc(c.q)+'»</blockquote>':'')+'<cite><span class="av">'+esc((c.tienda||'?').charAt(0))+'</span><span><b>'+esc(c.tienda)+'</b>'+esc(c.who)+'</span></cite></div></li>'}).join('');
   }else if(PROD){$('casos').hidden=true}
   else{
-    cl.innerHTML=['Moda','Joyería','Decoración'].map(function(s){return '<li class="case pend"><div class="ph"><span>'+s+' · Ciudad</span></div><div class="bd"><div class="kpi">+00 %</div><div class="kl">Resultado medible y en cuánto tiempo</div><blockquote>«Aquí va una frase real del cliente, con sus palabras.»</blockquote><cite><b>Caso real pendiente</b>Nombre, dueño o dueña de la tienda</cite></div></li>'}).join('');
+    cl.innerHTML=['Moda','Joyería','Deporte','Decoración','Óptica'].map(function(s){return '<li class="case pend glass"><div class="ph"><svg><use href="#i-store"/></svg><span class="tag glass">'+s+' · Ciudad</span></div><div class="bd"><div class="kpi">+00 %</div><div class="kl">Resultado medible y en cuánto tiempo</div><blockquote>«Aquí va la frase real del cliente.»</blockquote><cite><span class="av">?</span><span><b>Caso real pendiente</b>Nombre, dueño o dueña</span></cite></div></li>'}).join('');
     $('cases-note').hidden=false;
   }
+  (function(){
+    var items=cl.children,dots=$('dots'),prev=$('prev'),next=$('next');if(!items.length)return;
+    dots.innerHTML=[].map.call(items,function(){return '<i></i>'}).join('');
+    function step(){var a=items[0],b=items[1];return b?b.offsetLeft-a.offsetLeft:a.offsetWidth}
+    function upd(){var i=Math.round(cl.scrollLeft/step());[].forEach.call(dots.children,function(x,k){x.classList.toggle('on',k===Math.min(i,items.length-1))});
+      prev.disabled=cl.scrollLeft<4;next.disabled=cl.scrollLeft+cl.clientWidth>=cl.scrollWidth-4}
+    prev.onclick=function(){cl.scrollBy({left:-step(),behavior:RM?'auto':'smooth'})};
+    next.onclick=function(){cl.scrollBy({left:step(),behavior:RM?'auto':'smooth'})};
+    cl.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+    var down=false,sx=0,sl=0,moved=false;
+    cl.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;down=true;moved=false;sx=e.clientX;sl=cl.scrollLeft;cl.classList.add('drag')});
+    addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>3)moved=true;cl.scrollLeft=sl-dx});
+    addEventListener('pointerup',function(){if(!down)return;down=false;cl.classList.remove('drag');var s=step();cl.scrollTo({left:Math.round(cl.scrollLeft/s)*s,behavior:RM?'auto':'smooth'})});
+    cl.addEventListener('click',function(e){if(moved){e.preventDefault();e.stopPropagation()}},true);
+  })();
 
-  /* ---------- píxel de Meta, solo con consentimiento; los eventos esperan en cola ---------- */
+  /* ---------- brillo que sigue al ratón en los botones ---------- */
+  [].forEach.call(d.querySelectorAll('.btn'),function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.setProperty('--x',(e.clientX-r.left)+'px');b.style.setProperty('--y',(e.clientY-r.top)+'px')})});
+
+  /* ---------- píxel de Meta, solo con consentimiento ---------- */
   var PQ=[],fbOn=false;window.__ev=[];
   function px(name,data,custom){var p=Object.assign({content_category:N||'tiendas'},data||{});window.__ev.push([name,p]);
     if(!PIXEL)return;if(fbOn)fbq(custom?'trackCustom':'track',name,p);else PQ.push([custom?'trackCustom':'track',name,p])}
@@ -485,24 +553,20 @@ footer nav{display:flex;gap:20px;flex-wrap:wrap}
     $('ck-no').onclick=function(){try{localStorage.setItem(CK,'0')}catch(e){}box.hidden=true;PQ.length=0}}}
   px('PageView');
 
-  /* ---------- el vídeo: play y cuánto ven (25/50/75/95 %) ---------- */
-  var fig=$('vsl');
+  /* ---------- el vídeo ---------- */
   if(VSL.src){
     var v=d.createElement('video');v.src=VSL.src;if(VSL.poster)v.poster=VSL.poster;v.controls=true;v.playsInline=true;v.preload='metadata';
     v.setAttribute('aria-label','Vídeo de Christian: cómo tu tienda física puede vender online');
-    fig.style.setProperty('--ar',VSL.ratio||'16/9');if(VSL.ratio==='9/16')fig.style.maxWidth='min(100%,420px)';
-    fig.innerHTML='';fig.appendChild(v);
+    var fig=$('vsl');fig.style.setProperty('--ar',VSL.ratio||'16/9');if(VSL.ratio==='9/16')fig.style.maxWidth='min(100%,420px)';
+    var vin=$('vsl-in');vin.innerHTML='';vin.appendChild(v);
     var played=false,marks={};
     v.addEventListener('play',function(){if(!played){played=true;px('VSLPlay',{},true)}});
     v.addEventListener('timeupdate',function(){if(!v.duration)return;var p=v.currentTime/v.duration*100;
       [25,50,75,95].forEach(function(m){if(p>=m&&!marks[m]){marks[m]=1;px(m===50?'ViewContent':'VSL'+m,{content_name:'VSL '+m+'%'},m!==50)}})});
-  }else{
-    $('slot').addEventListener('click',function(){$('vsl-msg').hidden=false});
-  }
+  }else{$('slot').addEventListener('click',function(){$('vsl-msg').hidden=false})}
 
   /* ---------- clics en los botones ---------- */
-  d.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(!a)return;
-    px('ClicCTA',{content_name:a.getAttribute('data-cta')},true)});
+  d.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(!a)return;px('ClicCTA',{content_name:a.getAttribute('data-cta')},true)});
 
   /* ---------- la agenda (Calendly) ---------- */
   function calUrl(inline){
@@ -522,20 +586,19 @@ footer nav{display:flex;gap:20px;flex-wrap:wrap}
     if(m==='calendly.page_height'&&frame&&c){var hh=parseInt(e.data.payload&&e.data.payload.height,10);if(hh>400&&hh<3000)c.style.minHeight=hh+'px'}
     if(m==='calendly.date_and_time_selected')px('EligeHora',{},true);
     if(m==='calendly.event_scheduled'&&!booked){booked=true;px('Schedule');
-      $('book-box').innerHTML='<div class="ok"><h3>Hecho. Tu llamada está reservada.</h3><p style="margin:0;color:var(--mute)">Gracias por tu tiempo. Nos vemos en la llamada.</p><ol>'+
-        '<li><b>Mira tu email.</b> Te ha llegado la invitación con el enlace. Añádela a tu calendario.</li>'+
-        '<li><b>Te escribo por WhatsApp</b> para confirmar. Si te surge algo, me lo dices por ahí.</li>'+
-        '<li><b>Ten a mano</b> tu web o tu Instagram, más o menos cuántos productos tienes y qué TPV usas.</li></ol></div>';
+      $('book-box').innerHTML='<div class="ok glass"><h3>¡Hecho! Tu llamada está reservada.</h3><p>Nos vemos en la llamada.</p><ol>'+
+        '<li><b>Mira tu email.</b> Tienes la invitación con el enlace.</li>'+
+        '<li><b>Te escribo por WhatsApp</b> para confirmar.</li>'+
+        '<li><b>Ten a mano</b> tu web o Instagram, cuántos productos tienes y qué TPV usas.</li></ol></div>';
       $('reservar').scrollIntoView({behavior:'smooth',block:'start'})}
   });
 
-  /* ---------- cabecera, barra del móvil y apariciones ---------- */
-  var top=$('top'),bar=$('bar'),heroIn=true,bookIn=false;
-  addEventListener('scroll',function(){top.classList.toggle('solid',scrollY>20)},{passive:true});
+  /* ---------- barra del móvil y apariciones ---------- */
+  var bar=$('bar'),heroIn=true,bookIn=false;
   if('IntersectionObserver' in window){
     new IntersectionObserver(function(es){heroIn=es[0].isIntersecting;bar.classList.toggle('on',!heroIn&&!bookIn)},{rootMargin:'0px 0px -40% 0px'}).observe($('inicio'));
     new IntersectionObserver(function(es){bookIn=es[0].isIntersecting;bar.classList.toggle('on',!heroIn&&!bookIn)}).observe($('reservar'));
-    var rio=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');rio.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    var rio=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');rio.unobserve(x.target)}})},{rootMargin:'0px 0px -6% 0px'});
     [].forEach.call(d.querySelectorAll('.rv'),function(el){rio.observe(el)});
   }else{[].forEach.call(d.querySelectorAll('.rv'),function(el){el.classList.add('in')})}
 })();
