@@ -4,52 +4,6 @@
 # La primera vez instala Node.js en ~/.404node (solo si no lo tienes) y te pide entrar en Cloudflare en el navegador.
 cd "$(dirname "$0")" || exit 1
 fin() { echo; read -r -p "  Pulsa Intro para cerrar." _; exit "${1:-0}"; }
-# 0) antes de subir nada, trae lo último de GitHub: así siempre sube la última versión (las imágenes que solo están en el Mac no se tocan)
-REPO_URL="https://github.com/contactochristiansilva-cyber/404growth.git"
-ROOT="$(cd .. && pwd)"
-if [ "$1" != "--ya" ]; then
-  echo
-  if ! xcode-select -p >/dev/null 2>&1; then
-    echo "  Para que esto se actualice solo, el Mac necesita las herramientas de desarrollo de Apple."
-    echo "  Abre Terminal, escribe:  xcode-select --install  y acepta. Mientras, subo lo que hay en esta carpeta."
-  else
-    echo "  Trayendo lo último de GitHub…"
-    ANTES=$(shasum "$0" 2>/dev/null)
-    export GIT_TERMINAL_PROMPT=0
-    if [ ! -d "$ROOT/.git" ]; then ( cd "$ROOT" && git init -q && git remote add origin "$REPO_URL" ) >/dev/null 2>&1; fi
-    ( cd "$ROOT" && git config credential.helper osxkeychain ) >/dev/null 2>&1   # el acceso a GitHub se guarda en el llavero del Mac
-    OKF=0; ( cd "$ROOT" && git fetch -q origin main ) 2>/dev/null && OKF=1
-    if [ $OKF = 0 ]; then
-      echo
-      echo "  GitHub necesita saber que eres tú (solo esta vez; luego se guarda en el llavero del Mac)."
-      echo "  1) Se abre GitHub en el navegador. Pon de nombre «subir 404», en «Repository access» elige «Only select repositories» → 404growth,"
-      echo "     en «Permissions» → «Contents» elige «Read-only», y pulsa «Generate token». Copia el código que sale (empieza por github_pat_)."
-      echo "  2) Vuelve aquí. En «Username» escribe:  contactochristiansilva-cyber   y en «Password» pega el código (al pegar no se ve nada: es normal) y pulsa Intro."
-      echo
-      open "https://github.com/settings/personal-access-tokens/new" 2>/dev/null
-      ( cd "$ROOT" && GIT_TERMINAL_PROMPT=1 git fetch -q origin main ) && OKF=1
-    fi
-    if [ $OKF = 1 ]; then
-      if ( cd "$ROOT" && git rev-parse -q --verify HEAD >/dev/null 2>&1 ); then
-        if ( cd "$ROOT" && git merge -q --ff-only origin/main ) >/dev/null 2>&1; then echo "  ✓ Carpeta al día con GitHub"
-        else
-          # hay cambios hechos en este Mac: se guardan aparte (git stash) y se pone la versión de GitHub
-          ( cd "$ROOT" && git stash push -q -u -m "subir.command $(date '+%Y-%m-%d %H:%M')" -- 404growth-subir web117-404growth ':(exclude)*.jpg' ':(exclude)*.jpeg' ':(exclude)*.png' ':(exclude)*.webp' ':(exclude)*.mp4' ) >/dev/null 2>&1
-          if ( cd "$ROOT" && git merge -q --ff-only origin/main ) >/dev/null 2>&1 || ( cd "$ROOT" && git reset -q --keep origin/main ) >/dev/null 2>&1; then echo "  ✓ Carpeta al día con GitHub (tus cambios locales quedan guardados en git stash)"
-          else echo "  ! No pude ponerla al día sola. Avisa a Claude. Subo lo que hay en esta carpeta."; fi
-        fi
-      else
-        # primera vez: la carpeta no estaba conectada a GitHub
-        if ( cd "$ROOT" && git checkout -q -f -B main origin/main && git branch -q --set-upstream-to=origin/main main ) >/dev/null 2>&1; then echo "  ✓ Carpeta conectada a GitHub y al día"
-        else echo "  ! No pude conectarla a GitHub. Avisa a Claude. Subo lo que hay en esta carpeta."; fi
-      fi
-      # si este mismo archivo ha cambiado, se vuelve a abrir con la versión nueva
-      if [ "$(shasum "$0" 2>/dev/null)" != "$ANTES" ]; then exec /bin/bash "$0" --ya; fi
-    else
-      echo "  ! No pude leer GitHub (¿sin internet o sin permiso?). Subo lo que hay en esta carpeta."
-    fi
-  fi
-fi
 SITE=$(sed -n 's/.*"directory": *"\([^"]*\)".*/\1/p' wrangler.jsonc)
 echo
 echo "  404 Growth · subir"
