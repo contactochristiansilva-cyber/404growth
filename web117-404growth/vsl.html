@@ -317,6 +317,15 @@ footer{position:relative;z-index:3;padding:20px 0 120px;font-size:13.5px;color:v
 footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 22px;margin-bottom:10px}
 footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 
+/* ordenador: H1, vídeo y primer botón caben en la primera pantalla */
+@media (min-width:901px){
+ .top{padding-top:20px}
+ .hero h1{font-size:clamp(44px,min(6.2vw,8.6vh),88px);margin-top:18px}
+ .stage{margin-top:26px}
+ .device{max-width:min(860px,max(520px,calc((100vh - 490px) * 16 / 9 + 24px)));padding:10px;border-radius:28px}
+ .screen{border-radius:20px}
+ .hero .cta{margin-top:22px;gap:12px}
+}
 /* barra móvil, cookies */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px max(14px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));transform:translateY(130%);transition:transform .45s cubic-bezier(.2,.8,.2,1);display:none}
 .bar.on{transform:none}
