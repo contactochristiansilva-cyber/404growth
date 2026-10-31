@@ -3394,7 +3394,7 @@ async function vslBook(req, env, b, k) {
     } catch (e) {}
     if (mailed) await DBq.prepare("UPDATE ll SET mailed = 1 WHERE id = ?1").bind(id).run();
   }
-  try { await pushAll(env, { title: "Llamada reservada · " + name, body: biz + " (" + VSL_SEC[sec] + ") · invierte " + VSL_BUD[bud] + " · " + whenTxt + ". " + (mailed ? "Confirmación enviada desde hola@." : "No se pudo enviar el email de confirmación."), tag: "lb" + id, url: "/admin/llamadas#l=" + id }); } catch (e) {}
+  try { await pushAll(env, { title: "Llamada reservada · " + name, body: biz + " (" + VSL_SEC[sec] + ") · invierte " + VSL_BUD[bud] + " · " + whenTxt + ". " + (g.id ? "Google le ha enviado la invitación con el Meet" + (mailed ? " y el email de hola@." : ".") : mailed ? "Confirmación enviada desde hola@." : "No se pudo enviar ni la invitación ni el email."), tag: "lb" + id, url: "/admin/llamadas#l=" + id }); } catch (e) {}
   return json({ ok: true, id: id, start: start, end: new Date(end).toISOString(), join: join, gcal: gcal, mailed: !!mailed, resched: resched });
 }
 
