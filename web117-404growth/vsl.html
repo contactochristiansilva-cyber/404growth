@@ -143,6 +143,43 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .sec{position:relative;padding:110px 0 0}
 .glow{position:absolute;left:50%;top:0;width:900px;height:500px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(111,194,166,.13),transparent);pointer-events:none;z-index:-1}
 
+/* reserva: calendario propio */
+.bk{display:grid;grid-template-columns:280px 1fr;max-width:940px;margin:30px auto 0;border-radius:30px;text-align:left;overflow:hidden}
+.bk-me{padding:28px 24px;border-right:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:18px}
+.bk-me>div{display:grid;gap:2px}.bk-me img{width:72px;height:72px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px rgba(111,194,166,.35)}
+.bk-me small{font-size:12.5px;color:var(--mute)}.bk-me b{font-size:18px;font-weight:600}.bk-me span{font-size:13.5px;color:var(--mute)}
+.bk-me ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14.5px}
+.bk-me li{display:flex;align-items:center;gap:10px}.bk-me li svg{width:17px;height:17px;color:var(--t2)}
+.bk-sel{margin:0;padding:12px 14px;border-radius:14px;background:rgba(111,194,166,.14);font-size:14px;line-height:1.4}.bk-sel b{display:block;font-size:15px}
+.bk-main{padding:26px 26px 28px;min-height:440px}
+.bk-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:12px}.bk-h b{font-size:17px;font-weight:600}.bk-h span{font-size:13px;color:var(--mute)}
+.bk-days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.bk-day{display:grid;gap:2px;justify-items:center;padding:12px 4px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--ink);cursor:pointer;font:inherit;transition:background .2s,border-color .2s,transform .2s}
+.bk-day:hover{border-color:var(--t2);transform:translateY(-2px)}
+.bk-day small{font-size:12px;color:var(--mute);text-transform:capitalize}.bk-day b{font-size:22px;font-weight:600;line-height:1.1}.bk-day i{font-style:normal;font-size:11.5px;color:var(--t2)}
+.bk-day[aria-selected=true]{background:#fff;border-color:#fff;color:#07100D}.bk-day[aria-selected=true] small,.bk-day[aria-selected=true] i{color:#2E7A64}
+.bk-times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;min-height:60px}
+.bk-time{height:46px;border-radius:12px;border:1px solid rgba(111,194,166,.4);background:transparent;color:var(--ink);font:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:background .2s,color .2s}
+.bk-time:hover{background:rgba(111,194,166,.16)}.bk-time[aria-selected=true]{background:var(--t);border-color:var(--t);color:#04110D}
+.bk-load,.bk-none{grid-column:1/-1;color:var(--mute);font-size:14.5px;padding:10px 0}
+.bk-back{border:0;background:none;color:var(--t2);font:inherit;font-size:14px;cursor:pointer;padding:0;margin-bottom:14px}
+.bk-f{display:grid;gap:6px;margin-bottom:12px}.bk-f label{font-size:13.5px;color:var(--mute)}
+.bk-f input,.bk-f select{height:50px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:var(--ink);padding:0 14px;font:inherit;font-size:16px}
+.bk-f select option{color:#111}
+.bk-f input:focus,.bk-f select:focus{outline:0;border-color:var(--t2);box-shadow:0 0 0 3px rgba(111,194,166,.2)}
+.bk-f .bad{border-color:var(--bad)}
+.bk-2c{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bk-err{margin:4px 0 10px;color:var(--bad);font-size:14px}
+.bk-go{width:100%;justify-content:space-between;margin-top:6px}.bk-go[disabled]{opacity:.6;pointer-events:none}
+.bk-legal{font-size:12.5px;color:var(--mute);margin:12px 0 0}.bk-legal a{color:var(--t2)}
+.bk-ok{max-width:640px;margin:30px auto 0;border-radius:30px;padding:36px 30px;text-align:center}
+.bk-ok img{width:96px;height:96px;border-radius:50%;object-fit:cover;margin:0 auto 14px;box-shadow:0 0 0 4px rgba(111,194,166,.35)}
+.bk-ok h3{font-size:30px;font-weight:400;letter-spacing:-.03em;margin:4px 0 10px}
+.bk-ok .when{display:inline-block;margin:6px 0 18px;padding:12px 18px;border-radius:14px;background:rgba(111,194,166,.14);font-size:17px;font-weight:600}
+.bk-ok .when::first-letter{text-transform:uppercase}
+.bk-ok p{color:var(--mute);margin:0 auto 18px;max-width:440px}
+.bk-ok .acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+@media (max-width:820px){.bk{grid-template-columns:1fr}.bk-me{border-right:0;border-bottom:1px solid rgba(255,255,255,.1);flex-direction:row;flex-wrap:wrap;align-items:center}.bk-me ul{display:none}.bk-days{grid-template-columns:repeat(3,1fr)}.bk-times{grid-template-columns:repeat(3,1fr)}.bk-2c{grid-template-columns:1fr}.bk-main{padding:20px 16px 22px}}
 /* reserva */
 .steps{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:30px auto 0}
 .step{display:flex;align-items:center;gap:10px;padding:8px 18px 8px 8px;border-radius:99px;font-size:14.5px;font-weight:500}
@@ -497,7 +534,31 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
       <span class="step lg rv d2"><b>3</b>Precio cerrado</span>
     </div>
     <div id="book-box">
-      <div class="calw lg rv"><div class="cal" id="cal"><div class="cal-wait"><i></i><span>Cargando la agenda…</span><a id="cal-out" href="https://calendly.com/hola-404growth/tienda-online-404-growth" target="_blank" rel="noopener">¿Tarda? Ábrela aquí</a></div></div></div>
+      <div class="bk lg rv" id="bk">
+        <aside class="bk-me"><img src="/christian-hola.jpg" alt="Christian Silva" width="72" height="72"><div><small>Vas a hablar con</small><b>Christian Silva</b><span>Fundador de 404 Growth</span></div>
+          <ul><li><svg><use href="#i-cal"/></svg>15 minutos</li><li><svg><use href="#i-chat"/></svg>Google Meet</li><li><svg><use href="#i-tag"/></svg>Precio cerrado, sin compromiso</li></ul>
+          <p class="bk-sel" id="bk-sel" hidden></p></aside>
+        <div class="bk-main">
+          <div class="bk-st" id="bk-1">
+            <div class="bk-h"><b>Elige un día</b><span id="bk-tz">Hora de España</span></div>
+            <div class="bk-days" id="bk-days" role="listbox" aria-label="Días disponibles"><span class="bk-load">Cargando huecos libres…</span></div>
+            <div class="bk-h" style="margin-top:22px"><b id="bk-dl">Elige una hora</b></div>
+            <div class="bk-times" id="bk-times" role="listbox" aria-label="Horas disponibles"></div>
+          </div>
+          <form class="bk-st" id="bk-2" hidden novalidate>
+            <button type="button" class="bk-back" id="bk-back">‹ Cambiar hora</button>
+            <div class="bk-h"><b>Tus datos</b><span>Último paso</span></div>
+            <div class="bk-f"><label for="f-name">Nombre</label><input id="f-name" name="name" autocomplete="name" required maxlength="80"></div>
+            <div class="bk-2c"><div class="bk-f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>
+              <div class="bk-f"><label for="f-phone">WhatsApp</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="24" placeholder="600 000 000"></div></div>
+            <div class="bk-f"><label for="f-biz">Tu tienda (web o Instagram)</label><input id="f-biz" name="biz" required maxlength="140" placeholder="mitienda.es o @mitienda"></div>
+            <div class="bk-f"><label for="f-rev">¿Cuánto factura tu tienda al mes?</label><select id="f-rev" name="rev" required><option value="">Elige una opción</option><option value="r0">Menos de 30.000 €</option><option value="r1">30.000 – 60.000 €</option><option value="r2">60.000 – 100.000 €</option><option value="r3">Más de 100.000 €</option></select></div>
+            <p class="bk-err" id="bk-err" role="alert" hidden></p>
+            <button class="btn bk-go" type="submit" id="bk-go">Confirmar llamada <span class="ar"><svg><use href="#i-ne"/></svg></span></button>
+            <p class="bk-legal">Usamos tus datos solo para preparar y hacer la llamada. <a href="/legal" target="_blank" rel="noopener">Privacidad</a>.</p>
+          </form>
+        </div>
+      </div>
       <p class="alt">¿Prefieres escribir? <a href="https://wa.me/34610594450?text=Hola%20Christian%2C%20he%20visto%20el%20v%C3%ADdeo%20y%20quiero%20pasar%20mi%20tienda%20f%C3%ADsica%20a%20tienda%20online." target="_blank" rel="noopener" data-cta="whatsapp">Háblame por WhatsApp</a></p>
     </div>
   </div>
@@ -653,7 +714,6 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   var AVATAR='/ind-me.webp';
   var PHOTO='/christian-404.webp';
   var CASES=[];
-  var CAL='https://calendly.com/hola-404growth/tienda-online-404-growth';
 
   var d=document,qs=new URLSearchParams(location.search);
   function $(id){return d.getElementById(id)}
@@ -767,30 +827,74 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   /* ---------- clics en los botones ---------- */
   d.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(!a)return;px('ClicCTA',{content_name:a.getAttribute('data-cta')},true)});
 
-  /* ---------- la agenda (Calendly) ---------- */
-  function calUrl(inline){
-    var p={utm_source:qs.get('utm_source')||'404growth.com',utm_medium:qs.get('utm_medium')||'vsl',utm_campaign:qs.get('utm_campaign')||'vsl-tiendas',utm_content:qs.get('utm_content')||(N||'general')};
-    if(qs.get('utm_term'))p.utm_term=qs.get('utm_term');
-    if(inline){p.embed_domain=location.host||'404growth.com';p.embed_type='Inline';p.primary_color='2e7a64';p.hide_gdpr_banner='0'}
-    return CAL+'?'+Object.keys(p).map(function(k){return k+'='+encodeURIComponent(p[k])}).join('&')}
-  $('cal-out').href=calUrl(false);
-  var frame=null,booked=false;
-  function loadCal(){if(frame)return;frame=d.createElement('iframe');frame.title='Agenda para reservar una llamada con Christian';frame.src=calUrl(true);
-    frame.onload=function(){setTimeout(function(){var c=$('cal');if(c)c.classList.add('ready')},3500)};$('cal').appendChild(frame)}
-  if('IntersectionObserver' in window){var cio=new IntersectionObserver(function(es){if(es[0].isIntersecting){loadCal();cio.disconnect()}},{rootMargin:'1200px 0px'});cio.observe($('reservar'))}else loadCal();
-  window.addEventListener('message',function(e){
-    if(e.origin!=='https://calendly.com')return;
-    var m=e.data&&e.data.event;if(typeof m!=='string'||m.indexOf('calendly.')!==0)return;
-    var c=$('cal');if(c)c.classList.add('ready');
-    if(m==='calendly.page_height'&&frame&&c){var hh=parseInt(e.data.payload&&e.data.payload.height,10);if(hh>400&&hh<3000)c.style.minHeight=hh+'px'}
-    if(m==='calendly.date_and_time_selected')px('EligeHora',{},true);
-    if(m==='calendly.event_scheduled'&&!booked){booked=true;px('Schedule');
-      $('book-box').innerHTML='<div class="ok lg"><h3>Hecho. Tu llamada está reservada.</h3><p>Nos vemos en la llamada.</p><ol>'+
-        '<li><b>Mira tu email.</b> Tienes la invitación con el enlace.</li>'+
-        '<li><b>Te escribo por WhatsApp</b> para confirmar.</li>'+
-        '<li><b>Ten a mano</b> tu web o Instagram, cuántos productos tienes y qué TPV usas.</li></ol></div>';
-      $('reservar').scrollIntoView({behavior:'smooth',block:'start'})}
-  });
+  /* ---------- seguimiento propio: cada visita y cada paso llegan al admin (/l/…) ----------
+     Nuestros dispositivos se excluyen una vez con ?interno=1 (se recuerda en ese navegador; ?interno=0 lo deshace). */
+  var API='/l/',INT=false;try{var iq=/[?&]interno=([01])/.exec(location.search);if(iq){if(iq[1]==='1')localStorage.setItem('c404int','1');else localStorage.removeItem('c404int')}INT=!!localStorage.getItem('c404int')}catch(e){}
+  var LIVE=!INT&&!navigator.webdriver&&PROD;
+  var UTM=(function(){var o={},ks=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];ks.forEach(function(k){var v=qs.get(k);if(v)o[k]=v.slice(0,120)});
+    try{if(Object.keys(o).length)localStorage.setItem('c404utm',JSON.stringify(o));else o=JSON.parse(localStorage.getItem('c404utm')||'{}')}catch(e){}return o})();
+  function post(path,b,beacon){if(!LIVE)return Promise.resolve(null);var t=JSON.stringify(b);
+    if(beacon&&navigator.sendBeacon){try{if(navigator.sendBeacon(API+path,new Blob([t],{type:'application/json'})))return Promise.resolve(null)}catch(e){}}
+    return fetch(API+path,{method:'POST',body:t,keepalive:!!beacon,headers:{'content-type':'application/json'}}).then(function(r){return r.json().then(function(j){j.__s=r.status;return j})}).catch(function(){return null})}
+  var key=null,seen=0,since=0,depth=0,sent='',QUE=[];
+  function clock(){var now=Date.now();if(since)seen+=now-since;since=d.visibilityState==='visible'?now:0}
+  function ping(){clock();if(!key)return;var b={k:key,s:Math.round(seen/1000),d:depth,vp:0,vm:0,vs:0};var j=JSON.stringify(b);if(j===sent)return;sent=j;post('p',b,true)}
+  function send(path,b){if(key){b.k=key;post(path,b,true)}else QUE.push([path,b])}
+  function open(){if(key!==null)return;key='';['scroll','pointerdown','touchstart','keydown'].forEach(function(e){removeEventListener(e,open,true)});
+    post('h',{n:N||'tienda',utm:UTM,ref:(d.referrer||'').slice(0,200),w:innerWidth}).then(function(j){key=(j&&j.k)||'';if(key){QUE.splice(0).forEach(function(x){x[1].k=key;post(x[0],x[1],true)});ping()}})}
+  if(LIVE){['scroll','pointerdown','touchstart','keydown'].forEach(function(e){addEventListener(e,open,{capture:true,passive:true})});clock();
+    var tick=0;setInterval(function(){clock();if(seen>=2500)open();if(key&&++tick%15===0)ping()},1000);
+    d.addEventListener('visibilitychange',function(){clock();ping()});addEventListener('pagehide',ping);
+    if('IntersectionObserver' in window){var dio=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){depth=Math.max(depth,+x.target.getAttribute('data-dp'));dio.unobserve(x.target)}})},{rootMargin:'0px 0px -40% 0px'});
+      ['inicio','reservar','casos','metodo','encaje','dudas','nosotros'].forEach(function(id,i){var el=$(id);if(el){el.setAttribute('data-dp',i+1);dio.observe(el)}})}}
+  d.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(a)send('c',{w:a.getAttribute('data-cta')})});
+
+  /* ---------- el calendario propio: huecos reales de Calendly, reserva sin salir de la página ---------- */
+  var TZ='Europe/Madrid',SL=[],day=null,pick=null,stepSeen={};
+  var fD=new Intl.DateTimeFormat('es-ES',{timeZone:TZ,weekday:'short',day:'numeric',month:'short'}),fT=new Intl.DateTimeFormat('es-ES',{timeZone:TZ,hour:'2-digit',minute:'2-digit'}),
+      fK=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}),fL=new Intl.DateTimeFormat('es-ES',{timeZone:TZ,weekday:'long',day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'});
+  function step(s,ev,data){if(stepSeen[s])return;stepSeen[s]=1;send('cal',{s:s});if(ev)px(ev,data||{},true)}
+  function demoSlots(){var out=[],t=new Date();t.setMinutes(0,0,0);for(var dd=1;out.length<120&&dd<20;dd++){var x=new Date(t.getTime()+dd*864e5);var wd=x.getDay();if(wd===0||wd===6)continue;
+    for(var h=9;h<18;h++)for(var m=0;m<60;m+=30){if((h*7+m+dd)%5===0)continue;var u=new Date(Date.UTC(x.getUTCFullYear(),x.getUTCMonth(),x.getUTCDate(),h-1,m));out.push(u.toISOString())}}return out}
+  function load(){if(!PROD){SL=demoSlots();drawDays();return}
+    fetch(API+'slots',{method:'POST',body:'{}',headers:{'content-type':'application/json'}}).then(function(r){return r.json()}).then(function(j){SL=(j&&j.slots)||[];drawDays()})
+      .catch(function(){$('bk-days').innerHTML='<span class="bk-none">No se ha podido cargar la agenda. <a href="https://wa.me/34610594450" target="_blank" rel="noopener" style="color:var(--t2)">Escríbeme por WhatsApp</a> y te doy hueco.</span>'})}
+  function groups(){var g={},order=[];SL.forEach(function(iso){var k=fK.format(new Date(iso));if(!g[k]){g[k]=[];order.push(k)}g[k].push(iso)});return {g:g,order:order}}
+  function drawDays(){var G=groups(),box=$('bk-days');if(!G.order.length){box.innerHTML='<span class="bk-none">Ahora mismo no hay huecos libres. <a href="https://wa.me/34610594450" target="_blank" rel="noopener" style="color:var(--t2)">Escríbeme por WhatsApp</a>.</span>';return}
+    var show=G.order.slice(0,innerWidth<820?6:10);
+    box.innerHTML=show.map(function(k){var dt=new Date(G.g[k][0]),p=fD.formatToParts(dt),wd=(p.find(function(x){return x.type==='weekday'})||{}).value||'',dn=(p.find(function(x){return x.type==='day'})||{}).value||'',mo=(p.find(function(x){return x.type==='month'})||{}).value||'';
+      return '<button type="button" class="bk-day" role="option" aria-selected="false" data-k="'+k+'"><small>'+esc(wd.replace('.',''))+'</small><b>'+esc(dn)+'</b><small>'+esc(mo.replace('.',''))+'</small><i>'+G.g[k].length+' huecos</i></button>'}).join('');
+    [].forEach.call(box.children,function(b){b.onclick=function(){choose(b.getAttribute('data-k'))}});choose(show[0],true)}
+  function choose(k,auto){day=k;var G=groups();[].forEach.call($('bk-days').children,function(b){b.setAttribute('aria-selected',b.getAttribute('data-k')===k)});
+    var t=G.g[k]||[];$('bk-dl').textContent='Horas libres · '+fD.format(new Date(t[0]||Date.now())).replace('.','');
+    $('bk-times').innerHTML=t.map(function(iso){return '<button type="button" class="bk-time" role="option" aria-selected="false" data-t="'+iso+'">'+fT.format(new Date(iso))+'</button>'}).join('');
+    [].forEach.call($('bk-times').children,function(b){b.onclick=function(){time(b.getAttribute('data-t'))}});
+    if(!auto)step('cd','EligeDia')}
+  function time(iso){pick=iso;step('ct','EligeHora');
+    var txt=fL.format(new Date(iso));$('bk-sel').innerHTML='<b>'+esc(txt)+'</b>15 min · Google Meet · hora de España';$('bk-sel').hidden=false;
+    $('bk-1').hidden=true;$('bk-2').hidden=false;try{$('f-name').focus({preventScroll:true})}catch(e){}send('fs',{});px('FormEmpezado',{},true)}
+  $('bk-back').onclick=function(){$('bk-2').hidden=true;$('bk-1').hidden=false};
+  if('IntersectionObserver' in window){var cio=new IntersectionObserver(function(es){if(es[0].isIntersecting){load();step('cv');cio.disconnect()}},{rootMargin:'600px 0px'});cio.observe($('bk'))}else load();
+  $('bk-2').addEventListener('input',function(e){if(e.target.classList)e.target.classList.remove('bad');if(!this.querySelector('.bad'))$('bk-err').hidden=true});
+  $('bk-2').onsubmit=function(e){e.preventDefault();var f=this,err=$('bk-err');
+    var v={name:f.name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),biz:f.biz.value.trim(),rev:f.rev.value};var tel=v.phone.replace(/[^\d+]/g,'');
+    var ok={name:v.name.length>=2,email:/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email),phone:/^\+?\d{9,15}$/.test(tel),biz:v.biz.length>=2,rev:!!v.rev},all=true;
+    Object.keys(ok).forEach(function(k){f[k].classList.toggle('bad',!ok[k]);if(!ok[k])all=false});
+    if(!all){err.textContent=!ok.email&&v.email?'Revisa el email.':!ok.phone&&v.phone?'Revisa el número de WhatsApp.':'Rellena todos los campos, por favor.';err.hidden=false;return}
+    err.hidden=true;var go=$('bk-go');go.disabled=true;go.firstChild.textContent='Reservando… ';
+    px('Lead',{content_name:v.rev});
+    var body={k:key||'',start:pick,name:v.name,email:v.email,phone:tel,biz:v.biz,rev:v.rev,n:N||'tienda',utm:UTM,tz:(Intl.DateTimeFormat().resolvedOptions().timeZone||TZ)};
+    var done=function(j){go.disabled=false;go.firstChild.textContent='Confirmar llamada ';
+      if(j&&j.ok){px('Schedule',{content_name:v.rev,value:v.rev==='r3'?4:v.rev==='r2'?3:v.rev==='r1'?2:1,currency:'EUR'});ok2(v,j);return}
+      if(j&&j.error==='taken'){SL=j.slots||SL;err.textContent='Esa hora se acaba de ocupar. Elige otra, por favor.';err.hidden=false;setTimeout(function(){$('bk-2').hidden=true;$('bk-1').hidden=false;drawDays()},1400);return}
+      err.innerHTML='No se ha podido reservar. <a href="https://wa.me/34610594450?text='+encodeURIComponent('Hola Christian, quiero reservar la llamada para '+fL.format(new Date(pick)))+'" target="_blank" rel="noopener" style="color:var(--t2)">Escríbeme por WhatsApp</a> y te la dejo hecha.';err.hidden=false};
+    if(!PROD){setTimeout(function(){done({ok:true,demo:1,join:'',gcal:'#',mailed:true})},700);return}
+    fetch(API+'book',{method:'POST',body:JSON.stringify(body),headers:{'content-type':'application/json'}}).then(function(r){return r.json()}).then(done).catch(function(){done(null)})};
+  function ok2(v,j){var txt=fL.format(new Date(pick));
+    $('book-box').innerHTML='<div class="bk-ok lg"><img src="/christian-hola.jpg" alt="Christian Silva"><span style="color:var(--t2);font-size:14px">Christian Silva · 404 Growth</span><h3>Hecho, '+esc(v.name.split(' ')[0])+'. Nos vemos.</h3><span class="when">'+esc(txt)+'</span>'+
+      '<p>'+(j.mailed?'Te acabo de enviar la confirmación a <b style="color:var(--ink)">'+esc(v.email)+'</b> desde hola@404growth.com, con el enlace de la videollamada.':'Te llega la invitación a <b style="color:var(--ink)">'+esc(v.email)+'</b> con el enlace de la videollamada.')+' También te escribo por WhatsApp para confirmar.</p>'+
+      '<div class="acts">'+(j.gcal&&j.gcal!=='#'?'<a class="btn" href="'+esc(j.gcal)+'" target="_blank" rel="noopener">Añadir a mi calendario <span class="ar"><svg><use href="#i-cal"/></svg></span></a>':'')+(j.join?'<a class="btn" href="'+esc(j.join)+'" target="_blank" rel="noopener" style="background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)">Enlace de Meet</a>':'')+'</div></div>';
+    $('reservar').scrollIntoView({behavior:'smooth',block:'start'})}
 
   /* ---------- barra del móvil y apariciones ---------- */
   var bar=$('bar'),heroIn=true,bookIn=false;

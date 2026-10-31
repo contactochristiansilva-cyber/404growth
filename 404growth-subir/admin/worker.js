@@ -2858,7 +2858,7 @@ const LL_DDL = [
   "CREATE TABLE IF NOT EXISTS ll (id TEXT PRIMARY KEY, ts INTEGER NOT NULL, k TEXT, ih TEXT, n TEXT, name TEXT NOT NULL, email TEXT NOT NULL, phone TEXT NOT NULL, biz TEXT, sedes TEXT, ans TEXT, score INTEGER NOT NULL DEFAULT 0, grade TEXT, fit INTEGER NOT NULL DEFAULT 0, bk INTEGER NOT NULL DEFAULT 0, bk_at INTEGER, ev TEXT, inv TEXT, att INTEGER, qual INTEGER, won INTEGER NOT NULL DEFAULT 0, amount INTEGER NOT NULL DEFAULT 0, note TEXT, src TEXT, utm TEXT, upd INTEGER)",
   "CREATE INDEX IF NOT EXISTS ll_ts ON ll (ts)",
 ];
-const LL_N = { dental: "Clínicas dentales", estetica: "Medicina estética", inmo: "Inmobiliarias", gym: "Gimnasios", "": "General" };
+const LL_N = { dental: "Clínicas dentales", estetica: "Medicina estética", inmo: "Inmobiliarias", gym: "Gimnasios", tienda: "Tiendas (VSL)", moda: "Tiendas · moda", joyeria: "Tiendas · joyería", deporte: "Tiendas · deporte", obrador: "Tiendas · obrador", optica: "Tiendas · óptica", deco: "Tiendas · decoración", "": "General" };
 const LL_Q = {
   goal: ["¿Qué quiere conseguir?", { g0: "Más clientes nuevos", g1: "Contestar a todos", g2: "Que le conozcan en redes", g3: "Todo, con un sistema" }],
   now: ["Situación", { s0: "Contestan ellos cuando pueden", s1: "Agencia o community sin resultados", s2: "Casi sin web ni redes", s3: "Funciona, quiere crecer" }],
@@ -2871,7 +2871,9 @@ const LL_PTS = { r0: 0, r1: 1, r2: 2, r3: 3, b0: 0, b1: 1, b2: 2, b3: 3, w0: 3, 
 const LL_SEDES = ["1 sede", "2 o 3 sedes", "4 o más sedes"];
 const LL_BOT = /bot|crawl|spider|slurp|facebookexternalhit|meta-externalagent|preview|headless|lighthouse|pingdom|monitor|curl|wget|python|httpclient|axios|node-fetch/i;
 let llOk = false;
-async function llQ(env, fn) { if (!llOk) { await env.DB.batch(LL_DDL.map((q) => env.DB.prepare(q))); llOk = true; } return fn(); }
+// v36: the native calendar of /vsl adds three steps to a visit: calendar seen (cv), day chosen (cd), time chosen (ct); and the store's monthly sales on the lead (rev)
+const LL_ALTER = ["ALTER TABLE lv ADD COLUMN cv INTEGER NOT NULL DEFAULT 0", "ALTER TABLE lv ADD COLUMN cd INTEGER NOT NULL DEFAULT 0", "ALTER TABLE lv ADD COLUMN ct INTEGER NOT NULL DEFAULT 0", "ALTER TABLE ll ADD COLUMN start INTEGER", "ALTER TABLE ll ADD COLUMN join_url TEXT", "ALTER TABLE ll ADD COLUMN mailed INTEGER NOT NULL DEFAULT 0"];
+async function llQ(env, fn) { if (!llOk) { await env.DB.batch(LL_DDL.map((q) => env.DB.prepare(q))); for (const q of LL_ALTER) { try { await env.DB.prepare(q).run(); } catch (e) {} } llOk = true; } return fn(); }
 const llKey = (v) => (typeof v === "string" && /^[A-Za-z0-9_-]{8,24}$/.test(v) ? v : "");
 const llNiche = (v) => (typeof v === "string" && Object.prototype.hasOwnProperty.call(LL_N, v) ? v : "");
 const llInt = (v, lo, hi) => { const n = Math.round(Number(v)); return Number.isFinite(n) ? Math.min(hi, Math.max(lo, n)) : lo; };
@@ -2901,6 +2903,107 @@ function llAns(raw) {
   const a = {}; if (!raw || typeof raw !== "object") return a;
   for (const k of Object.keys(LL_Q)) { const v = raw[k]; if (typeof v === "string" && LL_Q[k][1][v]) a[k] = v; }
   return a;
+}
+
+/* ---------- v36: the native calendar of /vsl ----------
+   /l/slots: the free times of Chris's Calendly event «Tienda online · 404 Growth», read with his sealed token (cached 90 s).
+   /l/book: books the chosen time in Calendly through its Scheduling API (no Calendly page in between), keeps the lead in ll,
+   and sends the confirmation from hola@404growth.com (Resend, the key of Settings) with Chris's photo, the Meet link and an .ics. */
+const VSL_ET = "https://api.calendly.com/event_types/58ec126e-0cb8-4d2b-81d3-f0e531c7e072";
+const VSL_FROM = "Christian · 404 Growth <hola@404growth.com>", VSL_REPLY = "hola@404growth.com", VSL_PHOTO = SITE + "/christian-hola.jpg";
+const VSL_REV = { r0: "Menos de 30.000 €", r1: "30.000 – 60.000 €", r2: "60.000 – 100.000 €", r3: "Más de 100.000 €" };
+async function vslSlots(env, fresh) {
+  const now = Date.now();
+  if (!fresh) { const c = parse(await getMeta(env, "vsl_slots"), null); if (c && now - c.at < 90000) return c.slots; }
+  const st = await clyState(env); if (!st || !st.tok) { const e = new Error("nocal"); e.code = "nocal"; throw e; }
+  const out = []; let from = now + 2 * 3600000;                                          // nothing sooner than two hours from now
+  for (let i = 0; i < 3; i++) {                                                            // three weeks, seven days per call (Calendly's limit)
+    const to = from + 7 * DAY - 60000;
+    const j = await clyFetch(env, st.tok, "/event_type_available_times?event_type=" + encodeURIComponent(VSL_ET) + "&start_time=" + clyIso(from) + "&end_time=" + clyIso(to));
+    for (const x of j.collection || []) if (x.status === "available" && x.start_time) out.push(x.start_time);
+    from = to + 60000;
+  }
+  await setMeta(env, "vsl_slots", JSON.stringify({ at: now, slots: out }));
+  return out;
+}
+const vslWhen = (iso, tz) => { try { return new Intl.DateTimeFormat("es-ES", { timeZone: tz, weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }).format(new Date(iso)); } catch (e) { return iso; } };
+const vslEsc = (t) => String(t == null ? "" : t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const icsDate = (ms) => new Date(ms).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+function vslIcs(id, start, end, name, join) {
+  const L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//404 Growth//VSL//ES", "METHOD:REQUEST", "BEGIN:VEVENT", "UID:" + id + "@404growth.com", "DTSTAMP:" + icsDate(Date.now()),
+    "DTSTART:" + icsDate(start), "DTEND:" + icsDate(end), "SUMMARY:Llamada con Christian · 404 Growth",
+    "DESCRIPTION:Tu tienda online en 15 días. " + (join ? "Videollamada: " + join : "Te llegará el enlace por email."), "LOCATION:" + (join || "Google Meet"),
+    "ORGANIZER;CN=Christian · 404 Growth:mailto:" + VSL_REPLY, "ATTENDEE;CN=" + name.replace(/[,;:]/g, " ") + ";RSVP=TRUE:mailto:" + "invitado@404growth.com", "END:VEVENT", "END:VCALENDAR"];
+  return L.join("\r\n");
+}
+function vslMail(l, whenTxt, join, gcal, resched) {
+  const first = vslEsc(l.name.split(" ")[0]);
+  const btn = (href, txt, dark) => '<a href="' + vslEsc(href) + '" style="display:inline-block;padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;' + (dark ? "background:#0C1412;color:#ffffff" : "background:#EEF5F2;color:#0C1412") + '">' + txt + "</a>";
+  const html = '<!doctype html><html lang="es"><body style="margin:0;background:#F3F5F4;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif;color:#0C1412">' +
+    '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F3F5F4;padding:32px 12px"><tr><td align="center">' +
+    '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:20px;overflow:hidden">' +
+    '<tr><td style="background:#0C1412;padding:22px 28px;color:#ffffff;font-weight:800;font-size:17px;letter-spacing:-.02em">404/GROWTH</td></tr>' +
+    '<tr><td style="padding:32px 28px 8px"><table role="presentation" cellpadding="0" cellspacing="0"><tr>' +
+    '<td style="padding-right:16px"><img src="' + VSL_PHOTO + '" width="72" height="72" alt="Christian" style="display:block;border-radius:50%;width:72px;height:72px;object-fit:cover"></td>' +
+    '<td><div style="font-size:13px;color:#5B6762">Vas a hablar con</div><div style="font-size:18px;font-weight:700">Christian Silva</div><div style="font-size:13px;color:#5B6762">Fundador de 404 Growth</div></td></tr></table></td></tr>' +
+    '<tr><td style="padding:18px 28px 0"><h1 style="margin:0;font-size:26px;line-height:1.2;letter-spacing:-.02em">Hecho, ' + first + '. Tu llamada está reservada.</h1></td></tr>' +
+    '<tr><td style="padding:18px 28px 0"><div style="background:#EEF5F2;border-radius:14px;padding:18px 20px">' +
+    '<div style="font-size:13px;color:#5B6762">Cuándo</div><div style="font-size:18px;font-weight:700">' + vslEsc(whenTxt.charAt(0).toUpperCase() + whenTxt.slice(1)) + ' (hora de España)</div>' +
+    '<div style="font-size:13px;color:#5B6762;margin-top:10px">Dónde</div><div style="font-size:16px;font-weight:600">' + (join ? '<a href="' + vslEsc(join) + '" style="color:#1F6B54">Google Meet · entrar a la llamada</a>' : "Google Meet · te llega el enlace en la invitación del calendario") + "</div>" +
+    '<div style="font-size:13px;color:#5B6762;margin-top:10px">Duración</div><div style="font-size:16px;font-weight:600">15 minutos</div></div></td></tr>' +
+    '<tr><td style="padding:22px 28px 0;font-size:15.5px;line-height:1.6">En la llamada me cuentas tu tienda, te enseño cómo quedaría online con tu catálogo y te doy precio y plazos cerrados. Para aprovecharla, ten a mano tu web o tu Instagram, más o menos cuántos productos tienes y qué TPV usas.</td></tr>' +
+    '<tr><td style="padding:22px 28px 0">' + btn(gcal, "Añadir a Google Calendar", true) + " &nbsp; " + (join ? btn(join, "Enlace de Meet", false) : "") + "</td></tr>" +
+    '<tr><td style="padding:22px 28px 30px;font-size:14px;line-height:1.6;color:#5B6762">¿Te surge algo? ' + (resched ? '<a href="' + vslEsc(resched) + '" style="color:#1F6B54">Cambia la hora aquí</a> o contesta' : "Contesta") + " a este email y lo movemos. También te escribo por WhatsApp para confirmar.<br><br>Un abrazo,<br><b style=\"color:#0C1412\">Christian</b></td></tr>" +
+    '</table><div style="font-size:12px;color:#8A9590;padding:16px">404 Growth · hola@404growth.com</div></td></tr></table></body></html>';
+  const text = "Hecho, " + l.name.split(" ")[0] + ". Tu llamada con Christian (404 Growth) está reservada.\n\nCuándo: " + whenTxt + " (hora de España)\nDónde: " + (join || "Google Meet (enlace en la invitación)") + "\nDuración: 15 minutos\n\nAñadir a Google Calendar: " + gcal + "\n" + (resched ? "Cambiar la hora: " + resched + "\n" : "") + "\nUn abrazo,\nChristian\nhola@404growth.com";
+  return { html, text };
+}
+async function vslBook(req, env, b, k) {
+  const now = Date.now(), DBq = env.DB;
+  const name = str(b.name, 80), email = str(b.email, 160).toLowerCase(), phone = str(b.phone, 24).replace(/[^\d+]/g, ""), biz = str(b.biz, 140);
+  const rev = Object.prototype.hasOwnProperty.call(VSL_REV, b.rev) ? b.rev : "", tz = CalCore.okTz(b.tz) ? b.tz : CAL_TZ, start = typeof b.start === "string" ? b.start : "";
+  if (name.length < 2 || !okEmail(email) || !/^\+?\d{9,15}$/.test(phone) || biz.length < 2 || !rev || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/.test(start)) return bad("fields");
+  const ih = (await sha("l404ip|" + (req.headers.get("cf-connecting-ip") || "local"))).slice(0, 22);
+  const many = await DBq.prepare("SELECT COUNT(*) AS n FROM ll WHERE ih = ?1 AND ts > ?2").bind(ih, now - 3600000).first();
+  if (many && many.n >= 5) return bad("slow", 429);
+  let slots; try { slots = await vslSlots(env, true); } catch (e) { return json({ error: "nocal" }, 503); }
+  const startMs = Date.parse(start); if (!slots.some((x) => Date.parse(x) === startMs)) return json({ error: "taken", slots: slots }, 409);
+  const utm = llUtm(b.utm), tel = phone.charAt(0) === "+" ? phone : "+34" + phone.replace(/^0034/, "");
+  const st = await clyState(env);
+  let inv;
+  try {
+    inv = await clyFetch(env, st.tok, "/invitees", { method: "POST", body: JSON.stringify({
+      event_type: VSL_ET, start_time: start, location: { kind: "google_conference" },
+      invitee: { name: name, email: email, timezone: tz },
+      questions_and_answers: [{ question: "Cuéntenos algo que nos ayude a prepararnos para la reunión.", answer: "Tienda: " + biz + " · Factura: " + VSL_REV[rev] + " · WhatsApp: " + tel, position: 0 }],
+      tracking: { utm_source: utm.utm_source || "404growth.com", utm_medium: utm.utm_medium || "vsl", utm_campaign: utm.utm_campaign || "vsl-tiendas", utm_content: utm.utm_content || null, utm_term: utm.utm_term || null, salesforce_uuid: null } }) });
+  } catch (e) { return json({ error: e.code === "clyplan" ? "plan" : "book", detail: e.detail || "" }, 502); }
+  const r0 = inv.resource || inv, evUri = str(r0.event, 200), invUri = str(r0.uri, 200), resched = okUrl(r0.reschedule_url) ? r0.reschedule_url : "";
+  let join = "", end = startMs + 15 * 60000;
+  try { const ev = await clyFetch(env, st.tok, evUri); const e2 = ev.resource || {}; if (e2.end_time) end = Date.parse(e2.end_time); if (e2.location && okUrl(e2.location.join_url)) join = e2.location.join_url; } catch (e) {}
+  let vis = null; if (k) vis = await DBq.prepare("SELECT n, src FROM lv WHERE k = ?1").bind(k).first();
+  const n = vis && vis.n ? vis.n : llNiche(b.n) || "tienda", src = vis ? vis.src : llSrc(utm, "");
+  const fit = rev === "r0" ? 0 : 1, grade = rev === "r3" || rev === "r2" ? "A" : rev === "r1" ? "B" : "C";
+  const id = rid("L").slice(0, 13);
+  await DBq.prepare("INSERT INTO ll (id, ts, k, ih, n, name, email, phone, biz, sedes, ans, score, grade, fit, bk, bk_at, ev, inv, src, utm, upd, start, join_url) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, 1, ?2, ?15, ?16, ?17, ?18, ?2, ?19, ?20)")
+    .bind(id, now, k || null, ih, n, name, email, tel, biz, VSL_REV[rev], JSON.stringify({ rev: rev }), fit * 2 + (grade === "A" ? 3 : grade === "B" ? 1 : 0), grade, fit, evUri, invUri, src, JSON.stringify(utm), startMs, join).run();
+  if (k) await DBq.prepare("UPDATE lv SET fs = 1, fd = 1, bk = 1, ct = 1, cd = 1, cv = 1, lead = ?2, last = ?3 WHERE k = ?1").bind(k, id, now).run();
+  await setMeta(env, "vsl_slots", "");                                                     // the time just taken is no longer offered
+  const whenTxt = vslWhen(start, CAL_TZ);
+  const gcal = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent("Llamada con Christian · 404 Growth") + "&dates=" + icsDate(startMs) + "/" + icsDate(end) + "&details=" + encodeURIComponent("Tu tienda online en 15 días." + (join ? "\nVideollamada: " + join : "")) + "&location=" + encodeURIComponent(join || "Google Meet");
+  let mailed = 0;
+  const key = await getMeta(env, "nl_key");
+  if (key) {
+    const m = vslMail({ name }, whenTxt, join, gcal, resched), ics = vslIcs(id, startMs, end, name, join);
+    try {
+      const rr = await fetch((env.MAILAPI || "https://api.resend.com") + "/emails", { method: "POST", headers: { authorization: "Bearer " + key, "content-type": "application/json" },
+        body: JSON.stringify({ from: VSL_FROM, to: [email], reply_to: VSL_REPLY, subject: "Tu llamada con Christian · " + whenTxt, html: m.html, text: m.text, attachments: [{ filename: "llamada-404growth.ics", content: btoa(unescape(encodeURIComponent(ics))) }] }) });
+      mailed = rr.ok ? 1 : 0;
+    } catch (e) {}
+    if (mailed) await DBq.prepare("UPDATE ll SET mailed = 1 WHERE id = ?1").bind(id).run();
+  }
+  try { await pushAll(env, { title: "Llamada reservada · " + name, body: biz + " · factura " + VSL_REV[rev] + " · " + whenTxt + ". " + (mailed ? "Confirmación enviada desde hola@." : "No se pudo enviar el email de confirmación."), tag: "lb" + id, url: "/admin/llamadas#l=" + id }); } catch (e) {}
+  return json({ ok: true, id: id, start: start, end: new Date(end).toISOString(), join: join, gcal: gcal, mailed: !!mailed, resched: resched });
 }
 
 /* the landing: /l/h (a visit starts), /l/p (time, depth, VSL), /l/c (a click on the action), /l/fs (form started), /l/f (form sent), /l/b (booked) */
@@ -2936,6 +3039,11 @@ async function llPublic(req, env, p) {
     }
     if (p === "c") { if (k) await DBq.prepare("UPDATE lv SET cta = MIN(cta + 1, 99), cw = ?2, last = ?3 WHERE k = ?1").bind(k, str(b.w, 30), now).run(); return json({ ok: true }); }
     if (p === "fs") { if (k) await DBq.prepare("UPDATE lv SET fs = 1, last = ?2 WHERE k = ?1").bind(k, now).run(); return json({ ok: true }); }
+    if (p === "cal") {                                                                     // v36: a step of the native calendar (seen, day, time)
+      const col = { cv: "cv", cd: "cd", ct: "ct" }[b.s]; if (k && col) await DBq.prepare("UPDATE lv SET " + col + " = 1, last = ?2 WHERE k = ?1").bind(k, now).run(); return json({ ok: true });
+    }
+    if (p === "slots") { try { return json({ tz: CAL_TZ, slots: await vslSlots(env, false) }); } catch (e) { return json({ error: "nocal", slots: [] }, 503); } }
+    if (p === "book") return vslBook(req, env, b, k);
     if (p === "f") {
       const name = str(b.name, 80), email = str(b.email, 160).toLowerCase(), phone = str(b.phone, 24).replace(/[^\d+]/g, ""), biz = str(b.biz, 140);
       const sedes = LL_SEDES.includes(b.sedes) ? b.sedes : "";
