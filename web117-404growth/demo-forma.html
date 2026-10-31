@@ -94,6 +94,25 @@ a:focus-visible,button:focus-visible{outline:2px solid #2F6BFF;outline-offset:3p
 @media (max-width:1100px){.nav{display:none}.hd .w{grid-template-columns:auto 1fr}.sr{display:none}.row{grid-auto-columns:42%}.usp{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.w{padding:0 16px}.hero{height:82vh}.hero h1{font-size:76px}.hero .pp{display:none}.row{grid-auto-columns:72%}.duo{grid-template-columns:1fr}.tile .in{left:20px;bottom:20px}}
 @media (prefers-reduced-motion:reduce){.hero .tc-img img{animation:none}}
+
+/* variante FORMA */
+.hero{display:grid;grid-template-columns:1fr 1.2fr;height:auto;min-height:640px;background:#14281F}
+.hero:after{display:none}
+.hero .tc-img{position:relative;inset:auto;order:2;min-height:640px}
+.hero .tc-img img{animation:none;object-position:62% center}
+.hero .in{position:static;order:1;max-width:none;margin:0;padding:56px 56px 56px max(36px,3vw);display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:clamp(64px,5.6vw,100px)}
+.hero .mo{color:#9FD0B4}
+.row{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-auto-columns:auto;overflow:visible;gap:16px}
+.arr{display:none}
+.card{flex-direction:row;align-items:center;gap:18px;background:var(--soft);border-radius:18px;padding:14px}
+.card .im{width:46%;flex:none;border-radius:12px;background:#E9ECE8}
+.card .im .tc-img{background:#E9ECE8}
+.card .tx{display:flex;flex-direction:column;min-width:0}
+.card .st{margin-top:0}
+.card .qa{position:static;width:auto;height:40px;border-radius:99px;padding:0 18px;margin-top:12px;background:var(--ink);color:#fff;font-size:14.5px;font-weight:600;box-shadow:none;align-self:flex-start}
+@media (max-width:1100px){.hero{grid-template-columns:1fr}.hero .tc-img{order:0;min-height:420px}.row{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -154,8 +173,8 @@ var P=[
  {id:'omega',name:'Omega-3 Ultra',sb:'90 perlas',price:32,img:I+'p6.webp',st:'En stock',ok:1}
 ];
 Tienda({key:'forma',name:'FORMA',freeShip:50,products:P,
- card:function(p,T){return '<article class="card"><div class="im">'+(p.tag?'<span class="tg'+(p.hot?' hot':'')+'">'+T.esc(p.tag)+'</span>':'')+T.img(p.img,p.name)+'<button class="qa" type="button" data-add="'+p.id+'" aria-label="Añadir '+T.esc(p.name)+'">+</button></div>'+
-  '<span class="st'+(p.ok?' ok':'')+'">'+T.esc(p.st)+'</span><h3>'+T.esc(p.name)+'</h3><span class="sb">'+T.esc(p.sb)+'</span><span class="pr">'+T.money(p.price)+(p.was?'<s>'+T.money(p.was)+'</s>':'')+' <small style="color:var(--green);font-weight:600">· '+T.money(p.price*.85)+' suscrito</small></span></article>'}
+ card:function(p,T){return '<article class="card"><div class="im">'+(p.tag?'<span class="tg'+(p.hot?' hot':'')+'">'+T.esc(p.tag)+'</span>':'')+T.img(p.img,p.name)+'</div><div class="tx">'+
+  '<span class="st'+(p.ok?' ok':'')+'">'+T.esc(p.st)+'</span><h3>'+T.esc(p.name)+'</h3><span class="sb">'+T.esc(p.sb)+'</span><span class="pr">'+T.money(p.price)+(p.was?'<s>'+T.money(p.was)+'</s>':'')+'</span><small style="color:var(--green);font-weight:600;font-size:14px">'+T.money(p.price*.85)+' con suscripción</small><button class="qa" type="button" data-add="'+p.id+'">Añadir</button></div></article>'}
 });
 })();
 </script>

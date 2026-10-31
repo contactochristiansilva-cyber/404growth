@@ -94,6 +94,27 @@ a:focus-visible,button:focus-visible{outline:2px solid #2F6BFF;outline-offset:3p
 @media (max-width:1100px){.nav{display:none}.hd .w{grid-template-columns:auto 1fr}.sr{display:none}.row{grid-auto-columns:42%}.usp{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.w{padding:0 16px}.hero{height:82vh}.hero h1{font-size:76px}.hero .pp{display:none}.row{grid-auto-columns:72%}.duo{grid-template-columns:1fr}.tile .in{left:20px;bottom:20px}}
 @media (prefers-reduced-motion:reduce){.hero .tc-img img{animation:none}}
+
+/* variante NÁCAR */
+.hero{margin:18px max(36px,env(safe-area-inset-left,0px)) 0;border-radius:28px;height:min(680px,calc(100vh - 130px))}
+.hero:after{display:none}
+.hero .tc-img img{object-position:70% center}
+.hero .in{left:28px;right:auto;top:28px;bottom:28px;width:min(560px,46%);max-width:none;margin:0;padding:44px 40px;border-radius:22px;background:rgba(250,240,239,.94);color:var(--ink);display:flex;flex-direction:column;justify-content:center}
+.hero .mo{color:var(--red);font-weight:700}
+.hero h1{font-size:clamp(54px,4.8vw,84px);color:var(--ink)}
+.hero p{color:#3B3133}
+.hero .cta .btn:first-child{background:var(--ink);color:#fff}
+.hero .cta a.btn{color:var(--ink)!important;box-shadow:inset 0 0 0 1.5px var(--ink)!important}
+.sh h2{font-weight:600;letter-spacing:-.04em}
+.card .im{border-radius:22px;background:#F6E7E5}
+.card .im .tc-img{background:#F6E7E5}
+.card .tg{border-radius:99px;background:var(--ink);color:#fff}
+.card .tg.hot{background:var(--red);color:#fff}
+.card .bb{margin-top:12px;height:46px;border-radius:99px;border:0;background:var(--ink);color:#fff;font-weight:600;font-size:15px;cursor:pointer;transition:background .2s}
+.card .bb:hover{background:var(--red)}
+.card .st{order:-1}
+@media (max-width:900px){.hero .in{width:auto;right:20px;left:20px;top:auto}}
+
 </style>
 </head>
 <body>
@@ -154,8 +175,8 @@ var P=[
  {id:'spf',name:'Protector SPF 50',sb:'Acabado invisible · 50 ml',price:24,img:I+'p5.webp',st:'Envío en 24 h',ok:1}
 ];
 Tienda({key:'nacar',name:'NÁCAR',freeShip:40,products:P,
- card:function(p,T){return '<article class="card"><div class="im">'+(p.tag?'<span class="tg'+(p.hot?' hot':'')+'">'+T.esc(p.tag)+'</span>':'')+T.img(p.img,p.name)+'<button class="qa" type="button" data-add="'+p.id+'" aria-label="Añadir '+T.esc(p.name)+'">+</button></div>'+
-  '<span class="st'+(p.ok?' ok':'')+'">'+T.esc(p.st)+'</span><h3>'+T.esc(p.name)+'</h3><span class="sb">'+T.esc(p.sb)+'</span><span class="pr">'+T.money(p.price)+(p.was?'<s>'+T.money(p.was)+'</s>':'')+'</span></article>'}
+ card:function(p,T){return '<article class="card"><div class="im">'+(p.tag?'<span class="tg'+(p.hot?' hot':'')+'">'+T.esc(p.tag)+'</span>':'')+T.img(p.img,p.name)+'</div>'+
+  '<span class="st'+(p.ok?' ok':'')+'">'+T.esc(p.st)+'</span><h3>'+T.esc(p.name)+'</h3><span class="sb">'+T.esc(p.sb)+'</span><span class="pr">'+T.money(p.price)+(p.was?'<s>'+T.money(p.was)+'</s>':'')+'</span><button class="bb" type="button" data-add="'+p.id+'">Añadir a la cesta</button></article>'}
 });
 })();
 </script>

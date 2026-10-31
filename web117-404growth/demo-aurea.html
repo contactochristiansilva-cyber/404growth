@@ -94,6 +94,26 @@ a:focus-visible,button:focus-visible{outline:2px solid #2F6BFF;outline-offset:3p
 @media (max-width:1100px){.nav{display:none}.hd .w{grid-template-columns:auto 1fr}.sr{display:none}.row{grid-auto-columns:42%}.usp{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.w{padding:0 16px}.hero{height:82vh}.hero h1{font-size:76px}.hero .pp{display:none}.row{grid-auto-columns:72%}.duo{grid-template-columns:1fr}.tile .in{left:20px;bottom:20px}}
 @media (prefers-reduced-motion:reduce){.hero .tc-img img{animation:none}}
+
+/* variante ÁUREA */
+.hero:after{background:linear-gradient(180deg,rgba(0,0,0,.05) 35%,rgba(30,20,10,.62))}
+.hero .in{text-align:center;bottom:52px}
+.hero h1{margin-left:auto;margin-right:auto;max-width:16ch;font-size:clamp(56px,5.6vw,96px)}
+.hero p{margin-left:auto;margin-right:auto}
+.hero .cta{justify-content:center}
+.sh{justify-content:center;text-align:center;margin-bottom:30px}
+.sh h2{font-family:var(--d);font-weight:400;font-size:clamp(40px,3.6vw,56px);letter-spacing:-.02em}
+.arr{display:none}
+.row{grid-auto-columns:calc((100% - 3*28px)/4);gap:28px}
+.card{text-align:center;align-items:center}
+.card .im{aspect-ratio:4/5;width:100%;background:#F4EEE6}
+.card .im .tc-img{background:#F4EEE6}
+.card .tg{left:50%;transform:translateX(-50%);border-radius:0;background:transparent;color:var(--ink);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;top:14px}
+.card .qa{left:50%;right:auto;bottom:16px;transform:translateX(-50%);width:auto;height:42px;border-radius:0;padding:0 22px;background:#fff;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:0;transition:opacity .25s}
+.card:hover .qa{opacity:1}
+.card h3{font-family:var(--d);font-weight:400;font-size:22px;margin-top:6px}
+.card .st{order:5;font-size:13px;margin-top:4px}
+
 </style>
 </head>
 <body>
@@ -154,7 +174,7 @@ var P=[
  {id:'trio',name:'Trío de anillos',sb:'Con diamante',price:199,img:I+'p6.webp',st:'Envío en 24 h',ok:1}
 ];
 Tienda({key:'aurea',name:'ÁUREA',freeShip:0,products:P,
- card:function(p,T){return '<article class="card"><div class="im">'+(p.tag?'<span class="tg'+(p.hot?' hot':'')+'">'+T.esc(p.tag)+'</span>':'')+T.img(p.img,p.name)+'<button class="qa" type="button" data-add="'+p.id+'" aria-label="Añadir '+T.esc(p.name)+'">+</button></div>'+
+ card:function(p,T){return '<article class="card"><div class="im">'+(p.tag?'<span class="tg'+(p.hot?' hot':'')+'">'+T.esc(p.tag)+'</span>':'')+T.img(p.img,p.name)+'<button class="qa" type="button" data-add="'+p.id+'">Añadir a la cesta</button></div>'+
   '<span class="st'+(p.ok?' ok':'')+'">'+T.esc(p.st)+'</span><h3>'+T.esc(p.name)+'</h3><span class="sb">'+T.esc(p.sb)+'</span><span class="pr">'+T.money(p.price)+'</span></article>'}
 });
 })();
