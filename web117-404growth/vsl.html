@@ -302,13 +302,14 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
  background:linear-gradient(180deg,#fff 30%,rgba(255,255,255,.25) 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .fhi{position:relative;z-index:3;font-size:15px;color:var(--mute);margin-bottom:10px}
 .fstage{position:relative;max-width:1100px;margin:0 auto}
-.fphoto{position:relative;z-index:2;width:min(560px,92vw);margin:calc(min(19.5vw,290px) * -.55) auto 0;aspect-ratio:4/5;
+.fphoto{position:relative;z-index:2;width:min(780px,100vw);margin:calc(min(19.5vw,290px) * -.62) auto 0;aspect-ratio:900/781;
  -webkit-mask:linear-gradient(180deg,#000 72%,transparent 100%);mask:linear-gradient(180deg,#000 72%,transparent 100%)}
-.fphoto img{width:100%;height:100%;object-fit:contain;object-position:bottom}
+.fphoto img{width:100%;height:100%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 -10px 40px rgba(111,194,166,.18))}
 .fphoto svg{width:100%;height:100%}
-.fcopy{position:absolute;z-index:3;left:max(20px,env(safe-area-inset-left,0px));bottom:16%;max-width:300px;text-align:left}
+.fbottom{position:relative;z-index:3;display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap;margin-top:-90px;padding:0 20px}
+.fcopy{max-width:330px;text-align:center}
 .fcopy p{font-size:26px;font-weight:400;letter-spacing:-.035em;line-height:1.15;margin:0 0 18px}
-.fcard{position:absolute;z-index:3;right:max(20px,env(safe-area-inset-right,0px));bottom:16%;width:280px;padding:18px;border-radius:24px;text-align:left}
+.fcard{width:290px;padding:18px;border-radius:24px;text-align:left}
 .fcard .row{display:flex;flex-direction:column;gap:8px}
 .fcard .it{display:flex;align-items:center;gap:10px;font-size:14px}
 .fcard .it svg{width:18px;height:18px;color:var(--t2);flex:none}
@@ -338,8 +339,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
  .road{grid-template-columns:1fr 1fr}
  .fit{grid-template-columns:1fr}
  .bar{display:block}
- .fcopy,.fcard{position:relative;left:auto;right:auto;bottom:auto;margin:0 auto;max-width:420px;width:auto;text-align:center}
- .fcopy{margin-top:-40px}.fcard{margin-top:22px;text-align:left}
+ .fbottom{flex-direction:column;margin-top:-50px}
 }
 @media (max-width:560px){
  .hero h1{margin-top:48px}
@@ -358,8 +358,9 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
  .cf{height:520px}.cf-card{height:480px}
  .band{padding:48px 18px;border-radius:28px}
  .founder{margin-top:100px}
- .fname{font-size:23vw}.fphoto{margin-top:-12vw}
- .fcopy{padding:0 20px}.fcard{margin-left:20px;margin-right:20px}
+ .fname{font-size:23vw}
+ .fcard{width:100%;max-width:360px}
+ .fphoto{margin-top:-15vw}
  .cf-card .kpi b{font-size:32px}
 }
 </style>
@@ -552,6 +553,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
       <svg viewBox="0 0 400 500" aria-hidden="true"><defs><linearGradient id="sil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A3B36"/><stop offset="1" stop-color="#0B1311"/></linearGradient></defs>
         <circle cx="200" cy="170" r="82" fill="url(#sil)"/><path d="M40 500c0-120 70-200 160-200s160 80 160 200z" fill="url(#sil)"/></svg>
     </div>
+    <div class="fbottom">
     <div class="fcopy rv"><p>Te atiendo yo, desde la llamada hasta que tu tienda abre.</p><a class="btn" href="#reservar" data-cta="nosotros">Reservar llamada <span class="ar"><svg><use href="#i-ne"/></svg></span></a></div>
     <div class="fcard lg rv d1">
       <div class="row">
@@ -560,6 +562,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
         <span class="it"><svg><use href="#i-chart"/></svg>Todo medido desde el día 1</span>
       </div>
       <div class="tags"><a href="https://wa.me/34610594450" target="_blank" rel="noopener" data-cta="whatsapp-final">WhatsApp</a><a href="/#nichos" target="_blank" rel="noopener">Tiendas de ejemplo</a></div>
+    </div>
     </div>
   </div>
   <footer>
@@ -582,7 +585,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
      PIXEL:  id del píxel de Meta (15–16 cifras). Vacío = sin píxel y sin aviso de cookies.
      VSL:    src = mp4 con subtítulos quemados; poster = foto fija; ratio "16/9" o "9/16". src vacío = el hueco con el botón de play.
      AVATAR: foto pequeña de Christian (círculo del vídeo).
-     PHOTO:  foto de Christian SIN FONDO (png o webp transparente, de cintura para arriba) para el final, delante del nombre.
+     PHOTO:  foto de Christian SIN FONDO (webp transparente) para el final, delante del nombre.
      CASES:  SOLO casos reales, con permiso del cliente:
              {tienda:'Nombre', sector:'Moda', ciudad:'Valencia', img:'/casos/x.webp', kpi:'+38 %', kpil:'ventas online en 3 meses', q:'cita literal', who:'Nombre, dueña'}
              Vacío = en 404growth.com la sección se oculta; en la vista previa salen huecos.
@@ -590,7 +593,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   var PIXEL='';
   var VSL={src:'',poster:'',ratio:'16/9'};
   var AVATAR='/ind-me.webp';
-  var PHOTO='/christian-recorte.png';
+  var PHOTO='/christian-recorte.webp';
   var CASES=[];
   var CAL='https://calendly.com/hola-404growth/llamada-404-growth';
 
