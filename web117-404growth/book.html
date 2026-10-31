@@ -416,7 +416,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
  .hero .cta{margin-top:22px;gap:12px}
 }
 /* barra móvil, cookies */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px max(14px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));transform:translate3d(0,130%,0);transition:transform .22s cubic-bezier(.4,0,1,1);will-change:transform;backface-visibility:hidden;display:none}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--bg);box-shadow:0 -1px 0 rgba(255,255,255,.06);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));transform:translate3d(0,130%,0);transition:transform .22s cubic-bezier(.4,0,1,1);will-change:transform;backface-visibility:hidden;display:none}
 .bar.on{transform:translate3d(0,0,0);transition:transform .32s cubic-bezier(.16,1,.3,1)}
 @media (prefers-reduced-motion:reduce){.bar,.bar.on{transition:none}}
 .bar .btn{width:100%;justify-content:space-between}
