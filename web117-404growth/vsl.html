@@ -83,8 +83,9 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .hero h1{font-size:clamp(36px,4.3vw,66px);line-height:1.02;letter-spacing:-.05em;margin:30px auto 0;max-width:1240px}
 .hero h1 b{font-weight:500}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;margin:26px auto 0;padding:9px 18px 9px 14px;border-radius:99px;font-size:14px;font-weight:500;color:#DDE6E2;letter-spacing:-.005em}
+.eyebrow b{font-weight:600;color:var(--t2)}
 .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--t2);box-shadow:0 0 0 4px rgba(111,194,166,.2);flex:none}
-.hero h1 em,.hero h1>span{display:block;text-wrap:balance}
+.hero h1>em,.hero h1>span{display:block;text-wrap:balance}
 .hero h1{text-wrap:wrap}
 .hero h1 b{font-weight:500}
 .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(160deg,#2B5247,#16302A) center/cover;display:grid;place-items:center;font-weight:600;font-size:14px;color:var(--t2);flex:none}
@@ -363,7 +364,12 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
  .fbottom{flex-direction:column;margin-top:-4%}
 }
 @media (max-width:560px){
- .hero h1{margin-top:22px}
+ .hero h1{margin-top:16px}
+ .eyebrow{background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0 6px;margin-top:22px;font-size:13.5px;line-height:1.4;color:#E4EBE8;display:block;max-width:300px;margin-left:auto;margin-right:auto}
+ .eyebrow:after{display:none}
+ .lgx .eyebrow{backdrop-filter:none}
+ .eyebrow b{display:block}
+ .eyebrow i{display:inline-block;vertical-align:middle;margin:-2px 8px 0 0;width:7px;height:7px}
  .logo{font-size:16px}
  .stage{margin-top:36px}
  .device{padding:7px;border-radius:24px}.screen{border-radius:18px}
@@ -428,8 +434,8 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   <div class="beams" aria-hidden="true"></div><div class="stripes" aria-hidden="true"></div>
   <header class="top"><a class="logo" href="/" aria-label="404 Growth">404/GROWTH<sup>®</sup></a></header>
   <div class="wrap">
-    <p class="eyebrow lg"><i aria-hidden="true"></i>Solo para tiendas físicas que ya venden y quieren vender online</p>
-    <h1><span>Convertimos tu tienda física en una tienda online</span> <em><b>que vende en toda España en 15&nbsp;días.</b></em></h1>
+    <p class="eyebrow lg"><i aria-hidden="true"></i><span>Solo para tiendas físicas que facturan <b>más de 30.000€ al mes</b></span></p>
+    <h1><span>Convertimos tu tienda física en una <em><b>tienda online</b></em></span> <em><b>que vende en toda España en 15&nbsp;días.</b></em></h1>
     <div class="stage">
       <div class="arc2" aria-hidden="true"></div><div class="arc" aria-hidden="true"></div>
       <figure class="device" id="vsl" style="margin-top:0;margin-bottom:0">
