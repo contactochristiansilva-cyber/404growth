@@ -18,8 +18,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;800&family=Oswald:wght@300;400;500;600&display=swap">
-<link rel="preconnect" href="https://calendly.com">
-<link rel="preconnect" href="https://assets.calendly.com" crossorigin>
 <style>
 /* Layout: columna centrada sobre negro; focos de luz verde desde arriba; cristal de verdad (desenfoque + borde de luz + refracción) solo sobre contenido. */
 :root{color-scheme:dark;
@@ -949,7 +947,9 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     px('Lead',{content_name:v.bud,content_category:v.sec});
     var body={k:key||'',start:pick,name:v.name,email:v.email,phone:tel,biz:v.biz,bud:v.bud,sec:v.sec,n:(v.sec&&v.sec!=='otro'?v.sec:N||'tienda'),utm:UTM,tz:(Intl.DateTimeFormat().resolvedOptions().timeZone||TZ)};
     var done=function(j){go.disabled=false;go.firstChild.textContent='Confirmar llamada ';
-      if(j&&j.ok){px('Schedule',{content_name:v.bud,content_category:v.sec,value:{b0:1,b1:2,b2:3,b3:4,b4:2}[v.bud]||1,currency:'EUR'});ok2(v,j);return}
+      if(j&&j.ok){px('Schedule',{content_name:v.bud,content_category:v.sec,value:{b0:1,b1:2,b2:3,b3:4,b4:2}[v.bud]||1,currency:'EUR'});ev('bk','',0);flush();
+        try{sessionStorage.setItem('c404bk',JSON.stringify({name:v.name.split(' ')[0],email:v.email,start:j.start||pick,join:j.join||'',gcal:j.gcal||'',mailed:!!j.mailed,google:/meet\.google\.com/.test(j.join||'')}))}catch(x){}
+        go.disabled=true;go.firstChild.textContent='¡Reservada! ';setTimeout(function(){location.href='/gracias'},PROD?350:700);return}
       if(!(j&&j.ok))ev('bkerr',(j&&j.error)||'red',0);
       if(j&&j.error==='taken'){SL=j.slots||SL;err.textContent='Esa hora se acaba de ocupar. Elige otra, por favor.';err.hidden=false;setTimeout(function(){$('bk-2').hidden=true;$('bk-1').hidden=false;drawDays()},1400);return}
       err.innerHTML='No se ha podido reservar. <a href="https://wa.me/34610594450?text='+encodeURIComponent('Hola Christian, quiero reservar la llamada para '+fL.format(new Date(pick)))+'" target="_blank" rel="noopener" style="color:var(--t2)">Escríbeme por WhatsApp</a> y te la dejo hecha.';err.hidden=false};
