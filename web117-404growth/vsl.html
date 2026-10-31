@@ -296,17 +296,15 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .faq p{margin:-4px 22px 20px;color:var(--mute);font-size:15px;line-height:1.55}
 
 /* ---------- final: foto con el nombre detrás ---------- */
-.founder{position:relative;margin-top:140px;padding-top:40px;overflow:hidden}
-.founder:before{content:"";position:absolute;left:50%;top:10%;width:1200px;height:900px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(111,194,166,.32),rgba(111,194,166,.08) 55%,transparent);pointer-events:none}
-.fname{position:relative;z-index:1;font-family:var(--c);font-weight:600;text-transform:uppercase;line-height:.8;letter-spacing:-.02em;font-size:min(16.5vw,245px);margin:0;white-space:nowrap;
- background:linear-gradient(180deg,#fff 30%,rgba(255,255,255,.25) 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.fhi{position:relative;z-index:3;font-size:15px;color:var(--mute);margin-bottom:10px}
-.fstage{position:relative;max-width:1100px;margin:0 auto}
-.fphoto{position:relative;z-index:2;width:min(780px,100vw);margin:calc(min(16.5vw,245px) * -.6) auto 0;aspect-ratio:1000/803;
- -webkit-mask:linear-gradient(180deg,#000 72%,transparent 100%);mask:linear-gradient(180deg,#000 72%,transparent 100%)}
-.fphoto img{width:100%;height:100%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 0 1.5px rgba(166,227,205,.75)) drop-shadow(0 0 26px rgba(111,194,166,.5)) drop-shadow(0 0 70px rgba(111,194,166,.25))}
-.fphoto svg{width:100%;height:100%}
-.fbottom{position:relative;z-index:3;display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap;margin-top:-90px;padding:0 20px}
+.founder{position:relative;margin-top:120px;padding-top:20px;overflow:hidden}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.fhi{position:relative;z-index:3;font-size:15px;color:var(--mute);margin:0 0 6px}
+.fstage{position:relative;max-width:1440px;margin:0 auto}
+.fphoto{position:relative;width:100%;aspect-ratio:16/9;margin:0 auto;background:#050807;
+ -webkit-mask:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 72%,transparent);-webkit-mask-composite:source-in;
+ mask:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent) intersect,linear-gradient(180deg,transparent,#000 7%,#000 72%,transparent)}
+.fphoto img{width:100%;height:100%;object-fit:cover;display:block}
+.fbottom{position:relative;z-index:3;display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap;margin-top:-11%;padding:0 20px}
 .fcopy{max-width:330px;text-align:center}
 .fcopy p{font-size:26px;font-weight:400;letter-spacing:-.035em;line-height:1.15;margin:0 0 18px}
 .fcard{width:290px;padding:18px;border-radius:24px;text-align:left}
@@ -339,7 +337,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
  .road{grid-template-columns:1fr 1fr}
  .fit{grid-template-columns:1fr}
  .bar{display:block}
- .fbottom{flex-direction:column;margin-top:-50px}
+ .fbottom{flex-direction:column;margin-top:-4%}
 }
 @media (max-width:560px){
  .hero h1{margin-top:48px}
@@ -358,9 +356,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
  .cf{height:520px}.cf-card{height:480px}
  .band{padding:48px 18px;border-radius:28px}
  .founder{margin-top:100px}
- .fname{font-size:19.5vw}
  .fcard{width:100%;max-width:360px}
- .fphoto{margin-top:-15vw}
  .cf-card .kpi b{font-size:32px}
 }
 </style>
@@ -548,11 +544,8 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 <section class="founder" id="nosotros">
   <div class="fstage">
     <p class="fhi rv">Hola, soy</p>
-    <p class="fname" aria-label="Christian">Christian</p>
-    <div class="fphoto" id="fphoto">
-      <svg viewBox="0 0 400 500" aria-hidden="true"><defs><linearGradient id="sil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A3B36"/><stop offset="1" stop-color="#0B1311"/></linearGradient></defs>
-        <circle cx="200" cy="170" r="82" fill="url(#sil)"/><path d="M40 500c0-120 70-200 160-200s160 80 160 200z" fill="url(#sil)"/></svg>
-    </div>
+    <h2 class="sr">Christian Silva, fundador de 404 Growth</h2>
+    <div class="fphoto" id="fphoto"></div>
     <div class="fbottom">
     <div class="fcopy rv"><p>Te atiendo yo, desde la llamada hasta que tu tienda abre.</p><a class="btn" href="#reservar" data-cta="nosotros">Reservar llamada <span class="ar"><svg><use href="#i-ne"/></svg></span></a></div>
     <div class="fcard lg rv d1">
@@ -585,7 +578,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
      PIXEL:  id del píxel de Meta (15–16 cifras). Vacío = sin píxel y sin aviso de cookies.
      VSL:    src = mp4 con subtítulos quemados; poster = foto fija; ratio "16/9" o "9/16". src vacío = el hueco con el botón de play.
      AVATAR: foto pequeña de Christian (círculo del vídeo).
-     PHOTO:  foto de Christian SIN FONDO (webp transparente) para el final, delante del nombre.
+     PHOTO:  imagen final 16:9 (Christian con su nombre detrás, ya montada).
      CASES:  SOLO casos reales, con permiso del cliente:
              {tienda:'Nombre', sector:'Moda', ciudad:'Valencia', img:'/casos/x.webp', kpi:'+38 %', kpil:'ventas online en 3 meses', q:'cita literal', who:'Nombre, dueña'}
              Vacío = en 404growth.com la sección se oculta; en la vista previa salen huecos.
@@ -593,7 +586,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   var PIXEL='';
   var VSL={src:'',poster:'',ratio:'16/9'};
   var AVATAR='/ind-me.webp';
-  var PHOTO='/christian-recorte.webp';
+  var PHOTO='/christian-404.webp';
   var CASES=[];
   var CAL='https://calendly.com/hola-404growth/llamada-404-growth';
 
@@ -617,7 +610,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   /* ---------- fotos opcionales ---------- */
   if(VSL.poster&&!VSL.src){var pi=new Image();pi.className='poster';pi.alt='';pi.onload=function(){$('slot').insertBefore(pi,$('slot').firstChild)};pi.src=VSL.poster}
   if(AVATAR){var im=new Image();im.onload=function(){[].forEach.call(d.querySelectorAll('[data-av]'),function(a){a.style.backgroundImage='url("'+AVATAR+'")';a.textContent=''})};im.src=AVATAR}
-  if(PHOTO){var fp=new Image();fp.alt='Christian Silva, fundador de 404 Growth';fp.onload=function(){var b=$('fphoto');b.innerHTML='';b.appendChild(fp)};fp.src=PHOTO}
+  if(PHOTO){var fp=new Image();fp.alt='Christian Silva con su nombre detrás';fp.onload=function(){var b=$('fphoto');b.innerHTML='';b.appendChild(fp)};fp.src=PHOTO}
 
   /* ---------- casos de éxito: carrusel 3D ---------- */
   var ART={moda:'linear-gradient(160deg,#6B5543,#2A211B 60%,#120E0C)',joyeria:'linear-gradient(160deg,#8A7444,#3A2E17 60%,#15110A)',deporte:'linear-gradient(160deg,#2C6E80,#123540 60%,#081419)',
