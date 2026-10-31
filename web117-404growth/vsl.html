@@ -178,6 +178,12 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .cf-card .kpi span{font-size:13.5px;color:var(--mute);line-height:1.3}
 .cf-card q{display:block;margin-top:12px;font-size:15px;line-height:1.45;color:#D6DBD8;quotes:"«" "»"}
 .cf-card .who{margin-top:12px;font-size:13px;color:var(--mute)}
+.cf-card.demo .art{background-position:top center;background-size:cover}
+.cf-card.demo .info{padding:16px 18px 16px}
+.cf-card.demo h3{font-size:26px}
+.cf-card .dd{margin:6px 0 0;font-size:14px;line-height:1.4;color:#D6DBD8}
+.cf-card .tgs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.cf-card .tgs span{font-size:12px;font-weight:500;padding:5px 10px;border-radius:99px;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
 .cf-card.side{filter:brightness(.6) saturate(.8)}
 .cf-bar{display:inline-flex;align-items:center;gap:14px;margin-top:6px;padding:8px;border-radius:99px}
 .cf-btn{width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center;cursor:pointer;transition:background .25s,transform .25s}
@@ -502,7 +508,8 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 <section class="sec" id="casos">
   <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
-    <h2 class="rv">Tiendas que ya venden<br><em>con la persiana bajada.</em></h2>
+    <h2 class="rv">Así podría verse<br><em>tu tienda online.</em></h2>
+    <p class="lead rv">Tiendas de demostración diseñadas por 404 Growth. Cada marca, con su propia identidad.</p>
   </div>
   <div class="cf rv" id="cf" tabindex="0" aria-label="Casos de éxito. Usa las flechas para pasar."></div>
   <div class="cf-bar lg rv"><button class="cf-btn" type="button" id="prev" aria-label="Anterior"><svg><use href="#i-l"/></svg></button><span class="cf-mid" id="cf-mid" aria-live="polite"></span><button class="cf-btn" type="button" id="next" aria-label="Siguiente"><svg><use href="#i-r"/></svg></button></div>
@@ -641,9 +648,8 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
      VSL:    src = mp4 con subtítulos quemados; poster = foto fija; ratio "16/9" o "9/16". src vacío = el hueco con el botón de play.
      AVATAR: foto pequeña de Christian (círculo del vídeo).
      PHOTO:  imagen final 16:9 (Christian con su nombre detrás, ya montada).
-     CASES:  SOLO casos reales, con permiso del cliente:
+     CASES:  SOLO casos reales, con permiso del cliente (si está vacío se muestran las tiendas de demostración DEMOS):
              {tienda:'Nombre', sector:'Moda', ciudad:'Valencia', img:'/casos/x.webp', kpi:'+38 %', kpil:'ventas online en 3 meses', q:'cita literal', who:'Nombre, dueña'}
-             Vacío = en 404growth.com la sección se oculta; en la vista previa salen huecos.
      Sector desde el anuncio: ?n=moda | joyeria | deporte | obrador | optica | deco (o utm_content con ese valor). */
   var PIXEL='';
   var VSL={src:'',poster:'',ratio:'16/9'};
@@ -677,19 +683,20 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   /* ---------- casos de éxito: carrusel 3D ---------- */
   var ART={moda:'linear-gradient(160deg,#6B5543,#2A211B 60%,#120E0C)',joyeria:'linear-gradient(160deg,#8A7444,#3A2E17 60%,#15110A)',deporte:'linear-gradient(160deg,#2C6E80,#123540 60%,#081419)',
     deco:'linear-gradient(160deg,#8C5A44,#3B2419 60%,#160D09)',optica:'linear-gradient(160deg,#3D4F7A,#1A2340 60%,#0A0E1A)',obrador:'linear-gradient(160deg,#9A7A52,#43311D 60%,#18110A)'};
-  var list=CASES.length?CASES:(PROD?[]:[
-    {tienda:'Caso real pendiente',sector:'Moda',ciudad:'Ciudad',kpi:'+00 %',kpil:'qué mide y en cuánto tiempo',q:'Aquí va la frase real del cliente.',who:'Nombre, dueño o dueña',pend:1,k:'moda'},
-    {tienda:'Caso real pendiente',sector:'Joyería',ciudad:'Ciudad',kpi:'+00 %',kpil:'qué mide y en cuánto tiempo',q:'Aquí va la frase real del cliente.',who:'Nombre, dueño o dueña',pend:1,k:'joyeria'},
-    {tienda:'Caso real pendiente',sector:'Deporte',ciudad:'Ciudad',kpi:'+00 %',kpil:'qué mide y en cuánto tiempo',q:'Aquí va la frase real del cliente.',who:'Nombre, dueño o dueña',pend:1,k:'deporte'},
-    {tienda:'Caso real pendiente',sector:'Decoración',ciudad:'Ciudad',kpi:'+00 %',kpil:'qué mide y en cuánto tiempo',q:'Aquí va la frase real del cliente.',who:'Nombre, dueño o dueña',pend:1,k:'deco'},
-    {tienda:'Caso real pendiente',sector:'Óptica',ciudad:'Ciudad',kpi:'+00 %',kpil:'qué mide y en cuánto tiempo',q:'Aquí va la frase real del cliente.',who:'Nombre, dueño o dueña',pend:1,k:'optica'}]);
+  /* Tiendas de demostración (proyectos conceptuales de 404 Growth): se muestran mientras no haya casos reales */
+  var DEMOS=[
+    {tienda:'Velia',sector:'Cosmética',img:'/demos/cards/velia.webp',d:'Lujo silencioso mediterráneo, test de piel y ritual en 3 pasos.',tags:['Variantes','Test de piel','Pago en 3 plazos']},
+    {tienda:'Núcleo',sector:'Suplementos',img:'/demos/cards/nucleo.webp',d:'Laboratorio deportivo: arma tu stack y suscripción con descuento.',tags:['Stack -15%','Suscripción','Ficha técnica']},
+    {tienda:'Dstrto',sector:'Ropa urbana',img:'/demos/cards/dstrto.webp',d:'Lanzamientos con cuenta atrás, tallas agotadas y lookbook.',tags:['Cuenta atrás','Tallas','Compra el look']},
+    {tienda:'Orbe',sector:'Tecnología',img:'/demos/cards/orbe.webp',d:'Producto al detalle: colores, compatibilidad y kits con ahorro.',tags:['Colores','Compatibilidad','Kits']}
+  ];
+  var list=CASES.length?CASES:DEMOS;
   if(!list.length){$('casos').hidden=true}else{
-    if(!CASES.length)$('cases-note').hidden=false;
-    var cf=$('cf'),dots=$('cf-dots'),mid=$('cf-mid'),cur=Math.min(2,list.length-1);
+    var cf=$('cf'),dots=$('cf-dots'),mid=$('cf-mid'),cur=Math.min(1,list.length-1);
     cf.innerHTML=list.map(function(c,i){var key=c.k||(ALIAS[(c.sector||'').toLowerCase()]||'moda');
-      return '<article class="cf-card" data-i="'+i+'"><div class="art" style="background-image:'+(c.img?'linear-gradient(180deg,transparent 40%,rgba(0,0,0,.4)),url(\''+esc(c.img)+'\')':ART[key]||ART.moda)+'">'+(c.img?'':'<svg><use href="#i-store"/></svg>')+'</div>'+
-        '<div class="top2"><span class="pill lg">'+esc(c.sector)+' · '+esc(c.ciudad||'')+'</span><span class="pill lg">'+(i+1)+'/'+list.length+'</span></div>'+
-        '<div class="info lg dark"><h3>'+esc(c.tienda)+'</h3>'+(c.kpi?'<div class="kpi"><b>'+esc(c.kpi)+'</b><span>'+esc(c.kpil)+'</span></div>':'')+(c.q?'<q>'+esc(c.q)+'</q>':'')+'<div class="who">'+esc(c.who)+'</div></div></article>'}).join('');
+      return '<article class="cf-card'+(c.tags?' demo':'')+'" data-i="'+i+'"><div class="art" style="background-image:'+(c.img?(c.tags?'':'linear-gradient(180deg,transparent 40%,rgba(0,0,0,.4)),')+'url(\''+esc(c.img)+'\')':ART[key]||ART.moda)+'">'+(c.img?'':'<svg><use href="#i-store"/></svg>')+'</div>'+
+        '<div class="top2"><span class="pill lg dark">'+esc(c.sector)+(c.ciudad?' · '+esc(c.ciudad):'')+'</span><span class="pill lg dark">'+(i+1)+'/'+list.length+'</span></div>'+
+        '<div class="info lg dark"><h3>'+esc(c.tienda)+'</h3>'+(c.d?'<p class="dd">'+esc(c.d)+'</p>':'')+(c.tags?'<div class="tgs">'+c.tags.map(function(t){return '<span>'+esc(t)+'</span>'}).join('')+'</div>':'')+(c.kpi?'<div class="kpi"><b>'+esc(c.kpi)+'</b><span>'+esc(c.kpil)+'</span></div>':'')+(c.q?'<q>'+esc(c.q)+'</q>':'')+(c.who?'<div class="who">'+esc(c.who)+'</div>':'')+'</div></article>'}).join('');
     dots.innerHTML=list.map(function(){return '<i></i>'}).join('');
     var cards=[].slice.call(cf.children);
     function render(){var w=cards[0].offsetWidth,gap=Math.min(w*.62,innerWidth*.28);
@@ -697,7 +704,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
         c.style.transform='translateX('+(o*gap)+'px) translateZ('+(-a*140)+'px) rotateY('+(o*-24)+'deg)';
         c.style.opacity=a>2?0:1;c.style.zIndex=20-a;c.style.pointerEvents=a>2?'none':'auto';c.classList.toggle('side',a>0)});
       [].forEach.call(dots.children,function(x,k){x.classList.toggle('on',k===cur)});
-      mid.innerHTML='<b>'+esc(list[cur].tienda)+'</b><span>'+esc(list[cur].sector)+' · '+esc(list[cur].ciudad||'')+'</span>'}
+      mid.innerHTML='<b>'+esc(list[cur].tienda)+'</b><span>'+esc(list[cur].sector)+(list[cur].ciudad?' · '+esc(list[cur].ciudad):' · Proyecto conceptual')+'</span>'}
     function go(n){cur=Math.max(0,Math.min(list.length-1,n));render()}
     $('prev').onclick=function(){go(cur-1)};$('next').onclick=function(){go(cur+1)};
     cards.forEach(function(c){c.addEventListener('click',function(){var i=+c.getAttribute('data-i');if(i!==cur&&!moved)go(i)})});
