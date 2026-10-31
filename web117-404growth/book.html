@@ -951,6 +951,12 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     var done=function(j){go.disabled=false;go.firstChild.textContent='Confirmar llamada ';
       if(j&&j.ok){px('Schedule',{content_name:v.bud,content_category:v.sec,value:{b0:1,b1:2,b2:3,b3:4,b4:2}[v.bud]||1,currency:'EUR'});ok2(v,j);return}
       if(!(j&&j.ok))ev('bkerr',(j&&j.error)||'red',0);
+      if(!j||j.error==='plan'||j.error==='book'||j.error==='nocal'){   /* Calendly gratis no deja reservar desde fuera: se termina en Calendly, con la hora y los datos ya puestos */
+        var dt=new Date(pick),pt={};new Intl.DateTimeFormat('en-GB',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23',timeZoneName:'longOffset'}).formatToParts(dt).forEach(function(x){pt[x.type]=x.value});
+        var off=(pt.timeZoneName||'GMT+01:00').replace('GMT','')||'+00:00';if(off.length===3)off+=':00';var ymd=pt.year+'-'+pt.month+'-'+pt.day;
+        var CL='https://calendly.com/hola-404growth/tienda-online-404-growth/'+ymd+'T'+pt.hour+':'+pt.minute+':00'+off+'?month='+pt.year+'-'+pt.month+'&date='+ymd+'&name='+encodeURIComponent(v.name)+'&email='+encodeURIComponent(v.email)+
+          '&a1='+encodeURIComponent('Tienda: '+v.biz+' · Vende: '+(v.sec||'')+' · Inversión: '+(v.bud||'')+' · WhatsApp: '+tel)+'&utm_source=404growth.com&utm_medium=book';
+        ev('bkcal','',0);go.disabled=true;err.innerHTML='Último paso: te llevo a confirmar la hora en Calendly, con tus datos ya puestos…';err.hidden=false;setTimeout(function(){location.href=CL},900);return}
       if(j&&j.error==='taken'){SL=j.slots||SL;err.textContent='Esa hora se acaba de ocupar. Elige otra, por favor.';err.hidden=false;setTimeout(function(){$('bk-2').hidden=true;$('bk-1').hidden=false;drawDays()},1400);return}
       err.innerHTML='No se ha podido reservar. <a href="https://wa.me/34610594450?text='+encodeURIComponent('Hola Christian, quiero reservar la llamada para '+fL.format(new Date(pick)))+'" target="_blank" rel="noopener" style="color:var(--t2)">Escríbeme por WhatsApp</a> y te la dejo hecha.';err.hidden=false};
     if(!PROD){setTimeout(function(){done({ok:true,demo:1,join:'',gcal:'#',mailed:true})},700);return}
