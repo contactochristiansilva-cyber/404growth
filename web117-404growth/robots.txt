@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://404growth.com/sitemap.xml
+Sitemap: https://404growth.com/blog/sitemap.xml

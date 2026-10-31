@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Javier × 404 Growth · Traspaso de 404 Content</title>
+<meta name="description" content="La guía completa para que 404-content.com pase a ser tuyo: dominio, plataforma, clientes, pagos e IA, paso a paso y con todos los enlaces.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#141110">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="404 Growth">
+<meta property="og:title" content="Javier × 404 Growth · Traspaso de 404 Content">
+<meta property="og:description" content="Paso a paso y con todos los enlaces: dominio, plataforma, clientes, pagos e IA.">
+<meta property="og:image" content="https://404growth.com/p-javier--og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter Tight";src:url(/inter-tight.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+:root{--t:#BA6954;--td:#9C513E;--tl:#E9C3B7;--tbg:#F6E9E3;--cream:#F7F2EE;--ink:#141110;--ink2:#1C1817;--mute:#6E6764;--mute2:#9C9490;--line:#E6DFDA;--dline:#2E2826;--ok:#3E7D5C;--okbg:#E7F1EA;
+--f:"Inter Tight",-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;--m:ui-monospace,"SF Mono",Menlo,"JetBrains Mono",monospace;--g:clamp(16px,4vw,40px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font:400 17px/1.55 var(--f);letter-spacing:-.011em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 var(--g)}
+.mono{font-family:var(--m);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.04em;line-height:1.02;text-wrap:balance}
+p{margin:0}
+code,.code{font-family:var(--m);font-size:.86em}
+b,strong{font-weight:650}
+.w404{font-weight:800;letter-spacing:-.03em;white-space:nowrap}
+.w404 sup{font-size:.45em;margin-left:1px;vertical-align:.9em}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:50;background:rgba(20,17,16,.92);backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px);color:#fff;padding-top:env(safe-area-inset-top,0px)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:54px}
+.bar .w404{font-size:16px;color:#fff;text-decoration:none}
+.bar .prog{display:flex;align-items:center;gap:12px;min-width:0}
+.bar .prog span{font-family:var(--m);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--mute2);white-space:nowrap}
+.bar .meter{width:120px;height:4px;border-radius:9px;background:var(--dline);overflow:hidden;flex:none}
+.bar .meter i{display:block;height:100%;width:0;background:var(--t);transition:width .4s cubic-bezier(.2,.8,.2,1)}
+.read{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--t)}
+
+/* hero (collab) */
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:clamp(56px,10vh,110px) 0 clamp(48px,8vh,84px)}
+.hero:before{content:"";position:absolute;right:-20%;top:-30%;width:900px;height:900px;background:radial-gradient(closest-side,rgba(186,105,84,.28),transparent);pointer-events:none}
+.hero .wrap{position:relative;max-width:1080px}
+.kick{color:var(--tl)}
+.hero h1{margin-top:22px;font-size:clamp(34px,11.2vw,128px);letter-spacing:-.055em;line-height:.9}
+.hero h1 .ln{display:block}
+.hero h1 .x{color:var(--t);font-weight:500;margin-right:.08em}
+.hero h1 .w404 sup{font-size:.3em;vertical-align:1.75em}
+.hero .lead{margin-top:30px;max-width:620px;font-size:clamp(18px,2.1vw,22px);line-height:1.42;color:#D9D2CD;letter-spacing:-.015em}
+.hero .facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:34px;padding-top:22px;border-top:1px solid var(--dline);color:var(--mute2)}
+.hero .facts b{color:#fff;font-weight:600}
+
+/* sections */
+section{padding:clamp(52px,8vh,88px) 0;border-bottom:1px solid var(--line)}
+section.cream{background:var(--cream)}
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.sh h2{font-size:clamp(32px,5vw,50px)}
+.sh .mono{color:var(--mute)}
+.intro{font-size:19px;line-height:1.5;color:var(--mute);max-width:640px;margin:-8px 0 28px}
+
+/* overview cards */
+.phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ph{display:flex;flex-direction:column;gap:8px;padding:18px;border-radius:16px;background:#fff;border:1px solid var(--line);text-decoration:none;transition:border-color .2s,transform .2s}
+.ph:hover{border-color:var(--tl);transform:translateY(-2px)}
+.ph .n{font-family:var(--m);font-size:12px;color:var(--t)}
+.ph b{font-size:18px;letter-spacing:-.02em;line-height:1.15}
+.ph small{color:var(--mute);font-size:14px;line-height:1.4}
+.ph .c{margin-top:auto;font-family:var(--m);font-size:11.5px;color:var(--mute2);text-transform:uppercase;letter-spacing:.05em}
+.ph.done .c{color:var(--ok)}
+
+/* what you get */
+.files{display:grid;gap:0;border-top:1px solid var(--line)}
+.files div{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:6px 20px;padding:14px 0;border-bottom:1px solid var(--line)}
+.files code{font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+.files p{color:var(--mute);font-size:15.5px}
+
+/* to go through together */
+.together{margin-top:18px;padding:16px 18px;border-radius:16px;background:var(--ink);color:#fff;display:grid;gap:10px}
+.together .mono{color:var(--tl)}
+.together div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}
+.together a{display:flex;justify-content:space-between;gap:10px;color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:8px 0;border-bottom:1px solid var(--dline)}
+.together a i{font-style:normal;font-family:var(--m);font-size:11.5px;color:var(--mute2);text-transform:uppercase;white-space:nowrap;align-self:center}
+.together a:hover{color:var(--tl)}
+@media (max-width:560px){.together div{grid-template-columns:1fr}.spec div{grid-template-columns:1fr;gap:2px}}
+.spec{display:grid;border-top:1px solid var(--line);font-size:15px}
+.spec div{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:4px 14px;padding:9px 0;border-bottom:1px solid var(--line)}
+.spec div>span:first-child{color:var(--mute)}
+.spec code{overflow-wrap:anywhere}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+/* phase */
+.phase-h{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 18px;align-items:end;margin-bottom:28px}
+.phase-h .big{grid-row:span 2;font-size:clamp(64px,10vw,104px);font-weight:700;letter-spacing:-.06em;line-height:.8;color:var(--t)}
+.phase-h h2{font-size:clamp(30px,4.6vw,46px)}
+.phase-h p{color:var(--mute);font-size:16px}
+
+/* step */
+.steps{display:grid;gap:14px}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(18px,3vw,26px);scroll-margin-top:70px;transition:border-color .25s,background .25s}
+.cream .step{border-color:#E9E0D9}
+.step.done{border-color:#C9DDD0;background:#FBFDFB}
+.st-h{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:start}
+.num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font-weight:700;font-size:15px;letter-spacing:-.02em;flex:none;transition:background .25s}
+.step.done .num{background:var(--ok)}
+.st-h h3{font-size:clamp(20px,2.6vw,25px);letter-spacing:-.03em;line-height:1.15;padding-top:5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{font-family:var(--m);font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:99px;background:var(--cream);color:var(--mute)}
+.chip.you{background:var(--tbg);color:var(--td)}
+.chip.chris{background:#ECEAF6;color:#4C4880}
+.tick{appearance:none;border:1px solid var(--line);background:#fff;color:var(--mute);font:600 13px/1 var(--f);padding:9px 12px;border-radius:99px;cursor:pointer;display:inline-flex;gap:7px;align-items:center;white-space:nowrap;transition:all .2s}
+.tick:hover{border-color:var(--mute2);color:var(--ink)}
+.tick:before{content:"";width:14px;height:14px;border-radius:50%;border:1.5px solid currentColor;flex:none}
+.tick[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:#fff}
+.tick[aria-pressed="true"]:before{border:0;background:#fff no-repeat center/9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l3 3 5-6' fill='none' stroke='%233E7D5C' stroke-width='2'/%3E%3C/svg%3E")}
+.st-b{margin:16px 0 0 52px;display:grid;gap:12px;min-width:0}
+.st-b p,.st-b li{color:#3B3533;font-size:16.5px}
+.st-b ol,.st-b ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.st-b li::marker{color:var(--t);font-weight:700}
+.note{padding:12px 14px;border-radius:12px;background:var(--cream);color:#4A4341!important;font-size:15px!important}
+.note.warn{background:#FBEDE8;color:#7A3A2A!important}
+.note b{color:var(--ink)}
+
+/* links */
+.links{display:grid;gap:8px}
+.lk{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 14px;align-items:center;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;text-decoration:none;transition:border-color .2s,background .2s}
+.lk:hover{border-color:var(--t);background:#FFFCFA}
+.lk b{font-size:15.5px;letter-spacing:-.01em}
+.lk code{grid-column:1;font-size:12.5px;color:var(--mute);overflow-wrap:anywhere;word-break:break-word}
+.lk i{grid-row:1/span 2;grid-column:2;font-style:normal;color:var(--t);font-size:18px;transition:transform .2s}
+.lk:hover i{transform:translate(2px,-2px)}
+
+/* code */
+.cb{position:relative;background:var(--ink);color:#EDE6E1;border-radius:14px;overflow:hidden}
+.cb pre{margin:0;padding:16px 16px 16px;overflow-x:auto;font:13px/1.65 var(--m);white-space:pre}
+.cb pre .c{color:#8F8580}
+.cb .cp{position:absolute;top:8px;right:8px;appearance:none;border:1px solid var(--dline);background:var(--ink2);color:#fff;font:600 12px/1 var(--f);padding:7px 10px;border-radius:8px;cursor:pointer}
+.cb .cp:hover{border-color:var(--t)}
+.tpl{background:var(--cream);border-radius:14px;padding:16px;position:relative}
+.tpl pre{margin:0;white-space:pre-wrap;font:15px/1.55 var(--f);color:#3B3533;padding-right:70px}
+.tpl .cp{position:absolute;top:10px;right:10px;appearance:none;border:1px solid var(--line);background:#fff;color:var(--ink);font:600 12px/1 var(--f);padding:7px 10px;border-radius:8px;cursor:pointer}
+
+/* table-ish */
+.kv{display:grid;border-top:1px solid var(--line)}
+.kv div{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:4px 18px;padding:12px 0;border-bottom:1px solid var(--line);font-size:16px}
+.kv div>span:first-child{font-weight:600}
+.kv div>span:last-child{color:var(--mute)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff}
+.box h3{font-size:20px;letter-spacing:-.025em;margin-bottom:10px}
+.box ul{margin:0;padding-left:18px;display:grid;gap:6px;color:#3B3533;font-size:15.5px}
+.box.yes h3{color:var(--ok)}
+.box.no h3{color:var(--td)}
+
+/* faq */
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:16px 36px 16px 0;font-weight:600;font-size:17px;letter-spacing:-.015em;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:4px;top:12px;font-size:24px;font-weight:400;color:var(--t);transition:transform .25s}
+details[open] summary:after{transform:rotate(45deg)}
+details .a{padding:0 0 18px;color:#3B3533;font-size:16px;display:grid;gap:10px}
+
+/* all links */
+.all{columns:2;column-gap:28px}
+.all a{display:block;break-inside:avoid;padding:9px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:15px}
+.all a span{display:block;font-family:var(--m);font-size:12px;color:var(--mute);overflow-wrap:anywhere}
+.all a:hover span{color:var(--t)}
+
+footer{background:var(--ink);color:var(--mute2);padding:44px 0 calc(44px + env(safe-area-inset-bottom,0px));font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer .w404{color:#fff;font-size:18px}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;background:var(--ink);color:#fff;padding:10px 16px;border-radius:99px;font-size:14px;font-weight:600;transition:all .25s;pointer-events:none;z-index:80}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:820px){.phases{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.all{columns:1}}
+@media (max-width:560px){
+ body{font-size:16px}
+ .tpl pre{padding:30px 0 0}
+ .bar .meter{width:64px}
+ .st-h{grid-template-columns:auto minmax(0,1fr)}
+ .st-h .tick{grid-column:1/-1;justify-self:start;margin-left:52px}
+ .st-b{margin-left:0}
+ .files div,.kv div{grid-template-columns:1fr}
+ .phases{grid-template-columns:1fr}
+ .phase-h{grid-template-columns:1fr}.phase-h .big{grid-row:auto}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{.bar,.tick,.cp,.toast{display:none!important}.hero{background:#fff;color:#000}.hero .lead{color:#333}section{break-inside:avoid-page}}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="wrap">
+ <a class="w404" href="#top" aria-label="404 Growth, arriba">404/GROWTH<sup>®</sup></a>
+ <div class="prog" aria-live="polite"><span id="pt">0 de 17 pasos</span><div class="meter" aria-hidden="true"><i id="pm"></i></div></div>
+</div><div class="read" id="rd"></div></div>
+
+<header class="hero" id="top"><div class="wrap">
+ <p class="mono kick">Traspaso de 404-content.com · Privado</p>
+ <h1><span class="ln">Javier</span><span class="ln"><span class="x">×</span><span class="w404">404/GROWTH<sup>®</sup></span></span></h1>
+ <p class="lead">Todo lo que tienes que hacer para que <b style="color:#fff">404 Content</b> pase a ser tuyo: el dominio, la plataforma, los clientes, los pagos y la IA. En este orden, con cada enlace a mano.</p>
+ <div class="facts mono"><span><b>4</b> fases</span><span><b>17</b> pasos</span><span>Tu parte: <b>1–2 horas</b></span><span>Actualizado <b>29 oct 2026</b></span></div>
+</div></header>
+
+<section class="cream" id="resumen"><div class="wrap">
+ <div class="sh"><h2>De un vistazo</h2><span class="mono">Marca cada paso al terminarlo: se guarda en este navegador</span></div>
+ <div class="phases">
+  <a class="ph" href="#f1" data-ph="1"><span class="n">Fase 1</span><b>Prepara tus cuentas</b><small>Cloudflare, Stripe y Anthropic, a tu nombre.</small><span class="c">0/5</span></a>
+  <a class="ph" href="#f2" data-ph="2"><span class="n">Fase 2</span><b>El dominio</b><small>Chris te lo mueve y tú lo aceptas.</small><span class="c">0/3</span></a>
+  <a class="ph" href="#f3" data-ph="3"><span class="n">Fase 3</span><b>Publica</b><small>Un doble clic sube la web, la plataforma y los clientes.</small><span class="c">0/2</span></a>
+  <a class="ph" href="#f4" data-ph="4"><span class="n">Fase 4</span><b>Ponlo en marcha</b><small>Tu admin, tus claves, tus avisos y tus clientes.</small><span class="c">0/7</span></a>
+ </div>
+ <div class="together"><span class="mono">Para ver juntos con Chris</span><div>
+  <a href="#s15">Checkout: lo que ve el cliente al pagar <i>paso 15</i></a>
+  <a href="#s13">Botón directo a tu WhatsApp (soporte) <i>paso 13</i></a>
+  <a href="#s4">Branding del portal de clientes <i>paso 4</i></a>
+  <a href="#s5">Integraciones y alta en Claude <i>pasos 5 y 12</i></a>
+ </div></div>
+</div></section>
+
+<section id="recibes"><div class="wrap">
+ <div class="sh"><h2>Lo que te pasa Chris</h2></div>
+ <p class="intro">Una carpeta llamada <b style="color:var(--ink)">404content-traspaso</b>, por un canal privado (por ejemplo, un enlace de Drive solo para ti). Lleva datos de clientes: no la reenvíes y guárdala bien.</p>
+ <div class="files">
+  <div><code>2-publicar.command</code><p>Lo único que vas a abrir. Con doble clic (en Mac) lo publica todo en tu cuenta.</p></div>
+  <div><code>datos/404content-datos.sql</code><p>Los clientes de 404 Content y todo lo suyo. Se importa solo al publicar.</p></div>
+  <div><code>404content/</code><p>Lo que se publica: la plataforma (<code>worker.js</code>), su configuración (<code>wrangler.jsonc</code>) y la landing con sus imágenes (<code>public/</code>).</p></div>
+  <div><code>LEEME.md</code><p>Esta misma guía, en corto.</p></div>
+  <div><code>fuentes-404content.zip</code><p>El código fuente y sus pruebas, por si algún día un programador toca algo.</p></div>
+  <div><code>1-exportar-datos.command</code><p>Es de Chris (saca los datos de su cuenta). Tú no lo abras.</p></div>
+ </div>
+</div></section>
+
+<!-- ============ FASE 1 ============ -->
+<section class="cream" id="f1"><div class="wrap">
+ <div class="phase-h"><span class="big">01</span><h2>Prepara tus cuentas</h2><p>Hazlo antes de que Chris mueva nada. Unos 30–40 minutos.</p></div>
+ <div class="steps">
+
+ <article class="step" id="s1" data-s="1" data-ph="1"><div class="st-h"><span class="num">1</span><div><h3>Crea tu cuenta de Cloudflare y activa Workers Paid</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">10 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Cloudflare guarda el dominio, la plataforma, la base de datos y la IA que pasa a texto las notas de voz.</p>
+  <ol><li>Crea la cuenta (o entra si ya tienes una).</li><li>Activa el plan <b>Workers Paid</b>: 5 US$ al mes por cuenta. Con el gratuito, cada petición solo tiene 10 ms de CPU y los inicios de sesión pueden fallar.</li></ol>
+  <div class="links">
+   <a class="lk" href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener"><b>Crear cuenta de Cloudflare</b><code>https://dash.cloudflare.com/sign-up</code><i>↗</i></a>
+   <a class="lk" href="https://dash.cloudflare.com/?to=/:account/workers/plans" target="_blank" rel="noopener"><b>Planes de Workers (elige Workers Paid)</b><code>https://dash.cloudflare.com/?to=/:account/workers/plans</code><i>↗</i></a>
+   <a class="lk" href="https://developers.cloudflare.com/workers/platform/pricing/" target="_blank" rel="noopener"><b>Precios de Workers</b><code>https://developers.cloudflare.com/workers/platform/pricing/</code><i>↗</i></a>
+  </div>
+ </div></article>
+
+ <article class="step" id="s2" data-s="2" data-ph="1"><div class="st-h"><span class="num">2</span><div><h3>Copia tu Account ID y mándaselo a Chris</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">2 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Es el número de tu cuenta: Chris lo necesita para mandarte el dominio. No es una contraseña; se puede compartir.</p>
+  <ol><li>Abre Workers &amp; Pages.</li><li>En <b>Account details</b>, pulsa copiar junto a <b>Account ID</b>. También sirve buscar «Copy account ID» con Cmd/Ctrl + K.</li></ol>
+  <div class="links">
+   <a class="lk" href="https://dash.cloudflare.com/?to=/:account/workers-and-pages" target="_blank" rel="noopener"><b>Workers &amp; Pages (ahí está tu Account ID)</b><code>https://dash.cloudflare.com/?to=/:account/workers-and-pages</code><i>↗</i></a>
+   <a class="lk" href="https://developers.cloudflare.com/fundamentals/account/find-account-and-zone-ids/" target="_blank" rel="noopener"><b>Cómo encontrar el Account ID</b><code>https://developers.cloudflare.com/fundamentals/account/find-account-and-zone-ids/</code><i>↗</i></a>
+  </div>
+ </div></article>
+
+ <article class="step" id="s3" data-s="3" data-ph="1"><div class="st-h"><span class="num">3</span><div><h3>Añade 404-content.com a tu Cloudflare</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">5 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Cloudflare exige que el dominio exista ya en la cuenta que lo recibe. Se queda «pendiente» hasta que llegue; es normal.</p>
+  <ol><li>Abre <b>Domains</b> y pulsa <b>Onboard a domain</b>.</li><li>Escribe <code>404-content.com</code> y continúa.</li><li>Elige el plan <b>Free</b>. No hace falta crear ningún registro DNS para la web: se crean solos al publicar (fase 3).</li></ol>
+  <p class="note">Si Chris te pasa registros de correo (MX o TXT), añádelos también en DNS: al cambiar de cuenta no viajan.</p>
+  <div class="links">
+   <a class="lk" href="https://dash.cloudflare.com/?to=/:account/domains/overview" target="_blank" rel="noopener"><b>Domains → Onboard a domain</b><code>https://dash.cloudflare.com/?to=/:account/domains/overview</code><i>↗</i></a>
+   <a class="lk" href="https://developers.cloudflare.com/fundamentals/manage-domains/add-site/" target="_blank" rel="noopener"><b>Guía de Cloudflare: añadir un dominio</b><code>https://developers.cloudflare.com/fundamentals/manage-domains/add-site/</code><i>↗</i></a>
+  </div>
+ </div></article>
+
+ <article class="step" id="s4" data-s="4" data-ph="1"><div class="st-h"><span class="num">4</span><div><h3>Crea tu cuenta de Stripe y activa los pagos</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">15 min + revisión de Stripe</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Con tu Stripe cobras los planes de 404 Content (19, 29 y 49 € al mes, IVA incluido, con 7 días gratis). Empieza ya: Stripe revisa los datos de la empresa y puede tardar.</p>
+  <ol><li>Crea la cuenta y completa <b>Activar pagos</b> con tus datos fiscales y tu cuenta bancaria. En «Nombre público» y «Descriptor del extracto» pon <b>404 Content</b>: es lo que ven los clientes al pagar y en su banco.</li><li><b>Branding:</b> pon estos valores. Así el portal de clientes, las facturas y los emails de Stripe se ven igual que el pago de 404 Content.</li></ol>
+  <div class="spec">
+   <div><span>Icono</span><span><a href="https://404-content.com/logo-content.png" target="_blank" rel="noopener"><code>https://404-content.com/logo-content.png</code></a> (descárgalo y súbelo)</span></div>
+   <div><span>Logo</span><span><a href="https://404-content.com/logo-content-wide.png" target="_blank" rel="noopener"><code>https://404-content.com/logo-content-wide.png</code></a></span></div>
+   <div><span>Color de marca</span><span><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></div>
+   <div><span>Color de acento</span><span><i class="sw" style="background:#6E56FF"></i><code>#6E56FF</code> (el violeta de los botones)</span></div>
+  </div>
+  <ol start="3"><li><b>Portal de clientes</b> (obligatorio: la plataforma lo abre desde Ajustes → Facturación). Actívalo con: actualizar el método de pago, ver el historial de facturas y cancelar la suscripción «al final del periodo». En «Información de la empresa» pon las condiciones <code>https://404-content.com/condiciones</code> y la privacidad <code>https://404-content.com/privacidad</code>.</li><li><b>Emails a clientes:</b> activa los recibos de los pagos correctos.</li><li>La clave la copias en la fase 4 (paso 12).</li></ol>
+  <div class="links">
+   <a class="lk" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener"><b>Crear cuenta de Stripe</b><code>https://dashboard.stripe.com/register</code><i>↗</i></a>
+   <a class="lk" href="https://dashboard.stripe.com/settings/branding" target="_blank" rel="noopener"><b>Branding (nombre, logo y color)</b><code>https://dashboard.stripe.com/settings/branding</code><i>↗</i></a>
+   <a class="lk" href="https://dashboard.stripe.com/settings/billing/portal" target="_blank" rel="noopener"><b>Portal de clientes (actívalo)</b><code>https://dashboard.stripe.com/settings/billing/portal</code><i>↗</i></a>
+   <a class="lk" href="https://dashboard.stripe.com/settings/emails" target="_blank" rel="noopener"><b>Emails a clientes (recibos)</b><code>https://dashboard.stripe.com/settings/emails</code><i>↗</i></a>
+  </div>
+  <p class="note">No hace falta configurar webhooks: la plataforma consulta a Stripe por su cuenta.</p>
+ </div></article>
+
+ <article class="step" id="s5" data-s="5" data-ph="1"><div class="st-h"><span class="num">5</span><div><h3>Crea tu cuenta de Anthropic (la IA)</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">5 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Claude, de Anthropic, escribe las ideas, los guiones, los textos y lleva la entrevista con cada negocio. Pagas por uso.</p>
+  <ol><li>Entra en la consola de Claude y crea la cuenta con tu email (o con Google). Pon como organización el nombre de tu empresa.</li><li>En <b>Billing</b>, añade una tarjeta y compra créditos: es prepago, con 20–50 € empiezas. Si quieres, activa la recarga automática.</li><li>En <b>Limits</b>, pon un tope de gasto al mes para no llevarte sustos.</li><li>La clave la creas en la fase 4 (paso 12) y la llamas «404 Content».</li></ol>
+  <p class="note"><b>Integraciones de 404 Content:</b> solo tres. Stripe (cobros), Anthropic (la IA que escribe) y Workers AI de Cloudflare (pasa a texto las notas de voz; ya va incluida al publicar). Instagram, WhatsApp Business y Meta no hacen falta.</p>
+  <div class="links">
+   <a class="lk" href="https://platform.claude.com/" target="_blank" rel="noopener"><b>Consola de Claude (Anthropic)</b><code>https://platform.claude.com/</code><i>↗</i></a>
+   <a class="lk" href="https://platform.claude.com/settings/billing" target="_blank" rel="noopener"><b>Billing (saldo)</b><code>https://platform.claude.com/settings/billing</code><i>↗</i></a>
+   <a class="lk" href="https://platform.claude.com/settings/limits" target="_blank" rel="noopener"><b>Limits (tope de gasto)</b><code>https://platform.claude.com/settings/limits</code><i>↗</i></a>
+  </div>
+ </div></article>
+ </div>
+</div></section>
+
+<!-- ============ FASE 2 ============ -->
+<section id="f2"><div class="wrap">
+ <div class="phase-h"><span class="big">02</span><h2>El dominio</h2><p>Chris lo mueve; tú lo aceptas. Tienes 5 días desde que te llega el aviso.</p></div>
+ <div class="steps">
+
+ <article class="step" id="s6" data-s="6" data-ph="2"><div class="st-h"><span class="num">6</span><div><h3>Chris exporta los clientes y te pasa la carpeta</h3><div class="chips"><span class="chip chris">Chris</span><span class="chip">10 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Chris saca los datos justo antes de mover el dominio, para que no se pierda nada, y te dice cuántos clientes hay y cuántos pagan. Desde ese momento nadie toca 404 Content hasta que lo publiques tú.</p>
+  <p class="note"><b>Clientes que ya pagan.</b> Sus suscripciones están en el Stripe de Chris y no se pueden mover tal cual. Si Chris te dice «con suscripción: 0», no tienes que hacer nada. Si hay alguno, no canceléis nada: antes de seguir hay que preparar su paso a tu Stripe (mira «Si hay clientes de pago» al final). Mientras tanto siguen usando la plataforma con normalidad.</p>
+ </div></article>
+
+ <article class="step" id="s7" data-s="7" data-ph="2"><div class="st-h"><span class="num">7</span><div><h3>Chris inicia el traspaso del dominio a tu cuenta</h3><div class="chips"><span class="chip chris">Chris</span><span class="chip">5 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Desde su Cloudflare: Manage domains → 404-content.com → Configuration → Start, con tu Account ID. Antes apaga DNSSEC, que es un requisito.</p>
+  <div class="links">
+   <a class="lk" href="https://developers.cloudflare.com/registrar/account-options/inter-account-transfer/" target="_blank" rel="noopener"><b>Cómo funciona el traspaso entre cuentas</b><code>https://developers.cloudflare.com/registrar/account-options/inter-account-transfer/</code><i>↗</i></a>
+  </div>
+ </div></article>
+
+ <article class="step" id="s8" data-s="8" data-ph="2"><div class="st-h"><span class="num">8</span><div><h3>Acepta el dominio</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">2 min · antes de 5 días</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <ol><li>Te llega un email de Cloudflare con la solicitud.</li><li>Abre <b>Manage domains</b>, pulsa <b>View Actions</b> en el aviso de arriba y luego <b>Accept</b>.</li><li>Desde ese momento el dominio y su renovación anual son tuyos. Durante 30 días no se puede volver a traspasar; es normal.</li></ol>
+  <div class="links">
+   <a class="lk" href="https://dash.cloudflare.com/?to=/:account/registrar/domains" target="_blank" rel="noopener"><b>Manage domains → View Actions → Accept</b><code>https://dash.cloudflare.com/?to=/:account/registrar/domains</code><i>↗</i></a>
+  </div>
+  <p class="note warn"><b>Ve directo a la fase 3.</b> Entre que aceptas y publicas, 404-content.com no responde: cuanto antes publiques, mejor.</p>
+ </div></article>
+ </div>
+</div></section>
+
+<!-- ============ FASE 3 ============ -->
+<section class="cream" id="f3"><div class="wrap">
+ <div class="phase-h"><span class="big">03</span><h2>Publica</h2><p>Un doble clic. Unos 10 minutos, casi todos esperando.</p></div>
+ <div class="steps">
+
+ <article class="step" id="s9" data-s="9" data-ph="3"><div class="st-h"><span class="num">9</span><div><h3>Doble clic en 2-publicar.command</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">Mac · 10 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Con 404-content.com ya aceptado en tu cuenta, abre la carpeta y haz doble clic en <code>2-publicar.command</code>. Se abre una ventana negra que lo hace todo en este orden:</p>
+  <ol>
+   <li>La primera vez instala Node.js (en tu carpeta personal, sin tocar nada más).</li>
+   <li>Abre Cloudflare en el navegador: entra con <b>tu</b> cuenta y pulsa <b>Allow</b>.</li>
+   <li>Crea la base de datos <code>404content</code> e importa los clientes.</li>
+   <li>Sube la web y la plataforma a 404-content.com y www.404-content.com. Si pregunta si quieres continuar, escribe <code>y</code> y pulsa Intro.</li>
+   <li>Crea dos secretos: la clave que cifra tus claves (<code>P404_KEY</code>) y tu <b>código de alta</b> (<code>SETUP_CODE</code>).</li>
+  </ol>
+  <p class="note warn"><b>Apunta el código de alta</b> que sale al final: lo necesitas en el paso 11 y solo se enseña una vez.</p>
+  <p class="note">Si macOS dice que no puede abrirlo porque es de un desarrollador no identificado: clic derecho en el archivo → <b>Abrir</b> → Abrir. Se puede repetir sin miedo: lo que ya está hecho, lo salta.</p>
+ </div></article>
+
+ <article class="step" id="s10" data-s="10" data-ph="3"><div class="st-h"><span class="num">10</span><div><h3>Sin Mac: los mismos pasos a mano</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">Windows o Linux · solo si no usas el paso 9</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Instala Node.js 22 o superior. Después abre una terminal en la carpeta <code>404content</code> y ejecuta línea a línea:</p>
+  <div class="links"><a class="lk" href="https://nodejs.org/" target="_blank" rel="noopener"><b>Descargar Node.js (versión LTS)</b><code>https://nodejs.org/</code><i>↗</i></a></div>
+  <div class="cb"><button class="cp" type="button" data-copy="c1">Copiar</button><pre id="c1">npx wrangler@4 login
+npx wrangler@4 d1 create 404content
+<span class="c"># copia el "database_id" que sale y pégalo en wrangler.jsonc, donde pone PENDIENTE</span>
+npx wrangler@4 d1 execute 404content --remote -y --file ../datos/404content-datos.sql
+npx wrangler@4 deploy
+npx wrangler@4 secret put P404_KEY
+<span class="c"># pega una clave larga al azar (32 caracteres o más) y pulsa Intro</span>
+npx wrangler@4 secret put SETUP_CODE
+<span class="c"># escribe tu código de alta (12 caracteres o más) y pulsa Intro</span></pre></div>
+ </div></article>
+ </div>
+</div></section>
+
+<!-- ============ FASE 4 ============ -->
+<section id="f4"><div class="wrap">
+ <div class="phase-h"><span class="big">04</span><h2>Ponlo en marcha</h2><p>Tu admin, tus claves, tus avisos y tus clientes. Unos 30 minutos.</p></div>
+ <div class="steps">
+
+ <article class="step" id="s11" data-s="11" data-ph="4"><div class="st-h"><span class="num">11</span><div><h3>Crea tu administrador</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">2 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Escribe el código de alta, tu email y una contraseña de 12 caracteres o más. Solo se puede hacer una vez: después, ese enlace dice «Ya está hecho» y entras por el acceso de administración.</p>
+  <div class="links">
+   <a class="lk" href="https://404-content.com/admin/alta" target="_blank" rel="noopener"><b>Crear el administrador</b><code>https://404-content.com/admin/alta</code><i>↗</i></a>
+   <a class="lk" href="https://404-content.com/entrar?admin=1" target="_blank" rel="noopener"><b>Entrar al admin (a partir de ahora)</b><code>https://404-content.com/entrar?admin=1</code><i>↗</i></a>
+  </div>
+ </div></article>
+
+ <article class="step" id="s12" data-s="12" data-ph="4"><div class="st-h"><span class="num">12</span><div><h3>Admin → Claves: Stripe, Anthropic y tus datos legales</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">10 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <ol>
+   <li><b>Stripe:</b> copia tu clave secreta (<code>sk_live_…</code>) o crea una clave restringida (<code>rk_live_…</code>) y pégala en «Clave de Stripe».</li>
+   <li><b>IVA:</b> deja «21 % incluido en el precio» o elige «Stripe Tax» si lo tienes activado en Stripe.</li>
+   <li><b>Anthropic:</b> crea una clave (<code>sk-ant-…</code>) y pégala en «Clave de Anthropic». El modelo puedes dejarlo en blanco.</li>
+   <li><b>Tus datos legales:</b> titular, NIF o CIF, domicilio, email de contacto y, si quieres, teléfono. Salen en las condiciones, la privacidad y el aviso legal; mientras falten, esas páginas dicen «[pendiente]».</li>
+   <li>Pulsa <b>Guardar</b> y después <b>Comprobar conexiones</b>: Stripe y Anthropic tienen que decir «ok».</li>
+  </ol>
+  <div class="links">
+   <a class="lk" href="https://404-content.com/admin#claves" target="_blank" rel="noopener"><b>Admin → Claves</b><code>https://404-content.com/admin#claves</code><i>↗</i></a>
+   <a class="lk" href="https://dashboard.stripe.com/apikeys" target="_blank" rel="noopener"><b>Stripe → Claves de API</b><code>https://dashboard.stripe.com/apikeys</code><i>↗</i></a>
+   <a class="lk" href="https://dashboard.stripe.com/settings/tax" target="_blank" rel="noopener"><b>Stripe Tax (opcional)</b><code>https://dashboard.stripe.com/settings/tax</code><i>↗</i></a>
+   <a class="lk" href="https://platform.claude.com/settings/keys" target="_blank" rel="noopener"><b>Anthropic → API keys → Create key</b><code>https://platform.claude.com/settings/keys</code><i>↗</i></a>
+  </div>
+  <p class="note">Las claves se guardan cifradas y no salen nunca de la plataforma. No las mandes por chat ni por email a nadie.</p>
+ </div></article>
+
+ <article class="step" id="s13" data-s="13" data-ph="4"><div class="st-h"><span class="num">13</span><div><h3>Tu WhatsApp de soporte</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">1 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Los clientes tienen un botón directo a tu WhatsApp en su panel: en el ordenador, «Soporte por WhatsApp» abajo del menú; en el móvil, un botón verde redondo; y en Ajustes, «¿Necesitas ayuda?». El mensaje ya sale empezado con su negocio y su email, para que sepas quién te escribe.</p>
+  <ol><li>Admin → Claves → <b>Soporte</b> → «WhatsApp de soporte»: tu número con prefijo, por ejemplo <code>+34 600 000 000</code>.</li><li>Pulsa <b>Guardar</b>. Si lo dejas vacío, el botón no sale.</li></ol>
+  <div class="links">
+   <a class="lk" href="https://404-content.com/admin#claves" target="_blank" rel="noopener"><b>Admin → Claves → Soporte</b><code>https://404-content.com/admin#claves</code><i>↗</i></a>
+  </div>
+ </div></article>
+
+ <article class="step" id="s14" data-s="14" data-ph="4"><div class="st-h"><span class="num">14</span><div><h3>Activa los avisos en tu móvil</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">3 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Te llegan como notificación las altas, los pagos abiertos, los cambios de suscripción, la actividad de los clientes, las contraseñas olvidadas y los errores.</p>
+  <ol><li>Abre el admin en el móvil. En iPhone: Safari → Compartir → <b>Añadir a pantalla de inicio</b>, y ábrelo desde ese icono. En Android: menú ⋮ → <b>Instalar app</b>.</li><li>Ve a <b>Plataforma → Avisos en este móvil → Activar avisos</b> y acepta el permiso. Te llega una prueba al momento.</li><li>En la misma pantalla puedes cambiar tu contraseña.</li></ol>
+  <div class="links">
+   <a class="lk" href="https://404-content.com/admin#plataforma" target="_blank" rel="noopener"><b>Admin → Plataforma</b><code>https://404-content.com/admin#plataforma</code><i>↗</i></a>
+  </div>
+ </div></article>
+
+ <article class="step" id="s15" data-s="15" data-ph="4"><div class="st-h"><span class="num">15</span><div><h3>Prueba que todo funciona</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">10 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <ol>
+   <li>La landing carga y la prueba de las 3 ideas gratis responde.</li>
+   <li>En Plataforma, pulsa <b>Sacar enlace de la cuenta de prueba</b> y recorre el panel como lo ve un cliente. Ábrelo en una ventana privada para no cerrar tu sesión del admin.</li>
+   <li>El alta abre el pago de Stripe (el <b>checkout</b>). Ojo: Stripe es real. Haz un alta con tu propia tarjeta y cancélala desde Ajustes → Facturación antes del día 8: no se cobra nada.</li>
+   <li>Las páginas legales llevan ya tus datos, sin «[pendiente]».</li>
+  </ol>
+  <p><b>Lo que ve el cliente en el checkout:</b></p>
+  <div class="spec">
+   <div><span>Marca</span><span>Logo y colores de 404 Content (fondo blanco, botón violeta).</span></div>
+   <div><span>Plan</span><span>El que eligió: 19, 29 o 49 € al mes, IVA incluido.</span></div>
+   <div><span>Mensaje</span><span>«Hoy no se cobra nada. El día 8 se cobra el primer mes… Si cancelas antes desde tu panel, no pagas nada. Sin permanencia.»</span></div>
+   <div><span>Tarjeta</span><span>Su banco la verifica (3D Secure) al empezar, para que el día 8 se cobre sin volver a pedirla.</span></div>
+   <div><span>Facturación</span><span>Dirección obligatoria y NIF opcional, para sus facturas.</span></div>
+   <div><span>Descuentos</span><span>Casilla de código promocional: los cupones se crean en Stripe.</span></div>
+  </div>
+  <div class="links">
+   <a class="lk" href="https://404-content.com/" target="_blank" rel="noopener"><b>La landing</b><code>https://404-content.com/</code><i>↗</i></a>
+   <a class="lk" href="https://404-content.com/#prueba" target="_blank" rel="noopener"><b>Las 3 ideas gratis</b><code>https://404-content.com/#prueba</code><i>↗</i></a>
+   <a class="lk" href="https://404-content.com/empezar" target="_blank" rel="noopener"><b>Alta de clientes (7 días gratis)</b><code>https://404-content.com/empezar</code><i>↗</i></a>
+   <a class="lk" href="https://dashboard.stripe.com/coupons" target="_blank" rel="noopener"><b>Stripe → Cupones (códigos promocionales)</b><code>https://dashboard.stripe.com/coupons</code><i>↗</i></a>
+   <a class="lk" href="https://404-content.com/entrar" target="_blank" rel="noopener"><b>Acceso de clientes</b><code>https://404-content.com/entrar</code><i>↗</i></a>
+   <a class="lk" href="https://404-content.com/condiciones" target="_blank" rel="noopener"><b>Condiciones</b><code>https://404-content.com/condiciones</code><i>↗</i></a>
+   <a class="lk" href="https://404-content.com/privacidad" target="_blank" rel="noopener"><b>Privacidad</b><code>https://404-content.com/privacidad</code><i>↗</i></a>
+   <a class="lk" href="https://404-content.com/aviso-legal" target="_blank" rel="noopener"><b>Aviso legal</b><code>https://404-content.com/aviso-legal</code><i>↗</i></a>
+   <a class="lk" href="https://404-content.com/eliminar-datos" target="_blank" rel="noopener"><b>Eliminar mis datos</b><code>https://404-content.com/eliminar-datos</code><i>↗</i></a>
+  </div>
+ </div></article>
+
+ <article class="step" id="s16" data-s="16" data-ph="4"><div class="st-h"><span class="num">16</span><div><h3>Avisa a los clientes del cambio</h3><div class="chips"><span class="chip you">Tú</span><span class="chip">10 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Siguen entrando con el mismo email y la misma contraseña, con su calendario, sus textos y su negocio intactos. Pero cambia quién trata sus datos, así que conviene contárselo. Tienes sus emails en Admin → Clientes. Plantilla para copiar:</p>
+  <div class="tpl"><button class="cp" type="button" data-copy="t1">Copiar</button><pre id="t1">Asunto: 404 Content cambia de titular
+
+Hola:
+
+Desde el [fecha], 404 Content pasa a estar gestionado por [tu nombre o empresa] ([NIF]).
+
+Para ti no cambia nada: entras en https://404-content.com/entrar con el mismo email y la misma contraseña, y tu calendario, tus textos y la información de tu negocio siguen ahí.
+
+Solo una cosa: vuelve a activar los avisos del móvil en Ajustes → Avisos.
+
+Desde ahora somos los responsables de tus datos. Puedes leer la política de privacidad en https://404-content.com/privacidad y pedir verlos, corregirlos o borrarlos escribiendo a [tu email].
+
+Un saludo,
+[tu nombre]</pre></div>
+ </div></article>
+
+ <article class="step" id="s17" data-s="17" data-ph="4"><div class="st-h"><span class="num">17</span><div><h3>Chris retira lo suyo</h3><div class="chips"><span class="chip chris">Chris</span><span class="chip">5 min</span></div></div><button class="tick" type="button" aria-pressed="false">Hecho</button></div>
+ <div class="st-b">
+  <p>Cuando le confirmes que todo funciona, Chris quita 404-content.com de su plataforma y borra su copia de los datos. A partir de aquí, 404 Content es solo tuyo.</p>
+ </div></article>
+ </div>
+</div></section>
+
+<!-- ============ MÁS ============ -->
+<section class="cream" id="viaja"><div class="wrap">
+ <div class="sh"><h2>Qué viaja y qué no</h2></div>
+ <div class="two">
+  <div class="box yes"><h3>Viaja</h3><ul>
+   <li>Los clientes del plan 404 Content y sus negocios extra.</li>
+   <li>Sus usuarios y contraseñas (cifradas): entran igual que antes.</li>
+   <li>Perfil del negocio, entrevista con la IA, calendario, ideas, textos y logos.</li>
+   <li>La actividad de cada cliente y las altas a medias.</li>
+   <li>El embudo de la landing y los ajustes de IA e IVA.</li>
+  </ul></div>
+  <div class="box no"><h3>No viaja</h3><ul>
+   <li>Las sesiones abiertas: todos vuelven a entrar una vez.</li>
+   <li>Los móviles con avisos: cada cliente los reactiva.</li>
+   <li>Las claves de Stripe y Anthropic de Chris: pones las tuyas.</li>
+   <li>Las suscripciones de Stripe (mira abajo).</li>
+   <li>Nada de 404 Growth ni de otros servicios de Chris.</li>
+  </ul></div>
+ </div>
+</div></section>
+
+<section id="pagos"><div class="wrap">
+ <div class="sh"><h2>Si hay clientes de pago</h2></div>
+ <p class="intro">Solo si en el paso 6 Chris te dice que hay suscripciones activas.</p>
+ <div class="st-b" style="margin:0">
+  <ol>
+   <li>Antes de mover el dominio, decídselo a Chris: hay que preparar la plataforma para enlazar cada cuenta con su nueva suscripción en tu Stripe.</li>
+   <li>Stripe puede copiar los clientes y sus tarjetas de la cuenta de Chris a la tuya; lo pide Chris desde su cuenta.</li>
+   <li>Las suscripciones no se copian: se vuelven a crear en tu Stripe, con el mismo plan y la fecha del próximo cobro.</li>
+   <li>Hasta entonces, sus cuentas siguen funcionando y nadie queda en pausa por el cambio.</li>
+  </ol>
+  <div class="links">
+   <a class="lk" href="https://docs.stripe.com/get-started/data-migrations/pan-copy-self-serve" target="_blank" rel="noopener"><b>Stripe: copiar clientes y tarjetas entre cuentas</b><code>https://docs.stripe.com/get-started/data-migrations/pan-copy-self-serve</code><i>↗</i></a>
+   <a class="lk" href="https://support.stripe.com/questions/recreate-subscriptions-and-plans-after-moving-customer-data-to-a-new-stripe-account" target="_blank" rel="noopener"><b>Stripe: recrear suscripciones tras la copia</b><code>https://support.stripe.com/questions/recreate-subscriptions-and-plans-after-moving-customer-data-to-a-new-stripe-account</code><i>↗</i></a>
+  </div>
+ </div>
+</div></section>
+
+<section class="cream" id="costes"><div class="wrap">
+ <div class="sh"><h2>Lo que vas a pagar tú</h2></div>
+ <div class="kv">
+  <div><span>Cloudflare Workers Paid</span><span>5 US$ al mes por cuenta, más el uso de Workers AI y D1 por encima de lo incluido. Con pocos clientes suele ser casi nada.</span></div>
+  <div><span>Dominio 404-content.com</span><span>La renovación anual, desde tu cuenta de Cloudflare.</span></div>
+  <div><span>Anthropic</span><span>Por uso: cada calendario, guion y entrevista consume algo de saldo.</span></div>
+  <div><span>Stripe</span><span>Su comisión por cada cobro.</span></div>
+ </div>
+</div></section>
+
+<section id="dia"><div class="wrap">
+ <div class="sh"><h2>Tu día a día después</h2></div>
+ <div class="kv">
+  <div><span>Nuevo cliente</span><span>Te llega un aviso. Lo ves en Admin → Clientes, con su actividad.</span></div>
+  <div><span>Alguien olvida la contraseña</span><span>Te llega un aviso. En Admin → Clientes, abre su ficha, pulsa «Enlace para cambiar contraseña» y mándaselo tú (WhatsApp o email). Vale 48 horas.</span></div>
+  <div><span>Pago a medias</span><span>Admin → Altas: quien abrió el pago y no lo terminó. Llámale.</span></div>
+  <div><span>Cambiar algo de la web o la plataforma</span><span>El código está en <code>fuentes-404content.zip</code>. Tras un cambio, se vuelve a publicar con el mismo <code>2-publicar.command</code>.</span></div>
+ </div>
+</div></section>
+
+<section class="cream" id="ayuda"><div class="wrap">
+ <div class="sh"><h2>Si algo falla</h2></div>
+ <details><summary>2-publicar.command dice «No se pudo subir»</summary><div class="a"><p>Casi siempre es porque 404-content.com aún no está aceptado en tu cuenta (paso 8). Acéptalo, espera un par de minutos y vuelve a abrirlo: lo ya hecho lo salta.</p></div></details>
+ <details><summary>macOS no deja abrir el archivo</summary><div class="a"><p>Clic derecho → Abrir → Abrir. Si dice que no tienes permiso, abre Terminal y escribe <code>bash </code>, arrastra el archivo a la ventana y pulsa Intro.</p></div></details>
+ <details><summary>He perdido el código de alta</summary><div class="a"><p>Si aún no creaste el administrador, pon uno nuevo en la carpeta <code>404content</code> con:</p><div class="cb"><button class="cp" type="button" data-copy="c2">Copiar</button><pre id="c2">npx wrangler@4 secret put SETUP_CODE</pre></div></div></details>
+ <details><summary>Las páginas legales dicen «[pendiente]»</summary><div class="a"><p>Faltan tus datos legales en Admin → Claves (paso 12). Guárdalos y recarga.</p></div></details>
+ <details><summary>«Comprobar conexiones» no dice «ok»</summary><div class="a"><p>Revisa que la clave de Stripe empiece por <code>sk_live_</code> o <code>rk_live_</code> y que la de Anthropic empiece por <code>sk-ant-</code>, que tu cuenta de Anthropic tenga saldo y que Stripe haya terminado de activar tu cuenta.</p></div></details>
+ <details><summary>Un cliente no puede entrar</summary><div class="a"><p>Su email y su contraseña son los de siempre. Si no la recuerda, que pulse «He olvidado mi contraseña» en <code>404-content.com/entrar</code>: te llega un aviso y le mandas el enlace desde su ficha («Enlace para cambiar contraseña»).</p></div></details>
+</div></section>
+
+<section id="enlaces"><div class="wrap">
+ <div class="sh"><h2>Todos los enlaces</h2><span class="mono">En el orden en que los usas</span></div>
+ <div class="all">
+  <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener">Crear cuenta de Cloudflare<span>https://dash.cloudflare.com/sign-up</span></a>
+  <a href="https://dash.cloudflare.com/?to=/:account/workers/plans" target="_blank" rel="noopener">Planes de Workers<span>https://dash.cloudflare.com/?to=/:account/workers/plans</span></a>
+  <a href="https://dash.cloudflare.com/?to=/:account/workers-and-pages" target="_blank" rel="noopener">Workers &amp; Pages (Account ID)<span>https://dash.cloudflare.com/?to=/:account/workers-and-pages</span></a>
+  <a href="https://dash.cloudflare.com/?to=/:account/domains/overview" target="_blank" rel="noopener">Domains → Onboard a domain<span>https://dash.cloudflare.com/?to=/:account/domains/overview</span></a>
+  <a href="https://dashboard.stripe.com/register" target="_blank" rel="noopener">Crear cuenta de Stripe<span>https://dashboard.stripe.com/register</span></a>
+  <a href="https://dashboard.stripe.com/settings/branding" target="_blank" rel="noopener">Stripe → Branding<span>https://dashboard.stripe.com/settings/branding</span></a>
+  <a href="https://dashboard.stripe.com/settings/billing/portal" target="_blank" rel="noopener">Stripe → Portal de clientes<span>https://dashboard.stripe.com/settings/billing/portal</span></a>
+  <a href="https://dashboard.stripe.com/settings/emails" target="_blank" rel="noopener">Stripe → Emails a clientes<span>https://dashboard.stripe.com/settings/emails</span></a>
+  <a href="https://404-content.com/logo-content.png" target="_blank" rel="noopener">Logo para Stripe (icono)<span>https://404-content.com/logo-content.png</span></a>
+  <a href="https://404-content.com/logo-content-wide.png" target="_blank" rel="noopener">Logo para Stripe (ancho)<span>https://404-content.com/logo-content-wide.png</span></a>
+  <a href="https://platform.claude.com/" target="_blank" rel="noopener">Consola de Claude (Anthropic)<span>https://platform.claude.com/</span></a>
+  <a href="https://platform.claude.com/settings/billing" target="_blank" rel="noopener">Anthropic → Billing<span>https://platform.claude.com/settings/billing</span></a>
+  <a href="https://platform.claude.com/settings/limits" target="_blank" rel="noopener">Anthropic → Limits<span>https://platform.claude.com/settings/limits</span></a>
+  <a href="https://dash.cloudflare.com/?to=/:account/registrar/domains" target="_blank" rel="noopener">Manage domains (aceptar el traspaso)<span>https://dash.cloudflare.com/?to=/:account/registrar/domains</span></a>
+  <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js (solo sin Mac)<span>https://nodejs.org/</span></a>
+  <a href="https://404-content.com/admin/alta" target="_blank" rel="noopener">Crear el administrador<span>https://404-content.com/admin/alta</span></a>
+  <a href="https://404-content.com/entrar?admin=1" target="_blank" rel="noopener">Entrar al admin<span>https://404-content.com/entrar?admin=1</span></a>
+  <a href="https://404-content.com/admin#claves" target="_blank" rel="noopener">Admin → Claves<span>https://404-content.com/admin#claves</span></a>
+  <a href="https://dashboard.stripe.com/apikeys" target="_blank" rel="noopener">Stripe → Claves de API<span>https://dashboard.stripe.com/apikeys</span></a>
+  <a href="https://dashboard.stripe.com/settings/tax" target="_blank" rel="noopener">Stripe Tax<span>https://dashboard.stripe.com/settings/tax</span></a>
+  <a href="https://platform.claude.com/settings/keys" target="_blank" rel="noopener">Anthropic → API keys<span>https://platform.claude.com/settings/keys</span></a>
+  <a href="https://404-content.com/admin#claves" target="_blank" rel="noopener">Admin → Claves → Soporte (WhatsApp)<span>https://404-content.com/admin#claves</span></a>
+  <a href="https://404-content.com/admin#plataforma" target="_blank" rel="noopener">Admin → Plataforma (avisos)<span>https://404-content.com/admin#plataforma</span></a>
+  <a href="https://404-content.com/" target="_blank" rel="noopener">Landing<span>https://404-content.com/</span></a>
+  <a href="https://404-content.com/empezar" target="_blank" rel="noopener">Alta de clientes (checkout)<span>https://404-content.com/empezar</span></a>
+  <a href="https://dashboard.stripe.com/coupons" target="_blank" rel="noopener">Stripe → Cupones<span>https://dashboard.stripe.com/coupons</span></a>
+  <a href="https://404-content.com/entrar" target="_blank" rel="noopener">Acceso de clientes<span>https://404-content.com/entrar</span></a>
+  <a href="https://404-content.com/condiciones" target="_blank" rel="noopener">Condiciones<span>https://404-content.com/condiciones</span></a>
+  <a href="https://404-content.com/privacidad" target="_blank" rel="noopener">Privacidad<span>https://404-content.com/privacidad</span></a>
+  <a href="https://404-content.com/aviso-legal" target="_blank" rel="noopener">Aviso legal<span>https://404-content.com/aviso-legal</span></a>
+  <a href="https://404-content.com/eliminar-datos" target="_blank" rel="noopener">Eliminar mis datos<span>https://404-content.com/eliminar-datos</span></a>
+  <a href="https://developers.cloudflare.com/registrar/account-options/inter-account-transfer/" target="_blank" rel="noopener">Cloudflare: traspaso entre cuentas<span>https://developers.cloudflare.com/registrar/account-options/inter-account-transfer/</span></a>
+  <a href="https://docs.stripe.com/get-started/data-migrations/pan-copy-self-serve" target="_blank" rel="noopener">Stripe: copiar clientes entre cuentas<span>https://docs.stripe.com/get-started/data-migrations/pan-copy-self-serve</span></a>
+ </div>
+ <p class="note" style="margin-top:28px">Antes de cerrar el trato, firmad un contrato de compraventa que diga qué se vende (dominio, código, marca, datos de clientes y suscripciones), el precio y desde qué fecha. Que lo revise un abogado o un gestor: esta guía no es asesoramiento legal.</p>
+</div></section>
+
+<footer><div class="wrap"><span class="w404">404/GROWTH<sup>®</sup></span><span>Página privada para Javier · no la compartas</span></div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+var KEY="traspaso-javier-v2",TOTAL=17,done={};
+try{done=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){done={}}
+var steps=[].slice.call(document.querySelectorAll(".step"));
+function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
+function paint(){
+ var n=0,per={1:[0,0],2:[0,0],3:[0,0],4:[0,0]};
+ steps.forEach(function(s){var id=s.getAttribute("data-s"),ph=s.getAttribute("data-ph"),on=!!done[id];
+  s.classList.toggle("done",on);s.querySelector(".tick").setAttribute("aria-pressed",on?"true":"false");
+  per[ph][1]++;if(on){per[ph][0]++;n++}});
+ document.getElementById("pt").textContent=n+" de "+TOTAL+" pasos";
+ document.getElementById("pm").style.width=(n/TOTAL*100)+"%";
+ [].forEach.call(document.querySelectorAll(".ph"),function(c){var p=per[c.getAttribute("data-ph")];c.querySelector(".c").textContent=p[0]+"/"+p[1]+(p[0]===p[1]?" · listo":"");c.classList.toggle("done",p[0]===p[1])});
+}
+steps.forEach(function(s){s.querySelector(".tick").addEventListener("click",function(){var id=s.getAttribute("data-s");if(done[id])delete done[id];else done[id]=1;save();paint()})});
+paint();
+var t=document.getElementById("toast"),tt;
+function toast(m){t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(function(){t.classList.remove("on")},1800)}
+[].forEach.call(document.querySelectorAll("[data-copy]"),function(b){b.addEventListener("click",function(){
+ var el=document.getElementById(b.getAttribute("data-copy")),txt=el.innerText;
+ function sel(){var r=document.createRange();r.selectNodeContents(el);var w=getSelection();w.removeAllRanges();w.addRange(r);toast("Seleccionado: pulsa Copiar")}
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(function(){toast("Copiado")},sel);else sel()})});
+var rd=document.getElementById("rd");
+function onScroll(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;rd.style.width=(max>0?h.scrollTop/max*100:0)+"%"}
+addEventListener("scroll",onScroll,{passive:true});onScroll();
+})();
+</script>
+</body>
+</html>

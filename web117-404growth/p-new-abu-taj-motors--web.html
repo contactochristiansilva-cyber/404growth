@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New Abu Taj Motors · Your new website · 404 Growth</title><meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:IT;src:url(/inter-tight.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--bg:#141518;--ink:#edebe6;--mute:rgba(237,235,230,.62);--line:rgba(237,235,230,.14);--blue:#2f6bff}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.4 IT,system-ui,sans-serif}
+.bar{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:14px;padding:12px max(16px,3vw);background:rgba(20,21,24,.96);border-bottom:1px solid var(--line)}
+.bar b{font-weight:800;letter-spacing:-.03em}.bar span{color:var(--mute);font-size:13px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar a{color:var(--ink);text-decoration:none;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;padding:8px 14px;border:1px solid var(--line);border-radius:99px;white-space:nowrap}
+.bar a.on{background:var(--ink);color:var(--bg)}
+main{padding:clamp(16px,3vw,40px) max(16px,3vw) 60px}
+.frame{max-width:1400px;margin:0 auto 48px;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line),0 40px 80px -40px rgba(0,0,0,.6)}
+.frame .bw{display:flex;align-items:center;gap:6px;height:34px;padding:0 12px;background:#ecebe8;color:#55565b;font-size:12px}
+.frame .bw i{width:9px;height:9px;border-radius:50%;background:#c9c8c4}.frame .bw em{font-style:normal;margin-left:10px}
+.frame img{display:block;width:100%;height:auto}
+h2{max-width:1400px;margin:0 auto 14px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--mute)}
+.note{max-width:1400px;margin:0 auto;color:var(--mute);font-size:13px}
+</style></head><body>
+<div class="bar"><b>404/GROWTH®</b><span>Your new website · New Abu Taj Motors · Design with your stock on DubiCars, 5 Oct 2026</span><a href="#home" class="on">Home</a><a href="#car">Car page</a></div>
+<main>
+<h2 id="home">Home page</h2>
+<div class="frame"><div class="bw"><i></i><i></i><i></i><em>New Abu Taj Motors · new website</em></div><img src="/p-new-abu-taj-motors--web--home.webp" alt="The new home page of New Abu Taj Motors" width="1400" height="4900"></div>
+<h2 id="car">Car page</h2>
+<div class="frame"><div class="bw"><i></i><i></i><i></i><em>New Abu Taj Motors · new website</em></div><img src="/p-new-abu-taj-motors--web--car.webp" alt="A car page of the new website of New Abu Taj Motors" width="1400" height="3165" loading="lazy"></div>
+<p class="note">Design concept by 404 Growth with your real stock, photos and prices as listed on DubiCars on 5 October 2026. It is not your live website.</p>
+</main><script>
+/* c404 v3 (27 oct 2026): more detail for the visit counter below. No cookies, nothing kept on the device, never what is typed or copied. */
+(function(){
+  if(!/(^|\.)404growth\.com$/.test(location.hostname)||!window.fetch)return;
+  try{if(localStorage.getItem('c404int')&&!/[?&]interno=0/.test(location.search))return}catch(e){}
+  var EP='https://404growth-visits.contactochristiansilva.workers.dev',key='',Q=[],seq=0,T0=Date.now(),act=0,last=0,it=0,maxs=0,ms={},SS={},cur=null,curT=0,seenS={},ord=0,idle=false,playing=0,errs=0,rerrs=0,sz=0,sentNav=false,iv;
+  var rid=Math.random().toString(36).slice(2,8);
+  function sec(){return Math.round((Date.now()-T0)/1000)}
+  function ev(y,o){o=o||{};o.y=y;o.i=rid+(seq++).toString(36);o.t=sec();o.ot=Date.now();Q.push(o);if(Q.length>200)Q.shift();if(Q.length>=20)flush()}
+  function flush(beacon){if(!key||!Q.length)return;var b=JSON.stringify({k:key,ev:Q.splice(0,25)});
+    try{if(beacon&&navigator.sendBeacon&&navigator.sendBeacon(EP+'/e',b)){}else fetch(EP+'/e',{method:'POST',body:b,keepalive:true}).catch(function(){})}catch(e){}if(Q.length)setTimeout(function(){flush(beacon)},300)}
+  function txt(s,n){return String(s||'').replace(/\s+/g,' ').trim().slice(0,n||80)}
+  function vis(){return document.visibilityState==='visible'}
+  function poke(){last=Date.now();if(!it)it=1;if(idle){idle=false;ev('wake')}}
+  ['scroll','pointerdown','touchstart','keydown','wheel','mousemove'].forEach(function(e){addEventListener(e,poke,{capture:true,passive:true})});
+  var SECS=[].slice.call(document.querySelectorAll('section[id],header[id],footer[id],article[id],main[id]')).filter(function(s){return /^[A-Za-z][\w-]{0,39}$/.test(s.id)}).slice(0,40);
+  function head(s){var h=s.querySelector('h1,h2,h3');return txt((h&&h.textContent)||s.getAttribute('aria-label')||s.id,60)}
+  function current(){var y=innerHeight/2,best=null;for(var i=0;i<SECS.length;i++){var r=SECS[i].getBoundingClientRect();if(r.top<=y&&r.bottom>=y){if(!best||r.height<best.r.height)best={s:SECS[i],r:r}}}return best&&best.s}
+  function scrollPct(){var de=document.documentElement,h=Math.max(1,de.scrollHeight);return Math.min(100,Math.round((scrollY+innerHeight)/h*100))}
+  function tick(){var now=Date.now(),on=vis()&&(now-last<30000||playing>0);
+    if(vis()&&!on&&!idle&&last){idle=true;ev('idle')}
+    if(on){act+=1;var s=current();if(s){SS[s.id]=(SS[s.id]||0)+1;if(s!==cur){cur=s;curT=0}curT++;if(curT===1&&!seenS[s.id]){seenS[s.id]=1;ev('sin',{s:s.id,l:head(s),m:{ord:++ord}})}}}
+    var p=scrollPct();if(p>maxs){maxs=p;[25,50,75,90,100].forEach(function(m){if(p>=m&&!ms[m]){ms[m]=1;ev('scr',{n:m})}})}
+    if(++sz%5===0)flush()}
+  window.__c404x=function(){var o={sw:screen.width,sh:screen.height,vw:innerWidth,vh:innerHeight,dpr:window.devicePixelRatio||1,or:innerHeight>=innerWidth?'p':'l',tch:navigator.maxTouchPoints||0,it:it};
+    try{o.lang=(navigator.languages&&navigator.languages[0])||navigator.language||''}catch(e){}
+    try{o.tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
+    try{o.dk=matchMedia('(prefers-color-scheme: dark)').matches?1:0}catch(e){}
+    try{var r=document.referrer&&new URL(document.referrer);if(r&&r.host!==location.host)o.ref=r.host}catch(e){}
+    try{var n=performance.getEntriesByType('navigation')[0];if(n)o.nav=n.type}catch(e){}
+    o.wd=navigator.webdriver?1:0;o.hl=(/HeadlessChrome/.test(navigator.userAgent)||(navigator.languages&&navigator.languages.length===0))?1:0;return o};
+  window.__c404p=function(){var o={a:act,sd:maxs},n=0,ss={};for(var k in SS){if(n++>=40)break;ss[k]=SS[k]}o.ss=ss;return o};
+  window.__c404on=function(k){if(!k||key)return;key=k;flush()};
+  iv=setInterval(tick,1000);
+  document.addEventListener('visibilitychange',function(){ev(vis()?'vis':'hid');if(!vis()){navTimes();flush(true)}});
+  addEventListener('pagehide',function(){ev('end',{n:act});navTimes();flush(true)});
+  document.addEventListener('toggle',function(e){var d=e.target;if(d&&d.tagName==='DETAILS'){var s=d.querySelector('summary');ev(d.open?'exp':'col',{l:txt(s&&s.textContent,60),s:(d.closest('[id]')||{}).id||''})}},true);
+  document.addEventListener('click',function(e){try{var el=e.target&&e.target.closest&&e.target.closest('[role="tab"],a[href],[data-share]');if(!el)return;
+    var sc=el.closest('section[id],header[id],footer[id],article[id]'),sid=sc?sc.id:'';
+    if(el.getAttribute('role')==='tab')ev('tab',{l:txt(el.textContent,60),s:sid});
+    else if(el.hasAttribute('data-share'))ev('share',{s:sid,m:{ch:txt(el.getAttribute('data-share'),20)}});
+    else{var h=el.getAttribute('href')||'';if(el.hasAttribute('download')||/\.(pdf|zip|docx?|xlsx?|pptx?|key|numbers)(\?|#|$)/i.test(h)){var f=h.split(/[?#]/)[0].split('/').pop();ev('dl',{s:sid,m:{file:txt(decodeURIComponent(f),80)}})}}}catch(x){}},true);
+  document.addEventListener('copy',function(){var n=0;try{n=String(getSelection()).length}catch(e){}ev('copy',{m:{len:n}})},true);
+  addEventListener('beforeprint',function(){ev('print')});
+  document.addEventListener('fullscreenchange',function(){if(document.fullscreenElement)ev('fs')});
+  var forms={};document.addEventListener('focusin',function(e){var f=e.target&&e.target.form;if(f){var id=txt(f.id||f.getAttribute('name')||'form',30);if(!forms[id]){forms[id]=1;ev('form0',{m:{form:id}})}}},true);
+  document.addEventListener('submit',function(e){var f=e.target;ev('form1',{m:{form:txt(f.id||f.getAttribute('name')||'form',30)}})},true);
+  try{if(navigator.share){var sh=navigator.share.bind(navigator);navigator.share=function(d){ev('share',{m:{ch:'sistema'}});return sh(d)}}}catch(e){}
+  var orient=innerHeight>=innerWidth;addEventListener('resize',function(){var o=innerHeight>=innerWidth;if(o!==orient&&sz<9999){orient=o;ev('resize',{m:{or:o?'vertical':'horizontal'}})}});
+  function vname(v){return txt(v.getAttribute('aria-label')||v.title||(v.currentSrc||v.src||'').split('/').pop().split('?')[0]||'vídeo',60)}
+  document.addEventListener('play',function(e){var v=e.target;if(v.tagName!=='VIDEO'||v.muted&&v.autoplay&&v.loop)return;playing++;v.__q=v.__q||{};var sc=v.closest('[id]');ev('vplay',{l:vname(v),s:sc?sc.id:''})},true);
+  document.addEventListener('pause',function(e){var v=e.target;if(v.tagName!=='VIDEO'||v.muted&&v.autoplay&&v.loop)return;playing=Math.max(0,playing-1);if(!v.ended)ev('vpause',{l:vname(v),n:Math.round(v.currentTime/Math.max(1,v.duration||1)*100)})},true);
+  document.addEventListener('timeupdate',function(e){var v=e.target;if(v.tagName!=='VIDEO'||!v.duration||v.muted&&v.autoplay&&v.loop)return;var p=v.currentTime/v.duration*100;v.__q=v.__q||{};[25,50,75].forEach(function(m){if(p>=m&&!v.__q[m]){v.__q[m]=1;ev('vprog',{l:vname(v),n:m})}})},true);
+  document.addEventListener('ended',function(e){var v=e.target;if(v.tagName!=='VIDEO'||v.muted&&v.autoplay&&v.loop)return;ev('vend',{l:vname(v)})},true);
+  addEventListener('error',function(e){try{var t=e.target;if(t&&t!==window&&t.tagName){if(rerrs++<10){var u=t.currentSrc||t.src||t.href||'';ev('rerr',{m:{tag:t.tagName.toLowerCase(),res:txt(u.split('?')[0].split('/').pop(),80)}})}}else if(errs++<5)ev('err',{m:{msg:txt(e.message,120),src:txt(String(e.filename||'').split('?')[0].split('/').pop(),60),line:e.lineno||0}})}catch(x){}},true);
+  addEventListener('unhandledrejection',function(e){if(errs++<5)ev('err',{m:{msg:txt(e.reason&&(e.reason.message||e.reason),120)}})});
+  var lcp=0,cls=0;try{new PerformanceObserver(function(l){l.getEntries().forEach(function(x){lcp=Math.round(x.startTime)})}).observe({type:'largest-contentful-paint',buffered:true})}catch(e){}
+  try{new PerformanceObserver(function(l){l.getEntries().forEach(function(x){if(!x.hadRecentInput)cls+=x.value})}).observe({type:'layout-shift',buffered:true})}catch(e){}
+  function navTimes(){if(sentNav)return;sentNav=true;var m={};try{var n=performance.getEntriesByType('navigation')[0];if(n){m.ttfb=Math.round(n.responseStart);m.dcl=Math.round(n.domContentLoadedEventEnd);m.load=Math.round(n.loadEventEnd)}}catch(e){}
+    if(lcp)m.lcp=lcp;m.cls=Math.round(cls*1000)/1000;try{var c=navigator.connection;if(c){if(c.effectiveType)m.net=c.effectiveType;if(c.saveData)m.save='sí'}}catch(e){}ev('nav',{m:m})}
+  addEventListener('load',function(){setTimeout(navTimes,6000)});
+})();
+</script>
+<script>
+/* visit counter (22 oct 2026): tells our own counter (404growth-visits) that this page was opened, for how long it was read and how far it got.
+   No cookies, nothing stored on the visitor's device, live site only. Our own devices opt out once with ?interno=1. */
+(function(){
+  var slug="new-abu-taj-motors--web",EP='https://404growth-visits.contactochristiansilva.workers.dev',EV=['scroll','pointerdown','touchstart','keydown'],PARTS=[];
+  try{var q=/[?&]interno=([01])/.exec(location.search);if(q){if(q[1]==='1')localStorage.setItem('c404int','1');else localStorage.removeItem('c404int')}if(localStorage.getItem('c404int'))return}catch(e){}
+  if(!slug||!/(^|\.)404growth\.com$/.test(location.hostname)||navigator.webdriver||!window.fetch)return;
+  var key=null,seen=0,since=0,depth=0,sent='',n=0,iv,gone=false,CQ=[];
+  function clock(){var now=Date.now();if(since)seen+=now-since;since=document.visibilityState==='visible'?now:0}
+  function push(){clock();if(!key)return;var b=JSON.stringify(Object.assign({k:key,t:Math.round(seen/1000),d:depth,e:gone?1:0},window.__c404p?__c404p():{}));if(b===sent)return;sent=b;
+    try{if(!(navigator.sendBeacon&&navigator.sendBeacon(EP+'/p',b)))fetch(EP+'/p',{method:'POST',body:b,keepalive:true})}catch(e){}}
+  function open(){if(key!==null)return;key='';EV.forEach(function(e){removeEventListener(e,open,true)});
+    fetch(EP+'/h',{method:'POST',body:JSON.stringify({s:slug,x:window.__c404x?__c404x():{}}),keepalive:true}).then(function(r){return r.json()}).then(function(j){key=(j&&j.k)||'';push();cflush();if(key&&window.__c404on)__c404on(key)}).catch(function(){})}
+  EV.forEach(function(e){addEventListener(e,open,{capture:true,passive:true})});clock();
+  iv=setInterval(function(){clock();if(seen>=2800)open();if(seen>=1800000){push();clearInterval(iv)}else if(key&&++n%15===0)push()},1000);
+  document.addEventListener('visibilitychange',function(){gone=document.visibilityState==='hidden';push()});addEventListener('pagehide',function(){gone=true;push()});addEventListener('pageshow',function(e){if(e.persisted){gone=false;push()}});
+    /* c404 v2: the buttons and links tapped, with the part of the page; nothing typed is ever read */
+    function cflush(){if(!key||!CQ.length)return;var b=JSON.stringify({k:key,c:CQ.splice(0,20)});try{if(!(navigator.sendBeacon&&navigator.sendBeacon(EP+'/c',b)))fetch(EP+'/c',{method:'POST',body:b,keepalive:true})}catch(e){}if(CQ.length)setTimeout(cflush,400)}
+    function ctx(s){return String(s||'').replace(/\s+/g,' ').trim()}
+    document.addEventListener('click',function(ev){try{
+      var el=ev.target&&ev.target.closest&&ev.target.closest('a,button,summary,label,select,input,textarea,video,[role="button"],[role="tab"],[data-go],[onclick]');if(!el)return;
+      var sec=el.closest('section[id],header[id],footer[id],nav[id],aside[id],main[id],article[id],#sheet')||el.closest('section,header,footer,article'),hd=sec&&sec.querySelector('h1,h2,h3'),sh=ctx(hd&&hd.textContent);
+      if(!sh){var hs=document.querySelectorAll('h1,h2,h3');for(var i=hs.length-1;i>=0;i--){if(hs[i].compareDocumentPosition(el)&4){sh=ctx(hs[i].textContent);break}}}
+      var fld=/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName),w=ctx(el.getAttribute('aria-label')||(fld?(el.labels&&el.labels[0]&&el.labels[0].innerText)||el.getAttribute('placeholder')||el.name:el.innerText));
+      if(!w){var im=el.querySelector&&el.querySelector('img');w=ctx((im&&im.alt)||el.title||'')}
+      var h='',a=el.closest('a[href]');if(a){var u=new URL(a.getAttribute('href'),location.href);h=u.protocol==='mailto:'?'mailto:':u.protocol==='tel:'?'tel:':u.host===location.host?u.pathname+u.hash:u.host+(/wa\.me|whatsapp/.test(u.host)?'':u.pathname)}
+      var de=document.documentElement;CQ.push({t:Math.round((seen+(since?Date.now()-since:0))/1000),s:(sec&&sec.id)||'',sh:sh.slice(0,80),w:w.slice(0,90),h:h.slice(0,120),x:Math.round(ev.clientX/Math.max(1,innerWidth)*100),y:Math.round((ev.pageY||0)/Math.max(1,de.scrollHeight)*100)});
+      if(CQ.length>40)CQ.shift();if(key)cflush();else open()}catch(e){}},true);
+
+  if(PARTS.length&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){depth=Math.max(depth,+x.target.getAttribute('data-cd'));io.unobserve(x.target);push()}})},{rootMargin:'0px 0px -35% 0px'});
+    PARTS.forEach(function(p){var el=document.getElementById(p[0]);if(el){el.setAttribute('data-cd',p[1]);io.observe(el)}})}
+})();
+</script>
+</body></html>

@@ -1,0 +1,29 @@
+// 404 Growth · el Worker «404growth-admin» (v35, 31 oct 2026: rutas /blog del blog público; v30, 27 oct 2026: inteligencia de propuestas; v29 avisos de la plataforma; v28 la ruta /l/*). Configuración de Cloudflare del
+// 22 oct 2026: rutas /admin, /portal y /nl de 404growth.com y www, aviso cada minuto, bases D1 «404growth-admin» (DB) y
+// «404growth-visits» (VIS). El secreto KIT_KEY ya está en Cloudflare y se queda como está (subir no lo toca).
+{
+  "name": "404growth-admin",
+  "account_id": "d59d5d5e6d9dba65f2a977ef91ab2840",
+  "main": "worker.js",
+  "compatibility_date": "2025-09-01",
+  "no_bundle": true,
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "www.404growth.com/l/*", "zone_name": "404growth.com" },
+    { "pattern": "404growth.com/l/*", "zone_name": "404growth.com" },
+    { "pattern": "www.404growth.com/nl*", "zone_name": "404growth.com" },
+    { "pattern": "www.404growth.com/portal*", "zone_name": "404growth.com" },
+    { "pattern": "www.404growth.com/admin*", "zone_name": "404growth.com" },
+    { "pattern": "404growth.com/nl*", "zone_name": "404growth.com" },
+    { "pattern": "404growth.com/portal*", "zone_name": "404growth.com" },
+    { "pattern": "404growth.com/admin*", "zone_name": "404growth.com" },
+    { "pattern": "404growth.com/blog*", "zone_name": "404growth.com" },
+    { "pattern": "www.404growth.com/blog*", "zone_name": "404growth.com" }
+  ],
+  "triggers": { "crons": ["*/1 * * * *"] },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "404growth-admin", "database_id": "e5f69c5d-afe8-42f0-a0db-a4cb096df0c3" },
+    { "binding": "VIS", "database_name": "404growth-visits", "database_id": "53b69260-1e39-4cf4-845a-354b2fc003a9" }
+  ]
+}

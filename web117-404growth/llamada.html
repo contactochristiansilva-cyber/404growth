@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Reserva tu llamada | 404 Growth</title>
+<meta name="description" content="Contenido cada mes, web, asistente de IA y CRM en un solo paquete para negocios que viven de citas. Si en 3 meses no doblamos tu tasa de conversión, trabajamos gratis hasta conseguirlo.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://404growth.com/llamada">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="404 Growth">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://404growth.com/llamada">
+<meta property="og:title" content="Más clientes que pagan, sin estar pegado al móvil · 404 Growth">
+<meta property="og:description" content="Contenido, web, asistente de IA y CRM en un solo paquete. Reserva 30 minutos con Christian.">
+<meta property="og:image" content="https://404growth.com/og-404.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#EDEBE6">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://calendly.com">
+<link rel="preconnect" href="https://assets.calendly.com" crossorigin>
+<style>
+/* 404 Growth · /llamada (v2, 25 oct 2026): the landing of the Meta ads, centred like a letter.
+   Hero → VSL → the pain → what it looks like after → proof → how it works → for whom → who is behind → FAQ → the form and the agenda → confirmation.
+   One action everywhere: «Reservar mi llamada», which goes to the qualification form; the agenda opens after it, already filled in.
+   One page for the four niches (?n=dental|estetica|inmo|gym). Same system as the home: paper, ink, the blue dot, pills. */
+@font-face{font-family:"Inter Tight";src:url(/inter-tight.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+:root{
+  --paper:#EDEBE6; --paper-2:#E3E0D9; --card:#F7F6F2; --ink:#1B1B1D; --ink-2:#47464B; --mute:#5C5A5F; --line:rgba(27,27,29,.18);
+  --blue:#2F6BFF; --blue-2:#1F55E0; --night:#141518; --night-2:#1D1F23; --night-3:#2A2C31; --mist:#B9C8FF; --soft:#C9CBD3;
+  --g:clamp(16px,5vw,64px); --text:680px; --wide:1060px;
+  --font:"Inter Tight",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.55 var(--font);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-50%;z-index:100;pointer-events:none;opacity:.3;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.dot{display:inline-block;width:.5em;height:.5em;border-radius:50%;background:var(--blue);vertical-align:.05em;margin-left:.06em}
+.label{font-size:12.5px;line-height:1.25;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+
+/* layout: everything centred; text in a letter-width column, pictures and grids a little wider */
+.sec{--pt:clamp(76px,11vh,124px);--pb:clamp(76px,11vh,124px);position:relative;padding:var(--pt) var(--g) var(--pb);text-align:center}
+/* the thread: one line down the middle of the page joins every section, from each action to the next title (a blue node) */
+.sec::before,.sec::after{content:"";position:absolute;left:50%;width:1px;margin-left:-.5px;background:currentColor;opacity:.3;pointer-events:none}
+.sec::before{top:0;height:calc(var(--pt) + 4px)}
+.sec::after{bottom:0;height:calc(var(--pb) - 20px)}
+.hero::before,#pd::after{display:none}
+.kick{position:relative;z-index:1}
+.kick::before{content:"";display:block;width:10px;height:10px;border-radius:50%;background:var(--blue);margin:0 auto 14px;box-shadow:0 0 0 5px var(--paper)}
+.alt .kick::before{box-shadow:0 0 0 5px var(--paper-2)}
+.night .kick::before{box-shadow:0 0 0 5px var(--night)}
+.kick .num{display:inline-grid;place-items:center;min-width:28px;height:22px;padding:0 6px;margin-right:8px;border-radius:99px;background:var(--ink);color:var(--paper);font-size:11.5px;letter-spacing:0}
+.night .kick .num{background:var(--paper);color:var(--night)}
+.meta{margin:18px 0 0;color:var(--ink-2)}
+.fine{margin:22px auto 0;max-width:60ch;font-size:14.5px;color:var(--mute)}
+.night .fine{color:var(--soft)}
+.col{max-width:var(--text);margin-inline:auto}
+.wide{max-width:var(--wide);margin-inline:auto}
+.letter{text-align:left}
+.letter p{margin:0 0 1.05em;font-size:clamp(18px,1.35vw,20.5px);line-height:1.58}
+.letter p:last-child{margin-bottom:0}
+.letter strong{font-weight:700}
+.h2{margin:0 auto;font-size:clamp(32px,4.6vw,60px);line-height:1;font-weight:700;letter-spacing:-.04em;max-width:17ch;text-wrap:balance}
+.kick{margin:0 0 18px;color:var(--mute)}
+.lede{margin:22px auto 0;font-size:clamp(18px,1.4vw,21px);line-height:1.45;color:var(--ink-2);max-width:36ch;text-wrap:pretty}
+.night{background:var(--night);color:var(--paper)}
+.night .kick{color:var(--mist)}
+.night .lede{color:var(--soft)}
+.alt{background:var(--paper-2)}
+
+/* the one action, everywhere */
+.cta{margin-top:clamp(36px,5vh,52px);display:flex;flex-direction:column;align-items:center;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:60px;padding:0 34px;border:0;border-radius:99px;background:var(--blue);color:#fff;
+  font-size:15px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s;box-shadow:0 2px 0 rgba(20,21,24,.12)}
+.btn:hover{background:var(--blue-2)}
+.btn:active{transform:scale(.98)}
+.btn svg{width:16px;height:16px;flex:none}
+.cta small{font-size:14px;color:var(--mute);line-height:1.35}
+.night .cta small{color:var(--soft)}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 16px;border:1px solid currentColor;border-radius:99px;background:transparent;
+  font-size:12.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.pill:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* header */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:calc(12px + env(safe-area-inset-top,0px)) var(--g) 12px;transition:background .3s,color .3s}
+.top.solid{background:rgba(237,235,230,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.top.on-night{color:var(--paper)}
+.top.on-night.solid{background:rgba(20,21,24,.86)}
+.top.on-night .pill:hover{background:var(--paper);color:var(--night);border-color:var(--paper)}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.02em;white-space:nowrap;line-height:1}
+.logo sup{font-size:.5em;font-weight:700;vertical-align:.9em;margin-left:1px}
+
+/* 01 · hero */
+.hero{--pt:calc(92px + env(safe-area-inset-top,0px));padding-top:var(--pt)}
+.hero .kick{margin-bottom:12px}
+.hero .kick::before{display:none}
+.hero h1{margin:0 auto;font-size:clamp(40px,5.2vw,80px);line-height:1;font-weight:700;letter-spacing:-.045em;max-width:22ch;text-wrap:balance}
+.hero .sub{margin:30px auto 0;max-width:40ch;font-size:clamp(18px,1.5vw,22px);line-height:1.45;color:var(--ink-2);text-wrap:pretty}
+.promise{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:10px 18px;border:1px solid var(--line);border-radius:99px;font-size:15px;line-height:1.3;background:rgba(255,255,255,.35);text-align:left}
+.promise b{font-weight:700}
+.promise i{flex:none;width:9px;height:9px;border-radius:50%;background:var(--blue)}
+
+/* 02 · the VSL */
+.vsl{position:relative;margin:clamp(22px,3.4vh,34px) auto 0;width:100%;max-width:min(var(--wide),calc((100svh - 330px) * 16 / 9));border-radius:10px;overflow:hidden;background:var(--night);box-shadow:0 30px 70px -40px rgba(20,21,24,.7)}
+.vsl video{width:100%;aspect-ratio:var(--ar,16/9);background:#000;object-fit:contain}
+.slot{position:relative;width:100%;aspect-ratio:16/9;display:grid;place-items:center;border:0;padding:0;background:var(--night);color:var(--paper);cursor:pointer}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%;filter:grayscale(1) brightness(.5)}
+.slot .play{position:relative;width:clamp(68px,9vw,104px);height:clamp(68px,9vw,104px);border-radius:50%;background:var(--blue);display:grid;place-items:center;transition:transform .25s}
+.slot:hover .play{transform:scale(1.06)}
+.slot .play svg{width:34%;height:34%;margin-left:6%}
+.slot .cap{position:absolute;left:0;right:0;bottom:0;padding:18px 22px;display:flex;justify-content:space-between;gap:12px;font-size:14px;background:linear-gradient(0deg,rgba(20,21,24,.85),rgba(20,21,24,0));text-align:left}
+.slot .cap b{font-weight:600}
+.vsl-msg{margin:12px 0 0;font-size:15px;color:var(--ink-2)}
+
+/* 03 · the pain and 04 · after */
+.scene{margin:0 auto 34px;font-size:clamp(26px,3.4vw,42px);line-height:1.08;font-weight:700;letter-spacing:-.03em;max-width:20ch;text-wrap:balance}
+.night .letter p{color:#D9DAE0}
+.night .letter strong{color:#fff}
+.ticks{list-style:none;margin:30px 0 0;padding:0;text-align:left;border-top:1px solid rgba(255,255,255,.16)}
+.ticks li{position:relative;padding:15px 0 15px 34px;border-bottom:1px solid rgba(255,255,255,.16);font-size:clamp(17px,1.3vw,19px);line-height:1.4}
+.ticks li::before{content:"";position:absolute;left:4px;top:1.18em;width:14px;height:2px;background:#FF6B5E}
+.when{list-style:none;margin:8px 0 34px;padding:0;text-align:left}
+.when li{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:20px;padding:12px 0;border-bottom:1px solid var(--line);font-size:clamp(17px,1.3vw,19px);line-height:1.4}
+.when time{min-width:5.4em;font-weight:700;font-variant-numeric:tabular-nums;color:var(--blue)}
+.goods{list-style:none;margin:28px 0 0;padding:0;text-align:left;display:grid;gap:10px}
+.goods li{position:relative;padding:16px 18px 16px 50px;background:var(--card);border-radius:10px;font-size:clamp(17px,1.3vw,19px);line-height:1.4}
+.goods li::before{content:"";position:absolute;left:18px;top:19px;width:18px;height:18px;border-radius:50%;background:var(--blue) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.2'><path d='M4 8.2l2.6 2.6L12 5.4'/></svg>") center/12px no-repeat}
+
+
+/* 01 · the reels: covers like the real ones, a hook in big type */
+.rg{list-style:none;margin:clamp(30px,5vh,48px) auto 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;text-align:left;counter-reset:r}
+.rc{position:relative;aspect-ratio:9/16;border-radius:12px;overflow:hidden;padding:12px;display:flex;flex-direction:column;justify-content:space-between;background:var(--ink);color:var(--paper);counter-increment:r}
+.rc.b{background:var(--blue);color:#fff}
+.rc.c{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.rc.ph{background:#000;color:#fff}
+.rc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rc.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 30%,rgba(0,0,0,.75))}
+.rc > *{position:relative;z-index:1}
+.rc .rt{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.02em}
+.rc .rt span:first-child::before{content:counter(r,decimal-leading-zero)}
+.rc .tg{padding:3px 8px;border-radius:99px;background:rgba(255,255,255,.16);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:72%}
+.rc.c .tg{background:rgba(27,27,29,.08)}
+.rc.gift .tg{background:#fff;color:var(--blue)}
+.rc.c.gift .tg{background:var(--blue);color:#fff}
+.rc .t{font-size:clamp(14px,1.25vw,18px);line-height:1.12;font-weight:700;letter-spacing:-.02em;text-wrap:balance}
+.rc .rb{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:11.5px;font-weight:700}
+.rc .rb i{display:block;width:22px;height:22px;border-radius:50%;background:currentColor;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 6.5v11l9-5.5z'/></svg>") center/14px no-repeat,linear-gradient(#000,#000);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.9}
+.rc .pbar{position:absolute;left:12px;right:12px;bottom:40px;height:2px;border-radius:2px;background:currentColor;opacity:.25}
+
+/* 02 · the web: a phone with the site, and what makes it convert */
+.webx{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:center;margin-top:clamp(32px,5vh,52px);text-align:left}
+.phone{position:relative;width:min(100%,320px);margin:0 auto;aspect-ratio:9/18.5;border-radius:38px;padding:10px;background:var(--ink);box-shadow:0 30px 60px -30px rgba(20,21,24,.55)}
+.phone .scr{position:relative;width:100%;height:100%;border-radius:29px;overflow:hidden;background:#fff;color:#1b1b1d;font-size:12px;line-height:1.35}
+.st-bar{display:flex;justify-content:space-between;align-items:center;padding:30px 14px 10px;border-bottom:1px solid #eee}
+.st-bar b{font-size:13px;letter-spacing:-.01em}
+.st-bar span{font-size:10.5px;font-weight:700;padding:6px 10px;border-radius:99px;color:#fff;background:var(--acc)}
+.st-hero{margin:10px;border-radius:14px;padding:18px 14px;color:#fff;background:linear-gradient(160deg,var(--acc),#141518);min-height:150px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px}
+.st-hero small{font-size:10px;opacity:.8;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.st-hero b{font-size:19px;line-height:1.08;letter-spacing:-.02em}
+.st-hero span{align-self:flex-start;font-size:11px;font-weight:700;padding:8px 12px;border-radius:99px;background:#fff;color:#1b1b1d}
+.st-row{display:flex;gap:6px;padding:4px 10px 8px;color:#6e6c70;font-size:10.5px;font-weight:600}
+.st-row i{font-style:normal;color:#e8a317}
+.st-list{list-style:none;margin:0;padding:0 10px}
+.st-list li{display:flex;justify-content:space-between;align-items:center;padding:11px 4px;border-bottom:1px solid #eee;font-weight:600}
+.st-list li::after{content:"›";color:#9a9a9f;font-size:16px}
+.st-wa{position:absolute;right:12px;bottom:14px;width:42px;height:42px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.2)}
+.st-wa svg{width:22px;height:22px}
+.pin{position:absolute;z-index:2;width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700;box-shadow:0 0 0 3px #fff}
+.marks{list-style:none;margin:0;padding:0;counter-reset:m;display:grid;gap:4px}
+.marks li{position:relative;counter-increment:m;padding:14px 0 14px 46px;border-bottom:1px solid var(--line)}
+.marks li::before{content:counter(m);position:absolute;left:0;top:13px;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+.marks b{display:block;font-size:clamp(17px,1.4vw,20px);letter-spacing:-.015em}
+.marks span{display:block;margin-top:3px;font-size:15.5px;line-height:1.45;color:var(--ink-2)}
+
+/* 03 · the assistant: a WhatsApp conversation that plays once when it comes into view */
+.aix{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:center;margin-top:clamp(32px,5vh,52px);text-align:left}
+.phone.chat{background:#000;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);display:flex;flex-direction:column;padding:10px}
+.wa-top{display:flex;align-items:center;gap:10px;padding:28px 12px 10px;background:#1F2C34;color:#E9EDEF;border-radius:29px 29px 0 0}
+.wa-top i{width:32px;height:32px;border-radius:50%;background:var(--blue) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'><circle cx='12' cy='9' r='4'/><path d='M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6z'/></svg>") center/20px no-repeat}
+.wa-top b{display:block;font-size:13px}
+.wa-top span{display:block;font-size:10.5px;color:#8696A0}
+.wa{flex:1;overflow:hidden;padding:12px 10px;display:flex;flex-direction:column;gap:6px;background:#0B141A;border-radius:0 0 29px 29px}
+.msg{max-width:82%;padding:7px 9px 5px;border-radius:9px;font-size:12.5px;line-height:1.35;color:#E9EDEF;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.msg.on{opacity:1;transform:none}
+.msg.u{align-self:flex-end;background:#005C4B;border-top-right-radius:2px}
+.msg.a{align-self:flex-start;background:#202C33;border-top-left-radius:2px}
+.msg time{display:block;text-align:right;font-size:9.5px;color:#8696A0;margin-top:2px}
+.msg.typing{display:flex;gap:4px;padding:10px 12px}
+.msg.typing i{width:6px;height:6px;border-radius:50%;background:#8696A0;animation:tp 1s infinite}
+.msg.typing i:nth-child(2){animation-delay:.15s}.msg.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{50%{opacity:.3}}
+.ai-list{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.ai-list li{padding:14px 0 14px 34px;position:relative;border-bottom:1px solid rgba(255,255,255,.14)}
+.ai-list li::before{content:"";position:absolute;left:0;top:17px;width:20px;height:20px;border-radius:50%;background:var(--blue) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.2'><path d='M4 8.2l2.6 2.6L12 5.4'/></svg>") center/12px no-repeat}
+.ai-list b{display:block;font-size:clamp(17px,1.4vw,20px);letter-spacing:-.015em}
+.ai-list span{display:block;margin-top:3px;font-size:15.5px;line-height:1.45;color:var(--soft)}
+@media (max-width:960px){.rg{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.webx,.aix{grid-template-columns:minmax(0,1fr)}.rc{padding:9px;border-radius:10px}.rc .t{font-size:13px}.rc .rt,.rc .rb{font-size:10px}.rc .pbar{left:9px;right:9px;bottom:34px}.rc .rb i{width:18px;height:18px}}
+@media (max-width:420px){.rc .t{font-size:12px}.rc .tg{max-width:64%}}
+@media (prefers-reduced-motion:reduce){.msg{transition:none}}
+
+/* 05 · proof */
+.stats{list-style:none;margin:clamp(36px,6vh,56px) auto 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;text-align:left}
+.stats li{background:var(--card);border-radius:10px;padding:22px 20px;display:flex;flex-direction:column;gap:10px}
+.stats .n{font-size:clamp(40px,4.4vw,58px);line-height:.9;font-weight:700;letter-spacing:-.05em}
+.stats p{margin:0;font-size:15.5px;line-height:1.4}
+.stats a{margin-top:auto;font-size:12.5px;line-height:1.35;color:var(--mute);text-underline-offset:2px}
+.quotes{list-style:none;margin:20px auto 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;text-align:left}
+.quotes li{background:var(--ink);color:var(--paper);border-radius:10px;padding:24px 22px;display:flex;flex-direction:column;gap:16px}
+.quotes blockquote{margin:0;font-size:18px;line-height:1.45}
+.quotes cite{font-style:normal;font-size:14px;color:var(--soft)}
+.quotes cite b{display:block;color:var(--paper);font-weight:600}
+.signed{margin:clamp(40px,6vh,56px) auto 0;max-width:var(--wide);border-top:1px solid var(--ink)}
+.signed h3{margin:22px 0 4px;font-size:clamp(20px,1.8vw,24px);letter-spacing:-.02em}
+.signed .gl{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;text-align:left}
+.signed .gl li{border:1px solid var(--ink);border-radius:10px;padding:22px 20px}
+.signed .big{display:block;font-size:clamp(46px,5vw,68px);line-height:.85;font-weight:700;letter-spacing:-.055em;margin-bottom:14px}
+.signed .big small{font-size:.4em;letter-spacing:-.02em;margin-left:.08em}
+.signed p{margin:0;font-size:16px;line-height:1.4}
+
+/* 06 · how it works */
+.steps{list-style:none;margin:clamp(36px,6vh,56px) auto 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;text-align:left;counter-reset:s}
+.steps li{background:var(--card);border-radius:10px;padding:26px 22px 24px;counter-increment:s;display:flex;flex-direction:column;gap:10px}
+.steps li::before{content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-weight:700;font-size:15px}
+.steps h3{margin:6px 0 0;font-size:clamp(20px,1.8vw,24px);line-height:1.1;letter-spacing:-.02em}
+.steps p{margin:0;font-size:16px;line-height:1.45;color:var(--ink-2)}
+.get{margin:28px auto 0;max-width:var(--text);text-align:left;font-size:16px;color:var(--ink-2);line-height:1.5}
+.get b{color:var(--ink)}
+
+/* 07 · for whom */
+.fit{margin:clamp(36px,6vh,56px) auto 0;display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:left}
+.fit > div{border-radius:10px;padding:26px 24px}
+.fit .yes{background:var(--card)}
+.fit .no{background:transparent;border:1px solid var(--line)}
+.fit h3{margin:0 0 14px;font-size:20px;letter-spacing:-.02em}
+.fit ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.fit li{position:relative;padding-left:30px;font-size:16.5px;line-height:1.4}
+.fit .yes li::before,.fit .no li::before{content:"";position:absolute;left:0;top:.18em;width:18px;height:18px;border-radius:50%}
+.fit .yes li::before{background:var(--blue) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.2'><path d='M4 8.2l2.6 2.6L12 5.4'/></svg>") center/12px no-repeat}
+.fit .no li::before{background:var(--ink-2) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2'><path d='M5 5l6 6M11 5l-6 6'/></svg>") center/11px no-repeat}
+
+/* 08 · who is behind */
+.me{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px);align-items:center;text-align:left;margin-top:clamp(36px,6vh,56px)}
+.me figure{margin:0;border-radius:10px;overflow:hidden;aspect-ratio:4/5}
+.me figure img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:grayscale(1)}
+.me .sig{margin-top:18px;font-size:15px;color:var(--soft)}
+.me .sig b{display:block;color:var(--paper);font-size:17px}
+.why{list-style:none;margin:clamp(36px,6vh,52px) auto 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;text-align:left}
+.why li{border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:20px 18px}
+.why b{display:block;font-size:17px;margin-bottom:6px;letter-spacing:-.01em}
+.why span{font-size:15px;line-height:1.4;color:var(--soft)}
+
+/* 09 · FAQ */
+.faq{margin:clamp(32px,5vh,48px) auto 0;text-align:left;border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-size:clamp(18px,1.4vw,20px);font-weight:600;letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:24px;height:24px;border-radius:50%;background:var(--ink) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2'><path d='M8 4v8M4 8h8'/></svg>") center/12px no-repeat;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:-4px 0 20px;font-size:17px;line-height:1.55;color:var(--ink-2);max-width:58ch}
+
+/* 10 · the form and the agenda */
+.book{scroll-margin-top:60px}
+.card{margin:clamp(32px,5vh,48px) auto 0;max-width:720px;background:#fff;border-radius:14px;box-shadow:0 30px 80px -40px rgba(20,21,24,.45);text-align:left;overflow:hidden}
+.card-in{padding:clamp(22px,4vw,40px)}
+.prog{height:4px;background:var(--paper-2)}
+.prog i{display:block;height:100%;width:0;background:var(--blue);transition:width .35s cubic-bezier(.2,.7,.2,1)}
+.step-n{margin:0 0 10px;color:var(--mute)}
+.q{margin:0 0 22px;font-size:clamp(22px,2.4vw,30px);line-height:1.12;font-weight:700;letter-spacing:-.025em;text-wrap:balance}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;min-height:58px;padding:12px 18px;border:1.5px solid #D9D7D1;border-radius:12px;background:#fff;text-align:left;font-size:17px;line-height:1.3;cursor:pointer;transition:border-color .15s,background .15s}
+@media (hover:hover){.opt:hover{border-color:var(--ink)}}
+.opt[aria-pressed="true"]{border-color:var(--blue);background:#EEF3FF}
+.opt i{flex:none;width:20px;height:20px;border-radius:50%;border:1.5px solid #B9B6AE;transition:border-color .15s,box-shadow .15s}
+.opt[aria-pressed="true"] i{border-color:var(--blue);box-shadow:inset 0 0 0 5px var(--blue)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px}
+.back{border:0;background:none;padding:8px 0;font-size:15px;color:var(--mute);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.fields{display:grid;gap:14px}
+.fields .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fl{display:grid;gap:6px}
+.fl label{font-size:14px;font-weight:600}
+.fl input,.fl select{width:100%;min-height:52px;padding:0 14px;border:1.5px solid #D9D7D1;border-radius:10px;background:#fff;font-size:16px}
+.fl input:focus,.fl select:focus{border-color:var(--blue);outline:none}
+.fl .bad{border-color:#D23C2F}
+.legal{margin:4px 0 0;font-size:13px;color:var(--mute);line-height:1.45}
+.legal a{color:var(--ink-2)}
+.ferr{margin:0;color:#B4322F;font-size:14.5px;font-weight:600}
+.go{width:100%;margin-top:6px}
+.cal{position:relative;min-height:720px}
+.cal iframe{display:block;width:100%;height:720px;border:0;opacity:0;transition:opacity .3s}
+.cal.ready iframe{opacity:1}
+.cal-wait{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:14px;font-size:15px;color:var(--ink-2);text-align:center;padding:24px}
+.cal.ready .cal-wait{visibility:hidden}
+.cal-wait i{width:12px;height:12px;border-radius:50%;background:var(--blue);animation:calp 1s ease-in-out infinite}
+@keyframes calp{50%{transform:scale(1.7);opacity:.45}}
+.cal-head{padding:clamp(22px,4vw,32px) clamp(22px,4vw,40px) 6px}
+.cal-head p{margin:6px 0 0;font-size:16px;color:var(--ink-2)}
+.nofit p{margin:0 0 14px;font-size:17px;line-height:1.55}
+.nofit .q{margin-bottom:16px}
+
+/* 11 · confirmation */
+.ok-h{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.ok-h i{flex:none;width:44px;height:44px;border-radius:50%;background:#1DB36B url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.2'><path d='M4 8.2l2.6 2.6L12 5.4'/></svg>") center/22px no-repeat}
+.ok-h .q{margin:0}
+.next{list-style:none;margin:8px 0 0;padding:0;counter-reset:n}
+.next li{position:relative;padding:16px 0 16px 46px;border-top:1px solid var(--line);counter-increment:n;font-size:16.5px;line-height:1.5}
+.next li::before{content:counter(n);position:absolute;left:0;top:15px;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-weight:700;font-size:14px}
+.next b{display:block}
+.ps{max-width:var(--text);margin:0 auto;text-align:left}
+.ps p{font-size:clamp(17px,1.3vw,19px);line-height:1.55;margin:0}
+.ps b{font-weight:700}
+
+footer{padding:26px var(--g) calc(90px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;gap:10px 24px;flex-wrap:wrap;color:var(--ink-2);text-align:center}
+footer a{text-decoration:underline;text-underline-offset:3px}
+@media (min-width:821px){footer{padding-bottom:28px}}
+
+/* phone bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(237,235,230,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-top:1px solid rgba(27,27,29,.12);transform:translateY(110%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.bar.on{transform:none}
+.bar .btn{width:100%;min-height:54px;box-shadow:none}
+@media (min-width:821px){.bar{display:none}}
+
+/* consent for the Meta pixel (only when the pixel is configured) */
+.ck{position:fixed;left:16px;bottom:16px;z-index:60;width:min(380px,calc(100vw - 32px));padding:18px;border-radius:10px;background:var(--ink);color:var(--paper);font-size:14.5px;line-height:1.4;box-shadow:0 10px 40px rgba(0,0,0,.25);text-align:left}
+.ck p{margin:0 0 14px}
+.ck a{color:var(--mist)}
+.ck .row{display:flex;gap:8px;flex-wrap:wrap}
+.ck .pill{border-color:var(--paper)}
+.ck .pill.solid{background:var(--paper);color:var(--ink)}
+.ck .pill:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+@media (max-width:820px){.ck{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+
+@media (max-width:960px){
+  .stats{grid-template-columns:1fr 1fr}
+  .why{grid-template-columns:1fr 1fr}
+  .signed .gl,.steps{grid-template-columns:minmax(0,1fr)}
+  .me{grid-template-columns:minmax(0,1fr)}
+  .me figure{max-width:340px;margin:0 auto}
+}
+@media (max-width:700px){
+  .top .pill{min-height:36px;padding:0 13px;font-size:11.5px}
+  .hero{padding-top:calc(96px + env(safe-area-inset-top,0px))}
+  .hero h1{font-size:clamp(36px,10.4vw,56px)}
+  .promise{border-radius:14px}
+  .fit,.fields .two{grid-template-columns:minmax(0,1fr)}
+  .slot .cap{font-size:13px;padding:12px 14px}
+  .cal,.cal iframe{min-height:1040px;height:1040px}
+  .btn{padding:0 26px;font-size:14px}
+}
+@media (max-width:420px){.stats,.why{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <span class="logo" aria-label="404 Growth">404/GROWTH<sup>®</sup></span>
+  <a class="pill" href="#reservar" data-cta="cabecera">Reservar mi llamada</a>
+</header>
+
+<main>
+<!-- 01 · hero: who it is for, the result they want, the VSL at first sight, the promise, the action -->
+<section class="sec hero" id="inicio">
+  <p class="kick label" id="k">Para negocios que viven de citas</p>
+  <h1 id="h">Más clientes que pagan, sin estar pegado al móvil</h1>
+  <figure class="vsl" id="vsl">
+    <button class="slot" type="button" id="slot" aria-label="Ver el vídeo de 3 minutos">
+      <img src="/ind-me.webp" alt="" width="840" height="1120" fetchpriority="high">
+      <span class="play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="#fff"><path d="M4 2.5v11l9-5.5z"/></svg></span>
+      <span class="cap"><b>Christian te lo explica en 3 minutos</b><span>Dale al play antes de reservar</span></span>
+    </button>
+  </figure>
+  <p class="vsl-msg" id="vsl-msg" hidden role="status">El vídeo llega en unos días. Mientras, aquí abajo te lo cuento por escrito.</p>
+  <p class="sub" id="sub">Te grabamos el contenido, te montamos la web, un asistente que contesta en menos de un minuto (también a las once de la noche) y un CRM que te dice quién ha pagado. En 15 días.</p>
+  <p class="promise"><i aria-hidden="true"></i><span><b>Por contrato:</b> si en 3 meses no doblamos tu tasa de conversión, trabajamos gratis hasta conseguirlo.</span></p>
+  <div class="cta"><a class="btn" href="#reservar" data-cta="portada">Reservar mi llamada</a><small>30 minutos con Christian · Gratis · Sales con el precio cerrado</small></div>
+</section>
+
+<!-- 03 · the pain -->
+<section class="sec night" id="dolor" aria-labelledby="scene">
+  <div class="col">
+    <p class="kick label">Te suena, ¿verdad?</p>
+    <h2 class="scene" id="scene">Son las 23:04 y alguien te pregunta si tienes hueco esta semana.</h2>
+    <div class="letter">
+      <p>Tú estás en el sofá. Tu equipo, en su casa. El mensaje se queda ahí, en «visto».</p>
+      <p>A la mañana siguiente contestáis. Rápido, con buen tono y con buen precio.</p>
+      <p id="pain-3">Y ya no hay nadie al otro lado. Esa persona escribió a tres sitios a la vez y <strong>se quedó con el primero que le contestó.</strong></p>
+      <p>No lo perdiste por precio. Ni por calidad. <strong>Lo perdiste por llegar tarde.</strong></p>
+      <p>Y lo peor no es ese mensaje. Es que no sabes cuántos más como ese se te escapan cada semana.</p>
+    </div>
+    <ul class="ticks" id="pains">
+      <li>Te escriben de noche y contestas por la mañana.</li>
+      <li>Pagas a varios proveedores y nadie se hace cargo del resultado.</li>
+      <li>Publicas cuando puedes, que es casi nunca.</li>
+      <li>No sabes de dónde viene cada cliente que paga.</li>
+    </ul>
+    <div class="cta"><a class="btn" href="#reservar" data-cta="dolor">Quiero arreglarlo</a><small>Te enseño cómo en 30 minutos</small></div>
+  </div>
+</section>
+
+<!-- 01 · content: the first 15 reels of the niche (like the collab proposals) -->
+<section class="sec" id="reels" aria-labelledby="reels-h">
+  <p class="kick label"><span class="num">01</span> Contenido</p>
+  <h2 class="h2" id="reels-h">Tus 15 primeros reels, ya pensados</h2>
+  <p class="lede" id="reels-p">Un filmmaker graba en tu negocio una mañana al mes. De ahí salen estos 15. Los editamos, los publicamos nosotros y cada uno termina en tu agenda o en tu WhatsApp.</p>
+  <p class="meta label">12 + 3 de regalo · 1 rodaje al mes · Publicados por nosotros</p>
+  <ol class="rg wide" id="rg"></ol>
+  <p class="fine" id="reels-note">Ejemplo de un primer mes. Los tuyos salen de tu negocio, de tu equipo y de lo que te pregunta tu gente.</p>
+  <div class="cta"><a class="btn" href="#reservar" data-cta="reels">Quiero mis 15 reels</a></div>
+</section>
+
+<!-- 02 · web: built to turn that traffic into appointments -->
+<section class="sec alt" id="web" aria-labelledby="web-h">
+  <p class="kick label"><span class="num">02</span> Web</p>
+  <h2 class="h2" id="web-h">Una web nueva, pensada para convertir a quien te ve</h2>
+  <p class="lede">Quien ve tu reel entra en tu perfil y, de ahí, en tu web. Tiene unos segundos para decidir. La montamos para que en esos segundos encuentre lo que busca y pida cita sin llamar.</p>
+  <div class="webx wide">
+    <div class="phone" aria-hidden="true"><div class="scr" id="site"></div></div>
+    <ol class="marks">
+      <li><b>El botón de cita, siempre a la vista</b><span>Arriba, en medio y al final. Nadie tiene que buscar cómo reservar.</span></li>
+      <li><b>Lo que haces y cómo funciona, claro</b><span id="wm2">Tus servicios explicados como los explicarías tú en persona.</span></li>
+      <li><b>WhatsApp a un toque</b><span>Para quien prefiere preguntar antes. Ahí le espera tu asistente.</span></li>
+      <li><b>Rápida en el móvil</b><span>Que es desde donde te ve casi todo el mundo que llega de Instagram.</span></li>
+    </ol>
+  </div>
+  <p class="fine">Con tu dominio y tu marca. Y si ya tienes web, la rehacemos sin perder lo que ya tienes en Google.</p>
+  <div class="cta"><a class="btn" href="#reservar" data-cta="web">Reservar mi llamada</a></div>
+</section>
+
+<!-- 03 · the AI assistant, 24/7 -->
+<section class="sec night" id="asistente" aria-labelledby="ai-h">
+  <p class="kick label"><span class="num">03</span> Asistente de IA · 24/7</p>
+  <h2 class="h2" id="ai-h">Contesta en menos de un minuto. También a las 23:04.</h2>
+  <p class="lede">Responde por WhatsApp e Instagram con tu tono, tus precios y tu agenda. Reserva la cita y le pasa a tu equipo lo que necesita una persona.</p>
+  <div class="aix wide">
+    <div class="phone chat" aria-label="Ejemplo de conversación con el asistente"><div class="wa-top"><i aria-hidden="true"></i><div><b id="wa-name">Tu Negocio</b><span>Asistente virtual · en línea</span></div></div><div class="wa" id="wa"></div></div>
+    <ul class="ai-list">
+      <li><b>Menos de 1 minuto</b><span>Y si un mes no lo cumple, ese mes no lo pagas. Por contrato.</span></li>
+      <li><b>24 horas, 7 días</b><span>De noche, en domingo y en festivos, que es cuando la gente tiene tiempo de escribir.</span></li>
+      <li><b>Reserva en tu agenda</b><span>Propone huecos reales y deja la cita hecha, con su recordatorio.</span></li>
+      <li><b>Sin hacerse pasar por nadie</b><span>Se presenta como asistente virtual y le pasa a tu equipo lo que no sabe.</span></li>
+      <li><b>Todo queda en tu CRM</b><span>Quién escribió, qué preguntó, de qué vídeo venía y si acabó pagando.</span></li>
+    </ul>
+  </div>
+  <div class="cta"><a class="btn" href="#reservar" data-cta="asistente">Reservar mi llamada</a></div>
+</section>
+
+<!-- 04 · what it looks like after -->
+<section class="sec" id="despues" aria-labelledby="after-h">
+  <div class="col">
+    <p class="kick label">Y después</p>
+    <h2 class="h2" id="after-h">Tú te enteras con el café. Ya está todo hecho.</h2>
+    <ol class="when" id="when" style="margin-top:34px">
+      <li><time>23:06</time><span id="w3">Ya tiene cita el jueves a las 19:30.</span></li>
+      <li><time>Miércoles</time><span>Le llega el recordatorio. Si no puede venir, el sistema le busca otro día.</span></li>
+      <li><time>Jueves</time><span id="w5">Viene, paga, y en tu CRM ves qué vídeo te lo trajo.</span></li>
+    </ol>
+    <div class="letter"><p><strong>Así se ve tu negocio dentro de 90 días:</strong></p></div>
+    <ul class="goods" id="goods">
+      <li>Cada mensaje contestado en menos de un minuto, también en domingo.</li>
+      <li>Clientes que llegan con la cita hecha y el recordatorio recibido.</li>
+      <li>15 vídeos al mes de tu negocio, grabados por un filmmaker y publicados por nosotros.</li>
+      <li>Un panel donde ves qué vídeo te trajo cada cliente y cuánto ha pagado.</li>
+    </ul>
+    <div class="cta"><a class="btn" href="#reservar" data-cta="despues">Reservar mi llamada</a><small>Y te enseño el sistema por dentro</small></div>
+  </div>
+</section>
+
+<!-- 05 · proof: verifiable data, real testimonials (when there are), and what we sign -->
+<section class="sec alt" id="prueba" aria-labelledby="proof-h">
+  <p class="kick label">Prueba</p>
+  <h2 class="h2" id="proof-h">No te pido que me creas. Mira los datos.</h2>
+  <p class="lede">Aquí no vas a ver una pared de logos ni capturas de facturación. Vas a ver estudios con su fuente y lo que firmamos.</p>
+  <ul class="stats wide">
+    <li><span class="n">7×</span><p>Más probable cualificar a un interesado si le contestas en la primera hora. Y el 23 % de las empresas no contestó nunca.</p><a href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" target="_blank" rel="noopener">Harvard Business Review, 2011 · 2.241 empresas</a></li>
+    <li><span class="n">92 %</span><p>De quienes usan redes en España usa WhatsApp. Y el 74 %, Instagram: por ahí te escriben.</p><a href="https://marketing4ecommerce.net/estudio-redes-sociales-en-espana-2025/" target="_blank" rel="noopener">IAB Spain y Elogia · Redes Sociales 2025</a></li>
+    <li><span class="n">78,6 %</span><p>Acude a su cita cuando recibe un recordatorio por mensaje, frente al 67,8 % sin él.</p><a href="https://www.cochrane.org/evidence/CD007458_mobile-phone-messaging-reminders-attendance-healthcare-appointments" target="_blank" rel="noopener">Cochrane, 2013 · 5.841 personas</a></li>
+    <li><span class="n">37 %</span><p>De las microempresas de España con internet tiene web. Las de 10 o más empleados, el 84,5 %.</p><a href="https://ine.es/dyngs/Prensa/ETICCE20241T2025.pdf" target="_blank" rel="noopener">INE · Uso de TIC en empresas, 2025</a></li>
+  </ul>
+  <ul class="quotes wide" id="quotes" hidden></ul>
+  <div class="signed">
+    <h3>Y lo que no te puedo demostrar con un estudio, lo firmo.</h3>
+    <ul class="gl">
+      <li><span class="big">×2</span><p>Si en 3 meses no doblamos tu tasa de conversión, trabajamos gratis hasta conseguirlo.</p></li>
+      <li><span class="big">&lt;1<small>min</small></span><p>Si un mes el asistente no contesta en menos de un minuto, ese mes no lo pagas.</p></li>
+      <li><span class="big">15<small>días</small></span><p>Web, asistente y CRM en marcha en 15 días. Si no, no pagas mensualidad hasta que lo estén.</p></li>
+    </ul>
+  </div>
+  <div class="cta"><a class="btn" href="#reservar" data-cta="prueba">Reservar mi llamada</a></div>
+</section>
+
+<!-- 06 · how it works -->
+<section class="sec" id="como" aria-labelledby="how-h">
+  <p class="kick label">Cómo funciona</p>
+  <h2 class="h2" id="how-h">Tres pasos. El único que te toca es el primero.</h2>
+  <ol class="steps wide">
+    <li><h3>Reservas tu llamada</h3><p>30 minutos por Google Meet. Me cuentas cómo te llegan hoy los clientes y te enseño el sistema por dentro. Sales con una propuesta y el precio cerrado.</p></li>
+    <li><h3>Lo montamos en 15 días</h3><p>Tu web, tu asistente en WhatsApp e Instagram y tu CRM, conectados con tu agenda. Tu equipo aprende a usarlo con vídeos cortos.</p></li>
+    <li><h3>Cada mes, más clientes</h3><p>Un filmmaker graba en tu negocio, publicamos 15 reels y te mandamos un informe con lo que te ha traído clientes.</p></li>
+  </ol>
+  <p class="get"><b>Lo que te llevas:</b> un rodaje al mes con filmmaker y 15 reels publicados, web con tu marca y cita online, un asistente de IA que contesta en menos de un minuto a cualquier hora, un CRM con el origen y el seguimiento de cada cliente, recordatorios para que no falten y un informe mensual. Todo en un paquete y una cuota al mes.</p>
+  <div class="cta"><a class="btn" href="#reservar" data-cta="como">Reservar mi llamada</a></div>
+</section>
+
+<!-- 07 · for whom it is and is not -->
+<section class="sec alt" id="encaje" aria-labelledby="fit-h">
+  <p class="kick label">Para quién es</p>
+  <h2 class="h2" id="fit-h">No es para todo el mundo. Y está bien que sea así.</h2>
+  <div class="fit wide">
+    <div class="yes"><h3>Es para ti si…</h3><ul>
+      <li id="fy1">Tienes un negocio independiente con equipo y vives de citas o visitas.</li>
+      <li>Te escriben más personas de las que podéis atender bien.</li>
+      <li>Quieres el recorrido entero, de que te vean a que te paguen.</li>
+      <li>Puedes dedicarnos una mañana al mes para grabar.</li>
+      <li>Quieres saber de dónde viene cada euro que entra.</li>
+    </ul></div>
+    <div class="no"><h3>No es para ti si…</h3><ul>
+      <li>Eres una franquicia o una cadena.</li>
+      <li>Trabajas solo, sin equipo.</li>
+      <li>Buscas solo anuncios o solo una web.</li>
+      <li>No quieres salir nunca en un vídeo.</li>
+      <li>Lo que buscas es lo más barato.</li>
+    </ul></div>
+  </div>
+  <div class="cta"><a class="btn" href="#reservar" data-cta="encaje">Encajo. Quiero mi llamada</a></div>
+</section>
+
+<!-- 09 · objections -->
+<section class="sec" id="dudas" aria-labelledby="faq-h">
+  <div class="col">
+    <p class="kick label">Dudas</p>
+    <h2 class="h2" id="faq-h">Lo que me suelen preguntar antes de reservar</h2>
+    <div class="faq">
+      <details><summary>¿Cuánto tiempo me va a quitar?</summary><p>Poco. La llamada de 30 minutos, una reunión de arranque y una mañana al mes para el rodaje. Editar, publicar, contestar mensajes y hacer el seguimiento lo hacemos nosotros.</p></details>
+      <details><summary>¿Es adecuado para mi negocio?</summary><p id="faq-fit">Si vives de citas o visitas y te escriben por WhatsApp o Instagram, casi seguro que sí. Y si no lo es, te lo digo en la llamada. Prefiero eso a hacerte perder el tiempo y el dinero.</p></details>
+      <details><summary>¿Qué pasa durante la llamada?</summary><p>Me cuentas cómo te llegan hoy los clientes y qué pasa con cada mensaje. Te enseño el sistema por dentro, funcionando. Y te digo qué montaría en tu caso, en qué plazo y cuánto cuesta. 30 minutos por Google Meet.</p></details>
+      <details><summary>¿Tengo que contratar algo?</summary><p>No. Sales de la llamada con una propuesta y un precio cerrado. Si te encaja, seguimos. Si no, te quedas con las ideas, que también te sirven.</p></details>
+      <details><summary>¿Cuánto cuesta?</summary><p>Es un paquete cerrado con una cuota al mes, y depende de las sedes que tengas. Te doy el precio en la llamada, cerrado y sin sorpresas.</p></details>
+      <details><summary>¿Hay permanencia?</summary><p>Sí, de tres meses. Es lo mínimo para que el contenido y el sistema empiecen a dar resultados, y es el plazo de la garantía: si en esos 3 meses no doblamos tu tasa de conversión, trabajamos gratis hasta conseguirlo.</p></details>
+      <details><summary>Ya tengo web o agencia. ¿Qué pasa con eso?</summary><p>La web la rehacemos en tu dominio y redirigimos las direcciones antiguas, para no perder lo que ya tienes en Google. Y si tienes agencia, en la llamada vemos qué te está dando y qué tiene sentido mantener.</p></details>
+      <details><summary>¿El asistente se hace pasar por una persona?</summary><p>No. Se presenta como asistente virtual, contesta lo que sabe y le pasa a tu equipo lo que necesita una persona.</p></details>
+    </div>
+    <div class="cta"><a class="btn" href="#reservar" data-cta="dudas">Reservar mi llamada</a></div>
+  </div>
+</section>
+
+<!-- 10 · the form (qualification) and the agenda; 11 · confirmation -->
+<section class="sec alt book" id="reservar" aria-labelledby="book-h">
+  <p class="kick label">Tu llamada</p>
+  <h2 class="h2" id="book-h">Reserva tu llamada en 2 minutos<span class="dot" aria-hidden="true"></span></h2>
+  <p class="lede">Seis preguntas rápidas y eliges día y hora. Así llego a la llamada sabiendo de qué hablamos.</p>
+  <div class="card" id="card">
+    <div class="prog" aria-hidden="true"><i id="prog"></i></div>
+    <div id="form-box"></div>
+  </div>
+</section>
+
+<section class="sec" id="pd" aria-label="Posdata">
+  <div class="ps">
+    <p><b>P.D.</b> Si has bajado hasta aquí sin leer nada, te lo resumo: contestamos a cada persona que te escribe en menos de un minuto, te grabamos y publicamos 15 vídeos al mes, ves de dónde viene cada cliente que paga y, si en 3 meses no doblamos tu tasa de conversión, trabajamos gratis hasta conseguirlo. Por contrato.</p>
+  </div>
+  <div class="cta"><a class="btn" href="#reservar" data-cta="pd">Reservar mi llamada</a><small>30 minutos · Gratis · Sin compromiso</small></div>
+</section>
+</main>
+
+<footer class="label">
+  <span>404 Growth · Contenido, web, asistente de IA y CRM · Toda España</span>
+  <span><a href="/legal" target="_blank" rel="noopener">Aviso legal y privacidad</a> · © <span id="yr">2026</span></span>
+</footer>
+
+<div class="bar" id="bar"><a class="btn" href="#reservar" data-cta="barra">Reservar mi llamada</a></div>
+
+<div class="ck" id="ck" hidden role="dialog" aria-label="Cookies de medición">
+  <p>¿Nos dejas usar la cookie de Meta? Solo sirve para saber qué anuncio te trajo hasta aquí. <a href="/legal#cookies" target="_blank" rel="noopener">Más información</a></p>
+  <div class="row"><button class="pill solid" type="button" id="ck-yes">Aceptar</button><button class="pill" type="button" id="ck-no">No, gracias</button></div>
+</div>
+
+<script>
+(function(){
+  /* ---------- what to fill in ----------
+     PIXEL:  the Meta pixel (dataset) id, 15–16 digits. Empty = no pixel and no cookie notice.
+     VSL:    the video. src = an mp4 with the subtitles burned in, poster = a still, ratio "16/9" or "9/16". Empty src = the slot with the play button.
+     QUOTES: real testimonials only, with the person's name and business: {q:'…', who:'Nombre Apellido', biz:'Negocio, ciudad'}. Empty = the block is hidden.
+     FIT:    who sees the agenda after the form (the rest get a kind «not now» and still reach the admin). */
+  var PIXEL='';
+  var VSL={src:'',poster:'/ind-me.webp',ratio:'16/9'};
+  var QUOTES=[];
+  var FIT=function(a){return a.budget!=='b0'&&a.when!=='w3'};
+  var CAL='https://calendly.com/hola-404growth/llamada-404-growth';
+  var API='/l/';
+
+  var d=document,root=d.documentElement,qs=new URLSearchParams(location.search);
+  d.getElementById('yr').textContent=new Date().getFullYear();
+  function $(id){return d.getElementById(id)}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+  /* ---------- the niche, from the ad link ---------- */
+  var ALIAS={dental:'dental',dentales:'dental',clinica:'dental',estetica:'estetica','estética':'estetica',medicina:'estetica',capilar:'estetica',
+    inmo:'inmo',inmobiliaria:'inmo',inmobiliarias:'inmo',gym:'gym',gimnasio:'gym',gimnasios:'gym',fitness:'gym'};
+  var N=ALIAS[(qs.get('n')||qs.get('utm_content')||'').toLowerCase().trim()]||'';
+  var T={
+    dental:{k:'Para dueños de clínicas dentales',h:'La agenda llena de pacientes, sin vivir pegado al WhatsApp',
+      sub:'Te grabamos el contenido, te montamos la web, un asistente que contesta a tus pacientes en menos de un minuto (también a las once de la noche) y un CRM que te dice quién ha pagado. En 15 días.',
+      scene:'Son las 23:04 y alguien pregunta si tienes hueco para una limpieza esta semana.',
+      p3:'Y ya no hay nadie al otro lado. Escribió a tres clínicas a la vez y <strong>reservó en la primera que le contestó.</strong>',
+      pains:['La recepción cierra a las ocho y el WhatsApp sigue sonando.','Haces presupuestos que se quedan en «me lo pienso».','Pagas anuncios o Doctoralia y no sabes cuántos pacientes te traen.','Las redes las llevas tú cuando puedes. O sea, nunca.'],
+      w1:'Alguien pregunta si tienes hueco para una limpieza.',w3:'Ya tiene cita el jueves a las 19:30, con su primera visita explicada.',w5:'Viene, se queda el tratamiento, y en tu CRM ves qué vídeo te lo trajo.',
+      goods:['Cada mensaje contestado en menos de un minuto, también en domingo.','Pacientes que llegan con la cita hecha y el recordatorio recibido.','Presupuestos con seguimiento automático, hasta que dicen sí o no.','15 vídeos al mes de tu clínica que generan la confianza por ti.'],
+      fy1:'Tienes una clínica independiente, con equipo, y vives de primeras visitas.'},
+    estetica:{k:'Para dueños de clínicas de medicina estética',h:'Que quien te pregunta «¿precio?» acabe reservando',
+      sub:'Te grabamos el contenido, te montamos la web, un asistente que contesta en menos de un minuto por Instagram y WhatsApp (también a las once de la noche) y un CRM que te dice quién ha pagado. En 15 días.',
+      scene:'Son las 23:04 y alguien te escribe por Instagram: «Info precio».',
+      p3:'Y ya no hay nadie al otro lado. Preguntó en tres clínicas a la vez y <strong>reservó la valoración en la primera que le contestó.</strong>',
+      pains:['Te escriben «info precio» y, cuando contestas, desaparecen.','Contestas por Instagram entre paciente y paciente, con los guantes puestos.','Probaste un community manager y lo único que creció fueron los likes.','No sabes qué publicación te trajo a tu mejor paciente del mes.'],
+      w1:'Alguien pregunta cuánto cuesta el tratamiento que vio en tu reel.',w3:'Ya tiene su valoración el jueves a las 19:30, con el precio orientativo explicado.',w5:'Viene, se hace el tratamiento, y en tu CRM ves qué vídeo te la trajo.',
+      goods:['Cada «¿precio?» contestado al minuto, con la valoración ya propuesta.','Pacientes que llegan sabiendo lo que se van a hacer y con el recordatorio recibido.','Seguimiento automático para quien preguntó y no reservó.','15 vídeos al mes de tu clínica y tus resultados, publicados por nosotros.'],
+      fy1:'Tienes una clínica independiente, con equipo, y vives de valoraciones y tratamientos.'},
+    inmo:{k:'Para dueños de inmobiliarias',h:'Sé la primera agencia que contesta. Siempre',
+      sub:'Te grabamos el contenido, te montamos la web, un asistente que contesta a cada contacto de portal o Instagram en menos de un minuto y un CRM con el origen de cada operación. En 15 días.',
+      scene:'Son las 23:04 y alguien pregunta si el ático que tienes en Idealista sigue disponible.',
+      p3:'Y ya no hay nadie al otro lado. Escribió a tres agencias por pisos parecidos y <strong>fue a ver el de la primera que le contestó.</strong>',
+      pains:['Los contactos de los portales se enfrían antes de que alguien los llame.','Un comprador escribe a tres agencias y gana la que contesta primero.','La captación de propietarios depende de ti y de tu agenda.','Pagas portales cada mes y no sabes qué operación vino de dónde.'],
+      w1:'Alguien pregunta si el ático sigue disponible.',w3:'Ya tiene visita el jueves a las 19:30, filtrado: presupuesto, hipoteca y plazo.',w5:'Va a la visita, y en tu CRM ves de qué portal o qué vídeo vino.',
+      goods:['Cada contacto contestado al minuto, filtrado y con visita propuesta.','Tus agentes llamando solo a quien está listo para comprar o vender.','Propietarios que te escriben porque te han visto en vídeo.','Un CRM con el origen de cada contacto y de cada operación.'],
+      fy1:'Tienes una agencia independiente, con agentes, y vives de visitas y captaciones.'},
+    gym:{k:'Para dueños de gimnasios',h:'Que quien viene a probar se quede a entrenar',
+      sub:'Te grabamos el contenido, te montamos la web, un asistente que contesta en menos de un minuto (también a las once de la noche), agenda la prueba y hace el seguimiento hasta el alta. En 15 días.',
+      scene:'Son las 23:04 y alguien pregunta si puede ir a probar mañana.',
+      p3:'Y ya no hay nadie al otro lado. Escribió a dos gimnasios a la vez y <strong>fue a probar al primero que le contestó.</strong>',
+      pains:['Vienen a probar, les encanta, y nadie vuelve a escribirles.','En enero entra todo el mundo y en marzo se va la mitad.','Contestáis por Instagram en los descansos, cuando os acordáis.','Tienes un programa de gestión que usáis a medias.'],
+      w1:'Alguien pregunta si puede ir a probar mañana.',w3:'Ya tiene su prueba mañana a las 19:30, con lo que tiene que traer.',w5:'Viene, entrena, y el seguimiento sigue hasta que se da de alta.',
+      goods:['Cada «¿puedo probar?» con su prueba reservada en el momento.','Seguimiento automático después de la prueba, hasta el alta.','Avisos a los socios que dejan de venir, antes de que se den de baja.','15 vídeos al mes de tu gimnasio y tu gente, publicados por nosotros.'],
+      fy1:'Tienes un gimnasio, box o estudio independiente, con equipo.'}
+  };
+  if(N){var t=T[N];
+    $('k').textContent=t.k;$('h').textContent=t.h;$('sub').textContent=t.sub;
+    $('scene').textContent=t.scene;$('pain-3').innerHTML=t.p3;
+    $('pains').innerHTML=t.pains.map(function(x){return '<li>'+esc(x)+'</li>'}).join('');
+    $('w3').textContent=t.w3;$('w5').textContent=t.w5;
+    $('goods').innerHTML=t.goods.map(function(x){return '<li>'+esc(x)+'</li>'}).join('');
+    $('fy1').textContent=t.fy1;
+    d.title=t.h+' | 404 Growth';
+  }
+  if(QUOTES.length){var qu=$('quotes');qu.hidden=false;qu.innerHTML=QUOTES.map(function(x){return '<li><blockquote>«'+esc(x.q)+'»</blockquote><cite><b>'+esc(x.who)+'</b>'+esc(x.biz||'')+'</cite></li>'}).join('')}
+
+
+  /* ---------- 01 · the 15 reels, 02 · the site in the phone, 03 · the conversation (by niche) ---------- */
+  var REELS={"dental": [["Proceso", "Miedo al dentista: así es la sedación consciente", "Cita"], ["Equipo", "Conoce a la doctora de tu ortodoncia", "Cita"], ["Dudas", "¿Cuánto dura un implante? Respuesta corta", "WhatsApp"], ["Proceso", "Así es una sesión de blanqueamiento", "Cita"], ["Equipo", "Un día en recepción", "WhatsApp"], ["Consejo", "3 errores al cepillarte los dientes", "WhatsApp"], ["Tecnología", "Escáner 3D: adiós a los moldes", "Cita"], ["Primera visita", "Tu primera visita, paso a paso", "Cita"], ["Familias", "La primera revisión de tu hijo", "Cita"], ["Ortodoncia", "Alineadores invisibles: lo que nadie te cuenta", "WhatsApp"], ["Dudas", "¿Duele una endodoncia?", "WhatsApp"], ["Detrás de cámaras", "Así esterilizamos todo", "Cita"], ["De regalo", "Tour por la clínica en 30 segundos", "Cita"], ["De regalo", "Pregunta a la doctora", "WhatsApp"], ["De regalo", "Financiación sin sustos", "Cita"]], "estetica": [["Proceso", "Así es un tratamiento con ácido hialurónico", "Cita"], ["Valoración", "La valoración: qué miramos antes de empezar", "Cita"], ["Dudas", "¿Se nota el bótox? Respuesta honesta", "WhatsApp"], ["Equipo", "La doctora detrás de cada tratamiento", "Cita"], ["Capilar", "Injerto capilar: así es el día", "Cita"], ["Láser", "Láser: cuántas sesiones hacen falta", "Cita"], ["Detrás de cámaras", "Preparamos la cabina para ti", "WhatsApp"], ["Mitos", "4 mitos sobre la medicina estética", "WhatsApp"], ["Piel", "Tu rutina después de un peeling", "WhatsApp"], ["Primera visita", "Tu primera visita, paso a paso", "Cita"], ["Tecnología", "Diagnóstico facial con tecnología", "Cita"], ["Consejo", "Lo que no debes hacer después del tratamiento", "WhatsApp"], ["De regalo", "Tour por la clínica", "Cita"], ["De regalo", "Pregunta a la doctora", "WhatsApp"], ["De regalo", "Resultados naturales: nuestra forma de trabajar", "Cita"]], "inmo": [["Tour", "Ático con terraza: tour en 40 segundos", "Visita"], ["Propietarios", "Cuánto vale tu piso y cómo lo calculamos", "WhatsApp"], ["Barrio", "Vivir en el centro: lo bueno y lo malo", "WhatsApp"], ["Equipo", "Conoce a tu agente", "WhatsApp"], ["Propietarios", "5 errores al vender tu casa", "WhatsApp"], ["Compradores", "Hipoteca: lo que te van a pedir", "WhatsApp"], ["Home staging", "El mismo salón, otra venta", "Visita"], ["Tour", "Casa con jardín a 15 minutos del centro", "Visita"], ["Detrás de cámaras", "Así preparamos una visita", "Visita"], ["Proceso", "Del cartel al «vendido»: el proceso", "WhatsApp"], ["Dudas", "¿Exclusiva o no exclusiva?", "WhatsApp"], ["Inversión", "Comprar para alquilar: números claros", "WhatsApp"], ["De regalo", "Tour por la oficina", "WhatsApp"], ["De regalo", "Pregunta al agente", "WhatsApp"], ["De regalo", "Entrega de llaves", "Visita"]], "gym": [["Clase", "Fuerza para principiantes: así es la clase", "Prueba"], ["Equipo", "Tu entrenador: quién es y cómo trabaja", "Prueba"], ["Primer día", "Tu primer día, paso a paso", "Prueba"], ["Técnica", "Sentadilla bien hecha en 30 segundos", "WhatsApp"], ["Comunidad", "Por qué la gente se queda", "Prueba"], ["Instalaciones", "Tour por el gimnasio", "Prueba"], ["Nutrición", "Qué comer antes de entrenar", "WhatsApp"], ["Reto", "Reto de 30 días: empieza el lunes", "Prueba"], ["Detrás de cámaras", "Así preparamos tu plan", "Prueba"], ["Clase", "HIIT de 20 minutos", "Prueba"], ["Dudas", "¿Cuántos días a la semana?", "WhatsApp"], ["Comunidad", "El sábado de la comunidad", "Prueba"], ["De regalo", "Movilidad para la oficina", "WhatsApp"], ["De regalo", "Pregunta al entrenador", "WhatsApp"], ["De regalo", "Conoce la zona de peso libre", "Prueba"]], "": [["Proceso", "Así es tu primera visita, paso a paso", "Cita"], ["Equipo", "Conoce a quien te va a atender", "Cita"], ["Dudas", "La pregunta que más nos hacen", "WhatsApp"], ["Detrás de cámaras", "Un día normal en el negocio", "WhatsApp"], ["Consejo", "3 errores que vemos cada semana", "WhatsApp"], ["Antes de venir", "Qué traer el primer día", "Cita"], ["Tour", "El local en 30 segundos", "Cita"], ["Dudas", "¿Cuánto cuesta? Respuesta honesta", "WhatsApp"], ["Equipo", "Por qué hacemos lo que hacemos", "Cita"], ["Mitos", "Mitos de nuestro sector", "WhatsApp"], ["Proceso", "De la primera llamada al resultado", "Cita"], ["Clientes", "Lo que nos dicen al salir", "Cita"], ["De regalo", "Pregunta al equipo", "WhatsApp"], ["De regalo", "Novedades del mes", "Cita"], ["De regalo", "Reservar en dos toques", "Cita"]]};
+  var IMGS={};   /* optional covers: IMGS.dental=['/r/dental-01.webp', …] (15 per niche, 9:16); missing ones stay as type covers */
+  var SITE={
+    '':{b:'Tu Negocio',q:'Pedir cita',k:'Tu sector',h:'Lo que haces, explicado en una frase',c:'Pide tu cita',s:['Servicios','Precios','Equipo','Dónde estamos'],a:'#2F6BFF'},
+    dental:{b:'Clínica Aurora',q:'Pedir cita',k:'Odontología',h:'Tu sonrisa, en buenas manos',c:'Pide tu primera cita',s:['Primera visita','Implantes','Ortodoncia invisible','Blanqueamiento'],a:'#1E7A8C'},
+    estetica:{b:'Lumen Estética',q:'Reservar',k:'Medicina estética',h:'Resultados naturales, sin prisas',c:'Reserva tu valoración',s:['Valoración','Ácido hialurónico','Láser','Tratamiento capilar'],a:'#A0675B'},
+    inmo:{b:'Casa Norte',q:'Valorar',k:'Inmobiliaria',h:'Vende tu casa sin perder meses',c:'Valora tu casa',s:['Pisos en venta','Vender mi casa','Alquiler','Valoración'],a:'#2D5A47'},
+    gym:{b:'Forja Training',q:'Probar',k:'Gimnasio',h:'Entrena con gente que te espera',c:'Reserva tu prueba',s:['Clase de prueba','Fuerza','Entrenamiento personal','Horarios'],a:'#D9562B'}
+  };
+  var CHAT={
+    '':[['u','¡Hola! Os he visto en Instagram. ¿Tenéis hueco esta semana?'],['a','¡Hola! Soy el asistente virtual de Tu Negocio. Sí: el jueves a las 19:30 o el viernes a las 10:00. ¿Cuál te va mejor?'],['u','El jueves'],['a','Hecho ✅ Jueves a las 19:30. El miércoles te llega un recordatorio. ¿Me dices tu nombre?']],
+    dental:[['u','¡Hola! ¿Tenéis hueco esta semana para una limpieza?'],['a','¡Hola! Soy el asistente virtual de Clínica Aurora 😊 Sí: el jueves a las 19:30 o el viernes a las 10:00. ¿Cuál te va mejor?'],['u','El jueves perfecto'],['a','Hecho ✅ Jueves a las 19:30. El miércoles te llega un recordatorio. ¿Es tu primera visita con nosotros?']],
+    estetica:[['u','Hola, info precio ácido hialurónico labios'],['a','¡Hola! Soy el asistente virtual de Lumen Estética. El precio depende de lo que necesites, por eso la doctora hace antes una valoración de 15 minutos.'],['a','¿Te va bien el jueves a las 19:30?'],['u','Sí, genial'],['a','Reservado ✅ Jueves a las 19:30. Te mando la ubicación y un recordatorio el día antes.']],
+    inmo:[['u','Hola, ¿sigue disponible el ático con terraza?'],['a','¡Hola! Soy el asistente virtual de Casa Norte. Sí, sigue disponible. ¿Lo buscas para vivir o para invertir?'],['u','Para vivir. Tengo la hipoteca preaprobada'],['a','Perfecto. Puedo enseñártelo el jueves a las 19:30 o el sábado a las 11:00. ¿Cuál prefieres?'],['u','El sábado'],['a','Hecho ✅ Sábado a las 11:00. Te acompaña Laura, del equipo.']],
+    gym:[['u','¡Hola! ¿Puedo ir a probar mañana?'],['a','¡Claro! Soy el asistente virtual de Forja Training. Mañana tienes clase de fuerza a las 19:30 o sala libre todo el día. ¿Qué te apetece?'],['u','La clase de fuerza'],['a','Reservada ✅ Mañana a las 19:30. Trae ropa cómoda y agua. ¡Te esperamos!']]
+  };
+  var NN=N||'',NOUN={'':'tu negocio',dental:'tu clínica',estetica:'tu clínica',inmo:'tu agencia',gym:'tu gimnasio'}[NN];
+  $('reels-p').textContent='Un filmmaker graba en '+NOUN+' una mañana al mes. De ahí salen estos 15. Los editamos, los publicamos nosotros y cada uno termina en tu agenda o en tu WhatsApp.';
+  if(NN)$('reels-note').textContent='Ejemplo de un primer mes para '+({dental:'una clínica dental',estetica:'una clínica de medicina estética',inmo:'una inmobiliaria',gym:'un gimnasio'}[NN])+'. Los tuyos salen de tu negocio, de tu equipo y de lo que te pregunta tu gente.';
+  var STY=['','c','b','c','','b','c','','c','b','','c','b','','c'];
+  $('rg').innerHTML=REELS[NN].map(function(r,i){var img=(IMGS[NN]||[])[i],gift=i>=12;
+    return '<li class="rc '+(img?'ph':STY[i])+(gift?' gift':'')+'">'+(img?'<img src="'+esc(img)+'" alt="" loading="lazy" width="540" height="960">':'')+
+      '<div class="rt"><span></span><span class="tg">'+esc(r[0])+'</span></div><p class="t">'+esc(r[1])+'</p><span class="pbar" aria-hidden="true"></span><div class="rb"><span>→ '+esc(r[2])+'</span><i aria-hidden="true"></i></div></li>'}).join('');
+  var st=SITE[NN];
+  $('site').style.setProperty('--acc',st.a);
+  $('site').innerHTML='<div class="st-bar"><b>'+esc(st.b)+'</b><span>'+esc(st.q)+'</span></div>'+
+    '<div class="st-hero"><small>'+esc(st.k)+'</small><b>'+esc(st.h)+'</b><span>'+esc(st.c)+'</span></div>'+
+    '<div class="st-row"><i>★★★★★</i> Reseñas de Google</div><ul class="st-list">'+st.s.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'+
+    '<span class="st-wa"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.3.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.7-.1 1.3z"/></svg></span>';
+  var ph=$('site').parentNode;['right:-12px;top:52px','left:-12px;top:52%','right:-12px;bottom:36px'].forEach(function(css,i){var e=d.createElement('span');e.className='pin';e.style.cssText=css;e.textContent=i+1;ph.appendChild(e)});
+  if(NN==='inmo')$('wm2').textContent='Tus inmuebles con buenas fotos, y un botón para valorar la casa de quien quiere vender.';
+  $('wa-name').textContent=st.b;
+  var conv=CHAT[NN],wa=$('wa'),played=false;
+  function bubble(m,t){var e=d.createElement('div');e.className='msg '+m[0];e.innerHTML=esc(m[1])+'<time>'+t+'</time>';wa.appendChild(e);return e}
+  function playChat(){if(played)return;played=true;wa.innerHTML='';
+    var rm=matchMedia('(prefers-reduced-motion: reduce)').matches,t0=4,k=0;
+    function tm(i){return '23:0'+Math.min(9,t0+Math.floor(i/2))}
+    if(rm){conv.forEach(function(m,i){bubble(m,tm(i)).classList.add('on')});return}
+    (function next(){if(k>=conv.length)return;var m=conv[k],i=k;k++;
+      if(m[0]==='a'){var ty=d.createElement('div');ty.className='msg a typing on';ty.innerHTML='<i></i><i></i><i></i>';wa.appendChild(ty);
+        setTimeout(function(){wa.removeChild(ty);var e=bubble(m,tm(i));requestAnimationFrame(function(){e.classList.add('on')});setTimeout(next,900)},1100)}
+      else{var e=bubble(m,tm(i));requestAnimationFrame(function(){e.classList.add('on')});setTimeout(next,1000)}})()}
+  if('IntersectionObserver' in window){var cio=new IntersectionObserver(function(es){if(es[0].isIntersecting){playChat();cio.disconnect()}},{threshold:.35});cio.observe(wa)}else playChat();
+
+  /* ---------- tracking: our own (the admin, /l/…) and the Meta pixel ----------
+     Our devices opt out once with ?interno=1 (remembered in that browser; ?interno=0 undoes it): no visits, no notifications. */
+  var INT=false;try{var iq=/[?&]interno=([01])/.exec(location.search);if(iq){if(iq[1]==='1')localStorage.setItem('c404int','1');else localStorage.removeItem('c404int')}INT=!!localStorage.getItem('c404int')}catch(e){}
+  var LIVE=!INT&&(!!window.__L404TEST||(!navigator.webdriver&&/(^|\.)404growth\.com$/.test(location.hostname)));
+  var key=null,seen=0,since=0,depth=0,sent='',vp=0,vm=0,vs=0,QUE=[];
+  function utmAll(){var o={};['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){var v=qs.get(k);if(v)o[k]=v.slice(0,120)});return o}
+  var UTM=utmAll();
+  function post(path,b,beacon){if(!LIVE)return Promise.resolve(null);var s=JSON.stringify(b);
+    if(beacon&&navigator.sendBeacon){try{if(navigator.sendBeacon(API+path,s))return Promise.resolve(null)}catch(e){}}
+    return fetch(API+path,{method:'POST',body:s,keepalive:true,headers:{'content-type':'application/json'}}).then(function(r){return r.ok?r.json():null}).catch(function(){return null})}
+  function clock(){var now=Date.now();if(since)seen+=now-since;since=d.visibilityState==='visible'?now:0}
+  function ping(){clock();if(!key)return;var b={k:key,s:Math.round(seen/1000),d:depth,vp:vp,vm:vm,vs:vs};var j=JSON.stringify(b);if(j===sent)return;sent=j;post('p',b,true)}
+  function send(path,b){if(key){b.k=key;post(path,b,true)}else QUE.push([path,b])}
+  var EVH=['scroll','pointerdown','touchstart','keydown'];
+  function open(){if(key!==null)return;key='';EVH.forEach(function(e){removeEventListener(e,open,true)});
+    post('h',{n:N,utm:UTM,ref:(d.referrer||'').slice(0,200),w:innerWidth}).then(function(j){key=(j&&j.k)||'';if(key){QUE.splice(0).forEach(function(x){x[1].k=key;post(x[0],x[1],true)});ping()}})}
+  if(LIVE){EVH.forEach(function(e){addEventListener(e,open,{capture:true,passive:true})});clock();
+    var tick=0,iv=setInterval(function(){clock();if(seen>=2500)open();if(seen>=3600000){ping();clearInterval(iv)}else if(key&&++tick%15===0)ping()},1000);
+    d.addEventListener('visibilitychange',function(){clock();ping()});addEventListener('pagehide',ping);
+    var secs=['inicio','dolor','reels','web','asistente','prueba','como','encaje','dudas','reservar'];
+    if('IntersectionObserver' in window){var dio=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){depth=Math.max(depth,+x.target.getAttribute('data-dp'));dio.unobserve(x.target)}})},{rootMargin:'0px 0px -40% 0px'});
+      secs.forEach(function(id,i){var el=$(id);if(el){el.setAttribute('data-dp',i+1);dio.observe(el)}})}
+  }
+  /* the pixel, only with consent; its events wait in a queue until then */
+  var PQ=[],fbOn=false;window.__ev=[];
+  function px(name,data,custom){var p=Object.assign({content_category:N||'general'},data||{});window.__ev.push([name,p]);
+    if(!PIXEL)return;if(fbOn)fbq(custom?'trackCustom':'track',name,p);else PQ.push([custom?'trackCustom':'track',name,p])}
+  function fbLoad(){if(fbOn||!PIXEL)return;fbOn=true;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,d,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',PIXEL);PQ.splice(0).forEach(function(a){fbq(a[0],a[1],a[2])})}
+  var CK='c404meta',ck=null;try{ck=localStorage.getItem(CK)}catch(e){}
+  if(PIXEL){if(ck==='1')fbLoad();else if(ck!=='0'){var box=$('ck');box.hidden=false;
+    $('ck-yes').onclick=function(){try{localStorage.setItem(CK,'1')}catch(e){}box.hidden=true;fbLoad()};
+    $('ck-no').onclick=function(){try{localStorage.setItem(CK,'0')}catch(e){}box.hidden=true;PQ.length=0}}}
+  px('PageView');
+
+  /* ---------- the VSL: plays and how far they watch (every 5 %) ---------- */
+  var fig=$('vsl');
+  if(VSL.src){
+    var v=d.createElement('video');v.src=VSL.src;if(VSL.poster)v.poster=VSL.poster;v.controls=true;v.playsInline=true;v.preload='metadata';
+    v.setAttribute('aria-label','Vídeo de Christian: cómo funciona el sistema de 404 Growth');
+    fig.style.setProperty('--ar',VSL.ratio||'16/9');if(VSL.ratio==='9/16')fig.style.maxWidth='min(100%,440px)';
+    fig.innerHTML='';fig.appendChild(v);
+    var half=false,watched=0,lastT=0;
+    v.addEventListener('play',function(){if(!vp){vp=1;px('VSLPlay',{},true);ping()}});
+    v.addEventListener('timeupdate',function(){var t=v.currentTime;if(t>lastT&&t-lastT<2)watched+=t-lastT;lastT=t;vs=Math.round(watched);
+      if(v.duration){var p=Math.floor(t/v.duration*20)*5;if(p>vm){vm=p;if(p%25===0)ping()}if(!half&&t/v.duration>=.5){half=true;px('ViewContent',{content_name:'VSL 50%'})}}});
+    v.addEventListener('seeking',function(){lastT=v.currentTime});
+    v.addEventListener('ended',function(){vm=100;ping()});
+  }else{
+    $('slot').addEventListener('click',function(){$('vsl-msg').hidden=false;if(!vp){vp=1;ping()}});
+  }
+
+  /* ---------- clicks on the action ---------- */
+  d.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#reservar"]');if(!a)return;
+    var w=a.getAttribute('data-cta')||'';send('c',{w:w});px('ClicCTA',{content_name:w},true)});
+
+  /* ---------- the form: six questions, then the contact, then the agenda (already filled in) ---------- */
+  var QS=[
+    {id:'goal',q:'¿Qué quieres conseguir en los próximos meses?',o:[['g0','Más clientes nuevos cada mes'],['g1','Contestar a todos y no perder ninguno'],['g2','Que me conozcan en redes'],['g3','Todo eso, con un sistema que funcione solo']]},
+    {id:'now',q:'¿Cómo estás ahora mismo?',o:[['s0','Contestamos nosotros cuando podemos'],['s1','Pago agencia o community y no noto clientes'],['s2','Casi no tengo web ni redes cuidadas'],['s3','Funciona, pero quiero crecer más']]},
+    {id:'rev',q:'¿Cuánto factura tu negocio al mes, más o menos?',o:[['r0','Menos de 10.000 €'],['r1','Entre 10.000 y 30.000 €'],['r2','Entre 30.000 y 80.000 €'],['r3','Más de 80.000 €']]},
+    {id:'budget',q:'¿Cuánto podrías invertir al mes para resolverlo?',o:[['b0','Menos de 500 €'],['b1','Entre 500 y 1.000 €'],['b2','Entre 1.000 y 2.000 €'],['b3','Más de 2.000 €']]},
+    {id:'when',q:'¿Cuándo te gustaría tenerlo funcionando?',o:[['w0','Este mismo mes'],['w1','En 1 a 3 meses'],['w2','Más adelante'],['w3','Solo estoy mirando']]},
+    {id:'dec',q:'¿Eres quien toma la decisión?',o:[['d0','Sí, decido yo'],['d1','Lo decido con mi socio o socia'],['d2','No, decide otra persona']]}
+  ];
+  var SEDES=['1 sede','2 o 3 sedes','4 o más sedes'];
+  var A={},step=0,started=false,lead=null,box2=$('form-box'),prog=$('prog');
+  var TOTAL=QS.length+1;
+  function setProg(i){prog.style.width=Math.round(i/TOTAL*100)+'%'}
+  function focusIn(){var f=box2.querySelector('.q');if(f){f.setAttribute('tabindex','-1');try{f.focus({preventScroll:true})}catch(e){}}}
+  function renderQ(){
+    if(step>=QS.length){renderContact();return}
+    var x=QS[step];setProg(step);
+    box2.innerHTML='<div class="card-in"><p class="step-n label">Pregunta '+(step+1)+' de '+QS.length+'</p><h3 class="q">'+esc(x.q)+'</h3><div class="opts" role="group" aria-label="'+esc(x.q)+'">'+
+      x.o.map(function(o){return '<button type="button" class="opt" data-v="'+o[0]+'" aria-pressed="'+(A[x.id]===o[0])+'"><i aria-hidden="true"></i><span>'+esc(o[1])+'</span></button>'}).join('')+'</div>'+
+      (step?'<div class="nav"><button type="button" class="back">Atrás</button><span></span></div>':'')+'</div>';
+    box2.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){
+      A[x.id]=b.getAttribute('data-v');box2.querySelectorAll('.opt').forEach(function(o){o.setAttribute('aria-pressed',String(o===b))});
+      if(!started){started=true;send('fs',{});px('FormEmpezado',{},true)}
+      setTimeout(function(){step++;renderQ();focusIn();var cr=$('card').getBoundingClientRect();if(cr.top<0||cr.top>innerHeight*.6)$('card').scrollIntoView({behavior:'smooth',block:'start'})},180)}});
+    var bk=box2.querySelector('.back');if(bk)bk.onclick=function(){step--;renderQ();focusIn()};
+  }
+  var C={name:'',email:'',phone:'',biz:'',sedes:''};
+  function renderContact(){
+    setProg(QS.length);
+    box2.innerHTML='<form class="card-in" id="cf" novalidate><p class="step-n label">Último paso</p><h3 class="q">¿A quién llamo?</h3><div class="fields">'+
+      '<div class="two"><div class="fl"><label for="f-name">Tu nombre</label><input id="f-name" name="name" autocomplete="name" required maxlength="80"></div>'+
+      '<div class="fl"><label for="f-phone">Tu WhatsApp</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="24" placeholder="600 000 000"></div></div>'+
+      '<div class="fl"><label for="f-email">Tu email</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>'+
+      '<div class="two"><div class="fl"><label for="f-biz">Tu negocio (nombre y web o Instagram)</label><input id="f-biz" name="biz" required maxlength="140" placeholder="Clínica Ejemplo · @clinicaejemplo"></div>'+
+      '<div class="fl"><label for="f-sedes">¿Cuántas sedes tienes?</label><select id="f-sedes" name="sedes" required><option value="">Elige</option>'+SEDES.map(function(s){return '<option>'+s+'</option>'}).join('')+'</select></div></div>'+
+      '<p class="ferr" id="ferr" role="alert" hidden></p>'+
+      '<button class="btn go" type="submit" id="go">Ver los huecos libres</button>'+
+      '<p class="legal">Usamos tus datos solo para preparar y hacer la llamada. <a href="/legal" target="_blank" rel="noopener">Aviso legal y privacidad</a>.</p></div>'+
+      '<div class="nav"><button type="button" class="back">Atrás</button><span></span></div></form>';
+    ['name','phone','email','biz','sedes'].forEach(function(k){var el=$('f-'+k);el.value=C[k]||''});
+    box2.querySelector('.back').onclick=function(){step=QS.length-1;renderQ();focusIn()};
+    $('cf').onsubmit=function(e){e.preventDefault();
+      var f=this,ok=true,err='';
+      ['name','phone','email','biz','sedes'].forEach(function(k){C[k]=String(f[k].value||'').trim()});
+      var tel=C.phone.replace(/[^\d+]/g,'');
+      var chk={name:C.name.length>=2,phone:/^\+?\d{9,15}$/.test(tel),email:/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(C.email),biz:C.biz.length>=2,sedes:SEDES.indexOf(C.sedes)>=0};
+      Object.keys(chk).forEach(function(k){f[k].classList.toggle('bad',!chk[k]);if(!chk[k])ok=false});
+      if(!ok){err=!chk.phone&&C.phone?'Revisa el número de WhatsApp.':!chk.email&&C.email?'Revisa el email.':'Rellena todos los campos, por favor.';var fe=$('ferr');fe.textContent=err;fe.hidden=false;return}
+      C.tel=tel.charAt(0)==='+'?tel:'+34'+tel.replace(/^0034/,'');
+      var b=$('go');b.disabled=true;b.textContent='Un momento…';
+      var fit=FIT(A),pay={n:N,ans:A,name:C.name,email:C.email,phone:C.tel,biz:C.biz,sedes:C.sedes,utm:UTM};
+      var done=function(j){lead=(j&&j.id)||'';try{sessionStorage.setItem('l404',lead)}catch(e){}
+        px('Lead',{content_name:fit?'encaja':'no encaja'});if(fit)px('LeadCualificado',{},true);
+        if(fit)renderCal();else renderNoFit()};
+      if(key)post('f',Object.assign({k:key},pay)).then(done);
+      else if(LIVE){open();setTimeout(function(){post('f',Object.assign({k:key||''},pay)).then(done)},900)}
+      else done(null);
+    };
+  }
+  function calUrl(){
+    var u=Object.assign({},UTM);u.utm_source=u.utm_source||'404growth.com';u.utm_medium=u.utm_medium||'landing';u.utm_campaign=u.utm_campaign||'llamada';u.utm_content=u.utm_content||(N||'general');
+    if(lead&&!u.utm_term)u.utm_term=lead;
+    var p={embed_domain:location.host||'404growth.com',embed_type:'Inline',primary_color:'2f6bff',text_color:'1b1b1d',background_color:'ffffff',hide_gdpr_banner:'0',
+      name:C.name,email:C.email,a1:C.biz,a2:C.sedes,a3:C.tel};
+    Object.keys(u).forEach(function(k){p[k]=u[k]});
+    return CAL+'?'+Object.keys(p).map(function(k){return k+'='+encodeURIComponent(p[k])}).join('&')}
+  var frame=null,booked=false;
+  function renderCal(){
+    setProg(TOTAL);
+    var who=A.dec==='d2'?' Si decide otra persona, elige un hueco en el que pueda estar.':'';
+    box2.innerHTML='<div class="cal-head"><p class="step-n label">Último paso</p><h3 class="q" style="margin:0">Elige día y hora</h3><p>Tus datos ya están puestos: solo tienes que elegir el hueco y confirmar.'+esc(who)+'</p></div>'+
+      '<div class="cal" id="cal"><div class="cal-wait"><i></i><span>Cargando la agenda…</span><a href="'+esc(calUrl().replace(/embed_type=Inline&?/,''))+'" target="_blank" rel="noopener">¿Tarda? Ábrela aquí</a></div></div>';
+    frame=d.createElement('iframe');frame.title='Agenda para reservar una llamada con Christian';frame.src=calUrl();
+    frame.onload=function(){setTimeout(function(){var c=$('cal');if(c)c.classList.add('ready')},4000)};
+    $('cal').appendChild(frame);
+    var r=$('reservar');if(r.getBoundingClientRect().top<-40)r.scrollIntoView({behavior:'smooth'});
+  }
+  function renderNoFit(){
+    setProg(TOTAL);
+    box2.innerHTML='<div class="card-in nofit"><h3 class="q">Gracias, '+esc(C.name.split(' ')[0])+'. Te soy sincero.</h3>'+
+      '<p>Por lo que me cuentas, ahora mismo no es el momento de montar el sistema completo, y no quiero hacerte perder 30 minutos ni venderte algo que todavía no te toca.</p>'+
+      '<p>Me guardo tus respuestas. Si veo que puedo ayudarte con algo más pequeño, te escribo yo por WhatsApp. Y si tu situación cambia, aquí tienes la página.</p>'+
+      '<p style="margin:0">Un abrazo,<br><b>Christian</b></p></div>';
+  }
+  function renderOk(){
+    setProg(TOTAL);
+    box2.innerHTML='<div class="card-in"><div class="ok-h"><i aria-hidden="true"></i><h3 class="q">Hecho. Tu llamada está reservada.</h3></div>'+
+      '<ol class="next">'+
+      '<li><b>Mira tu email</b>Te ha llegado la invitación con el enlace de Google Meet. Añádela a tu calendario para que no se te pase.</li>'+
+      '<li><b>Te escribo por WhatsApp</b>Para confirmar la llamada. Si te surge algo, me lo dices por ahí.</li>'+
+      '<li><b>Ten esto a mano</b>Cuántos mensajes os llegan a la semana, cómo lleváis la agenda y tu web o tu Instagram. Con eso, los 30 minutos dan para mucho.</li>'+
+      '</ol><p class="legal" style="margin-top:14px">¿Al final no puedes? Cambia la hora desde el email de Calendly. Prefiero eso a que se quede un hueco vacío.</p></div>';
+    var r=$('reservar');r.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  window.addEventListener('message',function(e){
+    if(e.origin!=='https://calendly.com')return;
+    var m=e.data&&e.data.event;if(typeof m!=='string'||m.indexOf('calendly.')!==0)return;
+    var c=$('cal');if(c)c.classList.add('ready');
+    if(m==='calendly.page_height'&&frame){var hh=parseInt(e.data.payload&&e.data.payload.height,10);if(hh>400&&hh<3000){frame.style.height=hh+'px';if(c)c.style.minHeight=hh+'px'}}
+    if(m==='calendly.date_and_time_selected')px('EligeHora',{},true);
+    if(m==='calendly.event_scheduled'&&!booked){booked=true;var pl=e.data.payload||{};
+      send('b',{id:lead||'',ev:String(pl.event&&pl.event.uri||'').slice(0,200),inv:String(pl.invitee&&pl.invitee.uri||'').slice(0,200)});
+      px('Schedule');renderOk()}
+  });
+  renderQ();
+
+  /* ---------- header colour and phone bar ---------- */
+  var top=$('top'),bar=$('bar'),hero=$('inicio'),book=$('reservar'),heroIn=true,bookIn=false;
+  var nights=[].slice.call(d.querySelectorAll('.night'));
+  function hdr(){var y=scrollY||0;top.classList.toggle('solid',y>30);var on=false;nights.forEach(function(n){var r=n.getBoundingClientRect();if(r.top<=32&&r.bottom>=32)on=true});top.classList.toggle('on-night',on)}
+  addEventListener('scroll',hdr,{passive:true});hdr();
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){heroIn=es[0].isIntersecting;bar.classList.toggle('on',!heroIn&&!bookIn)},{rootMargin:'0px 0px -50% 0px'}).observe(hero);
+    new IntersectionObserver(function(es){bookIn=es[0].isIntersecting;bar.classList.toggle('on',!heroIn&&!bookIn)},{threshold:0}).observe(book);
+  }
+})();
+</script>
+</body>
+</html>

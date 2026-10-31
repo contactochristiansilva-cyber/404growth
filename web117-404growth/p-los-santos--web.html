@@ -1,0 +1,397 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Los Santos Tattoo · estudio de tatuajes en Calle Sierpes, Sevilla</title><meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Black &amp; grey, tradicional y fine line, y piercing a mano alzada, en un pasaje de la calle Sierpes, sin cita previa de lunes a sábado.">
+<style>@font-face{font-family:'Arch';src:url(/p-los-santos--web--f--archivo-latin-wdth-normal.woff2) format('woff2');font-weight:100 900;font-stretch:62% 125%;font-style:normal;font-display:block}
+@font-face{font-family:'Arch';src:url(/p-los-santos--web--f--archivo-latin-wdth-italic.woff2) format('woff2');font-weight:100 900;font-stretch:62% 125%;font-style:italic;font-display:block}
+@font-face{font-family:'News';src:url(/p-los-santos--web--f--newsreader-latin-opsz-italic.woff2) format('woff2');font-weight:200 800;font-style:italic;font-display:block}
+@font-face{font-family:'News';src:url(/p-los-santos--web--f--newsreader-latin-opsz-normal.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:block}
+:root{--wall:#EEEDE9;--paper:#FFFFFF;--ink:#000;--red:#D90429;--red-d:#B5001F;--grey:#5F5C57;--line:rgba(0,0,0,.16);--g:clamp(16px,3.4vw,44px);--fs:120px;color-scheme:light}
+*{box-sizing:border-box}
+html{background:var(--wall);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--wall);color:var(--ink);font:400 17px/1.55 'Arch',system-ui,sans-serif;font-stretch:100%;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,p,figure,blockquote,dl,dd,ol,ul{margin:0;padding:0}
+ul,ol{list-style:none}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2.5px solid var(--red);outline-offset:3px}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1480px;margin:0 auto;padding-inline:var(--g)}
+svg{width:18px;height:18px;flex:0 0 auto}
+
+/* buttons: pills, the studio's red for the actions */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 24px;border-radius:999px;border:1.5px solid transparent;
+  font:600 15.5px/1 'Arch';font-stretch:100%;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background-color .15s,color .15s,border-color .15s}
+.btn.sm{min-height:42px;padding:0 18px;font-size:14.5px}
+.btn.red{background:var(--red);color:#fff}.btn.red:hover{background:var(--red-d)}
+.btn.line{border-color:var(--ink);background:transparent}.btn.line:hover{background:var(--ink);color:var(--wall)}
+.btn.ink{background:var(--ink);color:#fff}.btn.ink:hover{background:#2a2a2a}
+
+/* top bar */
+.top{display:flex;align-items:center;gap:28px;padding-block:18px 10px;position:relative;z-index:5}
+.brand img{height:40px;width:auto}
+.nav{display:flex;gap:26px;margin-inline-start:auto;font:500 15px/1 'Arch'}
+.nav a{text-decoration:none;padding:8px 0;border-bottom:1.5px solid transparent}.nav a:hover{border-color:var(--ink)}
+.loc{font:italic 400 18px/1 'News';text-decoration:none;color:var(--grey)}
+@media (max-width:900px){.nav{display:none}.loc{margin-inline-start:auto;font-size:16px}.brand img{height:34px}}
+
+/* hero: the wordmark, cut by the strip of pieces */
+.hero{padding-top:4px}
+.wmw{position:relative;max-width:1480px;margin:0 auto}
+.wm{padding-inline:var(--g);font:900 var(--fs)/.8 'Arch';font-stretch:125%;letter-spacing:-.04em;text-transform:uppercase;white-space:nowrap;position:relative;z-index:1}
+.wm.l1{padding-top:.05em}
+@media (max-width:700px){.wm{font-stretch:100%;letter-spacing:-.03em}}
+.strip{--sh:max(calc(.92 * var(--fs)),200px);position:relative;z-index:2;height:var(--sh);width:100vw;margin:calc(-.17 * var(--fs)) 0 calc(-.17 * var(--fs)) calc(50% - 50vw);overflow:hidden}
+.track{display:flex;gap:10px;width:max-content;height:100%;animation:drift 80s linear infinite}
+.track .dup{display:flex;gap:10px;height:100%}
+.strip:hover .track{animation-play-state:paused}
+@keyframes drift{to{transform:translateX(calc(-50% - 5px))}}
+.fr{position:relative;height:100%;aspect-ratio:9/16;flex:0 0 auto;background:#ccc;overflow:hidden}
+.fr img{width:100%;height:100%;object-fit:cover}
+.fr figcaption{position:absolute;left:8px;bottom:7px;font:600 12px/1 'Arch';color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+@media (prefers-reduced-motion:reduce){.track{animation:none}.strip{overflow-x:auto;scrollbar-width:none}}
+.hb{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px var(--g);margin-top:clamp(28px,4vw,56px);align-items:start}
+.tag{grid-column:1/8;font:italic 300 clamp(34px,5vw,76px)/1.02 'News';letter-spacing:-.015em;text-wrap:balance}
+.hr{grid-column:8/13;display:grid;gap:22px;padding-top:8px}
+.lead{font-size:19px;line-height:1.5;max-width:34ch}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;border-top:1.5px solid var(--ink);padding-top:16px}
+.facts dt{font:800 34px/1 'Arch';font-stretch:115%;letter-spacing:-.02em}
+.facts dd{font-size:14px;line-height:1.35;color:var(--grey);margin-top:6px}
+.acts{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:900px){.tag,.hr{grid-column:1/-1}.lead{font-size:18px}}
+
+/* sections */
+.sec{padding-block:clamp(72px,10vw,150px) 0}
+.sh{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px var(--g);align-items:end;margin-bottom:clamp(28px,4vw,52px)}
+.sh h2{grid-column:1/8;font:800 clamp(36px,5.4vw,84px)/.95 'Arch';font-stretch:110%;letter-spacing:-.03em;text-wrap:balance}
+.sh p{grid-column:8/13;font:italic 400 clamp(19px,1.6vw,23px)/1.35 'News';color:var(--ink);max-width:36ch}
+@media (max-width:900px){.sh h2,.sh p{grid-column:1/-1}}
+
+/* the index of styles */
+.idx{border-bottom:1.5px solid var(--ink)}
+.row{border-top:1px solid var(--line)}
+.row.g0{border-top:1.5px solid var(--ink)}
+.st{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"n a";align-items:center;column-gap:24px;width:100%;padding:8px 0 10px;
+  background:none;border:0;cursor:pointer;text-align:start}
+.sn{grid-area:n;font:750 clamp(44px,8.6vw,138px)/.9 'Arch';font-stretch:68%;letter-spacing:-.02em;transition:color .15s;overflow-wrap:anywhere}
+.sa{grid-area:a;font:italic 400 clamp(20px,2vw,30px)/1 'News';align-self:end}
+.sc{grid-area:c;font-size:13px;color:var(--grey);text-align:end;align-self:start;margin-top:6px}
+.st:hover .sn,.st[aria-expanded="true"] .sn{color:var(--red)}
+.pan{padding:6px 0 26px;display:grid;gap:16px}
+.pan[hidden]{display:none}
+.th{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:760px}
+.th img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.th figcaption{font:italic 400 15px/1.3 'News';margin-top:6px}
+.pa{display:flex;flex-wrap:wrap;gap:10px}
+.pv{position:fixed;left:0;top:0;width:260px;z-index:20;pointer-events:none;opacity:0;transition:opacity .12s;background:var(--paper);padding:8px 8px 10px;box-shadow:0 18px 40px -18px rgba(0,0,0,.45)}
+.pv.on{opacity:1}
+.pv img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.pv figcaption{display:grid;gap:2px;margin-top:8px}.pv b{font:italic 400 17px/1.2 'News'}.pv span{font-size:12.5px;color:var(--grey)}
+@media (hover:none),(max-width:900px){.pv{display:none}}
+@media (max-width:600px){.st{column-gap:12px;padding:6px 0 8px}.sa{font-size:18px}.sc{font-size:12px}}
+
+/* artists */
+.arts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;max-width:1480px;margin:0 auto;padding-inline:var(--g)}
+.ar{display:grid;align-content:start;gap:10px;min-width:0}
+.ar img{width:100%;aspect-ratio:4/5;object-fit:cover;margin-bottom:6px}
+.ar h3{font:italic 400 clamp(34px,3vw,46px)/1 'News';letter-spacing:-.01em}
+.ar .ss{font:700 14px/1.3 'Arch';font-stretch:85%;text-transform:none}
+.ar .ln{font-size:15.5px;line-height:1.5}
+.ar blockquote{font:italic 400 17px/1.35 'News';color:var(--grey);border-left:2px solid var(--red);padding-left:12px}
+.ar .btn{justify-self:start;margin-top:6px}
+@media (max-width:1100px){.arts{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:min(78vw,360px);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin}
+  .ar{scroll-snap-align:start}}
+
+/* La sala: pieces hung with their museum labels */
+.fil{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chip{min-height:40px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:transparent;cursor:pointer;font:500 14.5px/1 'Arch';display:inline-flex;align-items:center;gap:8px}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--wall)}
+.chip.sty{background:var(--red);border-color:var(--red);color:#fff}.chip.sty svg{width:15px;height:15px}
+.wall{columns:4 260px;column-gap:22px}
+.w{break-inside:avoid;margin-bottom:26px}
+.w img{width:100%}
+.cart{background:var(--paper);padding:11px 13px 12px;display:grid;gap:3px;border-top:0;max-width:92%;margin-top:-1px}
+.cart b{font:italic 400 18px/1.25 'News'}
+.cart span{font-size:13px;line-height:1.3;color:var(--grey)}
+.cart .by{color:var(--ink);font-weight:600}
+.w.more{display:none}.wall.all .w.more{display:block}
+.w.hide{display:none!important}
+.moreb{display:flex;justify-content:center;margin-top:8px}
+@media (max-width:640px){.wall{columns:2;column-gap:12px}.w{margin-bottom:16px}.cart{padding:8px 9px 9px;max-width:100%}.cart b{font-size:15.5px}.cart span{font-size:12px}}
+
+/* the studio */
+.band{background:var(--ink);color:var(--wall);margin-top:clamp(72px,10vw,150px);padding-bottom:clamp(64px,8vw,120px)}
+.stg{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:28px var(--g);align-items:start}
+.sph{grid-column:1/7;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sph .p0{grid-column:1/-1;width:100%;aspect-ratio:4/3;object-fit:cover}
+.sph .p1,.sph .p2{width:100%;aspect-ratio:4/5;object-fit:cover}
+.stx{grid-column:8/13;display:grid;gap:24px}
+.stx h2{font:800 clamp(34px,4.4vw,66px)/.98 'Arch';font-stretch:110%;letter-spacing:-.03em;text-wrap:balance}
+.stx .big{font:italic 300 clamp(21px,1.8vw,26px)/1.35 'News'}
+.ex{display:grid;gap:18px;border-top:1px solid rgba(238,237,233,.25);padding-top:20px}
+.ex h3{font:700 16px/1.2 'Arch';margin-bottom:4px}
+.ex p{font-size:15.5px;color:rgba(238,237,233,.78)}
+.adr{display:flex;gap:12px;font-size:16px;line-height:1.45}.adr svg{margin-top:2px}.adr i{font-family:'News';font-size:18px}
+@media (max-width:900px){.sph,.stx{grid-column:1/-1}}
+
+/* cita */
+.cg{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:28px var(--g);align-items:start}
+.steps{grid-column:1/4;display:grid;gap:0;counter-reset:s;border-top:1.5px solid var(--ink)}
+.steps li{counter-increment:s;display:grid;gap:4px;padding:16px 0 18px;border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);font:800 30px/1 'Arch';font-stretch:115%;color:var(--red)}
+.steps b{font:700 17px/1.2 'Arch'}.steps span{font-size:15px;color:var(--grey)}
+.idea{grid-column:4/9;display:grid;gap:18px;background:var(--paper);padding:clamp(18px,2.4vw,30px)}
+.idea fieldset{border:0;margin:0;padding:0;display:grid;gap:10px}
+.idea legend,.fl>span:first-child{font:700 14px/1.2 'Arch';padding:0;margin-bottom:10px}
+.cs{display:flex;flex-wrap:wrap;gap:8px}
+.fl{display:grid}
+.fl select,.fl textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;background:var(--wall);font-size:16px}
+.fl textarea{resize:vertical;min-height:88px;line-height:1.45}
+.fb{position:relative;display:flex;align-items:center;gap:10px;border:1.5px dashed var(--line);border-radius:10px;padding:12px;background:var(--wall);font-size:15px;cursor:pointer}
+.fb input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.sum{border-top:1px solid var(--line);padding-top:14px}
+.sum .k{font:italic 400 17px/1.2 'News';margin-bottom:8px}
+.sum pre{margin:0;white-space:pre-wrap;font:400 14.5px/1.5 'Arch';background:#DCF8C6;color:#111;padding:11px 13px;border-radius:12px 12px 2px 12px;max-width:440px}
+.idea .btn{justify-self:start}
+.night{grid-column:9/13;background:#0B141A;color:#E9EDEF;border-radius:18px;overflow:hidden;position:sticky;top:20px}
+.night header{display:flex;gap:12px;align-items:center;padding:14px 16px;background:#202C33}
+.night header img{width:42px;height:42px;object-fit:contain;background:#fff;border-radius:50%;padding:5px}
+.night header b{display:block;font:600 15.5px/1.2 'Arch'}.night header span{font-size:12.5px;color:#8696A0;display:flex;align-items:center;gap:6px}
+.night header i{width:8px;height:8px;border-radius:50%;background:#25D366}
+.msgs{display:grid;gap:8px;padding:16px 14px}
+.m{max-width:86%;padding:8px 10px 6px;border-radius:10px;font-size:14.5px;line-height:1.4;display:grid}
+.m.in{background:#202C33;justify-self:start;border-top-left-radius:2px}
+.m.out{background:#005C4B;justify-self:end;border-top-right-radius:2px}
+.m time{font-size:11px;color:rgba(233,237,239,.6);justify-self:end;margin-top:2px}
+.nn{padding:0 16px 18px;font:italic 400 16px/1.4 'News';color:#C9D1D6}
+@media (max-width:1100px){.steps{grid-column:1/-1;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 18px}.idea{grid-column:1/8}.night{grid-column:8/13}}
+@media (max-width:820px){.steps{grid-template-columns:1fr 1fr}.idea,.night{grid-column:1/-1}.night{position:static}}
+
+/* visit + faq */
+.vg{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:40px var(--g)}
+.vg>div:first-child{grid-column:1/6;display:grid;gap:20px;align-content:start}
+.vg h2{font:800 clamp(34px,4.4vw,66px)/.98 'Arch';font-stretch:110%;letter-spacing:-.03em}
+.adr2{font:italic 400 22px/1.35 'News';max-width:30ch}
+.hrs{border-collapse:collapse;width:100%;max-width:420px;font-size:16px}
+.hrs th{text-align:start;font-weight:600;padding:10px 0;border-bottom:1px solid var(--line)}.hrs td{text-align:end;padding:10px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.faq{grid-column:7/13;display:grid;align-content:start}
+.faq h2{margin-bottom:18px}
+.faq details{border-top:1px solid var(--line)}.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 36px 18px 0;font:600 18px/1.3 'Arch';position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:4px;top:50%;width:12px;height:12px;border-right:2px solid;border-bottom:2px solid;transform:translateY(-70%) rotate(45deg);transition:transform .15s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq details p{padding:0 0 20px;font-size:16px;max-width:60ch}
+@media (max-width:900px){.vg>div:first-child,.faq{grid-column:1/-1}}
+
+/* footer + the fixed buttons */
+.foot{margin-top:clamp(80px,10vw,150px);border-top:1.5px solid var(--ink);padding:26px 0 120px;overflow:hidden}
+.fw{font:900 calc(var(--fs) * .62)/.8 'Arch';font-stretch:125%;letter-spacing:-.035em;white-space:nowrap}
+.fr2{display:flex;gap:20px;align-items:center;margin-top:26px;font-size:14px;color:var(--grey)}.fr2 img{height:34px;width:auto}
+.fix{position:fixed;right:var(--g);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;gap:8px;box-shadow:0 14px 34px -14px rgba(0,0,0,.5);border-radius:999px}
+@media (max-width:600px){.fix{left:12px;right:12px}.fix .btn{flex:1;padding:0 12px;font-size:15px}}
+</style></head><body>
+<header class="top wrap"><a class="brand" href="#top" aria-label="Los Santos Tattoo, inicio"><img src="/p-los-santos--web--img--logo.png" width="93" height="96" alt="Los Santos Tattoo"></a>
+<nav class="nav" aria-label="Secciones"><a href="#estilos">Estilos</a><a href="#artistas">Artistas</a><a href="#sala">La sala</a><a href="#estudio">El estudio</a><a href="#cita">Cita</a></nav>
+<a class="loc" href="#visita">Calle Sierpes, Sevilla</a></header><main><section class="hero" id="top">
+<h1 class="sr">Los Santos Tattoo, estudio de tatuajes en Calle Sierpes, Sevilla</h1>
+<div class="wmw" aria-hidden="true"><p class="wm l1">LOS SANTOS</p>
+<div class="strip"><div class="track"><figure class="fr"><img class="" src="/p-los-santos--web--img--ig017-720.webp" width="720" height="720" alt="Dragón japonés a color, tatuaje tradicional de Curro Retamal en brazo" decoding="async"><figcaption>Curro Retamal</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig002-720.webp" width="720" height="828" alt="Rama de naranjo, tatuaje color de Nau" decoding="async"><figcaption>Nau</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--034-720.webp" width="600" height="800" alt="Águila, tatuaje tradicional de Los Santos en brazo" decoding="async"><figcaption>Los Santos</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig023-720.webp" width="720" height="770" alt="Guerrero con espadas, tatuaje black &amp; grey de Curro Retamal en antebrazo" decoding="async"><figcaption>Curro Retamal</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig049-720.webp" width="720" height="776" alt="Carta del tarot «The Fool», tatuaje fineline de Nau en muslo" decoding="async"><figcaption>Nau</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig043-720.webp" width="720" height="720" alt="Hombre, relojes blandos y raíces, tatuaje black &amp; grey de Curro Retamal en antebrazo" decoding="async"><figcaption>Curro Retamal</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--033-720.webp" width="600" height="800" alt="Mujer con máscara de sol, tatuaje tradicional de Los Santos en brazo" decoding="async"><figcaption>Los Santos</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig013-720.webp" width="720" height="960" alt="Calavera con serpientes, tatuaje black &amp; grey de Curro Retamal en antebrazo" decoding="async"><figcaption>Curro Retamal</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig029-720.webp" width="720" height="960" alt="Paloma lineal con estrella en puntillismo, tatuaje fineline de Nau en pecho" decoding="async"><figcaption>Nau</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig020-720.webp" width="720" height="955" alt="Perro de Fu en la mano, tatuaje black &amp; grey de Curro Retamal en mano" decoding="async"><figcaption>Curro Retamal</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--020-720.webp" width="600" height="800" alt="Ancla con flor, tatuaje tradicional de Los Santos en brazo" decoding="async"><figcaption>Los Santos</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig040-720.webp" width="720" height="720" alt="Perro con «Triana», tatuaje black &amp; grey de Curro Retamal en antebrazo" decoding="async"><figcaption>Curro Retamal</figcaption></figure><div class="dup"><figure class="fr"><img class="" src="/p-los-santos--web--img--ig017-720.webp" width="720" height="720" alt="Dragón japonés a color, tatuaje tradicional de Curro Retamal en brazo" decoding="async"><figcaption>Curro Retamal</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig002-720.webp" width="720" height="828" alt="Rama de naranjo, tatuaje color de Nau" decoding="async"><figcaption>Nau</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--034-720.webp" width="600" height="800" alt="Águila, tatuaje tradicional de Los Santos en brazo" decoding="async"><figcaption>Los Santos</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig023-720.webp" width="720" height="770" alt="Guerrero con espadas, tatuaje black &amp; grey de Curro Retamal en antebrazo" decoding="async"><figcaption>Curro Retamal</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig049-720.webp" width="720" height="776" alt="Carta del tarot «The Fool», tatuaje fineline de Nau en muslo" decoding="async"><figcaption>Nau</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig043-720.webp" width="720" height="720" alt="Hombre, relojes blandos y raíces, tatuaje black &amp; grey de Curro Retamal en antebrazo" decoding="async"><figcaption>Curro Retamal</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--033-720.webp" width="600" height="800" alt="Mujer con máscara de sol, tatuaje tradicional de Los Santos en brazo" decoding="async"><figcaption>Los Santos</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig013-720.webp" width="720" height="960" alt="Calavera con serpientes, tatuaje black &amp; grey de Curro Retamal en antebrazo" decoding="async"><figcaption>Curro Retamal</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig029-720.webp" width="720" height="960" alt="Paloma lineal con estrella en puntillismo, tatuaje fineline de Nau en pecho" decoding="async"><figcaption>Nau</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig020-720.webp" width="720" height="955" alt="Perro de Fu en la mano, tatuaje black &amp; grey de Curro Retamal en mano" decoding="async"><figcaption>Curro Retamal</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--020-720.webp" width="600" height="800" alt="Ancla con flor, tatuaje tradicional de Los Santos en brazo" decoding="async"><figcaption>Los Santos</figcaption></figure><figure class="fr"><img class="" src="/p-los-santos--web--img--ig040-720.webp" width="720" height="720" alt="Perro con «Triana», tatuaje black &amp; grey de Curro Retamal en antebrazo" decoding="async"><figcaption>Curro Retamal</figcaption></figure></div></div></div>
+<p class="wm l2">TATTOO</p></div>
+<div class="wrap hb">
+<p class="tag">estudio de tatuajes y piercings en la calle Sierpes, Sevilla.</p>
+<div class="hr"><p class="lead">Black &amp; grey, tradicional y fine line, y piercing a mano alzada, en un pasaje de la calle Sierpes, sin cita previa de lunes a sábado.</p><dl class="facts"><div><dt>5,0</dt><dd>en Google (1.814 reseñas)</dd></div><div><dt>11–20 h</dt><dd>de lunes a sábado, sin cita previa</dd></div><div><dt>4</dt><dd>idiomas: español, inglés, francés e italiano</dd></div><div><dt>26</dt><dd>piezas en «La sala»</dd></div></dl>
+<div class="acts"><a class="btn red" href="#cita">Pide cita</a><a class="btn line" href="#estilos">Ver los estilos</a></div></div>
+</div></section><section class="sec wrap" id="estilos">
+<div class="sh"><h2>Elige el estilo y te decimos quién lo tatúa.</h2><p>Elige el estilo y te decimos quién lo tatúa. Y si lo tienes claro, ven sin cita.</p></div>
+<ul class="idx"><li class="row g0"><button type="button" class="st" aria-expanded="false" data-s="Black &amp; grey" data-a="curro" data-pv="/p-los-santos--web--img--ig013-720.webp" data-pt="Calavera con serpientes" data-pm="Black &amp; grey, antebrazo"><span class="sn">Black &amp; grey</span><span class="sa">Curro Retamal</span></button><div class="pan" hidden><div class="th"><figure><img class="" src="/p-los-santos--web--img--ig013-720.webp" width="720" height="960" alt="Calavera con serpientes, tatuaje black &amp; grey de Curro Retamal en antebrazo" loading="lazy" decoding="async"><figcaption>Calavera con serpientes</figcaption></figure><figure><img class="" src="/p-los-santos--web--img--ig014-720.webp" width="720" height="867" alt="Lettering «Blessed» entre nubes, tatuaje black &amp; grey de Curro Retamal en antebrazo" loading="lazy" decoding="async"><figcaption>Lettering «Blessed» entre nubes</figcaption></figure><figure><img class="" src="/p-los-santos--web--img--ig019-720.webp" width="720" height="802" alt="Humo a mano alzada, tatuaje black &amp; grey de Curro Retamal en mano" loading="lazy" decoding="async"><figcaption>Humo a mano alzada</figcaption></figure></div><div class="pa"><a class="btn line sm" href="#sala" data-go="Black &amp; grey">Ver en la sala</a><a class="btn red sm" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener">Pide cita con Curro Retamal</a></div></div></li><li class="row"><button type="button" class="st" aria-expanded="false" data-s="Tradicional" data-a="curro" data-pv="/p-los-santos--web--img--ig004-720.webp" data-pt="El Auryn de «La historia interminable»" data-pm="Tradicional, antebrazo"><span class="sn">Tradicional</span><span class="sa">Curro Retamal</span></button><div class="pan" hidden><div class="th"><figure><img class="" src="/p-los-santos--web--img--ig004-720.webp" width="720" height="1280" alt="El Auryn de «La historia interminable», tatuaje tradicional de Curro Retamal en antebrazo" loading="lazy" decoding="async"><figcaption>El Auryn de «La historia interminable»</figcaption></figure><figure><img class="" src="/p-los-santos--web--img--ig017-720.webp" width="720" height="720" alt="Dragón japonés a color, tatuaje tradicional de Curro Retamal en brazo" loading="lazy" decoding="async"><figcaption>Dragón japonés a color</figcaption></figure><figure><img class="" src="/p-los-santos--web--img--ig022-720.webp" width="720" height="720" alt="Kewpie boxeador con «Down here with us», tatuaje tradicional de Curro Retamal" loading="lazy" decoding="async"><figcaption>Kewpie boxeador con «Down here with us»</figcaption></figure></div><div class="pa"><a class="btn line sm" href="#sala" data-go="Tradicional">Ver en la sala</a><a class="btn red sm" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener">Pide cita con Curro Retamal</a></div></div></li><li class="row"><button type="button" class="st" aria-expanded="false" data-s="Fineline" data-a="curro" data-pv="/p-los-santos--web--img--ig038-720.webp" data-pt="Mosaico lineal" data-pm="Fineline, muslo"><span class="sn">Fineline</span><span class="sa">Curro Retamal</span></button><div class="pan" hidden><div class="th"><figure><img class="" src="/p-los-santos--web--img--ig038-720.webp" width="720" height="720" alt="Mosaico lineal, tatuaje fineline de Curro Retamal en muslo" loading="lazy" decoding="async"><figcaption>Mosaico lineal</figcaption></figure></div><div class="pa"><a class="btn line sm" href="#sala" data-go="Fineline">Ver en la sala</a><a class="btn red sm" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener">Pide cita con Curro Retamal</a></div></div></li><li class="row g0"><button type="button" class="st" aria-expanded="false" data-s="Fineline" data-a="nau" data-pv="/p-los-santos--web--img--ig029-720.webp" data-pt="Paloma lineal con estrella en puntillismo" data-pm="Fineline, pecho"><span class="sn">Fineline</span><span class="sa">Nau</span></button><div class="pan" hidden><div class="th"><figure><img class="" src="/p-los-santos--web--img--ig029-720.webp" width="720" height="960" alt="Paloma lineal con estrella en puntillismo, tatuaje fineline de Nau en pecho" loading="lazy" decoding="async"><figcaption>Paloma lineal con estrella en puntillismo</figcaption></figure><figure><img class="" src="/p-los-santos--web--img--ig049-720.webp" width="720" height="776" alt="Carta del tarot «The Fool», tatuaje fineline de Nau en muslo" loading="lazy" decoding="async"><figcaption>Carta del tarot «The Fool»</figcaption></figure></div><div class="pa"><a class="btn line sm" href="#sala" data-go="Fineline">Ver en la sala</a><a class="btn red sm" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener">Pide cita con Nau</a></div></div></li><li class="row"><button type="button" class="st" aria-expanded="false" data-s="Black &amp; grey" data-a="nau" data-pv="/p-los-santos--web--img--ig011-720.webp" data-pt="Toro realista" data-pm="Black &amp; grey, brazo"><span class="sn">Black &amp; grey</span><span class="sa">Nau</span></button><div class="pan" hidden><div class="th"><figure><img class="" src="/p-los-santos--web--img--ig011-720.webp" width="720" height="884" alt="Toro realista, tatuaje black &amp; grey de Nau en brazo" loading="lazy" decoding="async"><figcaption>Toro realista</figcaption></figure></div><div class="pa"><a class="btn line sm" href="#sala" data-go="Black &amp; grey">Ver en la sala</a><a class="btn red sm" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener">Pide cita con Nau</a></div></div></li><li class="row"><button type="button" class="st" aria-expanded="false" data-s="Color" data-a="nau" data-pv="/p-los-santos--web--img--ig002-720.webp" data-pt="Rama de naranjo" data-pm="Color"><span class="sn">Color</span><span class="sa">Nau</span></button><div class="pan" hidden><div class="th"><figure><img class="" src="/p-los-santos--web--img--ig002-720.webp" width="720" height="828" alt="Rama de naranjo, tatuaje color de Nau" loading="lazy" decoding="async"><figcaption>Rama de naranjo</figcaption></figure></div><div class="pa"><a class="btn line sm" href="#sala" data-go="Color">Ver en la sala</a><a class="btn red sm" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener">Pide cita con Nau</a></div></div></li><li class="row g0"><button type="button" class="st" aria-expanded="false" data-s="Tradicional" data-a="equipo" data-pv="/p-los-santos--web--img--020-720.webp" data-pt="Ancla con flor" data-pm="Tradicional, brazo"><span class="sn">Tradicional</span><span class="sa">Los Santos</span></button><div class="pan" hidden><div class="th"><figure><img class="" src="/p-los-santos--web--img--020-720.webp" width="600" height="800" alt="Ancla con flor, tatuaje tradicional de Los Santos en brazo" loading="lazy" decoding="async"><figcaption>Ancla con flor</figcaption></figure><figure><img class="" src="/p-los-santos--web--img--031-720.webp" width="600" height="800" alt="Corazón sagrado con suculentas, tatuaje tradicional de Los Santos" loading="lazy" decoding="async"><figcaption>Corazón sagrado con suculentas</figcaption></figure><figure><img class="" src="/p-los-santos--web--img--033-720.webp" width="600" height="800" alt="Mujer con máscara de sol, tatuaje tradicional de Los Santos en brazo" loading="lazy" decoding="async"><figcaption>Mujer con máscara de sol</figcaption></figure></div><div class="pa"><a class="btn line sm" href="#sala" data-go="Tradicional">Ver en la sala</a><a class="btn red sm" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener">Pide cita con Los Santos</a></div></div></li><li class="row"><button type="button" class="st" aria-expanded="false" data-s="Blackwork" data-a="equipo" data-pv="/p-los-santos--web--img--032-720.webp" data-pt="Motor" data-pm="Blackwork, pecho"><span class="sn">Blackwork</span><span class="sa">Los Santos</span></button><div class="pan" hidden><div class="th"><figure><img class="" src="/p-los-santos--web--img--032-720.webp" width="600" height="800" alt="Motor, tatuaje blackwork de Los Santos en pecho" loading="lazy" decoding="async"><figcaption>Motor</figcaption></figure><figure><img class="" src="/p-los-santos--web--img--005-720.webp" width="720" height="520" alt="Polilla con calavera, tatuaje blackwork de Los Santos" loading="lazy" decoding="async"><figcaption>Polilla con calavera</figcaption></figure><figure><img class="" src="/p-los-santos--web--img--028-720.webp" width="600" height="800" alt="Flor de loto ornamental, tatuaje blackwork de Los Santos en mano" loading="lazy" decoding="async"><figcaption>Flor de loto ornamental</figcaption></figure></div><div class="pa"><a class="btn line sm" href="#sala" data-go="Blackwork">Ver en la sala</a><a class="btn red sm" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener">Pide cita con Los Santos</a></div></div></li><li class="row"><button type="button" class="st" aria-expanded="false" data-s="Neotradicional" data-a="equipo" data-pv="/p-los-santos--web--img--007-720.webp" data-pt="Murciélago y Jigsaw" data-pm="Neotradicional, pecho"><span class="sn">Neotradicional</span><span class="sa">Los Santos</span></button><div class="pan" hidden><div class="th"><figure><img class="" src="/p-los-santos--web--img--007-720.webp" width="720" height="520" alt="Murciélago y Jigsaw, tatuaje neotradicional de Los Santos en pecho" loading="lazy" decoding="async"><figcaption>Murciélago y Jigsaw</figcaption></figure></div><div class="pa"><a class="btn line sm" href="#sala" data-go="Neotradicional">Ver en la sala</a><a class="btn red sm" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener">Pide cita con Los Santos</a></div></div></li></ul>
+<figure class="pv" aria-hidden="true"><img alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="640" height="800"><figcaption><b></b><span></span></figcaption></figure>
+</section><section class="sec" id="artistas"><div class="wrap sh"><h2>Dos residentes y la casa.</h2><p>Curro Retamal y Nau son los tatuadores residentes. Los piercings los hacen Peter Glitter y Dami.</p></div>
+<div class="arts"><article class="ar" id="a-curro"><img class="" src="/p-los-santos--web--img--ig023-720.webp" width="720" height="770" alt="Guerrero con espadas, tatuaje black &amp; grey de Curro Retamal en antebrazo" loading="lazy" decoding="async"><h3>Curro Retamal</h3><p class="ss">Black &amp; grey, Tradicional, Fineline</p><a class="btn line sm" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Pide cita con Curro Retamal</a></article><article class="ar" id="a-nau"><img class="" src="/p-los-santos--web--img--ig049-720.webp" width="720" height="776" alt="Carta del tarot «The Fool», tatuaje fineline de Nau en muslo" loading="lazy" decoding="async"><h3>Nau</h3><p class="ss">Fineline, Black &amp; grey, Color</p><a class="btn line sm" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Pide cita con Nau</a></article><article class="ar" id="a-equipo"><img class="" src="/p-los-santos--web--img--034-720.webp" width="600" height="800" alt="Águila, tatuaje tradicional de Los Santos en brazo" loading="lazy" decoding="async"><h3>Los Santos</h3><p class="ss">Tradicional, Blackwork, Neotradicional</p><p class="ln">Las piezas que el estudio publica en su web, sin firma.</p><a class="btn line sm" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Pide cita con Los Santos</a></article></div></section><section class="sec wrap" id="sala">
+<div class="sh"><h2>La sala.</h2><p>Cada pieza con su cartela: qué es, quién la tatuó, en qué estilo y dónde.</p></div>
+<div class="fil" role="group" aria-label="Filtrar por artista"><button type="button" class="chip" aria-pressed="true" data-fa="">Todas</button><button type="button" class="chip" aria-pressed="false" data-fa="curro">Curro Retamal</button><button type="button" class="chip" aria-pressed="false" data-fa="nau">Nau</button><button type="button" class="chip" aria-pressed="false" data-fa="equipo">Los Santos</button><button type="button" class="chip sty" id="fs" hidden></button></div>
+<div class="wall" id="wall"><figure class="w" data-a="curro" data-s="Black &amp; grey"><img class="" src="/p-los-santos--web--img--ig023-720.webp" width="720" height="770" alt="Guerrero con espadas, tatuaje black &amp; grey de Curro Retamal en antebrazo" loading="lazy" decoding="async"><figcaption class="cart"><b>Guerrero con espadas</b><span class="by">Curro Retamal</span><span>Black &amp; grey, antebrazo</span></figcaption></figure><figure class="w" data-a="nau" data-s="Fineline"><img class="" src="/p-los-santos--web--img--ig049-720.webp" width="720" height="776" alt="Carta del tarot «The Fool», tatuaje fineline de Nau en muslo" loading="lazy" decoding="async"><figcaption class="cart"><b>Carta del tarot «The Fool»</b><span class="by">Nau</span><span>Fineline, muslo</span></figcaption></figure><figure class="w" data-a="equipo" data-s="Tradicional"><img class="" src="/p-los-santos--web--img--034-720.webp" width="600" height="800" alt="Águila, tatuaje tradicional de Los Santos en brazo" loading="lazy" decoding="async"><figcaption class="cart"><b>Águila</b><span class="by">Los Santos</span><span>Tradicional, brazo</span></figcaption></figure><figure class="w" data-a="curro" data-s="Tradicional"><img class="" src="/p-los-santos--web--img--ig017-720.webp" width="720" height="720" alt="Dragón japonés a color, tatuaje tradicional de Curro Retamal en brazo" loading="lazy" decoding="async"><figcaption class="cart"><b>Dragón japonés a color</b><span class="by">Curro Retamal</span><span>Tradicional, brazo</span></figcaption></figure><figure class="w" data-a="nau" data-s="Color"><img class="" src="/p-los-santos--web--img--ig002-720.webp" width="720" height="828" alt="Rama de naranjo, tatuaje color de Nau" loading="lazy" decoding="async"><figcaption class="cart"><b>Rama de naranjo</b><span class="by">Nau</span><span>Color</span></figcaption></figure><figure class="w" data-a="curro" data-s="Black &amp; grey"><img class="" src="/p-los-santos--web--img--ig013-720.webp" width="720" height="960" alt="Calavera con serpientes, tatuaje black &amp; grey de Curro Retamal en antebrazo" loading="lazy" decoding="async"><figcaption class="cart"><b>Calavera con serpientes</b><span class="by">Curro Retamal</span><span>Black &amp; grey, antebrazo</span></figcaption></figure><figure class="w" data-a="equipo" data-s="Tradicional"><img class="" src="/p-los-santos--web--img--033-720.webp" width="600" height="800" alt="Mujer con máscara de sol, tatuaje tradicional de Los Santos en brazo" loading="lazy" decoding="async"><figcaption class="cart"><b>Mujer con máscara de sol</b><span class="by">Los Santos</span><span>Tradicional, brazo</span></figcaption></figure><figure class="w" data-a="curro" data-s="Black &amp; grey"><img class="" src="/p-los-santos--web--img--ig043-720.webp" width="720" height="720" alt="Hombre, relojes blandos y raíces, tatuaje black &amp; grey de Curro Retamal en antebrazo" loading="lazy" decoding="async"><figcaption class="cart"><b>Hombre, relojes blandos y raíces</b><span class="by">Curro Retamal</span><span>Black &amp; grey, antebrazo</span></figcaption></figure><figure class="w" data-a="nau" data-s="Fineline"><img class="" src="/p-los-santos--web--img--ig029-720.webp" width="720" height="960" alt="Paloma lineal con estrella en puntillismo, tatuaje fineline de Nau en pecho" loading="lazy" decoding="async"><figcaption class="cart"><b>Paloma lineal con estrella en puntillismo</b><span class="by">Nau</span><span>Fineline, pecho</span></figcaption></figure><figure class="w" data-a="curro" data-s="Black &amp; grey"><img class="" src="/p-los-santos--web--img--ig020-720.webp" width="720" height="955" alt="Perro de Fu en la mano, tatuaje black &amp; grey de Curro Retamal en mano" loading="lazy" decoding="async"><figcaption class="cart"><b>Perro de Fu en la mano</b><span class="by">Curro Retamal</span><span>Black &amp; grey, mano</span></figcaption></figure><figure class="w" data-a="equipo" data-s="Tradicional"><img class="" src="/p-los-santos--web--img--020-720.webp" width="600" height="800" alt="Ancla con flor, tatuaje tradicional de Los Santos en brazo" loading="lazy" decoding="async"><figcaption class="cart"><b>Ancla con flor</b><span class="by">Los Santos</span><span>Tradicional, brazo</span></figcaption></figure><figure class="w" data-a="curro" data-s="Black &amp; grey"><img class="" src="/p-los-santos--web--img--ig042-720.webp" width="720" height="720" alt="Toro sobre mancha roja, tatuaje black &amp; grey de Curro Retamal en brazo" loading="lazy" decoding="async"><figcaption class="cart"><b>Toro sobre mancha roja</b><span class="by">Curro Retamal</span><span>Black &amp; grey, brazo</span></figcaption></figure><figure class="w" data-a="nau" data-s="Black &amp; grey"><img class="" src="/p-los-santos--web--img--ig011-720.webp" width="720" height="884" alt="Toro realista, tatuaje black &amp; grey de Nau en brazo" loading="lazy" decoding="async"><figcaption class="cart"><b>Toro realista</b><span class="by">Nau</span><span>Black &amp; grey, brazo</span></figcaption></figure><figure class="w" data-a="curro" data-s="Tradicional"><img class="" src="/p-los-santos--web--img--ig004-720.webp" width="720" height="1280" alt="El Auryn de «La historia interminable», tatuaje tradicional de Curro Retamal en antebrazo" loading="lazy" decoding="async"><figcaption class="cart"><b>El Auryn de «La historia interminable»</b><span class="by">Curro Retamal</span><span>Tradicional, antebrazo</span></figcaption></figure><figure class="w" data-a="equipo" data-s="Neotradicional"><img class="" src="/p-los-santos--web--img--007-720.webp" width="720" height="520" alt="Murciélago y Jigsaw, tatuaje neotradicional de Los Santos en pecho" loading="lazy" decoding="async"><figcaption class="cart"><b>Murciélago y Jigsaw</b><span class="by">Los Santos</span><span>Neotradicional, pecho</span></figcaption></figure><figure class="w" data-a="curro" data-s="Black &amp; grey"><img class="" src="/p-los-santos--web--img--ig040-720.webp" width="720" height="720" alt="Perro con «Triana», tatuaje black &amp; grey de Curro Retamal en antebrazo" loading="lazy" decoding="async"><figcaption class="cart"><b>Perro con «Triana»</b><span class="by">Curro Retamal</span><span>Black &amp; grey, antebrazo</span></figcaption></figure><figure class="w" data-a="equipo" data-s="Tradicional"><img class="" src="/p-los-santos--web--img--035-720.webp" width="600" height="800" alt="Cabeza de tigre, tatuaje tradicional de Los Santos" loading="lazy" decoding="async"><figcaption class="cart"><b>Cabeza de tigre</b><span class="by">Los Santos</span><span>Tradicional</span></figcaption></figure><figure class="w" data-a="curro" data-s="Fineline"><img class="" src="/p-los-santos--web--img--ig038-720.webp" width="720" height="720" alt="Mosaico lineal, tatuaje fineline de Curro Retamal en muslo" loading="lazy" decoding="async"><figcaption class="cart"><b>Mosaico lineal</b><span class="by">Curro Retamal</span><span>Fineline, muslo</span></figcaption></figure><figure class="w" data-a="equipo" data-s="Tradicional"><img class="" src="/p-los-santos--web--img--031-720.webp" width="600" height="800" alt="Corazón sagrado con suculentas, tatuaje tradicional de Los Santos" loading="lazy" decoding="async"><figcaption class="cart"><b>Corazón sagrado con suculentas</b><span class="by">Los Santos</span><span>Tradicional</span></figcaption></figure><figure class="w" data-a="curro" data-s="Tradicional"><img class="" src="/p-los-santos--web--img--ig052-720.webp" width="720" height="722" alt="Corazón sagrado con daga, tatuaje tradicional de Curro Retamal en brazo" loading="lazy" decoding="async"><figcaption class="cart"><b>Corazón sagrado con daga</b><span class="by">Curro Retamal</span><span>Tradicional, brazo</span></figcaption></figure><figure class="w" data-a="equipo" data-s="Blackwork"><img class="" src="/p-los-santos--web--img--032-720.webp" width="600" height="800" alt="Motor, tatuaje blackwork de Los Santos en pecho" loading="lazy" decoding="async"><figcaption class="cart"><b>Motor</b><span class="by">Los Santos</span><span>Blackwork, pecho</span></figcaption></figure><figure class="w" data-a="curro" data-s="Black &amp; grey"><img class="" src="/p-los-santos--web--img--ig014-720.webp" width="720" height="867" alt="Lettering «Blessed» entre nubes, tatuaje black &amp; grey de Curro Retamal en antebrazo" loading="lazy" decoding="async"><figcaption class="cart"><b>Lettering «Blessed» entre nubes</b><span class="by">Curro Retamal</span><span>Black &amp; grey, antebrazo</span></figcaption></figure><figure class="w" data-a="equipo" data-s="Blackwork"><img class="" src="/p-los-santos--web--img--005-720.webp" width="720" height="520" alt="Polilla con calavera, tatuaje blackwork de Los Santos" loading="lazy" decoding="async"><figcaption class="cart"><b>Polilla con calavera</b><span class="by">Los Santos</span><span>Blackwork</span></figcaption></figure><figure class="w" data-a="curro" data-s="Tradicional"><img class="" src="/p-los-santos--web--img--ig022-720.webp" width="720" height="720" alt="Kewpie boxeador con «Down here with us», tatuaje tradicional de Curro Retamal" loading="lazy" decoding="async"><figcaption class="cart"><b>Kewpie boxeador con «Down here with us»</b><span class="by">Curro Retamal</span><span>Tradicional</span></figcaption></figure><figure class="w more" data-a="equipo" data-s="Blackwork"><img class="" src="/p-los-santos--web--img--028-720.webp" width="600" height="800" alt="Flor de loto ornamental, tatuaje blackwork de Los Santos en mano" loading="lazy" decoding="async"><figcaption class="cart"><b>Flor de loto ornamental</b><span class="by">Los Santos</span><span>Blackwork, mano</span></figcaption></figure><figure class="w more" data-a="curro" data-s="Black &amp; grey"><img class="" src="/p-los-santos--web--img--ig019-720.webp" width="720" height="802" alt="Humo a mano alzada, tatuaje black &amp; grey de Curro Retamal en mano" loading="lazy" decoding="async"><figcaption class="cart"><b>Humo a mano alzada</b><span class="by">Curro Retamal</span><span>Black &amp; grey, mano</span></figcaption></figure></div>
+<p class="moreb"><button type="button" class="btn line" id="more">Ver las 26 piezas</button></p>
+</section><section class="sec band" id="estudio"><div class="wrap stg">
+<div class="sph"><img class="p0" src="/p-los-santos--web--img--ig001-1000.webp" width="1000" height="1000" alt="El estudio Los Santos Tattoo" loading="lazy" decoding="async"><img class="p1" src="/p-los-santos--web--img--036-720.webp" width="720" height="480" alt="La entrada de Los Santos Tattoo, en el pasaje de Sierpes 11" loading="lazy" decoding="async"><img class="p2" src="/p-los-santos--web--img--009-720.webp" width="720" height="480" alt="Un tatuador de Los Santos diseña un tatuaje en la tableta" loading="lazy" decoding="async"></div>
+<div class="stx"><h2>En el pasaje de Sierpes 11.</h2><p class="big">Un estudio de tatuajes y piercings en pleno centro de Sevilla, con las paredes llenas de cuadros. Abrimos de lunes a sábado, de 11:00 a 20:00, y no necesitas cita previa.</p><div class="ex"><div><h3>Walk-ins welcome</h3><p>No necesitas cita previa para hacerte un tatuaje o un piercing: ven de lunes a sábado.</p></div><div><h3>Piercing</h3><p>Peter Glitter perfora a mano alzada, con aguja americana y joyería de titanio grado implante.</p></div><div><h3>We speak English</h3><p>Hablamos inglés, francés e italiano.</p></div></div>
+<p class="adr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.9"/></svg><span>Calle Sierpes, 11 (pasaje, local 8)<br>41004 Sevilla</span></p></div>
+</div></section><section class="sec wrap" id="cita">
+<div class="sh"><h2>Pide cita.</h2><p>Asesoramiento gratis. Cuéntanos tu idea y te contestamos con presupuesto, sesiones y fechas.</p></div>
+<div class="cg">
+<ol class="steps"><li><b>Ven o escríbenos</b><span>No necesitas cita previa: ven de lunes a sábado, de 11:00 a 20:00, o escríbenos por Instagram.</span></li><li><b>Presupuesto</b><span>Tu artista ve la idea, el tamaño y la zona y te da el precio.</span></li><li><b>El diseño</b><span>Lo prepara contigo, a mano alzada o en la tableta.</span></li><li><b>A la camilla</b><span>Si hay hueco, te tatúas ese mismo día; si no, te damos cita.</span></li></ol>
+<form class="idea" id="idea" onsubmit="return false">
+<fieldset><legend>Zona del cuerpo</legend><div class="cs"><button type="button" class="chip" aria-pressed="false" data-g="zona" data-v="Brazo">Brazo</button><button type="button" class="chip" aria-pressed="false" data-g="zona" data-v="Antebrazo">Antebrazo</button><button type="button" class="chip" aria-pressed="false" data-g="zona" data-v="Mano">Mano</button><button type="button" class="chip" aria-pressed="false" data-g="zona" data-v="Pierna">Pierna</button><button type="button" class="chip" aria-pressed="false" data-g="zona" data-v="Espalda">Espalda</button><button type="button" class="chip" aria-pressed="false" data-g="zona" data-v="Pecho">Pecho</button><button type="button" class="chip" aria-pressed="false" data-g="zona" data-v="Costado">Costado</button><button type="button" class="chip" aria-pressed="false" data-g="zona" data-v="Cuello">Cuello</button><button type="button" class="chip" aria-pressed="false" data-g="zona" data-v="Otra">Otra</button></div></fieldset>
+<fieldset><legend>Lado</legend><div class="cs"><button type="button" class="chip" aria-pressed="false" data-g="lado" data-v="Izquierdo">Izquierdo</button><button type="button" class="chip" aria-pressed="false" data-g="lado" data-v="Derecho">Derecho</button><button type="button" class="chip" aria-pressed="false" data-g="lado" data-v="Centro">Centro</button></div></fieldset>
+<fieldset><legend>Tamaño</legend><div class="cs"><button type="button" class="chip" aria-pressed="false" data-g="tam" data-v="Pequeño, hasta 5 cm">Pequeño, hasta 5 cm</button><button type="button" class="chip" aria-pressed="false" data-g="tam" data-v="Mediano, 5–15 cm">Mediano, 5–15 cm</button><button type="button" class="chip" aria-pressed="false" data-g="tam" data-v="Grande, más de 15 cm">Grande, más de 15 cm</button><button type="button" class="chip" aria-pressed="false" data-g="tam" data-v="Pieza completa">Pieza completa</button></div></fieldset>
+<label class="fl"><span>Artista</span><select id="fa"><option value="">Que me lo digáis vosotros</option><option value="Curro Retamal">Curro Retamal · black &amp; grey, tradicional, fineline</option><option value="Nau">Nau · fineline, black &amp; grey, color</option><option value="Los Santos">Los Santos · tradicional, blackwork, neotradicional</option></select></label>
+<label class="fl"><span>Tu idea</span><textarea id="fi" rows="3" placeholder="Qué quieres tatuarte, el estilo, si es tu primer tatuaje…"></textarea></label>
+<label class="fl up"><span>Referencias, hasta 4 imágenes</span><span class="fb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5l-8.2 8.2a5 5 0 0 1-7.1-7.1l8.5-8.5a3.4 3.4 0 0 1 4.8 4.8l-8.5 8.5a1.7 1.7 0 0 1-2.4-2.4l7.8-7.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><span id="fn">Añadir imágenes</span><input type="file" id="ff" accept="image/*" multiple></span></label>
+<div class="sum"><p class="k">Así le llega a Los Santos Tattoo</p><pre id="sum"></pre></div>
+<a class="btn red" id="send" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Enviar por Instagram</a>
+</form>
+<aside class="night" aria-label="El asistente de WhatsApp e Instagram">
+<header><img src="/p-los-santos--web--img--logo.png" width="93" height="96" alt=""><div><b>Los Santos Tattoo</b><span><i></i>contesta al momento</span></div></header>
+<div class="msgs"><div class="m in"><p>Hola! Quiero un fine line pequeño, una paloma o algo así. ¿Quién lo haría?</p><time>23:40</time></div><div class="m out"><p>¡Hola! El fine line es lo de Nau. El precio depende del diseño y del tamaño, y te lo da ella. ¿Me pasas una referencia y el tamaño aproximado?</p><time>23:40</time></div><div class="m in"><p>📎 referencia.jpg · unos 7 cm</p><time>23:42</time></div><div class="m out"><p>Perfecto. Se lo paso a Nau con tu referencia y mañana te escribe con el presupuesto y sus huecos. Y si lo prefieres, puedes venir sin cita de lunes a sábado, de 11:00 a 20:00.</p><time>23:42</time></div></div>
+<p class="nn">A cualquier hora: resuelve lo básico, pide la referencia y el tamaño, y pasa la consulta al artista de ese estilo.</p>
+</aside>
+</div></section><section class="sec wrap vg" id="visita">
+<div><h2>Visítanos.</h2><p class="adr2">Calle Sierpes, 11 (pasaje, local 8), 41004 Sevilla.</p>
+<table class="hrs"><tr><th>Lunes a sábado</th><td>11:00 – 20:00</td></tr></table>
+<div class="acts"><a class="btn line sm" href="https://www.google.com/maps/search/Los+Santos+Tattoo+Calle+Sierpes+11+Sevilla" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.9"/></svg>Cómo llegar</a><a class="btn line sm" href="tel:+34955277283">955 27 72 83</a>
+<a class="btn line sm" href="https://www.instagram.com/lossantostattoosevilla/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>@lossantostattoosevilla</a></div></div>
+<div class="faq"><h2>Preguntas.</h2><details><summary>¿Necesito cita?</summary><p>No. Puedes venir sin cita previa de lunes a sábado, de 11:00 a 20:00, para tatuarte o para hacerte un piercing.</p></details><details><summary>¿Cuánto cuesta un tatuaje?</summary><p>Depende del diseño, del tamaño y de la zona. Cuéntanos tu idea y tu artista te da el presupuesto.</p></details><details><summary>¿Qué tengo que mandaros?</summary><p>La zona del cuerpo, el lado, el tamaño aproximado, hasta 4 imágenes de referencia y todo lo que tengas en mente. El formulario de arriba lo junta por ti.</p></details><details><summary>¿Hacéis piercing?</summary><p>Sí. Peter Glitter perfora a mano alzada, con aguja americana y joyería de titanio grado implante.</p></details><details><summary>¿Habláis otros idiomas?</summary><p>Sí: inglés, francés e italiano.</p></details></div>
+</section></main><footer class="foot"><div class="wrap"><p class="fw" aria-hidden="true">LOS SANTOS TATTOO</p>
+<div class="fr2"><img src="/p-los-santos--web--img--logo.png" width="93" height="96" alt="Los Santos Tattoo"><p>Demo de concepto de 404 Growth para Los Santos Tattoo. No es la web oficial: las piezas, los textos y los datos son los que publica el estudio.</p></div></div></footer>
+<nav class="fix" aria-label="Reservar"><a class="btn red" href="https://ig.me/m/lossantostattoosevilla" target="_blank" rel="noopener">Reserva</a><a class="btn ink" href="https://www.instagram.com/lossantostattoosevilla/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Custom · IG</a></nav>
+<script>window.T={"wa": "", "ig": "lossantostattoosevilla", "name": "Los Santos Tattoo"};(function(){
+  var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+  var root=document.documentElement;
+  /* the wordmark fills the width: its longest line sets the size for the page */
+  function fit(){var w=$$('.wm');if(!w.length)return;root.style.setProperty('--fs','100px');
+    var cs=getComputedStyle(w[0]),avail=w[0].clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight),max=0;
+    w.forEach(function(e){var r=document.createRange();r.selectNodeContents(e);max=Math.max(max,r.getBoundingClientRect().width)});
+    if(max>0)root.style.setProperty('--fs',Math.min(420,Math.floor(100*avail/max*0.995))+'px')}
+  fit();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(fit,80)});
+
+  /* the index of styles: hover shows the piece, a tap opens the row */
+  var pv=$('.pv'),pi=pv&&$('img',pv),hov=matchMedia('(hover:hover) and (min-width:901px)');
+  $$('.st').forEach(function(b){
+    b.addEventListener('mouseenter',function(){if(!hov.matches||!pv)return;pi.src=b.dataset.pv;$('b',pv).textContent=b.dataset.pt;$('span',pv).textContent=b.querySelector('.sa').textContent+', '+b.dataset.pm.toLowerCase();pv.classList.add('on')});
+    b.addEventListener('mouseleave',function(){pv&&pv.classList.remove('on')});
+    b.addEventListener('mousemove',function(e){if(!pv)return;var x=Math.min(innerWidth-280,e.clientX+28),y=Math.min(innerHeight-380,Math.max(12,e.clientY-160));pv.style.transform='translate('+x+'px,'+y+'px)'});
+    b.addEventListener('click',function(){var open=b.getAttribute('aria-expanded')==='true';
+      $$('.st[aria-expanded="true"]').forEach(function(o){o.setAttribute('aria-expanded','false');o.parentNode.querySelector('.pan').hidden=true});
+      if(!open){b.setAttribute('aria-expanded','true');b.parentNode.querySelector('.pan').hidden=false;pv&&pv.classList.remove('on')}});
+  });
+
+  /* La sala: by artist, by style, and the rest of the pieces */
+  var wall=$('#wall'),fa='',fs='',fsb=$('#fs');
+  function paint(){$$('.w',wall).forEach(function(f){f.classList.toggle('hide',(fa&&f.dataset.a!==fa)||(fs&&f.dataset.s!==fs))});
+    if(fa||fs)wall.classList.add('all');
+    $$('.fil .chip[data-fa]').forEach(function(c){c.setAttribute('aria-pressed',String(c.dataset.fa===fa))});
+    if(fsb){fsb.hidden=!fs;fsb.innerHTML=fs?'Estilo: '+fs.replace(/[<>&]/g,'')+' <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>':'';fsb.setAttribute('aria-label',fs?'Quitar el filtro de estilo '+fs:'')}}
+  $$('.fil .chip[data-fa]').forEach(function(c){c.addEventListener('click',function(){fa=c.dataset.fa;fs='';paint()})});
+  fsb&&fsb.addEventListener('click',function(){fs='';paint()});
+  $$('[data-go]').forEach(function(a){a.addEventListener('click',function(){fs=a.dataset.go;fa='';paint()})});
+  var mb=$('#more');mb&&mb.addEventListener('click',function(){wall.classList.add('all');mb.parentNode.hidden=true});
+
+  /* the idea form writes the WhatsApp for you */
+  var pick={zona:'',lado:'',tam:''},sum=$('#sum'),send=$('#send'),files=[];
+  function msg(){var a=$('#fa').value,i=$('#fi').value.trim(),L=['¡Hola! Quiero pedir cita para un tatuaje.'];
+    if(pick.zona)L.push('Zona: '+pick.zona.toLowerCase()+(pick.lado?' ('+pick.lado.toLowerCase()+')':''));
+    if(pick.tam)L.push('Tamaño: '+pick.tam.charAt(0).toLowerCase()+pick.tam.slice(1));
+    L.push('Artista: '+(a||'que me recomendéis'));
+    if(i)L.push('Idea: '+i);
+    if(files.length)L.push('Te mando '+files.length+(files.length===1?' referencia':' referencias')+' por aquí.');
+    return L.join('\n')}
+  function upd(){var t=msg();if(sum)sum.textContent=t;if(send)send.href=T.wa?'https://wa.me/'+T.wa+'?text='+encodeURIComponent(t):'https://ig.me/m/'+T.ig}
+  $$('.idea .chip').forEach(function(c){c.addEventListener('click',function(){var g=c.dataset.g,on=pick[g]===c.dataset.v;pick[g]=on?'':c.dataset.v;
+    $$('.idea .chip[data-g="'+g+'"]').forEach(function(o){o.setAttribute('aria-pressed',String(!on&&o===c))});upd()})});
+  ['#fa','#fi'].forEach(function(s){var e=$(s);e&&e.addEventListener('input',upd)});
+  var ff=$('#ff');ff&&ff.addEventListener('change',function(){files=[].slice.call(ff.files||[]).slice(0,4);
+    $('#fn').textContent=files.length?files.map(function(f){return f.name}).join(', '):'Añadir imágenes';upd()});
+  upd();
+})();
+</script><script>
+/* c404 v3 (27 oct 2026): more detail for the visit counter below. No cookies, nothing kept on the device, never what is typed or copied. */
+(function(){
+  if(!/(^|\.)404growth\.com$/.test(location.hostname)||!window.fetch)return;
+  try{if(localStorage.getItem('c404int')&&!/[?&]interno=0/.test(location.search))return}catch(e){}
+  var EP='https://404growth-visits.contactochristiansilva.workers.dev',key='',Q=[],seq=0,T0=Date.now(),act=0,last=0,it=0,maxs=0,ms={},SS={},cur=null,curT=0,seenS={},ord=0,idle=false,playing=0,errs=0,rerrs=0,sz=0,sentNav=false,iv;
+  var rid=Math.random().toString(36).slice(2,8);
+  function sec(){return Math.round((Date.now()-T0)/1000)}
+  function ev(y,o){o=o||{};o.y=y;o.i=rid+(seq++).toString(36);o.t=sec();o.ot=Date.now();Q.push(o);if(Q.length>200)Q.shift();if(Q.length>=20)flush()}
+  function flush(beacon){if(!key||!Q.length)return;var b=JSON.stringify({k:key,ev:Q.splice(0,25)});
+    try{if(beacon&&navigator.sendBeacon&&navigator.sendBeacon(EP+'/e',b)){}else fetch(EP+'/e',{method:'POST',body:b,keepalive:true}).catch(function(){})}catch(e){}if(Q.length)setTimeout(function(){flush(beacon)},300)}
+  function txt(s,n){return String(s||'').replace(/\s+/g,' ').trim().slice(0,n||80)}
+  function vis(){return document.visibilityState==='visible'}
+  function poke(){last=Date.now();if(!it)it=1;if(idle){idle=false;ev('wake')}}
+  ['scroll','pointerdown','touchstart','keydown','wheel','mousemove'].forEach(function(e){addEventListener(e,poke,{capture:true,passive:true})});
+  var SECS=[].slice.call(document.querySelectorAll('section[id],header[id],footer[id],article[id],main[id]')).filter(function(s){return /^[A-Za-z][\w-]{0,39}$/.test(s.id)}).slice(0,40);
+  function head(s){var h=s.querySelector('h1,h2,h3');return txt((h&&h.textContent)||s.getAttribute('aria-label')||s.id,60)}
+  function current(){var y=innerHeight/2,best=null;for(var i=0;i<SECS.length;i++){var r=SECS[i].getBoundingClientRect();if(r.top<=y&&r.bottom>=y){if(!best||r.height<best.r.height)best={s:SECS[i],r:r}}}return best&&best.s}
+  function scrollPct(){var de=document.documentElement,h=Math.max(1,de.scrollHeight);return Math.min(100,Math.round((scrollY+innerHeight)/h*100))}
+  function tick(){var now=Date.now(),on=vis()&&(now-last<30000||playing>0);
+    if(vis()&&!on&&!idle&&last){idle=true;ev('idle')}
+    if(on){act+=1;var s=current();if(s){SS[s.id]=(SS[s.id]||0)+1;if(s!==cur){cur=s;curT=0}curT++;if(curT===1&&!seenS[s.id]){seenS[s.id]=1;ev('sin',{s:s.id,l:head(s),m:{ord:++ord}})}}}
+    var p=scrollPct();if(p>maxs){maxs=p;[25,50,75,90,100].forEach(function(m){if(p>=m&&!ms[m]){ms[m]=1;ev('scr',{n:m})}})}
+    if(++sz%5===0)flush()}
+  window.__c404x=function(){var o={sw:screen.width,sh:screen.height,vw:innerWidth,vh:innerHeight,dpr:window.devicePixelRatio||1,or:innerHeight>=innerWidth?'p':'l',tch:navigator.maxTouchPoints||0,it:it};
+    try{o.lang=(navigator.languages&&navigator.languages[0])||navigator.language||''}catch(e){}
+    try{o.tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
+    try{o.dk=matchMedia('(prefers-color-scheme: dark)').matches?1:0}catch(e){}
+    try{var r=document.referrer&&new URL(document.referrer);if(r&&r.host!==location.host)o.ref=r.host}catch(e){}
+    try{var n=performance.getEntriesByType('navigation')[0];if(n)o.nav=n.type}catch(e){}
+    o.wd=navigator.webdriver?1:0;o.hl=(/HeadlessChrome/.test(navigator.userAgent)||(navigator.languages&&navigator.languages.length===0))?1:0;return o};
+  window.__c404p=function(){var o={a:act,sd:maxs},n=0,ss={};for(var k in SS){if(n++>=40)break;ss[k]=SS[k]}o.ss=ss;return o};
+  window.__c404on=function(k){if(!k||key)return;key=k;flush()};
+  iv=setInterval(tick,1000);
+  document.addEventListener('visibilitychange',function(){ev(vis()?'vis':'hid');if(!vis()){navTimes();flush(true)}});
+  addEventListener('pagehide',function(){ev('end',{n:act});navTimes();flush(true)});
+  document.addEventListener('toggle',function(e){var d=e.target;if(d&&d.tagName==='DETAILS'){var s=d.querySelector('summary');ev(d.open?'exp':'col',{l:txt(s&&s.textContent,60),s:(d.closest('[id]')||{}).id||''})}},true);
+  document.addEventListener('click',function(e){try{var el=e.target&&e.target.closest&&e.target.closest('[role="tab"],a[href],[data-share]');if(!el)return;
+    var sc=el.closest('section[id],header[id],footer[id],article[id]'),sid=sc?sc.id:'';
+    if(el.getAttribute('role')==='tab')ev('tab',{l:txt(el.textContent,60),s:sid});
+    else if(el.hasAttribute('data-share'))ev('share',{s:sid,m:{ch:txt(el.getAttribute('data-share'),20)}});
+    else{var h=el.getAttribute('href')||'';if(el.hasAttribute('download')||/\.(pdf|zip|docx?|xlsx?|pptx?|key|numbers)(\?|#|$)/i.test(h)){var f=h.split(/[?#]/)[0].split('/').pop();ev('dl',{s:sid,m:{file:txt(decodeURIComponent(f),80)}})}}}catch(x){}},true);
+  document.addEventListener('copy',function(){var n=0;try{n=String(getSelection()).length}catch(e){}ev('copy',{m:{len:n}})},true);
+  addEventListener('beforeprint',function(){ev('print')});
+  document.addEventListener('fullscreenchange',function(){if(document.fullscreenElement)ev('fs')});
+  var forms={};document.addEventListener('focusin',function(e){var f=e.target&&e.target.form;if(f){var id=txt(f.id||f.getAttribute('name')||'form',30);if(!forms[id]){forms[id]=1;ev('form0',{m:{form:id}})}}},true);
+  document.addEventListener('submit',function(e){var f=e.target;ev('form1',{m:{form:txt(f.id||f.getAttribute('name')||'form',30)}})},true);
+  try{if(navigator.share){var sh=navigator.share.bind(navigator);navigator.share=function(d){ev('share',{m:{ch:'sistema'}});return sh(d)}}}catch(e){}
+  var orient=innerHeight>=innerWidth;addEventListener('resize',function(){var o=innerHeight>=innerWidth;if(o!==orient&&sz<9999){orient=o;ev('resize',{m:{or:o?'vertical':'horizontal'}})}});
+  function vname(v){return txt(v.getAttribute('aria-label')||v.title||(v.currentSrc||v.src||'').split('/').pop().split('?')[0]||'vídeo',60)}
+  document.addEventListener('play',function(e){var v=e.target;if(v.tagName!=='VIDEO'||v.muted&&v.autoplay&&v.loop)return;playing++;v.__q=v.__q||{};var sc=v.closest('[id]');ev('vplay',{l:vname(v),s:sc?sc.id:''})},true);
+  document.addEventListener('pause',function(e){var v=e.target;if(v.tagName!=='VIDEO'||v.muted&&v.autoplay&&v.loop)return;playing=Math.max(0,playing-1);if(!v.ended)ev('vpause',{l:vname(v),n:Math.round(v.currentTime/Math.max(1,v.duration||1)*100)})},true);
+  document.addEventListener('timeupdate',function(e){var v=e.target;if(v.tagName!=='VIDEO'||!v.duration||v.muted&&v.autoplay&&v.loop)return;var p=v.currentTime/v.duration*100;v.__q=v.__q||{};[25,50,75].forEach(function(m){if(p>=m&&!v.__q[m]){v.__q[m]=1;ev('vprog',{l:vname(v),n:m})}})},true);
+  document.addEventListener('ended',function(e){var v=e.target;if(v.tagName!=='VIDEO'||v.muted&&v.autoplay&&v.loop)return;ev('vend',{l:vname(v)})},true);
+  addEventListener('error',function(e){try{var t=e.target;if(t&&t!==window&&t.tagName){if(rerrs++<10){var u=t.currentSrc||t.src||t.href||'';ev('rerr',{m:{tag:t.tagName.toLowerCase(),res:txt(u.split('?')[0].split('/').pop(),80)}})}}else if(errs++<5)ev('err',{m:{msg:txt(e.message,120),src:txt(String(e.filename||'').split('?')[0].split('/').pop(),60),line:e.lineno||0}})}catch(x){}},true);
+  addEventListener('unhandledrejection',function(e){if(errs++<5)ev('err',{m:{msg:txt(e.reason&&(e.reason.message||e.reason),120)}})});
+  var lcp=0,cls=0;try{new PerformanceObserver(function(l){l.getEntries().forEach(function(x){lcp=Math.round(x.startTime)})}).observe({type:'largest-contentful-paint',buffered:true})}catch(e){}
+  try{new PerformanceObserver(function(l){l.getEntries().forEach(function(x){if(!x.hadRecentInput)cls+=x.value})}).observe({type:'layout-shift',buffered:true})}catch(e){}
+  function navTimes(){if(sentNav)return;sentNav=true;var m={};try{var n=performance.getEntriesByType('navigation')[0];if(n){m.ttfb=Math.round(n.responseStart);m.dcl=Math.round(n.domContentLoadedEventEnd);m.load=Math.round(n.loadEventEnd)}}catch(e){}
+    if(lcp)m.lcp=lcp;m.cls=Math.round(cls*1000)/1000;try{var c=navigator.connection;if(c){if(c.effectiveType)m.net=c.effectiveType;if(c.saveData)m.save='sí'}}catch(e){}ev('nav',{m:m})}
+  addEventListener('load',function(){setTimeout(navTimes,6000)});
+})();
+</script>
+<script>
+/* visit counter (22 oct 2026): tells our own counter (404growth-visits) that this page was opened, for how long it was read and how far it got.
+   No cookies, nothing stored on the visitor's device, live site only. Our own devices opt out once with ?interno=1. */
+(function(){
+  var slug="los-santos--web",EP='https://404growth-visits.contactochristiansilva.workers.dev',EV=['scroll','pointerdown','touchstart','keydown'],PARTS=[];
+  try{var q=/[?&]interno=([01])/.exec(location.search);if(q){if(q[1]==='1')localStorage.setItem('c404int','1');else localStorage.removeItem('c404int')}if(localStorage.getItem('c404int'))return}catch(e){}
+  if(!slug||!/(^|\.)404growth\.com$/.test(location.hostname)||navigator.webdriver||!window.fetch)return;
+  var key=null,seen=0,since=0,depth=0,sent='',n=0,iv,gone=false,CQ=[];
+  function clock(){var now=Date.now();if(since)seen+=now-since;since=document.visibilityState==='visible'?now:0}
+  function push(){clock();if(!key)return;var b=JSON.stringify(Object.assign({k:key,t:Math.round(seen/1000),d:depth,e:gone?1:0},window.__c404p?__c404p():{}));if(b===sent)return;sent=b;
+    try{if(!(navigator.sendBeacon&&navigator.sendBeacon(EP+'/p',b)))fetch(EP+'/p',{method:'POST',body:b,keepalive:true})}catch(e){}}
+  function open(){if(key!==null)return;key='';EV.forEach(function(e){removeEventListener(e,open,true)});
+    fetch(EP+'/h',{method:'POST',body:JSON.stringify({s:slug,x:window.__c404x?__c404x():{}}),keepalive:true}).then(function(r){return r.json()}).then(function(j){key=(j&&j.k)||'';push();cflush();if(key&&window.__c404on)__c404on(key)}).catch(function(){})}
+  EV.forEach(function(e){addEventListener(e,open,{capture:true,passive:true})});clock();
+  iv=setInterval(function(){clock();if(seen>=2800)open();if(seen>=1800000){push();clearInterval(iv)}else if(key&&++n%15===0)push()},1000);
+  document.addEventListener('visibilitychange',function(){gone=document.visibilityState==='hidden';push()});addEventListener('pagehide',function(){gone=true;push()});addEventListener('pageshow',function(e){if(e.persisted){gone=false;push()}});
+    /* c404 v2: the buttons and links tapped, with the part of the page; nothing typed is ever read */
+    function cflush(){if(!key||!CQ.length)return;var b=JSON.stringify({k:key,c:CQ.splice(0,20)});try{if(!(navigator.sendBeacon&&navigator.sendBeacon(EP+'/c',b)))fetch(EP+'/c',{method:'POST',body:b,keepalive:true})}catch(e){}if(CQ.length)setTimeout(cflush,400)}
+    function ctx(s){return String(s||'').replace(/\s+/g,' ').trim()}
+    document.addEventListener('click',function(ev){try{
+      var el=ev.target&&ev.target.closest&&ev.target.closest('a,button,summary,label,select,input,textarea,video,[role="button"],[role="tab"],[data-go],[onclick]');if(!el)return;
+      var sec=el.closest('section[id],header[id],footer[id],nav[id],aside[id],main[id],article[id],#sheet')||el.closest('section,header,footer,article'),hd=sec&&sec.querySelector('h1,h2,h3'),sh=ctx(hd&&hd.textContent);
+      if(!sh){var hs=document.querySelectorAll('h1,h2,h3');for(var i=hs.length-1;i>=0;i--){if(hs[i].compareDocumentPosition(el)&4){sh=ctx(hs[i].textContent);break}}}
+      var fld=/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName),w=ctx(el.getAttribute('aria-label')||(fld?(el.labels&&el.labels[0]&&el.labels[0].innerText)||el.getAttribute('placeholder')||el.name:el.innerText));
+      if(!w){var im=el.querySelector&&el.querySelector('img');w=ctx((im&&im.alt)||el.title||'')}
+      var h='',a=el.closest('a[href]');if(a){var u=new URL(a.getAttribute('href'),location.href);h=u.protocol==='mailto:'?'mailto:':u.protocol==='tel:'?'tel:':u.host===location.host?u.pathname+u.hash:u.host+(/wa\.me|whatsapp/.test(u.host)?'':u.pathname)}
+      var de=document.documentElement;CQ.push({t:Math.round((seen+(since?Date.now()-since:0))/1000),s:(sec&&sec.id)||'',sh:sh.slice(0,80),w:w.slice(0,90),h:h.slice(0,120),x:Math.round(ev.clientX/Math.max(1,innerWidth)*100),y:Math.round((ev.pageY||0)/Math.max(1,de.scrollHeight)*100)});
+      if(CQ.length>40)CQ.shift();if(key)cflush();else open()}catch(e){}},true);
+
+  if(PARTS.length&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){depth=Math.max(depth,+x.target.getAttribute('data-cd'));io.unobserve(x.target);push()}})},{rootMargin:'0px 0px -35% 0px'});
+    PARTS.forEach(function(p){var el=document.getElementById(p[0]);if(el){el.setAttribute('data-cd',p[1]);io.observe(el)}})}
+})();
+</script>
+</body></html>

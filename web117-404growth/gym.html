@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="es" class="g-wait">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Una página privada de 404 Growth: el asistente de WhatsApp que contestaría por vosotros, vuestra web rehecha y el sistema que funcionaría detrás.">
+<meta name="theme-color" content="#EDEBE6">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<title>Tu gimnasio × 404 Growth</title>
+<style>
+/* Private page for one gym (Spanish). Same look as the home of 404growth.com: warm paper, ink, Inter Tight, one blue dot.
+   Their site next to ours first, then the assistant answering at 23:41 with their own prices, the system behind it, who we are and the next step.
+   No price of ours anywhere: they ask for it. */
+@font-face{font-family:"Inter Tight";src:url(/inter-tight.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+:root{
+  --paper:#EDEBE6;--paper-2:#E3E0D9;--ink:#1B1B1D;--ink-2:#47464B;--mute:#6E6C70;--rule:#1B1B1D;
+  --blue:#2F6BFF;--night:#141518;--night-2:#1D1F23;--night-3:#2A2C31;--mist:#B9C8FF;--mist-2:#7F8BB0;
+  --ok:#1DB36B;--wa:#25D366;
+  --g:clamp(16px,5.2vw,80px);
+  --font:"Inter Tight",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html.g-wait body{visibility:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.5 var(--font);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-50%;z-index:100;pointer-events:none;opacity:.3;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.wrap{padding-inline:var(--g)}
+.label{font-size:12.5px;line-height:1.25;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+.dot{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:var(--blue);vertical-align:.04em;margin-inline:.06em .16em}
+.night{background:var(--night);color:var(--paper)}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:99px;border:1px solid currentColor;
+  font-size:13px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;white-space:nowrap;cursor:pointer;background:none;transition:background .2s,color .2s}
+.pill.ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pill.ink:hover{background:var(--blue);border-color:var(--blue)}
+.pill.wa{background:var(--wa);border-color:var(--wa);color:#0B1F12}
+.pill.wa:hover{filter:brightness(1.06)}
+.pill:not(.ink):not(.wa):hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.night .pill:not(.ink):not(.wa):hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.pill svg{width:16px;height:16px;flex:none}
+.sec{padding-block:clamp(72px,12vh,140px)}
+.sec-top{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--rule);color:var(--ink-2)}
+.night .sec-top{border-color:var(--night-3);color:var(--mist-2)}
+.h2{margin:clamp(28px,5vh,56px) 0 0;font-size:clamp(40px,6.4vw,112px);line-height:.88;font-weight:800;letter-spacing:-.055em;text-transform:uppercase;text-wrap:balance;max-width:16ch}
+.lead{margin:clamp(18px,3vh,30px) 0 0;font-size:clamp(18px,1.6vw,24px);line-height:1.35;font-weight:500;letter-spacing:-.01em;max-width:44ch;color:var(--ink-2)}
+.night .lead{color:var(--mist)}
+
+/* header */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px 24px;
+  padding:calc(12px + env(safe-area-inset-top,0px)) var(--g) 12px;transition:background .3s,color .3s}
+.top.solid{background:rgba(237,235,230,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.top.on-night{color:var(--paper)}
+.top.on-night.solid{background:rgba(20,21,24,.82)}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none;white-space:nowrap;line-height:1}
+.logo sup{font-size:.5em;font-weight:700;vertical-align:.9em;margin-left:1px}
+.top .who{flex:1;text-align:center;opacity:.8;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.top .pill{min-height:38px;padding:0 16px;font-size:12px}
+.prog{position:fixed;left:0;right:0;top:0;height:2px;z-index:51;background:var(--blue);transform-origin:left;transform:scaleX(0)}
+@media (max-width:700px){.top .who{display:none}}
+
+/* hero */
+.hero{min-height:88svh;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,80px);align-items:center;
+  padding:calc(96px + env(safe-area-inset-top,0px)) var(--g) clamp(40px,8vh,80px)}
+.hero h1{margin:18px 0 0;font-size:clamp(42px,4.9vw,96px);line-height:.86;font-weight:800;letter-spacing:-.06em;text-transform:uppercase;text-wrap:balance}
+.hero h1 .mu{color:var(--mute)}
+.hero p{margin:clamp(20px,3.4vh,34px) 0 0;font-size:clamp(18px,1.55vw,23px);line-height:1.38;color:var(--ink-2);max-width:40ch}
+.hero .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:clamp(22px,3.6vh,36px)}
+.hero .fine{margin-top:18px;font-size:13px;color:var(--mute)}
+.frame{position:relative;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 60px 110px -50px rgba(20,21,24,.55),0 0 0 1px rgba(27,27,29,.08)}
+.frame .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#F1EFEA;border-bottom:1px solid #E2DFD8}
+.frame .bar i{width:9px;height:9px;border-radius:50%;background:#D6D2CA}
+.frame .bar span{margin-left:8px;flex:1;background:#fff;border-radius:6px;padding:3px 10px;font-size:11.5px;color:#6E6C70;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frame .view{aspect-ratio:1400/1000;background:#141518 center top/100% auto no-repeat}
+@media (max-width:900px){.hero{grid-template-columns:minmax(0,1fr);min-height:auto;padding-top:calc(92px + env(safe-area-inset-top,0px))}}
+
+/* the comparison */
+.cmp-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:clamp(28px,5vh,48px)}
+.cmp-tabs button{min-height:44px;padding:0 20px;border-radius:99px;border:1px solid var(--ink);background:none;font-size:13px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;cursor:pointer}
+.cmp-tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.cmp-tabs small{font-weight:500;text-transform:none;letter-spacing:0;opacity:.7;margin-left:6px}
+.cmp{margin:22px auto 0;max-width:1040px}
+.cmp figcaption{display:flex;justify-content:space-between;gap:8px 20px;flex-wrap:wrap;margin-bottom:12px;color:var(--ink-2);font-size:15px}
+.cmp figcaption b{color:var(--ink)}
+.cmp .cap-m{display:none}
+@media (max-width:700px){.cmp .cap-d{display:none}.cmp .cap-m{display:inline}}
+.ba{position:relative;border-radius:14px;overflow:clip;max-width:100%;--pos:50%;--py:50%;background:#fff;user-select:none;-webkit-user-select:none;touch-action:pan-y pinch-zoom;cursor:ew-resize;
+  box-shadow:0 60px 110px -50px rgba(20,21,24,.5),0 0 0 1px rgba(27,27,29,.1)}
+.ba .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block;pointer-events:none}
+.ba .shot.after{clip-path:inset(0 0 0 var(--pos))}
+.ba .handle{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:var(--blue);z-index:3;pointer-events:none}
+.ba .knob{position:absolute;z-index:3;pointer-events:none;top:clamp(32px,var(--py),calc(100% - 32px));left:clamp(30px,var(--pos),calc(100% - 30px));width:48px;height:48px;transform:translate(-50%,-50%);border-radius:50%;
+  background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E") center/22px no-repeat;box-shadow:0 8px 24px rgba(47,107,255,.45)}
+.ba .tags{position:sticky;top:calc(100svh - 64px);z-index:2;height:0}
+.ba .tag{position:absolute;bottom:auto;top:0;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:7px 12px;border-radius:99px;transition:opacity .2s;white-space:nowrap}
+.ba .tag.l{left:12px;background:rgba(20,21,24,.86);color:#fff}
+.ba .tag.r{right:12px;background:var(--blue);color:#fff}
+.ba.at-l .tag.l,.ba.at-r .tag.r{opacity:0}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;pointer-events:none}
+.ba:has(input:focus-visible){outline:2px solid var(--blue);outline-offset:4px}
+.cmp-next{display:flex;justify-content:center;margin-top:28px}
+.made{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px clamp(24px,4vw,56px);margin:clamp(40px,7vh,72px) auto 0;max-width:1040px;border-top:1px solid var(--rule);padding-top:24px}
+.made b{display:block;font-size:15px}
+.made p{margin:6px 0 0;font-size:15px;line-height:1.45;color:var(--ink-2)}
+@media (max-width:760px){.made{grid-template-columns:minmax(0,1fr)}}
+
+/* 23:41: the assistant with their own prices */
+.demo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:clamp(36px,6vw,96px);align-items:start;margin-top:clamp(28px,5vh,56px)}
+.demo .h2{margin-top:0}
+.demo ul{list-style:none;margin:clamp(24px,4vh,40px) 0 0;padding:0;border-top:1px solid var(--night-3)}
+.demo li{display:grid;grid-template-columns:3em minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid var(--night-3)}
+.demo li .n{font-size:12.5px;font-weight:600;color:var(--mist-2);font-variant-numeric:tabular-nums;padding-top:3px}
+.demo li b{display:block;font-size:18px;font-weight:600;letter-spacing:-.01em}
+.demo li span{display:block;color:var(--mist);font-size:15.5px;line-height:1.4;margin-top:2px}
+.phone{position:relative;border-radius:40px;background:#0B0C0E;padding:12px;box-shadow:0 70px 120px -50px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.08)}
+.scr{border-radius:30px;overflow:hidden;background:#EFE7DD;height:min(640px,78svh);display:flex;flex-direction:column}
+.wh{display:flex;align-items:center;gap:10px;padding:16px 16px 12px;background:#F7F4EF;border-bottom:1px solid #E4DCD1;color:#141518}
+.wh .av{width:38px;height:38px;border-radius:50%;background:#141518;display:grid;place-items:center;overflow:hidden;flex:none}
+.wh .av img{width:78%;height:auto;object-fit:contain}
+.wh .av b{color:#fff;font-size:15px}
+.wh .nm b{display:block;font-size:15px;line-height:1.2}
+.wh .nm small{display:block;font-size:12px;color:#1DA851}
+.msgs{flex:1;overflow:hidden;padding:14px 12px 16px;display:flex;flex-direction:column;gap:8px;justify-content:flex-end}
+.msgs .day{align-self:center;font-size:11px;font-weight:600;letter-spacing:.06em;color:#6E6C70;background:#fff;border-radius:8px;padding:3px 10px;margin-bottom:4px}
+.bub{max-width:84%;padding:8px 11px 6px;border-radius:12px;font-size:14.5px;line-height:1.38;color:#141518;box-shadow:0 1px 0 rgba(0,0,0,.06);opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s}
+.bub.on{opacity:1;transform:none}
+.bub.in{align-self:flex-start;background:#fff;border-top-left-radius:4px}
+.bub.out{align-self:flex-end;background:#D9FDD3;border-top-right-radius:4px}
+.bub time{display:block;text-align:right;font-size:10.5px;color:#6E6C70;margin-top:2px}
+.typing{align-self:flex-end;background:#D9FDD3;border-radius:12px;padding:10px 12px;display:none;gap:4px}
+.typing.on{display:flex}
+.typing i{width:6px;height:6px;border-radius:50%;background:#6E6C70;animation:tp 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{0%,60%,100%{opacity:.25}30%{opacity:1}}
+.lead-card{margin-top:16px;border-radius:16px;background:var(--night-2);border:1px solid var(--night-3);padding:14px 16px;display:flex;align-items:center;gap:12px;opacity:.35;transition:opacity .5s}
+.lead-card.on{opacity:1}
+.lead-card .st{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--blue);color:#fff;border-radius:99px;padding:4px 9px;white-space:nowrap}
+.lead-card span{font-size:14px;color:var(--mist);line-height:1.35}
+.replay{margin-top:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--mist-2);font-size:12.5px}
+.replay button{white-space:nowrap;flex:none;min-height:40px;padding:0 16px;border-radius:99px;border:1px solid var(--night-3);background:none;color:var(--paper);font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;cursor:pointer}
+@media (max-width:900px){.demo{grid-template-columns:minmax(0,1fr)}.scr{height:560px}}
+
+/* the system */
+.pledges{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px clamp(24px,4vw,64px);margin-top:clamp(36px,6vh,64px);border-top:1px solid var(--rule);padding-top:clamp(20px,3vh,32px)}
+.pl .v{font-size:clamp(48px,6vw,112px);font-weight:700;letter-spacing:-.05em;line-height:.88;white-space:nowrap}
+.pl .v .lt{color:var(--blue)}
+.pl p{margin:14px 0 0;color:var(--ink-2);max-width:32ch;font-size:15.5px;line-height:1.45}
+.pieces{list-style:none;margin:clamp(48px,8vh,88px) 0 0;padding:0;border-top:1px solid var(--rule)}
+.pieces li{display:grid;grid-template-columns:3.4em minmax(0,1.1fr) minmax(0,1fr);gap:12px clamp(16px,3vw,40px);align-items:baseline;padding:clamp(14px,2.4vh,24px) 0;border-bottom:1px solid var(--rule)}
+.pieces .k{font-size:12.5px;font-weight:600;color:var(--mute);font-variant-numeric:tabular-nums}
+.pieces .w{font-size:clamp(40px,6.6vw,112px);font-weight:800;letter-spacing:-.055em;line-height:.88;text-transform:uppercase}
+.pieces .d{font-size:clamp(16px,1.35vw,20px);line-height:1.35;color:var(--ink-2);max-width:36ch}
+.honest{margin-top:clamp(32px,5vh,52px);max-width:62ch;font-size:16px;line-height:1.5;color:var(--ink-2);padding-left:18px;border-left:2px solid var(--blue)}
+@media (max-width:760px){.pledges{grid-template-columns:minmax(0,1fr)}.pieces li{grid-template-columns:2.4em minmax(0,1fr)}.pieces .d{grid-column:2}}
+
+/* who */
+.who-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:end;margin-top:clamp(28px,5vh,56px)}
+.who-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05);border-radius:4px}
+.who-grid .h2{margin-top:0}
+.who-grid p{margin:20px 0 0;font-size:clamp(17px,1.4vw,21px);line-height:1.45;color:var(--mist);max-width:42ch}
+.who-grid .sig{margin-top:28px;display:flex;gap:16px;flex-wrap:wrap;align-items:baseline}
+.who-grid .sig b{font-size:20px}
+.who-grid .sig span{color:var(--mist-2)}
+@media (max-width:760px){.who-grid{grid-template-columns:minmax(0,1fr)}.who-grid img{max-width:360px}}
+
+/* next step */
+.next .h2{max-width:12ch}
+.opts{margin-top:clamp(28px,5vh,48px)}
+.opts p{margin:0 0 12px;color:var(--ink-2);font-size:15px}
+.opts .row{display:flex;gap:8px;flex-wrap:wrap}
+.opts button{min-height:44px;padding:0 18px;border-radius:99px;border:1px solid var(--ink);background:none;font-size:14px;font-weight:600;cursor:pointer}
+.opts button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.send{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;align-items:center}
+.contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:clamp(40px,7vh,72px);border-top:1px solid var(--rule);padding-top:22px;max-width:900px}
+.contact .v{font-size:clamp(22px,2.2vw,32px);font-weight:600;letter-spacing:-.02em;margin-top:6px;user-select:all}
+.contact .label{color:var(--ink-2)}
+.fine2{margin-top:22px;color:var(--mute);font-size:14px}
+@media (max-width:600px){.contact{grid-template-columns:minmax(0,1fr)}}
+
+/* footer */
+.foot{padding-block:clamp(40px,8vh,80px) calc(28px + env(safe-area-inset-bottom,0px))}
+.foot .big{font-size:clamp(44px,13.6vw,280px);font-weight:800;letter-spacing:-.07em;line-height:.8;white-space:nowrap;overflow:hidden}
+.foot .big sup{font-size:.22em;vertical-align:2.2em;letter-spacing:0}
+.foot .row{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;margin-top:24px;padding-top:16px;border-top:1px solid var(--rule);font-size:12.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+.foot .row a{text-decoration:none}
+/* hero: their new site with the assistant's phone in front of it */
+.hvis{position:relative;padding:0 0 clamp(40px,7vw,90px)}
+.hvis .frame{transform:rotate(1.2deg)}
+.mini{position:absolute;right:clamp(-4px,-1vw,0px);bottom:0;width:min(270px,58%);border-radius:28px;background:#0B0C0E;padding:8px;box-shadow:0 50px 90px -30px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.08);transform:rotate(-2deg)}
+.mini .wh{border-radius:21px 21px 0 0;padding:11px 12px 9px;gap:8px}
+.mini .wh .av{width:30px;height:30px}
+.mini .wh .nm b{font-size:13px}
+.mini .wh .nm small{font-size:10.5px}
+.mm{background:#EFE7DD;border-radius:0 0 21px 21px;padding:10px 9px 12px;display:flex;flex-direction:column;gap:6px}
+.mm .bub{opacity:1;transform:none;font-size:12px;line-height:1.35;max-width:88%;padding:6px 9px 5px}
+.mm .bub time{font-size:9.5px}
+.mm .bub.out{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden}
+@media (max-width:900px){.hvis .frame{transform:none}.mini{right:10px;width:min(240px,62%)}}
+
+/* three things on this page */
+.trio{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:12px;padding-block:0 clamp(24px,5vh,48px)}
+.tr{display:flex;flex-direction:column;gap:6px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:18px 20px 20px;min-width:0;transition:background .2s,color .2s}
+.tr .k{font-size:12.5px;font-weight:600;color:var(--mute);font-variant-numeric:tabular-nums}
+.tr b{font-size:clamp(19px,1.7vw,24px);letter-spacing:-.02em;line-height:1.15}
+.tr span:last-child{font-size:15px;line-height:1.4;color:var(--ink-2)}
+.tr.on{background:var(--night);color:var(--paper);border-color:var(--night)}
+.tr.on .k{color:var(--mist-2)}
+.tr.on span:last-child{color:var(--mist)}
+.tr:hover{background:var(--ink);color:var(--paper)}
+.tr:hover span:last-child,.tr:hover .k{color:var(--mist)}
+@media (max-width:760px){.trio{grid-template-columns:minmax(0,1fr)}}
+
+/* ask it yourself */
+.ask{margin-top:16px}
+.ask p{margin:0 0 10px;font-size:12.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--mist-2)}
+.ask .row{display:flex;flex-wrap:wrap;gap:8px}
+.ask button{min-height:42px;padding:0 16px;border-radius:99px;border:1px solid var(--mist-2);background:none;color:var(--paper);font-size:14px;font-weight:600;cursor:pointer;text-align:left}
+.ask button:hover{background:var(--paper);color:var(--night);border-color:var(--paper)}
+.ask button[disabled]{opacity:.35;cursor:default;background:none;color:var(--paper);border-color:var(--mist-2)}
+.ask.pulse button:not([disabled]){animation:pu 1.6s ease-in-out 2}
+@keyframes pu{50%{border-color:var(--blue);box-shadow:0 0 0 4px rgba(47,107,255,.25)}}
+
+/* one person, from the question to the CRM */
+.path{margin-top:clamp(40px,7vh,72px)}
+.path .label{color:var(--ink-2);margin:0 0 14px}
+.path ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.path li{border-top:2px solid var(--ink);padding-top:12px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.path li:nth-child(-n+2){border-color:var(--blue)}
+.path .t{font-size:12.5px;font-weight:600;color:var(--mute);font-variant-numeric:tabular-nums}
+.path li:nth-child(-n+2) .t{color:var(--blue)}
+.path b{font-size:17px;line-height:1.2;letter-spacing:-.01em}
+.path li span:last-child{font-size:14.5px;line-height:1.4;color:var(--ink-2)}
+@media (max-width:900px){.path ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.path ol{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<header class="top" id="top">
+  <a class="logo" href="/" aria-label="404 Growth, inicio">404/GROWTH<sup>®</sup></a>
+  <span class="who label">Página privada para <span data-co>tu gimnasio</span></span>
+  <a class="pill ink wa-l" href="https://wa.me/34610594450" target="_blank" rel="noopener">Hablemos</a>
+</header>
+
+<main>
+<!-- 1 · hero: what this page is, with the assistant in front -->
+<section class="hero" id="inicio">
+  <div>
+    <p class="label" style="margin:0;color:var(--ink-2)">Página privada · <span data-co>tu gimnasio</span></p>
+    <h1>No os hemos escrito una propuesta<span class="dot" aria-hidden="true"></span><br><span class="mu">Os lo enseñamos hecho.</span></h1>
+    <p>Un <b>asistente de WhatsApp</b> que contesta a cada persona que pregunta en menos de un minuto, también a las 23:41, con vuestras cuotas y horarios. Y vuestra web, rehecha para que apuntarse sea fácil. Todo con los datos de <b data-co>tu gimnasio</b>.</p>
+    <div class="ctas">
+      <a class="pill ink" href="#demo">Probar el asistente ↓</a>
+      <a class="pill" href="#web">Ver la web nueva</a>
+    </div>
+    <p class="fine">Hecha a mano por 404 Growth. Solo tiene este enlace quien lo ha recibido.</p>
+  </div>
+  <div class="hvis" aria-hidden="true">
+    <div class="frame">
+      <div class="bar"><i></i><i></i><i></i><span data-dom>tugimnasio.es</span></div>
+      <div class="view" id="peek"></div>
+    </div>
+    <div class="mini">
+      <div class="wh"><div class="av" id="av0"><b>·</b></div><div class="nm"><b data-co>tu gimnasio</b><small>en línea</small></div></div>
+      <div class="mm" id="mini"></div>
+    </div>
+  </div>
+</section>
+
+<!-- what you will find here: three things, the assistant first -->
+<section class="wrap trio" aria-label="Qué hay en esta página">
+  <a href="#demo" class="tr on"><span class="k">01</span><b>El asistente de WhatsApp</b><span>Contesta al momento, de día y de noche, y lleva al alta o al día de prueba. Pruébalo con vuestros datos.</span></a>
+  <a href="#web" class="tr"><span class="k">02</span><b>Vuestra web, rehecha</b><span>La portada y la página de cuotas y alta, al lado de las de hoy.</span></a>
+  <a href="#sistema" class="tr"><span class="k">03</span><b>El CRM</b><span>Cada persona que pregunta queda apuntada. Nadie se queda sin respuesta.</span></a>
+</section>
+
+<!-- 3 · 23:41 -->
+<section class="sec wrap night" id="demo" aria-label="El asistente">
+  <div class="sec-top label"><span>01 · El asistente de WhatsApp</span><span>Pruébalo</span></div>
+  <div class="demo">
+    <div>
+      <h2 class="h2">Son las 23:41<span class="dot" aria-hidden="true"></span><br>Recepción cerró.</h2>
+      <p class="lead">Quien escribe a esa hora no espera a mañana: si nadie contesta, pregunta en otro gimnasio. El asistente de <span data-co>tu gimnasio</span> contesta en segundos, con vuestras cuotas y horarios, y le deja el alta o la prueba a un toque. Así lo haría:</p>
+      <ul>
+        <li><span class="n">01</span><div><b>Contesta en menos de 1 minuto</b><span>Por WhatsApp e Instagram, a cualquier hora y con vuestros datos.</span></div></li>
+        <li><span class="n">02</span><div><b>Lleva al alta o a la prueba</b><span>Manda el enlace de la cuota que encaja o reserva el día de prueba.</span></div></li>
+        <li><span class="n">03</span><div><b>Avisa a tu equipo</b><span>Con el nombre, el centro y lo que ha preguntado, ya en el CRM.</span></div></li>
+        <li><span class="n">04</span><div><b>Vuestro equipo, libre</b><span>Las preguntas de siempre (precio, horario, cómo apuntarse) dejan de ocupar la recepción.</span></div></li>
+      </ul>
+    </div>
+    <div>
+      <div class="phone" aria-label="Conversación de ejemplo por WhatsApp">
+        <div class="scr">
+          <div class="wh"><div class="av" id="av"><b>·</b></div><div class="nm"><b data-co>tu gimnasio</b><small>en línea</small></div></div>
+          <div class="msgs" id="msgs"><span class="day">HOY</span><div class="typing" id="typing"><i></i><i></i><i></i></div></div>
+        </div>
+      </div>
+      <div class="lead-card" id="lc"><span class="st">Nuevo en el CRM</span><span id="lc-t">Interesado nuevo</span></div>
+      <div class="ask" id="ask" hidden><p>Pregúntale tú:</p><div class="row" id="qs"></div></div>
+      <div class="replay"><span>Ejemplo con los datos públicos de <span data-co>tu gimnasio</span>.</span><button type="button" id="again">Ver otra vez</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · their site next to ours -->
+<section class="sec wrap" id="web" aria-label="La web">
+  <div class="sec-top label"><span>02 · La web</span><span>Desliza para comparar</span></div>
+  <h2 class="h2">Vuestra web, al lado de la actual<span class="dot" aria-hidden="true"></span></h2>
+  <p class="lead">Quien llega desde Instagram o Google no viene a leer: viene a ver si le encaja. En unos segundos tiene que encontrar su centro, la cuota y cómo apuntarse.</p>
+  <div class="cmp-tabs" role="tablist" aria-label="Página">
+    <button type="button" role="tab" id="tab-h" aria-selected="true" aria-controls="cmp-h">Portada</button>
+    <button type="button" role="tab" id="tab-d" aria-selected="false" aria-controls="cmp-d">Tarifas y alta</button>
+  </div>
+  <figure class="cmp" id="cmp-h" role="tabpanel" aria-labelledby="tab-h">
+    <figcaption><b>Portada</b><span class="cap-d">De arriba abajo, como la ve quien llega desde Instagram</span><span class="cap-m">Pellizca para ampliar</span></figcaption>
+    <div class="ba" data-ba id="ba-h" style="aspect-ratio:1400/5800">
+      <img class="shot" id="hb" alt="La portada actual" decoding="async">
+      <img class="shot after" id="ha" alt="La portada que proponemos: centros, cuotas, alta online y WhatsApp a la vista" decoding="async">
+      <div class="tags"><span class="tag l">Ahora</span><span class="tag r">Con 404</span></div>
+      <div class="handle"></div><div class="knob"></div>
+      <input type="range" min="0" max="100" value="50" aria-label="Compara la portada actual con la propuesta">
+    </div>
+    <div class="cmp-next"><button class="pill" type="button" data-go="d">Ver tarifas y alta →</button></div>
+  </figure>
+  <figure class="cmp" id="cmp-d" role="tabpanel" aria-labelledby="tab-d" hidden>
+    <figcaption><b>Tarifas y alta</b><span class="cap-d">Donde se decide el alta</span><span class="cap-m">Pellizca para ampliar</span></figcaption>
+    <div class="ba" data-ba id="ba-d" style="aspect-ratio:1400/3600">
+      <img class="shot" id="db" alt="La página actual" loading="lazy" decoding="async">
+      <img class="shot after" id="da" alt="La página que proponemos: cuotas claras, alta online en tres pasos y preguntas frecuentes" loading="lazy" decoding="async">
+      <div class="tags"><span class="tag l">Ahora</span><span class="tag r">Con 404</span></div>
+      <div class="handle"></div><div class="knob"></div>
+      <input type="range" min="0" max="100" value="50" aria-label="Compara la página actual con la propuesta">
+    </div>
+    <div class="cmp-next"><button class="pill" type="button" data-go="h">← Volver a la portada</button></div>
+  </figure>
+  <div class="made">
+    <div><b>Todo es vuestro</b><p>Centros, horarios, cuotas, promociones y fotos, tal y como los publicáis hoy. No hemos inventado nada.</p></div>
+    <div><b>Pensada para apuntarse</b><p>La cuota y el alta a un toque desde cualquier punto de la página, también desde el móvil.</p></div>
+    <div><b>WhatsApp en cada bloque</b><p>Cada duda que llega por ahí la contesta el asistente al momento, como habéis visto arriba.</p></div>
+  </div>
+</section>
+
+<!-- 4 · the system behind -->
+<section class="sec wrap" id="sistema" aria-label="El sistema">
+  <div class="sec-top label"><span>03 · El sistema</span><span>Todo conectado, con vuestra marca</span></div>
+  <h2 class="h2">La tecnología de una gran cadena<span class="dot" aria-hidden="true"></span><span style="color:var(--mute)">con vuestra marca.</span></h2>
+  <div class="pledges">
+    <div class="pl"><div class="v"><span class="lt">&lt;</span>1 min</div><p>Respuesta a cada interesado, a cualquier hora. Si un mes no se cumple, ese mes no lo pagáis.</p></div>
+    <div class="pl"><div class="v">15 días</div><p>Web, asistente y CRM en marcha en 15 días. Si no, no pagáis mensualidad hasta que lo estén.</p></div>
+    <div class="pl"><div class="v">1 por zona</div><p>Un solo gimnasio en cada zona. No trabajamos para vuestra competencia.</p></div>
+  </div>
+  <div class="path" aria-label="Un interesado, de principio a fin">
+    <p class="label">Una persona que pregunta, de principio a fin</p>
+    <ol>
+      <li><span class="t">23:41</span><b>Pregunta</b><span>Por WhatsApp o Instagram, desde vuestra web o desde un anuncio.</span></li>
+      <li><span class="t">23:41</span><b>El asistente contesta</b><span>Con vuestras cuotas, horarios y centros, en segundos.</span></li>
+      <li><span class="t">23:43</span><b>Se apunta o reserva la prueba</b><span>Con el enlace de vuestra alta online o un hueco para venir.</span></li>
+      <li><span class="t">8:00</span><b>Vuestro equipo lo ve en el CRM</b><span>Con su nombre, su centro y lo que preguntó.</span></li>
+      <li><span class="t">+1 día</span><b>Si no viene, se le escribe</b><span>El sistema le busca otro día, sin que nadie tenga que acordarse.</span></li>
+    </ol>
+  </div>
+  <ol class="pieces">
+    <li><span class="k">01</span><span class="w">Asistente</span><span class="d">Contesta por WhatsApp e Instagram en menos de un minuto, reserva la prueba y lleva al alta.</span></li>
+    <li><span class="k">02</span><span class="w">Web</span><span class="d">La que acabáis de ver: centros, cuotas y alta online, rápida y pensada para el móvil.</span></li>
+    <li><span class="k">03</span><span class="w">CRM</span><span class="d">Cada interesado guardado: de dónde viene, qué preguntó y cuándo viene. Si no aparece, el sistema le escribe para buscar otro día.</span></li>
+    <li><span class="k">04</span><span class="w">App</span><span class="d">Con vuestro nombre y vuestro logo: reservas, rutinas, avisos y cuota en el móvil de cada socio.</span></li>
+  </ol>
+  <p class="honest">Lo decimos claro: el asistente y el CRM todavía no están montados para <span data-co>tu gimnasio</span>. Se ponen en marcha con vuestro equipo, vuestras cuotas y vuestro programa de gestión. Lo de arriba es lo que hacen cuando están funcionando.</p>
+</section>
+
+<!-- 5 · who -->
+<section class="sec wrap night" id="about" aria-label="Quién está detrás">
+  <div class="sec-top label"><span>04 · Quién está detrás</span><span>España</span></div>
+  <div class="who-grid">
+    <img src="/ind-me.webp" alt="Christian Silva, fundador de 404 Growth" decoding="async">
+    <div>
+      <h2 class="h2">Esta página la he hecho yo<span class="dot" aria-hidden="true"></span></h2>
+      <p>Soy Christian, de 404 Growth. Hacemos la web, el asistente de IA, el CRM y la app para gimnasios y centros deportivos. Antes de escribiros he mirado vuestra web, vuestros centros y vuestras cuotas, y he preferido enseñaros el resultado a contároslo.</p>
+      <p>Si me escribes, te contesto yo, en persona.</p>
+      <div class="sig"><b>Christian Silva</b><span>Fundador · 404 Growth</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · next -->
+<section class="sec wrap next" id="next" aria-label="Siguiente paso">
+  <div class="sec-top label"><span>05 · Siguiente paso</span><span>Sin compromiso</span></div>
+  <h2 class="h2">Hablemos<span class="dot" aria-hidden="true"></span></h2>
+  <p class="lead">En 20 minutos te enseño cómo funcionaría en <span data-co>tu gimnasio</span> y qué haría falta. Si no es para vosotros, dímelo y no vuelvo a escribir.</p>
+  <div class="opts">
+    <p>¿Qué es lo que más te ha gustado? (opcional, va en el mensaje)</p>
+    <div class="row" id="opts">
+      <button type="button" aria-pressed="false" data-v="el asistente">El asistente</button>
+      <button type="button" aria-pressed="false" data-v="la web">La web</button>
+      <button type="button" aria-pressed="false" data-v="el CRM">El CRM</button>
+      <button type="button" aria-pressed="false" data-v="la app">La app</button>
+      <button type="button" aria-pressed="false" data-v="todo">Todo</button>
+      <button type="button" aria-pressed="false" data-v="no">No me convence</button>
+    </div>
+  </div>
+  <div class="send">
+    <a class="pill wa" id="send" href="https://wa.me/34610594450" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.2Z"/></svg>Escribir por WhatsApp</a>
+    <a class="pill" href="mailto:hola@404growth.com" id="mail">Escribir un email</a>
+  </div>
+  <div class="contact">
+    <div><span class="label">WhatsApp · respondo yo</span><div class="v">+34 610 594 450</div></div>
+    <div><span class="label">Email</span><div class="v">hola@404growth.com</div></div>
+  </div>
+  <p class="fine2">Esta página es privada: no aparece en buscadores y solo la tiene quien ha recibido el enlace.</p>
+</section>
+</main>
+
+<footer class="foot wrap">
+  <div class="big" aria-hidden="true">404/GROWTH<sup>®</sup></div>
+  <div class="row"><span>Web, asistente de IA, CRM y app para gimnasios · España</span><a href="/legal">Aviso legal y privacidad</a></div>
+</footer>
+
+<script>
+/* c404 v3 (27 oct 2026): more detail for the visit counter below. No cookies, nothing kept on the device, never what is typed or copied. */
+(function(){
+  if(!/(^|\.)404growth\.com$/.test(location.hostname)||!window.fetch)return;
+  try{if(localStorage.getItem('c404int')&&!/[?&]interno=0/.test(location.search))return}catch(e){}
+  var EP='https://404growth-visits.contactochristiansilva.workers.dev',key='',Q=[],seq=0,T0=Date.now(),act=0,last=0,it=0,maxs=0,ms={},SS={},cur=null,curT=0,seenS={},ord=0,idle=false,playing=0,errs=0,rerrs=0,sz=0,sentNav=false,iv;
+  var rid=Math.random().toString(36).slice(2,8);
+  function sec(){return Math.round((Date.now()-T0)/1000)}
+  function ev(y,o){o=o||{};o.y=y;o.i=rid+(seq++).toString(36);o.t=sec();o.ot=Date.now();Q.push(o);if(Q.length>200)Q.shift();if(Q.length>=20)flush()}
+  function flush(beacon){if(!key||!Q.length)return;var b=JSON.stringify({k:key,ev:Q.splice(0,25)});
+    try{if(beacon&&navigator.sendBeacon&&navigator.sendBeacon(EP+'/e',b)){}else fetch(EP+'/e',{method:'POST',body:b,keepalive:true}).catch(function(){})}catch(e){}if(Q.length)setTimeout(function(){flush(beacon)},300)}
+  function txt(s,n){return String(s||'').replace(/\s+/g,' ').trim().slice(0,n||80)}
+  function vis(){return document.visibilityState==='visible'}
+  function poke(){last=Date.now();if(!it)it=1;if(idle){idle=false;ev('wake')}}
+  ['scroll','pointerdown','touchstart','keydown','wheel','mousemove'].forEach(function(e){addEventListener(e,poke,{capture:true,passive:true})});
+  var SECS=[].slice.call(document.querySelectorAll('section[id],header[id],footer[id],article[id],main[id]')).filter(function(s){return /^[A-Za-z][\w-]{0,39}$/.test(s.id)}).slice(0,40);
+  function head(s){var h=s.querySelector('h1,h2,h3');return txt((h&&h.textContent)||s.getAttribute('aria-label')||s.id,60)}
+  function current(){var y=innerHeight/2,best=null;for(var i=0;i<SECS.length;i++){var r=SECS[i].getBoundingClientRect();if(r.top<=y&&r.bottom>=y){if(!best||r.height<best.r.height)best={s:SECS[i],r:r}}}return best&&best.s}
+  function scrollPct(){var de=document.documentElement,h=Math.max(1,de.scrollHeight);return Math.min(100,Math.round((scrollY+innerHeight)/h*100))}
+  function tick(){var now=Date.now(),on=vis()&&(now-last<30000||playing>0);
+    if(vis()&&!on&&!idle&&last){idle=true;ev('idle')}
+    if(on){act+=1;var s=current();if(s){SS[s.id]=(SS[s.id]||0)+1;if(s!==cur){cur=s;curT=0}curT++;if(curT===1&&!seenS[s.id]){seenS[s.id]=1;ev('sin',{s:s.id,l:head(s),m:{ord:++ord}})}}}
+    var p=scrollPct();if(p>maxs){maxs=p;[25,50,75,90,100].forEach(function(m){if(p>=m&&!ms[m]){ms[m]=1;ev('scr',{n:m})}})}
+    if(++sz%5===0)flush()}
+  window.__c404x=function(){var o={sw:screen.width,sh:screen.height,vw:innerWidth,vh:innerHeight,dpr:window.devicePixelRatio||1,or:innerHeight>=innerWidth?'p':'l',tch:navigator.maxTouchPoints||0,it:it};
+    try{o.lang=(navigator.languages&&navigator.languages[0])||navigator.language||''}catch(e){}
+    try{o.tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
+    try{o.dk=matchMedia('(prefers-color-scheme: dark)').matches?1:0}catch(e){}
+    try{var r=document.referrer&&new URL(document.referrer);if(r&&r.host!==location.host)o.ref=r.host}catch(e){}
+    try{var n=performance.getEntriesByType('navigation')[0];if(n)o.nav=n.type}catch(e){}
+    o.wd=navigator.webdriver?1:0;o.hl=(/HeadlessChrome/.test(navigator.userAgent)||(navigator.languages&&navigator.languages.length===0))?1:0;return o};
+  window.__c404p=function(){var o={a:act,sd:maxs},n=0,ss={};for(var k in SS){if(n++>=40)break;ss[k]=SS[k]}o.ss=ss;return o};
+  window.__c404on=function(k){if(!k||key)return;key=k;flush()};
+  iv=setInterval(tick,1000);
+  document.addEventListener('visibilitychange',function(){ev(vis()?'vis':'hid');if(!vis()){navTimes();flush(true)}});
+  addEventListener('pagehide',function(){ev('end',{n:act});navTimes();flush(true)});
+  document.addEventListener('toggle',function(e){var d=e.target;if(d&&d.tagName==='DETAILS'){var s=d.querySelector('summary');ev(d.open?'exp':'col',{l:txt(s&&s.textContent,60),s:(d.closest('[id]')||{}).id||''})}},true);
+  document.addEventListener('click',function(e){try{var el=e.target&&e.target.closest&&e.target.closest('[role="tab"],a[href],[data-share]');if(!el)return;
+    var sc=el.closest('section[id],header[id],footer[id],article[id]'),sid=sc?sc.id:'';
+    if(el.getAttribute('role')==='tab')ev('tab',{l:txt(el.textContent,60),s:sid});
+    else if(el.hasAttribute('data-share'))ev('share',{s:sid,m:{ch:txt(el.getAttribute('data-share'),20)}});
+    else{var h=el.getAttribute('href')||'';if(el.hasAttribute('download')||/\.(pdf|zip|docx?|xlsx?|pptx?|key|numbers)(\?|#|$)/i.test(h)){var f=h.split(/[?#]/)[0].split('/').pop();ev('dl',{s:sid,m:{file:txt(decodeURIComponent(f),80)}})}}}catch(x){}},true);
+  document.addEventListener('copy',function(){var n=0;try{n=String(getSelection()).length}catch(e){}ev('copy',{m:{len:n}})},true);
+  addEventListener('beforeprint',function(){ev('print')});
+  document.addEventListener('fullscreenchange',function(){if(document.fullscreenElement)ev('fs')});
+  var forms={};document.addEventListener('focusin',function(e){var f=e.target&&e.target.form;if(f){var id=txt(f.id||f.getAttribute('name')||'form',30);if(!forms[id]){forms[id]=1;ev('form0',{m:{form:id}})}}},true);
+  document.addEventListener('submit',function(e){var f=e.target;ev('form1',{m:{form:txt(f.id||f.getAttribute('name')||'form',30)}})},true);
+  try{if(navigator.share){var sh=navigator.share.bind(navigator);navigator.share=function(d){ev('share',{m:{ch:'sistema'}});return sh(d)}}}catch(e){}
+  var orient=innerHeight>=innerWidth;addEventListener('resize',function(){var o=innerHeight>=innerWidth;if(o!==orient&&sz<9999){orient=o;ev('resize',{m:{or:o?'vertical':'horizontal'}})}});
+  function vname(v){return txt(v.getAttribute('aria-label')||v.title||(v.currentSrc||v.src||'').split('/').pop().split('?')[0]||'vídeo',60)}
+  document.addEventListener('play',function(e){var v=e.target;if(v.tagName!=='VIDEO'||v.muted&&v.autoplay&&v.loop)return;playing++;v.__q=v.__q||{};var sc=v.closest('[id]');ev('vplay',{l:vname(v),s:sc?sc.id:''})},true);
+  document.addEventListener('pause',function(e){var v=e.target;if(v.tagName!=='VIDEO'||v.muted&&v.autoplay&&v.loop)return;playing=Math.max(0,playing-1);if(!v.ended)ev('vpause',{l:vname(v),n:Math.round(v.currentTime/Math.max(1,v.duration||1)*100)})},true);
+  document.addEventListener('timeupdate',function(e){var v=e.target;if(v.tagName!=='VIDEO'||!v.duration||v.muted&&v.autoplay&&v.loop)return;var p=v.currentTime/v.duration*100;v.__q=v.__q||{};[25,50,75].forEach(function(m){if(p>=m&&!v.__q[m]){v.__q[m]=1;ev('vprog',{l:vname(v),n:m})}})},true);
+  document.addEventListener('ended',function(e){var v=e.target;if(v.tagName!=='VIDEO'||v.muted&&v.autoplay&&v.loop)return;ev('vend',{l:vname(v)})},true);
+  addEventListener('error',function(e){try{var t=e.target;if(t&&t!==window&&t.tagName){if(rerrs++<10){var u=t.currentSrc||t.src||t.href||'';ev('rerr',{m:{tag:t.tagName.toLowerCase(),res:txt(u.split('?')[0].split('/').pop(),80)}})}}else if(errs++<5)ev('err',{m:{msg:txt(e.message,120),src:txt(String(e.filename||'').split('?')[0].split('/').pop(),60),line:e.lineno||0}})}catch(x){}},true);
+  addEventListener('unhandledrejection',function(e){if(errs++<5)ev('err',{m:{msg:txt(e.reason&&(e.reason.message||e.reason),120)}})});
+  var lcp=0,cls=0;try{new PerformanceObserver(function(l){l.getEntries().forEach(function(x){lcp=Math.round(x.startTime)})}).observe({type:'largest-contentful-paint',buffered:true})}catch(e){}
+  try{new PerformanceObserver(function(l){l.getEntries().forEach(function(x){if(!x.hadRecentInput)cls+=x.value})}).observe({type:'layout-shift',buffered:true})}catch(e){}
+  function navTimes(){if(sentNav)return;sentNav=true;var m={};try{var n=performance.getEntriesByType('navigation')[0];if(n){m.ttfb=Math.round(n.responseStart);m.dcl=Math.round(n.domContentLoadedEventEnd);m.load=Math.round(n.loadEventEnd)}}catch(e){}
+    if(lcp)m.lcp=lcp;m.cls=Math.round(cls*1000)/1000;try{var c=navigator.connection;if(c){if(c.effectiveType)m.net=c.effectiveType;if(c.saveData)m.save='sí'}}catch(e){}ev('nav',{m:m})}
+  addEventListener('load',function(){setTimeout(navTimes,6000)});
+})();
+</script>
+<script>
+(function(){
+  /* ---- who is this page for ----
+     /g/<slug> reads <MEDIA>collab/<slug>.json, written for each gym:
+       {"name":"Sportia Gimnasios","sector":"gym","hh":5685,"dh":3611,"v":1,"dom":"sportiagimnasios.com","logo":1,
+        "chat":[["in","…","23:41"],["out","…","23:41"],…],"ok":"Interesado nuevo · Jundiz 26 · desde 36,25 €"}
+     and the four pictures <slug>-hb.webp / -ha.webp (home, now / ours) and <slug>-db.webp / -da.webp (prices and sign-up, now / ours),
+     all 1400 px wide; hh and dh are their heights. "logo":1 = <slug>-lg.png exists (their own logo, for the chat header).
+     v: bump it when the pictures are replaced (added to their URLs). Without a valid json the visitor is sent to the home page. */
+  var MEDIA=/(^|\.)404growth\.com$/.test(location.hostname)?'https://media.404growth.com/':'/_media/';
+  var slug=(location.pathname.replace(/\/+$/,'').split('/g/')[1]||'').split('/')[0].toLowerCase().replace(/[^a-z0-9-]/g,'').slice(0,60);
+  var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(){document.documentElement.classList.remove('g-wait')}
+  function home(){location.replace('/')}
+  if(!slug||!window.fetch){home();return}
+  var done=false;setTimeout(function(){if(!done)home()},6000);
+  fetch(MEDIA+'collab/'+slug+'.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(m){
+    if(!m||m.sector!=='gym'||typeof m.name!=='string'||!m.name){home();return}
+    done=true;boot(m)}).catch(home);
+
+  function boot(m){
+    var NAME=m.name.slice(0,80),q=m.v?'?v='+encodeURIComponent(m.v):'',base=MEDIA+'collab/'+slug+'-';
+    document.title=NAME+' × 404 Growth';
+    [].forEach.call(document.querySelectorAll('[data-co]'),function(el){el.textContent=NAME});
+    if(m.dom)[].forEach.call(document.querySelectorAll('[data-dom]'),function(el){el.textContent=String(m.dom).slice(0,60)});
+    var hh=+m.hh||5800,dh=+m.dh||3600;
+    document.getElementById('ba-h').style.aspectRatio='1400/'+hh;
+    document.getElementById('ba-d').style.aspectRatio='1400/'+dh;
+    document.getElementById('hb').src=base+'hb.webp'+q;document.getElementById('ha').src=base+'ha.webp'+q;
+    document.getElementById('db').src=base+'db.webp'+q;document.getElementById('da').src=base+'da.webp'+q;
+    document.getElementById('peek').style.backgroundImage='url("'+base+'ha.webp'+q+'")';
+    ['av','av0'].forEach(function(id){var av=document.getElementById(id);
+      if(m.logo){av.innerHTML='';var li=new Image();li.alt='';li.src=base+'lg.png'+q;av.appendChild(li)}else av.querySelector('b').textContent=NAME.charAt(0)});
+    mini(Array.isArray(m.chat)?m.chat:[]);
+    show();
+    tabs();sliders();chat(Array.isArray(m.chat)?m.chat:[],String(m.ok||''),Array.isArray(m.qa)?m.qa:[]);wa(NAME);header();counter();
+  }
+
+  /* the two pairs: home and prices/sign-up, one at a time */
+  function tabs(){
+    var T={h:document.getElementById('tab-h'),d:document.getElementById('tab-d')},P={h:document.getElementById('cmp-h'),d:document.getElementById('cmp-d')};
+    function sel(k,scroll){Object.keys(T).forEach(function(x){T[x].setAttribute('aria-selected',x===k);P[x].hidden=x!==k});
+      if(scroll){var y=document.querySelector('.cmp-tabs').getBoundingClientRect().top+scrollY-90;scrollTo({top:y,behavior:rm?'auto':'smooth'})}
+      dispatchEvent(new Event('resize'))}
+    T.h.onclick=function(){sel('h')};T.d.onclick=function(){sel('d')};
+    [].forEach.call(document.querySelectorAll('[data-go]'),function(b){b.onclick=function(){sel(b.dataset.go,true)}});
+  }
+
+  /* compare sliders: the divider follows the pointer; while the pointer is elsewhere the knob stays at mid-screen */
+  function sliders(){
+    [].forEach.call(document.querySelectorAll('[data-ba]'),function(ba){
+      var rg=ba.querySelector('input'),bx=null,by=null,raf=0;
+      function set(v){v=Math.max(0,Math.min(100,v));ba.style.setProperty('--pos',v+'%');ba.classList.toggle('at-l',v<8);ba.classList.toggle('at-r',v>92);return v}
+      function place(){raf=0;var r=ba.getBoundingClientRect();if(!r.width)return;
+        if(bx!==null){var v=(bx-r.left)/r.width*100;if(v<1.5)v=0;if(v>98.5)v=100;rg.value=Math.round(set(v))}
+        var y=bx!==null?by:innerHeight/2;ba.style.setProperty('--py',Math.max(0,Math.min(r.height,y-r.top))+'px')}
+      function track(e){bx=e.clientX;by=e.clientY;if(!raf)raf=requestAnimationFrame(place)}
+      ba.addEventListener('pointermove',track);
+      ba.addEventListener('pointerdown',function(e){bx=e.clientX;by=e.clientY;place()});
+      ba.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse'){bx=e.clientX;by=e.clientY;place()}bx=null});
+      ba.addEventListener('pointerup',function(e){if(e.pointerType!=='mouse'){bx=e.clientX;by=e.clientY;place();bx=null}});
+      ba.addEventListener('pointercancel',function(){bx=null});
+      addEventListener('scroll',function(){if(!raf)raf=requestAnimationFrame(place)},{passive:true});
+      addEventListener('resize',function(){if(!raf)raf=requestAnimationFrame(place)});
+      rg.addEventListener('input',function(){set(+rg.value)});
+      set(50);place();
+    });
+  }
+
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  /* hero: the first lines of their conversation, still, on a small phone in front of their new site */
+  function mini(L){var box=document.getElementById('mini');box.innerHTML='';
+    L.slice(0,3).forEach(function(x){var d=x[0]==='out'?'out':'in',el=document.createElement('div');el.className='bub '+d;el.innerHTML=esc(x[1])+'<time>'+esc(x[2]||'')+'</time>';box.appendChild(el)})}
+
+  /* 23:41: their own conversation plays when the phone comes into view; then the visitor asks it the usual questions
+     (qa: [[question, answer], ...], answers written from their public prices and hours); "Ver otra vez" starts again */
+  function chat(L,ok,QA){
+    var box=document.getElementById('msgs'),ty=document.getElementById('typing'),lc=document.getElementById('lc'),ask=document.getElementById('ask'),qs=document.getElementById('qs'),run=0,played=false,clock=0;
+    document.getElementById('lc-t').textContent=ok||'Interesado nuevo';
+    function hm(t){var r=/^(\d{1,2}):(\d{2})$/.exec(t||'');return r?(+r[1])*60+(+r[2]):null}
+    function stamp(){clock=(clock+1)%1440;return Math.floor(clock/60)+':'+('0'+clock%60).slice(-2)}
+    function bubble(d,t,tm){var el=document.createElement('div');el.className='bub '+d;el.innerHTML=esc(t)+'<time>'+esc(tm||'')+'</time>';return el}
+    function put(el,id,next){if(id!==run)return;ty.classList.remove('on');box.insertBefore(el,ty);requestAnimationFrame(function(){el.classList.add('on')});if(next)setTimeout(next,rm?0:(el.classList.contains('in')?900:1300))}
+    function say(d,t,tm,id,next){var el=bubble(d,t,tm);if(d==='out'&&!rm){box.appendChild(ty);ty.classList.add('on');setTimeout(function(){put(el,id,next)},1000)}else put(el,id,next)}
+    function chips(){qs.innerHTML='';
+      QA.slice(0,6).forEach(function(x){if(!Array.isArray(x)||!x[0]||!x[1])return;var b=document.createElement('button');b.type='button';b.textContent=String(x[0]).slice(0,60);
+        b.onclick=function(){if(b.disabled)return;[].forEach.call(qs.querySelectorAll('button'),function(o){o.disabled=true});ask.classList.remove('pulse');var id=run;
+          say('in',String(x[0]),stamp(),id,function(){say('out',String(x[1]),stamp(),id,function(){if(id!==run)return;b.dataset.done='1';[].forEach.call(qs.querySelectorAll('button'),function(o){o.disabled=!!o.dataset.done})})})};
+        qs.appendChild(b)});
+      ask.hidden=!qs.children.length}
+    function play(){var id=++run;played=true;ask.hidden=true;
+      [].forEach.call(box.querySelectorAll('.bub'),function(n){n.remove()});lc.classList.remove('on');ty.classList.remove('on');
+      var i=0;clock=hm(L.length?L[L.length-1][2]:'')||1423;
+      function step(){if(id!==run)return;if(i>=L.length){ty.classList.remove('on');setTimeout(function(){if(id!==run)return;lc.classList.add('on');chips();ask.classList.add('pulse')},rm?0:500);return}
+        var x=L[i++];say(x[0]==='out'?'out':'in',x[1],x[2]||'',id,step)}
+      step()}
+    document.getElementById('again').onclick=play;
+    if(rm||!('IntersectionObserver' in window)){play();return}
+    var io=new IntersectionObserver(function(en){if(en[0].isIntersecting&&!played){play();io.disconnect()}},{threshold:.35});
+    io.observe(document.querySelector('#demo .phone'));
+  }
+
+  /* WhatsApp: the message carries the gym and what they liked */
+  function wa(NAME){
+    var opts=[].slice.call(document.querySelectorAll('#opts button'));
+    var base='Hola Christian, he visto la página que habéis hecho para '+NAME+'.';
+    function upd(){
+      var on=opts.filter(function(b){return b.getAttribute('aria-pressed')==='true'}).map(function(b){return b.dataset.v}),msg=base;
+      if(on.indexOf('no')>-1)msg=base+' No me acaba de convencer. Te cuento por qué: ';
+      else if(on.length)msg=base+' Lo que más me ha gustado: '+(on.length>1?on.slice(0,-1).join(', ')+' y '+on[on.length-1]:on[0])+'. ¿Lo hablamos?';
+      [].forEach.call(document.querySelectorAll('.wa-l'),function(a){a.href='https://wa.me/34610594450?text='+encodeURIComponent(base)});
+      document.getElementById('send').href='https://wa.me/34610594450?text='+encodeURIComponent(msg);
+      document.getElementById('mail').href='mailto:hola@404growth.com?subject='+encodeURIComponent('Página de '+NAME)+'&body='+encodeURIComponent(msg);
+    }
+    opts.forEach(function(b){b.onclick=function(){
+      var v=b.getAttribute('aria-pressed')!=='true';
+      if(v&&(b.dataset.v==='no'||b.dataset.v==='todo'))opts.forEach(function(o){o.setAttribute('aria-pressed','false')});
+      else if(v)opts.forEach(function(o){if(o.dataset.v==='no'||o.dataset.v==='todo')o.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed',v);upd()}});
+    upd();
+  }
+
+  /* header: solid once the hero is behind, light text over the dark sections; reading progress */
+  function header(){
+    var top=document.getElementById('top'),pr=document.getElementById('prog'),nights=[].slice.call(document.querySelectorAll('.night')),pq=0;
+    function f(){pq=0;top.classList.toggle('solid',scrollY>40);var y=top.offsetHeight/2,on=nights.some(function(n){var r=n.getBoundingClientRect();return r.top<=y&&r.bottom>=y});top.classList.toggle('on-night',on);
+      var h=document.documentElement.scrollHeight-innerHeight;pr.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')'}
+    addEventListener('scroll',function(){if(!pq)pq=requestAnimationFrame(f)},{passive:true});addEventListener('resize',f);f();
+  }
+
+  /* ---- visit counter: tells our own counter (404growth-visits, a small Worker on our Cloudflare account) that this page was opened,
+     for how long it was read and how far down. No cookies and nothing stored on the visitor's device. It runs only on the live site.
+     Our own devices opt out once by opening any private page with ?interno=1 (remembered in that browser; ?interno=0 undoes it). ---- */
+  function counter(){
+    var EP='https://404growth-visits.contactochristiansilva.workers.dev',EV=['scroll','pointerdown','touchstart','keydown'];
+    try{var q=/[?&]interno=([01])/.exec(location.search);if(q){if(q[1]==='1')localStorage.setItem('c404int','1');else localStorage.removeItem('c404int')}if(localStorage.getItem('c404int'))return}catch(e){}
+    if(!slug||!/(^|\.)404growth\.com$/.test(location.hostname)||navigator.webdriver)return;
+    var key=null,seen=0,since=0,depth=0,sent='',n=0,iv,gone=false,CQ=[];
+    function clock(){var now=Date.now();if(since)seen+=now-since;since=document.visibilityState==='visible'?now:0}
+    function push(){clock();if(!key)return;var b=JSON.stringify(Object.assign({k:key,t:Math.round(seen/1000),d:depth,e:gone?1:0},window.__c404p?__c404p():{}));if(b===sent)return;sent=b;
+      try{if(!(navigator.sendBeacon&&navigator.sendBeacon(EP+'/p',b)))fetch(EP+'/p',{method:'POST',body:b,keepalive:true})}catch(e){}}
+    /* a visit starts with the first sign of a person: three seconds with the page in view, or a scroll, tap or key */
+    function open(){if(key!==null)return;key='';EV.forEach(function(e){removeEventListener(e,open,true)});
+      fetch(EP+'/h',{method:'POST',body:JSON.stringify({s:slug,x:window.__c404x?__c404x():{}}),keepalive:true}).then(function(r){return r.json()}).then(function(j){key=(j&&j.k)||'';push();cflush();if(key&&window.__c404on)__c404on(key)}).catch(function(){})}
+    EV.forEach(function(e){addEventListener(e,open,{capture:true,passive:true})});clock();
+    iv=setInterval(function(){clock();if(seen>=2800)open();if(seen>=1800000){push();clearInterval(iv)}else if(key&&++n%15===0)push()},1000);
+    document.addEventListener('visibilitychange',function(){gone=document.visibilityState==='hidden';push()});addEventListener('pagehide',function(){gone=true;push()});addEventListener('pageshow',function(e){if(e.persisted){gone=false;push()}});
+    /* c404 v2: the buttons and links tapped, with the part of the page; nothing typed is ever read */
+    function cflush(){if(!key||!CQ.length)return;var b=JSON.stringify({k:key,c:CQ.splice(0,20)});try{if(!(navigator.sendBeacon&&navigator.sendBeacon(EP+'/c',b)))fetch(EP+'/c',{method:'POST',body:b,keepalive:true})}catch(e){}if(CQ.length)setTimeout(cflush,400)}
+    function ctx(s){return String(s||'').replace(/\s+/g,' ').trim()}
+    document.addEventListener('click',function(ev){try{
+      var el=ev.target&&ev.target.closest&&ev.target.closest('a,button,summary,label,select,input,textarea,video,[role="button"],[role="tab"],[data-go],[onclick]');if(!el)return;
+      var sec=el.closest('section[id],header[id],footer[id],nav[id],aside[id],main[id],article[id],#sheet')||el.closest('section,header,footer,article'),hd=sec&&sec.querySelector('h1,h2,h3'),sh=ctx(hd&&hd.textContent);
+      if(!sh){var hs=document.querySelectorAll('h1,h2,h3');for(var i=hs.length-1;i>=0;i--){if(hs[i].compareDocumentPosition(el)&4){sh=ctx(hs[i].textContent);break}}}
+      var fld=/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName),w=ctx(el.getAttribute('aria-label')||(fld?(el.labels&&el.labels[0]&&el.labels[0].innerText)||el.getAttribute('placeholder')||el.name:el.innerText));
+      if(!w){var im=el.querySelector&&el.querySelector('img');w=ctx((im&&im.alt)||el.title||'')}
+      var h='',a=el.closest('a[href]');if(a){var u=new URL(a.getAttribute('href'),location.href);h=u.protocol==='mailto:'?'mailto:':u.protocol==='tel:'?'tel:':u.host===location.host?u.pathname+u.hash:u.host+(/wa\.me|whatsapp/.test(u.host)?'':u.pathname)}
+      var de=document.documentElement;CQ.push({t:Math.round((seen+(since?Date.now()-since:0))/1000),s:(sec&&sec.id)||'',sh:sh.slice(0,80),w:w.slice(0,90),h:h.slice(0,120),x:Math.round(ev.clientX/Math.max(1,innerWidth)*100),y:Math.round((ev.pageY||0)/Math.max(1,de.scrollHeight)*100)});
+      if(CQ.length>40)CQ.shift();if(key)cflush();else open()}catch(e){}},true);
+
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){depth=Math.max(depth,+x.target.getAttribute('data-cd'));io.unobserve(x.target)}})},{rootMargin:'0px 0px -35% 0px'});
+      ['demo','web','sistema','about','next'].forEach(function(id,i){var el=document.getElementById(id);if(el){el.setAttribute('data-cd',i+1);io.observe(el)}})}
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+// 404 Growth · el Worker «404growth-visits» (el contador de visitas de las propuestas), con la misma configuración que tiene en
+// Cloudflare el 22 oct 2026: base de datos D1 «404growth-visits» como DB, workers.dev activo, sin vistas previas.
+// v2: guarda si la página sigue abierta y los clics (columnas seen y ex, tabla c); las crea él solo la primera vez.
+{
+  "name": "404growth-visits",
+  "account_id": "d59d5d5e6d9dba65f2a977ef91ab2840",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  "no_bundle": true,
+  "workers_dev": true,
+  "preview_urls": false,
+  "d1_databases": [
+    { "binding": "DB", "database_name": "404growth-visits", "database_id": "53b69260-1e39-4cf4-845a-354b2fc003a9" }
+  ]
+}

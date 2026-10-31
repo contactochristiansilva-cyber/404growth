@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ozono Aranjuez × 404 Growth · Propuesta</title>
+<meta name="description" content="Contenido, web, asistente de IA y CRM para Ozono Aranjuez: del primer reel al alta.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="404 Growth">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Ozono Aranjuez × 404 Growth">
+<meta property="og:description" content="Contenido, web, asistente de IA y CRM para Ozono Aranjuez: del primer reel al alta.">
+<meta property="og:image" content="https://404growth.com/p-ozono-aranjuez--a--og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#141518">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* snapshot of the 404 Growth home (web95, oct 2026): tokens, type and components, reused as is */
+/* 404 Growth · home for independent businesses: one closed package, from the content to the paying client. After BASIC/DEPT: a warm paper ground with fine grain, ink type set very large and tight,
+   thin rules, small uppercase labels, pill buttons, one dark chapter in the middle. Blue is the only accent (the 404 dot). */
+@font-face{font-family:"Inter Tight";src:url(/inter-tight.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+:root{
+  --paper:#EDEBE6; --paper-2:#E3E0D9; --ink:#1B1B1D; --ink-2:#47464B; --mute:#6E6C70; --rule:#1B1B1D;
+  --blue:#2F6BFF; --night:#141518; --night-2:#1D1F23; --night-3:#2A2C31; --mist:#B9C8FF; --mist-2:#7F8BB0;
+  --ok:#1DB36B; --wa:#25D366;
+  --g:clamp(16px,5.2vw,80px);
+  --font:"Inter Tight",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:0}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.5 var(--font);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-50%;z-index:100;pointer-events:none;opacity:.32;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.wrap{padding-inline:var(--g)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.label{font-size:12.5px;line-height:1.25;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+.caps{text-transform:uppercase}
+.dot{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:var(--blue);vertical-align:.04em;margin-inline:.06em}
+.rule{border:0;border-top:1px solid var(--rule);margin:0}
+.pill{display:inline-flex;align-items:center;gap:.6em;min-height:40px;padding:0 18px;border:1px solid currentColor;border-radius:99px;background:transparent;
+  font-size:12.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.pill:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pill.solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.pill.solid:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.pill svg{width:14px;height:14px;flex:none}
+.night .pill:hover{background:var(--mist);color:var(--night);border-color:var(--mist)}
+
+/* header */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:calc(14px + env(safe-area-inset-top,0px)) var(--g) 14px;transition:transform .45s cubic-bezier(.2,.7,.2,1),background .3s,color .3s}
+.top.solid{background:rgba(237,235,230,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.top.hide{transform:translateY(-110%)}
+.top.on-night{color:var(--paper)}
+.top.on-night.solid{background:rgba(20,21,24,.82)}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.02em;text-decoration:none;white-space:nowrap;line-height:1}
+.logo sup{font-size:.5em;font-weight:700;vertical-align:.9em;margin-left:1px}
+.nav{display:flex;gap:clamp(18px,2.6vw,40px)}
+.nav a{font-size:12.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;opacity:.9;position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav a:hover::after{transform:scaleX(1)}
+.menu-btn{display:none;min-height:40px;padding:0 16px;border:1px solid currentColor;border-radius:99px;background:none;font-size:12.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;cursor:pointer}
+.sheet{position:fixed;inset:0;z-index:60;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;
+  padding:calc(14px + env(safe-area-inset-top,0px)) var(--g) calc(24px + env(safe-area-inset-bottom,0px))}
+.sheet .row{display:flex;justify-content:space-between;align-items:center;min-height:40px}
+.sheet nav{margin-top:auto;display:flex;flex-direction:column;gap:6px}
+.sheet nav a{font-size:clamp(34px,10vw,64px);font-weight:700;line-height:1.05;letter-spacing:-.03em;text-transform:uppercase;text-decoration:none}
+.sheet .foot{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:900px){.nav,.top .pill{display:none}.menu-btn{display:inline-flex;align-items:center}}
+
+/* hero: five pictures in 9:16, edge to edge and in order (filmmaking, web, assistant, CRM, paying client),
+   are the background of the headline. They rise one after the other, left to right, when the page opens.
+   Wide screens: one column each. Phones, tablets and tall screens: the strip pans slowly from the first to the last. */
+.hero{position:relative;overflow:hidden;background:var(--night);color:var(--paper)}
+.hb{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.hb figure{position:relative;margin:0;overflow:hidden;clip-path:inset(100% 0 0 0);transition:clip-path 1.1s cubic-bezier(.7,0,.2,1);transition-delay:calc(.1s + var(--i) * .12s)}
+.hb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 2.2s cubic-bezier(.2,.7,.2,1);transition-delay:calc(.1s + var(--i) * .12s)}
+.hero.go .hb figure{clip-path:inset(0 0 0 0)}
+.hero.go .hb img{transform:none}
+.hb::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(12,13,15,.62) 0%,rgba(12,13,15,0) 24%),linear-gradient(0deg,rgba(12,13,15,.88) 0%,rgba(12,13,15,.55) 30%,rgba(12,13,15,0) 62%)}
+.hero-in{position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column;padding-top:calc(92px + env(safe-area-inset-top,0px));padding-bottom:clamp(26px,4.4vh,48px)}
+.hero .meta{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;opacity:.88}
+.hero-top{margin-top:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.62fr);align-items:end;gap:24px clamp(32px,5vw,96px)}
+.hero h1{margin:0;font-size:clamp(42px,min(6.6vw,11vh),132px);line-height:.88;font-weight:700;letter-spacing:-.045em;text-transform:uppercase}
+.hero h1 .ln{display:block;overflow:hidden;padding:.16em 0 .04em;margin-top:-.16em}
+.hero h1 .ln>span{display:inline-block}
+.hero .base{display:flex;flex-direction:column;align-items:flex-start;gap:18px;padding-bottom:.4em}
+.hero .base p{margin:0;max-width:40ch;font-size:clamp(16px,1.3vw,20px);line-height:1.38}
+.hero .ctas{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.hero .pill:hover{background:var(--paper);color:var(--night);border-color:var(--paper)}
+.hero .pill.solid{background:var(--paper);color:var(--night);border-color:var(--paper)}
+.hero .pill.solid:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+@media (max-width:900px),(max-aspect-ratio:11/10){
+  .hb{display:flex;width:max-content;height:100%;animation:hbpan 36s linear .9s infinite alternate}
+  .hb figure{flex:none;height:100%;aspect-ratio:9/16}
+  .hero-top{grid-template-columns:minmax(0,1fr)}
+  .hero .base{padding-bottom:0}
+  /* hb-shade-m */
+  .hb::after{background:linear-gradient(180deg,rgba(12,13,15,.6) 0%,rgba(12,13,15,0) 22%),linear-gradient(0deg,rgba(12,13,15,.93) 0%,rgba(12,13,15,.8) 48%,rgba(12,13,15,.42) 62%,rgba(12,13,15,0) 80%)}
+}
+@keyframes hbpan{to{transform:translateX(calc(-100% + 100vw))}}
+@media (max-width:700px){.hero h1{font-size:clamp(42px,12.4vw,72px)}}
+
+/* every section below the hero is one full screen */
+.screen{min-height:100svh}
+.night{background:var(--night);color:var(--paper)}
+
+/* manifesto + the three commitments */
+.mani{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(32px,6vh,72px);padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(32px,6vh,64px)}
+.mani-k{margin:0;color:var(--ink-2)}
+.mani-h{margin:0;font-size:clamp(30px,min(4.3vw,7.6vh),80px);line-height:1.04;font-weight:600;letter-spacing:-.035em;max-width:23ch;text-wrap:balance}
+.mani-h .mute{color:var(--mute)}
+.pledges{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px clamp(24px,4vw,64px);border-top:1px solid var(--rule);padding-top:clamp(20px,3vh,32px)}
+.pl .v{font-size:clamp(44px,min(6.2vw,11vh),124px);font-weight:700;letter-spacing:-.05em;line-height:.88;white-space:nowrap}
+.pl .v .lt{color:var(--blue)}
+.pl p{margin:16px 0 0;color:var(--ink-2);max-width:32ch;font-size:15.5px;line-height:1.45}
+@media (max-width:760px){.pledges{grid-template-columns:minmax(0,1fr)}}
+
+/* the system: an index of the four pieces, in the order of one night */
+.sys{display:flex}
+.sys-in{width:100%;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,4vh,44px);padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(32px,6vh,64px)}
+.sys-top{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;color:var(--mist-2)}
+.sys-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--night-3)}
+.sys-list a{display:grid;grid-template-columns:3.4em minmax(0,1.5fr) minmax(0,.7fr) 6.6em;align-items:center;gap:clamp(12px,2vw,32px);padding-block:clamp(4px,1.3vh,14px);border-bottom:1px solid var(--night-3);text-decoration:none;color:var(--paper)}
+.sys-list .k,.sys-list .t{font-size:12.5px;font-weight:600;letter-spacing:.03em;color:var(--mist-2);font-variant-numeric:tabular-nums}
+.sys-list .t{text-align:right}
+.sys-list .w{font-size:clamp(40px,min(8.2vw,10.8vh),168px);font-weight:800;letter-spacing:-.055em;line-height:.9;text-transform:uppercase;transition:transform .6s cubic-bezier(.2,.7,.2,1),color .3s}
+.sys-list .d{font-size:clamp(16px,1.45vw,22px);line-height:1.25;color:var(--mist);max-width:22ch}
+.sys-list a:hover .w,.sys-list a:focus-visible .w{transform:translateX(.06em);color:var(--mist)}
+@media (max-width:760px){.sys-list a{grid-template-columns:2.2em minmax(0,1fr) auto}.sys-list .w{grid-column:2;grid-row:1}.sys-list .t{grid-column:3;grid-row:1}.sys-list .d{grid-column:2/-1;grid-row:2;padding-bottom:8px}}
+
+/* one piece per screen: words on one half, a photo and one large piece of the product on the other */
+.pz{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.pz.dark{background:var(--night);color:var(--paper)}
+.pz-txt{display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:calc(104px + env(safe-area-inset-top,0px)) var(--g) clamp(32px,6vh,64px);min-width:0}
+.pz.flip .pz-txt{order:2}
+.pz-top{display:flex;justify-content:space-between;gap:16px;color:var(--ink-2)}
+.pz.dark .pz-top{color:var(--mist-2)}
+.pz-top .tm{font-variant-numeric:tabular-nums}
+.pz-w{margin:0;font-size:clamp(52px,min(7vw,16vh),168px);line-height:.84;font-weight:800;letter-spacing:-.055em;text-transform:uppercase}
+.pz-h{margin:clamp(18px,3.2vh,34px) 0 0;font-size:clamp(19px,min(1.85vw,3.3vh),30px);line-height:1.25;font-weight:500;letter-spacing:-.012em;max-width:31ch}
+.pz.dark .pz-h{color:var(--mist)}
+.pz-f{list-style:none;margin:0;padding:clamp(16px,2.4vh,24px) 0 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pz.dark .pz-f{border-color:var(--night-3)}
+.pz-f li{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;line-height:1.35}
+.pz-img{position:relative;overflow:hidden;background:var(--night);min-height:320px}
+.pz-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.07);transition:transform 1.8s cubic-bezier(.2,.7,.2,1)}
+.pz.play .pz-img img{transform:scale(1)}
+.ui{position:absolute;left:50%;top:50%;width:min(84%,500px);transform:translate(-50%,-44%);opacity:0;transition:opacity .8s .2s,transform 1s .2s cubic-bezier(.2,.7,.2,1);font-family:var(--font)}
+.pz.play .ui{opacity:1;transform:translate(-50%,-50%)}
+@media (max-width:860px){.pz{grid-template-columns:minmax(0,1fr)}.pz .pz-img{order:-1;min-height:58svh}.pz.flip .pz-txt{order:2}.pz-txt{padding-top:28px;gap:24px}.pz-f{grid-template-columns:minmax(0,1fr);gap:8px}}
+
+/* web: the gym's own site */
+.ui-web{background:#fff;color:#141518;border-radius:14px;overflow:hidden;box-shadow:0 50px 90px -40px rgba(0,0,0,.75)}
+.bw-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#F1EFEA;border-bottom:1px solid #E2DFD8}
+.bw-bar i{width:9px;height:9px;border-radius:50%;background:#D6D2CA}
+.bw-bar span{margin-left:10px;flex:1;background:#fff;border-radius:6px;padding:4px 10px;font-size:11.5px;color:#6E6C70}
+.bw-hero{background:#141518;color:#EDEBE6;padding:clamp(20px,3vh,32px) clamp(18px,2.2vw,28px) clamp(18px,2.6vh,28px)}
+.bw-hero em{font-style:normal;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.bw-hero strong{display:block;margin:10px 0 18px;font-size:clamp(30px,min(3.4vw,6vh),54px);line-height:.88;letter-spacing:-.05em;text-transform:uppercase;font-weight:800}
+.bw-cta{display:flex;gap:8px;flex-wrap:wrap}
+.bw-cta span{font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;padding:9px 14px;border-radius:99px;border:1px solid rgba(237,235,230,.45)}
+.bw-cta .b{background:var(--blue);border-color:var(--blue);color:#fff}
+.bw-rows div{display:flex;justify-content:space-between;gap:12px;padding:12px clamp(18px,2.2vw,28px);border-top:1px solid #EEECE7;font-size:13.5px}
+.bw-rows span{color:var(--blue);font-weight:600}
+
+/* assistant: the conversation itself, large */
+.ui-chat{top:auto;bottom:7%;transform:translate(-50%,8%);display:flex;flex-direction:column;gap:10px;width:min(86%,460px)}
+.pz.play .ui-chat{transform:translate(-50%,0)}
+.cb{max-width:84%;padding:12px 16px 8px;border-radius:20px;font-size:clamp(15px,1.2vw,18px);line-height:1.35;box-shadow:0 24px 44px -24px rgba(0,0,0,.6);opacity:0;transform:translateY(12px)}
+.cb p{margin:0}
+.cb time{display:block;text-align:right;font-size:11px;opacity:.6;margin-top:4px;font-variant-numeric:tabular-nums}
+.cb.in{align-self:flex-start;background:#F4F2EE;color:#151517;border-bottom-left-radius:6px}
+.cb.out{background:var(--blue);color:#fff;border-bottom-right-radius:6px;max-width:100%}
+.cb.out b{display:block;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.85;margin-bottom:4px;font-weight:600}
+.slot{align-self:flex-end;display:grid;justify-items:end;max-width:84%}
+.slot>*{grid-area:1/1}
+.cb.ty{display:flex;gap:5px;padding:15px 16px;background:var(--blue)}
+.cb.ty i{width:7px;height:7px;border-radius:50%;background:#fff;opacity:.5;animation:ty 1s infinite}
+.cb.ty i:nth-child(2){animation-delay:.15s}.cb.ty i:nth-child(3){animation-delay:.3s}
+@keyframes ty{50%{opacity:1;transform:translateY(-2px)}}
+@keyframes cbIn{to{opacity:1;transform:none}}
+@keyframes cbTy{0%{opacity:0;transform:translateY(12px)}12%,85%{opacity:1;transform:none}100%{opacity:0;transform:none}}
+.pz.play .cb{animation:cbIn .55s cubic-bezier(.2,.7,.2,1) forwards}
+.pz.play .ui-chat>.cb:first-child{animation-delay:.5s}
+.pz.play .cb.ty{animation:cbTy 1.4s 1.2s forwards}
+.pz.play .slot .cb.out{animation-delay:2.5s}
+.pz.play .ui-chat>.cb:last-child{animation-delay:3.4s}
+
+/* CRM: one contact card, moving from new to trial */
+.ui-crm{background:#fff;color:#141518;border-radius:16px;padding:clamp(18px,2.6vh,24px) clamp(18px,2vw,24px) 14px;box-shadow:0 50px 90px -40px rgba(0,0,0,.75);width:min(84%,440px)}
+.cr-h{display:flex;gap:12px;align-items:center}
+.cr-h .av{flex:none;width:46px;height:46px;border-radius:50%;background:#EDEBE6;display:grid;place-items:center;font-weight:700;font-size:15px}
+.cr-h b{display:block;font-size:19px;letter-spacing:-.015em}
+.cr-h span{font-size:12.5px;color:#6E6C70}
+.cr-h .ch{margin-left:auto;font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#128C4B;background:#E3F5EA;border-radius:99px;padding:5px 9px;white-space:nowrap}
+.cr-st{list-style:none;margin:18px 0 6px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.cr-st li{font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;padding:10px 6px;border-radius:9px;background:#F1EFEA;color:#8A888D;text-align:center;transition:background .5s,color .5s}
+.cr-st li.on,.ui-crm.s2 .cr-st li:nth-child(2){background:var(--blue);color:#fff}
+.ui-crm.s2 .cr-st li:nth-child(1){background:#F1EFEA;color:#8A888D}
+.ui-crm dl{margin:12px 0 0}
+.ui-crm dl div{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid #EEECE7;font-size:14px}
+.ui-crm dt{color:#77757A}
+.ui-crm dd{margin:0;font-weight:600;text-align:right}
+
+/* content: one reel of the business, large, with the moment Laura finds it */
+.ui-reel{width:auto;height:min(76%,580px);aspect-ratio:9/16;border-radius:24px;overflow:hidden;color:#fff;
+  background:radial-gradient(90% 60% at 28% 18%,rgba(255,226,190,.30),rgba(255,226,190,0) 60%),radial-gradient(120% 90% at 80% 100%,rgba(47,107,255,.35),rgba(47,107,255,0) 55%),linear-gradient(170deg,#3A3D44 0%,#1B1C21 55%,#0F1013 100%);
+  box-shadow:0 50px 90px -40px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.08) inset}
+.rl-pr{position:absolute;left:12px;right:12px;top:12px;height:2.5px;border-radius:2px;background:rgba(255,255,255,.28);overflow:hidden}
+.rl-pr i{position:absolute;inset:0;background:#fff;transform:scaleX(.08);transform-origin:0 50%}
+.pz.play .rl-pr i{animation:rlPr 7s linear .6s forwards}
+@keyframes rlPr{to{transform:scaleX(1)}}
+.rl-top{position:absolute;left:14px;right:14px;top:24px;display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:700;letter-spacing:-.01em}
+.rl-top span{font-size:clamp(8.5px,.75vw,10.5px);font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:6px;opacity:.9;white-space:nowrap}
+.rl-top span::before{content:"";width:7px;height:7px;border-radius:50%;background:#FF3B30}
+.rl-hook{position:absolute;left:9%;right:20%;top:40%;margin:0;font-size:clamp(17px,min(1.9vw,3.1vh),26px);line-height:1.12;font-weight:700;letter-spacing:-.02em}
+.rl-hook mark{background:var(--blue);color:#fff;padding:0 .18em;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.rl-side{position:absolute;right:10px;bottom:20%;display:grid;gap:14px;justify-items:center;font-size:11px;font-weight:600}
+.rl-side svg{width:24px;height:24px;display:block;margin:0 auto 3px}
+.rl-foot{position:absolute;left:14px;right:56px;bottom:16px;display:grid;gap:8px}
+.rl-who{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700}
+.rl-who .av{width:28px;height:28px;border-radius:50%;background:#EDEBE6;color:#141518;display:grid;place-items:center;font-size:10px;font-weight:800}
+.rl-who em{font-style:normal;font-size:11px;font-weight:600;border:1px solid rgba(255,255,255,.6);border-radius:7px;padding:3px 8px}
+.rl-foot p{margin:0;font-size:12.5px;line-height:1.3;opacity:.92}
+.rl-nt{position:absolute;left:10px;right:10px;top:56px;display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:14px;background:rgba(246,244,240,.92);color:#141518;
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 20px 40px -20px rgba(0,0,0,.6);opacity:0;transform:translateY(-10px)}
+.rl-nt .av{flex:none;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:700}
+.rl-nt b{display:block;font-size:12.5px}
+.rl-nt span{font-size:11.5px;color:#5A595F}
+.pz.play .rl-nt{animation:ntIn .7s 1.8s cubic-bezier(.2,.7,.2,1) forwards}
+.pz.play .rl-side .lk svg{animation:lk .5s 1.5s ease-out both}
+@keyframes lk{40%{transform:scale(1.25)}100%{transform:none;fill:#FF3B5C;stroke:#FF3B5C}}
+
+/* client: Laura's whole journey in one card, from the reel to the payment */
+.ui-trip{background:#fff;color:#141518;border-radius:16px;padding:clamp(18px,2.6vh,24px) clamp(18px,2vw,24px) 16px;box-shadow:0 50px 90px -40px rgba(0,0,0,.55);width:min(86%,460px)}
+.ui-trip .cr-h .ch{color:#128C4B;background:#E3F5EA}
+.tp-l{list-style:none;margin:16px 0 0;padding:0;position:relative}
+.tp-l::before{content:"";position:absolute;left:calc(5.4em + 5px);top:14px;bottom:14px;width:1px;background:#E2DFD8}
+.tp-l li{display:grid;grid-template-columns:5.4em 11px minmax(0,1fr);gap:0 12px;align-items:center;padding:7px 0;font-size:13.5px;line-height:1.3;opacity:0;transform:translateY(6px)}
+.tp-l time{font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:#77757A;font-variant-numeric:tabular-nums}
+.tp-l i{width:11px;height:11px;border-radius:50%;background:#fff;border:2px solid #C9C5BD;position:relative;z-index:1}
+.tp-l li.b i{border-color:var(--blue);background:var(--blue)}
+.tp-l li.b span{font-weight:700}
+.pz.play .tp-l li{animation:cbIn .5s cubic-bezier(.2,.7,.2,1) forwards}
+.pz.play .tp-l li:nth-child(1){animation-delay:.5s}.pz.play .tp-l li:nth-child(2){animation-delay:.8s}.pz.play .tp-l li:nth-child(3){animation-delay:1.1s}
+.pz.play .tp-l li:nth-child(4){animation-delay:1.4s}.pz.play .tp-l li:nth-child(5){animation-delay:1.7s}.pz.play .tp-l li:nth-child(6){animation-delay:2.1s}
+.tp-f{display:flex;justify-content:space-between;gap:12px;margin-top:10px;padding-top:12px;border-top:1px solid #EEECE7;font-size:12px;color:#77757A}
+.tp-f b{color:#141518;font-weight:600}
+
+/* the package: the whole path, grouped by what it does for you */
+.pack{display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,4.4vh,48px);padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(32px,6vh,64px)}
+.pack-top{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;color:var(--ink-2)}
+.pack-h{margin:0;font-size:clamp(40px,min(6.4vw,11vh),124px);line-height:.88;font-weight:800;letter-spacing:-.05em;text-transform:uppercase;text-wrap:balance}
+.pack-h .b{color:var(--blue)}
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,3vw,48px)}
+.stg{border-top:1px solid var(--rule);padding-top:clamp(14px,2.2vh,22px);min-width:0}
+.stg .k{display:flex;justify-content:space-between;gap:12px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+.stg h3{margin:10px 0 14px;font-size:clamp(28px,min(3.2vw,5.6vh),56px);line-height:.92;font-weight:800;letter-spacing:-.045em;text-transform:uppercase}
+.stg h3 .dot{width:.42em;height:.42em}
+.stg ul{list-style:none;margin:0;padding:0}
+.stg li{display:flex;gap:10px;padding:10px 0;border-top:1px solid rgba(27,27,29,.16);font-size:clamp(15px,1.15vw,17px);line-height:1.35}
+.stg li::before{content:"";flex:none;width:7px;height:7px;margin-top:.5em;border-radius:50%;background:var(--blue)}
+.pack-f{display:flex;justify-content:space-between;align-items:center;gap:16px 32px;flex-wrap:wrap;padding-top:clamp(14px,2.2vh,22px);border-top:1px solid var(--rule)}
+.pack-f p{margin:0;max-width:52ch;color:var(--ink-2);font-size:clamp(15px,1.2vw,18px)}
+@media (max-width:860px){.stages{grid-template-columns:minmax(0,1fr);gap:22px}}
+
+/* booking pop-up: Calendly in our own frame, loaded ahead so it opens at once */
+/* while waiting it stays transparent and lets everything through: hidden frames are not rendered by the browser, transparent ones are */
+.cal{position:fixed;inset:0;z-index:110;display:grid;place-items:center;padding:56px 24px 32px;background:rgba(20,21,24,.86);opacity:0;pointer-events:none;transition:opacity .22s}
+.cal.cal-show{opacity:1;pointer-events:auto}
+.cal-box{position:relative;width:min(1060px,100%);height:min(720px,100%);background:transparent;transform:translateY(14px) scale(.985);transition:transform .32s cubic-bezier(.2,.7,.2,1)}
+.cal.cal-show .cal-box{transform:none}
+.cal iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .25s}
+.cal.ready iframe{opacity:1}
+.cal-wait{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:14px;color:var(--mist);font-size:14px;text-align:center;padding:24px}
+.cal.ready .cal-wait{visibility:hidden}
+.cal-wait i{width:12px;height:12px;border-radius:50%;background:var(--blue);animation:calp 1s ease-in-out infinite}
+@keyframes calp{50%{transform:scale(1.7);opacity:.45}}
+.cal-wait a{color:#fff;font-weight:600}
+.cal-x{position:absolute;top:10px;right:14px;z-index:2;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer}
+.cal-x svg{width:20px;height:20px}
+@media (max-width:700px){.cal{padding:0}.cal-box{width:100%;height:100%}.cal-x{top:8px;right:8px;background:var(--ink)}.cal-x svg{width:16px;height:16px}}
+html.cal-open,html.cal-open body{overflow:hidden}
+
+/* night statement: the photo is the whole screen */
+.open{position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.open figure{position:absolute;inset:0;margin:0}
+.open figure img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.open figure.in img{transform:scale(1)}
+.open figure::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,21,24,.92) 0%,rgba(20,21,24,.55) 45%,rgba(20,21,24,.15) 100%)}
+.open figcaption{position:absolute;right:var(--g);top:calc(104px + env(safe-area-inset-top,0px));z-index:1;color:var(--paper);opacity:.8}
+.open .txt{position:relative;z-index:1;padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(32px,6vh,64px);max-width:1180px}
+.open h2{margin:0;font-size:clamp(40px,min(6.6vw,11vh),120px);line-height:.88;font-weight:700;letter-spacing:-.045em;text-transform:uppercase;color:var(--paper);text-wrap:balance}
+.open .dot{background:var(--blue)}
+.open p{margin:28px 0 0;color:var(--mist);max-width:44ch;font-size:clamp(17px,1.4vw,20px)}
+.open .act{margin-top:32px;color:var(--paper)}
+
+/* the numbers: independent sources, each tied to one of the pieces */
+.data{display:flex;flex-direction:column;justify-content:center;gap:clamp(18px,3.4vh,36px);padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(32px,6vh,64px)}
+.data .h{display:flex;justify-content:space-between;align-items:flex-end;gap:12px 24px;flex-wrap:wrap}
+.data .h h2{margin:0;font-size:clamp(32px,min(4.4vw,8vh),80px);line-height:.92;font-weight:700;letter-spacing:-.04em;text-transform:uppercase}
+.dgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--rule)}
+.dc{display:flex;flex-direction:column;gap:10px;padding:clamp(16px,2.8vh,30px) clamp(16px,2.4vw,40px) clamp(16px,2.8vh,30px) 0;border-bottom:1px solid var(--rule);text-decoration:none;min-width:0}
+.dc:nth-child(2n){padding-left:clamp(16px,2.4vw,40px);padding-right:0;border-left:1px solid var(--rule)}
+.dc .n{font-size:clamp(50px,min(6.6vw,11vh),124px);font-weight:700;letter-spacing:-.05em;line-height:.85;color:var(--blue);white-space:nowrap}
+.dc .n small{font-size:.45em;letter-spacing:-.02em}
+.dc .tag{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--blue)}
+.dc h3{margin:0;font-size:clamp(18px,min(1.8vw,3.2vh),28px);line-height:1.08;font-weight:600;letter-spacing:-.02em;text-transform:uppercase;max-width:28ch;text-wrap:balance}
+.dc .src{margin-top:auto;padding-top:4px;color:var(--ink-2);font-size:13.5px;line-height:1.45}
+.dc .src b{font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.03em;color:var(--ink)}
+.dc:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
+@media (min-width:761px) and (max-height:800px){.data{gap:14px}.dc{padding-block:12px;gap:8px}.dc .n{font-size:min(6vw,9.5vh)}.dc .src{font-size:12.5px;line-height:1.35}}
+@media (max-width:760px){.dgrid{grid-template-columns:minmax(0,1fr)}.dc,.dc:nth-child(2n){padding-left:0;padding-right:0;border-left:0}}
+
+/* how we work: one line from the first call to the app, with the dot running along it */
+.how{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(28px,5vh,56px);padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(32px,6vh,64px)}
+.how-top{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;color:var(--ink-2)}
+.how-h{margin:0;font-size:clamp(52px,min(9vw,15vh),176px);line-height:.86;font-weight:800;letter-spacing:-.055em;text-transform:uppercase;text-wrap:balance}
+.how-h .b{color:var(--blue)}
+.tl{--p:0}
+.tl-line{position:relative;height:1px;background:var(--rule);margin-bottom:clamp(20px,3.4vh,36px)}
+.tl-fill{position:absolute;left:0;top:0;height:1px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(var(--p))}
+.tl-dot{position:absolute;top:-8px;left:calc(var(--p) * 100%);width:17px;height:17px;margin-left:-8px;border-radius:50%;background:var(--blue)}
+.tl-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.6vw,40px)}
+.tl-steps li{opacity:.35;transition:opacity .5s}
+.tl-steps li.on{opacity:1}
+.tl-steps .k{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+.tl-steps h3{margin:8px 0 10px;font-size:clamp(22px,2.2vw,34px);line-height:1;font-weight:700;letter-spacing:-.03em;text-transform:uppercase}
+.tl-steps p{margin:0;color:var(--ink-2);font-size:15px;line-height:1.45;max-width:30ch}
+@media (max-width:760px){.tl-steps{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:28px}}
+
+/* faq */
+.faq{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:24px clamp(24px,5vw,80px);align-content:center;padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(32px,6vh,64px)}
+.faq h2{margin:0;font-size:clamp(40px,min(6vw,11vh),112px);line-height:.88;font-weight:700;letter-spacing:-.045em;text-transform:uppercase}
+@media (max-width:860px){.faq{grid-template-columns:minmax(0,1fr)}}
+.faq details{border-top:1px solid var(--rule)}
+.faq details:last-of-type{border-bottom:1px solid var(--rule)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;align-items:center;padding:clamp(18px,2.2vw,26px) 0;font-size:clamp(20px,2vw,30px);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:34px;height:34px;border:1px solid currentColor;border-radius:50%;position:relative;transition:transform .3s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:currentColor;transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] summary i{transform:rotate(45deg)}
+.faq details p{margin:0;padding:0 0 26px;max-width:60ch;color:var(--ink-2);font-size:17px}
+
+/* contact + footer */
+.end{min-height:calc(100svh - var(--foot-h,0px));display:flex;flex-direction:column;justify-content:space-between;padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(28px,4vh,48px)}
+.end h2{margin:0;font-size:clamp(44px,8.6vw,156px);line-height:.88;font-weight:700;letter-spacing:-.05em;text-transform:uppercase;text-wrap:balance}
+.end .ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 40px;margin-top:clamp(40px,5vw,72px);padding-top:20px;border-top:1px solid var(--rule)}
+.end .way{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.end .way .v{font-size:clamp(22px,2.4vw,34px);font-weight:600;letter-spacing:-.02em;word-break:break-word}
+@media (max-width:900px){.end .ways{grid-template-columns:minmax(0,1fr)}}
+.foot{padding-block:24px calc(20px + env(safe-area-inset-bottom,0px))}
+.foot .word{font-size:clamp(44px,13.6vw,280px);font-weight:800;letter-spacing:-.07em;line-height:.8;white-space:nowrap;overflow:hidden}
+.foot .word sup{font-size:.22em;vertical-align:2.2em;letter-spacing:0}
+.foot .bot{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;margin-top:22px;padding-top:16px;border-top:1px solid var(--rule)}
+.foot .bot a{text-decoration:none}
+.foot .bot a:hover{text-decoration:underline}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.hero h1 .ln>span{transform:translateY(105%);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.hero.go h1 .ln>span{transform:none}
+.hero h1 .ln:nth-child(2)>span{transition-delay:.08s}.hero h1 .ln:nth-child(3)>span{transition-delay:.16s}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv,.hero h1 .ln>span,.hb figure,.hb img,.hb,.open figure img,.pz-img img,.cb,.tl-steps li,.tp-l li,.rl-nt,.rl-pr i,.cal-box,.cal iframe{transition:none!important;animation:none!important;opacity:1!important;transform:none!important}
+  .cal{transition:none!important}
+  .ui{transition:none!important}
+  .cb.ty{display:none}
+  .hb figure{clip-path:none!important}
+}
+/* proposal for one business: what the home does not have. Same tokens, type and rules as w95.css */
+.top .who{font-size:12.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;opacity:.75;white-space:nowrap}
+@media (max-width:1180px){.top .who{display:none}}
+.mute{color:var(--mute)}
+.b{color:var(--blue)}
+
+/* four commitments instead of three: the last one is the contract */
+.pledges.p4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.pledges.p4 .pl .v{font-size:clamp(40px,min(4.9vw,10vh),104px)}
+.pledges.p4 .pl p{font-size:15px}
+@media (max-width:1100px){.pledges.p4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.pledges.p4{grid-template-columns:minmax(0,1fr)}}
+
+/* what we saw on their site today, next to what changes */
+.lost{display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,4.4vh,48px);padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(32px,6vh,64px)}
+.lost-top{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;color:var(--ink-2)}
+.lost-h{margin:0;font-size:clamp(34px,min(4.8vw,8.6vh),92px);line-height:.94;font-weight:700;letter-spacing:-.045em;text-transform:uppercase;max-width:20ch;text-wrap:balance}
+.vs{border-top:1px solid var(--rule)}
+.vs-h,.vs-r{display:grid;grid-template-columns:3.2em minmax(0,1fr) minmax(0,1fr) 9.5em;gap:clamp(14px,2.4vw,40px);align-items:baseline}
+.vs-h{padding:14px 0;color:var(--ink-2);border-bottom:1px solid rgba(27,27,29,.18)}
+.vs-r{padding:clamp(16px,2.6vh,26px) 0;border-bottom:1px solid rgba(27,27,29,.18)}
+.vs-r .k{font-size:12.5px;font-weight:600;letter-spacing:.03em;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.vs-r p{margin:0;font-size:clamp(16px,1.35vw,21px);line-height:1.32;letter-spacing:-.01em}
+.vs-r .a{color:var(--ink-2)}
+.vs-r .c{font-weight:600;display:flex;gap:12px}
+.vs-r .c::before{content:"";flex:none;width:9px;height:9px;margin-top:.48em;border-radius:50%;background:var(--blue)}
+.vs-r .st{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;text-align:right;text-decoration:none;color:var(--blue);white-space:nowrap}
+.vs-act{display:flex;justify-content:space-between;align-items:center;gap:16px 32px;flex-wrap:wrap}
+.vs-act p{margin:0;max-width:56ch;color:var(--ink-2);font-size:clamp(15px,1.2vw,18px)}
+@media (max-width:860px){
+  .vs-h{display:none}
+  .vs-r{grid-template-columns:2.4em minmax(0,1fr);row-gap:10px}
+  .vs-r .a{grid-column:2}.vs-r .c{grid-column:2}.vs-r .st{grid-column:2;text-align:left}
+  .vs-r .a::before{content:"Hoy · ";font-weight:600;color:var(--ink)}
+}
+
+/* the path: who walks it */
+.sys-p{margin:0;max-width:44ch;font-size:clamp(18px,1.6vw,26px);line-height:1.25;letter-spacing:-.012em;color:var(--mist)}
+
+/* a fact with its source, under the words of a piece */
+.dato{display:flex;gap:16px;align-items:flex-start;margin-top:clamp(18px,3vh,30px);max-width:44ch;text-decoration:none}
+.dato .n{flex:none;font-size:clamp(34px,3.2vw,52px);font-weight:700;letter-spacing:-.05em;line-height:.85;color:var(--blue)}
+.dato .n small{font-size:.5em}
+.dato span{font-size:14px;line-height:1.4;color:var(--ink-2)}
+.dato b{display:block;margin-top:4px;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.pz.dark .dato span{color:var(--mist-2)}.pz.dark .dato b{color:var(--paper)}
+.dato:hover span{text-decoration:underline;text-underline-offset:.18em}
+.pz-act{margin-top:clamp(18px,3vh,30px);display:flex;gap:10px;flex-wrap:wrap}
+
+/* reel on their own picture */
+.ui-reel.ph{background:#15161A}
+.ui-reel .rl-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ui-reel .rl-sh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,13,.6) 0%,rgba(10,11,13,.08) 28%,rgba(10,11,13,.2) 52%,rgba(10,11,13,.88) 100%)}
+
+/* the shoot: five blocks of one day */
+.shoot{display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,4.4vh,48px);padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(32px,6vh,64px)}
+.sh-top{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;color:var(--ink-2)}
+.sh-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:20px clamp(24px,5vw,80px);align-items:end}
+.sh-h{margin:0;font-size:clamp(40px,min(6.4vw,11vh),124px);line-height:.88;font-weight:800;letter-spacing:-.05em;text-transform:uppercase;text-wrap:balance}
+.sh-head p{margin:0;color:var(--ink-2);font-size:clamp(16px,1.3vw,19px);line-height:1.45;max-width:44ch}
+.sh-l{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.6vw,24px)}
+.sh-l li{display:flex;flex-direction:column;gap:12px;min-width:0}
+.sh-f{position:relative;margin:0;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--night);color:var(--paper)}
+.sh-f>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sh-l .k{display:flex;justify-content:space-between;gap:10px;padding-top:12px;border-top:1px solid var(--rule);font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+.sh-l h3{margin:0;font-size:clamp(20px,1.7vw,28px);line-height:1;font-weight:700;letter-spacing:-.03em;text-transform:uppercase}
+.sh-l p{margin:0;color:var(--ink-2);font-size:14.5px;line-height:1.45}
+/* viewfinder over a photo: it is being filmed */
+.vf{position:absolute;inset:0;pointer-events:none}
+.vf::before{content:"";position:absolute;inset:12px;border:1.5px solid rgba(255,255,255,.85);
+  -webkit-mask:linear-gradient(#000 0 0) top left/22px 22px no-repeat,linear-gradient(#000 0 0) top right/22px 22px no-repeat,linear-gradient(#000 0 0) bottom left/22px 22px no-repeat,linear-gradient(#000 0 0) bottom right/22px 22px no-repeat;
+  mask:linear-gradient(#000 0 0) top left/22px 22px no-repeat,linear-gradient(#000 0 0) top right/22px 22px no-repeat,linear-gradient(#000 0 0) bottom left/22px 22px no-repeat,linear-gradient(#000 0 0) bottom right/22px 22px no-repeat}
+.vf .rec{position:absolute;left:22px;top:20px;display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;letter-spacing:.08em;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.vf .rec::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF3B30;animation:recb 1.2s steps(1) infinite}
+.vf .tc{position:absolute;right:22px;top:20px;font-size:10.5px;font-weight:600;letter-spacing:.06em;color:#fff;font-variant-numeric:tabular-nums;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.vf .fr{position:absolute;left:50%;top:50%;width:46%;aspect-ratio:9/16;max-height:70%;transform:translate(-50%,-50%);border:1px dashed rgba(255,255,255,.6);border-radius:4px}
+@keyframes recb{50%{opacity:0}}
+/* the scripts card */
+.sh-sc{position:absolute;inset:0;display:flex;flex-direction:column;gap:8px;padding:18px 16px;background:linear-gradient(170deg,#24262B,#141518)}
+.sh-sc em{font-style:normal;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mist-2)}
+.sh-sc ol{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:6px}
+.sh-sc li{display:flex;gap:9px;padding:9px 10px;border-radius:9px;background:rgba(255,255,255,.06);font-size:12.5px;line-height:1.3;color:var(--paper);flex-direction:row}
+.sh-sc li b{flex:none;font-size:10.5px;color:var(--mist-2);font-variant-numeric:tabular-nums;padding-top:1px}
+.sh-sc .more{margin-top:auto;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mist)}
+/* the team in front of the camera */
+.sh-fc{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:16px;background:radial-gradient(80% 60% at 50% 40%,#2C3038,#141518)}
+.sh-fc .fs{display:grid;grid-template-columns:repeat(2,auto);gap:10px}
+.sh-fc .fs img{width:clamp(56px,5.4vw,84px);height:clamp(56px,5.4vw,84px);border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.14)}
+.sh-fc span{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mist);text-align:center;padding:0 12px}
+/* a client's words */
+.sh-q{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:20px 18px;background:var(--blue);color:#fff}
+.sh-q blockquote{margin:0;font-size:clamp(17px,1.5vw,23px);line-height:1.2;font-weight:600;letter-spacing:-.02em}
+.sh-q cite{font-style:normal;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;opacity:.9}
+@media (max-width:1100px){.sh-head{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:1100px){
+  .sh-l{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:minmax(220px,40%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-inline:calc(var(--g) * -1);padding-inline:var(--g);scroll-padding-inline:var(--g)}
+  .sh-l li{scroll-snap-align:start}
+}
+@media (max-width:600px){.sh-l{grid-auto-columns:76%}}
+
+/* the first fifteen reels */
+.reels{display:flex;flex-direction:column;justify-content:center;gap:clamp(22px,4vh,44px);padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(32px,6vh,64px)}
+.rs-top{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;color:var(--mist-2)}
+.rs-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:20px clamp(24px,5vw,80px);align-items:end}
+.rs-head h2{margin:0;font-size:clamp(40px,min(6.4vw,11vh),124px);line-height:.88;font-weight:800;letter-spacing:-.05em;text-transform:uppercase;text-wrap:balance}
+.rs-head p{margin:0;color:var(--mist);font-size:clamp(16px,1.3vw,19px);line-height:1.45;max-width:46ch}
+.rs-g{list-style:none;margin:0;padding:0 var(--g);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.rc{position:relative;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:linear-gradient(165deg,#2A2D33,#16171B);min-width:0;isolation:isolate}
+.rc>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.rc::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,11,13,.55) 0%,rgba(10,11,13,0) 30%,rgba(10,11,13,.25) 52%,rgba(10,11,13,.9) 100%)}
+.rc:hover>img.bg{transform:scale(1.04)}
+.rc .h{position:absolute;left:12px;right:12px;top:12px;display:flex;align-items:center;gap:8px}
+.rc .n{font-size:11px;font-weight:700;letter-spacing:.04em;font-variant-numeric:tabular-nums;color:#fff}
+.rc .tg{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.5);border-radius:99px;padding:3px 8px;white-space:nowrap}
+.rc .pi{margin-left:auto;width:22px;height:22px;flex:none}
+.rc .t{position:absolute;left:12px;right:12px;bottom:36px;margin:0;font-size:clamp(14.5px,1.12vw,18px);line-height:1.15;font-weight:700;letter-spacing:-.015em;color:#fff;text-wrap:balance}
+.rc .to{position:absolute;left:12px;right:12px;bottom:12px;font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--mist)}
+.rc.face .fc{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);width:44%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.16)}
+.rc.face .fc img{width:100%;height:100%;object-fit:cover}
+.rs-f{display:flex;justify-content:space-between;align-items:center;gap:12px 32px;flex-wrap:wrap;color:var(--mist-2)}
+@media (max-width:1100px){.rs-head{grid-template-columns:minmax(0,1fr)}.rs-g{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:700px){
+  .rs-g{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:64%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scroll-padding-inline:var(--g)}
+  .rc{aspect-ratio:9/16;scroll-snap-align:start}
+  .rc .t{font-size:19px}
+}
+
+/* we publish them: the first month in a calendar */
+.pub{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px clamp(32px,6vw,110px);align-items:center;padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(32px,6vh,64px)}
+.pub-txt{display:flex;flex-direction:column;gap:clamp(18px,3vh,30px);min-width:0}
+.pub-top{display:flex;justify-content:space-between;gap:12px;color:var(--ink-2)}
+.pub h2{margin:0;font-size:clamp(44px,min(6.6vw,12vh),128px);line-height:.86;font-weight:800;letter-spacing:-.055em;text-transform:uppercase}
+.pub-txt>p{margin:0;font-size:clamp(18px,1.6vw,24px);line-height:1.3;font-weight:500;letter-spacing:-.012em;max-width:34ch}
+.pub ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.pub ul li{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid rgba(27,27,29,.16);font-size:clamp(15px,1.15vw,17px);line-height:1.35}
+.pub ul li::before{content:"";flex:none;width:7px;height:7px;margin-top:.5em;border-radius:50%;background:var(--blue)}
+.pub .dato{margin-top:0}
+.calc{background:#fff;color:#141518;border-radius:18px;padding:clamp(18px,2.4vw,28px);box-shadow:0 40px 80px -50px rgba(0,0,0,.45);min-width:0}
+.calc-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px}
+.calc-h b{font-size:clamp(18px,1.5vw,22px);letter-spacing:-.02em}
+.calc-h span{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#77757A}
+.cg{display:grid;grid-template-columns:3.4em repeat(7,minmax(0,1fr));gap:6px}
+.cg .d{font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#8A888D;text-align:center;padding-bottom:2px}
+.cg .w{font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#8A888D;align-self:center}
+.cg .c{aspect-ratio:1;border-radius:10px;background:#F1EFEA;display:flex;flex-direction:column;justify-content:space-between;padding:6px;min-width:0}
+.cg .c.on{background:var(--blue);color:#fff}
+.cg .c.on.sun{background:#141518}
+.cg .c b{font-size:clamp(10px,.85vw,13px);font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.cg .c i{font-style:normal;font-size:clamp(8px,.62vw,10px);font-weight:600;letter-spacing:.03em;text-transform:uppercase;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.calc-f{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid #EEECE7;font-size:12.5px;color:#5A595F}
+.calc-f span{display:flex;align-items:center;gap:7px}
+.calc-f span::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--blue)}
+.calc-f span.sun::before{background:#141518}
+@media (max-width:960px){.pub{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:480px){.cg{grid-template-columns:2.6em repeat(7,minmax(0,1fr));gap:4px}.cg .c{border-radius:7px;padding:4px}.cg .c i{display:none}}
+
+/* their new site, in a browser */
+.ui-web.shot{width:min(88%,620px)}
+.pz-img .ui-web.shot img{position:static;inset:auto;display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;transform:none;transition:none}
+
+/* the guarantee: the contract, on blue */
+.gu{background:var(--blue);color:#fff;display:flex}
+.gu-in{width:100%;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(28px,5vh,56px);padding-block:calc(104px + env(safe-area-inset-top,0px)) clamp(32px,6vh,64px)}
+.gu-top{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;opacity:.9}
+.gu h2{margin:0;font-size:clamp(36px,min(5.6vw,10vh),112px);line-height:.92;font-weight:800;letter-spacing:-.05em;text-transform:uppercase;max-width:18ch;text-wrap:balance}
+.gu h2 .o{color:var(--night)}
+.gu-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px clamp(24px,4vw,64px);border-top:1px solid rgba(255,255,255,.55);padding-top:clamp(18px,3vh,28px)}
+.gu-row .v{font-size:clamp(34px,min(4vw,7.5vh),80px);font-weight:700;letter-spacing:-.05em;line-height:.9;white-space:nowrap}
+.gu-row p{margin:12px 0 0;font-size:15.5px;line-height:1.45;max-width:34ch;opacity:.95}
+.gu .pill{color:#fff}
+.gu .pill:hover{background:#fff;color:var(--blue);border-color:#fff}
+.gu .pill.solid{background:#fff;color:var(--blue);border-color:#fff}
+.gu .pill.solid:hover{background:var(--night);color:#fff;border-color:var(--night)}
+.gu-act{display:flex;gap:10px;flex-wrap:wrap}
+@media (max-width:760px){.gu-row{grid-template-columns:minmax(0,1fr)}}
+.top.on-blue{color:#fff}
+.top.on-blue.solid{background:rgba(47,107,255,.9)}
+.rc.plain{background:radial-gradient(110% 70% at 20% 10%,rgba(47,107,255,.32),rgba(47,107,255,0) 60%),linear-gradient(165deg,#2A2D33,#141518)}
+.rc.plain .t{top:42%;bottom:auto;font-size:clamp(17px,1.4vw,22px)}
+@keyframes ntIn{from{opacity:0;transform:translateY(-16px) scale(.98)}to{opacity:1;transform:none}}
+/* the business's own photos in the hero: graded down to sit with 404's pictures and keep the words readable */
+.hb figure.own img{filter:brightness(.6) saturate(.88) contrast(1.04)}
+@media (max-width:420px){.how-h{font-size:clamp(36px,12.4vw,52px)}}
+
+/* collab (21 oct 2026): their name × ours on the first screen, their new site rising from the fold, their own photos behind each step */
+.hero.cx{overflow:visible;z-index:3;display:flow-root}
+.cx .hero-in{min-height:0;padding-bottom:0}
+.hero h1.cx-h{margin:clamp(26px,6.4vh,80px) 0 0;font-size:min(calc((100vw - 2 * var(--g)) * var(--k)),15.5vh,196px);line-height:.88}
+.cx-h .ln{white-space:nowrap}
+.cx-h .x{color:var(--blue)}
+.cx-h sup{font-size:.32em;vertical-align:1.6em;letter-spacing:0;margin-left:.04em}
+.cx-base{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) auto;align-items:end;gap:18px clamp(24px,4vw,64px);
+  margin-top:clamp(20px,3.6vh,40px);padding-top:clamp(16px,2.4vh,24px);border-top:1px solid var(--night-3)}
+.cx-k{margin:0;font-size:clamp(18px,1.6vw,24px);line-height:1.06;font-weight:700;letter-spacing:-.025em;text-transform:uppercase}
+.cx-k>span:not(.dot):not(.sr){display:block}
+.cx-p{margin:0;max-width:46ch;color:rgba(237,235,230,.8);font-size:clamp(15px,1.1vw,17px);line-height:1.42}
+.cx .ctas{justify-content:flex-end}
+.cx-web{--cxo:clamp(110px,17vw,290px);position:relative;z-index:3;display:block;width:min(1180px,calc(100% - 2 * var(--g)));margin:clamp(26px,5vh,56px) auto calc(-1 * var(--cxo));
+  border-radius:14px;overflow:hidden;background:#fff;color:#141518;text-decoration:none;
+  box-shadow:0 0 0 1px rgba(255,255,255,.08),0 50px 90px -40px rgba(0,0,0,.5);
+  opacity:0;transform:translateY(46px);transition:opacity .9s cubic-bezier(.2,.7,.2,1) .45s,transform 1.1s cubic-bezier(.2,.7,.2,1) .45s}
+.hero.go .cx-web{opacity:1;transform:none}
+.cx-web .bw-bar{position:relative;z-index:1}
+.cx-web .bw-bar span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.cx-go{display:inline-flex;align-items:center;gap:.5em;margin-left:8px;padding:0 13px;height:28px;border-radius:99px;background:#141518;color:#fff;
+  font-size:11.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;transition:background .25s}
+.cx-go svg{width:12px;height:12px}
+.cx-web:hover .cx-go,.cx-web:focus-visible .cx-go{background:var(--blue)}
+.cx-web:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+.cx-scr{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;background:#141518}
+.cx-scr picture{display:block;height:100%}
+.cx-scr img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:top}
+.cx-tag{position:absolute;left:14px;bottom:14px;z-index:1;padding:7px 11px;border-radius:99px;background:rgba(20,21,24,.78);color:#fff;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-size:11px}
+.cx+.mani{padding-top:calc(clamp(110px,17vw,290px) + clamp(56px,9vh,104px))}
+@media (min-width:701px) and (max-height:800px){.hero h1.cx-h{margin-top:3vh;font-size:min(calc((100vw - 2 * var(--g)) * var(--k)),13.5vh,196px)}.cx-base{margin-top:2vh;padding-top:14px}.cx-web{margin-top:3vh}}
+@media (max-width:1100px){.cx-base{grid-template-columns:minmax(0,1fr) auto}.cx-p{grid-column:1 / -1;grid-row:2}.cx .ctas{grid-row:3;grid-column:1 / -1;justify-content:flex-start}}
+@media (max-width:700px){
+  .hero h1.cx-h{margin-top:22px;font-size:calc((100vw - 2 * var(--g)) * var(--k))}
+  .cx-base{grid-template-columns:minmax(0,1fr);gap:14px}
+  .cx-k>span:not(.dot):not(.sr){display:inline}
+  .cx-p{font-size:15px}
+  .cx-web{--cxo:clamp(150px,52vw,240px);width:min(78vw,340px);border-radius:26px;box-shadow:0 0 0 6px #23252a,0 0 0 7px rgba(255,255,255,.1),0 40px 70px -30px rgba(0,0,0,.45)}
+  .cx-web .bw-bar{justify-content:center;padding:8px}
+  .cx-web .bw-bar i,.cx-web .bw-bar span{display:none}
+  .cx-go{margin:0}
+  .cx-scr{aspect-ratio:9/16.5}
+  .cx+.mani{padding-top:calc(clamp(150px,52vw,240px) + 56px)}
+}
+.pz-img img.own{filter:brightness(.66) saturate(.88) contrast(1.05)}
+/* smooth scrolling on phones (21 oct): the blended grain over the whole screen and the blurred header are redrawn on every frame */
+@media (hover:none),(max-width:860px){body::before{display:none}.top.solid{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(237,235,230,.98)}.top.on-night.solid{background:rgba(20,21,24,.97)}.top.on-blue.solid{background:rgba(47,107,255,.98)}.cx-tag{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(20,21,24,.9)}.pz-img img,.open figure img{transform:none!important;transition:none!important}}
+.open figure img.own{filter:brightness(.52) saturate(.85) contrast(1.05)}
+@media (prefers-reduced-motion:reduce){.cx-web{opacity:1!important;transform:none!important;transition:none!important}}
+/* 12 + 3 de regalo (22 oct 2026) */.rc .gift{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--blue);border-radius:99px;padding:4px 9px;white-space:nowrap}.rc .gift+.pi{margin-left:0}.rc.gifted{box-shadow:inset 0 0 0 2px var(--blue)}</style>
+</head>
+<body>
+<header class="top" id="top">
+  <a class="logo" href="#inicio" aria-label="404 Growth, inicio de la propuesta">404/GROWTH<sup>®</sup></a>
+  <span class="who">Propuesta para Ozono Aranjuez</span>
+  <nav class="nav" aria-label="Secciones"><a href="#sistema">Recorrido</a><a href="#p-contenido">Contenido</a><a href="#p-web">Vuestra web</a><a href="#garantia">Garantía</a><a href="#contacto">Contacto</a></nav>
+  <a class="pill" href="https://calendly.com/hola-404growth/llamada-404-growth" data-cta="cabecera" target="_blank" rel="noopener">Reserva una llamada</a>
+  <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="sheet">Menú</button>
+</header>
+<div class="sheet" id="sheet" hidden>
+  <div class="row"><span class="logo">404/GROWTH<sup>®</sup></span><button class="menu-btn" id="menu-close" type="button" style="display:inline-flex">Cerrar</button></div>
+  <nav aria-label="Menú"><a href="#sistema">Recorrido</a><a href="#p-contenido">Contenido</a><a href="#p-web">Vuestra web</a><a href="#garantia">Garantía</a><a href="#contacto">Contacto</a></nav>
+  <div class="foot"><a class="pill" style="border-color:var(--paper)" href="https://calendly.com/hola-404growth/llamada-404-growth" data-cta="menu" target="_blank" rel="noopener">Reserva una llamada</a><a class="pill" style="border-color:var(--paper)" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20he%20visto%20la%20propuesta%20para%20Ozono%20Aranjuez." target="_blank" rel="noopener">WhatsApp</a></div>
+</div>
+<main>
+<section class="hero night cx" id="inicio">
+  <div class="hero-in wrap">
+    <div class="meta label"><span>Contenido · Web · Asistente de IA · CRM</span><span>Ozono Aranjuez · Aranjuez, Madrid · Octubre de 2026</span></div>
+    <h1 class="cx-h" style="--k:0.13474"><span class="ln"><span>Ozono</span></span><span class="ln"><span><span class="x">×</span> 404/GROWTH<sup>®</sup></span></span><span class="sr">: la propuesta de 404 Growth para Ozono Aranjuez</span></h1>
+    <div class="cx-base">
+      <p class="cx-k"><span>Os ven. </span><span>Os escriben. </span><span>Os pagan<span class="dot" aria-hidden="true"></span><span class="sr">.</span></span></p>
+      <p class="cx-p">Grabamos a vuestro equipo y vuestras instalaciones cada mes, publicamos los reels en vuestras redes y montamos la web, el asistente de IA y el CRM que convierten a quien os ve en un socio que se da de alta.</p>
+      <div class="ctas"><a class="pill" href="#sistema">Ver vuestro recorrido <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v12M3 9l5 5 5-5"/></svg></a><a class="pill solid" href="https://calendly.com/hola-404growth/llamada-404-growth" data-cta="portada" target="_blank" rel="noopener">Reserva una llamada</a></div>
+    </div>
+  </div>
+  <a class="cx-web" href="/p/ozono-aranjuez/web/" target="_blank" rel="noopener" aria-label="Ver vuestra web nueva completa, en otra pestaña">
+    <span class="bw-bar"><i></i><i></i><i></i><span>ozonoaranjuez.com</span><b class="cx-go">Ver la web completa <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></b></span>
+    <span class="cx-scr"><picture><source media="(max-width:700px)" srcset="/p-ozono-aranjuez--a--peek-m.webp" width="720" height="1320"><img src="/p-ozono-aranjuez--a--peek-d.webp" alt="Vuestra web nueva: la portada de Ozono Aranjuez" width="1200" height="750" fetchpriority="high" decoding="async"></picture><span class="cx-tag label">Vuestra web nueva · Demo</span></span>
+  </a>
+</section>
+<section class="screen mani wrap" id="garantias" aria-label="Qué os proponemos">
+  <p class="mani-k label rv">404 Growth × Ozono Aranjuez</p>
+  <h2 class="mani-h rv">Lo difícil ya lo tenéis: 2.400 m² con piscina cubierta, clases colectivas de mañana y tarde y un 4,3 en Google con 120 reseñas. <span class="mute">Ahora toca que os conozca quien busca gimnasio con piscina en Aranjuez y todavía no ha oído hablar de vosotros.</span></h2>
+  <div class="pledges p4"><div class="pl rv"><div class="v">15&nbsp;reels</div><p>Al mes (12 + 3 de regalo), de un día de rodaje con vosotros en Aranjuez. Los editamos y los publicamos nosotros.</p></div><div class="pl rv"><div class="v"><span class="lt">&lt;</span>1&nbsp;min</div><p>Respuesta a cada persona que os escriba, a cualquier hora. Si un mes no se cumple, ese mes no se paga.</p></div><div class="pl rv"><div class="v">15&nbsp;días</div><p>Web, asistente y CRM en marcha. Si no, no hay cuota hasta que lo estén.</p></div><div class="pl rv"><div class="v"><span class="lt">×</span>2</div><p>Vuestra tasa de conversión en 3 meses. Si no la doblamos, trabajamos gratis hasta conseguirlo. Por contrato.</p></div></div>
+</section>
+<section class="screen night sys" id="sistema" aria-label="Vuestro recorrido">
+  <div class="sys-in wrap">
+    <div class="sys-top label rv"><span>Vuestro recorrido</span><span>Del primer reel al alta</span></div>
+    <p class="sys-p rv">Sara vive en Aranjuez y quiere volver a entrenar después del verano. Todavía no os conoce.</p>
+    <ol class="sys-list"><li class="rv"><a href="#p-contenido"><span class="k">01</span><span class="w">Contenido</span><span class="d">Sara os ve en Instagram</span><span class="t">Dom 22:40</span></a></li><li class="rv"><a href="#p-web"><span class="k">02</span><span class="w">Web</span><span class="d">Mira la cuota y los horarios</span><span class="t">Dom 22:42</span></a></li><li class="rv"><a href="#p-asistente"><span class="k">03</span><span class="w">Asistente</span><span class="d">Pregunta y le respondéis al momento</span><span class="t">Dom 22:44</span></a></li><li class="rv"><a href="#p-crm"><span class="k">04</span><span class="w">CRM</span><span class="d">Queda apuntada, con su clase</span><span class="t">Dom 22:45</span></a></li><li class="rv"><a href="#p-cliente"><span class="k">05</span><span class="w">Cliente</span><span class="d">Sale con su alta hecha</span><span class="t">Lun 19:00</span></a></li></ol>
+  </div>
+</section>
+<section class="screen pz" id="p-contenido" aria-label="Contenido"><div class="pz-txt"><div class="pz-top label"><span>01 · Contenido</span><span class="tm">Dom 22:40</span></div><div><h2 class="pz-w rv">Contenido</h2><p class="pz-h rv">Un filmmaker de 404 rueda un día al mes con vosotros en el club: las clases de HBX Boxing, ciclo y Cross-Ozono, la sala, la piscina y vuestros entrenadores. Salen 15 reels y los publicamos nosotros. El domingo por la noche, Sara ve uno.</p></div><ul class="pz-f rv"><li>Un día de rodaje al mes en Aranjuez</li><li>15 reels editados</li><li>Los publicamos nosotros</li></ul></div><div class="pz-img"><img class="own" src="/p-ozono-aranjuez--a--bg-contenido.webp" alt="Una clase colectiva en Ozono Aranjuez" width="1000" height="1176" loading="lazy" decoding="async"><div class="ui ui-reel ph" aria-hidden="true"><img class="rl-bg" src="/p-ozono-aranjuez--a--boxing-540x960.webp" width="540" height="960" alt="" loading="lazy" decoding="async"><div class="rl-sh"></div><div class="rl-pr"><i></i></div><div class="rl-top">Reels<span>Rodado con 404</span></div><div class="rl-nt"><span class="av">SM</span><div><b>Sara M. ha guardado vuestro reel</b><span>Instagram · ahora</span></div></div><p class="rl-hook">¿Boxeo en Aranjuez? <mark>Prueba una clase de HBX</mark></p><div class="rl-side"><div class="lk"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div><div><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M20 12a8 8 0 0 1-11.7 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg></div><div><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M21 4 3 11l7 2.5L12.5 21z"/></svg></div></div><div class="rl-foot"><div class="rl-who"><span class="av">OZ</span>Ozono Aranjuez<em>Seguir</em></div><p>Clases colectivas y piscina cubierta, por 45 €/mes con todo incluido. Reserva tu clase en el enlace del perfil.</p></div></div></div></section>
+<section class="screen shoot wrap" id="rodaje" aria-label="El rodaje"><div class="sh-top label rv"><span>01 · Contenido · El rodaje</span><span>Un día al mes, en Aranjuez</span></div><div class="sh-head"><h2 class="sh-h rv">Lo que grabaríamos <span class="b">con vosotros.</span></h2><p class="rv">Una vez al mes, un filmmaker de 404 rueda con vosotros en el club. Llegamos con los guiones preparados y salimos con el material de los 15 reels.</p></div><ol class="sh-l"><li class="rv"><figure class="sh-f"><div class="sh-sc"><em>Guiones del primer rodaje</em><ol><li><b>01</b><span>¿Boxeo en Aranjuez? Prueba una clase de HBX</span></li><li><b>02</b><span>45 € al mes con todo incluido: qué entra en la cuota</span></li><li><b>06</b><span>Zero-Cross: tu primera clase de Cross-Ozono</span></li></ol><span class="more">+ 12 guiones más</span></div></figure><div class="k"><span>01</span><span>Guiones</span></div><h3>Los guiones</h3><p>Antes de rodar, preparamos con vuestros entrenadores los 15 guiones: lo que os pregunta la gente antes de apuntarse y lo que queréis que se sepa de Ozono.</p></li><li class="rv"><figure class="sh-f"><div class="sh-fc"><div class="fs"><img class="" src="data:image/webp;base64,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" width="200" height="200" alt="" loading="lazy" decoding="async"><img class="" src="data:image/webp;base64,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" width="200" height="200" alt="" loading="lazy" decoding="async"><img class="" src="data:image/webp;base64,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" width="200" height="200" alt="" loading="lazy" decoding="async"></div><span>Vuestros entrenadores, en clase</span></div></figure><div class="k"><span>02</span><span>Equipo</span></div><h3>El equipo, a cámara</h3><p>Vuestros entrenadores responden a cámara lo que os pregunta la gente: por qué clase empezar, qué es Hyrox o Zero-Cross, cómo es el aquagym o qué entra en la cuota de 45 €.</p></li><li class="rv"><figure class="sh-f"><img class="" src="/p-ozono-aranjuez--a--sala-640x800.webp" width="640" height="800" alt="Sala de fitness de Ozono Aranjuez" loading="lazy" decoding="async"><div class="vf" aria-hidden="true"><span class="rec">REC</span><span class="tc">00:00:24</span><span class="fr"></span></div></figure><div class="k"><span>03</span><span>Sala</span></div><h3>La sala</h3><p>Grabamos la sala de fitness, el box de Cross-Ozono y la sala de ciclo con vuestros entrenadores: cómo empieza alguien que llega nuevo.</p></li><li class="rv"><figure class="sh-f"><img class="" src="/p-ozono-aranjuez--a--aquagym-640x800.webp" width="640" height="800" alt="Clase de aquagym en la piscina cubierta de Ozono Aranjuez" loading="lazy" decoding="async"><div class="vf" aria-hidden="true"><span class="rec">REC</span><span class="tc">00:01:08</span><span class="fr"></span></div></figure><div class="k"><span>04</span><span>Clases</span></div><h3>Las clases y la piscina</h3><p>Una clase de HBX Boxing, otra de ciclo y el aquagym en la piscina cubierta, grabadas en vertical. Siempre con permiso de quien sale.</p></li><li class="rv"><figure class="sh-f"><div class="sh-q"><blockquote>«Las clases son excelentes y el personal súper amable»</blockquote><cite>Elena Monzon · Reseña en Google</cite></div></figure><div class="k"><span>05</span><span>Socios</span></div><h3>Los socios</h3><p>Si un socio quiere contar por qué entrena en Ozono, lo grabamos. Siempre con su permiso.</p></li></ol></section>
+<section class="screen night reels" id="reels" aria-label="Los 15 primeros reels"><div class="wrap" style="display:flex;flex-direction:column;gap:clamp(22px,4vh,44px)"><div class="rs-top label rv"><span>01 · Contenido · El primer mes</span><span>12 + 3 de regalo · 1 rodaje</span></div><div class="rs-head"><h2 class="rv">Vuestros 15 <span class="b">primeros reels.</span></h2><p class="rv">Salen de vuestras instalaciones, de vuestras clases, de lo que os pregunta la gente y de vuestro equipo. Cada uno termina en un sitio: en «Hazte socio» o en vuestro WhatsApp. Los tres últimos van de regalo.</p></div></div><ol class="rs-g wrap"><li class="rc rv"><img class="bg" src="/p-ozono-aranjuez--a--boxing-540x720.webp" width="540" height="720" alt="" loading="lazy" decoding="async"><div class="h"><span class="n">01</span><span class="tg">Pregunta</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">¿Boxeo en Aranjuez? Prueba una clase de HBX</p><span class="to">→ Visita</span></li><li class="rc plain rv"><div class="h"><span class="n">02</span><span class="tg">Cuotas</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">45 € al mes con todo incluido: qué entra en la cuota</p><span class="to">→ Alta</span></li><li class="rc rv"><img class="bg" src="/p-ozono-aranjuez--a--clase-540x720.webp" width="540" height="720" alt="" loading="lazy" decoding="async"><div class="h"><span class="n">03</span><span class="tg">Clases</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">Clases colectivas, de BodyPump a Hyrox</p><span class="to">→ Visita</span></li><li class="rc rv"><img class="bg" src="/p-ozono-aranjuez--a--aquagym-540x720.webp" width="540" height="720" alt="" loading="lazy" decoding="async"><div class="h"><span class="n">04</span><span class="tg">Piscina</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">Piscina cubierta: aquagym, natación y matronatación</p><span class="to">→ WhatsApp</span></li><li class="rc face rv"><span class="fc"><img class="" src="/p-ozono-aranjuez--a--monitores-300x300.webp" width="300" height="300" alt="" loading="lazy" decoding="async"></span><div class="h"><span class="n">05</span><span class="tg">Equipo</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">Vuestros entrenadores, a cámara: por qué clase empezar</p><span class="to">→ WhatsApp</span></li><li class="rc rv"><img class="bg" src="/p-ozono-aranjuez--a--cross-540x720.webp" width="540" height="720" alt="" loading="lazy" decoding="async"><div class="h"><span class="n">06</span><span class="tg">Clases</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">Zero-Cross: tu primera clase de Cross-Ozono</p><span class="to">→ Visita</span></li><li class="rc rv"><img class="bg" src="/p-ozono-aranjuez--a--reformer-540x720.webp" width="540" height="720" alt="" loading="lazy" decoding="async"><div class="h"><span class="n">07</span><span class="tg">Instalaciones</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">La sala de Pilates Reformer, por dentro</p><span class="to">→ WhatsApp</span></li><li class="rc plain rv"><div class="h"><span class="n">08</span><span class="tg">Pregunta</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">¿Abrís el sábado? De 10:00 a 14:00, con clases</p><span class="to">→ WhatsApp</span></li><li class="rc rv"><img class="bg" src="/p-ozono-aranjuez--a--ciclo-540x720.webp" width="540" height="720" alt="" loading="lazy" decoding="async"><div class="h"><span class="n">09</span><span class="tg">Clases</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">Indoor Cycling: una hora en la sala de ciclo</p><span class="to">→ Visita</span></li><li class="rc plain rv"><div class="h"><span class="n">10</span><span class="tg">Socios</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">«Las clases son excelentes»: lo que cuentan los socios</p><span class="to">→ Visita</span></li><li class="rc rv"><img class="bg" src="/p-ozono-aranjuez--a--sala-540x720.webp" width="540" height="720" alt="" loading="lazy" decoding="async"><div class="h"><span class="n">11</span><span class="tg">Sala</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">La sala de fitness: peso libre, máquinas y cardio</p><span class="to">→ Alta</span></li><li class="rc plain rv"><div class="h"><span class="n">12</span><span class="tg">Clases</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">Hyrox en Ozono: qué es y cómo se entrena</p><span class="to">→ Visita</span></li><li class="rc gifted plain rv"><div class="h"><span class="n">13</span><span class="tg">Instalaciones</span><span class="gift">De regalo</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">Fisioterapia en el mismo club: osteopatía, punción seca y más</p><span class="to">→ WhatsApp</span></li><li class="rc gifted face rv"><span class="fc"><img class="" src="/p-ozono-aranjuez--a--zumba-300x300.webp" width="300" height="300" alt="" loading="lazy" decoding="async"></span><div class="h"><span class="n">14</span><span class="tg">Equipo</span><span class="gift">De regalo</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">Una clase de Zumba con vuestro equipo, de principio a fin</p><span class="to">→ Visita</span></li><li class="rc gifted rv"><img class="bg" src="/p-ozono-aranjuez--a--recepcion-540x720.webp" width="540" height="720" alt="" loading="lazy" decoding="async"><div class="h"><span class="n">15</span><span class="tg">Barrio</span><span class="gift">De regalo</span><svg class="pi" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></div><p class="t">En la carretera de Toledo, 90, con aparcamiento gratuito</p><span class="to">→ Visita</span></li></ol><div class="rs-f wrap label rv"><span>Propuesta de guiones para el primer mes</span><span>Los cerramos con vosotros antes de rodar</span></div></section>
+<section class="screen pub wrap" id="publicamos" aria-label="Los publicamos nosotros"><div class="pub-txt"><div class="pub-top label rv"><span>01 · Contenido · Publicación</span></div><h2 class="rv">Los publicamos <span class="b">nosotros.</span></h2><p class="rv">No tenéis que grabar, editar ni acordaros de subir nada. Publicamos los 15 reels en vuestras redes, repartidos en el mes, cada uno con su texto y su enlace.</p><ul class="rv"><li>En vuestro Instagram (y en TikTok, si queréis)</li><li>3 o 4 reels por semana, todo el mes</li><li>Cada reel lleva a la página de alta o a vuestro WhatsApp</li></ul><a class="dato rv" href="https://marketing4ecommerce.net/estudio-redes-sociales-en-espana-2025/" target="_blank" rel="noopener"><span class="n">74<small>%</small></span><span>de los usuarios de redes en España usa Instagram. Es ahí donde os van a ver.<b>IAB Spain y Elogia · Estudio de Redes Sociales 2025</b></span></a></div><div class="calc rv" aria-label="Calendario de publicación del primer mes"><div class="calc-h"><b>Primer mes de publicación</b><span>15 reels</span></div><div class="cg"><span></span><span class="d">L</span><span class="d">M</span><span class="d">X</span><span class="d">J</span><span class="d">V</span><span class="d">S</span><span class="d">D</span><span class="w">Sem. 1</span><span class="c on"><b>01</b><i>Pregunta</i></span><span class="c"></span><span class="c on"><b>02</b><i>Cuotas</i></span><span class="c"></span><span class="c on"><b>03</b><i>Clases</i></span><span class="c"></span><span class="c on sun"><b>04</b><i>Piscina</i></span><span class="w">Sem. 2</span><span class="c on"><b>05</b><i>Equipo</i></span><span class="c"></span><span class="c on"><b>06</b><i>Clases</i></span><span class="c"></span><span class="c on"><b>07</b><i>Instalaciones</i></span><span class="c"></span><span class="c on sun"><b>08</b><i>Pregunta</i></span><span class="w">Sem. 3</span><span class="c on"><b>09</b><i>Clases</i></span><span class="c"></span><span class="c on"><b>10</b><i>Socios</i></span><span class="c"></span><span class="c on"><b>11</b><i>Sala</i></span><span class="c"></span><span class="c on sun"><b>12</b><i>Clases</i></span><span class="w">Sem. 4</span><span class="c on"><b>13</b><i>Instalaciones</i></span><span class="c"></span><span class="c on"><b>14</b><i>Equipo</i></span><span class="c"></span><span class="c on"><b>15</b><i>Barrio</i></span><span class="c"></span><span class="c"></span></div><div class="calc-f"><span>Entre semana</span><span class="sun">Domingo por la noche</span></div></div></section>
+<section class="screen pz dark night flip" id="p-web" aria-label="Web"><div class="pz-txt"><div class="pz-top label"><span>02 · Web</span><span class="tm">Dom 22:42</span></div><div><h2 class="pz-w rv">Web</h2><p class="pz-h rv">Desde el reel, Sara entra en vuestra web nueva: la cuota, el horario de las clases, la piscina y el alta online. Y «Hazte socio» en la portada.</p><div class="pz-act rv"><a class="pill" href="/p/ozono-aranjuez/web/" target="_blank" rel="noopener">Ver vuestra web nueva <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a></div></div><ul class="pz-f rv"><li>ozonoaranjuez.com, con vuestra marca</li><li>Cuota y horarios, a la vista</li><li>Mantenimiento incluido</li></ul></div><div class="pz-img"><img class="own" src="/p-ozono-aranjuez--a--bg-web.webp" alt="La piscina cubierta de Ozono Aranjuez" width="1000" height="1176" loading="lazy" decoding="async"><div class="ui ui-web shot" aria-hidden="true"><div class="bw-bar"><i></i><i></i><i></i><span>ozonoaranjuez.com</span></div><img src="/p-ozono-aranjuez--a--shot-1200x750.webp" alt="" width="1200" height="750" loading="lazy"></div></div></section>
+<section class="screen pz" id="p-asistente" aria-label="Asistente"><div class="pz-txt"><div class="pz-top label"><span>03 · Asistente de IA</span><span class="tm">Dom 22:44</span></div><div><h2 class="pz-w rv">Asistente</h2><p class="pz-h rv">A las 22:44 Sara escribe por WhatsApp para preguntar si puede probar una clase de boxing. Es domingo por la noche y recepción ya ha cerrado, pero el asistente de Ozono le responde al momento y le reserva una clase de prueba de Boxing para el lunes por la tarde.</p><a class="dato rv" href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" target="_blank" rel="noopener"><span class="n">7<small>×</small></span><span>más probabilidades de cualificar al interesado si le contestas en la primera hora.<b>Harvard Business Review · 2011</b></span></a></div><ul class="pz-f rv"><li>WhatsApp e Instagram</li><li>Responde en menos de 1 minuto</li><li>Se presenta como asistente virtual</li></ul></div><div class="pz-img"><img class="own" src="/p-ozono-aranjuez--a--bg-asistente.webp" alt="La recepción de Ozono Aranjuez" width="1000" height="1176" loading="lazy" decoding="async"><div class="ui ui-chat" aria-hidden="true"><div class="cb in"><p>¡Hola! Os he visto en Instagram. ¿Puedo probar una clase de boxing?</p><time>22:44</time></div><div class="slot"><div class="cb ty"><i></i><i></i><i></i></div><div class="cb out"><b>Asistente virtual · Ozono Aranjuez</b><p>¡Hola, Sara! Claro. Hay Boxing el lunes y el miércoles a las 18:30: 30 minutos en la sala HBX. Si luego te quedas, la cuota son 45 €/mes con todo incluido. ¿Te apunto el lunes a las 18:30?</p><time>22:44</time></div></div><div class="cb in"><p>¡Sí, el lunes!</p><time>22:45</time></div></div></div></section>
+<section class="screen pz dark night flip" id="p-crm" aria-label="CRM"><div class="pz-txt"><div class="pz-top label"><span>04 · CRM</span><span class="tm">Dom 22:45</span></div><div><h2 class="pz-w rv">CRM</h2><p class="pz-h rv">Sara ya está en vuestro CRM: vino por el reel «¿Boxeo en Aranjuez? Prueba una clase de HBX», preguntó si podía probar una clase de boxing y tiene su clase de prueba el lunes. Le llega un recordatorio y, si no puede, el sistema le escribe para buscar otro día.</p></div><ul class="pz-f rv"><li>El reel que trajo a cada socio</li><li>Seguimiento automático</li><li>Recordatorio de su clase de prueba</li></ul></div><div class="pz-img"><img class="own" src="/p-ozono-aranjuez--a--bg-crm.webp" alt="Sala de fitness de Ozono Aranjuez" width="1000" height="1176" loading="lazy" decoding="async"><div class="ui ui-crm" aria-hidden="true"><div class="cr-h"><span class="av">SM</span><div><b>Sara M.</b><span>Dom · 22:44</span></div><span class="ch">WhatsApp</span></div><ol class="cr-st"><li class="on">Nuevo</li><li>Clase de prueba</li><li>Socio</li></ol><dl><div><dt>Origen</dt><dd>Reel «¿Boxeo en Aranjuez?»</dd></div><div><dt>Clase</dt><dd>Boxing · Sala HBX</dd></div><div><dt>Clase de prueba</dt><dd>Lunes · 18:30</dd></div><div><dt>Recordatorio</dt><dd>Lunes · 17:30</dd></div></dl></div></div></section>
+<section class="screen pz" id="p-cliente" aria-label="Cliente"><div class="pz-txt"><div class="pz-top label"><span>05 · Cliente</span><span class="tm">Lun 19:00</span></div><div><h2 class="pz-w rv">Cliente</h2><p class="pz-h rv">El lunes viene a su clase de prueba: prueba la clase de Boxing, le enseñáis la sala y la piscina y se da de alta en la cuota de 45 €. Y lo veis todo en un sitio: qué reel le trajo, qué preguntó y cuándo vino. Cada mes, un informe con los socios que os ha traído cada reel.</p></div><ul class="pz-f rv"><li>El recorrido de cada socio</li><li>Altas registradas en el CRM</li><li>Informe mensual</li></ul></div><div class="pz-img"><img class="own" src="/p-ozono-aranjuez--a--recepcion-1100x1100.webp" width="1100" height="1100" alt="La recepción de Ozono, en la carretera de Toledo, 90, de Aranjuez" loading="lazy" decoding="async"><div class="ui ui-trip" aria-hidden="true"><div class="cr-h"><span class="av">SM</span><div><b>Sara M.</b><span>Socia · desde el lunes</span></div><span class="ch">Socia</span></div><ol class="tp-l"><li><time>Dom 22:40</time><i></i><span>Ve vuestro reel en Instagram</span></li><li><time>Dom 22:42</time><i></i><span>Entra en vuestra web</span></li><li><time>Dom 22:44</time><i></i><span>Escribe por WhatsApp</span></li><li><time>Dom 22:45</time><i></i><span>Reserva su clase de prueba</span></li><li><time>Lun 18:30</time><i></i><span>Viene a su clase de Boxing</span></li><li class="b"><time>Lun 19:00</time><i></i><span>Sale con su alta hecha</span></li></ol><div class="tp-f"><span>Origen</span><b>Reel «¿Boxeo en Aranjuez?»</b></div></div></div></section>
+<section class="screen night open" aria-label="Siempre abierto"><figure id="fig-open"><img class="own" src="/p-ozono-aranjuez--a--bg-abierto.webp" alt="La sala de HBX Boxing de Ozono Aranjuez" width="1600" height="900" loading="lazy" decoding="async"><figcaption class="label">Siempre abierto</figcaption></figure><div class="txt wrap rv"><h2>Domingo, 22:44. Recepción ha cerrado. <span class="dot" aria-hidden="true"></span> Ozono, no.</h2><p>Quien quiere volver a entrenar lo decide cuando tiene un rato: de noche, en fin de semana, al salir del trabajo. El sistema responde, apunta la visita y hace el seguimiento mientras vosotros estáis con vuestros socios.</p><div class="act"><a class="pill" href="https://calendly.com/hola-404growth/llamada-404-growth" data-cta="siempre-abierto" target="_blank" rel="noopener">Reserva una llamada</a></div></div></section>
+<section class="screen gu" id="garantia" aria-label="La garantía"><div class="gu-in wrap"><div class="gu-top label rv"><span>La garantía · Por contrato</span><span>Ozono Aranjuez × 404 Growth</span></div><h2 class="rv">Si en 3 meses no doblamos vuestra tasa de conversión, <span class="o">trabajamos gratis hasta conseguirlo.</span></h2><div><div class="gu-row"><div class="rv"><div class="v">&lt;1&nbsp;min</div><p>Respuesta a cada interesado, a cualquier hora. Si un mes no se cumple, ese mes no se paga.</p></div><div class="rv"><div class="v">15&nbsp;días</div><p>Web, asistente y CRM en marcha. Si no, no hay cuota hasta que lo estén.</p></div><div class="rv"><div class="v">3&nbsp;meses</div><p>De permanencia: lo mínimo para que el contenido y el sistema den resultados. Es también el plazo de la garantía.</p></div></div></div><div class="gu-act rv"><a class="pill solid" href="https://calendly.com/hola-404growth/llamada-404-growth" data-cta="garantia" target="_blank" rel="noopener">Reserva una llamada</a></div></div></section>
+<section class="screen pack wrap" id="incluye" aria-label="Qué incluye"><div class="pack-top label rv"><span>Qué incluye</span><span>Un paquete cerrado · Una cuota al mes</span></div><h2 class="pack-h rv">Todo el recorrido, <span class="b">en un solo paquete.</span></h2><div class="stages"><div class="stg rv"><div class="k"><span>01</span><span>Contenido</span></div><h3>Os ven<span class="dot" aria-hidden="true"></span></h3><ul><li>Un día de rodaje al mes con vosotros, con filmmaker</li><li>15 reels al mes, editados: 12 + 3 de regalo</li><li>Los publicamos nosotros en vuestras redes</li></ul></div><div class="stg rv"><div class="k"><span>02</span><span>Web · Asistente de IA</span></div><h3>Os escriben<span class="dot" aria-hidden="true"></span></h3><ul><li>Web nueva en ozonoaranjuez.com, con vuestra cuota, los horarios y el alta</li><li>Asistente de IA en WhatsApp e Instagram, a cualquier hora</li><li>Mantenimiento de la web incluido</li></ul></div><div class="stg rv"><div class="k"><span>03</span><span>CRM · Informe</span></div><h3>Os pagan<span class="dot" aria-hidden="true"></span></h3><ul><li>CRM con el origen de cada socio</li><li>Recordatorios para que nadie falte a su visita</li><li>Informe mensual: qué reels os han traído socios</li></ul></div></div><div class="pack-f rv"><p>Para vuestro club de Aranjuez, el precio os lo damos en la llamada: cerrado y sin sorpresas.</p><a class="pill solid" href="https://calendly.com/hola-404growth/llamada-404-growth" data-cta="que-incluye" target="_blank" rel="noopener">Reserva una llamada</a></div></section>
+<section class="screen how wrap" id="como" aria-label="Cómo trabajamos"><div class="how-top label rv"><span>Cómo trabajamos</span><span>De la primera llamada al primer rodaje</span></div><h2 class="how-h rv">En 15 días,<br><span class="b">funcionando.</span></h2><div class="tl" id="tl"><div class="tl-line" aria-hidden="true"><i class="tl-fill"></i><b class="tl-dot"></b></div><ol class="tl-steps"><li><span class="k">Primero</span><h3>Llamada</h3><p>Nos contáis cómo os llegan hoy los socios, cómo dais las altas y qué queréis que se conozca más.</p></li><li><span class="k">Después</span><h3>Propuesta</h3><p>Qué montamos, en qué plazo y cuánto cuesta. Precio cerrado, sin sorpresas.</p></li><li><span class="k">En 15 días</span><h3>En marcha</h3><p>Web, asistente y CRM funcionando, y fecha para el primer rodaje en el club.</p></li><li><span class="k">Cada mes</span><h3>Rodaje e informe</h3><p>Un día de rodaje, 15 reels publicados y un informe con los socios que os han traído.</p></li></ol></div></section>
+<section class="screen faq wrap" aria-label="Preguntas frecuentes"><h2 class="rv">Preguntas</h2><div class="faq-l"><details class="rv"><summary>¿Cuánto cuesta?<i aria-hidden="true"></i></summary><p>Es un paquete cerrado con una cuota al mes. Para vuestro club de Aranjuez os damos el precio en la llamada.</p></details><details class="rv"><summary>¿Quién graba y quién publica?<i aria-hidden="true"></i></summary><p>Un filmmaker que trabaja con nosotros va al club un día al mes. Editamos los 15 reels y los publicamos nosotros. Vosotros no tenéis que grabar, editar ni subir nada.</p></details><details class="rv"><summary>¿Hay permanencia?<i aria-hidden="true"></i></summary><p>Sí, de tres meses. Es lo mínimo para que el contenido y el sistema den resultados, y es el plazo de la garantía: si no doblamos vuestra tasa de conversión, seguimos gratis hasta conseguirlo.</p></details><details class="rv"><summary>¿El asistente se hace pasar por una persona?<i aria-hidden="true"></i></summary><p>No. Se presenta como asistente virtual, responde lo que sabe (cuotas, horarios, clases y dónde estáis) y, cuando hace falta alguien del equipo, os pasa la conversación.</p></details><details class="rv"><summary>¿Y nuestra web de ahora?<i aria-hidden="true"></i></summary><p>La rehacemos en ozonoaranjuez.com y redirigimos las direcciones antiguas, para no perder lo que ya tenéis en Google.</p></details><details class="rv"><summary>¿Trabajáis con otros gimnasios de Aranjuez?<i aria-hidden="true"></i></summary><p>Solo con uno por zona. Si os encaja, la zona es vuestra.</p></details></div></section>
+<section class="end wrap" id="contacto" aria-label="Contacto"><h2 class="rv">¿Lo hablamos, Ozono?</h2><div class="ways"><div class="way rv"><span class="label">Llamada · 30 min</span><span class="v">Por videollamada</span><a class="pill solid" href="https://calendly.com/hola-404growth/llamada-404-growth" data-cta="contacto" target="_blank" rel="noopener">Reserva una llamada</a></div><div class="way rv"><span class="label">WhatsApp · Christian</span><span class="v">+34 610 594 450</span><a class="pill" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20he%20visto%20la%20propuesta%20para%20Ozono%20Aranjuez." target="_blank" rel="noopener">Escribir por WhatsApp</a></div><div class="way rv"><span class="label">Email</span><span class="v">hola@404growth.com</span><a class="pill" href="mailto:hola@404growth.com?subject=Propuesta%20Ozono%20Aranjuez">Escribir un email</a></div></div></section>
+</main>
+<footer class="foot wrap">
+  <div class="word" aria-hidden="true">404/GROWTH<sup>®</sup></div>
+  <div class="bot label"><span>Propuesta preparada para Ozono Aranjuez · Octubre de 2026</span><span><a href="https://404growth.com/legal" target="_blank" rel="noopener">Aviso legal y privacidad</a> · © 2026 404 Growth</span></div>
+</footer>
+<script>
+(function(){
+  var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,d=document,root=d.documentElement;
+  /* header: solid after the first screen, hides going down, back going up; light over the dark and blue chapters */
+  var top=d.getElementById('top'),last=0,nights=[].slice.call(d.querySelectorAll('.night')),blues=[].slice.call(d.querySelectorAll('.gu'));
+  var RG=null;function rg(){RG=[nights,blues].map(function(L){return L.map(function(n){var r=n.getBoundingClientRect();return [r.top+scrollY,r.bottom+scrollY]})})}function over(list){if(!RG)rg();var L=RG[list===nights?0:1],y=(window.scrollY||0)+40;for(var i=0;i<L.length;i++)if(L[i][0]<=y&&L[i][1]>=y)return true;return false}window.addEventListener('resize',function(){RG=null});window.addEventListener('load',function(){RG=null});if(window.ResizeObserver)new ResizeObserver(function(){RG=null}).observe(d.body);
+  function hdr(){var y=window.scrollY||0;top.classList.toggle('solid',y>40);top.classList.toggle('hide',y>last&&y>400&&!d.body.classList.contains('menu-open'));last=y;
+    top.classList.toggle('on-night',over(nights));top.classList.toggle('on-blue',over(blues))}
+  var hq=false;window.addEventListener('scroll',function(){if(!hq){hq=true;requestAnimationFrame(function(){hq=false;hdr()})}},{passive:true});hdr();
+  /* mobile menu */
+  var sheet=d.getElementById('sheet'),mb=d.getElementById('menu-btn'),mc=d.getElementById('menu-close');
+  function menu(o){sheet.hidden=!o;mb.setAttribute('aria-expanded',o?'true':'false');d.body.classList.toggle('menu-open',o);d.body.style.overflow=o?'hidden':'';if(o)mc.focus();else mb.focus()}
+  mb.onclick=function(){menu(true)};mc.onclick=function(){menu(false)};
+  sheet.querySelectorAll('nav a').forEach(function(a){a.onclick=function(){menu(false)}});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sheet.hidden)menu(false)});
+  /* hero: the five pictures rise once the page is in */
+  var hs=d.getElementById('inicio');requestAnimationFrame(function(){requestAnimationFrame(function(){hs.classList.add('go')})});
+  /* reveal on scroll */
+  var els=[].slice.call(d.querySelectorAll('.rv,#fig-open'));
+  if(rm||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});els.forEach(function(e){io.observe(e)})}
+  /* the five pieces: each plays its small scene once, when it comes into view */
+  var pzs=[].slice.call(d.querySelectorAll('.pz'));
+  function playPz(p){if(p.classList.contains('play'))return;p.classList.add('play');var c=p.querySelector('.ui-crm');if(c)setTimeout(function(){c.classList.add('s2')},rm?0:1900)}
+  if(rm||!('IntersectionObserver' in window))pzs.forEach(playPz);
+  else{var po=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){playPz(e.target);po.unobserve(e.target)}})},{threshold:.35});pzs.forEach(function(p){po.observe(p)})}
+  /* how we work: the dot runs along the line */
+  var tl=d.getElementById('tl'),how=d.getElementById('como'),tls=[].slice.call(tl.querySelectorAll('.tl-steps li')),tlq=false;
+  function tlSet(p){tl.style.setProperty('--p',p.toFixed(3));tls.forEach(function(li,k){li.classList.toggle('on',p>=k/4-.001)})}
+  function tlRun(){tlq=false;var r=how.getBoundingClientRect(),vh=window.innerHeight;tlSet(Math.min(1,Math.max(0,(vh*.9-r.top)/(vh*.75))))}
+  if(rm)tlSet(1);else{window.addEventListener('scroll',function(){if(!tlq){tlq=true;requestAnimationFrame(tlRun)}},{passive:true});tlRun()}
+  /* booking: Calendly over the page, in our own frame, tagged with this proposal */
+  var CAL='https://calendly.com/hola-404growth/llamada-404-growth',cal=null,calLast=null,warmed=false;
+  function calMake(src){
+    if(cal)return;
+    cal=d.createElement('div');cal.className='cal';cal.setAttribute('role','dialog');cal.setAttribute('aria-modal','true');cal.setAttribute('aria-label','Reserva una llamada');cal.setAttribute('aria-hidden','true');
+    cal.innerHTML='<button class="cal-x" type="button" aria-label="Cerrar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button>'+
+      '<div class="cal-box"><div class="cal-wait"><i></i><span>Cargando el calendario…</span><a href="'+CAL+'" target="_blank" rel="noopener">¿Tarda? Ábrelo aquí</a></div></div>';
+    var f=d.createElement('iframe');f.title='Calendario para reservar una llamada con Christian';
+    f.src=CAL+'?embed_domain='+encodeURIComponent(location.host||'404growth.com')+'&embed_type=Inline&primary_color=2f6bff&text_color=1b1b1d&background_color=ffffff'+
+      '&utm_source=propuesta&utm_medium=whatsapp&utm_campaign=ozono-aranjuez&utm_content='+encodeURIComponent(src||'web');
+    cal.inert=true;f.onload=function(){setTimeout(function(){cal.classList.add('ready')},5000)};
+    cal.querySelector('.cal-box').appendChild(f);d.body.appendChild(cal);
+    cal.querySelector('.cal-x').onclick=calClose;cal.addEventListener('click',function(e){if(e.target===cal)calClose()});
+  }
+  window.addEventListener('message',function(e){if(!cal||e.origin!=='https://calendly.com')return;var ev=e.data&&e.data.event;if(typeof ev==='string'&&ev.indexOf('calendly.')===0&&ev!=='calendly.page_height')cal.classList.add('ready')});
+  function calOpen(a){calMake(a.getAttribute('data-cta'));calLast=a;if(!sheet.hidden)menu(false);root.classList.add('cal-open');cal.setAttribute('aria-hidden','false');cal.inert=false;
+    requestAnimationFrame(function(){cal.classList.add('cal-show');cal.querySelector('.cal-x').focus()})}
+  function calClose(){if(!cal||!cal.classList.contains('cal-show'))return;cal.classList.remove('cal-show');cal.setAttribute('aria-hidden','true');cal.inert=true;root.classList.remove('cal-open');if(calLast&&calLast.focus)calLast.focus({preventScroll:true})}
+  function calBtn(t){return t&&t.closest?t.closest('a[href^="'+CAL+'"]'):null}
+  d.addEventListener('click',function(e){var a=calBtn(e.target);if(!a||(cal&&cal.contains(a))||e.button>0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();calOpen(a)});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape')calClose()});
+  function warm(src){if(warmed)return;warmed=true;calMake(src)}
+  if(window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches)['scroll','pointermove','keydown'].forEach(function(t){window.addEventListener(t,function(){warm()},{passive:true,once:true})});
+  d.addEventListener('pointerover',function(e){var a=calBtn(e.target);if(a&&!(cal&&cal.contains(a)))warm(a.getAttribute('data-cta'))},{passive:true});
+  /* the contact screen and the footer share the last screen */
+  var foot=d.querySelector('footer.foot');function footH(){root.style.setProperty('--foot-h',foot.offsetHeight+'px')}footH();window.addEventListener('resize',footH);
+})();
+</script>
+<script>
+/* c404 v3 (27 oct 2026): more detail for the visit counter below. No cookies, nothing kept on the device, never what is typed or copied. */
+(function(){
+  if(!/(^|\.)404growth\.com$/.test(location.hostname)||!window.fetch)return;
+  try{if(localStorage.getItem('c404int')&&!/[?&]interno=0/.test(location.search))return}catch(e){}
+  var EP='https://404growth-visits.contactochristiansilva.workers.dev',key='',Q=[],seq=0,T0=Date.now(),act=0,last=0,it=0,maxs=0,ms={},SS={},cur=null,curT=0,seenS={},ord=0,idle=false,playing=0,errs=0,rerrs=0,sz=0,sentNav=false,iv;
+  var rid=Math.random().toString(36).slice(2,8);
+  function sec(){return Math.round((Date.now()-T0)/1000)}
+  function ev(y,o){o=o||{};o.y=y;o.i=rid+(seq++).toString(36);o.t=sec();o.ot=Date.now();Q.push(o);if(Q.length>200)Q.shift();if(Q.length>=20)flush()}
+  function flush(beacon){if(!key||!Q.length)return;var b=JSON.stringify({k:key,ev:Q.splice(0,25)});
+    try{if(beacon&&navigator.sendBeacon&&navigator.sendBeacon(EP+'/e',b)){}else fetch(EP+'/e',{method:'POST',body:b,keepalive:true}).catch(function(){})}catch(e){}if(Q.length)setTimeout(function(){flush(beacon)},300)}
+  function txt(s,n){return String(s||'').replace(/\s+/g,' ').trim().slice(0,n||80)}
+  function vis(){return document.visibilityState==='visible'}
+  function poke(){last=Date.now();if(!it)it=1;if(idle){idle=false;ev('wake')}}
+  ['scroll','pointerdown','touchstart','keydown','wheel','mousemove'].forEach(function(e){addEventListener(e,poke,{capture:true,passive:true})});
+  var SECS=[].slice.call(document.querySelectorAll('section[id],header[id],footer[id],article[id],main[id]')).filter(function(s){return /^[A-Za-z][\w-]{0,39}$/.test(s.id)}).slice(0,40);
+  function head(s){var h=s.querySelector('h1,h2,h3');return txt((h&&h.textContent)||s.getAttribute('aria-label')||s.id,60)}
+  function current(){var y=innerHeight/2,best=null;for(var i=0;i<SECS.length;i++){var r=SECS[i].getBoundingClientRect();if(r.top<=y&&r.bottom>=y){if(!best||r.height<best.r.height)best={s:SECS[i],r:r}}}return best&&best.s}
+  function scrollPct(){var de=document.documentElement,h=Math.max(1,de.scrollHeight);return Math.min(100,Math.round((scrollY+innerHeight)/h*100))}
+  function tick(){var now=Date.now(),on=vis()&&(now-last<30000||playing>0);
+    if(vis()&&!on&&!idle&&last){idle=true;ev('idle')}
+    if(on){act+=1;var s=current();if(s){SS[s.id]=(SS[s.id]||0)+1;if(s!==cur){cur=s;curT=0}curT++;if(curT===1&&!seenS[s.id]){seenS[s.id]=1;ev('sin',{s:s.id,l:head(s),m:{ord:++ord}})}}}
+    var p=scrollPct();if(p>maxs){maxs=p;[25,50,75,90,100].forEach(function(m){if(p>=m&&!ms[m]){ms[m]=1;ev('scr',{n:m})}})}
+    if(++sz%5===0)flush()}
+  window.__c404x=function(){var o={sw:screen.width,sh:screen.height,vw:innerWidth,vh:innerHeight,dpr:window.devicePixelRatio||1,or:innerHeight>=innerWidth?'p':'l',tch:navigator.maxTouchPoints||0,it:it};
+    try{o.lang=(navigator.languages&&navigator.languages[0])||navigator.language||''}catch(e){}
+    try{o.tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
+    try{o.dk=matchMedia('(prefers-color-scheme: dark)').matches?1:0}catch(e){}
+    try{var r=document.referrer&&new URL(document.referrer);if(r&&r.host!==location.host)o.ref=r.host}catch(e){}
+    try{var n=performance.getEntriesByType('navigation')[0];if(n)o.nav=n.type}catch(e){}
+    o.wd=navigator.webdriver?1:0;o.hl=(/HeadlessChrome/.test(navigator.userAgent)||(navigator.languages&&navigator.languages.length===0))?1:0;return o};
+  window.__c404p=function(){var o={a:act,sd:maxs},n=0,ss={};for(var k in SS){if(n++>=40)break;ss[k]=SS[k]}o.ss=ss;return o};
+  window.__c404on=function(k){if(!k||key)return;key=k;flush()};
+  iv=setInterval(tick,1000);
+  document.addEventListener('visibilitychange',function(){ev(vis()?'vis':'hid');if(!vis()){navTimes();flush(true)}});
+  addEventListener('pagehide',function(){ev('end',{n:act});navTimes();flush(true)});
+  document.addEventListener('toggle',function(e){var d=e.target;if(d&&d.tagName==='DETAILS'){var s=d.querySelector('summary');ev(d.open?'exp':'col',{l:txt(s&&s.textContent,60),s:(d.closest('[id]')||{}).id||''})}},true);
+  document.addEventListener('click',function(e){try{var el=e.target&&e.target.closest&&e.target.closest('[role="tab"],a[href],[data-share]');if(!el)return;
+    var sc=el.closest('section[id],header[id],footer[id],article[id]'),sid=sc?sc.id:'';
+    if(el.getAttribute('role')==='tab')ev('tab',{l:txt(el.textContent,60),s:sid});
+    else if(el.hasAttribute('data-share'))ev('share',{s:sid,m:{ch:txt(el.getAttribute('data-share'),20)}});
+    else{var h=el.getAttribute('href')||'';if(el.hasAttribute('download')||/\.(pdf|zip|docx?|xlsx?|pptx?|key|numbers)(\?|#|$)/i.test(h)){var f=h.split(/[?#]/)[0].split('/').pop();ev('dl',{s:sid,m:{file:txt(decodeURIComponent(f),80)}})}}}catch(x){}},true);
+  document.addEventListener('copy',function(){var n=0;try{n=String(getSelection()).length}catch(e){}ev('copy',{m:{len:n}})},true);
+  addEventListener('beforeprint',function(){ev('print')});
+  document.addEventListener('fullscreenchange',function(){if(document.fullscreenElement)ev('fs')});
+  var forms={};document.addEventListener('focusin',function(e){var f=e.target&&e.target.form;if(f){var id=txt(f.id||f.getAttribute('name')||'form',30);if(!forms[id]){forms[id]=1;ev('form0',{m:{form:id}})}}},true);
+  document.addEventListener('submit',function(e){var f=e.target;ev('form1',{m:{form:txt(f.id||f.getAttribute('name')||'form',30)}})},true);
+  try{if(navigator.share){var sh=navigator.share.bind(navigator);navigator.share=function(d){ev('share',{m:{ch:'sistema'}});return sh(d)}}}catch(e){}
+  var orient=innerHeight>=innerWidth;addEventListener('resize',function(){var o=innerHeight>=innerWidth;if(o!==orient&&sz<9999){orient=o;ev('resize',{m:{or:o?'vertical':'horizontal'}})}});
+  function vname(v){return txt(v.getAttribute('aria-label')||v.title||(v.currentSrc||v.src||'').split('/').pop().split('?')[0]||'vídeo',60)}
+  document.addEventListener('play',function(e){var v=e.target;if(v.tagName!=='VIDEO'||v.muted&&v.autoplay&&v.loop)return;playing++;v.__q=v.__q||{};var sc=v.closest('[id]');ev('vplay',{l:vname(v),s:sc?sc.id:''})},true);
+  document.addEventListener('pause',function(e){var v=e.target;if(v.tagName!=='VIDEO'||v.muted&&v.autoplay&&v.loop)return;playing=Math.max(0,playing-1);if(!v.ended)ev('vpause',{l:vname(v),n:Math.round(v.currentTime/Math.max(1,v.duration||1)*100)})},true);
+  document.addEventListener('timeupdate',function(e){var v=e.target;if(v.tagName!=='VIDEO'||!v.duration||v.muted&&v.autoplay&&v.loop)return;var p=v.currentTime/v.duration*100;v.__q=v.__q||{};[25,50,75].forEach(function(m){if(p>=m&&!v.__q[m]){v.__q[m]=1;ev('vprog',{l:vname(v),n:m})}})},true);
+  document.addEventListener('ended',function(e){var v=e.target;if(v.tagName!=='VIDEO'||v.muted&&v.autoplay&&v.loop)return;ev('vend',{l:vname(v)})},true);
+  addEventListener('error',function(e){try{var t=e.target;if(t&&t!==window&&t.tagName){if(rerrs++<10){var u=t.currentSrc||t.src||t.href||'';ev('rerr',{m:{tag:t.tagName.toLowerCase(),res:txt(u.split('?')[0].split('/').pop(),80)}})}}else if(errs++<5)ev('err',{m:{msg:txt(e.message,120),src:txt(String(e.filename||'').split('?')[0].split('/').pop(),60),line:e.lineno||0}})}catch(x){}},true);
+  addEventListener('unhandledrejection',function(e){if(errs++<5)ev('err',{m:{msg:txt(e.reason&&(e.reason.message||e.reason),120)}})});
+  var lcp=0,cls=0;try{new PerformanceObserver(function(l){l.getEntries().forEach(function(x){lcp=Math.round(x.startTime)})}).observe({type:'largest-contentful-paint',buffered:true})}catch(e){}
+  try{new PerformanceObserver(function(l){l.getEntries().forEach(function(x){if(!x.hadRecentInput)cls+=x.value})}).observe({type:'layout-shift',buffered:true})}catch(e){}
+  function navTimes(){if(sentNav)return;sentNav=true;var m={};try{var n=performance.getEntriesByType('navigation')[0];if(n){m.ttfb=Math.round(n.responseStart);m.dcl=Math.round(n.domContentLoadedEventEnd);m.load=Math.round(n.loadEventEnd)}}catch(e){}
+    if(lcp)m.lcp=lcp;m.cls=Math.round(cls*1000)/1000;try{var c=navigator.connection;if(c){if(c.effectiveType)m.net=c.effectiveType;if(c.saveData)m.save='sí'}}catch(e){}ev('nav',{m:m})}
+  addEventListener('load',function(){setTimeout(navTimes,6000)});
+})();
+</script>
+<script>
+/* visit counter (22 oct 2026): tells our own counter (404growth-visits) that this page was opened, for how long it was read and how far it got.
+   No cookies, nothing stored on the visitor's device, live site only. Our own devices opt out once with ?interno=1. */
+(function(){
+  var slug="ozono-aranjuez",EP='https://404growth-visits.contactochristiansilva.workers.dev',EV=['scroll','pointerdown','touchstart','keydown'],PARTS=[["p-contenido", 1], ["reels", 2], ["p-web", 3], ["p-asistente", 4], ["p-crm", 5], ["p-cliente", 6], ["garantia", 7], ["incluye", 8], ["contacto", 9]];
+  try{var q=/[?&]interno=([01])/.exec(location.search);if(q){if(q[1]==='1')localStorage.setItem('c404int','1');else localStorage.removeItem('c404int')}if(localStorage.getItem('c404int'))return}catch(e){}
+  if(!slug||!/(^|\.)404growth\.com$/.test(location.hostname)||navigator.webdriver||!window.fetch)return;
+  var key=null,seen=0,since=0,depth=0,sent='',n=0,iv,gone=false,CQ=[];
+  function clock(){var now=Date.now();if(since)seen+=now-since;since=document.visibilityState==='visible'?now:0}
+  function push(){clock();if(!key)return;var b=JSON.stringify(Object.assign({k:key,t:Math.round(seen/1000),d:depth,e:gone?1:0},window.__c404p?__c404p():{}));if(b===sent)return;sent=b;
+    try{if(!(navigator.sendBeacon&&navigator.sendBeacon(EP+'/p',b)))fetch(EP+'/p',{method:'POST',body:b,keepalive:true})}catch(e){}}
+  function open(){if(key!==null)return;key='';EV.forEach(function(e){removeEventListener(e,open,true)});
+    fetch(EP+'/h',{method:'POST',body:JSON.stringify({s:slug,x:window.__c404x?__c404x():{}}),keepalive:true}).then(function(r){return r.json()}).then(function(j){key=(j&&j.k)||'';push();cflush();if(key&&window.__c404on)__c404on(key)}).catch(function(){})}
+  EV.forEach(function(e){addEventListener(e,open,{capture:true,passive:true})});clock();
+  iv=setInterval(function(){clock();if(seen>=2800)open();if(seen>=1800000){push();clearInterval(iv)}else if(key&&++n%15===0)push()},1000);
+  document.addEventListener('visibilitychange',function(){gone=document.visibilityState==='hidden';push()});addEventListener('pagehide',function(){gone=true;push()});addEventListener('pageshow',function(e){if(e.persisted){gone=false;push()}});
+    /* c404 v2: the buttons and links tapped, with the part of the page; nothing typed is ever read */
+    function cflush(){if(!key||!CQ.length)return;var b=JSON.stringify({k:key,c:CQ.splice(0,20)});try{if(!(navigator.sendBeacon&&navigator.sendBeacon(EP+'/c',b)))fetch(EP+'/c',{method:'POST',body:b,keepalive:true})}catch(e){}if(CQ.length)setTimeout(cflush,400)}
+    function ctx(s){return String(s||'').replace(/\s+/g,' ').trim()}
+    document.addEventListener('click',function(ev){try{
+      var el=ev.target&&ev.target.closest&&ev.target.closest('a,button,summary,label,select,input,textarea,video,[role="button"],[role="tab"],[data-go],[onclick]');if(!el)return;
+      var sec=el.closest('section[id],header[id],footer[id],nav[id],aside[id],main[id],article[id],#sheet')||el.closest('section,header,footer,article'),hd=sec&&sec.querySelector('h1,h2,h3'),sh=ctx(hd&&hd.textContent);
+      if(!sh){var hs=document.querySelectorAll('h1,h2,h3');for(var i=hs.length-1;i>=0;i--){if(hs[i].compareDocumentPosition(el)&4){sh=ctx(hs[i].textContent);break}}}
+      var fld=/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName),w=ctx(el.getAttribute('aria-label')||(fld?(el.labels&&el.labels[0]&&el.labels[0].innerText)||el.getAttribute('placeholder')||el.name:el.innerText));
+      if(!w){var im=el.querySelector&&el.querySelector('img');w=ctx((im&&im.alt)||el.title||'')}
+      var h='',a=el.closest('a[href]');if(a){var u=new URL(a.getAttribute('href'),location.href);h=u.protocol==='mailto:'?'mailto:':u.protocol==='tel:'?'tel:':u.host===location.host?u.pathname+u.hash:u.host+(/wa\.me|whatsapp/.test(u.host)?'':u.pathname)}
+      var de=document.documentElement;CQ.push({t:Math.round((seen+(since?Date.now()-since:0))/1000),s:(sec&&sec.id)||'',sh:sh.slice(0,80),w:w.slice(0,90),h:h.slice(0,120),x:Math.round(ev.clientX/Math.max(1,innerWidth)*100),y:Math.round((ev.pageY||0)/Math.max(1,de.scrollHeight)*100)});
+      if(CQ.length>40)CQ.shift();if(key)cflush();else open()}catch(e){}},true);
+
+  if(PARTS.length&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){depth=Math.max(depth,+x.target.getAttribute('data-cd'));io.unobserve(x.target);push()}})},{rootMargin:'0px 0px -35% 0px'});
+    PARTS.forEach(function(p){var el=document.getElementById(p[0]);if(el){el.setAttribute('data-cd',p[1]);io.observe(el)}})}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+// 404 Growth · el Worker «404growth» (solo archivos estáticos), tal como está en Cloudflare el 22 oct 2026.
+// subir.command lo usa para publicar la carpeta de la web. Para una versión nueva solo cambia "directory".
+{
+  "name": "404growth",
+  "account_id": "d59d5d5e6d9dba65f2a977ef91ab2840",
+  "compatibility_date": "2026-10-22",
+  "assets": { "directory": "../web117-404growth" },
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [
+    { "pattern": "404growth.com", "custom_domain": true },
+    { "pattern": "www.404growth.com", "custom_domain": true }
+  ]
+}

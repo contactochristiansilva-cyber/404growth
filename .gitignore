@@ -1,0 +1,13 @@
+.DS_Store
+.wrangler/
+anterior/
+_to_delete/
+*.zip
+*.tar.gz
+# imágenes y vídeos: se quedan en el Mac (la web pesa ~1 GB con ellas)
+*.jpg
+*.jpeg
+*.webp
+*.png
+*.mp4
+*.pdf

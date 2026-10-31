@@ -1,0 +1,25 @@
+// 404 Growth · el Worker «404growth-partner»: la plataforma 404 Content en 404-content.com (27 oct 2026; antes app.404growth.com, que sigue
+// respondiendo y manda sus páginas a 404-content.com).
+// Usa la misma base D1 que el admin («404growth-admin», tablas p_*). Las claves de Stripe, Anthropic y Meta se ponen en
+// 404-content.com/admin → Claves (no van aquí). El secreto P404_KEY (cifra esas claves) lo crea subir.command la primera vez.
+// "ai": Workers AI de Cloudflare, para pasar a texto lo que se dice en los vídeos de 404 Content.
+{
+  "name": "404growth-partner",
+  "account_id": "d59d5d5e6d9dba65f2a977ef91ab2840",
+  "main": "worker.js",
+  "compatibility_date": "2025-09-01",
+  "no_bundle": true,
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "404-content.com", "custom_domain": true },
+    { "pattern": "www.404-content.com", "custom_domain": true },
+    { "pattern": "app.404growth.com", "custom_domain": true }
+  ],
+  "triggers": { "crons": ["*/5 * * * *"] },
+  "observability": { "enabled": true },
+  "ai": { "binding": "AI" },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "404growth-admin", "database_id": "e5f69c5d-afe8-42f0-a0db-a4cb096df0c3" }
+  ]
+}
