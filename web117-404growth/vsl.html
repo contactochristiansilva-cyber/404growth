@@ -70,7 +70,7 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .logo sup{font-size:8px;margin-left:1px}
 
 /* ---------- héroe: focos desde arriba ---------- */
-.hero{position:relative;padding:0 0 30px;overflow:hidden}
+.hero{position:relative;padding:0 0 10px;overflow:hidden}
 .beams{position:absolute;inset:0 0 auto;height:900px;pointer-events:none;z-index:0}
 .beams:before,.beams:after{content:"";position:absolute;top:-180px;width:520px;height:1100px;filter:blur(38px);opacity:.75;
  background:linear-gradient(180deg,rgba(166,227,205,.85),rgba(111,194,166,.35) 35%,transparent 75%)}
@@ -85,7 +85,7 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .eyebrow b{font-weight:600;color:var(--t2)}
 .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--t2);box-shadow:0 0 0 4px rgba(111,194,166,.2);flex:none}
 .hero h1>span{display:block;text-wrap:balance}
-.hero h1 .ha{font-size:.46em;font-weight:300;letter-spacing:-.025em;color:#D3DCD8;margin-bottom:.32em}
+.hero h1 .ha{font-size:.6em;font-weight:400;letter-spacing:-.035em;color:#F3F6F4;margin-bottom:.2em}
 .hero h1 .hb{font-weight:600;color:#fff}
 .hero h1 .hc{font-weight:600;background:linear-gradient(180deg,#E9FFF6 0%,var(--t2) 55%,var(--t) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
 .hero h1 .mk{position:relative;display:inline-block;white-space:nowrap}
@@ -124,10 +124,15 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .vmsg{max-width:620px;margin:18px auto 0;font-size:15px;color:var(--sand);padding:14px 18px;border-radius:18px}
 
 /* ---------- franja en movimiento ---------- */
-.marq{overflow:hidden;padding:26px 0;margin-top:70px;-webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.marq div{display:flex;width:max-content;animation:mq 38s linear infinite}
-.marq span{font-family:var(--c);font-weight:400;font-size:clamp(30px,4vw,52px);letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap;padding-right:28px;color:#E9EBE7}
-.marq span i{font-style:normal;color:var(--t);padding-left:28px}
+.strip{display:grid;gap:12px;margin-top:40px;-webkit-mask:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+.strip .row{overflow:hidden;padding:4px 0}
+.strip .track{display:flex;gap:12px;width:max-content;animation:mq 46s linear infinite}
+.strip .row.rev .track{animation-direction:reverse;animation-duration:52s}
+.strip:hover .track{animation-play-state:paused}
+.pc{display:inline-flex;align-items:center;gap:10px;padding:8px 18px 8px 8px;border-radius:99px;font-size:15px;font-weight:500;white-space:nowrap;color:var(--ink)}
+.pc .ci{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#07100D;flex:none}
+.pc .ci svg{width:16px;height:16px}
+.pc.t .ci{background:linear-gradient(180deg,#8FD8BE,#3E9A7C);color:#04110D}
 @keyframes mq{to{transform:translateX(-50%)}}
 
 /* ---------- secciones ---------- */
@@ -282,6 +287,10 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
  .mpin{gap:12px}
 }
 @media (max-width:560px){
+ .beams:before,.beams:after{width:300px;height:760px;opacity:.38;filter:blur(30px)}
+ .beams:before{left:-190px}.beams:after{right:-190px}
+ .stripes{opacity:.2}
+ .arc,.arc2{opacity:.45}
  .ticks{gap:4px}.ticks i{width:8px}
  .sc{padding:38px 9px 10px}.sc3 .nav3 b{font-size:10.5px;letter-spacing:.08em}.sc3 .nav3 span{font-size:8.5px}
  .sc4 .nt span{font-size:9px}.sc4 .nt b{font-size:9.5px}.sc4 .dt{font-size:9.5px;text-align:center}
@@ -338,11 +347,11 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 
 /* ordenador: H1, vídeo y primer botón caben en la primera pantalla */
 @media (min-width:901px){
- .top{padding-top:20px}
- .hero h1{font-size:clamp(40px,min(5vw,8.2vh),74px);margin-top:16px}
- .eyebrow{margin-top:18px}
- .stage{margin-top:30px;max-width:1140px}
- .device{max-width:min(1080px,max(480px,calc((100vh - 520px) * 16 / 9 + 24px)));padding:10px;border-radius:28px}
+ .top{padding-top:16px}
+ .hero h1{font-size:clamp(40px,min(4.5vw,7vh),66px);margin-top:12px}
+ .eyebrow{margin-top:14px}
+ .stage{margin-top:24px;max-width:1140px}
+ .device{max-width:min(1080px,max(480px,calc((100vh - 470px) * 16 / 9 + 24px)));padding:10px;border-radius:28px}
  .screen{border-radius:20px}
  .hero .cta{margin-top:22px;gap:12px}
 }
@@ -360,7 +369,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 .rv{opacity:0;transform:translateY(26px);filter:blur(8px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.2,1),filter 1s ease}
 .rv.in{opacity:1;transform:none;filter:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;filter:none;transition:none}.marq div,.swirl,.play:before{animation:none}.cf-card{transition:none}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;filter:none;transition:none}.strip .track,.swirl,.play:before{animation:none}.cf-card{transition:none}html{scroll-behavior:auto}}
 
 @media (max-width:900px){
  .road{grid-template-columns:1fr 1fr}
@@ -382,7 +391,8 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
  .vtag{left:10px;top:10px;font-size:12px;padding:7px 11px}
  .vbar{display:none}
  .btn{font-size:16px;padding-left:22px}
- .marq{margin-top:40px}
+ .strip{margin-top:30px;gap:8px}
+ .pc{font-size:13.5px;padding:6px 14px 6px 6px}.pc .ci{width:28px;height:28px}
  .sec{padding-top:80px}
  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:16px 6px 14px;border-radius:24px;position:relative;
   background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));box-shadow:inset 1px 1px 0 rgba(255,255,255,.3),inset -1px -1px 0 rgba(255,255,255,.08)}
@@ -460,14 +470,14 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
       <div class="micro"><span><svg><use href="#i-check"/></svg>15 minutos</span><span><svg><use href="#i-check"/></svg>Gratis</span><span><svg><use href="#i-check"/></svg>Precio cerrado</span></div>
     </div>
   </div>
-  <div class="marq" aria-hidden="true"><div>
-    <span>Tienda online en 15 días<i>✦</i></span><span>Bizum y Apple Pay<i>✦</i></span><span>Envíos a toda España<i>✦</i></span><span>Abierta 24/7<i>✦</i></span><span>Precio cerrado<i>✦</i></span><span>Tu mismo stock<i>✦</i></span>
-    <span>Tienda online en 15 días<i>✦</i></span><span>Bizum y Apple Pay<i>✦</i></span><span>Envíos a toda España<i>✦</i></span><span>Abierta 24/7<i>✦</i></span><span>Precio cerrado<i>✦</i></span><span>Tu mismo stock<i>✦</i></span>
-  </div></div>
+  <div class="strip" aria-hidden="true">
+    <div class="row"><div class="track"><span class="pc lg t"><span class="ci"><svg><use href="#i-cal"/></svg></span>Tienda online en 15 días</span><span class="pc lg"><span class="ci"><svg><use href="#i-card"/></svg></span>Bizum y Apple Pay</span><span class="pc lg"><span class="ci"><svg><use href="#i-truck"/></svg></span>Envíos a toda España</span><span class="pc lg"><span class="ci"><svg><use href="#i-store"/></svg></span>Recogida en tienda</span><span class="pc lg t"><span class="ci"><svg><use href="#i-tag"/></svg></span>Precio cerrado</span><span class="pc lg"><span class="ci"><svg><use href="#i-sync"/></svg></span>Tu mismo stock</span><span class="pc lg t"><span class="ci"><svg><use href="#i-cal"/></svg></span>Tienda online en 15 días</span><span class="pc lg"><span class="ci"><svg><use href="#i-card"/></svg></span>Bizum y Apple Pay</span><span class="pc lg"><span class="ci"><svg><use href="#i-truck"/></svg></span>Envíos a toda España</span><span class="pc lg"><span class="ci"><svg><use href="#i-store"/></svg></span>Recogida en tienda</span><span class="pc lg t"><span class="ci"><svg><use href="#i-tag"/></svg></span>Precio cerrado</span><span class="pc lg"><span class="ci"><svg><use href="#i-sync"/></svg></span>Tu mismo stock</span><span class="pc lg t"><span class="ci"><svg><use href="#i-cal"/></svg></span>Tienda online en 15 días</span><span class="pc lg"><span class="ci"><svg><use href="#i-card"/></svg></span>Bizum y Apple Pay</span><span class="pc lg"><span class="ci"><svg><use href="#i-truck"/></svg></span>Envíos a toda España</span><span class="pc lg"><span class="ci"><svg><use href="#i-store"/></svg></span>Recogida en tienda</span><span class="pc lg t"><span class="ci"><svg><use href="#i-tag"/></svg></span>Precio cerrado</span><span class="pc lg"><span class="ci"><svg><use href="#i-sync"/></svg></span>Tu mismo stock</span><span class="pc lg t"><span class="ci"><svg><use href="#i-cal"/></svg></span>Tienda online en 15 días</span><span class="pc lg"><span class="ci"><svg><use href="#i-card"/></svg></span>Bizum y Apple Pay</span><span class="pc lg"><span class="ci"><svg><use href="#i-truck"/></svg></span>Envíos a toda España</span><span class="pc lg"><span class="ci"><svg><use href="#i-store"/></svg></span>Recogida en tienda</span><span class="pc lg t"><span class="ci"><svg><use href="#i-tag"/></svg></span>Precio cerrado</span><span class="pc lg"><span class="ci"><svg><use href="#i-sync"/></svg></span>Tu mismo stock</span></div></div>
+    <div class="row rev"><div class="track"><span class="pc lg"><span class="ci"><svg><use href="#i-insta"/></svg></span>Instagram Shopping</span><span class="pc lg"><span class="ci"><svg><use href="#i-palette"/></svg></span>Tu marca y tu dominio</span><span class="pc lg t"><span class="ci"><svg><use href="#i-rocket"/></svg></span>Abierta 24/7</span><span class="pc lg"><span class="ci"><svg><use href="#i-mega"/></svg></span>Anuncios en Meta</span><span class="pc lg"><span class="ci"><svg><use href="#i-chart"/></svg></span>Ventas medidas</span><span class="pc lg t"><span class="ci"><svg><use href="#i-chat"/></svg></span>Te atiendo yo</span><span class="pc lg"><span class="ci"><svg><use href="#i-insta"/></svg></span>Instagram Shopping</span><span class="pc lg"><span class="ci"><svg><use href="#i-palette"/></svg></span>Tu marca y tu dominio</span><span class="pc lg t"><span class="ci"><svg><use href="#i-rocket"/></svg></span>Abierta 24/7</span><span class="pc lg"><span class="ci"><svg><use href="#i-mega"/></svg></span>Anuncios en Meta</span><span class="pc lg"><span class="ci"><svg><use href="#i-chart"/></svg></span>Ventas medidas</span><span class="pc lg t"><span class="ci"><svg><use href="#i-chat"/></svg></span>Te atiendo yo</span><span class="pc lg"><span class="ci"><svg><use href="#i-insta"/></svg></span>Instagram Shopping</span><span class="pc lg"><span class="ci"><svg><use href="#i-palette"/></svg></span>Tu marca y tu dominio</span><span class="pc lg t"><span class="ci"><svg><use href="#i-rocket"/></svg></span>Abierta 24/7</span><span class="pc lg"><span class="ci"><svg><use href="#i-mega"/></svg></span>Anuncios en Meta</span><span class="pc lg"><span class="ci"><svg><use href="#i-chart"/></svg></span>Ventas medidas</span><span class="pc lg t"><span class="ci"><svg><use href="#i-chat"/></svg></span>Te atiendo yo</span><span class="pc lg"><span class="ci"><svg><use href="#i-insta"/></svg></span>Instagram Shopping</span><span class="pc lg"><span class="ci"><svg><use href="#i-palette"/></svg></span>Tu marca y tu dominio</span><span class="pc lg t"><span class="ci"><svg><use href="#i-rocket"/></svg></span>Abierta 24/7</span><span class="pc lg"><span class="ci"><svg><use href="#i-mega"/></svg></span>Anuncios en Meta</span><span class="pc lg"><span class="ci"><svg><use href="#i-chart"/></svg></span>Ventas medidas</span><span class="pc lg t"><span class="ci"><svg><use href="#i-chat"/></svg></span>Te atiendo yo</span></div></div>
+  </div>
 </section>
 
 <!-- calendario -->
-<section class="sec" id="reservar" style="padding-top:60px">
+<section class="sec" id="reservar" style="padding-top:44px">
   <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
     <h2 class="rv">Elige tu hora.<br><em>Hablamos 15&nbsp;minutos.</em></h2>
