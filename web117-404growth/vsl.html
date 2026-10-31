@@ -82,6 +82,8 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .hero .wrap{position:relative;z-index:1;max-width:1360px}
 .hero h1{font-size:clamp(36px,4.3vw,66px);line-height:1.02;letter-spacing:-.05em;margin:30px auto 0;max-width:1240px}
 .hero h1 b{font-weight:500}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;margin:26px auto 0;padding:9px 18px 9px 14px;border-radius:99px;font-size:14px;font-weight:500;color:#DDE6E2;letter-spacing:-.005em}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--t2);box-shadow:0 0 0 4px rgba(111,194,166,.2);flex:none}
 .hero h1 em,.hero h1>span{display:block;text-wrap:balance}
 .hero h1{text-wrap:wrap}
 .hero h1 b{font-weight:500}
@@ -172,10 +174,20 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .cf-dots i{width:6px;height:6px;border-radius:99px;background:rgba(255,255,255,.25);transition:width .35s,background .35s}.cf-dots i.on{width:22px;background:#fff}
 .pendnote{margin:16px auto 0;font-size:13.5px;color:var(--sand);max-width:560px}
 
-/* metodología: 15 días contados con el scroll; el móvil construye la tienda */
+/* metodología: los 15 días pasan solos; el móvil construye la tienda */
 #metodo{padding-top:110px}
-.mtrack{position:relative;height:420vh}
-.mpin{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;overflow:hidden}
+.mtrack{position:relative;margin-top:34px}
+.mpin{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px}
+.mtabs{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:4px}
+.mtab{position:relative;overflow:hidden;padding:10px 16px;border-radius:99px;border:0;cursor:pointer;font:inherit;font-size:13.5px;font-weight:500;color:var(--mute);background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);transition:background .3s,color .3s}
+.mtab:hover{color:var(--ink)}
+.mtab.on{background:#fff;color:#07100D}
+.mtab i{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--t)}
+.mtab.on i{animation:mfill var(--dur,4.5s) linear forwards}
+.mpin.paused .mtab.on i{animation-play-state:paused}
+.mpin.manual .mtab.on i{animation:none;width:100%}
+@keyframes mfill{to{width:100%}}
+.mtab:focus-visible{outline:2px solid var(--t2);outline-offset:3px}
 .mcount{display:flex;align-items:flex-end;justify-content:center;gap:10px;line-height:.8}
 .mcount small{font-family:var(--c);font-size:22px;letter-spacing:.06em;color:var(--mute);padding-bottom:8px}
 .mcount b{font-family:var(--c);font-weight:400;font-size:clamp(64px,8vh,104px);letter-spacing:-.02em;min-width:1.15em;background:linear-gradient(180deg,#fff 20%,var(--t2));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
@@ -185,7 +197,7 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .ticks i.on{background:linear-gradient(180deg,var(--t2),var(--t))}
 .ticks i.now{transform:scaleY(1.35);box-shadow:0 0 0 3px rgba(111,194,166,.25)}
 .ticks i.ms{height:28px}
-.mstage{--ph:min(540px,52vh);position:relative;width:min(820px,100%);height:var(--ph);display:flex;justify-content:center}
+.mstage{--ph:min(540px,62vh);position:relative;width:min(820px,100%);height:var(--ph);display:flex;justify-content:center}
 .phone{position:relative;height:var(--ph);aspect-ratio:9/19;padding:9px;border-radius:calc(var(--ph) * .085);z-index:2}
 .phone .scr{position:relative;width:100%;height:100%;border-radius:calc(var(--ph) * .07);overflow:hidden;background:#0B1210}
 .phone .isl{position:absolute;left:50%;top:14px;width:30%;height:16px;margin-left:-15%;border-radius:99px;background:#000;z-index:9}
@@ -254,8 +266,7 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .mt p{margin:6px 0 0;color:var(--mute);font-size:15.5px}
 .mnote{font-size:12.5px;color:var(--dim);margin:0}
 @media (max-width:900px){
- .mtrack{height:440vh}
- .mstage{--ph:min(430px,42vh);height:auto;flex-direction:column;align-items:center;gap:10px}
+ .mstage{--ph:min(440px,56vh);height:auto;flex-direction:column;align-items:center;gap:10px}
  .orbit{position:static;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:0 10px;min-height:34px}
  .oc{position:static;display:none;font-size:12.5px;padding:6px 11px 6px 6px}
  .oc.on{display:inline-flex}
@@ -322,9 +333,10 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 /* ordenador: H1, vídeo y primer botón caben en la primera pantalla */
 @media (min-width:901px){
  .top{padding-top:20px}
- .hero h1{font-size:clamp(36px,min(4.3vw,7.4vh),66px);margin-top:18px}
+ .hero h1{font-size:clamp(36px,min(4.3vw,7.4vh),66px);margin-top:16px}
+ .eyebrow{margin-top:18px}
  .stage{margin-top:30px;max-width:1140px}
- .device{max-width:min(1080px,max(560px,calc((100vh - 400px) * 16 / 9 + 24px)));padding:10px;border-radius:28px}
+ .device{max-width:min(1080px,max(560px,calc((100vh - 445px) * 16 / 9 + 24px)));padding:10px;border-radius:28px}
  .screen{border-radius:20px}
  .hero .cta{margin-top:22px;gap:12px}
 }
@@ -361,7 +373,12 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
  .btn{font-size:16px;padding-left:22px}
  .marq{margin-top:40px}
  .sec{padding-top:80px}
- .steps{flex-direction:column;align-items:center}
+ .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:16px 6px 14px;border-radius:24px;position:relative;
+  background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));box-shadow:inset 1px 1px 0 rgba(255,255,255,.3),inset -1px -1px 0 rgba(255,255,255,.08)}
+ .steps:before{content:"";position:absolute;left:17%;right:17%;top:31px;height:1px;background:linear-gradient(90deg,rgba(166,227,205,.15),rgba(166,227,205,.6),rgba(166,227,205,.15))}
+ .step.lg{flex-direction:column;gap:8px;padding:0 4px;font-size:12.5px;line-height:1.25;background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;border-radius:0;position:relative;z-index:1}
+ .step.lg:after{display:none}
+ .step b{width:30px;height:30px}
  .calw{padding:6px;border-radius:26px;margin-left:-6px;margin-right:-6px}
  .cal{min-height:960px;border-radius:20px}
  .road{grid-template-columns:1fr}.stp{min-height:0}
@@ -411,6 +428,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   <div class="beams" aria-hidden="true"></div><div class="stripes" aria-hidden="true"></div>
   <header class="top"><a class="logo" href="/" aria-label="404 Growth">404/GROWTH<sup>®</sup></a></header>
   <div class="wrap">
+    <p class="eyebrow lg"><i aria-hidden="true"></i>Solo para tiendas físicas que ya venden y quieren vender online</p>
     <h1><span>Convertimos tu tienda física en una tienda online</span> <em><b>que vende en toda España en 15&nbsp;días.</b></em></h1>
     <div class="stage">
       <div class="arc2" aria-hidden="true"></div><div class="arc" aria-hidden="true"></div>
@@ -466,7 +484,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   <div class="wrap"><p class="pendnote" id="cases-note" hidden>Vista previa: son huecos. Rellena CASES en el código con casos reales; en 404growth.com, si está vacío, esta sección no se muestra.</p></div>
 </section>
 
-<!-- metodología: 15 días con el scroll -->
+<!-- metodología: 15 días, pasan solos -->
 <section class="sec" id="metodo">
   <div class="glow" aria-hidden="true"></div>
   <div class="wrap"><h2 class="rv">De tu mostrador a toda España<br><em>en 15&nbsp;días.</em></h2></div>
@@ -500,6 +518,12 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
         <div class="mt"><h3>Días 1–5 · Tu catálogo, online</h3><p>Tú nos pasas fotos y precios. Nosotros hacemos las fichas.</p></div>
         <div class="mt"><h3>Días 6–12 · Montamos tu tienda</h3><p>Con tu marca, tus pagos y tus envíos listos.</p></div>
         <div class="mt"><h3>Día 15 · Abres. Y vendes de noche.</h3><p>Después, anuncios y mejora con datos reales.</p></div>
+      </div>
+      <div class="mtabs" role="tablist" aria-label="Los 15 días, paso a paso">
+        <button class="mtab on" type="button" role="tab" aria-selected="true">Día 1<i></i></button>
+        <button class="mtab" type="button" role="tab" aria-selected="false">Días 1–5<i></i></button>
+        <button class="mtab" type="button" role="tab" aria-selected="false">Días 6–12<i></i></button>
+        <button class="mtab" type="button" role="tab" aria-selected="false">Día 15<i></i></button>
       </div>
       <p class="mnote">* Si tu TPV lo permite. Lo revisamos en la llamada.</p>
     </div>
@@ -659,7 +683,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     addEventListener('resize',render);render();
   }
 
-  /* ---------- metodología: el scroll cuenta los 15 días ---------- */
+  /* ---------- metodología: los 15 días pasan solos (o con las pestañas) ---------- */
   (function(){
     var tr=$('mtrack');if(!tr)return;
     var ticks=$('ticks'),day=$('mday'),orb=$('orbit'),scs=[].slice.call(tr.querySelectorAll('.sc')),mts=[].slice.call(tr.querySelectorAll('.mt'));
@@ -675,12 +699,23 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     var html='';CH.forEach(function(g,s){g.forEach(function(c,k){var pos=POS[k<2?(k===0?0:3):(k===2?1:4)];if(g.length===3)pos=[POS[0],POS[3],POS[4]][k];if(g.length===4)pos=[POS[0],POS[3],POS[1],POS[4]][k];
       html+='<span class="oc lg" data-s="'+s+'" style="'+pos+';transition-delay:'+(k*.08)+'s"><span class="ci"><svg><use href="#'+c[0]+'"/></svg></span>'+c[1]+'</span>'})});
     orb.innerHTML=html;var ocs=[].slice.call(orb.children);
-    var last=-1,lastD=-1;
-    function upd(){var r=tr.getBoundingClientRect(),tot=tr.offsetHeight-innerHeight,p=Math.min(1,Math.max(0,-r.top/tot));
-      var d=Math.max(1,Math.min(15,1+Math.round(p*14))),st=d<3?0:d<6?1:d<13?2:3;
-      if(d!==lastD){lastD=d;day.textContent=d<10?'0'+d:d;tk.forEach(function(t,i){t.classList.toggle('on',i<d);t.classList.toggle('now',i===d-1)})}
-      if(st!==last){last=st;scs.forEach(function(x,i){x.classList.toggle('on',i===st)});mts.forEach(function(x,i){x.classList.toggle('on',i===st)});ocs.forEach(function(x){x.classList.toggle('on',+x.getAttribute('data-s')===st)})}}
-    addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+    var pin=tr.querySelector('.mpin'),tabs=[].slice.call(tr.querySelectorAll('.mtab'));
+    var R=[[1,1],[2,5],[6,12],[13,15]],DUR=4500,cur=-1,timer=null,anim=null,inView=false,hover=false;
+    pin.style.setProperty('--dur',DUR/1000+'s');
+    function setDay(d){day.textContent=d<10?'0'+d:d;tk.forEach(function(t,i){t.classList.toggle('on',i<d);t.classList.toggle('now',i===d-1)})}
+    function show(st){cur=st;
+      scs.forEach(function(x,i){x.classList.toggle('on',i===st)});mts.forEach(function(x,i){x.classList.toggle('on',i===st)});
+      ocs.forEach(function(x){x.classList.toggle('on',+x.getAttribute('data-s')===st)});
+      tabs.forEach(function(t,i){var on=i===st;t.classList.remove('on');t.setAttribute('aria-selected',on);if(on){void t.offsetWidth;t.classList.add('on')}});
+      cancelAnimationFrame(anim);var a=R[st][0],b=R[st][1],t0=performance.now();
+      if(RM||a===b){setDay(b)}else{(function f(now){var k=Math.min(1,(now-t0)/1400);setDay(Math.round(a+(b-a)*k));if(k<1)anim=requestAnimationFrame(f)})(t0)}}
+    function plan(){clearTimeout(timer);if(RM||!inView||hover||pin.classList.contains('manual'))return;timer=setTimeout(function(){show((cur+1)%4);plan()},DUR)}
+    tabs.forEach(function(t,i){t.addEventListener('click',function(){pin.classList.remove('manual');show(i);plan()})});
+    pin.addEventListener('mouseenter',function(){hover=true;pin.classList.add('paused');clearTimeout(timer)});
+    pin.addEventListener('mouseleave',function(){hover=false;pin.classList.remove('paused');plan()});
+    if(RM)pin.classList.add('manual');
+    show(0);
+    if('IntersectionObserver' in window){new IntersectionObserver(function(es){inView=es[0].isIntersecting;if(inView){show(cur);plan()}else clearTimeout(timer)},{threshold:.45}).observe(pin)}else{inView=true;plan()}
   })();
 
   /* ---------- píxel de Meta, solo con consentimiento ---------- */
