@@ -212,12 +212,12 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 
 /* casos: carrusel 3D */
 #casos{overflow:hidden;padding-bottom:10px}
-.cf{position:relative;height:560px;margin-top:40px;perspective:1800px;user-select:none;-webkit-user-select:none;touch-action:pan-y}
-.cf-card{position:absolute;left:50%;top:0;width:min(380px,76vw);height:520px;margin-left:calc(min(380px,76vw) / -2);will-change:transform,opacity;border-radius:30px;overflow:hidden;transition:transform .95s cubic-bezier(.32,.72,0,1),opacity .95s cubic-bezier(.32,.72,0,1);
+.cf{position:relative;height:560px;margin-top:40px;perspective:1800px;user-select:none;-webkit-user-select:none;pointer-events:none}
+.cf-card{position:absolute;left:50%;top:0;width:min(380px,76vw);height:520px;margin-left:calc(min(380px,76vw) / -2);will-change:transform,opacity;border-radius:30px;overflow:hidden;transition:transform .8s cubic-bezier(.32,.72,0,1),opacity .8s cubic-bezier(.32,.72,0,1);
  backface-visibility:hidden;-webkit-backface-visibility:hidden;contain:layout paint;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.14);text-align:left}
 .cf-card .art{position:absolute;inset:0;background-size:cover;background-position:center}
 .cf-card .lg,.lgx .cf-card .lg{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}.cf-card .info.lg{background:linear-gradient(160deg,rgba(30,40,37,.9),rgba(12,18,16,.94))}.cf-card .pill.lg{background:rgba(12,18,16,.72)}
-.cf-card .shade{position:absolute;inset:0;background:#000;opacity:0;z-index:4;pointer-events:none;transition:opacity .95s cubic-bezier(.32,.72,0,1)}
+.cf-card .shade{position:absolute;inset:0;background:#000;opacity:0;z-index:4;pointer-events:none;transition:opacity .8s cubic-bezier(.32,.72,0,1)}
 .cf-card .art svg{position:absolute;left:50%;top:34%;width:120px;height:120px;transform:translate(-50%,-50%);color:rgba(255,255,255,.22)}
 .cf-card .top2{position:absolute;left:14px;right:14px;top:14px;display:flex;justify-content:space-between;z-index:3}
 .cf-card .pill{font-size:12.5px;font-weight:500;padding:8px 13px;border-radius:99px}
@@ -334,7 +334,7 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .mt.on{opacity:1;transform:none}
 .mt h3{font-size:clamp(24px,3vw,32px);font-weight:400;letter-spacing:-.035em}
 .mt p{margin:6px 0 0;color:var(--mute);font-size:15.5px}
-.mnote{font-size:12.5px;color:var(--dim);margin:0}
+.mnote{font-size:12.5px;color:var(--dim);margin:0}.q15+.mnote{margin-top:18px}
 @media (max-width:900px){
  .mstage{--ph:min(440px,56vh);height:auto;flex-direction:column;align-items:center;gap:10px}
  .orbit{position:static;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:0 10px;min-height:34px}
@@ -415,6 +415,39 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
  .screen{border-radius:20px}
  .hero .cta{margin-top:22px;gap:12px}
 }
+
+/* v39: los 15 días de un vistazo: quién hace qué */
+.q15{display:grid;grid-template-columns:1.1fr 1fr;gap:22px;margin-top:38px;text-align:left;align-items:stretch}
+.cal15{display:flex;flex-direction:column;justify-content:center;padding:22px;border-radius:28px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));box-shadow:inset 0 0 0 1px rgba(255,255,255,.09)}
+.c15h{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;width:100%;font-size:15px}.c15h b{font-weight:600}
+.lgd{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--mute)}.lgd i{width:10px;height:10px;border-radius:3px;margin-left:8px}.lgd i.tu{background:var(--sand)}.lgd i.us{background:var(--t)}
+.g15{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.d15{position:relative;aspect-ratio:1/1;border-radius:14px;padding:8px;display:flex;flex-direction:column;justify-content:space-between;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
+ color:var(--mute);transition:background .5s ease,color .5s ease,transform .5s cubic-bezier(.32,.72,0,1),box-shadow .5s ease;transition-delay:calc(var(--i) * 110ms)}
+.d15 small{font-size:12px;font-weight:500;line-height:1}
+.d15 svg{width:20px;height:20px;opacity:0;transform:scale(.6);transition:opacity .4s,transform .5s cubic-bezier(.32,.72,0,1);transition-delay:calc(var(--i) * 110ms + 150ms)}
+.d15 span{font-size:11.5px;font-weight:600;line-height:1.1;opacity:0;transition:opacity .4s;transition-delay:calc(var(--i) * 110ms + 150ms)}
+.go15 .d15 svg{opacity:1;transform:none}.go15 .d15 span{opacity:1}
+.go15 .d15.tu{background:var(--sand);color:#1B1710}
+.go15 .d15.both{background:linear-gradient(135deg,var(--sand) 0 50%,var(--t) 50% 100%);color:#10201A}
+.go15 .d15.us{background:var(--t);color:#07231B}
+.go15 .d15.go{background:#fff;color:#07100D;transform:scale(1.06);box-shadow:0 0 0 4px rgba(255,255,255,.12),0 18px 40px -10px rgba(166,227,205,.55)}
+.who15{display:grid;gap:12px}
+.w15{position:relative;padding:20px 20px 18px;border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));box-shadow:inset 0 0 0 1px rgba(255,255,255,.09);
+ opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .7s cubic-bezier(.32,.72,0,1);transition-delay:calc(var(--i) * 350ms + 200ms)}
+.go15 .w15{opacity:1;transform:none}
+.w15 .tg{display:inline-block;font-size:12px;font-weight:600;padding:5px 10px;border-radius:99px;margin-bottom:10px}
+.w15.tu .tg{background:var(--sand);color:#1B1710}.w15.us .tg{background:var(--t);color:#07231B}.w15.go .tg{background:#fff;color:#07100D}
+.w15 h3{font-size:24px;font-weight:400;letter-spacing:-.03em;margin:0 0 8px;line-height:1.15}
+.w15 ul{list-style:none;padding:0;margin:0;color:var(--mute);font-size:15px;display:grid;gap:4px}.w15 ul b{color:var(--ink);font-weight:600}
+.w15 ul.chips{display:flex;flex-wrap:wrap;gap:6px}.w15 ul.chips li{font-size:13px;padding:6px 10px;border-radius:99px;background:rgba(111,194,166,.12);color:var(--t2)}
+.ord{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.08);font-size:13px;color:var(--mute);line-height:1.35;
+ opacity:0;transform:translateY(10px) scale(.96);transition:opacity .5s,transform .6s cubic-bezier(.34,1.56,.64,1);transition-delay:2.6s}
+.ord b{display:block;color:var(--ink);font-weight:600;font-size:14px}.ord i{flex:none;width:34px;height:34px;border-radius:9px;background:linear-gradient(150deg,var(--t2),var(--t))}
+.go15 .ord{opacity:1;transform:none}
+.w15 .ex{margin:8px 0 0;font-size:11.5px;color:var(--dim)}
+@media (max-width:820px){.q15{grid-template-columns:1fr}.cal15{padding:16px}.g15{gap:6px}.d15{border-radius:11px;padding:6px}.d15 svg{width:16px;height:16px}.d15 span{font-size:10px}}
+@media (prefers-reduced-motion:reduce){.d15,.d15 svg,.d15 span,.w15,.ord{transition:none}}
 /* barra móvil, cookies */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--bg);box-shadow:0 -1px 0 rgba(255,255,255,.06);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));transform:translate3d(0,130%,0);transition:transform .22s cubic-bezier(.4,0,1,1);will-change:transform;backface-visibility:hidden;display:none}
 .bar.on{transform:translate3d(0,0,0);transition:transform .32s cubic-bezier(.16,1,.3,1)}
@@ -603,46 +636,22 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 <!-- metodología: 15 días, pasan solos -->
 <section class="sec" id="metodo">
   <div class="glow" aria-hidden="true"></div>
-  <div class="wrap"><h2 class="rv">De tu mostrador a toda España<br><em>en 15&nbsp;días.</em></h2></div>
-  <div class="mtrack" id="mtrack">
-    <div class="mpin">
-      <div class="mcount" aria-hidden="true"><small>DÍA</small><b id="mday">1</b><span>/15</span></div>
-      <div class="ticks" id="ticks" aria-hidden="true"></div>
-      <div class="mstage">
-        <div class="phone lg">
-          <div class="scr">
-            <span class="isl"></span>
-            <div class="sc sc1 on" data-s="0"><span class="tm">Llamada · 30 min</span><div class="vt"><span class="hd"></span><em>Christian</em></div><div class="vt me2"><span class="hd"></span><em>Tú</em></div><div class="ctrl"><i></i><i class="end"></i><i></i></div></div>
-            <div class="sc sc2" data-s="1"><div class="bar2"><b>Catálogo</b><span>Tus productos</span></div><div class="grid">
-              <div class="pr" style="transition-delay:.05s"><i style="background:linear-gradient(150deg,#D8C3A5,#9C7F5E)"></i><b>Abrigo de lana</b><span>129 €</span></div>
-              <div class="pr" style="transition-delay:.15s"><i style="background:linear-gradient(150deg,#C9D3C2,#6F8467)"></i><b>Jersey punto</b><span>55 €</span></div>
-              <div class="pr" style="transition-delay:.25s"><i style="background:linear-gradient(150deg,#E2C9B9,#A86F57)"></i><b>Bolso de piel</b><span>95 €</span></div>
-              <div class="pr" style="transition-delay:.35s"><i style="background:linear-gradient(150deg,#C7CCD8,#5E6884)"></i><b>Gabardina</b><span>119 €</span></div>
-            </div><div class="up">Subiendo fotos y precios<i></i></div></div>
-            <div class="sc sc3" data-s="2"><div class="nav3"><span>☰</span><b>TU TIENDA</b><span>Cesta (1)</span></div><div class="hero3"><small>Nueva colección</small><b>Abrigos y punto<br>para el otoño</b><span>Ver novedades</span></div><div class="ship">🚚 Envíos a toda España · Recogida en tienda</div><div class="pay"><p>Pagar 129 €</p><div class="rw"><span class="ap"> Pay</span><span class="bz">Bizum</span><span>Tarjeta</span></div><div class="go3">Confirmar pedido</div></div></div>
-            <div class="sc sc4" data-s="3"><div class="clk">23:14</div><div class="dt">Domingo · tu tienda está cerrada</div>
-              <div class="nt" style="transition-delay:.1s"><i></i><span><b>Nuevo pedido · 129 €</b><span>Abrigo de lana · Envío a Bilbao</span></span></div>
-              <div class="nt" style="transition-delay:.45s"><i></i><span><b>Nuevo pedido · 55 €</b><span>Jersey punto · Recogida mañana</span></span></div>
-              <div class="nt" style="transition-delay:.8s"><i class="ig"></i><span><b>Instagram</b><span>Compraron desde tu última publicación</span></span></div>
-              <span class="ex">Ejemplo ilustrativo</span></div>
-          </div>
-        </div>
-        <div class="orbit" id="orbit"></div>
+  <div class="wrap">
+    <h2 class="rv">De tu mostrador a toda España<br><em>en 15&nbsp;días.</em></h2>
+    <p class="lead rv">Tu parte: una llamada y tus fotos. <b>Todo lo demás lo hacemos nosotros.</b></p>
+    <div class="q15" id="q15">
+      <div class="cal15" aria-hidden="true">
+        <div class="c15h"><b>Tus 15 días</b><span class="lgd"><i class="tu"></i>Tú<i class="us"></i>Nosotros</span></div>
+        <div class="g15"><div class="d15 tu" style="--i:0"><small>1</small><svg><use href="#i-chat"/></svg><span>Llamada</span></div><div class="d15 both" style="--i:1"><small>2</small><svg><use href="#i-camera"/></svg><span>Fotos</span></div><div class="d15 both" style="--i:2"><small>3</small></div><div class="d15 both" style="--i:3"><small>4</small></div><div class="d15 both" style="--i:4"><small>5</small></div><div class="d15 us" style="--i:5"><small>6</small><svg><use href="#i-palette"/></svg><span>Marca</span></div><div class="d15 us" style="--i:6"><small>7</small></div><div class="d15 us" style="--i:7"><small>8</small><svg><use href="#i-card"/></svg><span>Pagos</span></div><div class="d15 us" style="--i:8"><small>9</small></div><div class="d15 us" style="--i:9"><small>10</small><svg><use href="#i-truck"/></svg><span>Envíos</span></div><div class="d15 us" style="--i:10"><small>11</small></div><div class="d15 us" style="--i:11"><small>12</small><svg><use href="#i-sync"/></svg><span>Stock*</span></div><div class="d15 us" style="--i:12"><small>13</small></div><div class="d15 us" style="--i:13"><small>14</small></div><div class="d15 go" style="--i:14"><small>15</small><svg><use href="#i-rocket"/></svg><span>Abres</span></div></div>
       </div>
-      <div class="mtext" aria-live="polite">
-        <div class="mt on"><h3>Día 1 · Llamada de 30 min</h3><p>Me cuentas tu tienda y te enseño cómo quedaría online.</p></div>
-        <div class="mt"><h3>Días 1–5 · Tu catálogo, online</h3><p>Tú nos pasas fotos y precios. Nosotros hacemos las fichas.</p></div>
-        <div class="mt"><h3>Días 6–12 · Montamos tu tienda</h3><p>Con tu marca, tus pagos y tus envíos listos.</p></div>
-        <div class="mt"><h3>Día 15 · Abres. Y vendes de noche.</h3><p>Después, anuncios y mejora con datos reales.</p></div>
+      <div class="who15">
+        <div class="w15 tu" style="--i:1"><span class="tg">Tú</span><h3>2 cosas</h3><ul><li><b>Día 1</b> · 30 min de llamada</li><li><b>Días 2–5</b> · nos pasas fotos y precios</li></ul></div>
+        <div class="w15 us" style="--i:2"><span class="tg">Nosotros</span><h3>Todo lo demás</h3><ul class="chips"><li>Las fichas</li><li>Tu marca y dominio</li><li>Bizum y Apple Pay</li><li>Envíos a toda España</li><li>Recogida en tienda</li><li>Stock con tu TPV*</li></ul></div>
+        <div class="w15 go" style="--i:3"><span class="tg">Día 15</span><h3>Abres. Y vendes también de noche.</h3>
+          <div class="ord"><i></i><span><b>Nuevo pedido · 129 €</b>Abrigo de lana · Envío a Bilbao · 23:14</span></div><p class="ex">Ejemplo ilustrativo</p></div>
       </div>
-      <div class="mtabs" role="tablist" aria-label="Los 15 días, paso a paso">
-        <button class="mtab on" type="button" role="tab" aria-selected="true">Día 1<i></i></button>
-        <button class="mtab" type="button" role="tab" aria-selected="false">Días 1–5<i></i></button>
-        <button class="mtab" type="button" role="tab" aria-selected="false">Días 6–12<i></i></button>
-        <button class="mtab" type="button" role="tab" aria-selected="false">Día 15<i></i></button>
-      </div>
-      <p class="mnote">* Si tu TPV lo permite. Lo revisamos en la llamada.</p>
     </div>
+    <p class="mnote">* Si tu TPV lo permite. Lo revisamos en la llamada.</p>
   </div>
 </section>
 
@@ -781,7 +790,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
         '<div class="top2"><span class="pill lg dark">'+esc(c.sector)+(c.ciudad?' · '+esc(c.ciudad):'')+'</span><span class="pill lg dark">'+(i+1)+'/'+list.length+'</span></div>'+
         '<div class="info lg dark"><h3>'+esc(c.tienda)+'</h3>'+(c.d?'<p class="dd">'+esc(c.d)+'</p>':'')+(c.tags?'<div class="tgs">'+c.tags.map(function(t){return '<span>'+esc(t)+'</span>'}).join('')+'</div>':'')+(c.kpi?'<div class="kpi"><b>'+esc(c.kpi)+'</b><span>'+esc(c.kpil)+'</span></div>':'')+(c.q?'<q>'+esc(c.q)+'</q>':'')+(c.who?'<div class="who">'+esc(c.who)+'</div>':'')+'</div></article>'}).join('');
     /* v39: avanza de una en una con transiciones CSS (las mueve la GPU, no JS en cada fotograma): fluido aunque la página esté ocupada; sin degradados laterales */
-    var cards=[].slice.call(cf.children),n=cards.length,CW=0,cur=0,PREV=[],MOB=matchMedia('(max-width:560px)'),HOLD=3400,tm=null,vis=false;
+    var cards=[].slice.call(cf.children),n=cards.length,CW=0,cur=0,PREV=[],MOB=matchMedia('(max-width:560px)'),HOLD=2500,tm=null,vis=false;
     cf.insertAdjacentHTML('afterend','<div class="cf-dots" aria-hidden="true">'+cards.map(function(){return '<i></i>'}).join('')+'</div>');
     var dots=[].slice.call(cf.nextSibling.children);
     function measure(){CW=cards[0].offsetWidth}measure();
@@ -795,10 +804,6 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
       dots.forEach(function(d,i){d.classList.toggle('on',i===cur)})}
     function go(k){cur=((cur+k)%n+n)%n;render();plan()}
     function plan(){clearTimeout(tm);if(vis&&!RM&&!document.hidden)tm=setTimeout(function(){go(1)},HOLD)}
-    var sx=null,sy=0;
-    cf.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
-    cf.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;sx=null;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))go(dx<0?1:-1)},{passive:true});
-    cf.addEventListener('click',function(e){var c=e.target.closest&&e.target.closest('.cf-card');if(!c)return;var o=PREV[+c.getAttribute('data-i')];if(o)go(o>0?1:-1)});
     document.addEventListener('visibilitychange',plan);
     if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;plan()},{threshold:.2}).observe(cf);else{vis=true;plan()}
     addEventListener('resize',function(){measure();render(true)});render(true);
@@ -838,6 +843,9 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     show(0);
     if('IntersectionObserver' in window){new IntersectionObserver(function(es){inView=es[0].isIntersecting;if(inView){show(cur);plan()}else clearTimeout(timer)},{threshold:.45}).observe(pin)}else{inView=true;plan()}
   })();
+
+  (function(){var q=$('q15');if(!q)return;if(RM||!('IntersectionObserver' in window)){q.classList.add('go15');return}
+    new IntersectionObserver(function(es){var e=es[0];if(e.isIntersecting&&e.intersectionRatio>.3)q.classList.add('go15');else if(!e.isIntersecting)q.classList.remove('go15')},{threshold:[0,.3]}).observe(q)})();
 
   /* ---------- píxel de Meta, solo con consentimiento ---------- */
   var PQ=[],fbOn=false;window.__ev=[];
