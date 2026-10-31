@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Velia · Cuidado de la piel mediterráneo</title>
+<meta name="description" content="Tienda de demostración creada por 404 Growth: marca conceptual de cosmética y skincare.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F4EFE8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/demos/tienda.css">
+<style>
+/* Velia: lujo silencioso mediterráneo. Hueso, arena y arcilla; serifa editorial con mucho aire. */
+:root{--bone:#F4EFE8;--sand:#E7DDD0;--clay:#9E6649;--clay2:#94604A;--ink:#2B2522;--mute:#6A5E56;--olive:#6E7356;--line:#E1D6C8;
+--tc-bg:#FBF8F4;--tc-ink:#2B2522;--tc-mute:#6A5E56;--tc-line:#E8DFD3;--tc-acc:#2B2522;--tc-acc-ink:#FBF8F4;--tc-r:2px;--tc-ph1:#F1E8DD;--tc-ph2:#DCCBB8;
+--se:"Cormorant Garamond",Georgia,serif;--sa:Manrope,system-ui,sans-serif}
+*{box-sizing:border-box}html,body{margin:0}html{scroll-behavior:smooth}
+body{background:var(--bone);color:var(--ink);font:400 15.5px/1.6 var(--sa);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{font:inherit;color:inherit}
+.w{max-width:1280px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px))}
+.se{font-family:var(--se);font-weight:400;letter-spacing:-.01em}
+.ey{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);font-weight:600}
+h1,h2,h3{margin:0;font-family:var(--se);font-weight:400;line-height:1;letter-spacing:-.015em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;border:1px solid var(--ink);background:var(--ink);color:var(--bone);font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.out{background:transparent;color:var(--ink)}.btn.out:hover{background:var(--ink);color:var(--bone)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+
+/* barra y cabecera */
+.ann{background:var(--ink);color:#EADFD3;font-size:12px;letter-spacing:.08em;text-align:center;padding:9px 16px}
+.hd{position:sticky;top:0;z-index:40;background:rgba(244,239,232,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.hd .w{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px}
+.nav{display:flex;gap:28px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase}
+.nav a{position:relative;padding:6px 0}.nav a:after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:currentColor;transition:right .35s}
+.nav a:hover:after,.nav a.on:after{right:0}
+.logo{font-family:var(--se);font-size:34px;letter-spacing:.32em;padding-left:.32em;line-height:1}
+.hr{display:flex;justify-content:flex-end;gap:22px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase}
+.hr button{border:0;background:none;cursor:pointer;letter-spacing:inherit;text-transform:inherit;font-size:inherit;padding:6px 0}
+[data-count]{display:inline-grid;place-items:center;min-width:18px;height:18px;margin-left:4px;border-radius:9px;background:var(--clay);color:#fff;font-size:10.5px;letter-spacing:0;padding:0 5px;transform:scale(0);transition:transform .3s}
+[data-count].on{transform:none}
+
+/* héroe */
+.hero{display:grid;grid-template-columns:1fr 1.05fr;min-height:calc(100svh - 110px);border-bottom:1px solid var(--line)}
+.hero .tx{display:flex;flex-direction:column;justify-content:center;padding:60px max(20px,5vw)}
+.hero h1{font-size:clamp(56px,7.4vw,118px);line-height:.92;margin:22px 0 26px}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.hero p{max-width:420px;color:var(--mute);font-size:16.5px;margin:0 0 36px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero .facts{display:flex;gap:26px;margin-top:46px;padding-top:24px;border-top:1px solid var(--line);font-size:12.5px;color:var(--mute);flex-wrap:wrap}
+.hero .facts b{display:block;font-family:var(--se);font-size:26px;font-weight:400;color:var(--ink);line-height:1.1}
+.hero .pic{position:relative}
+.hero .pic .tc-img{position:absolute;inset:0}
+.hero .pic .tc-img img{animation:kb 18s ease-out both}
+@keyframes kb{from{transform:scale(1.08)}}
+.chip{position:absolute;left:28px;bottom:28px;display:flex;gap:14px;align-items:center;padding:14px 18px;background:rgba(251,248,244,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);font-size:13px;max-width:300px}
+.chip i{width:44px;height:44px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#fff,#E8D5C3 60%,#C9A68C)}
+
+/* secciones */
+.sec{padding:110px 0}
+.shd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:46px;flex-wrap:wrap}
+.shd h2{font-size:clamp(40px,4.6vw,64px)}.shd h2 em{font-style:italic;color:var(--clay)}
+.shd a{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid;padding-bottom:3px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 22px}
+
+/* tarjeta */
+.card{position:relative;display:flex;flex-direction:column;gap:14px}
+.card .tc-img{aspect-ratio:4/5}
+.card:hover .tc-img img{transform:scale(1.045)}
+.card .bd{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.card h3{font-size:24px;line-height:1.1}
+.card small{display:block;color:var(--mute);font-size:13px;margin-top:4px}
+.card .pr{font-weight:600;white-space:nowrap}
+.card .tag{position:absolute;top:12px;left:12px;z-index:2;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;background:var(--bone);padding:6px 10px}
+.qk{position:absolute;left:12px;right:12px;z-index:2;bottom:12px;transform:translateY(10px);opacity:0;transition:.35s}
+.card .im{position:relative;display:block}
+.card:hover .qk,.card:focus-within .qk{opacity:1;transform:none}
+.qk button{width:100%;min-height:46px;border:0;background:rgba(43,37,34,.92);color:var(--bone);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+
+/* ritual */
+.ritual{display:grid;grid-template-columns:1fr 1fr;background:var(--sand)}
+.ritual .tc-img{min-height:620px}
+.ritual .tx{padding:80px max(20px,6vw);display:flex;flex-direction:column;justify-content:center}
+.ritual h2{font-size:clamp(42px,4.8vw,70px);margin:18px 0 40px}
+.steps{display:grid;gap:0;border-top:1px solid #CDBFAE}
+.step{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;padding:22px 0;border-bottom:1px solid #CDBFAE;cursor:pointer;transition:padding .3s}
+.step:hover{padding-left:10px}
+.step .n{font-family:var(--se);font-size:40px;color:var(--clay);line-height:1}
+.step b{display:block;font-family:var(--se);font-size:26px;font-weight:400}
+.step span{color:var(--mute);font-size:14px}
+.step .arr{font-size:20px;transition:transform .3s}.step:hover .arr{transform:translateX(6px)}
+
+/* test de piel */
+.quiz{text-align:center}
+.quiz h2{font-size:clamp(40px,4.6vw,64px);margin:16px 0 30px}
+.opts{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.opt{border:1px solid var(--ink);background:transparent;padding:14px 22px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .25s,color .25s}
+.opt[aria-pressed=true],.opt:hover{background:var(--ink);color:var(--bone)}
+.rec{display:grid;grid-template-columns:220px 1fr;gap:30px;align-items:center;max-width:760px;margin:40px auto 0;padding:24px;background:#FBF8F4;text-align:left;animation:rec .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes rec{from{opacity:0;transform:translateY(12px)}}
+.rec .tc-img{aspect-ratio:1}
+.rec h3{font-size:34px;margin:8px 0 10px}
+.rec p{color:var(--mute);margin:0 0 18px}
+
+/* ingredientes */
+.ing{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ing div{padding:48px 34px;border-right:1px solid var(--line)}.ing div:last-child{border-right:0}
+.ing b{display:block;font-family:var(--se);font-weight:400;font-size:64px;line-height:1;color:var(--clay)}
+.ing h3{font-size:28px;margin:14px 0 8px}
+.ing p{margin:0;color:var(--mute)}
+
+/* reseñas */
+.rev{background:var(--ink);color:#EFE6DB}
+.rev .ey{color:#B9A897}
+.rev .shd h2 em{color:#D9A788}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.revs figure{margin:0;padding:30px;border:1px solid #4A403B}
+.revs blockquote{margin:14px 0 18px;font-family:var(--se);font-size:25px;line-height:1.25}
+.revs figcaption{font-size:13px;color:#B9A897}
+.ill{display:inline-block;margin-top:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border:1px solid #6B5E56;padding:5px 9px;color:#D7C8B9}
+
+.news{text-align:center;padding:110px 0}
+.news h2{font-size:clamp(40px,4.6vw,62px);margin:14px 0 14px}
+.news p{color:var(--mute);margin:0 0 28px}
+.news form{display:flex;max-width:460px;margin:0 auto;border-bottom:1px solid var(--ink)}
+.news input{flex:1;border:0;background:transparent;padding:14px 4px;font:inherit;outline:0;min-width:0}
+.news button{border:0;background:none;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;font-weight:600}
+.news .ok{margin-top:16px;color:var(--olive)}
+
+.ft{background:#EBE3D8;padding:70px 0 40px;font-size:14px;color:var(--mute)}
+.ft .w{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.ft .logo{color:var(--ink);font-size:28px;display:block;margin-bottom:14px}
+.ft h4{margin:0 0 12px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+.ft a{display:block;padding:3px 0}.ft a:hover{color:var(--ink)}
+.ft .cp{grid-column:1/-1;border-top:1px solid #D7CBBD;padding-top:22px;margin-top:20px;font-size:12.5px}
+
+/* tienda */
+.shop{padding:60px 0 110px}
+.shop h1{font-size:clamp(52px,6vw,90px);margin:10px 0 30px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:36px}
+.fl{display:flex;gap:8px;flex-wrap:wrap}
+.fl button{border:1px solid var(--line);background:transparent;padding:9px 16px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.fl button.on,.fl button:hover{border-color:var(--ink);background:var(--ink);color:var(--bone)}
+.bar select{border:0;background:transparent;font:inherit;font-size:13px;color:var(--mute)}
+
+/* ficha */
+.pdp{display:grid;grid-template-columns:1.15fr 1fr;gap:60px;padding:40px 0 90px;align-items:start}
+.gal{display:grid;grid-template-columns:84px 1fr;gap:14px;position:sticky;top:96px}
+.th{display:grid;gap:10px;align-content:start}
+.th button{padding:0;border:1px solid transparent;background:none;cursor:pointer;aspect-ratio:4/5;overflow:hidden}
+.th button.on{border-color:var(--ink)}
+.th .tc-img,.th img{width:100%;height:100%}
+.gal [data-main]{aspect-ratio:4/5}
+.bc{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.pi h1{font-size:clamp(46px,4.6vw,70px);margin:14px 0 10px}
+.pi .sub{color:var(--mute);font-size:16px;margin:0 0 22px}
+.pi .price{font-size:24px;font-weight:600;margin-bottom:6px}
+.pi .pay{font-size:13px;color:var(--mute);margin-bottom:28px}
+.lbl{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin:0 0 10px}
+.lbl span{color:var(--mute);font-weight:500;letter-spacing:.04em;text-transform:none;margin-left:6px}
+.vr{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.vr label{position:relative}.vr input{position:absolute;opacity:0}
+.vr span{display:block;padding:12px 18px;border:1px solid var(--line);font-size:13.5px;cursor:pointer;transition:border-color .2s}
+.vr input:checked+span{border-color:var(--ink);background:#FBF8F4}
+.vr input:focus-visible+span{outline:2px solid var(--clay);outline-offset:2px}
+.buy{display:flex;gap:10px;margin-bottom:18px}
+.qt{display:flex;align-items:center;border:1px solid var(--ink)}
+.qt button{width:44px;height:52px;border:0;background:none;cursor:pointer;font-size:18px}
+.qt span{min-width:24px;text-align:center}
+.buy .btn{flex:1}
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:26px 0;font-size:12.5px;color:var(--mute);text-align:center}
+.perks div{padding:14px 8px;border:1px solid var(--line)}
+.perks b{display:block;color:var(--ink);font-weight:600;font-size:13px}
+details{border-top:1px solid var(--line)}details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:18px 0;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;display:flex;justify-content:space-between}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:18px;font-weight:400;transition:transform .3s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{margin:0 0 20px;color:var(--mute)}
+
+@media (max-width:980px){
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .hero,.ritual,.pdp{grid-template-columns:1fr}
+ .hero .pic{min-height:70vh;order:-1}
+ .ritual .tc-img{min-height:420px}
+ .ing,.revs{grid-template-columns:1fr}.ing div{border-right:0;border-bottom:1px solid var(--line)}
+ .ft .w{grid-template-columns:1fr 1fr}
+ .gal{position:static}
+ .nav{display:none}
+ .hd .w{grid-template-columns:auto 1fr auto}.logo{order:0}.hr{grid-column:3}
+}
+@media (max-width:560px){
+ .hero .pic{min-height:56vh}.hero .tx{padding:40px 20px 50px}
+ .logo{font-size:26px}
+ .sec{padding:76px 0}.grid{gap:22px 12px}.card h3{font-size:19px}
+ .rec{grid-template-columns:1fr}
+ .gal{grid-template-columns:1fr}.th{grid-auto-flow:column;grid-template-columns:repeat(4,64px);order:2}
+ .perks{grid-template-columns:1fr}
+ .qk{opacity:1;transform:none}.qk button{min-height:38px;font-size:10.5px}
+}
+</style>
+</head>
+<body>
+<div class="ann">Envío gratis desde 50 € · Dos muestras de regalo en cada pedido</div>
+<header class="hd"><div class="w">
+  <nav class="nav" aria-label="Principal"><a href="#tienda" data-nav="all">Tienda</a><a href="#tienda/serum" data-nav="serum">Sérums</a><a href="#inicio" data-nav="home">Rituales</a></nav>
+  <a class="logo" href="#inicio" aria-label="Velia, inicio">VELIA</a>
+  <div class="hr"><button type="button" onclick="location.hash='tienda'">Buscar</button><button type="button" data-open-cart>Cesta<span data-count>0</span></button></div>
+</div></header>
+
+<main>
+<!-- inicio -->
+<div data-view="home">
+  <section class="hero">
+    <div class="tx">
+      <span class="ey">Cosmética mediterránea · Hecha en España</span>
+      <h1>La piel,<br><em>en calma.</em></h1>
+      <p>Fórmulas cortas, ingredientes que se entienden y texturas que apetece usar. Un ritual de tres pasos para pieles que piden menos ruido.</p>
+      <div class="cta"><a class="btn" href="#p/serum-calma">Descubrir el sérum</a><a class="btn out" href="#tienda">Ver todo</a></div>
+      <div class="facts"><div><b>3 pasos</b>de rutina</div><div><b>Vegano</b>sin perfume añadido</div><div><b>30 días</b>para devolverlo</div></div>
+    </div>
+    <div class="pic"><span class="tc-img" data-ph="Velia · campaña"><img src="/demos/velia/hero.webp" alt="Frasco de sérum Velia sobre piedra al sol" onerror="this.parentNode.classList.add('ph');this.remove()"></span>
+      <div class="chip"><i></i><span><b>Niacinamida 5% + ceramidas</b><br>Unifica el tono y refuerza la barrera.</span></div></div>
+  </section>
+
+  <section class="sec"><div class="w">
+    <div class="shd" data-rv><div><span class="ey">Los más queridos</span><h2>Lo esencial, <em>bien hecho</em></h2></div><a href="#tienda">Ver la colección</a></div>
+    <div class="grid" data-home-grid="serum-calma,crema-barrera,limpiador,aceite-noche"></div>
+  </div></section>
+
+  <section class="ritual">
+    <span class="tc-img" data-ph="Ritual Velia"><img src="/demos/velia/ritual.webp" alt="Manos aplicando crema junto a una ventana" loading="lazy" onerror="this.parentNode.classList.add('ph');this.remove()"></span>
+    <div class="tx" data-rv>
+      <span class="ey">El ritual</span>
+      <h2>Tres pasos.<br>Ni uno más.</h2>
+      <div class="steps">
+        <a class="step" href="#p/limpiador"><span class="n">01</span><span><b>Limpia</b><span>Gel suave de avena · mañana y noche</span></span><span class="arr">→</span></a>
+        <a class="step" href="#p/serum-calma"><span class="n">02</span><span><b>Trata</b><span>Sérum de niacinamida · unas gotas</span></span><span class="arr">→</span></a>
+        <a class="step" href="#p/crema-barrera"><span class="n">03</span><span><b>Protege</b><span>Crema barrera con ceramidas</span></span><span class="arr">→</span></a>
+      </div>
+      <div style="margin-top:34px"><button class="btn" type="button" data-add-many="limpiador,serum-calma,crema-barrera">Añadir el ritual completo</button></div>
+    </div>
+  </section>
+
+  <section class="sec quiz"><div class="w">
+    <span class="ey">Encuentra tu producto</span>
+    <h2 class="se">¿Cómo sientes tu piel hoy?</h2>
+    <div class="opts" role="group" aria-label="Tipo de piel">
+      <button class="opt" type="button" data-skin="crema-barrera" aria-pressed="false">Tirante</button>
+      <button class="opt" type="button" data-skin="serum-calma" aria-pressed="false">Con rojeces</button>
+      <button class="opt" type="button" data-skin="bruma" aria-pressed="false">Apagada</button>
+      <button class="opt" type="button" data-skin="contorno" aria-pressed="false">Cansada</button>
+    </div>
+    <div id="rec"></div>
+  </div></section>
+
+  <section class="sec" style="padding-top:0"><div class="w">
+    <div class="ing" data-rv>
+      <div><b>5%</b><h3>Niacinamida</h3><p>Para un tono más uniforme y poros menos visibles.</p></div>
+      <div><b>3</b><h3>Ceramidas</h3><p>Las mismas que tiene tu piel, para que no pierda agua.</p></div>
+      <div><b>0</b><h3>Perfumes añadidos</h3><p>Huele a lo que es. Pensado también para pieles sensibles.</p></div>
+    </div>
+  </div></section>
+
+  <section class="sec rev"><div class="w">
+    <div class="shd"><div><span class="ey">Así se verían las reseñas</span><h2>Palabras <em>de clientas</em></h2><span class="ill">Reseñas ilustrativas · contenido de ejemplo</span></div></div>
+    <div class="revs">
+      <figure data-rv><span class="tc-stars">★★★★★</span><blockquote>«Ejemplo de reseña: textura ligera, se absorbe enseguida y no deja brillo.»</blockquote><figcaption>Nombre de clienta · Piel mixta</figcaption></figure>
+      <figure data-rv><span class="tc-stars">★★★★★</span><blockquote>«Ejemplo de reseña: el ritual de tres pasos me ha simplificado la mañana.»</blockquote><figcaption>Nombre de clienta · Piel seca</figcaption></figure>
+      <figure data-rv><span class="tc-stars">★★★★☆</span><blockquote>«Ejemplo de reseña: me gusta que no lleve perfume, mi piel lo agradece.»</blockquote><figcaption>Nombre de clienta · Piel sensible</figcaption></figure>
+    </div>
+  </div></section>
+
+  <section class="news"><div class="w">
+    <span class="ey">Club Velia</span><h2>10% en tu primer pedido</h2><p>Novedades, rituales de temporada y nada de spam.</p>
+    <form onsubmit="event.preventDefault();this.nextElementSibling.hidden=false;this.reset()"><input type="email" required placeholder="Tu email" aria-label="Tu email"><button>Unirme</button></form>
+    <p class="ok" hidden>Gracias. Esto es una demo: no se ha guardado ningún email.</p>
+  </div></section>
+</div>
+
+<!-- tienda -->
+<div data-view="shop" hidden><section class="shop"><div class="w">
+  <span class="ey">Colección</span><h1>Toda la rutina</h1>
+  <div class="bar"><div class="fl"><button type="button" data-filter="">Todo</button><button type="button" data-filter="serum">Sérums</button><button type="button" data-filter="crema">Cremas</button><button type="button" data-filter="limpieza">Limpieza</button><button type="button" data-filter="ojos">Ojos</button></div>
+    <div><span data-shop-count style="font-size:13px;color:var(--mute);margin-right:16px"></span><select data-sort aria-label="Ordenar"><option value="">Destacados</option><option value="lo">Precio: de menor a mayor</option><option value="hi">Precio: de mayor a menor</option></select></div></div>
+  <div class="grid" data-grid></div>
+</div></section></div>
+
+<!-- ficha -->
+<div data-view="product" hidden><div class="w">
+  <div data-pdp></div>
+  <div class="shd" style="margin-top:20px"><div><span class="ey">Completa tu ritual</span><h2>También te <em>gustará</em></h2></div></div>
+  <div class="grid" data-related style="padding-bottom:110px"></div>
+</div></div>
+</main>
+
+<footer class="ft"><div class="w">
+  <div><span class="logo">VELIA</span><p>Cosmética mediterránea de fórmulas cortas.<br>Marca conceptual creada como demostración.</p></div>
+  <div><h4>Tienda</h4><a href="#tienda/serum">Sérums</a><a href="#tienda/crema">Cremas</a><a href="#tienda/limpieza">Limpieza</a></div>
+  <div><h4>Ayuda</h4><a href="#inicio">Envíos y devoluciones</a><a href="#inicio">Preguntas frecuentes</a><a href="#inicio">Contacto</a></div>
+  <div><h4>Síguenos</h4><a href="#inicio">Instagram</a><a href="#inicio">TikTok</a></div>
+  <div class="cp">Tienda de demostración diseñada por 404 Growth. Productos, precios e imágenes son ilustrativos.</div>
+</div></footer>
+
+<script src="/demos/tienda.js"></script>
+<script>
+(function(){
+var I='/demos/velia/';
+var PRODUCTS=[
+ {id:'serum-calma',cat:'serum',name:'Sérum Calma',short:'Niacinamida 5% + zinc',price:38,img:I+'p-serum.webp',tag:'Más vendido',vars:['30 ml','Recarga 30 ml'],
+  desc:'Un sérum ligero que unifica el tono, matifica sin resecar y calma las rojeces del día a día.',ingr:'Niacinamida 5%, PCA de zinc, extracto de centella asiática, pantenol.',use:'3–4 gotas por la mañana y por la noche, después del limpiador.'},
+ {id:'crema-barrera',cat:'crema',name:'Crema Barrera',short:'Ceramidas + escualano',price:34,img:I+'p-crema.webp',tag:'Nuevo',vars:['50 ml','Recarga 50 ml'],
+  desc:'Crema nutritiva de textura bálsamo que refuerza la barrera de la piel y la mantiene confortable todo el día.',ingr:'Ceramidas NP, AP y EOP, escualano de oliva, manteca de karité.',use:'Una avellana de producto como último paso de la rutina.'},
+ {id:'limpiador',cat:'limpieza',name:'Gel Limpiador Avena',short:'Limpieza suave, pH 5,5',price:24,img:I+'p-limpiador.webp',vars:['150 ml','300 ml'],
+  desc:'Limpia sin tirantez gracias a la avena coloidal. Retira maquillaje ligero y protector solar.',ingr:'Avena coloidal, glicerina vegetal, betaína.',use:'Masajea sobre la piel húmeda y aclara con agua tibia.'},
+ {id:'aceite-noche',cat:'crema',name:'Aceite de Noche',short:'Bakuchiol + rosa mosqueta',price:42,img:I+'p-aceite.webp',vars:['30 ml'],
+  desc:'Un aceite seco para la noche que suaviza la textura de la piel. Alternativa vegetal al retinol.',ingr:'Bakuchiol 1%, aceite de rosa mosqueta, aceite de jojoba.',use:'3 gotas por la noche, presionando con las palmas.'},
+ {id:'bruma',cat:'limpieza',name:'Bruma Tónica',short:'Agua de azahar + ácido hialurónico',price:22,img:I+'p-bruma.webp',vars:['100 ml'],
+  desc:'Hidrata y aporta luz en cualquier momento del día, también sobre el maquillaje.',ingr:'Agua de azahar, ácido hialurónico de bajo peso molecular, aloe.',use:'Pulveriza a 20 cm del rostro siempre que lo necesites.'},
+ {id:'contorno',cat:'ojos',name:'Contorno Despierta',short:'Cafeína + péptidos',price:29,img:I+'p-contorno.webp',tag:'Edición limitada',vars:['15 ml'],
+  desc:'Gel fresco para el contorno que reduce la apariencia de ojeras y bolsas desde la primera aplicación.',ingr:'Cafeína 3%, péptidos, extracto de pepino.',use:'Toques suaves con el dedo anular, de dentro hacia fuera.'}
+];
+var S=Tienda({key:'velia',name:'Velia',title:'Velia · Cuidado de la piel mediterráneo',freeShip:50,products:PRODUCTS,
+ card:function(p,T){return '<article class="card" data-rv><div class="im"><a href="#p/'+p.id+'" aria-label="'+T.esc(p.name)+'">'+(p.tag?'<span class="tag">'+T.esc(p.tag)+'</span>':'')+T.img(p.img,p.name)+'</a><div class="qk"><button type="button" data-add="'+p.id+'">Añadir · '+T.money(p.price)+'</button></div></div><a href="#p/'+p.id+'" class="bd"><span><h3>'+T.esc(p.name)+'</h3><small>'+T.esc(p.short)+'</small></span><span class="pr">'+T.money(p.price)+'</span></a></article>'},
+ pdp:function(p,T){var g=[p.img,I+'textura.webp',I+'ritual.webp'];
+  return '<div class="pdp"><div class="gal"><div class="th">'+g.map(function(s,i){return '<button type="button" data-thumb="'+s+'" class="'+(i?'':'on')+'" aria-label="Ver imagen '+(i+1)+'">'+T.img(s,p.name)+'</button>'}).join('')+'</div><div data-main>'+T.img(p.img,p.name)+'</div></div>'+
+  '<div class="pi" data-buy><span class="bc"><a href="#tienda">Tienda</a> / '+T.esc(p.short)+'</span><h1>'+T.esc(p.name)+'</h1><p class="sub">'+T.esc(p.desc)+'</p><div class="price">'+T.money(p.price)+'</div><div class="pay">O 3 pagos de '+T.money(p.price/3)+' sin intereses</div>'+
+  '<p class="lbl">Formato<span data-vlabel></span></p><div class="vr">'+p.vars.map(function(v,i){return '<label><input type="radio" name="v" value="'+T.esc(v)+'"'+(i?'':' checked')+'><span>'+T.esc(v)+'</span></label>'}).join('')+'</div>'+
+  '<div class="buy"><div class="qt"><button type="button" data-qty="-1" aria-label="Menos">−</button><span data-qv>1</span><button type="button" data-qty="1" aria-label="Más">+</button></div><button class="btn" type="button" data-add="'+p.id+'" data-and-open>Añadir a la cesta</button></div>'+
+  '<div class="perks"><div><b>Envío gratis</b>desde 50 €</div><div><b>2 muestras</b>de regalo</div><div><b>30 días</b>de devolución</div></div>'+
+  '<details open><summary>Para qué sirve</summary><p>'+T.esc(p.desc)+'</p></details><details><summary>Ingredientes clave</summary><p>'+T.esc(p.ingr)+'</p></details><details><summary>Modo de uso</summary><p>'+T.esc(p.use)+'</p></details><details><summary>Envíos y devoluciones</summary><p>Envío en 24–48 h a toda España. Devolución gratuita durante 30 días.</p></details></div></div>'}
+});
+/* test de piel */
+var rec=document.getElementById('rec');
+document.querySelectorAll('[data-skin]').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('[data-skin]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+  var p=S.T.P[b.getAttribute('data-skin')];
+  rec.innerHTML='<div class="rec">'+S.T.img(p.img,p.name)+'<div><span class="ey">Te recomendamos</span><h3>'+p.name+'</h3><p>'+p.desc+'</p><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" type="button" data-add="'+p.id+'">Añadir · '+S.T.money(p.price)+'</button><a class="btn out" href="#p/'+p.id+'">Ver ficha</a></div></div></div>';
+})});
+})();
+</script>
+</body>
+</html>

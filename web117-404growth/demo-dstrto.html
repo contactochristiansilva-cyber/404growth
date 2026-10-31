@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DSTRTO · Drop 07 Asfalto</title>
+<meta name="description" content="Tienda de demostración creada por 404 Growth: marca conceptual de ropa urbana.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B0B0B">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600&display=swap">
+<link rel="stylesheet" href="/demos/tienda.css">
+<style>
+/* DSTRTO: streetwear de lanzamiento. Asfalto negro, blanco hueso, rojo señal; tipografía enorme y grano. */
+:root{--bk:#0B0B0B;--bk2:#161616;--wh:#EDEBE6;--gr:#8C8A85;--red:#FF3B2F;--line:#2A2A2A;
+--tc-bg:#111;--tc-ink:#EDEBE6;--tc-mute:#9A9893;--tc-line:#2A2A2A;--tc-acc:#FF3B2F;--tc-acc-ink:#0B0B0B;--tc-r:0px;--tc-ph1:#2A2A2A;--tc-ph2:#151515;
+--d:"Anton",Impact,sans-serif;--b:"Barlow",system-ui,sans-serif;--c:"Barlow Condensed","Arial Narrow",sans-serif}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bk);color:var(--wh);font:400 16px/1.5 var(--b);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:70;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{font:inherit;color:inherit}
+.w{max-width:1440px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-left,0px))}
+.c{font-family:var(--c);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:13px}
+h1,h2,h3{margin:0;font-family:var(--d);font-weight:400;text-transform:uppercase;line-height:.86;letter-spacing:-.005em}
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:54px;padding:0 26px;background:var(--wh);color:var(--bk);font-family:var(--c);font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.08em;border:0;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:var(--red);color:var(--bk)}
+.btn.out{background:transparent;color:var(--wh);box-shadow:inset 0 0 0 1.5px var(--wh)}.btn.out:hover{background:var(--wh);color:var(--bk)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+.drop{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;padding:9px 16px;background:var(--red);color:var(--bk);font-family:var(--c);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:14px}
+.drop b{font-variant-numeric:tabular-nums;background:var(--bk);color:var(--red);padding:2px 8px}
+.hd{position:sticky;top:0;z-index:40;background:rgba(11,11,11,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd .w{display:flex;align-items:center;height:64px;gap:28px}
+.logo{font-family:var(--d);font-size:30px;letter-spacing:.02em;line-height:1}
+.logo i{font-style:normal;color:var(--red)}
+.nav{display:flex;gap:24px;flex:1}
+.nav a{font-family:var(--c);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:var(--gr);transition:color .2s}
+.nav a:hover,.nav a.hot{color:var(--wh)}.nav a.hot:after{content:" ●";color:var(--red)}
+.cartb{border:0;background:none;cursor:pointer;font-family:var(--c);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:14px}
+[data-count]{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-left:6px;background:var(--red);color:var(--bk);font-size:12px;padding:0 4px}
+
+/* héroe */
+.hero{position:relative;height:calc(100svh - 104px);min-height:600px;overflow:hidden;display:flex;align-items:flex-end}
+.hero .tc-img{position:absolute;inset:0}
+.hero .tc-img img{filter:contrast(1.08) saturate(.85)}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(11,11,11,.15) 30%,rgba(11,11,11,.85))}
+.hero .in{position:relative;z-index:2;width:100%;padding-bottom:40px}
+.hero .lbl{display:flex;gap:14px;margin-bottom:10px}
+.hero .lbl span{border:1px solid var(--wh);padding:4px 10px}
+.hero h1{font-size:clamp(110px,23vw,380px);letter-spacing:-.01em;line-height:.8}
+.hero h1 .o{color:transparent;-webkit-text-stroke:2px var(--wh)}
+.hero .row{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-top:22px}
+.hero p{max-width:380px;margin:0;color:#CFCDC7;font-size:17px}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap}
+
+.mq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bk)}
+.mq div{display:flex;width:max-content;animation:mq 26s linear infinite}
+.mq span{font-family:var(--d);font-size:46px;text-transform:uppercase;padding:14px 26px;white-space:nowrap}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1.2px var(--wh)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+.sec{padding:90px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:30px;flex-wrap:wrap}
+.sh h2{font-size:clamp(56px,7vw,120px)}
+.sh h2 span{color:var(--red)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line)}
+.card{position:relative;background:var(--bk);display:flex;flex-direction:column}
+.card .im{position:relative;aspect-ratio:4/5;overflow:hidden}
+.card .im .tc-img{position:absolute;inset:0}
+.card .im .b{opacity:0;transition:opacity .45s}
+.card:hover .im .b{opacity:1}
+.card .tg{position:absolute;z-index:2;left:12px;top:12px;background:var(--red);color:var(--bk);font-family:var(--c);font-weight:600;text-transform:uppercase;font-size:12.5px;letter-spacing:.06em;padding:4px 8px}
+.card .tg.low{background:var(--wh)}
+.sizes{position:absolute;z-index:2;left:0;right:0;bottom:0;display:flex;gap:2px;padding:10px;transform:translateY(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.card:hover .sizes,.card:focus-within .sizes{transform:none}
+.sizes button{flex:1;min-height:42px;border:0;background:rgba(237,235,230,.94);color:var(--bk);font-family:var(--c);font-weight:600;font-size:15px;cursor:pointer;transition:background .2s}
+.sizes button:hover{background:var(--red)}
+.sizes button.out{opacity:.35;text-decoration:line-through;pointer-events:none}
+.card .bd{display:flex;justify-content:space-between;gap:12px;padding:14px 14px 18px}
+.card h3{font-family:var(--c);font-weight:600;font-size:20px;letter-spacing:.02em;line-height:1.1}
+.card small{display:block;color:var(--gr);font-size:13.5px;margin-top:2px}
+.card .pr{font-family:var(--c);font-weight:600;font-size:20px}
+.sw{display:flex;gap:6px;margin-top:8px}.sw i{width:14px;height:14px;border:1px solid #555}
+
+.look{display:flex;gap:2px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;background:var(--line)}
+.look::-webkit-scrollbar{display:none}
+.lk{position:relative;flex:0 0 min(460px,82vw);aspect-ratio:3/4;scroll-snap-align:start;overflow:hidden;background:var(--bk2)}
+.lk .tc-img{position:absolute;inset:0}
+.lk figcaption{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;display:flex;justify-content:space-between;align-items:end}
+.lk figcaption b{font-family:var(--d);font-size:40px;font-weight:400;line-height:.9}
+.lk:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.7))}
+.lk .shop{position:relative;z-index:3;background:var(--wh);color:var(--bk);font-family:var(--c);font-weight:600;text-transform:uppercase;font-size:13px;padding:8px 12px;border:0;cursor:pointer}
+
+.manifesto{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+.manifesto>div{background:var(--bk);padding:60px max(18px,3vw)}
+.manifesto h2{font-size:clamp(54px,6vw,104px)}
+.vals{display:grid;gap:0}
+.vals div{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);font-family:var(--c);font-weight:600;text-transform:uppercase;font-size:22px;letter-spacing:.03em}
+.vals div span{color:var(--red);font-size:15px}
+
+.ugc{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line)}
+.ugc .tc-img{aspect-ratio:1}
+.ugc figure{margin:0;position:relative}
+.ugc figcaption{position:absolute;left:10px;bottom:10px;font-family:var(--c);font-weight:600;font-size:13px;background:rgba(0,0,0,.6);padding:3px 7px}
+.ill{border:1px solid var(--gr);color:var(--gr);padding:4px 9px}
+
+.join{text-align:center;padding:110px 0;border-top:1px solid var(--line)}
+.join h2{font-size:clamp(60px,9vw,150px)}
+.join h2 span{color:var(--red)}
+.join p{color:var(--gr);margin:16px 0 26px}
+.join form{display:flex;max-width:520px;margin:0 auto;border:1.5px solid var(--wh)}
+.join input{flex:1;min-width:0;border:0;background:transparent;color:var(--wh);padding:16px;font:inherit;outline:0}
+.join .ok{color:var(--red);margin-top:14px}
+.ft{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--gr);font-size:13.5px}
+.ft .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media (max-width:900px){
+ .grid{grid-template-columns:repeat(2,1fr)}.manifesto{grid-template-columns:1fr}.ugc{grid-template-columns:repeat(2,1fr)}
+ .nav{display:none}.hd .w{justify-content:space-between}
+ .sizes{transform:none;position:static;padding:8px 8px 0;background:var(--bk)}.sizes button{min-height:36px;background:var(--bk2);color:var(--wh)}
+}
+@media (max-width:560px){
+ .hero{min-height:560px}.hero h1{font-size:30vw}.hero h1 .o{-webkit-text-stroke:1.4px var(--wh)}
+ .mq span{font-size:32px}.card h3{font-size:16px}.card .pr{font-size:16px}
+ .sec{padding:64px 0}
+}
+@media (prefers-reduced-motion:reduce){.mq div{animation:none}}
+</style>
+</head>
+<body>
+<div class="drop">Drop 08 · «Hormigón» en <b id="cd">03:14:22:09</b> · Acceso anticipado con newsletter</div>
+<header class="hd"><div class="w">
+  <a class="logo" href="#inicio" aria-label="Dstrto, inicio">DSTR<i>/</i>TO</a>
+  <nav class="nav" aria-label="Principal"><a class="hot" href="#drop">Drop 07</a><a href="#drop">Sudaderas</a><a href="#drop">Camisetas</a><a href="#drop">Pantalones</a><a href="#look">Lookbook</a></nav>
+  <button class="cartb" type="button" data-open-cart>Cesta<span data-count>0</span></button>
+</div></header>
+
+<main>
+<section class="hero" id="inicio">
+  <span class="tc-img" data-ph="DSTRTO · Drop 07"><img src="/demos/dstrto/hero.webp" alt="Modelo con sudadera negra en un paso subterráneo" onerror="this.parentNode.classList.add('ph');this.remove()"></span>
+  <div class="in w">
+    <div class="lbl c"><span>Drop 07</span><span>Edición limitada · 300 uds</span></div>
+    <h1>Asfal<span class="o">to</span></h1>
+    <div class="row"><p>Algodón grueso de 450 g, cortes amplios y nada de logos gigantes. Hecho para durar más que la tendencia.</p>
+      <div class="cta"><a class="btn" href="#drop">Comprar el drop →</a><a class="btn out" href="#look">Ver lookbook</a></div></div>
+  </div>
+</section>
+<div class="mq" aria-hidden="true"><div><span>Drop 07</span><span>Asfalto</span><span>450 g</span><span>Hecho en Portugal</span><span>Unidades limitadas</span><span>Drop 07</span><span>Asfalto</span><span>450 g</span><span>Hecho en Portugal</span><span>Unidades limitadas</span></div></div>
+
+<section class="sec" id="drop"><div class="w">
+  <div class="sh" data-rv><h2>El drop<span>.</span></h2><span class="c" style="color:var(--gr)">6 piezas · Envío en 24 h · Cambios gratis</span></div>
+</div>
+  <div class="grid" data-home-grid="hoodie,cargo,tee,varsity,crew,gorra"></div>
+</section>
+
+<section id="look"><div class="w"><div class="sh" data-rv style="padding-top:20px"><h2>Look<span>book</span></h2><span class="c" style="color:var(--gr)">Desliza →</span></div></div>
+  <div class="look">
+    <figure class="lk" style="margin:0"><span class="tc-img" data-ph="Look 01"><img src="/demos/dstrto/look1.webp" alt="Look con sudadera y cargo" loading="lazy" onerror="this.parentNode.classList.add('ph');this.remove()"></span><figcaption><b>Look<br>01</b><button class="shop" type="button" data-add-many="hoodie,cargo">Comprar look</button></figcaption></figure>
+    <figure class="lk" style="margin:0"><span class="tc-img" data-ph="Look 02"><img src="/demos/dstrto/look2.webp" alt="Look con varsity y camiseta" loading="lazy" onerror="this.parentNode.classList.add('ph');this.remove()"></span><figcaption><b>Look<br>02</b><button class="shop" type="button" data-add-many="varsity,tee">Comprar look</button></figcaption></figure>
+    <figure class="lk" style="margin:0"><span class="tc-img" data-ph="Look 03"><img src="/demos/dstrto/look3.webp" alt="Look con crewneck y gorra" loading="lazy" onerror="this.parentNode.classList.add('ph');this.remove()"></span><figcaption><b>Look<br>03</b><button class="shop" type="button" data-add-many="crew,gorra">Comprar look</button></figcaption></figure>
+    <figure class="lk" style="margin:0"><span class="tc-img" data-ph="Look 04"><img src="/demos/dstrto/look4.webp" alt="Detalle de tejido y etiqueta" loading="lazy" onerror="this.parentNode.classList.add('ph');this.remove()"></span><figcaption><b>Detalle</b></figcaption></figure>
+  </div>
+</section>
+
+<section class="sec"><div class="manifesto">
+  <div data-rv><span class="c" style="color:var(--red)">Manifiesto</span><h2 style="margin-top:16px">Menos<br>prendas.<br>Mejores.</h2></div>
+  <div class="vals" data-rv>
+    <div>Algodón orgánico 450 g <span>01</span></div><div>Confección en Portugal <span>02</span></div><div>Tiradas cortas, sin restock <span>03</span></div><div>Cambios gratis 30 días <span>04</span></div>
+  </div>
+</div></section>
+
+<section><div class="w"><div class="sh"><h2 style="font-size:clamp(46px,5vw,84px)">#Distrito</h2><span class="c ill">Fotos de comunidad ilustrativas</span></div></div>
+  <div class="ugc">
+    <figure><span class="tc-img" data-ph="@usuario"><img src="/demos/dstrto/ugc1.webp" alt="" loading="lazy" onerror="this.parentNode.classList.add('ph');this.remove()"></span><figcaption>@usuario</figcaption></figure>
+    <figure><span class="tc-img" data-ph="@usuario"><img src="/demos/dstrto/ugc2.webp" alt="" loading="lazy" onerror="this.parentNode.classList.add('ph');this.remove()"></span><figcaption>@usuario</figcaption></figure>
+    <figure><span class="tc-img" data-ph="@usuario"><img src="/demos/dstrto/ugc3.webp" alt="" loading="lazy" onerror="this.parentNode.classList.add('ph');this.remove()"></span><figcaption>@usuario</figcaption></figure>
+    <figure><span class="tc-img" data-ph="@usuario"><img src="/demos/dstrto/ugc4.webp" alt="" loading="lazy" onerror="this.parentNode.classList.add('ph');this.remove()"></span><figcaption>@usuario</figcaption></figure>
+  </div>
+</section>
+
+<section class="join"><div class="w">
+  <h2>Entra antes<span>.</span></h2><p>El próximo drop abre 24 h antes para la lista.</p>
+  <form onsubmit="event.preventDefault();this.nextElementSibling.hidden=false;this.reset()"><input type="email" required placeholder="Tu email" aria-label="Tu email"><button class="btn" type="submit">Apuntarme</button></form>
+  <p class="ok" hidden>Esto es una demo: no se ha guardado ningún email.</p>
+</div></section>
+</main>
+<footer class="ft"><div class="w"><span>DSTRTO · Marca conceptual de demostración diseñada por 404 Growth</span><span>Productos, precios e imágenes ilustrativos</span></div></footer>
+
+<script src="/demos/tienda.js"></script>
+<script>
+(function(){
+var I='/demos/dstrto/';
+var P=[
+ {id:'hoodie',name:'Hoodie Asfalto',sub:'Negro lavado · 450 g',price:79,img:I+'p-hoodie.webp',img2:I+'p-hoodie-b.webp',tag:'Quedan 12',low:1,sw:['#141414','#6E6C68'],out:['XS']},
+ {id:'cargo',name:'Cargo Ruta',sub:'Gris hormigón',price:89,img:I+'p-cargo.webp',img2:I+'p-cargo-b.webp',sw:['#8C8A85','#141414'],out:[]},
+ {id:'tee',name:'Tee Oversize Distrito',sub:'Hueso · 240 g',price:35,img:I+'p-tee.webp',img2:I+'p-tee-b.webp',tag:'Nuevo',sw:['#EDEBE6','#141414'],out:['XL']},
+ {id:'varsity',name:'Varsity Señal',sub:'Negro y rojo',price:149,img:I+'p-varsity.webp',img2:I+'p-varsity-b.webp',tag:'Quedan 5',low:1,sw:['#141414','#FF3B2F'],out:['S','XL']},
+ {id:'crew',name:'Crewneck Boxy',sub:'Gris jaspeado',price:65,img:I+'p-crew.webp',img2:I+'p-crew-b.webp',sw:['#9A9893'],out:[]},
+ {id:'gorra',name:'Gorra 6 paneles',sub:'Nylon técnico',price:29,img:I+'p-gorra.webp',img2:I+'p-gorra-b.webp',sw:['#141414','#EDEBE6'],out:[],one:1}
+];
+Tienda({key:'dstrto',name:'DSTRTO',freeShip:100,products:P,
+ card:function(p,T){var sz=p.one?['Talla única']:['XS','S','M','L','XL'];
+  return '<article class="card" data-rv><div class="im">'+(p.tag?'<span class="tg'+(p.low?'':' low')+'">'+T.esc(p.tag)+'</span>':'')+T.img(p.img,p.name)+T.img(p.img2,p.name,'b')+
+  '<div class="sizes" role="group" aria-label="Añadir talla">'+sz.map(function(s){return '<button type="button" class="'+(p.out.indexOf(s)>=0?'out':'')+'" data-add="'+p.id+'" data-size="'+s+'">'+s+'</button>'}).join('')+'</div></div>'+
+  '<div class="bd"><span><h3>'+T.esc(p.name)+'</h3><small>'+T.esc(p.sub)+'</small><span class="sw">'+p.sw.map(function(c){return '<i style="background:'+c+'"></i>'}).join('')+'</span></span><span class="pr">'+T.money(p.price)+'</span></div></article>'}
+});
+/* cuenta atrás del próximo drop */
+var end=Date.now()+((3*24+14)*3600+22*60+9)*1000,cd=document.getElementById('cd');
+function tick(){var s=Math.max(0,Math.floor((end-Date.now())/1000)),dd=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=s%60;cd.textContent=[dd,h,m,x].map(function(n){return (n<10?'0':'')+n}).join(':')}
+tick();setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>

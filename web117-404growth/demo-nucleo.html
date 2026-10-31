@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NÚCLEO · Suplementación que se mide</title>
+<meta name="description" content="Tienda de demostración creada por 404 Growth: marca conceptual de suplementos y bienestar.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#EFEEE8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500;112..125,700;112..125,800;100,400;100,500;100,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/demos/tienda.css">
+<style>
+/* NÚCLEO: laboratorio deportivo. Papel técnico, rejilla negra visible, verde lima de señal y datos en mono. */
+:root{--paper:#EFEEE8;--paper2:#E4E3DB;--ink:#101010;--mute:#55554F;--lime:#D2F53C;--lime2:#B9DC22;--line:#101010;
+--tc-bg:#F6F5F0;--tc-ink:#101010;--tc-mute:#55554F;--tc-line:#D5D4CC;--tc-acc:#101010;--tc-acc-ink:#D2F53C;--tc-r:0px;--tc-ph1:#F2F1EB;--tc-ph2:#D9D8CF;
+--f:"Archivo",system-ui,sans-serif;--m:"IBM Plex Mono",ui-monospace,monospace}
+*{box-sizing:border-box}html,body{margin:0}html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--f);font-stretch:100%;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{font:inherit;color:inherit}
+.w{max-width:1360px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px))}
+.m{font-family:var(--m);font-size:12px;letter-spacing:.02em;text-transform:uppercase}
+h1,h2,h3{margin:0;font-weight:800;font-stretch:125%;letter-spacing:-.035em;line-height:.9;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-height:56px;padding:0 20px;border:2px solid var(--ink);background:var(--ink);color:var(--lime);font-family:var(--m);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.btn:hover{background:var(--lime);color:var(--ink)}.btn:active{transform:translateY(2px)}
+.btn.lt{background:var(--lime);color:var(--ink)}.btn.lt:hover{background:var(--ink);color:var(--lime)}
+.btn.out{background:transparent;color:var(--ink)}.btn.out:hover{background:var(--ink);color:var(--lime)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible+span{outline:3px solid #2F6BFF;outline-offset:2px}
+
+.hd{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:2px solid var(--line)}
+.hd .w{display:flex;align-items:stretch;height:64px}
+.logo{display:flex;align-items:center;gap:10px;padding-right:22px;border-right:2px solid var(--line);font-weight:800;font-stretch:125%;font-size:22px;letter-spacing:-.04em}
+.logo i{width:22px;height:22px;border-radius:50%;background:var(--ink);box-shadow:inset 0 0 0 6px var(--lime)}
+.nav{display:flex;flex:1}
+.nav a{display:flex;align-items:center;padding:0 20px;border-right:2px solid var(--line);font-family:var(--m);font-size:12.5px;text-transform:uppercase;transition:background .2s}
+.nav a:hover,.nav a.on{background:var(--lime)}
+.cartb{display:flex;align-items:center;gap:10px;padding:0 20px;border:0;border-left:2px solid var(--line);background:var(--ink);color:var(--lime);font-family:var(--m);font-size:12.5px;text-transform:uppercase;cursor:pointer}
+[data-count]{display:inline-grid;place-items:center;min-width:22px;height:22px;background:var(--lime);color:var(--ink);font-weight:600;padding:0 5px}
+.tick{overflow:hidden;background:var(--lime);border-bottom:2px solid var(--line);white-space:nowrap}
+.tick div{display:inline-flex;gap:40px;padding:10px 0;animation:tk 30s linear infinite}
+.tick span{font-family:var(--m);font-size:12.5px;text-transform:uppercase}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+/* héroe */
+.hero{display:grid;grid-template-columns:1.2fr 1fr;border-bottom:2px solid var(--line)}
+.hero .tx{padding:56px max(20px,3vw) 48px;border-right:2px solid var(--line);display:flex;flex-direction:column}
+.hero h1{font-size:clamp(58px,8.2vw,138px);margin:26px 0 22px}
+.hero h1 span{background:var(--lime);padding:0 .08em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero p{font-size:19px;max-width:520px;margin:0 0 30px;color:#2A2A27}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap}
+.hero .kp{display:grid;grid-template-columns:repeat(3,1fr);margin-top:auto;padding-top:46px}
+.hero .kp div{border-top:2px solid var(--line);padding-top:12px}
+.hero .kp b{display:block;font-size:42px;font-weight:800;font-stretch:125%;letter-spacing:-.04em;line-height:1}
+.hero .pic{position:relative;min-height:620px;background:var(--paper2)}
+.hero .pic .tc-img{position:absolute;inset:0}
+.lab{position:absolute;right:18px;top:18px;background:var(--paper);border:2px solid var(--line);padding:12px 14px;font-family:var(--m);font-size:12px;line-height:1.6}
+.lab b{display:block;font-size:11px;color:var(--mute);font-weight:500}
+
+/* bloques */
+.sec{border-bottom:2px solid var(--line)}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:20px;padding:46px 0 26px;flex-wrap:wrap}
+.sh h2{font-size:clamp(40px,5vw,78px)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--line);border-left:2px solid var(--line)}
+.card{position:relative;border-right:2px solid var(--line);border-bottom:2px solid var(--line);display:flex;flex-direction:column;background:var(--paper);transition:background .25s}
+.card:hover{background:#F7F6F1}
+.card .tc-img{aspect-ratio:1;background:var(--paper2)}
+.card:hover .tc-img img{transform:scale(1.05) rotate(-1deg)}
+.card .bd{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:22px;line-height:.95}
+.card .gl{font-family:var(--m);font-size:12px;color:var(--mute);text-transform:uppercase}
+.card .fr{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px}
+.card .pr{font-family:var(--m);font-size:17px;font-weight:600}
+.card .ad{width:44px;height:44px;border:2px solid var(--ink);background:var(--lime);font-size:22px;line-height:1;cursor:pointer;transition:transform .2s}
+.card .ad:hover{transform:rotate(90deg)}
+.card .tg{position:absolute;left:12px;top:12px;z-index:2;font-family:var(--m);font-size:11px;text-transform:uppercase;background:var(--ink);color:var(--lime);padding:5px 8px}
+
+/* arma tu stack */
+.stack{display:grid;grid-template-columns:1fr 1.3fr;background:var(--ink);color:var(--paper)}
+.stack .l{padding:56px max(20px,3vw);border-right:2px solid #333}
+.stack h2{font-size:clamp(44px,5vw,80px);margin:18px 0 26px}
+.stack h2 span{color:var(--lime)}
+.goals{display:grid;gap:10px}
+.goal{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border:2px solid #3A3A36;background:transparent;color:var(--paper);font-family:var(--m);font-size:14px;text-transform:uppercase;cursor:pointer;text-align:left;transition:border-color .2s,background .2s}
+.goal:hover{border-color:var(--lime)}
+.goal[aria-pressed=true]{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.stack .r{padding:56px max(20px,3vw);display:flex;flex-direction:column;gap:16px}
+.sitem{display:grid;grid-template-columns:84px 1fr auto;gap:16px;align-items:center;padding:12px;border:2px solid #2E2E2B;animation:si .45s cubic-bezier(.2,.8,.2,1) both}
+.sitem:nth-child(2){animation-delay:.08s}.sitem:nth-child(3){animation-delay:.16s}
+@keyframes si{from{opacity:0;transform:translateX(16px)}}
+.sitem .tc-img{width:84px;height:84px;background:#22221F}
+.sitem b{display:block;font-size:18px;font-stretch:115%;text-transform:uppercase}
+.sitem small{font-family:var(--m);font-size:12px;color:#A9A9A2}
+.stot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:16px;border-top:2px solid #2E2E2B;margin-top:auto}
+.stot s{color:#8A8A84;font-family:var(--m)}
+.stot b{font-family:var(--m);font-size:30px;color:var(--lime);margin-left:10px}
+
+/* por qué */
+.why{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--line)}
+.why div{padding:30px 22px;border-right:2px solid var(--line)}.why div:last-child{border-right:0}
+.why .n{font-family:var(--m);font-size:12px;color:var(--mute)}
+.why h3{font-size:26px;margin:40px 0 10px;line-height:.95}
+.why p{margin:0;color:var(--mute);font-size:15px}
+.cmp{width:100%;border-collapse:collapse;font-family:var(--m);font-size:13.5px}
+.cmp th,.cmp td{border:2px solid var(--line);padding:14px 16px;text-align:left}
+.cmp th{background:var(--ink);color:var(--paper);font-weight:500;text-transform:uppercase;font-size:12px}
+.cmp td:nth-child(2){background:var(--lime);font-weight:600}
+.cmpw{overflow-x:auto;padding:0 0 56px}
+
+.rev{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--line)}
+.rev figure{margin:0;padding:28px 22px;border-right:2px solid var(--line)}.rev figure:last-child{border-right:0}
+.rev blockquote{margin:16px 0;font-size:22px;font-weight:700;font-stretch:112%;line-height:1.15;letter-spacing:-.02em}
+.rev figcaption{font-family:var(--m);font-size:12px;color:var(--mute);text-transform:uppercase}
+.illus{display:inline-block;font-family:var(--m);font-size:11px;text-transform:uppercase;border:2px solid var(--ink);padding:4px 8px;background:var(--paper)}
+
+.ft{background:var(--ink);color:#BDBDB5;padding:56px 0 30px;font-family:var(--m);font-size:13px}
+.ft .big{font-family:var(--f);font-weight:800;font-stretch:125%;font-size:clamp(70px,15vw,230px);line-height:.8;letter-spacing:-.05em;color:var(--lime);margin:30px 0 0}
+.ft .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.ft a:hover{color:var(--lime)}
+
+/* tienda */
+.shopt{padding:40px 0 0}
+.shopt h1{font-size:clamp(58px,8vw,130px)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:20px 0}
+.fl{display:flex;flex-wrap:wrap;gap:0;border:2px solid var(--line)}
+.fl button{border:0;border-right:2px solid var(--line);background:transparent;padding:12px 16px;font-family:var(--m);font-size:12.5px;text-transform:uppercase;cursor:pointer}
+.fl button:last-child{border-right:0}
+.fl button.on,.fl button:hover{background:var(--lime)}
+.bar select{border:2px solid var(--line);background:var(--paper);font-family:var(--m);font-size:12.5px;padding:11px 12px}
+
+/* ficha */
+.pdp{display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid var(--line)}
+.gal{border-right:2px solid var(--line);position:relative}
+.gal [data-main]{aspect-ratio:1;background:var(--paper2)}
+.th{display:flex;border-top:2px solid var(--line)}
+.th button{flex:1;aspect-ratio:1;max-width:120px;padding:0;border:0;border-right:2px solid var(--line);background:var(--paper2);cursor:pointer;opacity:.6;transition:opacity .2s}
+.th button.on,.th button:hover{opacity:1}
+.pi{padding:36px max(20px,3vw) 46px}
+.pi h1{font-size:clamp(46px,5vw,84px);margin:16px 0 12px}
+.pi .gl{font-family:var(--m);font-size:13px;color:var(--mute);text-transform:uppercase;margin-bottom:18px}
+.pi p.d{font-size:17px;max-width:520px;margin:0 0 24px}
+.claim{font-family:var(--m);font-size:12px;background:var(--paper2);padding:10px 12px;border-left:4px solid var(--ink);margin:0 0 24px}
+.opt-l{font-family:var(--m);font-size:12px;text-transform:uppercase;margin:0 0 10px;color:var(--mute)}
+.opt-l b{color:var(--ink)}
+.vr{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.vr label{position:relative}.vr input{position:absolute;opacity:0}
+.vr span{display:block;padding:12px 16px;border:2px solid var(--line);font-family:var(--m);font-size:13px;cursor:pointer;background:var(--paper)}
+.vr input:checked+span{background:var(--ink);color:var(--lime)}
+.plan{display:grid;gap:10px;margin-bottom:22px}
+.plan label{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px;border:2px solid var(--line);cursor:pointer;background:var(--paper)}
+.plan input{accent-color:#101010;width:18px;height:18px}
+.plan label:has(input:checked){background:var(--lime)}
+.plan .pp{font-family:var(--m);font-weight:600}
+.plan small{display:block;font-family:var(--m);font-size:11.5px;color:var(--mute);margin-top:2px}
+.buy{display:flex;gap:10px}
+.qt{display:flex;align-items:center;border:2px solid var(--line)}
+.qt button{width:44px;height:52px;border:0;background:none;cursor:pointer;font-size:18px}
+.qt span{min-width:26px;text-align:center;font-family:var(--m)}
+.buy .btn{flex:1}
+.nf{width:100%;border-collapse:collapse;font-family:var(--m);font-size:13px;margin-top:28px;border:2px solid var(--line)}
+.nf caption{text-align:left;font-family:var(--f);font-weight:800;font-stretch:125%;text-transform:uppercase;font-size:22px;padding-bottom:10px}
+.nf th,.nf td{padding:10px 12px;border-bottom:1px solid #BDBCB4;text-align:left}
+.nf th{background:var(--ink);color:var(--paper);font-weight:500}
+.nf td:last-child,.nf th:last-child{text-align:right}
+
+@media (max-width:1000px){
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .hero,.stack,.pdp{grid-template-columns:1fr}
+ .hero .tx,.stack .l,.gal{border-right:0}
+ .hero .tx{border-bottom:2px solid var(--line)}
+ .hero .pic{min-height:420px}
+ .why,.rev{grid-template-columns:1fr 1fr}.why div:nth-child(2){border-right:0}.why div{border-bottom:2px solid var(--line)}
+ .rev figure{border-bottom:2px solid var(--line)}
+ .nav a:not(.keep){display:none}
+}
+@media (max-width:560px){
+ .logo{font-size:18px;padding-right:14px}.nav a{padding:0 12px}.cartb{padding:0 14px}
+ .hero h1{font-size:15.5vw}.hero .kp b{font-size:30px}
+ .card .bd{padding:12px}.card h3{font-size:17px}.card .ad{width:38px;height:38px}
+ .why,.rev{grid-template-columns:1fr}.why div,.rev figure{border-right:0}
+ .sitem{grid-template-columns:64px 1fr;}.sitem .tc-img{width:64px;height:64px}.sitem .pr2{grid-column:2}
+ .buy{flex-wrap:wrap}.buy .btn{min-width:100%}
+}
+@media (prefers-reduced-motion:reduce){.tick div,.sitem{animation:none}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="w">
+  <a class="logo" href="#inicio" aria-label="Núcleo, inicio"><i></i>NÚCLEO</a>
+  <nav class="nav" aria-label="Principal"><a class="keep" href="#tienda" data-nav="all">Tienda</a><a href="#tienda/rendimiento" data-nav="rendimiento">Rendimiento</a><a href="#tienda/descanso" data-nav="descanso">Descanso</a><a href="#stack">Arma tu stack</a></nav>
+  <button class="cartb" type="button" data-open-cart>Cesta <span data-count>0</span></button>
+</div></header>
+<div class="tick" aria-hidden="true"><div><span>Envío gratis desde 45 €</span><span>✕ Sin azúcares añadidos</span><span>Dosis completas, sin mezclas opacas</span><span>Suscríbete y ahorra un 15%</span><span>Envío gratis desde 45 €</span><span>✕ Sin azúcares añadidos</span><span>Dosis completas, sin mezclas opacas</span><span>Suscríbete y ahorra un 15%</span></div></div>
+
+<main>
+<div data-view="home">
+  <section class="hero">
+    <div class="tx">
+      <span class="m">Suplementación · Lote 2026/10</span>
+      <h1>Energía<br>que se <span>mide.</span></h1>
+      <p>Ingredientes con dosis completas y etiqueta clara. Nada de mezclas opacas: sabes exactamente qué tomas y cuánto.</p>
+      <div class="cta"><a class="btn lt" href="#stack">Arma tu stack <span>→</span></a><a class="btn out" href="#tienda">Ver productos <span>↗</span></a></div>
+      <div class="kp"><div><b>3 g</b><span class="m">Creatina por toma</span></div><div><b>0</b><span class="m">Azúcares añadidos</span></div><div><b>-15%</b><span class="m">Con suscripción</span></div></div>
+    </div>
+    <div class="pic"><span class="tc-img" data-ph="NÚCLEO · campaña"><img src="/demos/nucleo/hero.webp" alt="Bote de creatina Núcleo junto a una toalla y un vaso" onerror="this.parentNode.classList.add('ph');this.remove()"></span>
+      <div class="lab"><b>Ficha · Creatina</b>Monohidrato 100%<br>3 g por toma<br>100 tomas</div></div>
+  </section>
+
+  <section class="sec"><div class="w">
+    <div class="sh" data-rv><h2>Lo básico,<br>bien dosificado</h2><a class="btn out" href="#tienda">Todo el catálogo <span>→</span></a></div>
+    <div class="grid" data-home-grid="creatina,whey,magnesio,omega3" style="margin-bottom:56px"></div>
+  </div></section>
+
+  <section class="stack sec" id="stack">
+    <div class="l">
+      <span class="m" style="color:var(--lime)">Arma tu stack · 3 productos · -15%</span>
+      <h2>¿Cuál es tu <span>objetivo?</span></h2>
+      <div class="goals" role="group" aria-label="Objetivo">
+        <button class="goal" type="button" data-goal="rendimiento" aria-pressed="true">Rendimiento <span>01</span></button>
+        <button class="goal" type="button" data-goal="descanso" aria-pressed="false">Descanso y calma <span>02</span></button>
+        <button class="goal" type="button" data-goal="recuperacion" aria-pressed="false">Recuperación <span>03</span></button>
+      </div>
+    </div>
+    <div class="r" id="stackr" aria-live="polite"></div>
+  </section>
+
+  <section class="sec"><div class="w">
+    <div class="sh" data-rv><h2>Por qué<br>NÚCLEO</h2></div>
+    <div class="why" data-rv>
+      <div><span class="n">01 / Etiqueta</span><h3>Dosis a la vista</h3><p>Cada ingrediente con su cantidad exacta por toma.</p></div>
+      <div><span class="n">02 / Fórmula</span><h3>Sin relleno</h3><p>Sin azúcares añadidos ni colorantes artificiales.</p></div>
+      <div><span class="n">03 / Formato</span><h3>Fácil de tomar</h3><p>Polvo que se disuelve bien y cápsulas de tamaño normal.</p></div>
+      <div><span class="n">04 / Ahorro</span><h3>Suscripción flexible</h3><p>-15% y la cambias o la pausas cuando quieras.</p></div>
+    </div>
+    <div class="cmpw" data-rv><table class="cmp"><thead><tr><th>Lo que miramos</th><th>NÚCLEO</th><th>Lo habitual</th></tr></thead><tbody>
+      <tr><td>Dosis por ingrediente</td><td>Siempre visible</td><td>A veces «mezcla patentada»</td></tr>
+      <tr><td>Azúcares añadidos</td><td>0 g</td><td>Variable</td></tr>
+      <tr><td>Suscripción</td><td>-15%, sin permanencia</td><td>Poco común</td></tr>
+    </tbody></table></div>
+  </div></section>
+
+  <section class="sec"><div class="w">
+    <div class="sh"><h2>Reseñas</h2><span class="illus">Ilustrativas · contenido de ejemplo</span></div>
+    <div class="rev">
+      <figure data-rv><span class="tc-stars">★★★★★</span><blockquote>«Ejemplo: se disuelve sin grumos y no sabe a nada.»</blockquote><figcaption>Nombre · Creatina</figcaption></figure>
+      <figure data-rv><span class="tc-stars">★★★★★</span><blockquote>«Ejemplo: me gusta ver la dosis exacta en la etiqueta.»</blockquote><figcaption>Nombre · Magnesio</figcaption></figure>
+      <figure data-rv><span class="tc-stars">★★★★☆</span><blockquote>«Ejemplo: la suscripción me ahorra pensar en recomprar.»</blockquote><figcaption>Nombre · Stack Rendimiento</figcaption></figure>
+    </div>
+  </div></section>
+</div>
+
+<div data-view="shop" hidden><div class="w">
+  <div class="shopt"><span class="m">Catálogo completo</span><h1>Productos</h1></div>
+  <div class="bar"><div class="fl"><button type="button" data-filter="">Todo</button><button type="button" data-filter="rendimiento">Rendimiento</button><button type="button" data-filter="descanso">Descanso</button><button type="button" data-filter="salud">Salud diaria</button></div>
+    <div><span class="m" data-shop-count style="margin-right:12px"></span><select data-sort aria-label="Ordenar"><option value="">Destacados</option><option value="lo">Precio ↑</option><option value="hi">Precio ↓</option></select></div></div>
+  <div class="grid" data-grid style="margin-bottom:70px"></div>
+</div></div>
+
+<div data-view="product" hidden>
+  <div data-pdp></div>
+  <div class="w"><div class="sh"><h2>Combínalo con</h2></div><div class="grid" data-related style="margin-bottom:70px"></div></div>
+</div>
+</main>
+
+<footer class="ft"><div class="w">
+  <div class="row"><span>NÚCLEO · Marca conceptual de demostración</span><span><a href="#tienda">Tienda</a> · <a href="#stack">Stack</a> · <a href="#inicio">Ayuda</a></span></div>
+  <p style="margin:18px 0 0;max-width:640px">Los complementos alimenticios no deben utilizarse como sustituto de una dieta equilibrada y un estilo de vida saludable. Tienda de demostración diseñada por 404 Growth: productos, precios e imágenes son ilustrativos.</p>
+  <div class="big">NÚCLEO</div>
+</div></footer>
+
+<script src="/demos/tienda.js"></script>
+<script>
+(function(){
+var I='/demos/nucleo/';
+var P=[
+ {id:'creatina',cat:'rendimiento',name:'Creatina Monohidrato',gl:'300 g · 100 tomas',price:29,img:I+'p-creatina.webp',tag:'Top ventas',vars:['Sin sabor','Limón'],
+  d:'Creatina monohidrato micronizada, sin aditivos. Se disuelve en agua, zumo o en tu batido.',claim:'La creatina aumenta el rendimiento físico en series sucesivas de ejercicios breves de alta intensidad (3 g diarios).',
+  nf:[['Creatina monohidrato','3 g'],['Calorías','0 kcal']]},
+ {id:'whey',cat:'rendimiento',name:'Whey Isolate',gl:'1 kg · 33 tomas',price:44,img:I+'p-whey.webp',vars:['Cacao','Vainilla','Neutro'],
+  d:'Proteína de suero aislada, baja en lactosa, para completar tu ingesta diaria de proteína.',claim:'Las proteínas contribuyen a que aumente y se conserve la masa muscular.',
+  nf:[['Proteína','27 g'],['Hidratos de carbono','1 g'],['Grasas','0,4 g']]},
+ {id:'magnesio',cat:'descanso',name:'Magnesio Bisglicinato',gl:'120 cápsulas',price:22,img:I+'p-magnesio.webp',tag:'Nuevo',vars:['120 cáps.'],
+  d:'Magnesio en forma de bisglicinato, de buena tolerancia digestiva. Ideal por la noche.',claim:'El magnesio contribuye a disminuir el cansancio y la fatiga.',
+  nf:[['Magnesio','300 mg'],['% VRN','80%']]},
+ {id:'omega3',cat:'salud',name:'Omega-3 Ultra',gl:'90 perlas',price:27,img:I+'p-omega.webp',vars:['90 perlas'],
+  d:'Aceite de pescado concentrado y purificado, con alta proporción de EPA y DHA por perla.',claim:'El EPA y el DHA contribuyen al funcionamiento normal del corazón (250 mg diarios).',
+  nf:[['EPA','600 mg'],['DHA','400 mg']]},
+ {id:'electro',cat:'rendimiento',name:'Electrolitos',gl:'30 sobres',price:24,img:I+'p-electro.webp',vars:['Sandía','Limón y lima'],
+  d:'Sodio, potasio y magnesio en sobres individuales para tus entrenos largos y días de calor.',claim:'El potasio contribuye al funcionamiento normal de los músculos.',
+  nf:[['Sodio','500 mg'],['Potasio','200 mg'],['Magnesio','60 mg']]},
+ {id:'ashwa',cat:'descanso',name:'Ashwagandha KSM-66',gl:'60 cápsulas',price:25,img:I+'p-ashwa.webp',vars:['60 cáps.'],
+  d:'Extracto de raíz de ashwagandha estandarizado, en cápsulas vegetales.',claim:'Consulta con un profesional si estás embarazada, en lactancia o tomas medicación.',
+  nf:[['Extracto de ashwagandha','600 mg'],['Witanólidos','≥ 5%']]}
+];
+var STACK={rendimiento:['creatina','whey','electro'],descanso:['magnesio','ashwa','omega3'],recuperacion:['whey','magnesio','omega3']};
+var S=Tienda({key:'nucleo',name:'NÚCLEO',title:'NÚCLEO · Suplementación que se mide',freeShip:45,products:P,
+ card:function(p,T){return '<article class="card" data-rv>'+(p.tag?'<span class="tg">'+T.esc(p.tag)+'</span>':'')+'<a href="#p/'+p.id+'">'+T.img(p.img,p.name)+'</a><div class="bd"><span class="gl">'+T.esc(p.gl)+'</span><a href="#p/'+p.id+'"><h3>'+T.esc(p.name)+'</h3></a><div class="fr"><span class="pr">'+T.money(p.price)+'</span><button class="ad" type="button" data-add="'+p.id+'" aria-label="Añadir '+T.esc(p.name)+'">+</button></div></div></article>'},
+ pdp:function(p,T){var g=[p.img,I+'lifestyle.webp',I+'hero.webp'];
+  return '<div class="pdp"><div class="gal"><div data-main>'+T.img(p.img,p.name)+'</div><div class="th">'+g.map(function(s,i){return '<button type="button" data-thumb="'+s+'" class="'+(i?'':'on')+'" aria-label="Imagen '+(i+1)+'">'+T.img(s,'')+'</button>'}).join('')+'</div></div>'+
+  '<div class="pi" data-buy><span class="m"><a href="#tienda">Productos</a> / '+T.esc(p.cat)+'</span><h1>'+T.esc(p.name)+'</h1><div class="gl">'+T.esc(p.gl)+'</div><p class="d">'+T.esc(p.d)+'</p><p class="claim">'+T.esc(p.claim)+'</p>'+
+  '<p class="opt-l">Variante: <b data-vlabel></b></p><div class="vr">'+p.vars.map(function(v,i){return '<label><input type="radio" name="v" value="'+T.esc(v)+'"'+(i?'':' checked')+'><span>'+T.esc(v)+'</span></label>'}).join('')+'</div>'+
+  '<div class="plan"><label><span><input type="radio" name="plan" value="Suscripción -15%" checked> Suscripción mensual<small>-15% · pausa o cancela cuando quieras</small></span><span class="pp">'+T.money(p.price*.85)+'</span></label><label><span><input type="radio" name="plan" value="Compra única"> Compra única</span><span class="pp">'+T.money(p.price)+'</span></label></div>'+
+  '<div class="buy"><div class="qt"><button type="button" data-qty="-1" aria-label="Menos">−</button><span data-qv>1</span><button type="button" data-qty="1" aria-label="Más">+</button></div><button class="btn lt" type="button" data-add="'+p.id+'" data-and-open>Añadir a la cesta <span>→</span></button></div>'+
+  '<table class="nf"><caption>Información nutricional</caption><thead><tr><th>Por toma</th><th>Cantidad</th></tr></thead><tbody>'+p.nf.map(function(r){return '<tr><td>'+T.esc(r[0])+'</td><td>'+T.esc(r[1])+'</td></tr>'}).join('')+'</tbody></table></div></div>'}
+});
+var r=document.getElementById('stackr');
+function show(goal){var ids=STACK[goal],T=S.T,tot=ids.reduce(function(a,id){return a+T.P[id].price},0);
+  r.innerHTML=ids.map(function(id){var p=T.P[id];return '<div class="sitem">'+T.img(p.img,p.name)+'<div><b>'+p.name+'</b><small>'+p.gl+'</small></div><span class="m pr2">'+T.money(p.price)+'</span></div>'}).join('')+
+  '<div class="stot"><span class="m">Stack completo <s>'+T.money(tot)+'</s><b>'+T.money(tot*.85)+'</b></span><button class="btn lt" type="button" data-add-many="'+ids.join(',')+'">Añadir el stack <span>→</span></button></div>'}
+document.querySelectorAll('[data-goal]').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('[data-goal]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});show(b.getAttribute('data-goal'))})});
+show('rendimiento');
+})();
+</script>
+</body>
+</html>

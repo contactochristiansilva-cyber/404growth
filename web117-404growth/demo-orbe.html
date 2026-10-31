@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ORBE · Accesorios para tu iPhone y tu escritorio</title>
+<meta name="description" content="Tienda de demostración creada por 404 Growth: marca conceptual de accesorios tecnológicos.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F5F5F3">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
+<link rel="stylesheet" href="/demos/tienda.css">
+<style>
+/* ORBE: precisión de producto. Gris perla, blanco, grafito y un azul cobalto; bento de cristal y mucho espacio. */
+:root{--bg:#F5F5F3;--card:#FFFFFF;--ink:#16171A;--mute:#5F636B;--line:#E3E4E1;--blue:#2F55E4;--blue2:#1F40BE;--gph:#2B2D31;
+--tc-bg:#FFFFFF;--tc-ink:#16171A;--tc-mute:#5F636B;--tc-line:#E8E9E6;--tc-acc:#2F55E4;--tc-acc-ink:#fff;--tc-r:14px;--tc-ph1:#FAFAF8;--tc-ph2:#E6E7E3;
+--d:Sora,system-ui,sans-serif;--b:"DM Sans",system-ui,sans-serif}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--b);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button,select{font:inherit;color:inherit}
+.w{max-width:1240px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px))}
+h1,h2,h3{margin:0;font-family:var(--d);font-weight:600;letter-spacing:-.035em;line-height:1.02}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:99px;border:0;background:var(--blue);color:#fff;font-weight:600;font-size:15px;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--blue2)}.btn:active{transform:scale(.97)}
+.btn.gh{background:transparent;color:var(--blue)}.btn.gh:hover{background:rgba(47,85,228,.08)}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+.hd{position:sticky;top:0;z-index:40;background:rgba(245,245,243,.8);-webkit-backdrop-filter:saturate(180%) blur(18px);backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid rgba(0,0,0,.06)}
+.hd .w{display:flex;align-items:center;height:56px;gap:30px}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--d);font-weight:700;font-size:19px;letter-spacing:-.03em}
+.logo i{width:18px;height:18px;border-radius:50%;background:conic-gradient(from 210deg,#2F55E4,#9BB0FF,#16171A,#2F55E4)}
+.nav{display:flex;gap:26px;flex:1;font-size:14px;color:var(--mute)}.nav a:hover{color:var(--ink)}
+.cartb{display:flex;align-items:center;gap:6px;border:0;background:none;cursor:pointer;font-size:14px}
+[data-count]{display:inline-grid;place-items:center;min-width:19px;height:19px;border-radius:99px;background:var(--blue);color:#fff;font-size:11px;padding:0 5px;transform:scale(0);transition:transform .3s}[data-count].on{transform:none}
+.promo{text-align:center;font-size:13.5px;padding:10px 16px;color:var(--mute)}.promo a{color:var(--blue);font-weight:600}
+
+/* héroe */
+.hero{text-align:center;padding:56px 0 30px}
+.hero .nw{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--blue);background:rgba(47,85,228,.08);padding:6px 12px;border-radius:99px}
+.hero h1{font-size:clamp(46px,6.6vw,96px);margin:18px auto 14px;max-width:14ch}
+.hero h1 span{color:var(--blue)}
+.hero p{font-size:19px;color:var(--mute);max-width:560px;margin:0 auto 26px}
+.hero .cta{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.stage{position:relative;max-width:1100px;margin:30px auto 0;aspect-ratio:16/8;border-radius:32px;overflow:hidden;background:radial-gradient(70% 90% at 50% 30%,#FFFFFF,#E5E6E2)}
+.stage .tc-img{position:absolute;inset:0;background:transparent}
+.stage .tc-img img{object-fit:cover;transition:opacity .45s}
+.swatch{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:10px;align-items:center;padding:8px 14px 8px 10px;border-radius:99px;background:rgba(255,255,255,.75);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 10px 30px -12px rgba(0,0,0,.25),inset 0 0 0 1px rgba(255,255,255,.7);font-size:13.5px}
+.swatch button{width:26px;height:26px;border-radius:50%;border:0;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);transition:transform .2s}
+.swatch button[aria-pressed=true]{box-shadow:0 0 0 2px #fff,0 0 0 4px var(--ink)}
+.swatch button:hover{transform:scale(1.1)}
+.specs{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:34px 0 0}
+.specs div{text-align:center}.specs b{display:block;font-family:var(--d);font-size:30px;font-weight:600;letter-spacing:-.03em}.specs span{font-size:13.5px;color:var(--mute)}
+
+/* bento */
+.sec{padding:90px 0}
+.sh{text-align:center;margin-bottom:40px}.sh h2{font-size:clamp(36px,4.4vw,60px)}.sh p{color:var(--mute);margin:12px 0 0;font-size:17px}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.bx{position:relative;border-radius:28px;background:var(--card);overflow:hidden;padding:30px;min-height:300px;display:flex;flex-direction:column;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.bx:hover{transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(20,24,40,.25)}
+.bx h3{font-size:28px}.bx p{color:var(--mute);margin:8px 0 0;max-width:30ch}
+.bx .k{font-size:13px;font-weight:600;color:var(--blue);margin-bottom:10px}
+.b1{grid-column:span 4;min-height:420px;background:linear-gradient(160deg,#1A1C21,#2C2F37);color:#fff}.b1 p{color:#B5B9C2}
+.b2{grid-column:span 2}.b3{grid-column:span 2}.b4{grid-column:span 2}.b5{grid-column:span 2}
+.bx .tc-img{position:absolute;right:-6%;bottom:-6%;width:70%;aspect-ratio:1;background:transparent}
+.b1 .tc-img{width:56%;right:2%;bottom:0}
+.bx .tc-img img{object-fit:contain}
+.big{font-family:var(--d);font-size:84px;font-weight:600;letter-spacing:-.05em;line-height:1;margin-top:auto}
+.big small{font-size:24px;color:var(--mute);letter-spacing:-.01em}
+.ring{margin-top:auto;width:120px;height:120px;border-radius:50%;background:conic-gradient(var(--blue) 0 72%,#E8E9E6 72%);display:grid;place-items:center;position:relative}
+.ring:after{content:"72%";color:var(--ink);position:absolute;inset:12px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:var(--d);font-weight:600;font-size:22px}
+
+/* compatibilidad */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;background:var(--card);border-radius:32px;padding:44px}
+.cmp h2{font-size:clamp(32px,3.6vw,48px)}.cmp p{color:var(--mute)}
+.sel{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.sel select{flex:1;min-width:200px;height:52px;border-radius:14px;border:1px solid var(--line);background:#F7F7F5;padding:0 14px;font-size:15px}
+.res{min-height:160px;border-radius:22px;background:var(--bg);padding:24px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.res .ok{display:flex;align-items:center;gap:10px;font-weight:600}
+.res .ok i{width:26px;height:26px;border-radius:50%;background:#1DB36B;color:#fff;font-style:normal;display:grid;place-items:center;font-size:14px}
+.res ul{margin:0;padding:0;list-style:none;display:flex;gap:8px;flex-wrap:wrap}
+.res li{font-size:13.5px;background:#fff;border:1px solid var(--line);padding:6px 10px;border-radius:99px}
+
+/* productos */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--card);border-radius:24px;padding:16px;display:flex;flex-direction:column;transition:box-shadow .4s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.card:hover{box-shadow:0 30px 60px -30px rgba(20,24,40,.3);transform:translateY(-3px)}
+.card .tc-img{aspect-ratio:1;border-radius:16px;background:radial-gradient(80% 80% at 50% 40%,#FBFBFA,#ECEDE9)}
+.card .tc-img img{object-fit:contain;padding:8%}
+.card:hover .tc-img img{transform:scale(1.05)}
+.card .tp{display:flex;justify-content:space-between;align-items:center;margin:14px 4px 0}
+.card .nw2{font-size:12px;font-weight:600;color:var(--blue)}
+.card .dots{display:flex;gap:5px}.card .dots i{width:12px;height:12px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.card h3{font-size:20px;margin:6px 4px 2px}
+.card p{margin:0 4px;color:var(--mute);font-size:14px}
+.card .bt{display:flex;justify-content:space-between;align-items:center;margin:16px 4px 2px}
+.card .pr{font-family:var(--d);font-weight:600;font-size:18px}
+.card .pr s{color:var(--mute);font-weight:400;font-size:14px;margin-left:6px}
+.card .btn{min-height:40px;padding:0 16px;font-size:14px}
+
+.kit{display:grid;grid-template-columns:1.1fr 1fr;border-radius:32px;overflow:hidden;background:linear-gradient(135deg,#1A1C21,#2C2F37);color:#fff}
+.kit .tc-img{min-height:420px;background:#24262c}
+.kit .tx{padding:50px}
+.kit h2{font-size:clamp(34px,3.8vw,52px);margin:10px 0 14px}
+.kit p{color:#B5B9C2}
+.kit ul{list-style:none;padding:0;margin:20px 0;display:grid;gap:10px}
+.kit li{display:flex;justify-content:space-between;border-bottom:1px solid #3A3D45;padding-bottom:10px;font-size:15px}
+.kit .tot{display:flex;align-items:baseline;gap:12px;margin-bottom:20px}
+.kit .tot b{font-family:var(--d);font-size:40px}.kit .tot s{color:#B5B9C2}
+.kit .sv{background:#1DB36B;color:#fff;font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:99px}
+
+.rv2{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rv2 figure{margin:0;background:var(--card);border-radius:24px;padding:26px}
+.rv2 blockquote{margin:12px 0 16px;font-family:var(--d);font-size:19px;font-weight:500;letter-spacing:-.02em;line-height:1.35}
+.rv2 figcaption{font-size:13.5px;color:var(--mute)}
+.tagi{display:inline-block;font-size:12px;font-weight:600;color:var(--mute);background:#EAEBE8;padding:5px 10px;border-radius:99px;margin-top:12px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:50px 0}
+.trust div{text-align:center;font-size:14px;color:var(--mute)}.trust b{display:block;color:var(--ink);font-family:var(--d);font-weight:600;font-size:16px;margin-bottom:2px}
+.ft{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--mute);font-size:13.5px}
+.ft .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media (max-width:960px){
+ .bento{grid-template-columns:repeat(2,1fr)}.b1,.b2,.b3,.b4,.b5{grid-column:span 2}.b2,.b3,.b4,.b5{grid-column:span 1}
+ .grid{grid-template-columns:repeat(2,1fr)}.cmp,.kit{grid-template-columns:1fr}.rv2{grid-template-columns:1fr}
+ .trust{grid-template-columns:repeat(2,1fr)}.nav{display:none}.hd .w{justify-content:space-between}
+}
+@media (max-width:560px){
+ .stage{aspect-ratio:4/5;border-radius:24px}.specs{gap:20px}.specs b{font-size:24px}
+ .b2,.b3,.b4,.b5{grid-column:span 2}.bx{min-height:240px}
+ .grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:10px;border-radius:18px}.card h3{font-size:16px}.card p{display:none}.card .bt{flex-direction:column;align-items:flex-start;gap:8px}.card .btn{width:100%}
+ .cmp,.kit .tx{padding:28px}
+}
+</style>
+</head>
+<body>
+<header class="hd"><div class="w">
+  <a class="logo" href="#inicio" aria-label="Orbe, inicio"><i></i>orbe</a>
+  <nav class="nav" aria-label="Principal"><a href="#productos">Carga</a><a href="#productos">Fundas</a><a href="#productos">Escritorio</a><a href="#compat">Compatibilidad</a></nav>
+  <button class="cartb" type="button" data-open-cart>Cesta<span data-count>0</span></button>
+</div></header>
+<div class="promo">Envío gratis en 24 h desde 39 € · 2 años de garantía · <a href="#kit">Ahorra 25 € con el Kit Escritorio ›</a></div>
+
+<main>
+<section class="hero" id="inicio"><div class="w">
+  <span class="nw">● Nuevo · Estación Trío</span>
+  <h1>Todo cargado. <span>Nada de cables.</span></h1>
+  <p>Carga tu iPhone, tu reloj y tus auriculares a la vez, en una sola pieza de aluminio que queda bien en cualquier mesa.</p>
+  <div class="cta"><button class="btn" type="button" data-add="trio" data-and-open>Comprar · 89 €</button><a class="btn gh" href="#productos">Ver accesorios ›</a></div>
+  <div class="stage">
+    <span class="tc-img" data-ph="Estación Trío"><img id="hero-img" src="/demos/orbe/hero-grafito.webp" alt="Estación de carga Orbe Trío en grafito sobre un escritorio" onerror="this.parentNode.classList.add('ph');this.remove()"></span>
+    <div class="swatch" role="group" aria-label="Color"><span>Color</span>
+      <button type="button" aria-label="Grafito" aria-pressed="true" style="background:#2B2D31" data-hero="grafito"></button>
+      <button type="button" aria-label="Arena" aria-pressed="false" style="background:#D9D2C5" data-hero="arena"></button>
+      <button type="button" aria-label="Azul" aria-pressed="false" style="background:#3D5BC9" data-hero="azul"></button></div>
+  </div>
+  <div class="specs"><div><b>15 W</b><span>carga MagSafe</span></div><div><b>3 en 1</b><span>iPhone, reloj, auriculares</span></div><div><b>Aluminio</b><span>reciclado</span></div><div><b>2 años</b><span>de garantía</span></div></div>
+</div></section>
+
+<section class="sec" style="padding-top:60px"><div class="w">
+  <div class="sh" data-rv><h2>Pensado al milímetro.</h2><p>Lo que no ves también importa.</p></div>
+  <div class="bento">
+    <div class="bx b1" data-rv><span class="k">Carga rápida</span><h3>De 0 a 50% en 30 minutos.</h3><p>Con el cargador GaN de 65 W, que además carga tu portátil.</p><div class="big">65<small> W</small></div><span class="tc-img" data-ph="Cargador GaN"><img src="/demos/orbe/p-gan.webp" alt="" loading="lazy" onerror="this.parentNode.classList.add('ph');this.remove()"></span></div>
+    <div class="bx b2" data-rv><span class="k">Batería</span><h3>Un día extra.</h3><p>Power bank magnético de 10.000 mAh.</p><div class="ring" aria-label="72% de carga"></div></div>
+    <div class="bx b3" data-rv><span class="k">Materiales</span><h3>Cuero de verdad.</h3><p>Fundas que cogen pátina con el tiempo.</p><span class="tc-img" data-ph="Funda de cuero"><img src="/demos/orbe/p-funda.webp" alt="" loading="lazy" onerror="this.parentNode.classList.add('ph');this.remove()"></span></div>
+    <div class="bx b4" data-rv><span class="k">Resistencia</span><h3>20.000 dobleces.</h3><p>Cable USB-C trenzado de 2 m.</p></div>
+    <div class="bx b5" data-rv><span class="k">Escritorio</span><h3>Pantalla a la altura de tus ojos.</h3><p>Soporte de aluminio plegable.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" id="compat" style="padding-top:0"><div class="w"><div class="cmp" data-rv>
+  <div><h2>¿Es compatible con mi móvil?</h2><p>Elige tu modelo y te decimos qué accesorios encajan.</p>
+    <div class="sel"><select id="model" aria-label="Tu modelo de móvil"><option value="">Elige tu modelo</option><option>iPhone 16 Pro</option><option>iPhone 16</option><option>iPhone 15</option><option>iPhone 14</option><option>iPhone 13</option><option value="android">Android con carga Qi2</option></select></div></div>
+  <div class="res" id="res" aria-live="polite"><span style="color:var(--mute)">Aquí verás los accesorios compatibles.</span></div>
+</div></div></section>
+
+<section class="sec" id="productos" style="padding-top:0"><div class="w">
+  <div class="sh" data-rv><h2>Accesorios</h2><p>Envío en 24 h · Devolución en 30 días</p></div>
+  <div class="grid" data-home-grid="trio,funda,power,gan,cable,soporte"></div>
+</div></section>
+
+<section class="sec" id="kit" style="padding-top:0"><div class="w"><div class="kit" data-rv>
+  <span class="tc-img" data-ph="Kit Escritorio"><img src="/demos/orbe/desk.webp" alt="Escritorio con soporte, estación de carga y cargador Orbe" loading="lazy" onerror="this.parentNode.classList.add('ph');this.remove()"></span>
+  <div class="tx"><span class="sv">Ahorras 25 €</span><h2>Kit Escritorio</h2><p>Lo esencial para una mesa ordenada, en un solo pedido.</p>
+    <ul><li><span>Estación Trío</span><span>89 €</span></li><li><span>Soporte de aluminio</span><span>45 €</span></li><li><span>Cargador GaN 65 W</span><span>39 €</span></li></ul>
+    <div class="tot"><b>148 €</b><s>173 €</s></div><button class="btn" type="button" data-add-many="trio,soporte,gan">Añadir el kit</button></div>
+</div></div></section>
+
+<section class="sec" style="padding-top:0"><div class="w">
+  <div class="sh"><h2>Opiniones</h2><span class="tagi">Reseñas ilustrativas · contenido de ejemplo</span></div>
+  <div class="rv2">
+    <figure data-rv><span class="tc-stars">★★★★★</span><blockquote>«Ejemplo: por fin una sola base para todo en la mesilla.»</blockquote><figcaption>Nombre · Estación Trío</figcaption></figure>
+    <figure data-rv><span class="tc-stars">★★★★★</span><blockquote>«Ejemplo: el cuero envejece muy bonito.»</blockquote><figcaption>Nombre · Funda de cuero</figcaption></figure>
+    <figure data-rv><span class="tc-stars">★★★★☆</span><blockquote>«Ejemplo: carga el portátil y el móvil con un solo enchufe.»</blockquote><figcaption>Nombre · Cargador GaN</figcaption></figure>
+  </div>
+  <div class="trust"><div><b>Envío 24 h</b>desde 39 €</div><div><b>2 años</b>de garantía</div><div><b>30 días</b>para devolverlo</div><div><b>Pago seguro</b>Tarjeta, Bizum, Apple Pay</div></div>
+</div></section>
+</main>
+<footer class="ft"><div class="w"><span>orbe · Marca conceptual de demostración diseñada por 404 Growth</span><span>Productos, precios e imágenes ilustrativos</span></div></footer>
+
+<script src="/demos/tienda.js"></script>
+<script>
+(function(){
+var I='/demos/orbe/';
+var P=[
+ {id:'trio',name:'Estación Trío',d:'iPhone, reloj y auriculares a la vez.',price:89,img:I+'p-trio.webp',nw:'Nuevo',dots:['#2B2D31','#D9D2C5','#3D5BC9'],fits:['iPhone','Android']},
+ {id:'funda',name:'Funda de cuero MagSafe',d:'Cuero curtido vegetal, con imanes.',price:49,img:I+'p-funda.webp',dots:['#6B3E26','#1E1E1E','#3B4A3A'],fits:['iPhone']},
+ {id:'power',name:'Power Bank 10.000 mAh',d:'Magnético, se engancha a tu móvil.',price:59,img:I+'p-power.webp',dots:['#2B2D31','#F0EFEA'],fits:['iPhone','Android']},
+ {id:'gan',name:'Cargador GaN 65 W',d:'Dos USB-C para móvil y portátil.',price:39,was:49,img:I+'p-gan.webp',nw:'-20%',dots:['#F0EFEA'],fits:['iPhone','Android']},
+ {id:'cable',name:'Cable USB-C trenzado 2 m',d:'Carga y datos, 60 W.',price:19,img:I+'p-cable.webp',dots:['#2B2D31','#D9D2C5'],fits:['iPhone','Android']},
+ {id:'soporte',name:'Soporte de aluminio',d:'Para portátil, plegable.',price:45,img:I+'p-soporte.webp',dots:['#B9BBBE','#2B2D31'],fits:['iPhone','Android']}
+];
+var S=Tienda({key:'orbe',name:'orbe',freeShip:39,products:P,
+ card:function(p,T){return '<article class="card" data-rv>'+T.img(p.img,p.name)+'<div class="tp"><span class="nw2">'+(p.nw||'')+'</span><span class="dots">'+p.dots.map(function(c){return '<i style="background:'+c+'"></i>'}).join('')+'</span></div><h3>'+T.esc(p.name)+'</h3><p>'+T.esc(p.d)+'</p><div class="bt"><span class="pr">'+T.money(p.price)+(p.was?'<s>'+T.money(p.was)+'</s>':'')+'</span><button class="btn" type="button" data-add="'+p.id+'">Añadir</button></div></article>'}
+});
+/* colores del héroe */
+document.querySelectorAll('[data-hero]').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('[data-hero]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+  var im=document.getElementById('hero-img');if(im){im.style.opacity=0;setTimeout(function(){im.src=I+'hero-'+b.getAttribute('data-hero')+'.webp';im.style.opacity=1},200)}})});
+/* compatibilidad */
+document.getElementById('model').addEventListener('change',function(){var v=this.value,res=document.getElementById('res');
+  if(!v){res.innerHTML='<span style="color:var(--mute)">Aquí verás los accesorios compatibles.</span>';return}
+  var k=v==='android'?'Android':'iPhone',ok=P.filter(function(p){return p.fits.indexOf(k)>=0});
+  res.innerHTML='<span class="ok"><i>✓</i>'+ok.length+' accesorios compatibles con '+(v==='android'?'tu Android con Qi2':v)+'</span><ul>'+ok.map(function(p){return '<li>'+p.name+'</li>'}).join('')+'</ul>'+(k==='Android'?'<small style="color:var(--mute)">La funda de cuero MagSafe es solo para iPhone.</small>':'')});
+})();
+</script>
+</body>
+</html>
