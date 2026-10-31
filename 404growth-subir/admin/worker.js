@@ -1634,6 +1634,10 @@ async function adminApi(req, env, me, p, ctx) {
   }
   if (p === "obra" || p.startsWith("obra/")) return obraAdmin(req, env, p);   // v25: the build portals
   if (p === "llam" || p.startsWith("llam/")) return llAdmin(req, env, p);
+  if (p === "google/cfg" && m === "POST") { const b = await body(req); if (!b) return bad("body"); const c = await gCfg(env);   // v38
+    if (typeof b.cid === "string" && b.cid.trim()) c.cid = b.cid.trim().slice(0, 200);
+    if (typeof b.csec === "string" && b.csec.trim()) { const sv = await seal(env, b.csec.trim().slice(0, 200), "gsecret"); if (!sv) return bad("seal", 500); c.csec = sv; }
+    await setMeta(env, "g_cfg", JSON.stringify(c)); return json({ ok: true }); }
   if (p === "land" || p.startsWith("land/")) return landAdmin(req, env, p);   // v37: the metrics of /book   // v28: the funnel of /llamada
   if (p === "kit" && m === "GET") return json(await kitAll(env));
   if (p === "kit" && m === "POST") return kitAdd(req, env, null);
@@ -3134,14 +3138,111 @@ function vslMail(l, whenTxt, join, gcal, resched) {
     '<tr><td style="padding:18px 28px 0"><div style="background:#EEF5F2;border-radius:14px;padding:18px 20px">' +
     '<div style="font-size:13px;color:#5B6762">Cuándo</div><div style="font-size:18px;font-weight:700">' + vslEsc(whenTxt.charAt(0).toUpperCase() + whenTxt.slice(1)) + ' (hora de España)</div>' +
     '<div style="font-size:13px;color:#5B6762;margin-top:10px">Dónde</div><div style="font-size:16px;font-weight:600">' + (join ? '<a href="' + vslEsc(join) + '" style="color:#1F6B54">Google Meet · entrar a la llamada</a>' : "Google Meet · te llega el enlace en la invitación del calendario") + "</div>" +
-    '<div style="font-size:13px;color:#5B6762;margin-top:10px">Duración</div><div style="font-size:16px;font-weight:600">15 minutos</div></div></td></tr>' +
+    '<div style="font-size:13px;color:#5B6762;margin-top:10px">Duración</div><div style="font-size:16px;font-weight:600">' + GB_DUR + ' minutos</div></div></td></tr>' +
     '<tr><td style="padding:22px 28px 0;font-size:15.5px;line-height:1.6">En la llamada me cuentas tu tienda, te enseño cómo quedaría online con tu catálogo y te doy precio y plazos cerrados. Para aprovecharla, ten a mano tu web o tu Instagram, más o menos cuántos productos tienes y qué TPV usas.</td></tr>' +
     '<tr><td style="padding:22px 28px 0">' + btn(gcal, "Añadir a Google Calendar", true) + " &nbsp; " + (join ? btn(join, "Enlace de Meet", false) : "") + "</td></tr>" +
     '<tr><td style="padding:22px 28px 30px;font-size:14px;line-height:1.6;color:#5B6762">¿Te surge algo? ' + (resched ? '<a href="' + vslEsc(resched) + '" style="color:#1F6B54">Cambia la hora aquí</a> o contesta' : "Contesta") + " a este email y lo movemos. También te escribo por WhatsApp para confirmar.<br><br>Un abrazo,<br><b style=\"color:#0C1412\">Christian</b></td></tr>" +
     '</table><div style="font-size:12px;color:#8A9590;padding:16px">404 Growth · hola@404growth.com</div></td></tr></table></body></html>';
-  const text = "Hecho, " + l.name.split(" ")[0] + ". Tu llamada con Christian (404 Growth) está reservada.\n\nCuándo: " + whenTxt + " (hora de España)\nDónde: " + (join || "Google Meet (enlace en la invitación)") + "\nDuración: 15 minutos\n\nAñadir a Google Calendar: " + gcal + "\n" + (resched ? "Cambiar la hora: " + resched + "\n" : "") + "\nUn abrazo,\nChristian\nhola@404growth.com";
+  const text = "Hecho, " + l.name.split(" ")[0] + ". Tu llamada con Christian (404 Growth) está reservada.\n\nCuándo: " + whenTxt + " (hora de España)\nDónde: " + (join || "Google Meet (enlace en la invitación)") + "\nDuración: " + GB_DUR + " minutos\n\nAñadir a Google Calendar: " + gcal + "\n" + (resched ? "Cambiar la hora: " + resched + "\n" : "") + "\nUn abrazo,\nChristian\nhola@404growth.com";
   return { html, text };
 }
+
+/* ---------- v38 (31 oct 2026): la agenda de /book es la del admin ----------
+   Huecos: L–V de 9:00 a 20:00 (hora de España), llamadas de 30 min cada 30 min, quitando lo ocupado en el calendario del admin y en
+   Google Calendar (freeBusy). Al reservar: evento en Google Calendar con su Meet e invitación al lead (Google la envía) y el mismo
+   evento en el calendario del admin. Calendly ya no se usa para reservar. Google se conecta una vez en /admin/google. */
+const GB_DUR = 30, GB_STEP = 30, GB_FROM = 9 * 60, GB_TO = 20 * 60, GB_DAYS = 14;
+const G_SCOPE = "openid email https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/calendar.freebusy";
+const gCb = (env) => (env.DEV ? "http://localhost:8790" : SITE) + "/admin/google/cb";
+async function gCfg(env) { return parse(await getMeta(env, "g_cfg"), {}); }
+async function gTok(env) {
+  const s = await getMeta(env, "g_tok"); if (!s) return null;
+  const t = parse(await unseal(env, s, "google"), null); if (!t || !t.rt) return null;
+  if (!t.at || t.exp - Date.now() < 120000) {
+    const c = await gCfg(env), sec = c.csec ? await unseal(env, c.csec, "gsecret") : "";
+    const r = await fetch("https://oauth2.googleapis.com/token", { method: "POST", headers: { "content-type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ client_id: c.cid || "", client_secret: sec || "", refresh_token: t.rt, grant_type: "refresh_token" }) });
+    const j = await r.json().catch(() => ({}));
+    if (!j.access_token) { const e = new Error("gauth: " + (j.error_description || j.error || r.status)); e.code = "gauth"; throw e; }
+    t.at = j.access_token; t.exp = Date.now() + (Number(j.expires_in) || 3600) * 1000;
+    await setMeta(env, "g_tok", await seal(env, JSON.stringify(t), "google"));
+  }
+  return t;
+}
+async function gApi(t, path, opt) {
+  const r = await fetch("https://www.googleapis.com/calendar/v3" + path, Object.assign({}, opt || {}, { headers: { authorization: "Bearer " + t.at, "content-type": "application/json" } }));
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) { const e = new Error("google: " + ((j.error && j.error.message) || r.status)); e.code = "google"; throw e; }
+  return j;
+}
+async function gbSlots(env, fresh) {
+  const now = Date.now();
+  if (!fresh) { const c = parse(await getMeta(env, "gb_slots"), null); if (c && now - c.at < 60000) return c.slots; }
+  const C = CalCore, tz = CAL_TZ, busy = await calBusy(env, tz), today = C.now(tz).slice(0, 10), min = now + 2 * 3600000;
+  let gb = [];
+  try { const t = await gTok(env); if (t) { const r = await gApi(t, "/freeBusy", { method: "POST", body: JSON.stringify({ timeMin: new Date(now).toISOString(), timeMax: new Date(now + (GB_DAYS + 2) * 864e5).toISOString(), items: [{ id: "primary" }] }) }); gb = (((r.calendars || {}).primary || {}).busy || []).map((x) => [Date.parse(x.start), Date.parse(x.end)]); } } catch (e) { gb = []; }
+  const out = [];
+  for (let i = 0; i <= GB_DAYS; i++) {
+    const d = C.addDays(today, i), wd = new Date(d + "T12:00:00Z").getUTCDay(); if (wd === 0 || wd === 6) continue;
+    const bz = busy.get(d) || [];
+    for (let m = GB_FROM; m + GB_DUR <= GB_TO; m += GB_STEP) {
+      if (bz.some(([a, b]) => m < b && m + GB_DUR > a)) continue;
+      const s = C.toUTC(d + "T" + C.hm(m), tz), e = s + GB_DUR * 60000;
+      if (s < min || gb.some(([a, b]) => a < e && b > s)) continue;
+      out.push(new Date(s).toISOString());
+    }
+  }
+  await setMeta(env, "gb_slots", JSON.stringify({ at: now, slots: out }));
+  return out;
+}
+/* the event in Google (with Meet; Google sends the invitation) and in the admin calendar */
+async function gbCreate(env, o) {
+  const t = await gTok(env); if (!t) { const e = new Error("nogoogle"); e.code = "nogoogle"; throw e; }
+  const ev = await gApi(t, "/calendars/primary/events?conferenceDataVersion=1&sendUpdates=all", { method: "POST", body: JSON.stringify({
+    summary: "Llamada 404 Growth · " + o.biz, description: o.notes,
+    start: { dateTime: new Date(o.s).toISOString(), timeZone: CAL_TZ }, end: { dateTime: new Date(o.e).toISOString(), timeZone: CAL_TZ },
+    attendees: [{ email: o.email, displayName: o.name }], guestsCanModify: false,
+    conferenceData: { createRequest: { requestId: rid("m").slice(0, 30), conferenceSolutionKey: { type: "hangoutsMeet" } } } }) });
+  const vid = ((ev.conferenceData || {}).entryPoints || []).find((x) => x.entryPointType === "video");
+  const join = ev.hangoutLink || (vid && vid.uri) || "";
+  const now = Date.now(), C = CalCore, id = "gb" + String(ev.id || rid("e")).replace(/[^A-Za-z0-9]/g, "").slice(0, 30);
+  await calIns(env, id, { title: "Llamada · " + o.name + " (" + o.biz + ")", start: C.fromUTC(o.s, CAL_TZ), end: C.fromUTC(o.e, CAL_TZ), allday: 0, tz: CAL_TZ, color: null, place: join ? "Google Meet" : null, link: join || ev.htmlLink || null, notes: o.notes, rep: null, until: null, exc: null, remind: 10, busy: 1 }, now, now).run();
+  await setMeta(env, "gb_slots", "");
+  return { id: ev.id || "", html: ev.htmlLink || "", join };
+}
+/* /admin/google: connect the Google account once (OAuth with offline access) */
+async function gPage(req, env, url, p) {
+  const c = await gCfg(env), back = "/admin/google";
+  if (p === "google/start") {
+    if (!c.cid || !c.csec) return go(back);
+    const st = rid("g"); await setMeta(env, "g_state", JSON.stringify({ st, ts: Date.now() }));
+    return go("https://accounts.google.com/o/oauth2/v2/auth?" + new URLSearchParams({ client_id: c.cid, redirect_uri: gCb(env), response_type: "code", scope: G_SCOPE, access_type: "offline", prompt: "consent", include_granted_scopes: "true", state: st }));
+  }
+  if (p === "google/cb") {
+    const s = parse(await getMeta(env, "g_state"), null); await setMeta(env, "g_state", "");
+    const fail = async (t) => { await setMeta(env, "g_err", JSON.stringify({ t, ts: Date.now() })); return go(back); };
+    if (!s || s.st !== url.searchParams.get("state") || Date.now() - s.ts > 900000) return fail("La conexión ha caducado. Vuelve a darle a Conectar.");
+    const code = url.searchParams.get("code"); if (!code) return fail(url.searchParams.get("error") || "Cancelaste la conexión.");
+    const sec = await unseal(env, c.csec, "gsecret");
+    const r = await fetch("https://oauth2.googleapis.com/token", { method: "POST", headers: { "content-type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ code, client_id: c.cid, client_secret: sec || "", redirect_uri: gCb(env), grant_type: "authorization_code" }) });
+    const j = await r.json().catch(() => ({}));
+    if (!j.refresh_token) return fail("Google no dio acceso permanente: " + (j.error_description || j.error || "sin refresh token") + ". Vuelve a conectar.");
+    let email = ""; try { email = JSON.parse(atob(String(j.id_token || "").split(".")[1].replace(/-/g, "+").replace(/_/g, "/"))).email || ""; } catch (e) {}
+    await setMeta(env, "g_tok", await seal(env, JSON.stringify({ rt: j.refresh_token, at: j.access_token, exp: Date.now() + (Number(j.expires_in) || 3600) * 1000, email, ts: Date.now() }), "google"));
+    await setMeta(env, "g_err", ""); await setMeta(env, "gb_slots", "");
+    return go(back);
+  }
+  const t = parse(await unseal(env, await getMeta(env, "g_tok"), "google"), null), err = parse(await getMeta(env, "g_err"), null);
+  const E = (x) => String(x == null ? "" : x).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
+  const h = '<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Google Calendar · 404 Growth</title><style>:root{--bg:#F4F5F8;--surface:#fff;--ink:#1F232A;--mute:#5F6878;--line:#E1E5EC;--accent:#3F6B57}body{margin:0;background:var(--bg);color:var(--ink);font:500 15px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif}.w{max-width:760px;margin:0 auto;padding:28px 18px 60px}.c{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:16px}h1{font-size:24px;margin:0 0 4px}p{margin:6px 0;color:var(--mute)}ol{padding-left:20px}li{margin:6px 0}code{background:#EEF1F4;padding:2px 6px;border-radius:6px;word-break:break-all}input{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:6px 0}.b{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:99px;padding:10px 18px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer}.ok{color:#157F4F;font-weight:700}.bad{color:#B4322F;font-weight:700}</style></head><body><div class="w">' +
+    '<h1>Agenda de /book · Google Calendar</h1><p>Las reservas de 404growth.com/book se guardan en el calendario del admin y en tu Google Calendar, con su enlace de Meet. Google envía la invitación al cliente.</p>' +
+    (err ? '<div class="c"><span class="bad">No se pudo conectar.</span><p>' + E(err.t) + "</p></div>" : "") +
+    '<div class="c">' + (t ? '<span class="ok">Conectado' + (t.email ? " como " + E(t.email) : "") + '.</span><p>Huecos: lunes a viernes de 9:00 a 20:00, llamadas de 30 minutos, quitando lo que ya tengas en el admin o en Google.</p><p><a class="b" href="/admin/google/start">Volver a conectar</a></p>'
+      : '<b>Conectar Google (una vez)</b><ol><li>En <a href="https://console.cloud.google.com/projectcreate" target="_blank" rel="noopener">Google Cloud</a> crea un proyecto «404 Growth».</li><li>Activa la <a href="https://console.cloud.google.com/apis/library/calendar-json.googleapis.com" target="_blank" rel="noopener">Google Calendar API</a>.</li><li>En <b>Pantalla de consentimiento OAuth</b>: tipo «Interno» si tu correo es de Google Workspace; si no, «Externo» y luego <b>Publicar la aplicación</b> (en modo de prueba el acceso caduca a los 7 días).</li><li>En <b>Credenciales → Crear credenciales → ID de cliente de OAuth → Aplicación web</b>, añade como URI de redirección: <code>' + E(gCb(env)) + '</code></li><li>Pega aquí el ID de cliente y el secreto, guarda y pulsa Conectar.</li></ol>') +
+    '<form id="f" style="margin-top:12px"><input name="cid" placeholder="' + (c.cid ? "ID de cliente guardado: " + E(c.cid.slice(0, 18)) + "…" : "ID de cliente (…apps.googleusercontent.com)") + '" autocomplete="off" data-lpignore="true"><input name="csec" type="password" autocomplete="new-password" data-lpignore="true" placeholder="' + (c.csec ? "Secreto guardado" : "Secreto del cliente") + '"><button class="b" type="submit">Guardar</button> ' + (c.cid && c.csec ? '<a class="b" href="/admin/google/start">Conectar Google</a>' : "") + "</form></div>" +
+    '<p style="margin-top:18px"><a href="/admin#calendario">Volver al calendario del admin</a></p></div><script>document.getElementById("f").onsubmit=function(e){e.preventDefault();var o={};[].forEach.call(this.elements,function(x){if(x.name&&x.value.trim())o[x.name]=x.value.trim()});fetch("/admin/api/google/cfg",{method:"POST",headers:{"content-type":"application/json","x-404":"1"},body:JSON.stringify(o)}).then(function(r){location.reload()})}</script></body></html>';
+  return page(h);
+}
+
 async function vslBook(req, env, b, k) {
   const now = Date.now(), DBq = env.DB;
   const name = str(b.name, 80), email = str(b.email, 160).toLowerCase(), phone = str(b.phone, 24).replace(/[^\d+]/g, ""), biz = str(b.biz, 140);
@@ -3150,21 +3251,12 @@ async function vslBook(req, env, b, k) {
   const ih = (await sha("l404ip|" + (req.headers.get("cf-connecting-ip") || "local"))).slice(0, 22);
   const many = await DBq.prepare("SELECT COUNT(*) AS n FROM ll WHERE ih = ?1 AND ts > ?2").bind(ih, now - 3600000).first();
   if (many && many.n >= 5) return bad("slow", 429);
-  let slots; try { slots = await vslSlots(env, true); } catch (e) { return json({ error: "nocal" }, 503); }
+  let slots; try { slots = await gbSlots(env, true); } catch (e) { return json({ error: "nocal" }, 503); }
   const startMs = Date.parse(start); if (!slots.some((x) => Date.parse(x) === startMs)) return json({ error: "taken", slots: slots }, 409);
   const utm = llUtm(b.utm), tel = phone.charAt(0) === "+" ? phone : "+34" + phone.replace(/^0034/, "");
-  const st = await clyState(env);
-  let inv;
-  try {
-    inv = await clyFetch(env, st.tok, "/invitees", { method: "POST", body: JSON.stringify({
-      event_type: VSL_ET, start_time: start, location: { kind: "google_conference" },
-      invitee: { name: name, email: email, timezone: tz },
-      questions_and_answers: [{ question: "Cuéntenos algo que nos ayude a prepararnos para la reunión.", answer: "Tienda: " + biz + " · Vende: " + VSL_SEC[sec] + " · Inversión: " + VSL_BUD[bud] + " · WhatsApp: " + tel, position: 0 }],
-      tracking: { utm_source: utm.utm_source || "404growth.com", utm_medium: utm.utm_medium || "vsl", utm_campaign: utm.utm_campaign || "vsl-tiendas", utm_content: utm.utm_content || null, utm_term: utm.utm_term || null, salesforce_uuid: null } }) });
-  } catch (e) { return json({ error: e.code === "clyplan" ? "plan" : "book", detail: e.detail || "" }, 502); }
-  const r0 = inv.resource || inv, evUri = str(r0.event, 200), invUri = str(r0.uri, 200), resched = okUrl(r0.reschedule_url) ? r0.reschedule_url : "";
-  let join = "", end = startMs + 15 * 60000;
-  try { const ev = await clyFetch(env, st.tok, evUri); const e2 = ev.resource || {}; if (e2.end_time) end = Date.parse(e2.end_time); if (e2.location && okUrl(e2.location.join_url)) join = e2.location.join_url; } catch (e) {}
+  const notes = "Tienda: " + biz + "\nVende: " + VSL_SEC[sec] + "\nInversión: " + VSL_BUD[bud] + "\nWhatsApp: " + tel + "\nEmail: " + email + "\nReservada en 404growth.com/book";
+  let g; try { g = await gbCreate(env, { s: startMs, e: startMs + GB_DUR * 60000, name, email, biz, notes }); } catch (e) { return json({ error: e.code === "nogoogle" ? "nocal" : "book", detail: String(e.message || "").slice(0, 160) }, 502); }
+  const evUri = g.html, invUri = g.id, resched = "", join = g.join, end = startMs + GB_DUR * 60000;
   let vis = null; if (k) vis = await DBq.prepare("SELECT n, src FROM lv WHERE k = ?1").bind(k).first();
   const n = llNiche(b.n) || (vis && vis.n) || "tienda", src = vis ? vis.src : llSrc(utm, "");
   const fit = bud === "b0" ? 0 : 1, grade = bud === "b3" || bud === "b2" ? "A" : bud === "b1" || bud === "b4" ? "B" : "C";
@@ -3181,7 +3273,7 @@ async function vslBook(req, env, b, k) {
     const m = vslMail({ name }, whenTxt, join, gcal, resched), ics = vslIcs(id, startMs, end, name, join);
     try {
       const rr = await fetch((env.MAILAPI || "https://api.resend.com") + "/emails", { method: "POST", headers: { authorization: "Bearer " + key, "content-type": "application/json" },
-        body: JSON.stringify({ from: VSL_FROM, to: [email], reply_to: VSL_REPLY, subject: "Tu llamada con Christian · " + whenTxt, html: m.html, text: m.text, attachments: [{ filename: "llamada-404growth.ics", content: btoa(unescape(encodeURIComponent(ics))) }] }) });
+        body: JSON.stringify({ from: VSL_FROM, to: [email], reply_to: VSL_REPLY, subject: "Tu llamada con Christian · " + whenTxt, html: m.html, text: m.text }) });   // v38: the calendar invitation comes from Google
       mailed = rr.ok ? 1 : 0;
     } catch (e) {}
     if (mailed) await DBq.prepare("UPDATE ll SET mailed = 1 WHERE id = ?1").bind(id).run();
@@ -3236,7 +3328,7 @@ async function llPublic(req, env, p) {
       const col = { cv: "cv", cd: "cd", ct: "ct" }[b.s]; if (k && col) await DBq.prepare("UPDATE lv SET " + col + " = 1, last = ?2 WHERE k = ?1").bind(k, now).run(); return json({ ok: true });
     }
     if (p === "e") return landEvents(env, b, k, now);                                      // v37: the events of /book
-    if (p === "slots") { try { return json({ tz: CAL_TZ, slots: await vslSlots(env, false) }); } catch (e) { return json({ error: "nocal", slots: [] }, 503); } }
+    if (p === "slots") { try { return json({ tz: CAL_TZ, dur: GB_DUR, slots: await gbSlots(env, false) }); } catch (e) { return json({ error: "nocal", slots: [] }, 503); } }
     if (p === "book") return vslBook(req, env, b, k);
     if (p === "f") {
       const name = str(b.name, 80), email = str(b.email, 160).toLowerCase(), phone = str(b.phone, 24).replace(/[^\d+]/g, ""), biz = str(b.biz, 140);
@@ -3640,6 +3732,7 @@ async function route(req, env, ctx) {
     if (p === "crm") return page(shell(pwa(PAGES.crm)));
     if (p.startsWith("social/")) return socOauth(req, env, url, p.slice(7));   // v35: Instagram and LinkedIn connections
     if (p === "llamadas") return go("/admin");
+    if (p === "google" || p.startsWith("google/")) return gPage(req, env, url, p);   // v38: Google Calendar for /book
     if (p === "landing") return page(shell(pwa(PAGES.landing)));   // v37: the metrics of /book   // v32: la landing /llamada ya no existe; su embudo se quita del admin
     const ob = /^obra(?:\/(c_[A-Za-z0-9_-]{6,20}))?$/.exec(p);   // v25: the build portals, as the team
     if (ob) return obPage({ admin: true, cid: ob[1] || "" });
