@@ -827,8 +827,8 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     fbq('init',PIXEL);PQ.splice(0).forEach(function(a){fbq(a[0],a[1],a[2])})}
   var CK='c404meta',ck=null;try{ck=localStorage.getItem(CK)}catch(e){}
   if(PIXEL){if(ck==='1')fbLoad();else if(ck!=='0'){var box=$('ck');box.hidden=false;
-    $('ck-yes').onclick=function(){try{localStorage.setItem(CK,'1')}catch(e){}box.hidden=true;fbLoad()};
-    $('ck-no').onclick=function(){try{localStorage.setItem(CK,'0')}catch(e){}box.hidden=true;PQ.length=0}}}
+    $('ck-yes').onclick=function(){try{localStorage.setItem(CK,'1')}catch(e){}box.hidden=true;fbLoad();ev('ck','si',0)};
+    $('ck-no').onclick=function(){try{localStorage.setItem(CK,'0')}catch(e){}box.hidden=true;PQ.length=0;ev('ck','no',0)}}}
   px('PageView');
 
   /* ---------- el vídeo ---------- */
@@ -837,11 +837,18 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     v.setAttribute('aria-label','Vídeo de Christian: cómo tu tienda física puede vender online');
     var dev=$('vsl');dev.style.setProperty('--ar',VSL.ratio||'16/9');if(VSL.ratio==='9/16')dev.style.maxWidth='min(100%,430px)';
     var sc=$('screen');sc.innerHTML='';sc.appendChild(v);
-    var played=false,marks={};
-    v.addEventListener('play',function(){if(!played){played=true;px('VSLPlay',{},true)}});
-    v.addEventListener('timeupdate',function(){if(!v.duration)return;var p=v.currentTime/v.duration*100;
-      [25,50,75,95].forEach(function(m){if(p>=m&&!marks[m]){marks[m]=1;px(m===50?'ViewContent':'VSL'+m,{content_name:'VSL '+m+'%'},m!==50)}})});
-  }else{$('slot').addEventListener('click',function(){$('vsl-msg').hidden=false})}
+    var played=false,marks={},lastT=0,wasMuted=v.muted;
+    v.addEventListener('play',function(){VS.plays++;ev('vplay','',Math.round(v.currentTime));if(!played){played=true;px('VSLPlay',{},true)}});
+    v.addEventListener('pause',function(){if(!v.ended)ev('vpause','',Math.round(v.currentTime))});
+    v.addEventListener('ended',function(){VS.end=1;VS.max=100;ev('vend','',Math.round(v.duration||0));ping()});
+    v.addEventListener('seeked',function(){if(Math.abs(v.currentTime-lastT)>2)ev('vseek',Math.round(lastT)+'>'+Math.round(v.currentTime),Math.round(v.currentTime))});
+    v.addEventListener('volumechange',function(){if(v.muted!==wasMuted){wasMuted=v.muted;if(!v.muted)VS.unm=1;ev('vmute',v.muted?'on':'off',Math.round(v.currentTime))}});
+    v.addEventListener('ratechange',function(){ev('vrate',String(v.playbackRate),Math.round(v.currentTime))});
+    d.addEventListener('fullscreenchange',function(){if(d.fullscreenElement)ev('vfs','',Math.round(v.currentTime))});
+    v.addEventListener('timeupdate',function(){if(!v.duration)return;var t=v.currentTime,dt=t-lastT;if(dt>0&&dt<1.5&&!v.paused)VS.secs+=dt;lastT=t;VS.dur=Math.round(v.duration);
+      var p=t/v.duration*100;if(p>VS.max)VS.max=Math.min(100,Math.round(p));
+      [10,25,50,75,95].forEach(function(m){if(p>=m&&!marks[m]){marks[m]=1;ev('vq','',m);if(m!==10)px(m===50?'ViewContent':'VSL'+m,{content_name:'VSL '+m+'%'},m!==50)}})});
+  }else{$('slot').addEventListener('click',function(){$('vsl-msg').hidden=false;ev('vtap','sin vídeo',0)})}
 
   /* ---------- clics en los botones ---------- */
   d.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(!a)return;px('ClicCTA',{content_name:a.getAttribute('data-cta')},true)});
@@ -855,24 +862,37 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   function post(path,b,beacon){if(!LIVE)return Promise.resolve(null);var t=JSON.stringify(b);
     if(beacon&&navigator.sendBeacon){try{if(navigator.sendBeacon(API+path,new Blob([t],{type:'application/json'})))return Promise.resolve(null)}catch(e){}}
     return fetch(API+path,{method:'POST',body:t,keepalive:!!beacon,headers:{'content-type':'application/json'}}).then(function(r){return r.json().then(function(j){j.__s=r.status;return j})}).catch(function(){return null})}
-  var key=null,seen=0,since=0,depth=0,sent='',QUE=[];
+  var key=null,seen=0,since=0,depth=0,sent='',QUE=[],VS={plays:0,max:0,secs:0,dur:0,end:0,unm:0},EVQ=[],T0=Date.now(),SECN='inicio',SECT=Date.now(),SX={},FQ=0,RET=0;
+  try{RET=localStorage.getItem('c404seen')?1:0;localStorage.setItem('c404seen','1')}catch(e){}
+  /* eventos: cada cosa que hace la visita (vídeo, secciones, botones, calendario, formulario, dudas, WhatsApp, salida) */
+  function ev(e,a,v){if(!LIVE||EVQ.length>200)return;EVQ.push([e,String(a==null?'':a).slice(0,80),Math.round(+v||0),Date.now()-T0]);if(/^(vplay|vend|cta|wa|bk|bkerr|ck)$/.test(e))flush()}
+  function flush(){if(!key||!EVQ.length)return;post('e',{k:key,ev:EVQ.splice(0,40)},true);if(EVQ.length)flush()}
+  function secTick(){var n=Date.now();SX[SECN]=(SX[SECN]||0)+Math.round((n-SECT)/1000);SECT=n}
   function clock(){var now=Date.now();if(since)seen+=now-since;since=d.visibilityState==='visible'?now:0}
-  function ping(){clock();if(!key)return;var b={k:key,s:Math.round(seen/1000),d:depth,vp:0,vm:0,vs:0};var j=JSON.stringify(b);if(j===sent)return;sent=j;post('p',b,true)}
+  function ping(){clock();if(!key)return;if(d.visibilityState==='visible')secTick();else SECT=Date.now();flush();
+    var b={k:key,s:Math.round(seen/1000),d:depth,vp:VS.plays?1:0,vm:VS.max,vs:Math.round(VS.secs),vn:VS.plays,ve:VS.end,vd:VS.dur,vu:VS.unm,sec:SECN,sx:SX,fq:FQ};var j=JSON.stringify(b);if(j===sent)return;sent=j;post('p',b,true)}
   function send(path,b){if(key){b.k=key;post(path,b,true)}else QUE.push([path,b])}
   function open(){if(key!==null)return;key='';['scroll','pointerdown','touchstart','keydown'].forEach(function(e){removeEventListener(e,open,true)});
-    post('h',{n:N||'tienda',utm:UTM,ref:(d.referrer||'').slice(0,200),w:innerWidth}).then(function(j){key=(j&&j.k)||'';if(key){QUE.splice(0).forEach(function(x){x[1].k=key;post(x[0],x[1],true)});ping()}})}
+    post('h',{pg:'book',n:N||'tienda',utm:UTM,ref:(d.referrer||'').slice(0,200),w:innerWidth,ret:RET,lang:(navigator.language||'').slice(0,12)}).then(function(j){key=(j&&j.k)||'';if(key){QUE.splice(0).forEach(function(x){x[1].k=key;post(x[0],x[1],true)});ping()}})}
+  setInterval(function(){if(key)flush()},5000);
   if(LIVE){['scroll','pointerdown','touchstart','keydown'].forEach(function(e){addEventListener(e,open,{capture:true,passive:true})});clock();
     var tick=0;setInterval(function(){clock();if(seen>=2500)open();if(key&&++tick%15===0)ping()},1000);
-    d.addEventListener('visibilitychange',function(){clock();ping()});addEventListener('pagehide',ping);
-    if('IntersectionObserver' in window){var dio=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){depth=Math.max(depth,+x.target.getAttribute('data-dp'));dio.unobserve(x.target)}})},{rootMargin:'0px 0px -40% 0px'});
+    d.addEventListener('visibilitychange',function(){clock();if(d.visibilityState==='hidden'){ev('hide',SECN,Math.round(seen/1000))}ping()});
+    addEventListener('pagehide',function(){ev('exit',SECN,Math.round(seen/1000));ping()});
+    if('IntersectionObserver' in window){var dio=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){depth=Math.max(depth,+x.target.getAttribute('data-dp'));ev('sec',x.target.id,+x.target.getAttribute('data-dp'));dio.unobserve(x.target)}})},{rootMargin:'0px 0px -40% 0px'});
+      var sio=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting&&x.target.id!==SECN){secTick();SECN=x.target.id}})},{rootMargin:'-45% 0px -45% 0px'});
+      ['inicio','reservar','casos','metodo','encaje','dudas','nosotros'].forEach(function(id){var el=$(id);if(el)sio.observe(el)});
       ['inicio','reservar','casos','metodo','encaje','dudas','nosotros'].forEach(function(id,i){var el=$(id);if(el){el.setAttribute('data-dp',i+1);dio.observe(el)}})}}
-  d.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(a)send('c',{w:a.getAttribute('data-cta')})});
+  d.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cta]');if(a){send('c',{w:a.getAttribute('data-cta')});ev('cta',a.getAttribute('data-cta'),Math.round(seen/1000))}
+    var l=e.target.closest&&e.target.closest('a[href]');if(!l)return;var h=l.getAttribute('href')||'',sc=l.closest('section,footer,.bar');
+    if(/wa\.me/.test(h))ev('wa',(sc&&sc.id)||(l.getAttribute('data-cta'))||'',0);else if(/^https?:|^\/(?!#)/.test(h))ev('link',h.replace(/^https?:\/\/(www\.)?/,'').slice(0,60),0)});
+  [].forEach.call(d.querySelectorAll('details'),function(x){x.addEventListener('toggle',function(){if(x.open)ev('faq',(x.querySelector('summary')||{}).textContent||'',0)})});
 
   /* ---------- el calendario propio: huecos reales de Calendly, reserva sin salir de la página ---------- */
   var TZ='Europe/Madrid',SL=[],day=null,pick=null,stepSeen={};
   var fD=new Intl.DateTimeFormat('es-ES',{timeZone:TZ,weekday:'short',day:'numeric',month:'short'}),fT=new Intl.DateTimeFormat('es-ES',{timeZone:TZ,hour:'2-digit',minute:'2-digit'}),
       fK=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}),fL=new Intl.DateTimeFormat('es-ES',{timeZone:TZ,weekday:'long',day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'});
-  function step(s,ev,data){if(stepSeen[s])return;stepSeen[s]=1;send('cal',{s:s});if(ev)px(ev,data||{},true)}
+  function step(s,pe,data){if(stepSeen[s])return;stepSeen[s]=1;send('cal',{s:s});ev('cal',s,0);if(pe)px(pe,data||{},true)}
   function demoSlots(){var out=[],t=new Date();t.setMinutes(0,0,0);for(var dd=1;out.length<120&&dd<20;dd++){var x=new Date(t.getTime()+dd*864e5);var wd=x.getDay();if(wd===0||wd===6)continue;
     for(var h=9;h<18;h++)for(var m=0;m<60;m+=30){if((h*7+m+dd)%5===0)continue;var u=new Date(Date.UTC(x.getUTCFullYear(),x.getUTCMonth(),x.getUTCDate(),h-1,m));out.push(u.toISOString())}}return out}
   function load(){if(!PROD){SL=demoSlots();drawDays();return}
@@ -893,43 +913,45 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     var t=G.g[k]||[];$('bk-dl').textContent='Horas libres · '+fD.format(new Date(t[0]||Date.now())).replace('.','');
     $('bk-times').innerHTML=grid(G,k).map(function(iso){return '<button type="button" class="bk-time" role="option" aria-selected="false" data-t="'+iso+'">'+fT.format(new Date(iso))+'</button>'}).join('');
     [].forEach.call($('bk-times').querySelectorAll('[data-t]'),function(b){b.onclick=function(){time(b.getAttribute('data-t'))}});
-    if(!auto)step('cd','EligeDia');if(first)setTimeout(function(){var r=hr.getBoundingClientRect();if(r.bottom>innerHeight)scrollBy({top:Math.min(r.bottom-innerHeight+24,r.top-80),behavior:'smooth'})},60)}
-  function time(iso){pick=iso;step('ct','EligeHora');
+    if(!auto){step('cd','EligeDia');ev('dia',k,0)}if(first)setTimeout(function(){var r=hr.getBoundingClientRect();if(r.bottom>innerHeight)scrollBy({top:Math.min(r.bottom-innerHeight+24,r.top-80),behavior:'smooth'})},60)}
+  function time(iso){pick=iso;step('ct','EligeHora');ev('hora',fT.format(new Date(iso)),0);
     var txt=fL.format(new Date(iso));$('bk-sel').innerHTML='<b>'+esc(txt)+'</b>15 min · Google Meet · hora de España';$('bk-sel').hidden=false;
     $('bk-1').hidden=true;$('bk-2').hidden=false;q(1);send('fs',{});px('FormEmpezado',{},true)}
   /* formulario por pasos: primero lo fácil (qué vende, inversión, su tienda) y el email y el WhatsApp al final */
   var Q=1,A={};
-  function q(n){Q=n;[].forEach.call(d.querySelectorAll('.bk-q'),function(x){x.hidden=+x.getAttribute('data-q')!==n});
+  function q(n){Q=n;if(n>FQ){FQ=n;ev('fq','',n)}[].forEach.call(d.querySelectorAll('.bk-q'),function(x){x.hidden=+x.getAttribute('data-q')!==n});
     $('bk-pn').textContent=n+' de 4';$('bk-pb').style.width=(n*25)+'%';
     if(n>1)px('FormPaso'+n,{},true);
     if(n===4){var nm=($('f-name').value.trim().split(' ')[0]||'');$('bk-q4').textContent=(nm?'Perfecto, '+nm.charAt(0).toUpperCase()+nm.slice(1)+'. ':'Perfecto. ')+'¿Dónde te mando el enlace de la llamada?'}
     var f=d.querySelector('.bk-q[data-q="'+n+'"] input');if(f&&innerWidth>820)try{f.focus({preventScroll:true})}catch(e){}}
   [].forEach.call(d.querySelectorAll('.bk-ch'),function(g){var nm=g.getAttribute('data-name');[].forEach.call(g.children,function(b){b.setAttribute('aria-pressed','false');b.onclick=function(){
-    [].forEach.call(g.children,function(x){x.setAttribute('aria-pressed',x===b)});A[nm]=b.getAttribute('data-v');setTimeout(function(){q(Q+1)},220)}})});
+    [].forEach.call(g.children,function(x){x.setAttribute('aria-pressed',x===b)});A[nm]=b.getAttribute('data-v');ev('fa',nm+':'+A[nm],Q);setTimeout(function(){q(Q+1)},220)}})});
   function nx3(){var b=$('f-biz'),n=$('f-name'),okb=b.value.trim().length>=2,okn=n.value.trim().length>=2;b.classList.toggle('bad',!okb);n.classList.toggle('bad',!okn);
     if(!okb)return b.focus();if(!okn)return n.focus();q(4)}
   $('bk-nx').onclick=nx3;
   $('f-biz').onkeydown=function(e){if(e.key==='Enter'){e.preventDefault();$('f-name').focus()}};
   $('f-name').onkeydown=function(e){if(e.key==='Enter'){e.preventDefault();nx3()}};
-  $('bk-back').onclick=function(){if(Q>1)q(Q-1);else{$('bk-2').hidden=true;$('bk-1').hidden=false}};
-  if('IntersectionObserver' in window){var cio=new IntersectionObserver(function(es){if(es[0].isIntersecting){load();step('cv');cio.disconnect()}},{rootMargin:'600px 0px'});cio.observe($('bk'))}else load();
+  $('bk-back').onclick=function(){ev('fback','',Q);if(Q>1)q(Q-1);else{$('bk-2').hidden=true;$('bk-1').hidden=false}};
+  if('IntersectionObserver' in window){var cio=new IntersectionObserver(function(es){if(es[0].isIntersecting){load();cio.disconnect()}},{rootMargin:'600px 0px'});cio.observe($('bk'));
+    var vio=new IntersectionObserver(function(es){if(es[0].isIntersecting){step('cv');vio.disconnect()}},{threshold:.35});vio.observe($('bk'))}else{load();step('cv')}
   $('bk-2').addEventListener('input',function(e){if(e.target.classList)e.target.classList.remove('bad');if(!this.querySelector('.bad'))$('bk-err').hidden=true});
   $('bk-2').onsubmit=function(e){e.preventDefault();var f=this,err=$('bk-err');
     if(Q<4){if(Q===3)nx3();return}var v={name:f.name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),biz:f.biz.value.trim(),bud:A.bud||'',sec:A.sec||''};var tel=v.phone.replace(/[^\d+]/g,'');
     var ok={name:v.name.length>=2,email:/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email),phone:/^\+?\d{9,15}$/.test(tel),biz:v.biz.length>=2},all=true;
     Object.keys(ok).forEach(function(k){f[k].classList.toggle('bad',!ok[k]);if(!ok[k])all=false});
     if(!v.bud||!v.sec)return q(!v.sec?1:2);if(!ok.biz||!ok.name)return q(3);
-    if(!all){err.textContent=!ok.email&&v.email?'Revisa el email.':!ok.phone&&v.phone?'Revisa el número de WhatsApp.':'Rellena el email y el WhatsApp, por favor.';err.hidden=false;return}
+    if(!all){ev('ferr',Object.keys(ok).filter(function(k){return !ok[k]}).join(','),4);err.textContent=!ok.email&&v.email?'Revisa el email.':!ok.phone&&v.phone?'Revisa el número de WhatsApp.':'Rellena el email y el WhatsApp, por favor.';err.hidden=false;return}
     err.hidden=true;var go=$('bk-go');go.disabled=true;go.firstChild.textContent='Reservando… ';
     px('Lead',{content_name:v.bud,content_category:v.sec});
     var body={k:key||'',start:pick,name:v.name,email:v.email,phone:tel,biz:v.biz,bud:v.bud,sec:v.sec,n:(v.sec&&v.sec!=='otro'?v.sec:N||'tienda'),utm:UTM,tz:(Intl.DateTimeFormat().resolvedOptions().timeZone||TZ)};
     var done=function(j){go.disabled=false;go.firstChild.textContent='Confirmar llamada ';
       if(j&&j.ok){px('Schedule',{content_name:v.bud,content_category:v.sec,value:{b0:1,b1:2,b2:3,b3:4,b4:2}[v.bud]||1,currency:'EUR'});ok2(v,j);return}
+      if(!(j&&j.ok))ev('bkerr',(j&&j.error)||'red',0);
       if(j&&j.error==='taken'){SL=j.slots||SL;err.textContent='Esa hora se acaba de ocupar. Elige otra, por favor.';err.hidden=false;setTimeout(function(){$('bk-2').hidden=true;$('bk-1').hidden=false;drawDays()},1400);return}
       err.innerHTML='No se ha podido reservar. <a href="https://wa.me/34610594450?text='+encodeURIComponent('Hola Christian, quiero reservar la llamada para '+fL.format(new Date(pick)))+'" target="_blank" rel="noopener" style="color:var(--t2)">Escríbeme por WhatsApp</a> y te la dejo hecha.';err.hidden=false};
     if(!PROD){setTimeout(function(){done({ok:true,demo:1,join:'',gcal:'#',mailed:true})},700);return}
     fetch(API+'book',{method:'POST',body:JSON.stringify(body),headers:{'content-type':'application/json'}}).then(function(r){return r.json()}).then(done).catch(function(){done(null)})};
-  function ok2(v,j){var txt=fL.format(new Date(pick));
+  function ok2(v,j){ev('bk','',0);var txt=fL.format(new Date(pick));
     $('book-box').innerHTML='<div class="bk-ok lg"><img src="/christian-hola.jpg" alt="Christian Silva"><span style="color:var(--t2);font-size:14px">Christian Silva · 404 Growth</span><h3>Hecho, '+esc(v.name.split(' ')[0])+'. Nos vemos.</h3><span class="when">'+esc(txt)+'</span>'+
       '<p>'+(j.mailed?'Te acabo de enviar la confirmación a <b style="color:var(--ink)">'+esc(v.email)+'</b> desde hola@404growth.com, con el enlace de la videollamada.':'Te llega la invitación a <b style="color:var(--ink)">'+esc(v.email)+'</b> con el enlace de la videollamada.')+' También te escribo por WhatsApp para confirmar.</p>'+
       '<div class="acts">'+(j.gcal&&j.gcal!=='#'?'<a class="btn" href="'+esc(j.gcal)+'" target="_blank" rel="noopener">Añadir a mi calendario <span class="ar"><svg><use href="#i-cal"/></svg></span></a>':'')+(j.join?'<a class="btn" href="'+esc(j.join)+'" target="_blank" rel="noopener" style="background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)">Enlace de Meet</a>':'')+'</div></div>';
