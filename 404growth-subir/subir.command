@@ -34,7 +34,7 @@ if [ "$1" != "--ya" ]; then
         if ( cd "$ROOT" && git merge -q --ff-only origin/main ) >/dev/null 2>&1; then echo "  ✓ Carpeta al día con GitHub"
         else
           # hay cambios hechos en este Mac: se guardan aparte (git stash) y se pone la versión de GitHub
-          ( cd "$ROOT" && git stash push -q -u -m "subir.command $(date '+%Y-%m-%d %H:%M')" -- . ':(exclude)*.jpg' ':(exclude)*.jpeg' ':(exclude)*.png' ':(exclude)*.webp' ':(exclude)*.mp4' ) >/dev/null 2>&1
+          ( cd "$ROOT" && git stash push -q -u -m "subir.command $(date '+%Y-%m-%d %H:%M')" -- 404growth-subir web117-404growth ':(exclude)*.jpg' ':(exclude)*.jpeg' ':(exclude)*.png' ':(exclude)*.webp' ':(exclude)*.mp4' ) >/dev/null 2>&1
           if ( cd "$ROOT" && git merge -q --ff-only origin/main ) >/dev/null 2>&1 || ( cd "$ROOT" && git reset -q --keep origin/main ) >/dev/null 2>&1; then echo "  ✓ Carpeta al día con GitHub (tus cambios locales quedan guardados en git stash)"
           else echo "  ! No pude ponerla al día sola. Avisa a Claude. Subo lo que hay en esta carpeta."; fi
         fi
