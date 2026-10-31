@@ -164,9 +164,9 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 
 /* casos: carrusel 3D */
 #casos{overflow:hidden;padding-bottom:10px}
-.cf{position:relative;height:560px;margin-top:40px;perspective:1600px;touch-action:pan-y;user-select:none}
-.cf-card{position:absolute;left:50%;top:0;width:min(380px,76vw);height:520px;margin-left:calc(min(380px,76vw) / -2);border-radius:30px;overflow:hidden;cursor:pointer;
- transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .7s,filter .7s;transform-style:preserve-3d;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.14);text-align:left}
+.cf{position:relative;height:560px;margin-top:40px;perspective:1600px;user-select:none;pointer-events:none}
+.cf-card{position:absolute;left:50%;top:0;width:min(380px,76vw);height:520px;margin-left:calc(min(380px,76vw) / -2);border-radius:30px;overflow:hidden;
+ transform-style:preserve-3d;will-change:transform;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.14);text-align:left}
 .cf-card .art{position:absolute;inset:0;background-size:cover;background-position:center}
 .cf-card .art svg{position:absolute;left:50%;top:34%;width:120px;height:120px;transform:translate(-50%,-50%);color:rgba(255,255,255,.22)}
 .cf-card .top2{position:absolute;left:14px;right:14px;top:14px;display:flex;justify-content:space-between;z-index:3}
@@ -184,7 +184,6 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .cf-card .dd{margin:6px 0 0;font-size:14px;line-height:1.4;color:#D6DBD8}
 .cf-card .tgs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .cf-card .tgs span{font-size:12px;font-weight:500;padding:5px 10px;border-radius:99px;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
-.cf-card.side{filter:brightness(.6) saturate(.8)}
 .cf-bar{display:inline-flex;align-items:center;gap:14px;margin-top:6px;padding:8px;border-radius:99px}
 .cf-btn{width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center;cursor:pointer;transition:background .25s,transform .25s}
 .cf-btn:hover{background:rgba(255,255,255,.2);transform:scale(1.06)}
@@ -511,9 +510,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     <h2 class="rv">Así podría verse<br><em>tu tienda online.</em></h2>
     <p class="lead rv">Tiendas de demostración diseñadas por 404 Growth. Cada marca, con su propia identidad.</p>
   </div>
-  <div class="cf rv" id="cf" tabindex="0" aria-label="Casos de éxito. Usa las flechas para pasar."></div>
-  <div class="cf-bar lg rv"><button class="cf-btn" type="button" id="prev" aria-label="Anterior"><svg><use href="#i-l"/></svg></button><span class="cf-mid" id="cf-mid" aria-live="polite"></span><button class="cf-btn" type="button" id="next" aria-label="Siguiente"><svg><use href="#i-r"/></svg></button></div>
-  <div class="cf-dots" id="cf-dots"></div>
+  <div class="cf rv" id="cf" aria-label="Tiendas de demostración"></div>
   <div class="wrap"><p class="pendnote" id="cases-note" hidden>Vista previa: son huecos. Rellena CASES en el código con casos reales; en 404growth.com, si está vacío, esta sección no se muestra.</p></div>
 </section>
 
@@ -693,28 +690,18 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   ];
   var list=CASES.length?CASES:DEMOS;
   if(!list.length){$('casos').hidden=true}else{
-    var cf=$('cf'),dots=$('cf-dots'),mid=$('cf-mid'),cur=Math.min(2,list.length-1);
+    var cf=$('cf');
     cf.innerHTML=list.map(function(c,i){var key=c.k||(ALIAS[(c.sector||'').toLowerCase()]||'moda');
       return '<article class="cf-card'+(c.tags?' demo':'')+'" data-i="'+i+'"><div class="art" style="background-image:'+(c.img?(c.tags?'':'linear-gradient(180deg,transparent 40%,rgba(0,0,0,.4)),')+'url(\''+esc(c.img)+'\')':ART[key]||ART.moda)+'">'+(c.img?'':'<svg><use href="#i-store"/></svg>')+'</div>'+
         '<div class="top2"><span class="pill lg dark">'+esc(c.sector)+(c.ciudad?' · '+esc(c.ciudad):'')+'</span><span class="pill lg dark">'+(i+1)+'/'+list.length+'</span></div>'+
         '<div class="info lg dark"><h3>'+esc(c.tienda)+'</h3>'+(c.d?'<p class="dd">'+esc(c.d)+'</p>':'')+(c.tags?'<div class="tgs">'+c.tags.map(function(t){return '<span>'+esc(t)+'</span>'}).join('')+'</div>':'')+(c.kpi?'<div class="kpi"><b>'+esc(c.kpi)+'</b><span>'+esc(c.kpil)+'</span></div>':'')+(c.q?'<q>'+esc(c.q)+'</q>':'')+(c.who?'<div class="who">'+esc(c.who)+'</div>':'')+'</div></article>'}).join('');
-    dots.innerHTML=list.map(function(){return '<i></i>'}).join('');
-    var cards=[].slice.call(cf.children);
-    function render(){var w=cards[0].offsetWidth,gap=Math.min(w*.62,innerWidth*.28);
-      cards.forEach(function(c,i){var o=i-cur,a=Math.abs(o);
+    var cards=[].slice.call(cf.children),n=cards.length,pos=0,last=0,SPEED=0.16;
+    function render(){var w=cards[0].offsetWidth,gap=Math.min(w*.62,innerWidth*.28),half=n/2;
+      cards.forEach(function(c,i){var o=((i-pos)%n+n)%n;if(o>half)o-=n;var a=Math.abs(o);
         c.style.transform='translateX('+(o*gap)+'px) translateZ('+(-a*140)+'px) rotateY('+(o*-24)+'deg)';
-        c.style.opacity=a>2?0:1;c.style.zIndex=20-a;c.style.pointerEvents=a>2?'none':'auto';c.classList.toggle('side',a>0)});
-      [].forEach.call(dots.children,function(x,k){x.classList.toggle('on',k===cur)});
-      mid.innerHTML='<b>'+esc(list[cur].tienda)+'</b><span>'+esc(list[cur].sector)+(list[cur].ciudad?' · '+esc(list[cur].ciudad):' · Proyecto conceptual')+'</span>'}
-    function go(n){cur=Math.max(0,Math.min(list.length-1,n));render()}
-    $('prev').onclick=function(){go(cur-1)};$('next').onclick=function(){go(cur+1)};
-    cards.forEach(function(c){c.addEventListener('click',function(){var i=+c.getAttribute('data-i');if(i!==cur&&!moved)go(i)})});
-    cf.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')go(cur-1);if(e.key==='ArrowRight')go(cur+1)});
-    var sx=null,moved=false;
-    cf.addEventListener('pointerdown',function(e){sx=e.clientX;moved=false});
-    cf.addEventListener('pointermove',function(e){if(sx!==null&&Math.abs(e.clientX-sx)>8)moved=true});
-    addEventListener('pointerup',function(e){if(sx===null)return;var dx=e.clientX-sx;sx=null;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));setTimeout(function(){moved=false},0)});
-    addEventListener('resize',render);render();
+        c.style.opacity=a>2.2?0:Math.min(1,2.6-a);c.style.zIndex=Math.round(100-a*10);c.style.filter='brightness('+(1-Math.min(a,1)*.4)+') saturate('+(1-Math.min(a,1)*.2)+')'})}
+    function tick(t){if(last)pos+=(t-last)/1000*SPEED;last=t;render();requestAnimationFrame(tick)}
+    addEventListener('resize',render);render();requestAnimationFrame(tick);
   }
 
   /* ---------- metodología: los 15 días pasan solos (o con las pestañas) ---------- */
