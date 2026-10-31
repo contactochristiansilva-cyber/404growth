@@ -160,7 +160,9 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .bk-day[aria-selected=true]{background:#fff;border-color:#fff;color:#07100D}.bk-day[aria-selected=true] small,.bk-day[aria-selected=true] i{color:#2E7A64}
 .bk-times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;min-height:60px}
 .bk-time{height:46px;border-radius:12px;border:1px solid rgba(111,194,166,.4);background:transparent;color:var(--ink);font:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:background .2s,color .2s}
-.bk-time:hover{background:rgba(111,194,166,.16)}.bk-time[aria-selected=true]{background:var(--t);border-color:var(--t);color:#04110D}
+.bk-time:hover{background:rgba(111,194,166,.16)}
+.bk-time.busy{border-color:rgba(255,255,255,.07);background:rgba(255,255,255,.025);color:rgba(255,255,255,.3);cursor:not-allowed;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;line-height:1.1}.bk-time.busy:hover{background:rgba(255,255,255,.025)}
+.bk-time.busy s{font-size:14px;text-decoration-thickness:1px}.bk-time.busy small{font-size:10.5px;letter-spacing:.02em}.bk-time[aria-selected=true]{background:var(--t);border-color:var(--t);color:#04110D}
 .bk-load,.bk-none{grid-column:1/-1;color:var(--mute);font-size:14.5px;padding:10px 0}
 .bk-back{border:0;background:none;color:var(--t2);font:inherit;font-size:14px;cursor:pointer;padding:0;margin-bottom:14px}
 .bk-f{display:grid;gap:6px;margin-bottom:12px}.bk-f label{font-size:13.5px;color:var(--mute)}
@@ -859,16 +861,24 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   function load(){if(!PROD){SL=demoSlots();drawDays();return}
     fetch(API+'slots',{method:'POST',body:'{}',headers:{'content-type':'application/json'}}).then(function(r){return r.json()}).then(function(j){SL=(j&&j.slots)||[];drawDays()})
       .catch(function(){$('bk-days').innerHTML='<span class="bk-none">No se ha podido cargar la agenda. <a href="https://wa.me/34610594450" target="_blank" rel="noopener" style="color:var(--t2)">Escríbeme por WhatsApp</a> y te doy hueco.</span>'})}
-  function groups(){var g={},order=[];SL.forEach(function(iso){var k=fK.format(new Date(iso));if(!g[k]){g[k]=[];order.push(k)}g[k].push(iso)});return {g:g,order:order}}
+  /* Algunos huecos se muestran como ocupados (y no se ofrecen): ~1 de cada 3, siempre los mismos, dejando al menos 3 libres por día */
+  function held(iso){var h=7;for(var i=0;i<iso.length;i++)h=(h*31+iso.charCodeAt(i))|0;return Math.abs(h)%10<4}
+  function groups(){var all={},g={},order=[];SL.forEach(function(iso){var k=fK.format(new Date(iso));if(!all[k]){all[k]=[];order.push(k)}all[k].push(iso)});
+    order.forEach(function(k){var f=all[k].filter(function(iso){return !held(iso)});g[k]=f.length>=3?f:all[k].slice()});
+    return {g:g,all:all,order:order}}
+  function grid(G,k){var a=G.all[k]||[],free={};(G.g[k]||[]).forEach(function(x){free[x]=1});if(!a.length)return [];
+    var ts=a.map(function(x){return new Date(x).getTime()}),st=30*6e4;for(var i=1;i<ts.length;i++){var d=ts[i]-ts[i-1];if(d>0&&d<st)st=d}
+    var out=[];for(var t=ts[0];t<=ts[ts.length-1];t+=st){var iso=new Date(t).toISOString().replace('.000Z','Z');var hit=a.filter(function(x){return new Date(x).getTime()===t})[0];out.push({iso:hit||iso,free:!!(hit&&free[hit])})}
+    return out}
   function drawDays(){var G=groups(),box=$('bk-days');if(!G.order.length){box.innerHTML='<span class="bk-none">Ahora mismo no hay huecos libres. <a href="https://wa.me/34610594450" target="_blank" rel="noopener" style="color:var(--t2)">Escríbeme por WhatsApp</a>.</span>';return}
     var show=G.order.slice(0,innerWidth<820?6:10);
     box.innerHTML=show.map(function(k){var dt=new Date(G.g[k][0]),p=fD.formatToParts(dt),wd=(p.find(function(x){return x.type==='weekday'})||{}).value||'',dn=(p.find(function(x){return x.type==='day'})||{}).value||'',mo=(p.find(function(x){return x.type==='month'})||{}).value||'';
-      return '<button type="button" class="bk-day" role="option" aria-selected="false" data-k="'+k+'"><small>'+esc(wd.replace('.',''))+'</small><b>'+esc(dn)+'</b><small>'+esc(mo.replace('.',''))+'</small><i>'+G.g[k].length+' huecos</i></button>'}).join('');
+      return '<button type="button" class="bk-day" role="option" aria-selected="false" data-k="'+k+'"><small>'+esc(wd.replace('.',''))+'</small><b>'+esc(dn)+'</b><small>'+esc(mo.replace('.',''))+'</small><i>'+G.g[k].length+' libres</i></button>'}).join('');
     [].forEach.call(box.children,function(b){b.onclick=function(){choose(b.getAttribute('data-k'))}});choose(show[0],true)}
   function choose(k,auto){day=k;var G=groups();[].forEach.call($('bk-days').children,function(b){b.setAttribute('aria-selected',b.getAttribute('data-k')===k)});
     var t=G.g[k]||[];$('bk-dl').textContent='Horas libres · '+fD.format(new Date(t[0]||Date.now())).replace('.','');
-    $('bk-times').innerHTML=t.map(function(iso){return '<button type="button" class="bk-time" role="option" aria-selected="false" data-t="'+iso+'">'+fT.format(new Date(iso))+'</button>'}).join('');
-    [].forEach.call($('bk-times').children,function(b){b.onclick=function(){time(b.getAttribute('data-t'))}});
+    $('bk-times').innerHTML=grid(G,k).map(function(o){var h=fT.format(new Date(o.iso));return o.free?'<button type="button" class="bk-time" role="option" aria-selected="false" data-t="'+o.iso+'">'+h+'</button>':'<button type="button" class="bk-time busy" disabled aria-disabled="true" title="Ocupado"><s>'+h+'</s><small>Ocupado</small></button>'}).join('');
+    [].forEach.call($('bk-times').querySelectorAll('[data-t]'),function(b){b.onclick=function(){time(b.getAttribute('data-t'))}});
     if(!auto)step('cd','EligeDia')}
   function time(iso){pick=iso;step('ct','EligeHora');
     var txt=fL.format(new Date(iso));$('bk-sel').innerHTML='<b>'+esc(txt)+'</b>15 min · Google Meet · hora de España';$('bk-sel').hidden=false;
