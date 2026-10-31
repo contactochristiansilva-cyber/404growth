@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Oswald:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;800&family=Oswald:wght@300;400;500;600&display=swap">
 <link rel="preconnect" href="https://calendly.com">
 <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
 <style>
@@ -66,8 +66,8 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 
 /* ---------- cabecera ---------- */
 .top{position:relative;z-index:5;display:flex;align-items:center;justify-content:center;gap:18px;padding:26px 16px 0}
-.logo{font-weight:600;font-size:15px;letter-spacing:.06em;text-decoration:none}
-.logo sup{font-size:8px;margin-left:2px;color:var(--mute);font-weight:400}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.03em;text-decoration:none;color:var(--ink)}
+.logo sup{font-size:8px;margin-left:1px}
 
 /* ---------- héroe: focos desde arriba ---------- */
 .hero{position:relative;padding:0 0 30px;overflow:hidden}
@@ -80,7 +80,7 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
  background:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 22px);
  -webkit-mask:radial-gradient(60% 70% at 50% 0%,#000,transparent 75%);mask:radial-gradient(60% 70% at 50% 0%,#000,transparent 75%)}
 .hero .wrap{position:relative;z-index:1}
-.hero h1{font-size:clamp(44px,7.4vw,96px);line-height:.98;letter-spacing:-.055em;margin:64px auto 0;max-width:14ch}
+.hero h1{font-size:clamp(44px,7.4vw,96px);line-height:.98;letter-spacing:-.055em;margin:30px auto 0;max-width:14ch}
 .hero h1 b{font-weight:500}
 .hero h1 em{display:block}
 .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(160deg,#2B5247,#16302A) center/cover;display:grid;place-items:center;font-weight:600;font-size:14px;color:var(--t2);flex:none}
@@ -340,7 +340,8 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
  .fbottom{flex-direction:column;margin-top:-4%}
 }
 @media (max-width:560px){
- .hero h1{margin-top:48px}
+ .hero h1{margin-top:22px}
+ .logo{font-size:16px}
  .stage{margin-top:36px}
  .device{padding:7px;border-radius:24px}.screen{border-radius:18px}
  .play{width:70px;height:70px;margin:-35px 0 0 -35px}.play svg{width:22px;height:22px}
