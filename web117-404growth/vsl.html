@@ -688,11 +688,12 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     {tienda:'Solenne',sector:'Moda mujer',img:'/demos/cards/solenne.webp',d:'Moda mediterránea premium: campaña editorial, tallas y «completa el look».',tags:['Tallas','Favoritos','Completa el look']},
     {tienda:'Pulso',sector:'Sneakers',img:'/demos/cards/pulso.webp',d:'Tienda multimarca: lanzamientos, stock por talla y entrega en 24 h.',tags:['Tallas','Stock en vivo','Compra rápida']},
     {tienda:'Forma',sector:'Suplementos',img:'/demos/cards/forma.webp',d:'Nutrición deportiva premium con suscripción y precios por toma.',tags:['Suscripción -15%','Packs','Stock']},
-    {tienda:'Áurea',sector:'Joyería',img:'/demos/cards/aurea.webp',d:'Joyería de oro de 18 k con grabado, caja de regalo y envío asegurado.',tags:['Grabado','Regalos','Envío asegurado']}
+    {tienda:'Áurea',sector:'Joyería',img:'/demos/cards/aurea.webp',d:'Joyería de oro de 18 k con grabado, caja de regalo y envío asegurado.',tags:['Grabado','Regalos','Envío asegurado']},
+    {tienda:'Nácar',sector:'Cosmética',img:'/demos/cards/nacar.webp',d:'Skincare moderno: rutinas en packs, muestras de regalo y envío en 24 h.',tags:['Rutinas','Packs','Muestras']}
   ];
   var list=CASES.length?CASES:DEMOS;
   if(!list.length){$('casos').hidden=true}else{
-    var cf=$('cf'),dots=$('cf-dots'),mid=$('cf-mid'),cur=Math.min(1,list.length-1);
+    var cf=$('cf'),dots=$('cf-dots'),mid=$('cf-mid'),cur=Math.min(2,list.length-1);
     cf.innerHTML=list.map(function(c,i){var key=c.k||(ALIAS[(c.sector||'').toLowerCase()]||'moda');
       return '<article class="cf-card'+(c.tags?' demo':'')+'" data-i="'+i+'"><div class="art" style="background-image:'+(c.img?(c.tags?'':'linear-gradient(180deg,transparent 40%,rgba(0,0,0,.4)),')+'url(\''+esc(c.img)+'\')':ART[key]||ART.moda)+'">'+(c.img?'':'<svg><use href="#i-store"/></svg>')+'</div>'+
         '<div class="top2"><span class="pill lg dark">'+esc(c.sector)+(c.ciudad?' · '+esc(c.ciudad):'')+'</span><span class="pill lg dark">'+(i+1)+'/'+list.length+'</span></div>'+
