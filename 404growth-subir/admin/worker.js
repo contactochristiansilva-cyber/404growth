@@ -3101,7 +3101,7 @@ async function vslSlots(env, fresh) {
   if (!fresh) { const c = parse(await getMeta(env, "vsl_slots"), null); if (c && now - c.at < 90000) return c.slots; }
   const st = await clyState(env); if (!st || !st.tok) { const e = new Error("nocal"); e.code = "nocal"; throw e; }
   const out = []; let from = now + 2 * 3600000;                                          // nothing sooner than two hours from now
-  for (let i = 0; i < 3; i++) {                                                            // three weeks, seven days per call (Calendly's limit)
+  for (let i = 0; i < 2; i++) {                                                            // two weeks (the page shows the next 6 days with room), seven days per call (Calendly's limit)
     const to = from + 7 * DAY - 60000;
     const j = await clyFetch(env, st.tok, "/event_type_available_times?event_type=" + encodeURIComponent(VSL_ET) + "&start_time=" + clyIso(from) + "&end_time=" + clyIso(to));
     for (const x of j.collection || []) if (x.status === "available" && x.start_time) out.push(x.start_time);
