@@ -6,7 +6,7 @@
 <title>Tu tienda cierra a las 20:00. Tus ventas, ya no. | 404 Growth</title>
 <meta name="description" content="Para dueños de tiendas físicas: en 21 días convertimos tu tienda en una tienda online que vende en toda España, con tu stock y tu marca. Mira el vídeo y reserva 15 minutos.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#0A1210">
+<meta name="theme-color" content="#040706">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="404 Growth">
 <meta property="og:locale" content="es_ES">
@@ -17,260 +17,270 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Oswald:wght@300;400;500&display=swap">
 <link rel="preconnect" href="https://calendly.com">
 <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
 <style>
-/* Layout: una sola columna centrada; las secciones se encadenan con un hilo de luz vertical, sin separadores. */
+/* Layout: columna centrada sobre negro; focos de luz verde desde arriba; cristal de verdad (desenfoque + borde de luz + refracción) solo sobre contenido. */
 :root{color-scheme:dark;
---bg:#0A1210;--ink:#EEE9DE;--mute:#A3AFA9;--t:#7FB8A4;--t2:#A9DCC9;--td:#3D786F;--sand:#D7C79A;--bad:#E09A88;
---gl:rgba(255,255,255,.07);--gl2:rgba(255,255,255,.12);--gb:rgba(255,255,255,.14);--gh:rgba(255,255,255,.32);
+--bg:#040706;--bg2:#08100E;--ink:#F3F4F1;--mute:#9AA49F;--dim:#86908B;
+--t:#6FC2A6;--t2:#A6E3CD;--tdeep:#0F3B31;--sand:#D9C9A0;--bad:#E79C8A;
 --f:"Inter Tight",Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
---s:"Instrument Serif","Iowan Old Style",Georgia,serif}
-*{box-sizing:border-box}html,body{margin:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--f);letter-spacing:-.011em;-webkit-font-smoothing:antialiased;overflow-x:hidden;text-align:center}
+--c:"Oswald","Arial Narrow",Impact,sans-serif}
+*{box-sizing:border-box}html,body{margin:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font:400 16.5px/1.55 var(--f);letter-spacing:-.01em;-webkit-font-smoothing:antialiased;overflow-x:hidden;text-align:center}
 a{color:inherit}img{max-width:100%;display:block}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
-h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.045em;line-height:1;text-wrap:balance}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;font-weight:300;letter-spacing:-.045em;line-height:1.02;text-wrap:balance}
+h2{font-size:clamp(38px,5.4vw,66px)}
+h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t2) 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:17px;line-height:1.5;color:var(--mute);margin:18px auto 0;max-width:460px;font-weight:400}
 
-/* fondo líquido: manchas que cambian de forma detrás del cristal */
-.blobs{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-.blobs i{position:absolute;width:46vmax;height:46vmax;filter:blur(70px);opacity:.42;will-change:transform,border-radius;animation:morph 22s ease-in-out infinite alternate}
-.blobs i:nth-child(1){left:-14vmax;top:-12vmax;background:radial-gradient(circle at 40% 40%,#2F6E5E,transparent 70%)}
-.blobs i:nth-child(2){right:-16vmax;top:30vh;background:radial-gradient(circle at 50% 50%,#55452A,transparent 70%);animation-duration:28s;animation-delay:-8s;opacity:.34}
-.blobs i:nth-child(3){left:20vw;bottom:-22vmax;background:radial-gradient(circle at 50% 50%,#1F5A50,transparent 70%);animation-duration:25s;animation-delay:-14s}
-@keyframes morph{
- 0%{border-radius:42% 58% 63% 37%/41% 44% 56% 59%;transform:translate(0,0) rotate(0)}
- 50%{border-radius:63% 37% 38% 62%/58% 62% 38% 42%;transform:translate(6vw,8vh) rotate(40deg)}
- 100%{border-radius:38% 62% 55% 45%/62% 35% 65% 38%;transform:translate(-4vw,14vh) rotate(-30deg)}}
+/* ---------- cristal líquido ---------- */
+.lg{position:relative;isolation:isolate;border-radius:28px;
+ background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.035) 45%,rgba(255,255,255,.06));
+ -webkit-backdrop-filter:blur(18px) saturate(190%) brightness(1.08);backdrop-filter:blur(18px) saturate(190%) brightness(1.08);
+ box-shadow:inset 1.5px 1.5px 0 -.5px rgba(255,255,255,.45),inset -1px -1px 0 -.5px rgba(255,255,255,.18),inset 0 0 22px rgba(255,255,255,.04),0 24px 60px -24px rgba(0,0,0,.85)}
+.lg:after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;z-index:2;
+ background:linear-gradient(135deg,rgba(255,255,255,.55),rgba(255,255,255,.06) 32%,rgba(255,255,255,0) 50%,rgba(255,255,255,.08) 68%,rgba(255,255,255,.38));
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.lgx .lg{backdrop-filter:url(#refract) blur(16px) saturate(190%) brightness(1.08)}
+.lg.dark{background:linear-gradient(160deg,rgba(20,28,26,.55),rgba(10,14,13,.35))}
 
-/* cristal */
-.glass{position:relative;background:linear-gradient(145deg,var(--gl2),var(--gl) 55%,rgba(255,255,255,.04));-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);
- border:1px solid var(--gb);box-shadow:inset 0 1px 0 var(--gh),inset 0 -1px 0 rgba(255,255,255,.06),0 30px 70px -30px rgba(0,0,0,.7)}
-.glass:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(120% 60% at 20% -10%,rgba(255,255,255,.16),transparent 55%)}
-
-/* botón de cristal líquido */
-.btn{--x:50%;--y:50%;position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:12px;
- color:#08110F;text-decoration:none;font-weight:650;font-size:18px;letter-spacing:-.01em;padding:19px 34px;border-radius:99px;white-space:nowrap;cursor:pointer;font-family:inherit;border:1px solid rgba(255,255,255,.5);
- background:radial-gradient(140px 80px at var(--x) var(--y),rgba(255,255,255,.55),transparent 70%),linear-gradient(180deg,rgba(176,226,208,.96),rgba(110,170,148,.92));
- box-shadow:inset 0 1px 0 rgba(255,255,255,.85),inset 0 -6px 14px rgba(20,70,58,.35),0 0 0 6px rgba(127,184,164,.12),0 18px 40px -12px rgba(127,184,164,.55);
- transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
-.btn:before{content:"";position:absolute;left:8%;right:8%;top:2px;height:46%;border-radius:99px;background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,0));z-index:-1;pointer-events:none}
-.btn:after{content:"";position:absolute;top:-20%;bottom:-20%;width:38%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);animation:sheen 4.5s ease-in-out infinite;pointer-events:none;z-index:-1}
-@keyframes sheen{0%,62%{left:-60%}100%{left:130%}}
-.btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -6px 14px rgba(20,70,58,.35),0 0 0 8px rgba(127,184,164,.16),0 26px 50px -14px rgba(127,184,164,.7)}
+/* ---------- botón: pastilla blanca + círculo con flecha ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;gap:14px;padding:7px 7px 7px 28px;border-radius:99px;text-decoration:none;
+ background:#fff;color:#07100D;font-weight:500;font-size:17px;letter-spacing:-.015em;white-space:nowrap;cursor:pointer;border:0;font-family:inherit;
+ box-shadow:0 0 0 1px rgba(255,255,255,.5),0 14px 40px -12px rgba(111,194,166,.55),inset 0 -2px 6px rgba(0,0,0,.12);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.btn .ar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#8FD8BE,#3E9A7C);color:#04110D;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -3px 8px rgba(0,40,30,.35);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.btn .ar svg{width:19px;height:19px}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(255,255,255,.7),0 22px 50px -12px rgba(111,194,166,.75),inset 0 -2px 6px rgba(0,0,0,.12)}
+.btn:hover .ar{transform:rotate(-45deg)}
+.btn.dn:hover .ar{transform:translateY(3px)}
 .btn:active{transform:scale(.98)}
-.btn:focus-visible,.arr:focus-visible,.faq summary:focus-visible,.links a:focus-visible{outline:2px solid var(--t2);outline-offset:4px}
-.btn .ar{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:rgba(8,17,15,.12);transition:transform .3s}
-.btn:hover .ar{transform:translateY(2px)}
-.btn.go:hover .ar{transform:translateX(3px)}
-.cta{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:40px}
-.chips{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
-.chip{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--ink);padding:9px 15px;border-radius:99px}
-.chip svg{width:16px;height:16px;color:var(--t2)}
+.btn:focus-visible,.cf-btn:focus-visible,.faq summary:focus-visible,.slot:focus-visible{outline:2px solid var(--t2);outline-offset:4px}
+.cta{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:36px}
+.micro{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--mute)}
+.micro span{display:inline-flex;align-items:center;gap:7px}
+.micro svg{width:15px;height:15px;color:var(--t)}
 
-/* hilo que une las secciones */
-.thread{display:flex;flex-direction:column;align-items:center;height:120px;position:relative}
-.thread:before{content:"";width:1px;height:100%;background:linear-gradient(180deg,transparent,rgba(127,184,164,.55),transparent)}
-.thread:after{content:"";position:absolute;top:0;left:50%;width:7px;height:7px;margin-left:-3.5px;border-radius:50%;background:var(--t2);box-shadow:0 0 14px 3px rgba(127,184,164,.7);animation:drop 2.8s cubic-bezier(.6,0,.4,1) infinite}
-@keyframes drop{0%{top:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{top:100%;opacity:0}}
+/* ---------- cabecera ---------- */
+.top{position:relative;z-index:5;display:flex;align-items:center;justify-content:center;gap:18px;padding:26px 16px 0}
+.top i{width:90px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4));position:relative}
+.top i:last-child{transform:scaleX(-1)}
+.top i:after{content:"";position:absolute;right:-3px;top:-3px;width:6px;height:6px;transform:rotate(45deg);background:#fff}
+.logo{font-weight:600;font-size:15px;letter-spacing:.06em;text-decoration:none}
+.logo sup{font-size:8px;margin-left:2px;color:var(--mute);font-weight:400}
 
-/* títulos de sección */
-.hd{max-width:880px;margin:0 auto}
-.hd h2{font-size:clamp(40px,6vw,76px);line-height:.98}
-.sf{font-family:var(--s);font-style:italic;font-weight:400;letter-spacing:-.02em;color:var(--t2);padding-right:.06em}
-.sec{padding:20px 0 0}
+/* ---------- héroe: focos desde arriba ---------- */
+.hero{position:relative;padding:0 0 30px;overflow:hidden}
+.beams{position:absolute;inset:0 0 auto;height:900px;pointer-events:none;z-index:0}
+.beams:before,.beams:after{content:"";position:absolute;top:-180px;width:520px;height:1100px;filter:blur(38px);opacity:.75;
+ background:linear-gradient(180deg,rgba(166,227,205,.85),rgba(111,194,166,.35) 35%,transparent 75%)}
+.beams:before{left:-120px;transform:rotate(-32deg);transform-origin:top center}
+.beams:after{right:-120px;transform:rotate(32deg);transform-origin:top center}
+.stripes{position:absolute;inset:0 0 auto;height:820px;z-index:0;pointer-events:none;opacity:.35;
+ background:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 22px);
+ -webkit-mask:radial-gradient(60% 70% at 50% 0%,#000,transparent 75%);mask:radial-gradient(60% 70% at 50% 0%,#000,transparent 75%)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(44px,7.4vw,96px);line-height:.98;letter-spacing:-.055em;margin:64px auto 0;max-width:14ch}
+.hero h1 b{font-weight:500}
+.hero h1 em{display:block}
+.av{width:42px;height:42px;border-radius:50%;background:linear-gradient(160deg,#2B5247,#16302A) center/cover;display:grid;place-items:center;font-weight:600;font-size:14px;color:var(--t2);flex:none}
 
-/* cabecera */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;display:flex;justify-content:center;padding:14px 16px 0;pointer-events:none}
-.logo{pointer-events:auto;display:inline-flex;align-items:center;padding:10px 20px;border-radius:99px;text-decoration:none;font-weight:800;font-size:15px;letter-spacing:.03em}
-.logo sup{font-size:9px;font-weight:500;margin-left:2px;color:var(--mute)}
-body:before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+/* vídeo en un dispositivo, con arco de luz detrás */
+.stage{position:relative;max-width:980px;margin:54px auto 0;padding:0 0 10px}
+.arc{position:absolute;left:50%;top:22%;width:150%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;z-index:-1;pointer-events:none;
+ background:radial-gradient(closest-side,transparent 86%,rgba(111,194,166,.55) 92%,rgba(166,227,205,.9) 94%,rgba(111,194,166,.35) 96%,transparent 100%);filter:blur(2px);opacity:.75;
+ -webkit-mask:linear-gradient(180deg,#000 0%,#000 18%,transparent 34%);mask:linear-gradient(180deg,#000 0%,#000 18%,transparent 34%)}
+.arc2{position:absolute;left:50%;top:18%;width:120%;height:70%;transform:translateX(-50%);z-index:-1;pointer-events:none;background:radial-gradient(50% 50% at 50% 50%,rgba(111,194,166,.28),transparent 70%);filter:blur(30px)}
+.device{--ar:16/9;position:relative;max-width:900px;margin:0 auto;padding:12px;border-radius:34px;
+ background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(255,255,255,.04));box-shadow:inset 1px 1px 0 rgba(255,255,255,.4),inset -1px -1px 0 rgba(255,255,255,.1),0 50px 120px -40px rgba(0,0,0,1),0 0 0 1px rgba(255,255,255,.08)}
+.screen{position:relative;aspect-ratio:var(--ar);border-radius:24px;overflow:hidden;background:#0A1311}
+.screen video{width:100%;height:100%;display:block;object-fit:cover;background:#000}
+.slot{position:absolute;inset:0;width:100%;border:0;padding:0;cursor:pointer;color:var(--ink);font-family:inherit;
+ background:radial-gradient(80% 90% at 70% 10%,#1E6A57 0%,transparent 60%),radial-gradient(60% 60% at 15% 90%,#3B3A26 0%,transparent 70%),linear-gradient(180deg,#0E211C,#060B0A)}
+.slot .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7}
+.swirl{position:absolute;inset:-20%;background:conic-gradient(from 200deg at 60% 40%,transparent,rgba(166,227,205,.22),transparent 30%,rgba(217,201,160,.14),transparent 55%);filter:blur(30px);animation:sw 14s linear infinite}
+@keyframes sw{to{transform:rotate(360deg)}}
+.play{position:absolute;left:50%;top:50%;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;display:grid;place-items:center;z-index:2;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.play:before{content:"";position:absolute;inset:-14px;border-radius:50%;border:1px solid rgba(255,255,255,.25);animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.5);opacity:0}}
+.play svg{width:28px;height:28px;margin-left:4px;color:#fff;position:relative;z-index:3}
+.slot:hover .play{transform:scale(1.08)}
+.vtag{position:absolute;left:18px;top:18px;z-index:2;font-size:13px;font-weight:500;padding:9px 14px;border-radius:99px;display:flex;gap:8px;align-items:center}
+.vtag i{width:7px;height:7px;border-radius:50%;background:#ff5a4f;box-shadow:0 0 0 3px rgba(255,90,79,.25)}
+.vbar{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;border-radius:99px;text-align:left}
+.vbar .av{width:38px;height:38px}
+.vbar b{display:block;font-size:14px;font-weight:600}.vbar span{font-size:12.5px;color:var(--mute)}
+.vbar .du{margin-left:auto;font-size:13px;font-weight:500;color:var(--ink)}
+.vmsg{max-width:620px;margin:18px auto 0;font-size:15px;color:var(--sand);padding:14px 18px;border-radius:18px}
 
-/* hero */
-.hero{padding:56px 0 0}
-.hero h1{font-size:clamp(48px,8.4vw,112px);line-height:.95;letter-spacing:-.055em;max-width:12ch;margin:0 auto}
-.hero h1 .sf{display:block;font-size:1.04em;line-height:1;margin-top:.04em}
-.vsl{--ar:16/9;position:relative;max-width:940px;margin:48px auto 0;aspect-ratio:var(--ar);border-radius:26px;padding:10px}
-.vsl .in{position:relative;width:100%;height:100%;border-radius:18px;overflow:hidden;background:#0E1A17}
-.vsl video{width:100%;height:100%;display:block;object-fit:cover;background:#000}
-@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
-.vsl:after{content:"";position:absolute;inset:-2px;border-radius:28px;z-index:-1;background:conic-gradient(from var(--a),rgba(127,184,164,0),rgba(127,184,164,.6),rgba(215,199,154,.45),rgba(127,184,164,0) 60%);filter:blur(14px);opacity:.7;animation:spin 9s linear infinite}
-@keyframes spin{to{--a:360deg}}
-.slot{position:absolute;inset:0;width:100%;border:0;padding:0;cursor:pointer;color:var(--ink);font-family:inherit;background:
- radial-gradient(120% 90% at 78% 30%,rgba(127,184,164,.28),transparent 60%),radial-gradient(90% 80% at 10% 100%,rgba(215,199,154,.16),transparent 60%),linear-gradient(160deg,#16302A,#0D1916)}
-.slot .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6}
-.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:104px;height:104px;border-radius:50%;display:grid;place-items:center;
- background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,.08));-webkit-backdrop-filter:blur(14px) saturate(180%);backdrop-filter:blur(14px) saturate(180%);
- border:1px solid rgba(255,255,255,.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 50px -10px rgba(0,0,0,.6);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.play:after{content:"";margin-left:8px;border-style:solid;border-width:17px 0 17px 28px;border-color:transparent transparent transparent #fff}
-.play:before{content:"";position:absolute;inset:-12px;border-radius:50%;border:1.5px solid rgba(169,220,201,.55);animation:pulse 2.4s ease-out infinite}
-@keyframes pulse{0%{transform:scale(.92);opacity:1}100%{transform:scale(1.5);opacity:0}}
-.slot:hover .play{transform:translate(-50%,-50%) scale(1.08)}
-.vtag{position:absolute;top:16px;left:50%;transform:translateX(-50%);font-size:13px;font-weight:600;padding:8px 14px;border-radius:99px;white-space:nowrap;color:var(--ink)}
-.vdur{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:13px;font-weight:600;padding:7px 13px;border-radius:99px;white-space:nowrap;color:var(--ink)}
-.vmsg{max-width:640px;margin:18px auto 0;font-size:15px;color:var(--sand);padding:14px 18px;border-radius:16px}
+/* ---------- franja en movimiento ---------- */
+.marq{overflow:hidden;padding:26px 0;margin-top:70px;-webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marq div{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marq span{font-family:var(--c);font-weight:400;font-size:clamp(30px,4vw,52px);letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap;padding-right:28px;color:#E9EBE7}
+.marq span i{font-style:normal;color:var(--t);padding-left:28px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- secciones ---------- */
+.sec{position:relative;padding:110px 0 0}
+.glow{position:absolute;left:50%;top:0;width:900px;height:500px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(111,194,166,.13),transparent);pointer-events:none;z-index:-1}
 
 /* reserva */
-.steps3{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:34px auto 0;max-width:900px}
-.st{display:flex;align-items:center;gap:12px;padding:12px 20px 12px 12px;border-radius:99px;font-size:15px;font-weight:600;text-align:left}
-.st .ic{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(127,184,164,.16);color:var(--t2);flex:none}
-.st .ic svg{width:19px;height:19px}
-.st small{display:block;font-size:12px;font-weight:500;color:var(--mute)}
-.calw{max-width:860px;margin:30px auto 0;border-radius:28px;padding:10px}
-.cal{position:relative;min-height:700px;background:#fff;border-radius:20px;overflow:hidden}
+.steps{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:30px auto 0}
+.step{display:flex;align-items:center;gap:10px;padding:8px 18px 8px 8px;border-radius:99px;font-size:14.5px;font-weight:500}
+.step b{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#07100D;font-size:13px;font-weight:600}
+.calw{max-width:880px;margin:30px auto 0;padding:10px;border-radius:32px}
+.cal{position:relative;min-height:700px;background:#fff;border-radius:24px;overflow:hidden}
 .cal iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .cal.ready .cal-wait{display:none}
 .cal-wait{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#4c5653;font-size:15px;z-index:1;background:#fff}
-.cal-wait i{width:30px;height:30px;border-radius:50%;border:3px solid #dfe7e4;border-top-color:var(--td);animation:rot 1s linear infinite}
-.cal-wait a{font-size:14px;color:#2f5e57}
+.cal-wait i{width:30px;height:30px;border-radius:50%;border:3px solid #dfe7e4;border-top-color:#2E7A64;animation:rot 1s linear infinite}
+.cal-wait a{font-size:14px;color:#245E4E}
 @keyframes rot{to{transform:rotate(360deg)}}
-.byme{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:8px 20px 8px 8px;border-radius:99px;font-size:14px;color:var(--mute);text-align:left}
-.byme b{color:var(--ink);display:block;font-size:15px}
-.av{width:42px;height:42px;border-radius:50%;background:linear-gradient(160deg,#2B5247,#16302A) center/cover;display:grid;place-items:center;font-weight:700;color:var(--t2);flex:none}
-.alt{margin:14px 0 0;font-size:14px;color:var(--mute)}.alt a{color:var(--t2)}
-.ok{max-width:640px;margin:30px auto 0;border-radius:24px;padding:36px}
-.ok h3{font-size:30px;margin-bottom:10px}
+.alt{margin:18px 0 0;font-size:14px;color:var(--mute)}.alt a{color:var(--t2)}
+.ok{max-width:620px;margin:30px auto 0;border-radius:30px;padding:40px 28px}
+.ok h3{font-size:32px;font-weight:400;margin-bottom:8px}
 .ok p{color:var(--mute);margin:0}
 .ok ol{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:10px;text-align:left}
-.ok li{padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.05);color:var(--mute)}.ok li b{color:var(--ink)}
+.ok li{padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.05);color:var(--mute)}.ok li b{color:var(--ink);font-weight:600}
 
-/* casos: carrusel horizontal */
-.rail{position:relative;margin-top:44px}
-.cases{list-style:none;margin:0;padding:10px max(24px,calc((100vw - 1072px)/2)) 30px;display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab;scroll-padding:0 max(24px,calc((100vw - 1072px)/2))}
-.cases::-webkit-scrollbar{display:none}
-.cases.drag{cursor:grabbing;scroll-snap-type:none}
-.case{flex:0 0 min(360px,82vw);scroll-snap-align:start;border-radius:26px;padding:10px;text-align:left;user-select:none;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
-.case:hover{transform:translateY(-6px)}
-.case .ph{aspect-ratio:4/3;border-radius:18px;background:linear-gradient(150deg,#1E3A33,#12221E) center/cover;position:relative;overflow:hidden;display:grid;place-items:center}
-.case .ph svg{width:54px;height:54px;color:rgba(169,220,201,.35)}
-.case .tag{position:absolute;left:12px;top:12px;font-size:12px;font-weight:600;padding:7px 12px;border-radius:99px;color:var(--ink)}
-.case .bd{padding:20px 14px 14px}
-.case .kpi{font-size:56px;font-weight:700;letter-spacing:-.06em;line-height:1;color:var(--t2)}
-.case .kl{font-size:15px;color:var(--mute);margin-top:6px}
-.case blockquote{margin:16px 0 0;font-family:var(--s);font-style:italic;font-size:22px;line-height:1.25;letter-spacing:-.01em}
-.case cite{display:flex;align-items:center;gap:10px;font-style:normal;font-size:14px;color:var(--mute);margin-top:18px}
-.case cite b{color:var(--ink);display:block}
-.case cite .av{width:34px;height:34px;font-size:13px}
-.case.pend .kpi{color:rgba(169,220,201,.35)}
-.case.pend blockquote{color:var(--mute)}
-.arrows{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:6px}
-.arr{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:var(--ink);cursor:pointer;font:inherit;transition:transform .3s,opacity .3s}
-.arr:hover{transform:scale(1.08)}.arr[disabled]{opacity:.35;cursor:default;transform:none}
-.arr svg{width:20px;height:20px}
-.dots{display:flex;gap:6px}.dots i{width:7px;height:7px;border-radius:99px;background:rgba(255,255,255,.22);transition:width .3s,background .3s}.dots i.on{width:24px;background:var(--t2)}
-.pendnote{margin:18px auto 0;font-size:14px;color:var(--sand);max-width:620px}
+/* casos: carrusel 3D */
+#casos{overflow:hidden;padding-bottom:10px}
+.cf{position:relative;height:560px;margin-top:40px;perspective:1600px;touch-action:pan-y;user-select:none}
+.cf-card{position:absolute;left:50%;top:0;width:min(380px,76vw);height:520px;margin-left:calc(min(380px,76vw) / -2);border-radius:30px;overflow:hidden;cursor:pointer;
+ transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .7s,filter .7s;transform-style:preserve-3d;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.14);text-align:left}
+.cf-card .art{position:absolute;inset:0;background-size:cover;background-position:center}
+.cf-card .art svg{position:absolute;left:50%;top:34%;width:120px;height:120px;transform:translate(-50%,-50%);color:rgba(255,255,255,.22)}
+.cf-card .top2{position:absolute;left:14px;right:14px;top:14px;display:flex;justify-content:space-between;z-index:3}
+.cf-card .pill{font-size:12.5px;font-weight:500;padding:8px 13px;border-radius:99px}
+.cf-card .info{position:absolute;left:10px;right:10px;bottom:10px;padding:22px 20px 20px;border-radius:24px;z-index:3}
+.cf-card h3{font-size:28px;font-weight:400;letter-spacing:-.035em}
+.cf-card .kpi{display:flex;align-items:baseline;gap:10px;margin-top:8px}
+.cf-card .kpi b{font-size:40px;font-weight:300;letter-spacing:-.05em;line-height:1;white-space:nowrap}
+.cf-card .kpi span{font-size:13.5px;color:var(--mute);line-height:1.3}
+.cf-card q{display:block;margin-top:12px;font-size:15px;line-height:1.45;color:#D6DBD8;quotes:"«" "»"}
+.cf-card .who{margin-top:12px;font-size:13px;color:var(--mute)}
+.cf-card.side{filter:brightness(.6) saturate(.8)}
+.cf-bar{display:inline-flex;align-items:center;gap:14px;margin-top:6px;padding:8px;border-radius:99px}
+.cf-btn{width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.1);color:#fff;display:grid;place-items:center;cursor:pointer;transition:background .25s,transform .25s}
+.cf-btn:hover{background:rgba(255,255,255,.2);transform:scale(1.06)}
+.cf-btn svg{width:18px;height:18px}
+.cf-mid{min-width:170px;font-size:14px}
+.cf-mid b{display:block;font-weight:600}.cf-mid span{color:var(--mute);font-size:12.5px}
+.cf-dots{display:flex;justify-content:center;gap:6px;margin-top:16px}
+.cf-dots i{width:6px;height:6px;border-radius:99px;background:rgba(255,255,255,.25);transition:width .35s,background .35s}.cf-dots i.on{width:22px;background:#fff}
+.pendnote{margin:16px auto 0;font-size:13.5px;color:var(--sand);max-width:560px}
 
 /* metodología */
-.road{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:52px auto 0;max-width:1080px}
-.road:before{content:"";position:absolute;left:12%;right:12%;top:47px;height:2px;background:linear-gradient(90deg,transparent,var(--t) 15%,var(--t) 85%,transparent);opacity:.5}
-.stp{border-radius:24px;padding:26px 20px 24px;display:flex;flex-direction:column;align-items:center;gap:6px}
-.stp .ic{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#08110F;background:linear-gradient(180deg,#B5E4D3,#76AF9A);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 0 0 6px rgba(127,184,164,.14);margin-bottom:12px}
+.road{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:48px auto 0;max-width:1060px}
+.stp{padding:26px 22px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;min-height:220px}
+.stp .n{font-family:var(--c);font-size:15px;letter-spacing:.04em;color:var(--t2)}
+.stp .ic{width:48px;height:48px;border-radius:50%;background:#fff;color:#07100D;display:grid;place-items:center;margin-bottom:auto}
 .stp .ic svg{width:21px;height:21px}
-.stp small{font-size:13px;font-weight:700;color:var(--t2);letter-spacing:.04em}
-.stp b{font-size:22px;letter-spacing:-.03em;line-height:1.1}
-.stp span{font-size:15px;color:var(--mute);line-height:1.4}
-.inc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px auto 0;max-width:1080px}
-.tile{border-radius:20px;padding:22px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:15px;font-weight:600;line-height:1.25;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.tile:hover{transform:translateY(-4px)}
-.tile svg{width:26px;height:26px;color:var(--t2)}
-.note{font-size:13px;color:var(--mute);margin:16px 0 0}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:18px auto 0}
-.side2{border-radius:24px;padding:26px}
-.side2 h3{font-size:20px;letter-spacing:-.025em;margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:10px}
-.side2 h3 em{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.06em;padding:5px 10px;border-radius:99px;background:rgba(127,184,164,.18);color:var(--t2)}
-.side2.you h3 em{background:rgba(215,199,154,.18);color:var(--sand)}
-.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-.pills span{font-size:14px;padding:8px 13px;border-radius:99px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+.stp b{font-size:24px;font-weight:400;letter-spacing:-.035em;margin-top:28px}
+.stp span{font-size:14.5px;color:var(--mute);line-height:1.4;margin-top:4px}
+.stp .hdr{display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:auto}
+.inc{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px auto 0;max-width:900px}
+.inc span{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:500;padding:11px 18px 11px 12px;border-radius:99px}
+.inc svg{width:18px;height:18px;color:var(--t2)}
+.note{font-size:12.5px;color:var(--dim);margin:14px 0 0}
+
+/* banda CTA */
+.band{max-width:960px;margin:0 auto;border-radius:36px;padding:64px 24px;overflow:hidden;position:relative}
+.band:before{content:"";position:absolute;left:50%;bottom:-60%;width:120%;height:120%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(111,194,166,.35),transparent);z-index:-1}
+.band h2{font-size:clamp(34px,4.6vw,56px)}
 
 /* encaje */
-.fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:48px auto 0}
-.fc{border-radius:26px;padding:30px 26px}
-.fc .big{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;font-size:26px;font-weight:700}
-.fc.si .big{background:linear-gradient(180deg,#B5E4D3,#76AF9A);color:#08110F;box-shadow:0 0 0 8px rgba(127,184,164,.12)}
-.fc.no .big{background:rgba(224,154,136,.14);color:var(--bad);box-shadow:0 0 0 8px rgba(224,154,136,.06)}
-.fc h3{font-size:26px;margin-bottom:18px}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:900px;margin:44px auto 0}
+.fc{padding:30px 26px;text-align:left}
+.fc .hd2{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.fc .mk{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;flex:none}
+.fc.si .mk{background:#fff;color:#07100D}.fc.no .mk{background:rgba(231,156,138,.16);color:var(--bad)}
+.fc .mk svg{width:18px;height:18px}
+.fc h3{font-size:24px;font-weight:400;letter-spacing:-.03em}
 .fc ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.fc li{padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.05);font-size:15.5px;line-height:1.35}
+.fc li{padding:13px 16px;border-radius:16px;background:rgba(255,255,255,.045);font-size:15.5px;line-height:1.35}
 .fc.no li{color:var(--mute)}
 
 /* preguntas */
-.faq{max-width:760px;margin:44px auto 0;display:grid;gap:10px;text-align:left}
-.faq details{border-radius:20px;padding:0 22px;transition:background .3s}
-.faq details[open]{background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.06))}
-.faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-size:18px;font-weight:600;letter-spacing:-.02em;line-height:1.35;position:relative}
+.faq{max-width:620px;margin:40px auto 0;display:grid;gap:12px;text-align:left}
+.faq details{border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 0 0 1px rgba(255,255,255,.07)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 70px 18px 22px;font-size:16.5px;font-weight:500;letter-spacing:-.015em;line-height:1.35;position:relative}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary:after{content:"+";position:absolute;right:0;top:50%;width:28px;height:28px;margin-top:-14px;border-radius:50%;display:grid;place-items:center;font-size:20px;font-weight:400;color:var(--t2);background:rgba(127,184,164,.14);transition:transform .3s}
+.faq summary:after{content:"";position:absolute;right:16px;top:50%;width:34px;height:34px;margin-top:-17px;border-radius:50%;background:#fff;transition:transform .35s cubic-bezier(.2,.8,.2,1);
+ -webkit-mask:none;background-image:linear-gradient(#07100D,#07100D),linear-gradient(#07100D,#07100D);background-size:13px 1.6px,1.6px 13px;background-position:center;background-repeat:no-repeat;background-color:#fff}
 .faq details[open] summary:after{transform:rotate(45deg)}
-.faq p{margin:0 0 20px;color:var(--mute);font-size:16px}
+.faq p{margin:-4px 22px 20px;color:var(--mute);font-size:15px;line-height:1.55}
 
-/* cta intermedio */
-.mid{max-width:880px;margin:0 auto;border-radius:34px;padding:56px 28px;overflow:hidden}
-.mid h2{font-size:clamp(34px,4.6vw,58px)}
-.mid .cta{margin-top:30px}
-
-/* quién está detrás */
-.me{max-width:760px;margin:44px auto 0;border-radius:32px;padding:44px 32px}
-.me .pic{width:132px;height:132px;border-radius:50%;margin:0 auto;background:linear-gradient(160deg,#2B5247,#16302A) center/cover;display:grid;place-items:center;font-size:48px;font-weight:700;color:var(--t2);box-shadow:0 0 0 8px rgba(127,184,164,.12),0 0 0 1px rgba(255,255,255,.2)}
-.me .nm{font-size:22px;font-weight:700;margin-top:18px;letter-spacing:-.02em}
-.me .rl{font-size:15px;color:var(--mute)}
-.me p{font-size:18px;line-height:1.55;color:var(--mute);margin:22px auto 0;max-width:560px}
-.me p b{color:var(--ink);font-weight:600}
-.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
-.vals div{border-radius:18px;padding:18px 12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
-.vals svg{width:24px;height:24px;color:var(--t2);margin:0 auto 8px;display:block}
-.vals b{display:block;font-size:16px}.vals span{font-size:13.5px;color:var(--mute)}
-.links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:26px}
-.links a{font-size:14px;font-weight:600;text-decoration:none;padding:10px 16px;border-radius:99px}
-
-/* pie, barra móvil, cookies */
-footer{padding:80px 0 130px;font-size:14px;color:var(--mute)}
-footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin-top:10px}
+/* ---------- final: foto con el nombre detrás ---------- */
+.founder{position:relative;margin-top:140px;padding-top:40px;overflow:hidden}
+.founder:before{content:"";position:absolute;left:50%;top:10%;width:1200px;height:900px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(111,194,166,.32),rgba(111,194,166,.08) 55%,transparent);pointer-events:none}
+.fname{position:relative;z-index:1;font-family:var(--c);font-weight:400;text-transform:uppercase;line-height:.8;letter-spacing:-.02em;font-size:min(19.5vw,290px);margin:0;white-space:nowrap;
+ background:linear-gradient(180deg,#fff 30%,rgba(255,255,255,.25) 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fhi{position:relative;z-index:3;font-size:15px;color:var(--mute);margin-bottom:10px}
+.fstage{position:relative;max-width:1100px;margin:0 auto}
+.fphoto{position:relative;z-index:2;width:min(560px,92vw);margin:calc(min(19.5vw,290px) * -.55) auto 0;aspect-ratio:4/5;
+ -webkit-mask:linear-gradient(180deg,#000 72%,transparent 100%);mask:linear-gradient(180deg,#000 72%,transparent 100%)}
+.fphoto img{width:100%;height:100%;object-fit:contain;object-position:bottom}
+.fphoto svg{width:100%;height:100%}
+.fcopy{position:absolute;z-index:3;left:max(20px,env(safe-area-inset-left,0px));bottom:16%;max-width:300px;text-align:left}
+.fcopy p{font-size:26px;font-weight:400;letter-spacing:-.035em;line-height:1.15;margin:0 0 18px}
+.fcard{position:absolute;z-index:3;right:max(20px,env(safe-area-inset-right,0px));bottom:16%;width:280px;padding:18px;border-radius:24px;text-align:left}
+.fcard .row{display:flex;flex-direction:column;gap:8px}
+.fcard .it{display:flex;align-items:center;gap:10px;font-size:14px}
+.fcard .it svg{width:18px;height:18px;color:var(--t2);flex:none}
+.fcard .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.fcard .tags a{font-size:12.5px;font-weight:500;text-decoration:none;padding:7px 12px;border-radius:99px;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+footer{position:relative;z-index:3;padding:20px 0 120px;font-size:13.5px;color:var(--dim)}
+footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 22px;margin-bottom:10px}
 footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:55;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));transform:translateY(120%);transition:transform .4s cubic-bezier(.2,.8,.2,1);display:none}
+
+/* barra móvil, cookies */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px max(14px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));transform:translateY(130%);transition:transform .45s cubic-bezier(.2,.8,.2,1);display:none}
 .bar.on{transform:none}
-.bar .btn{width:100%}
-.ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;max-width:440px;margin:0 auto;border-radius:20px;padding:18px;background:rgba(18,32,28,.85)}
+.bar .btn{width:100%;justify-content:space-between}
+.ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;max-width:440px;margin:0 auto;padding:18px;border-radius:22px;background:rgba(14,22,20,.8)}
 .ck p{margin:0 0 14px;font-size:14px;color:var(--mute)}.ck p a{color:var(--t2)}
 .ck .row{display:flex;gap:10px;justify-content:center}
-.pill{font:inherit;font-size:14px;font-weight:600;padding:10px 16px;border-radius:99px;border:1px solid var(--gb);background:transparent;color:var(--ink);cursor:pointer}
-.pill.solid{background:var(--t);border-color:var(--t);color:#08110F}
+.pill2{font:inherit;font-size:14px;font-weight:500;padding:10px 16px;border-radius:99px;border:0;background:rgba(255,255,255,.1);color:var(--ink);cursor:pointer}
+.pill2.solid{background:#fff;color:#07100D}
 
 /* apariciones */
-.rv{opacity:0;transform:translateY(24px) scale(.985);filter:blur(6px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1),filter .9s ease}
+.rv{opacity:0;transform:translateY(26px);filter:blur(8px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.2,1),filter 1s ease}
 .rv.in{opacity:1;transform:none;filter:none}
-.st.rv:nth-child(2),.stp.rv:nth-child(2),.tile.rv:nth-child(2){transition-delay:.08s}
-.st.rv:nth-child(3),.stp.rv:nth-child(3),.tile.rv:nth-child(3){transition-delay:.16s}
-.stp.rv:nth-child(4),.tile.rv:nth-child(4){transition-delay:.24s}
-.tile.rv:nth-child(5){transition-delay:.06s}.tile.rv:nth-child(6){transition-delay:.14s}.tile.rv:nth-child(7){transition-delay:.22s}.tile.rv:nth-child(8){transition-delay:.3s}
-@media (prefers-reduced-motion:reduce){
- .rv{opacity:1;transform:none;filter:none;transition:none}
- .blobs i,.btn:after,.play:before,.thread:after,.vsl:after{animation:none}
- html{scroll-behavior:auto}}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;filter:none;transition:none}.marq div,.swirl,.play:before{animation:none}.cf-card{transition:none}html{scroll-behavior:auto}}
 
 @media (max-width:900px){
- .road{grid-template-columns:1fr 1fr}.road:before{display:none}
- .inc{grid-template-columns:1fr 1fr}
- .duo,.fit{grid-template-columns:1fr}
+ .road{grid-template-columns:1fr 1fr}
+ .fit{grid-template-columns:1fr}
  .bar{display:block}
- .thread{height:90px}
+ .fcopy,.fcard{position:relative;left:auto;right:auto;bottom:auto;margin:0 auto;max-width:420px;width:auto;text-align:center}
+ .fcopy{margin-top:-40px}.fcard{margin-top:22px;text-align:left}
 }
 @media (max-width:560px){
- body{font-size:16px}
- .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
- .hero{padding-top:40px}
- .vsl{margin-top:30px;padding:6px;border-radius:20px}.vsl .in{border-radius:15px}
- .play{width:76px;height:76px}.play:after{border-width:13px 0 13px 21px;margin-left:6px}
- .vtag{top:10px;font-size:12px;padding:6px 11px}.vdur{display:none}
- .btn{font-size:17px;padding:18px 22px;width:100%}
- .steps3{flex-direction:column;align-items:stretch}
- .st{border-radius:18px}
- .calw{padding:6px;border-radius:22px;margin-left:-6px;margin-right:-6px}
- .cal{min-height:960px;border-radius:16px}
- .road{grid-template-columns:1fr}
- .vals{grid-template-columns:1fr}
- .me,.mid{padding:36px 18px;border-radius:26px}
- .fc{padding:24px 16px}
+ .top i{width:44px}
+ .hero h1{margin-top:48px}
+ .stage{margin-top:36px}
+ .device{padding:7px;border-radius:24px}.screen{border-radius:18px}
+ .play{width:70px;height:70px;margin:-35px 0 0 -35px}.play svg{width:22px;height:22px}
+ .vtag{left:10px;top:10px;font-size:12px;padding:7px 11px}
+ .vbar{display:none}
+ .btn{font-size:16px;padding-left:22px}
+ .marq{margin-top:40px}
+ .sec{padding-top:80px}
+ .steps{flex-direction:column;align-items:center}
+ .calw{padding:6px;border-radius:26px;margin-left:-6px;margin-right:-6px}
+ .cal{min-height:960px;border-radius:20px}
+ .road{grid-template-columns:1fr}.stp{min-height:0}
+ .cf{height:520px}.cf-card{height:480px}
+ .band{padding:48px 18px;border-radius:28px}
+ .founder{margin-top:100px}
+ .fname{font-size:23vw}.fphoto{margin-top:-12vw}
+ .fcopy{padding:0 20px}.fcard{margin-left:20px;margin-right:20px}
+ .cf-card .kpi b{font-size:32px}
 }
 </style>
 </head>
@@ -278,67 +288,78 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
  <defs>
-  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
-  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
-  <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
-  <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></symbol>
-  <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></symbol>
-  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c1-4 4.5-9 13-9 0 8.5-5 12-9 13z"/><circle cx="15" cy="9" r="1.5"/></symbol>
-  <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
-  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h13v11H1zM14 9h4l4 4v3h-8"/><circle cx="5.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></symbol>
-  <symbol id="i-sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5M3 21v-5h5"/></symbol>
-  <symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></symbol>
-  <symbol id="i-mega" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12"/></symbol>
-  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M8 16v-4M13 16V8M18 16v-7"/></symbol>
-  <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 1.5-.8 1.5-1.5 0-1.2-1-1.5-1-2.5S13.3 15 14.5 15H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/></symbol>
-  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></symbol>
+  <filter id="refract" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+   <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="n"/>
+   <feGaussianBlur in="n" stdDeviation="2" result="nb"/>
+   <feDisplacementMap in="SourceGraphic" in2="nb" scale="38" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c1-4 4.5-9 13-9 0 8.5-5 12-9 13z"/><circle cx="15" cy="9" r="1.5"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5h13v11H1zM14 9h4l4 4v3h-8"/><circle cx="5.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></symbol>
+  <symbol id="i-sync" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5M3 21v-5h5"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 8.5a5 5 0 0 1 0 7M18 6a8.5 8.5 0 0 1 0 12"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M8 16v-4M13 16V8M18 16v-7"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 1.5-.8 1.5-1.5 0-1.2-1-1.5-1-2.5S13.3 15 14.5 15H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7" r="1"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
   <symbol id="i-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></symbol>
   <symbol id="i-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></symbol>
   <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
-  <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-ne" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z" fill="currentColor"/></symbol>
  </defs>
 </svg>
 
-<div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
-
-<header class="top" id="top"><a class="logo glass" href="/" aria-label="404 Growth">404/GROWTH<sup>®</sup></a></header>
-
 <main>
-<!-- H1 + vídeo + CTA -->
+<!-- héroe -->
 <section class="hero" id="inicio">
+  <div class="beams" aria-hidden="true"></div><div class="stripes" aria-hidden="true"></div>
+  <header class="top"><i aria-hidden="true"></i><a class="logo" href="/" aria-label="404 Growth">404/GROWTH<sup>®</sup></a><i aria-hidden="true"></i></header>
   <div class="wrap">
-    <h1>Tu tienda cierra a las&nbsp;20:00. <span class="sf">Tus ventas, ya&nbsp;no.</span></h1>
-    <figure class="vsl glass" id="vsl" style="margin-bottom:0">
-      <div class="in" id="vsl-in">
-        <button class="slot" id="slot" type="button" aria-label="Ver el vídeo de Christian">
-          <span class="vtag glass">🔊 Dale al play con sonido</span>
-          <span class="play" aria-hidden="true"></span>
-          <span class="vdur glass">Christian · 4 min</span>
-        </button>
-      </div>
-    </figure>
-    <p class="vmsg glass" id="vsl-msg" hidden>El vídeo llega en unos días. Mientras, elige tu hora aquí abajo y te lo cuento en directo.</p>
+    <h1>Tu tienda cierra a las&nbsp;20:00. <em><b>Tus ventas, ya&nbsp;no.</b></em></h1>
+    <div class="stage">
+      <div class="arc2" aria-hidden="true"></div><div class="arc" aria-hidden="true"></div>
+      <figure class="device" id="vsl" style="margin-top:0;margin-bottom:0">
+        <div class="screen" id="screen">
+          <button class="slot" id="slot" type="button" aria-label="Ver el vídeo de Christian">
+            <span class="swirl" aria-hidden="true"></span>
+            <span class="vtag lg" aria-hidden="true"><i></i>Dale al play con sonido</span>
+            <span class="play lg" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+            <span class="vbar lg" aria-hidden="true"><span class="av" data-av>C</span><span><b>Christian Silva</b><span>Cómo tu tienda vende en toda España</span></span><span class="du">4:00</span></span>
+          </button>
+        </div>
+      </figure>
+    </div>
+    <p class="vmsg lg" id="vsl-msg" hidden>El vídeo llega en unos días. Mientras, elige tu hora aquí abajo y te lo cuento en directo.</p>
     <div class="cta">
-      <a class="btn" href="#reservar" data-cta="hero">Quiero mi tienda online <span class="ar"><svg width="16" height="16"><use href="#i-down"/></svg></span></a>
-      <div class="chips"><span class="chip glass"><svg><use href="#i-check"/></svg>15 minutos</span><span class="chip glass"><svg><use href="#i-check"/></svg>Gratis</span><span class="chip glass"><svg><use href="#i-check"/></svg>Precio cerrado</span></div>
+      <a class="btn dn" href="#reservar" data-cta="hero">Quiero mi tienda online <span class="ar"><svg><use href="#i-down"/></svg></span></a>
+      <div class="micro"><span><svg><use href="#i-check"/></svg>15 minutos</span><span><svg><use href="#i-check"/></svg>Gratis</span><span><svg><use href="#i-check"/></svg>Precio cerrado</span></div>
     </div>
   </div>
+  <div class="marq" aria-hidden="true"><div>
+    <span>Tienda online en 21 días<i>✦</i></span><span>Bizum y Apple Pay<i>✦</i></span><span>Envíos a toda España<i>✦</i></span><span>Abierta 24/7<i>✦</i></span><span>Precio cerrado<i>✦</i></span><span>Tu mismo stock<i>✦</i></span>
+    <span>Tienda online en 21 días<i>✦</i></span><span>Bizum y Apple Pay<i>✦</i></span><span>Envíos a toda España<i>✦</i></span><span>Abierta 24/7<i>✦</i></span><span>Precio cerrado<i>✦</i></span><span>Tu mismo stock<i>✦</i></span>
+  </div></div>
 </section>
 
 <!-- calendario -->
-<section class="sec" id="reservar">
-  <div class="thread" aria-hidden="true"></div>
+<section class="sec" id="reservar" style="padding-top:60px">
+  <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="hd rv"><h2>Elige tu hora. <span class="sf">Hablamos 15&nbsp;minutos.</span></h2></div>
-    <div class="steps3">
-      <div class="st glass rv"><span class="ic"><svg><use href="#i-chat"/></svg></span><span>Me cuentas tu tienda<small>Qué vendes y cómo</small></span></div>
-      <div class="st glass rv"><span class="ic"><svg><use href="#i-eye"/></svg></span><span>Te la enseño online<small>Con tu catálogo</small></span></div>
-      <div class="st glass rv"><span class="ic"><svg><use href="#i-tag"/></svg></span><span>Precio y plazos<small>Cerrados, sin presión</small></span></div>
+    <h2 class="rv">Elige tu hora.<br><em>Hablamos 15&nbsp;minutos.</em></h2>
+    <div class="steps">
+      <span class="step lg rv"><b>1</b>Me cuentas tu tienda</span>
+      <span class="step lg rv d1"><b>2</b>Te la enseño online</span>
+      <span class="step lg rv d2"><b>3</b>Precio cerrado</span>
     </div>
     <div id="book-box">
-      <div class="calw glass rv"><div class="cal" id="cal"><div class="cal-wait"><i></i><span>Cargando la agenda…</span><a id="cal-out" href="https://calendly.com/hola-404growth/llamada-404-growth" target="_blank" rel="noopener">¿Tarda? Ábrela aquí</a></div></div></div>
-      <div class="byme glass"><span class="av" data-av aria-hidden="true">C</span><span><b>Christian Silva</b>Te atiendo yo, sin comerciales</span></div>
+      <div class="calw lg rv"><div class="cal" id="cal"><div class="cal-wait"><i></i><span>Cargando la agenda…</span><a id="cal-out" href="https://calendly.com/hola-404growth/llamada-404-growth" target="_blank" rel="noopener">¿Tarda? Ábrela aquí</a></div></div></div>
       <p class="alt">¿Prefieres escribir? <a href="https://wa.me/34610594450?text=Hola%20Christian%2C%20he%20visto%20el%20v%C3%ADdeo%20y%20quiero%20pasar%20mi%20tienda%20f%C3%ADsica%20a%20tienda%20online." target="_blank" rel="noopener" data-cta="whatsapp">Háblame por WhatsApp</a></p>
     </div>
   </div>
@@ -346,66 +367,62 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 
 <!-- casos de éxito -->
 <section class="sec" id="casos">
-  <div class="thread" aria-hidden="true"></div>
-  <div class="wrap"><div class="hd rv"><h2>Tiendas que ya venden <span class="sf">con la persiana bajada.</span></h2></div></div>
-  <div class="rail rv">
-    <ul class="cases" id="cases" aria-label="Casos de éxito"></ul>
-    <div class="arrows"><button class="arr glass" type="button" id="prev" aria-label="Anterior"><svg><use href="#i-l"/></svg></button><span class="dots" id="dots"></span><button class="arr glass" type="button" id="next" aria-label="Siguiente"><svg><use href="#i-r"/></svg></button></div>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="rv">Tiendas que ya venden<br><em>con la persiana bajada.</em></h2>
   </div>
-  <div class="wrap"><p class="pendnote" id="cases-note" hidden>Vista previa: son huecos. Rellena CASES en el código con casos reales; en 404growth.com los huecos vacíos no se muestran.</p></div>
+  <div class="cf rv" id="cf" tabindex="0" aria-label="Casos de éxito. Usa las flechas para pasar."></div>
+  <div class="cf-bar lg rv"><button class="cf-btn" type="button" id="prev" aria-label="Anterior"><svg><use href="#i-l"/></svg></button><span class="cf-mid" id="cf-mid" aria-live="polite"></span><button class="cf-btn" type="button" id="next" aria-label="Siguiente"><svg><use href="#i-r"/></svg></button></div>
+  <div class="cf-dots" id="cf-dots"></div>
+  <div class="wrap"><p class="pendnote" id="cases-note" hidden>Vista previa: son huecos. Rellena CASES en el código con casos reales; en 404growth.com, si está vacío, esta sección no se muestra.</p></div>
 </section>
 
 <!-- metodología -->
 <section class="sec" id="metodo">
-  <div class="thread" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="hd rv"><h2>De tu mostrador a toda España <span class="sf">en 21&nbsp;días.</span></h2></div>
+    <h2 class="rv">De tu mostrador a toda España<br><em>en 21&nbsp;días.</em></h2>
     <div class="road">
-      <div class="stp glass rv"><span class="ic"><svg><use href="#i-chat"/></svg></span><small>DÍA 1</small><b>Llamada</b><span>Vemos tu tienda y tu catálogo</span></div>
-      <div class="stp glass rv"><span class="ic"><svg><use href="#i-camera"/></svg></span><small>DÍAS 1–7</small><b>Catálogo</b><span>Fotos, fichas, precios y stock</span></div>
-      <div class="stp glass rv"><span class="ic"><svg><use href="#i-store"/></svg></span><small>DÍAS 8–18</small><b>Tienda</b><span>Tu marca, pagos y envíos</span></div>
-      <div class="stp glass rv"><span class="ic"><svg><use href="#i-rocket"/></svg></span><small>DÍA 21</small><b>¡Abierta!</b><span>Y después, captación y mejora</span></div>
+      <div class="stp lg rv"><div class="hdr"><span class="ic"><svg><use href="#i-chat"/></svg></span><span class="n">DÍA 1</span></div><b>Llamada</b><span>Vemos tu tienda y tu catálogo</span></div>
+      <div class="stp lg rv d1"><div class="hdr"><span class="ic"><svg><use href="#i-camera"/></svg></span><span class="n">DÍAS 1–7</span></div><b>Catálogo</b><span>Fotos, fichas, precios y stock</span></div>
+      <div class="stp lg rv d2"><div class="hdr"><span class="ic"><svg><use href="#i-store"/></svg></span><span class="n">DÍAS 8–18</span></div><b>Tienda</b><span>Tu marca, pagos y envíos</span></div>
+      <div class="stp lg rv d3"><div class="hdr"><span class="ic"><svg><use href="#i-rocket"/></svg></span><span class="n">DÍA 21</span></div><b>Abierta</b><span>Y después, anuncios y mejora</span></div>
     </div>
-    <div class="inc">
-      <div class="tile glass rv"><svg><use href="#i-palette"/></svg>Tu marca y tu dominio</div>
-      <div class="tile glass rv"><svg><use href="#i-card"/></svg>Bizum, tarjeta y Apple Pay</div>
-      <div class="tile glass rv"><svg><use href="#i-truck"/></svg>Envíos a toda España</div>
-      <div class="tile glass rv"><svg><use href="#i-store"/></svg>Recogida en tienda</div>
-      <div class="tile glass rv"><svg><use href="#i-sync"/></svg>Stock con tu TPV*</div>
-      <div class="tile glass rv"><svg><use href="#i-insta"/></svg>Instagram Shopping</div>
-      <div class="tile glass rv"><svg><use href="#i-mega"/></svg>Anuncios en Meta</div>
-      <div class="tile glass rv"><svg><use href="#i-chart"/></svg>Ventas medidas</div>
+    <div class="inc rv">
+      <span class="lg"><svg><use href="#i-palette"/></svg>Tu marca y dominio</span>
+      <span class="lg"><svg><use href="#i-card"/></svg>Bizum, tarjeta, Apple Pay</span>
+      <span class="lg"><svg><use href="#i-truck"/></svg>Envíos a toda España</span>
+      <span class="lg"><svg><use href="#i-store"/></svg>Recogida en tienda</span>
+      <span class="lg"><svg><use href="#i-sync"/></svg>Stock con tu TPV*</span>
+      <span class="lg"><svg><use href="#i-insta"/></svg>Instagram Shopping</span>
+      <span class="lg"><svg><use href="#i-mega"/></svg>Anuncios en Meta</span>
+      <span class="lg"><svg><use href="#i-chart"/></svg>Ventas medidas</span>
     </div>
-    <div class="duo">
-      <div class="side2 glass rv"><h3><em>NOSOTROS</em>Lo hacemos todo</h3><div class="pills"><span>Diseño</span><span>Desarrollo</span><span>Fichas</span><span>Pagos</span><span>Envíos</span><span>Formación</span></div></div>
-      <div class="side2 you glass rv"><h3><em>TÚ</em>Solo pones</h3><div class="pills"><span>Productos</span><span>Precios y stock</span><span>Tus fotos</span><span>Quien prepare pedidos</span></div></div>
-    </div>
-    <p class="note">* Si tu TPV lo permite. Lo revisamos en la llamada.</p>
+    <p class="note">Tú pones productos, precios y fotos. Nosotros, todo lo demás. * Si tu TPV lo permite.</p>
   </div>
 </section>
 
 <section class="sec">
-  <div class="thread" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="mid glass rv">
-      <h2>¿Cómo quedaría <span class="sf">la tuya?</span></h2>
-      <div class="cta"><a class="btn go" href="#reservar" data-cta="metodo">Enséñamela en 15 min <span class="ar"><svg width="16" height="16"><use href="#i-right"/></svg></span></a></div>
+    <div class="band lg rv">
+      <h2>¿Cómo quedaría <em>la tuya?</em></h2>
+      <div class="cta"><a class="btn" href="#reservar" data-cta="metodo">Enséñamela en 15 min <span class="ar"><svg><use href="#i-ne"/></svg></span></a></div>
     </div>
   </div>
 </section>
 
 <!-- para quién es -->
 <section class="sec" id="encaje">
-  <div class="thread" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="hd rv"><h2>¿Es para <span class="sf">tu tienda?</span></h2></div>
+    <h2 class="rv">¿Es para <em>tu tienda?</em></h2>
     <div class="fit">
-      <div class="fc si glass rv"><div class="big">✓</div><h3>Sí, si…</h3><ul>
+      <div class="fc si lg rv"><div class="hd2"><span class="mk"><svg><use href="#i-check"/></svg></span><h3>Sí, si…</h3></div><ul>
         <li id="fy1">Tienes tienda física y vendes producto</li>
         <li>Tienes catálogo y alguien para los pedidos</li>
-        <li>Quieres vender fuera de tu zona y de tu horario</li>
+        <li>Quieres vender fuera de tu zona y horario</li>
       </ul></div>
-      <div class="fc no glass rv"><div class="big">✕</div><h3>No, si…</h3><ul>
+      <div class="fc no lg rv d1"><div class="hd2"><span class="mk"><svg><use href="#i-x"/></svg></span><h3>No, si…</h3></div><ul>
         <li>Buscas ventas garantizadas desde el día 1</li>
         <li>Vendes servicios o citas, no producto</li>
         <li>Solo quieres una web escaparate</li>
@@ -416,64 +433,52 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 
 <!-- preguntas -->
 <section class="sec" id="dudas">
-  <div class="thread" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="hd rv"><h2>Lo que <span class="sf">todos preguntan.</span></h2></div>
+    <h2 class="rv">Preguntas <em>frecuentes</em></h2>
+    <p class="lead rv">Lo que todos preguntan antes de reservar.</p>
     <div class="faq rv">
-      <details class="glass"><summary>¿Cuánto cuesta?</summary><p>Depende de cuántos productos tienes, si se conecta tu TPV y si incluye anuncios y email marketing. En la llamada te damos un precio cerrado, sin sorpresas.</p></details>
-      <details class="glass"><summary>¿Hay costes aparte?</summary><p>Pueden existir: el dominio si no tienes, la comisión de la pasarela por venta, los envíos y el presupuesto de anuncios. Te los detallamos antes de empezar.</p></details>
-      <details class="glass"><summary>¿Se conecta con el stock de mi tienda?</summary><p>Depende de tu TPV o programa. Muchos permiten sincronizar el stock con la web; otros no. Lo revisamos en la llamada.</p></details>
-      <details class="glass"><summary>¿Tengo que cerrar mi tienda física?</summary><p>No. La tienda online es un segundo canal con tu mismo stock.</p></details>
-      <details class="glass"><summary>Ya tengo web. ¿La perdemos?</summary><p>La rehacemos en tu dominio y redirigimos las direcciones antiguas para no perder lo que ya tienes en Google.</p></details>
-      <details class="glass"><summary>¿Quién la mantiene después?</summary><p>Te enseñamos a gestionar pedidos y productos tú mismo. El mantenimiento técnico y la captación se acuerdan en la propuesta.</p></details>
-      <details class="glass"><summary>¿Me garantizáis ventas?</summary><p>No. Dejamos la tienda lista para vender y la captación en marcha, pero las ventas dependen de tu producto, tus precios y el mercado. Medimos desde el primer día y mejoramos lo que funciona.</p></details>
+      <details open><summary>¿Cuánto cuesta?</summary><p>Depende de cuántos productos tienes, si se conecta tu TPV y si incluye anuncios. En la llamada te damos un precio cerrado, sin sorpresas.</p></details>
+      <details><summary>¿Hay costes aparte?</summary><p>Pueden existir: dominio, comisión de la pasarela por venta, envíos y presupuesto de anuncios. Te los detallamos antes de empezar.</p></details>
+      <details><summary>¿Se conecta con el stock de mi tienda?</summary><p>Depende de tu TPV o programa. Muchos permiten sincronizarlo con la web; otros no. Lo revisamos en la llamada.</p></details>
+      <details><summary>¿Tengo que cerrar mi tienda física?</summary><p>No. La tienda online es un segundo canal con tu mismo stock.</p></details>
+      <details><summary>Ya tengo web. ¿La perdemos?</summary><p>La rehacemos en tu dominio y redirigimos las direcciones antiguas para no perder lo que ya tienes en Google.</p></details>
+      <details><summary>¿Me garantizáis ventas?</summary><p>No. Dejamos la tienda lista y la captación en marcha, pero las ventas dependen de tu producto, tus precios y el mercado. Medimos desde el primer día y mejoramos lo que funciona.</p></details>
     </div>
+    <div class="cta" style="margin-top:44px"><a class="btn" href="#reservar" data-cta="faq">Elegir mi hora <span class="ar"><svg><use href="#i-ne"/></svg></span></a></div>
   </div>
 </section>
 
-<section class="sec">
-  <div class="thread" aria-hidden="true"></div>
-  <div class="wrap">
-    <div class="mid glass rv">
-      <h2>Tu persiana baja. <span class="sf">Tu tienda, no.</span></h2>
-      <div class="cta"><a class="btn go" href="#reservar" data-cta="faq">Elegir mi hora <span class="ar"><svg width="16" height="16"><use href="#i-right"/></svg></span></a></div>
+<!-- quién está detrás: foto con el nombre detrás -->
+<section class="founder" id="nosotros">
+  <div class="fstage">
+    <p class="fhi rv">Hola, soy</p>
+    <p class="fname" aria-label="Christian">Christian</p>
+    <div class="fphoto" id="fphoto">
+      <svg viewBox="0 0 400 500" aria-hidden="true"><defs><linearGradient id="sil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A3B36"/><stop offset="1" stop-color="#0B1311"/></linearGradient></defs>
+        <circle cx="200" cy="170" r="82" fill="url(#sil)"/><path d="M40 500c0-120 70-200 160-200s160 80 160 200z" fill="url(#sil)"/></svg>
     </div>
-  </div>
-</section>
-
-<!-- quién está detrás -->
-<section class="sec" id="nosotros">
-  <div class="thread" aria-hidden="true"></div>
-  <div class="wrap">
-    <div class="hd rv"><h2>Quién está <span class="sf">detrás.</span></h2></div>
-    <div class="me glass rv">
-      <div class="pic" data-av aria-hidden="true">C</div>
-      <div class="nm">Christian Silva</div>
-      <div class="rl">Fundador de 404 Growth</div>
-      <p>Ayudo a <b>tiendas físicas independientes</b> a vender online como las grandes, sin abrir otro local. Hablas conmigo desde la llamada hasta que tu tienda abre.</p>
-      <div class="vals">
-        <div><svg><use href="#i-tag"/></svg><b>Precio cerrado</b><span>Antes de empezar</span></div>
-        <div><svg><use href="#i-cal"/></svg><b>21 días</b><span>Con fechas claras</span></div>
-        <div><svg><use href="#i-chart"/></svg><b>Todo medido</b><span>Qué vende y dónde</span></div>
+    <div class="fcopy rv"><p>Te atiendo yo, desde la llamada hasta que tu tienda abre.</p><a class="btn" href="#reservar" data-cta="nosotros">Reservar llamada <span class="ar"><svg><use href="#i-ne"/></svg></span></a></div>
+    <div class="fcard lg rv d1">
+      <div class="row">
+        <span class="it"><svg><use href="#i-tag"/></svg>Precio cerrado antes de empezar</span>
+        <span class="it"><svg><use href="#i-cal"/></svg>Tienda abierta en 21 días</span>
+        <span class="it"><svg><use href="#i-chart"/></svg>Todo medido desde el día 1</span>
       </div>
-      <div class="links"><a class="glass" href="/#nichos" target="_blank" rel="noopener">Ver tiendas de ejemplo</a><a class="glass" href="https://wa.me/34610594450" target="_blank" rel="noopener" data-cta="whatsapp-nosotros">WhatsApp</a><a class="glass" href="mailto:hola@404growth.com">hola@404growth.com</a></div>
+      <div class="tags"><a href="https://wa.me/34610594450" target="_blank" rel="noopener" data-cta="whatsapp-final">WhatsApp</a><a href="/#nichos" target="_blank" rel="noopener">Tiendas de ejemplo</a></div>
     </div>
   </div>
+  <footer>
+    <nav><a href="/">404growth.com</a><a href="mailto:hola@404growth.com">hola@404growth.com</a><a href="/legal">Aviso legal y privacidad</a></nav>
+    <span>© <span id="yr">2026</span> 404 Growth · Christian Silva</span>
+  </footer>
 </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span>© <span id="yr">2026</span> 404 Growth</span>
-    <nav><a href="/">404growth.com</a><a href="mailto:hola@404growth.com">hola@404growth.com</a><a href="/legal">Aviso legal y privacidad</a></nav>
-  </div>
-</footer>
+<div class="bar" id="bar"><a class="btn" href="#reservar" data-cta="barra">Reservar mi llamada <span class="ar"><svg><use href="#i-ne"/></svg></span></a></div>
 
-<div class="bar" id="bar"><a class="btn" href="#reservar" data-cta="barra">Reservar mi llamada <span class="ar"><svg width="16" height="16"><use href="#i-right"/></svg></span></a></div>
-
-<div class="ck glass" id="ck" hidden role="dialog" aria-label="Cookies de medición">
+<div class="ck lg" id="ck" hidden role="dialog" aria-label="Cookies de medición">
   <p>¿Nos dejas usar la cookie de Meta? Solo sirve para saber qué anuncio te trajo hasta aquí. <a href="/legal#cookies" target="_blank" rel="noopener">Más información</a></p>
-  <div class="row"><button class="pill solid" type="button" id="ck-yes">Aceptar</button><button class="pill" type="button" id="ck-no">No, gracias</button></div>
+  <div class="row"><button class="pill2 solid" type="button" id="ck-yes">Aceptar</button><button class="pill2" type="button" id="ck-no">No, gracias</button></div>
 </div>
 
 <script>
@@ -481,14 +486,16 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   /* ---------- lo que hay que rellenar ----------
      PIXEL:  id del píxel de Meta (15–16 cifras). Vacío = sin píxel y sin aviso de cookies.
      VSL:    src = mp4 con subtítulos quemados; poster = foto fija; ratio "16/9" o "9/16". src vacío = el hueco con el botón de play.
-     AVATAR: foto de Christian (reserva y «quién está detrás»).
+     AVATAR: foto pequeña de Christian (círculo del vídeo).
+     PHOTO:  foto de Christian SIN FONDO (png o webp transparente, de cintura para arriba) para el final, delante del nombre.
      CASES:  SOLO casos reales, con permiso del cliente:
-             {tienda:'Nombre', sector:'Moda · Valencia', img:'/casos/x.webp', kpi:'+38 %', kpil:'qué mide y en cuánto tiempo', q:'cita literal', who:'Nombre, dueña'}
+             {tienda:'Nombre', sector:'Moda', ciudad:'Valencia', img:'/casos/x.webp', kpi:'+38 %', kpil:'ventas online en 3 meses', q:'cita literal', who:'Nombre, dueña'}
              Vacío = en 404growth.com la sección se oculta; en la vista previa salen huecos.
      Sector desde el anuncio: ?n=moda | joyeria | deporte | obrador | optica | deco (o utm_content con ese valor). */
   var PIXEL='';
-  var VSL={src:'',poster:'/ind-me.webp',ratio:'16/9'};
+  var VSL={src:'',poster:'',ratio:'16/9'};
   var AVATAR='/ind-me.webp';
+  var PHOTO='/christian-recorte.png';
   var CASES=[];
   var CAL='https://calendly.com/hola-404growth/llamada-404-growth';
 
@@ -498,6 +505,9 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   $('yr').textContent=new Date().getFullYear();
   var PROD=/(^|\.)404growth\.com$/.test(location.hostname);
   var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* refracción del cristal: solo en navegadores que la pintan bien (Chrome, Edge) */
+  var ua=navigator.userAgentData;if(ua&&ua.brands&&ua.brands.some(function(b){return /Chromium/.test(b.brand)}))d.documentElement.classList.add('lgx');
 
   /* ---------- sector, desde el enlace del anuncio ---------- */
   var ALIAS={moda:'moda',ropa:'moda',boutique:'moda',joyeria:'joyeria','joyería':'joyeria',bisuteria:'joyeria',deporte:'deporte',running:'deporte',
@@ -509,36 +519,42 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   /* ---------- fotos opcionales ---------- */
   if(VSL.poster&&!VSL.src){var pi=new Image();pi.className='poster';pi.alt='';pi.onload=function(){$('slot').insertBefore(pi,$('slot').firstChild)};pi.src=VSL.poster}
   if(AVATAR){var im=new Image();im.onload=function(){[].forEach.call(d.querySelectorAll('[data-av]'),function(a){a.style.backgroundImage='url("'+AVATAR+'")';a.textContent=''})};im.src=AVATAR}
+  if(PHOTO){var fp=new Image();fp.alt='Christian Silva, fundador de 404 Growth';fp.onload=function(){var b=$('fphoto');b.innerHTML='';b.appendChild(fp)};fp.src=PHOTO}
 
-  /* ---------- casos de éxito (carrusel) ---------- */
-  var cl=$('cases');
-  if(CASES.length){
-    cl.innerHTML=CASES.map(function(c){return '<li class="case glass"><div class="ph"'+(c.img?' style="background-image:url(\''+esc(c.img)+'\')"':'')+'>'+(c.img?'':'<svg><use href="#i-store"/></svg>')+'<span class="tag glass">'+esc(c.sector)+'</span></div><div class="bd">'+
-      (c.kpi?'<div class="kpi">'+esc(c.kpi)+'</div><div class="kl">'+esc(c.kpil)+'</div>':'')+
-      (c.q?'<blockquote>«'+esc(c.q)+'»</blockquote>':'')+'<cite><span class="av">'+esc((c.tienda||'?').charAt(0))+'</span><span><b>'+esc(c.tienda)+'</b>'+esc(c.who)+'</span></cite></div></li>'}).join('');
-  }else if(PROD){$('casos').hidden=true}
-  else{
-    cl.innerHTML=['Moda','Joyería','Deporte','Decoración','Óptica'].map(function(s){return '<li class="case pend glass"><div class="ph"><svg><use href="#i-store"/></svg><span class="tag glass">'+s+' · Ciudad</span></div><div class="bd"><div class="kpi">+00 %</div><div class="kl">Resultado medible y en cuánto tiempo</div><blockquote>«Aquí va la frase real del cliente.»</blockquote><cite><span class="av">?</span><span><b>Caso real pendiente</b>Nombre, dueño o dueña</span></cite></div></li>'}).join('');
-    $('cases-note').hidden=false;
+  /* ---------- casos de éxito: carrusel 3D ---------- */
+  var ART={moda:'linear-gradient(160deg,#6B5543,#2A211B 60%,#120E0C)',joyeria:'linear-gradient(160deg,#8A7444,#3A2E17 60%,#15110A)',deporte:'linear-gradient(160deg,#2C6E80,#123540 60%,#081419)',
+    deco:'linear-gradient(160deg,#8C5A44,#3B2419 60%,#160D09)',optica:'linear-gradient(160deg,#3D4F7A,#1A2340 60%,#0A0E1A)',obrador:'linear-gradient(160deg,#9A7A52,#43311D 60%,#18110A)'};
+  var list=CASES.length?CASES:(PROD?[]:[
+    {tienda:'Caso real pendiente',sector:'Moda',ciudad:'Ciudad',kpi:'+00 %',kpil:'qué mide y en cuánto tiempo',q:'Aquí va la frase real del cliente.',who:'Nombre, dueño o dueña',pend:1,k:'moda'},
+    {tienda:'Caso real pendiente',sector:'Joyería',ciudad:'Ciudad',kpi:'+00 %',kpil:'qué mide y en cuánto tiempo',q:'Aquí va la frase real del cliente.',who:'Nombre, dueño o dueña',pend:1,k:'joyeria'},
+    {tienda:'Caso real pendiente',sector:'Deporte',ciudad:'Ciudad',kpi:'+00 %',kpil:'qué mide y en cuánto tiempo',q:'Aquí va la frase real del cliente.',who:'Nombre, dueño o dueña',pend:1,k:'deporte'},
+    {tienda:'Caso real pendiente',sector:'Decoración',ciudad:'Ciudad',kpi:'+00 %',kpil:'qué mide y en cuánto tiempo',q:'Aquí va la frase real del cliente.',who:'Nombre, dueño o dueña',pend:1,k:'deco'},
+    {tienda:'Caso real pendiente',sector:'Óptica',ciudad:'Ciudad',kpi:'+00 %',kpil:'qué mide y en cuánto tiempo',q:'Aquí va la frase real del cliente.',who:'Nombre, dueño o dueña',pend:1,k:'optica'}]);
+  if(!list.length){$('casos').hidden=true}else{
+    if(!CASES.length)$('cases-note').hidden=false;
+    var cf=$('cf'),dots=$('cf-dots'),mid=$('cf-mid'),cur=Math.min(2,list.length-1);
+    cf.innerHTML=list.map(function(c,i){var key=c.k||(ALIAS[(c.sector||'').toLowerCase()]||'moda');
+      return '<article class="cf-card" data-i="'+i+'"><div class="art" style="background-image:'+(c.img?'linear-gradient(180deg,transparent 40%,rgba(0,0,0,.4)),url(\''+esc(c.img)+'\')':ART[key]||ART.moda)+'">'+(c.img?'':'<svg><use href="#i-store"/></svg>')+'</div>'+
+        '<div class="top2"><span class="pill lg">'+esc(c.sector)+' · '+esc(c.ciudad||'')+'</span><span class="pill lg">'+(i+1)+'/'+list.length+'</span></div>'+
+        '<div class="info lg dark"><h3>'+esc(c.tienda)+'</h3>'+(c.kpi?'<div class="kpi"><b>'+esc(c.kpi)+'</b><span>'+esc(c.kpil)+'</span></div>':'')+(c.q?'<q>'+esc(c.q)+'</q>':'')+'<div class="who">'+esc(c.who)+'</div></div></article>'}).join('');
+    dots.innerHTML=list.map(function(){return '<i></i>'}).join('');
+    var cards=[].slice.call(cf.children);
+    function render(){var w=cards[0].offsetWidth,gap=Math.min(w*.62,innerWidth*.28);
+      cards.forEach(function(c,i){var o=i-cur,a=Math.abs(o);
+        c.style.transform='translateX('+(o*gap)+'px) translateZ('+(-a*140)+'px) rotateY('+(o*-24)+'deg)';
+        c.style.opacity=a>2?0:1;c.style.zIndex=20-a;c.style.pointerEvents=a>2?'none':'auto';c.classList.toggle('side',a>0)});
+      [].forEach.call(dots.children,function(x,k){x.classList.toggle('on',k===cur)});
+      mid.innerHTML='<b>'+esc(list[cur].tienda)+'</b><span>'+esc(list[cur].sector)+' · '+esc(list[cur].ciudad||'')+'</span>'}
+    function go(n){cur=Math.max(0,Math.min(list.length-1,n));render()}
+    $('prev').onclick=function(){go(cur-1)};$('next').onclick=function(){go(cur+1)};
+    cards.forEach(function(c){c.addEventListener('click',function(){var i=+c.getAttribute('data-i');if(i!==cur&&!moved)go(i)})});
+    cf.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')go(cur-1);if(e.key==='ArrowRight')go(cur+1)});
+    var sx=null,moved=false;
+    cf.addEventListener('pointerdown',function(e){sx=e.clientX;moved=false});
+    cf.addEventListener('pointermove',function(e){if(sx!==null&&Math.abs(e.clientX-sx)>8)moved=true});
+    addEventListener('pointerup',function(e){if(sx===null)return;var dx=e.clientX-sx;sx=null;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));setTimeout(function(){moved=false},0)});
+    addEventListener('resize',render);render();
   }
-  (function(){
-    var items=cl.children,dots=$('dots'),prev=$('prev'),next=$('next');if(!items.length)return;
-    dots.innerHTML=[].map.call(items,function(){return '<i></i>'}).join('');
-    function step(){var a=items[0],b=items[1];return b?b.offsetLeft-a.offsetLeft:a.offsetWidth}
-    function upd(){var i=Math.round(cl.scrollLeft/step());[].forEach.call(dots.children,function(x,k){x.classList.toggle('on',k===Math.min(i,items.length-1))});
-      prev.disabled=cl.scrollLeft<4;next.disabled=cl.scrollLeft+cl.clientWidth>=cl.scrollWidth-4}
-    prev.onclick=function(){cl.scrollBy({left:-step(),behavior:RM?'auto':'smooth'})};
-    next.onclick=function(){cl.scrollBy({left:step(),behavior:RM?'auto':'smooth'})};
-    cl.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
-    var down=false,sx=0,sl=0,moved=false;
-    cl.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;down=true;moved=false;sx=e.clientX;sl=cl.scrollLeft;cl.classList.add('drag')});
-    addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>3)moved=true;cl.scrollLeft=sl-dx});
-    addEventListener('pointerup',function(){if(!down)return;down=false;cl.classList.remove('drag');var s=step();cl.scrollTo({left:Math.round(cl.scrollLeft/s)*s,behavior:RM?'auto':'smooth'})});
-    cl.addEventListener('click',function(e){if(moved){e.preventDefault();e.stopPropagation()}},true);
-  })();
-
-  /* ---------- brillo que sigue al ratón en los botones ---------- */
-  [].forEach.call(d.querySelectorAll('.btn'),function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.setProperty('--x',(e.clientX-r.left)+'px');b.style.setProperty('--y',(e.clientY-r.top)+'px')})});
 
   /* ---------- píxel de Meta, solo con consentimiento ---------- */
   var PQ=[],fbOn=false;window.__ev=[];
@@ -557,8 +573,8 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   if(VSL.src){
     var v=d.createElement('video');v.src=VSL.src;if(VSL.poster)v.poster=VSL.poster;v.controls=true;v.playsInline=true;v.preload='metadata';
     v.setAttribute('aria-label','Vídeo de Christian: cómo tu tienda física puede vender online');
-    var fig=$('vsl');fig.style.setProperty('--ar',VSL.ratio||'16/9');if(VSL.ratio==='9/16')fig.style.maxWidth='min(100%,420px)';
-    var vin=$('vsl-in');vin.innerHTML='';vin.appendChild(v);
+    var dev=$('vsl');dev.style.setProperty('--ar',VSL.ratio||'16/9');if(VSL.ratio==='9/16')dev.style.maxWidth='min(100%,430px)';
+    var sc=$('screen');sc.innerHTML='';sc.appendChild(v);
     var played=false,marks={};
     v.addEventListener('play',function(){if(!played){played=true;px('VSLPlay',{},true)}});
     v.addEventListener('timeupdate',function(){if(!v.duration)return;var p=v.currentTime/v.duration*100;
@@ -572,7 +588,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   function calUrl(inline){
     var p={utm_source:qs.get('utm_source')||'404growth.com',utm_medium:qs.get('utm_medium')||'vsl',utm_campaign:qs.get('utm_campaign')||'vsl-tiendas',utm_content:qs.get('utm_content')||(N||'general')};
     if(qs.get('utm_term'))p.utm_term=qs.get('utm_term');
-    if(inline){p.embed_domain=location.host||'404growth.com';p.embed_type='Inline';p.primary_color='3d786f';p.hide_gdpr_banner='0'}
+    if(inline){p.embed_domain=location.host||'404growth.com';p.embed_type='Inline';p.primary_color='2e7a64';p.hide_gdpr_banner='0'}
     return CAL+'?'+Object.keys(p).map(function(k){return k+'='+encodeURIComponent(p[k])}).join('&')}
   $('cal-out').href=calUrl(false);
   var frame=null,booked=false;
@@ -586,7 +602,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     if(m==='calendly.page_height'&&frame&&c){var hh=parseInt(e.data.payload&&e.data.payload.height,10);if(hh>400&&hh<3000)c.style.minHeight=hh+'px'}
     if(m==='calendly.date_and_time_selected')px('EligeHora',{},true);
     if(m==='calendly.event_scheduled'&&!booked){booked=true;px('Schedule');
-      $('book-box').innerHTML='<div class="ok glass"><h3>¡Hecho! Tu llamada está reservada.</h3><p>Nos vemos en la llamada.</p><ol>'+
+      $('book-box').innerHTML='<div class="ok lg"><h3>Hecho. Tu llamada está reservada.</h3><p>Nos vemos en la llamada.</p><ol>'+
         '<li><b>Mira tu email.</b> Tienes la invitación con el enlace.</li>'+
         '<li><b>Te escribo por WhatsApp</b> para confirmar.</li>'+
         '<li><b>Ten a mano</b> tu web o Instagram, cuántos productos tienes y qué TPV usas.</li></ol></div>';
