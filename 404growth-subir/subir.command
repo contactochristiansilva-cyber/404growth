@@ -4,31 +4,28 @@
 # La primera vez instala Node.js en ~/.404node (solo si no lo tienes) y te pide entrar en Cloudflare en el navegador.
 cd "$(dirname "$0")" || exit 1
 fin() { echo; read -r -p "  Pulsa Intro para cerrar." _; exit "${1:-0}"; }
-# 0) antes de subir, trae lo último de GitHub (repositorio público: no hace falta clave). Solo toca las dos carpetas del repo;
-#    las imágenes y vídeos que solo están en el Mac no se tocan. Si no hay internet, sube lo que hay en la carpeta.
-REPO_URL="https://github.com/contactochristiansilva-cyber/404growth.git"
-ROOT="$(cd .. && pwd)"; GD="$HOME/.404growth-git"
+# 0) antes de subir, trae lo último de GitHub (repositorio público: sin clave y sin instalar nada: solo curl y tar, que el Mac ya tiene).
+#    Solo toca las dos carpetas del repo; las imágenes y vídeos que solo están en el Mac no se tocan. Sin internet, sube lo que hay.
+REPO="contactochristiansilva-cyber/404growth"
+ROOT="$(cd .. && pwd)"
 if [ "$1" != "--ya" ]; then
   echo
-  if ! xcode-select -p >/dev/null 2>&1; then
-    echo "  Para que esto se actualice solo, el Mac necesita las herramientas de desarrollo de Apple (una vez)."
-    echo "  Abre Terminal, escribe:  xcode-select --install  y acepta. Mientras, subo lo que hay en esta carpeta."
-  else
-    echo "  Trayendo lo último de GitHub…"
-    ANTES=$(shasum "$0" 2>/dev/null)
-    export GIT_TERMINAL_PROMPT=0
-    G="git --git-dir=$GD --work-tree=$ROOT"
-    [ -d "$GD" ] || git --git-dir="$GD" init -q >/dev/null 2>&1
-    $G remote get-url origin >/dev/null 2>&1 || $G remote add origin "$REPO_URL" >/dev/null 2>&1
-    if $G fetch -q --depth=1 origin main >/dev/null 2>&1; then
-      if $G checkout -q -f origin/main -- 404growth-subir web117-404growth >/dev/null 2>&1; then
-        echo "  ✓ Carpeta al día con GitHub ($($G log -1 --format='%ad · %s' --date=format:'%d/%m %H:%M' origin/main 2>/dev/null | cut -c1-90))"
-      else echo "  ! No pude poner la carpeta al día. Avisa a Claude. Subo lo que hay en esta carpeta."; fi
-      if [ "$(shasum "$0" 2>/dev/null)" != "$ANTES" ]; then exec /bin/bash "$0" --ya; fi
+  echo "  Trayendo lo último de GitHub…"
+  ANTES=$(shasum "$0" 2>/dev/null)
+  TMP=$(mktemp -d 2>/dev/null || echo "/tmp/404-$$"); mkdir -p "$TMP"
+  if curl -fsSL --max-time 90 "https://github.com/$REPO/archive/refs/heads/main.tar.gz" -o "$TMP/r.tgz" 2>"$TMP/err" && tar -xzf "$TMP/r.tgz" -C "$TMP" 2>>"$TMP/err" && [ -d "$TMP/404growth-main/web117-404growth" ]; then
+    if cp -R "$TMP/404growth-main/404growth-subir/." "$ROOT/404growth-subir/" 2>>"$TMP/err" && cp -R "$TMP/404growth-main/web117-404growth/." "$ROOT/web117-404growth/" 2>>"$TMP/err"; then
+      ULT=$(curl -fsS --max-time 20 "https://api.github.com/repos/$REPO/commits/main" 2>/dev/null | sed -n 's/.*"message": *"\([^"]*\)".*/\1/p' | head -1 | cut -c1-80)
+      echo "  ✓ Carpeta al día con GitHub${ULT:+ · último cambio: $ULT}"
     else
-      echo "  ! No pude leer GitHub (¿sin internet?). Subo lo que hay en esta carpeta."
+      echo "  ! Bajé GitHub pero no pude copiar los archivos. Pásale esto a Claude:"; head -3 "$TMP/err" | sed 's/^/    /'
     fi
+  else
+    echo "  ! No pude bajar GitHub (¿sin internet?). Subo lo que hay en esta carpeta. Si tienes internet, pásale esto a Claude:"; head -3 "$TMP/err" 2>/dev/null | sed 's/^/    /'
   fi
+  rm -rf "$TMP" 2>/dev/null
+  chmod +x "$0" 2>/dev/null
+  if [ "$(shasum "$0" 2>/dev/null)" != "$ANTES" ]; then echo "  (subir.command también se ha actualizado; sigo con la versión nueva)"; exec /bin/bash "$0" --ya; fi
 fi
 SITE=$(sed -n 's/.*"directory": *"\([^"]*\)".*/\1/p' wrangler.jsonc)
 echo
