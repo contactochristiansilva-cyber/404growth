@@ -425,44 +425,44 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 .cf .cf-card .shade{display:none}
 @media (max-width:560px){.cf-track{gap:14px}@keyframes cfm{to{transform:translate3d(calc(-50% - 7px),0,0)}}}
 @media (prefers-reduced-motion:reduce){.cf-track{animation:none}}
-/* v40: los 15 días, tres momentos */
-.t15{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px;text-align:left}
-.t15-line{position:absolute;left:4px;right:4px;top:131px;height:2px;z-index:0}
-.t15-line i{position:absolute;inset:0;background:linear-gradient(90deg,rgba(166,227,205,.5),var(--t2) 70%,#fff);transform:scaleX(0);transform-origin:left;transition:transform 2.2s cubic-bezier(.65,0,.35,1)}
-.t15-line b{position:absolute;top:-5px;left:0;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#fff;box-shadow:0 0 0 6px rgba(166,227,205,.18),0 0 24px 4px rgba(166,227,205,.7);opacity:0;transition:left 2.2s cubic-bezier(.65,0,.35,1),opacity .3s}
-.go15 .t15-line i{transform:none}.go15 .t15-line b{left:100%;opacity:1}
-.t15-s{position:relative;z-index:1;padding:0 4px;opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform 1s cubic-bezier(.32,.72,0,1);transition-delay:calc(var(--i) * .7s + .1s)}
-.go15 .t15-s{opacity:1;transform:none}
-.t15-n{font-size:118px;font-weight:200;line-height:1;letter-spacing:-.06em;height:124px;background:linear-gradient(180deg,#fff 30%,rgba(255,255,255,.25));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
-.hot .t15-n{background:linear-gradient(180deg,var(--t2) 20%,rgba(111,194,166,.25));-webkit-background-clip:text;background-clip:text}
-.t15-v{position:relative;height:250px;margin:18px 0 22px;border-radius:26px;overflow:hidden;background:#0C1311;box-shadow:0 0 0 1px rgba(255,255,255,.1),0 40px 70px -40px rgba(0,0,0,.9)}
-.t15-v img{display:block;width:100%;height:100%;object-fit:cover}
-.v1 img{object-position:50% 30%;filter:saturate(.9)}
-.v1 .live,.v2 .up{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:8px;padding:8px 13px;border-radius:99px;background:rgba(4,7,6,.78);font-size:13px;font-weight:500}
-.v1 .live i{width:8px;height:8px;border-radius:50%;background:#FF5A4F;box-shadow:0 0 0 4px rgba(255,90,79,.2)}
-.v2{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px;background:linear-gradient(160deg,#141C19,#0A0F0D)}
-.v2 img{border-radius:14px;height:180px;opacity:0;transform:translateY(16px) scale(.94);transition:opacity .6s,transform .8s cubic-bezier(.32,.72,0,1);transition-delay:calc(1s + var(--k) * .18s)}
-.go15 .v2 img{opacity:1;transform:none}
-.v2 .up i{width:16px;height:16px;border-radius:50%;background:var(--t);-webkit-mask:radial-gradient(circle,#000 38%,transparent 40%);mask:radial-gradient(circle,#000 38%,transparent 40%)}
-.v2 .up i{-webkit-mask:none;mask:none;background:var(--t) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' stroke='%2307231B' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/100%}
-.v3 img{object-position:top center}
-.v3 .ord{position:absolute;left:12px;right:12px;top:12px;display:flex;gap:11px;align-items:center;padding:11px 13px;border-radius:18px;background:rgba(245,247,246,.94);color:#0B1210;font-size:12.5px;line-height:1.3;
- box-shadow:0 12px 30px -10px rgba(0,0,0,.6);opacity:0;transform:translateY(-14px) scale(.95);transition:opacity .5s,transform .7s cubic-bezier(.34,1.56,.64,1);transition-delay:2.6s}
-.v3 .ord b{display:block;font-size:13.5px;font-weight:600}.v3 .ord i{flex:none;width:32px;height:32px;border-radius:9px;background:linear-gradient(150deg,var(--t2),var(--t))}
-.go15 .v3 .ord{opacity:1;transform:none}
-.t15-d{margin:0 0 4px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--t2)}
-.t15-s h3{font-size:30px;font-weight:400;letter-spacing:-.035em;line-height:1.1;margin:0 0 8px}
-.t15-s p{margin:0;color:var(--mute);font-size:15.5px;line-height:1.45}
-.t15-who{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:14px!important;font-size:13.5px!important}
-.t15-who span{font-size:11.5px;font-weight:600;padding:4px 9px;border-radius:99px}.t15-who .tu{background:var(--sand);color:#1B1710}.t15-who .us{background:var(--t);color:#07231B}
-.t15+.mnote{margin-top:26px}
+/* v41: los 15 días, fijo mientras haces scroll */
+.sd{padding:0;height:380vh;position:relative}
+.sd-pin{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:center;gap:34px;padding:24px 24px 30px;overflow:hidden}
+.sd-h h2{font-size:clamp(34px,5vw,58px)}.sd-h .lead{margin-top:12px}
+.sd-g{display:grid;grid-template-columns:1fr 80px 1.15fr;align-items:stretch;max-width:1040px;width:100%;margin:0 auto;height:min(560px,58vh);text-align:left}
+.sd-l{display:flex;flex-direction:column;justify-content:space-around;align-items:flex-end;padding:14px 0}
+.sd-it{display:flex;align-items:center;gap:18px;color:var(--dim);transition:color .5s}
+.sd-it span{text-align:right;font-size:15px;line-height:1.25;transition:color .5s,transform .5s}
+.sd-it i{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);transition:background .5s,box-shadow .5s,transform .5s cubic-bezier(.32,.72,0,1)}
+.sd-it svg{width:26px;height:26px}
+.sd-it.on{color:var(--ink)}.sd-it.on span{transform:translateX(-4px)}
+.sd-it.on i{background:rgba(166,227,205,.16);box-shadow:inset 0 0 0 1px rgba(166,227,205,.5),0 0 40px -6px rgba(166,227,205,.55);transform:scale(1.08);color:var(--t2)}
+.sd-m{position:relative}
+.sd-path{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.sd-path path{fill:none;stroke-width:2;vector-effect:non-scaling-stroke}
+#sd-p{stroke:rgba(255,255,255,.1)}#sd-p2{stroke:var(--t2);stroke-dasharray:1;stroke-dashoffset:1}
+.sd-dot{position:absolute;left:0;top:0;width:0;height:0;will-change:transform}
+.sd-dot b{position:absolute;left:-8px;top:-8px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 0 0 6px rgba(166,227,205,.18),0 0 26px 4px rgba(166,227,205,.75)}
+.sd-dot span{position:absolute;left:18px;top:-12px;white-space:nowrap;font-size:13px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(4,7,6,.85);color:var(--t2);box-shadow:inset 0 0 0 1px rgba(166,227,205,.3)}
+.sd-r{display:flex;flex-direction:column;justify-content:center;gap:14px;padding-left:10px}
+.sd-cards{position:relative;min-height:300px}
+.sd-card{position:absolute;left:0;top:0;width:100%;padding:24px 24px 22px;opacity:0;transform:translateY(22px);pointer-events:none;transition:opacity .55s ease,transform .7s cubic-bezier(.32,.72,0,1)}
+.sd-card.on{opacity:1;transform:none;pointer-events:auto}
+.sd-d{margin:0 0 6px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--t2);display:flex;align-items:center;gap:10px}
+.sd-d .pill{font-size:11.5px;letter-spacing:0;text-transform:none;font-weight:600;padding:4px 9px;border-radius:99px}.pill.tu{background:var(--sand);color:#1B1710}.pill.us{background:var(--t);color:#07231B}.pill.go{background:#fff;color:#07100D}
+.sd-card h3{margin:0 0 14px;font-size:30px;font-weight:400;letter-spacing:-.035em;line-height:1.1}
+.sd-card ul{list-style:none;padding:0;margin:0;display:grid;gap:9px;font-size:15.5px;color:#D6DBD8}
+.sd-card li{display:flex;gap:10px;align-items:flex-start}.sd-card li svg{flex:none;width:18px;height:18px;margin-top:3px;color:var(--t)}
+.sd-ord{margin-top:16px;display:flex;gap:11px;align-items:center;padding:11px 13px;border-radius:16px;background:rgba(245,247,246,.94);color:#0B1210;font-size:12.5px;line-height:1.3;opacity:0;transform:translateY(10px) scale(.96);transition:opacity .5s .5s,transform .7s .5s cubic-bezier(.34,1.56,.64,1)}
+.sd-card.on .sd-ord{opacity:1;transform:none}.sd-ord b{display:block;font-size:13.5px;font-weight:600}.sd-ord i{flex:none;width:32px;height:32px;border-radius:9px;background:linear-gradient(150deg,var(--t2),var(--t))}
+.sd .mnote{text-align:left}
 @media (max-width:820px){
- .t15{grid-template-columns:1fr;gap:40px;padding-left:26px;margin-top:34px}
- .t15-line{left:4px;right:auto;top:20px;bottom:20px;width:2px;height:auto}
- .t15-line i{transform:scaleY(0);transform-origin:top;background:linear-gradient(180deg,rgba(166,227,205,.5),var(--t2) 70%,#fff)}
- .t15-line b{left:-5px!important;top:0;margin-left:0;transition:top 2.2s cubic-bezier(.65,0,.35,1),opacity .3s}.go15 .t15-line b{top:100%}
- .t15-n{font-size:84px;height:88px}.t15-v{height:220px}.v2 img{height:150px}.t15-s h3{font-size:27px}}
-@media (prefers-reduced-motion:reduce){.t15-line i,.t15-line b,.t15-s,.v2 img,.v3 .ord{transition:none}}
+ .sd{height:360vh}.sd-pin{gap:18px;padding:16px 14px 20px}.sd-h h2{font-size:32px}.sd-h .lead{font-size:15px;margin-top:8px}
+ .sd-g{grid-template-columns:52px 44px 1fr;height:min(520px,62vh)}
+ .sd-it span{display:none}.sd-it i{width:46px;height:46px}.sd-it svg{width:20px;height:20px}
+ .sd-dot span{display:none}.sd-r{padding-left:4px}
+ .sd-card{padding:16px 16px 14px}.sd-card h3{font-size:22px;margin-bottom:10px}.sd-card ul{font-size:14px;gap:7px}.sd-cards{min-height:280px}.sd .mnote{font-size:11.5px}}
+@media (prefers-reduced-motion:reduce){.sd-it,.sd-it i,.sd-it span,.sd-card,.sd-ord{transition:none}}
 /* barra móvil, cookies */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--bg);box-shadow:0 -1px 0 rgba(255,255,255,.06);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));transform:translate3d(0,130%,0);transition:transform .22s cubic-bezier(.4,0,1,1);will-change:transform;backface-visibility:hidden;display:none}
 .bar.on{transform:translate3d(0,0,0);transition:transform .32s cubic-bezier(.16,1,.3,1)}
@@ -649,33 +649,15 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 </section>
 
 <!-- metodología: 15 días, pasan solos -->
-<section class="sec" id="metodo">
-  <div class="glow" aria-hidden="true"></div>
-  <div class="wrap">
-    <h2 class="rv">De tu mostrador a toda España<br><em>en 15&nbsp;días.</em></h2>
-    <p class="lead rv">Tres momentos. Tú pones 30 minutos y tus fotos; el resto es cosa nuestra.</p>
-    <div class="t15" id="t15">
-      <div class="t15-line" aria-hidden="true"><i></i><b></b></div>
-      <article class="t15-s" style="--i:0">
-        <div class="t15-n" aria-hidden="true">1</div>
-        <div class="t15-v v1"><img src="/christian-404.webp" alt="" loading="lazy" decoding="async"><span class="live"><i></i>Llamada · 30 min</span></div>
-        <p class="t15-d">Día 1</p><h3>Hablamos.</h3><p>Me cuentas tu tienda y te enseño cómo quedaría online.</p>
-        <p class="t15-who"><span class="tu">Tú</span>30 minutos</p>
-      </article>
-      <article class="t15-s" style="--i:1">
-        <div class="t15-n" aria-hidden="true">5</div>
-        <div class="t15-v v2"><img src="/demos/solenne/p1.webp" alt="" loading="lazy" decoding="async" style="--k:0"><img src="/demos/solenne/p2.webp" alt="" loading="lazy" decoding="async" style="--k:1"><img src="/demos/solenne/p3.webp" alt="" loading="lazy" decoding="async" style="--k:2"><span class="up"><i></i>Catálogo online</span></div>
-        <p class="t15-d">Días 2–5</p><h3>Tu catálogo, online.</h3><p>Nos pasas fotos y precios. Nosotros hacemos las fichas.</p>
-        <p class="t15-who"><span class="tu">Tú</span>fotos y precios <span class="us">Nosotros</span>las fichas</p>
-      </article>
-      <article class="t15-s hot" style="--i:2">
-        <div class="t15-n" aria-hidden="true">15</div>
-        <div class="t15-v v3"><img src="/demos/cards/solenne.webp" alt="" loading="lazy" decoding="async"><span class="ord"><i></i><span><b>Nuevo pedido · 129 €</b>Envío a Bilbao · 23:14</span></span></div>
-        <p class="t15-d">Día 15</p><h3>Abres. Y vendes de noche.</h3><p>Tu marca, Bizum y Apple Pay, envíos a toda España y recogida en tienda.</p>
-        <p class="t15-who"><span class="us">Nosotros</span>todo esto, y tu stock con tu TPV*</p>
-      </article>
+<section class="sec sd" id="metodo">
+  <div class="sd-pin" id="sd">
+    <div class="wrap sd-h"><h2>De tu mostrador a toda España<br><em>en 15&nbsp;días.</em></h2><p class="lead">Tu parte: fotos y precios. Todo lo demás, nosotros.</p></div>
+    <div class="sd-g">
+      <div class="sd-l"><div class="sd-it" data-i="0"><span>Tus fotos<br>y precios</span><i><svg><use href="#i-camera"/></svg></i></div><div class="sd-it" data-i="1"><span>Tu marca<br>y tu tienda</span><i><svg><use href="#i-palette"/></svg></i></div><div class="sd-it" data-i="2"><span>Envíos<br>y stock</span><i><svg><use href="#i-truck"/></svg></i></div><div class="sd-it" data-i="3"><span>Abres</span><i><svg><use href="#i-rocket"/></svg></i></div></div>
+      <div class="sd-m" aria-hidden="true"><svg class="sd-path" viewBox="0 0 80 600" preserveAspectRatio="none"><path id="sd-p" d="M40 0 C40 140 18 190 40 300 C62 410 40 460 40 600"/><path id="sd-p2" pathLength="1" d="M40 0 C40 140 18 190 40 300 C62 410 40 460 40 600"/></svg><div class="sd-dot" id="sd-dot"><b></b><span id="sd-day">Día 1</span></div></div>
+      <div class="sd-r"><div class="sd-cards"><div class="sd-card lg dark" data-i="0"><p class="sd-d">Días 1–3 <span class="pill tu">Tú</span></p><h3>Tus fotos y precios</h3><ul><li><svg><use href="#i-check"/></svg>Nos pasas fotos y precios por WhatsApp</li><li><svg><use href="#i-check"/></svg>Nosotros hacemos las fichas de producto</li><li><svg><use href="#i-check"/></svg>Tú no tocas nada más</li></ul></div><div class="sd-card lg dark" data-i="1"><p class="sd-d">Días 4–8 <span class="pill us">Nosotros</span></p><h3>Tu marca y tu tienda</h3><ul><li><svg><use href="#i-check"/></svg>Tu marca y tu dominio</li><li><svg><use href="#i-check"/></svg>Diseño de la tienda, con tu identidad</li><li><svg><use href="#i-check"/></svg>Bizum, Apple Pay y tarjeta</li></ul></div><div class="sd-card lg dark" data-i="2"><p class="sd-d">Días 9–14 <span class="pill us">Nosotros</span></p><h3>Envíos y stock</h3><ul><li><svg><use href="#i-check"/></svg>Envíos a toda España</li><li><svg><use href="#i-check"/></svg>Recogida en tienda</li><li><svg><use href="#i-check"/></svg>Stock sincronizado con tu TPV*</li><li><svg><use href="#i-check"/></svg>Pruebas de compra reales</li></ul></div><div class="sd-card lg dark" data-i="3"><p class="sd-d">Día 15 <span class="pill go">Abierta</span></p><h3>Abres. Y vendes de noche.</h3><ul><li><svg><use href="#i-check"/></svg>Instagram Shopping conectado</li><li><svg><use href="#i-check"/></svg>Anuncios en Meta listos para empezar</li><li><svg><use href="#i-check"/></svg>Pedidos a cualquier hora, también de noche</li></ul><div class="sd-ord"><i></i><span><b>Nuevo pedido · 129 €</b>Domingo 23:14 · Envío a Bilbao</span></div></div></div>
+        <p class="mnote">Pedido de ejemplo, ilustrativo. * Si tu TPV lo permite.</p></div>
     </div>
-    <p class="mnote">Pedido de ejemplo, ilustrativo. * Si tu TPV lo permite. Lo revisamos en la llamada.</p>
   </div>
 </section>
 
@@ -855,8 +837,16 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     if('IntersectionObserver' in window){new IntersectionObserver(function(es){inView=es[0].isIntersecting;if(inView){show(cur);plan()}else clearTimeout(timer)},{threshold:.45}).observe(pin)}else{inView=true;plan()}
   })();
 
-  (function(){var q=$('t15');if(!q)return;if(RM||!('IntersectionObserver' in window)){q.classList.add('go15');return}
-    new IntersectionObserver(function(es){var e=es[0];if(e.isIntersecting&&e.intersectionRatio>.25)q.classList.add('go15');else if(!e.isIntersecting)q.classList.remove('go15')},{threshold:[0,.25]}).observe(q)})();
+  /* ---------- 15 días: el scroll mueve el punto por la línea y cambia el paso ---------- */
+  (function(){var sec=$('metodo'),pin=$('sd');if(!sec||!pin)return;
+    var path=$('sd-p'),fill=$('sd-p2'),dot=$('sd-dot'),day=$('sd-day'),m=pin.querySelector('.sd-m'),its=[].slice.call(pin.querySelectorAll('.sd-it')),cards=[].slice.call(pin.querySelectorAll('.sd-card')),L=path.getTotalLength(),cur=-1,raf=0,W=0,H=0;
+    function size(){W=m.offsetWidth;H=m.offsetHeight}
+    function set(p){var pt=path.getPointAtLength(L*p);dot.style.transform='translate3d('+(pt.x/80*W).toFixed(1)+'px,'+(pt.y/600*H).toFixed(1)+'px,0)';fill.style.strokeDashoffset=(1-p).toFixed(4);
+      day.textContent='Día '+(1+Math.round(p*14));var k=Math.min(3,Math.floor(p*4+.08));if(k!==cur){cur=k;its.forEach(function(x,i){x.classList.toggle('on',i===k)});cards.forEach(function(x,i){x.classList.toggle('on',i===k)})}}
+    function upd(){raf=0;var r=sec.getBoundingClientRect(),vh=innerHeight,p=Math.max(0,Math.min(1,-r.top/(r.height-vh)));set(p)}
+    function onS(){if(!raf)raf=requestAnimationFrame(upd)}
+    size();upd();addEventListener('scroll',onS,{passive:true});addEventListener('resize',function(){size();upd()});
+  })();
 
   /* ---------- píxel de Meta, solo con consentimiento ---------- */
   var PQ=[],fbOn=false;window.__ev=[];
