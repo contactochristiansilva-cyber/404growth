@@ -36,3 +36,19 @@ Para renderizar, desde `motor/`, ejecuta `./one.sh N`:
 4. Guarda el resultado en `out/metodo-0N-pizarra.mp4`.
 
 El vídeo 1 se renderiza igual con `rend.mjs`, a partir de `board.html` con el mapa ya inyectado.
+
+## Teleprompter (`motor/tele.py`)
+
+Cada vídeo tiene su teleprompter, que se genera con las mismas palabras y los mismos tiempos que su pizarra. Mide 1280×720:
+
+- Una cuenta atrás de 3 s y un pitido.
+- La intro a cámara.
+- La marca «50/50 · empieza la pizarra».
+- Las frases de la pizarra, iluminadas palabra a palabra, con la pizarra en miniatura al lado.
+
+Para generarlo:
+
+1. `python3 tele.py` crea `tpN.json` (`tb_after_beep` es el segundo en que entra la pizarra tras el pitido).
+2. `./tp.sh N <pizarra.mp4>` crea `out3/metodo-0N-teleprompter.mp4`.
+
+**Regla:** si se cambia una frase en `vN.py`, hay que volver a renderizar la pizarra y el teleprompter de ese vídeo.

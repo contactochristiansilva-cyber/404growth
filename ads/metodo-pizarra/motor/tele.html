@@ -1,0 +1,52 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Teleprompter</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1280px;height:720px;background:#0B0D0C;color:#fff;font-family:'Inter',sans-serif;overflow:hidden;-webkit-font-smoothing:antialiased}
+#bar{position:absolute;left:0;right:0;top:0;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid #1C201E;z-index:3;background:#0B0D0C}
+#lab{font-size:15px;font-weight:700;letter-spacing:.14em;padding:7px 12px;border-radius:8px;background:#1C201E;color:#fff}
+#lab.b{background:#173A30;color:#7FD3B6}
+#mid{font-size:15px;color:#6E736F}
+#tc{font-size:18px;color:#9AA09C;font-feature-settings:'tnum' 1;min-width:80px;text-align:right}
+#col{position:absolute;left:64px;top:0;width:820px;will-change:transform}
+.blk{font-size:40px;line-height:1.32;font-weight:600;letter-spacing:-.015em;margin-bottom:30px;transition:none}
+.blk.mark{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7FD3B6;padding:10px 0;border-top:1px solid #1F4A3D;border-bottom:1px solid #1F4A3D}
+.w{color:#8C928E}.w.s{color:#fff}.w.a{color:#7FD3B6}
+#mask{position:absolute;left:0;right:0;top:56px;height:40px;background:linear-gradient(#0B0D0C,rgba(11,13,12,0));z-index:2}
+#cd{position:absolute;inset:0;display:grid;place-items:center;z-index:4;background:#0B0D0C}
+#cd b{font-size:220px;font-weight:300;font-family:'Inter Display','Inter';color:#fff;line-height:1}
+#cd p{font-size:20px;color:#8C928E;text-align:center;margin-top:18px}
+#thumb{position:absolute;left:914px;top:328px;width:304px;height:304px;border:2px solid #2A2F2C;border-radius:6px}
+#thumb span{position:absolute;left:0;top:-30px;font-size:14px;font-weight:700;letter-spacing:.12em;color:#7FD3B6}
+#hint{position:absolute;left:914px;top:96px;width:320px;font-size:19px;line-height:1.45;color:#6E736F}
+</style></head><body>
+<div id="bar"><span id="lab">A CÁMARA</span><span id="mid">Vídeo __V__ · teleprompter</span><span id="tc">0:00</span></div>
+<div id="mask"></div>
+<div id="col"></div>
+<div id="hint"></div>
+<div id="thumb" style="opacity:0"><span>PIZARRA</span></div>
+<div id="cd"><div style="text-align:center"><b id="cdn">3</b><p>Graba ya · empieza a leer después del pitido</p></div></div>
+<script>
+var P=__PLAN__,RATE=2.5,COUNT=3;
+function cl(x){return x<0?0:x>1?1:x}
+function eio(p){return p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2}
+var col=document.getElementById('col'),W=[],B=[];
+P.blocks.forEach(function(b,i){var d=document.createElement('div');d.className='blk'+(b.k==='mark'?' mark':'');
+ if(b.k==='mark'){d.textContent=b.w[0][1];W.push([])}else{var ws=[];b.w.forEach(function(x,j){var s=document.createElement('span');s.className='w';s.textContent=x[1];d.appendChild(s);if(j<b.w.length-1)d.appendChild(document.createTextNode(' '));ws.push([x[0],s])});W.push(ws)}
+ col.appendChild(d);B.push({el:d,t:b.w[0][0],k:b.k})});
+var OFF=B.map(function(b){return b.el.offsetTop});
+var TOP=96;
+document.getElementById('hint').innerHTML='Pizarra: <b style="color:#fff">'+fmt(P.tb_after_beep)+'</b> después del pitido.<br>En DaVinci, pon la pizarra ahí.';
+function fmt(s){var m=Math.floor(s/60),r=(s-m*60);return m+':'+(r<10?'0':'')+r.toFixed(1).replace('.',',')}
+function render(T){
+ var cd=document.getElementById('cd');if(T<COUNT){cd.style.display='grid';document.getElementById('cdn').textContent=String(Math.ceil(COUNT-T));}else cd.style.display='none';
+ var c=0;for(var i=0;i<B.length;i++)if(B[i].t<=T+.25)c=i;
+ var tsw=B[c].t-.25,p=eio(cl((T-tsw)/.4)),y0=c>0?OFF[c-1]:OFF[0],y=y0+(OFF[c]-y0)*p;
+ col.style.transform='translateY('+(TOP-y).toFixed(1)+'px)';
+ for(i=0;i<B.length;i++){B[i].el.style.opacity=i===c?1:(i<c?.22:.5)}
+ for(i=0;i<W.length;i++)for(var j=0;j<W[i].length;j++){var w=W[i][j],t0=w[0];w[1].className='w'+(T>=t0+.36?' s':(T>=t0?' a':''))}
+ var inB=T>=P.TB;var lab=document.getElementById('lab');lab.textContent=inB?'50/50 · PIZARRA':(T<COUNT?'PREPÁRATE':'A CÁMARA');lab.className=inB?'b':'';
+ document.getElementById('thumb').style.opacity=inB?1:0;document.getElementById('hint').style.opacity=inB?0:1;
+ var s=Math.max(0,T-COUNT);document.getElementById('tc').textContent=Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+}
+window.render=render;window.TOTAL=P.total;render(0);
+</script></body></html>

@@ -56,7 +56,7 @@ def v6():
     lines = [
      'Mira tu web como la ve un cliente desde el móvil.',
      '{@A} Uno: {a1,a1m} no se puede comprar. Es un escaparate: «llámanos» o «escríbenos».',
-     'Dos: {a2,a2m} el precio y la talla, escondidos. Y quien tiene que preguntar, muchas veces no pregunta.',
+     'Dos: {a2,a2m} el precio y la talla, escondidos. Y quien tiene que preguntar, se va.',
      'Tres: {a3,a3m,a3s+.2} tarda en cargar en el móvil. Y el móvil es desde donde entra casi todo el mundo.',
      'Cuatro: {a4,a4m} pagar es un lío. Una transferencia, o un formulario.',
      'Cinco: {a5,a5m} aunque estuviera perfecta, nadie la empuja. Sin anuncios, sin Instagram, sin emails.',

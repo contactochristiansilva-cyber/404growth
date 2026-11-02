@@ -42,7 +42,7 @@ def v8():
      'Mira. Lo que mejor se vende online tiene alguna de estas cuatro cosas.',
      '{@A} {a1} Cabe en una caja y aguanta el viaje.',
      '{a2} La gente lo repite: se gasta y vuelve a por más.',
-     '{a3} No lo encuentras en cualquier sitio: tu selección, tu marca.',
+     '{a3} No está en todas partes: es tu selección, tu marca.',
      '{a4} O es para regalar.',
      '{@B} ¿Y si lo tuyo es delicado o grande? Hay salidas.',
      '{b1} Que lo compren online y lo recojan en tu tienda.',
@@ -50,7 +50,7 @@ def v8():
      '{b3} Y un precio de envío según el tamaño, para que no te coma el margen.',
      '{@C} Cuándo no tiene sentido: {c1} si vendes servicios o citas, no producto. {c2} O si solo quieres una web escaparate.',
      '{c3} Si tienes producto, catálogo y alguien para preparar los pedidos, {c4} encaja.',
-     '{@D} Lo demás lo vemos en la llamada, {d1} con tu catálogo delante: {d2} qué productos subir primero {d3} y cómo enviarlos.',
+     '{@D} Lo demás lo vemos en la llamada: {d1} treinta minutos, por Google Meet, con tu catálogo delante. {d2} Qué productos subir primero {d3} y cómo enviarlos.',
      '{@ALL} Y con esto, ya lo has visto todo. {@N} {nrec} Nos vemos en la llamada. {>>play}',
     ]
     return 8, '¿Tu producto se vende online?', frames, lines

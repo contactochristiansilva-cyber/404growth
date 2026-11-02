@@ -64,9 +64,9 @@ def v2():
      '{@B} ¿Y después? Después tu parte es una: {b1} preparar los pedidos.',
      'Que es lo mismo que ya haces en el mostrador: {b1a,b2+0.25} coges el producto, lo metes en una caja, {b2a,b3+0.25} y se envía.',
      '{btu} Y si no puedes tú, alguien de tu equipo.',
-     '{bus} Lo de traer clientes, los anuncios, los emails y mirar los números, eso es nuestro.',
+     '{bus} Traer clientes con anuncios y emails, mirar los números y ajustar lo que falle: eso es nuestro.',
      '{@C} Compáralo con abrir otro local: {c1} buscar sitio, {c2} la obra, {c3} contratar, {c4} y estar encima todos los días.',
-     '{c5} Aquí, una llamada {c6} y tus fotos.',
+     '{c5} Aquí: una llamada de una hora {c6} y tus fotos y precios.',
      '{@D} Así que sí: {dq} no tienes tiempo. {dt} Precisamente por eso lo montamos nosotros. {dt2}',
      '{@ALL} En el siguiente te enseño {p:.6} {@N} cómo es una tienda online por dentro. {nrec} Sin tecnicismos. {>>play}',
     ]

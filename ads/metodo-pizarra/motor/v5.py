@@ -49,7 +49,7 @@ def v5():
          ab('f1', 56, 96, '<div class="big" style="font-size:58px">No te puedo<br>garantizar ventas.</div><div style="font-size:22px;color:var(--mute);margin-top:16px">Dependen de tu producto, tus precios y el mercado.</div>') +
          card('f2', 56, 400, 888, 120, f'<div style="height:100%;padding:0 30px;display:flex;align-items:center;gap:18px">{chk(True)}<div style="font-size:25px;letter-spacing:-.02em">Lo que sí: <b style="font-weight:600">medir desde el primer pedido</b> y mejorar lo que funciona.</div></div>', cls='rowc') +
          card('f3', 56, 570, 420, 270, '<div style="padding:28px"><div style="font-size:17px;font-weight:600;letter-spacing:.12em" class="red">OTRO LOCAL · VÍDEO 1</div>'
-              '<div class="disp tn red" style="font-size:66px;font-weight:600;letter-spacing:-.045em;margin-top:14px">+50.000 €</div><div style="font-size:19px;color:var(--mute);margin-top:6px">antes de vender nada</div></div>') +
+              '<div class="disp tn red" style="font-size:66px;font-weight:600;letter-spacing:-.045em;margin-top:14px">54.000 €</div><div style="font-size:19px;color:var(--mute);margin-top:6px">antes de vender nada</div></div>') +
          card('f4', 524, 570, 420, 270, f'<div style="padding:28px"><div style="font-size:17px;font-weight:600;letter-spacing:.12em" class="grn">TU TIENDA ONLINE</div>'
               f'<div class="disp" style="font-size:52px;font-weight:400;letter-spacing:-.035em;margin-top:18px;display:flex;align-items:center;gap:14px"><span class="grn">{ic("lock",40,2)}</span>Precio cerrado</div><div style="font-size:19px;color:var(--mute);margin-top:10px">en la llamada</div></div>'))
     F = F.replace('class="card rowc"', 'class="card rowc"').replace(chk(True), '<i class="ok" style="flex:none;width:40px;height:40px;border-radius:50%;background:#E3F4EC;display:grid;place-items:center;color:var(--g2)">' + ic('check', 22, 2.6) + '</i>')
@@ -69,7 +69,7 @@ def v5():
      '{@E} Cada pedido devuelve un trozo. La cuenta es esta: {e1} lo que inviertes, {e2} entre lo que te queda por pedido. {e3} Eso son los pedidos que necesitas. {e4,e4_*}',
      '{@F} Y te digo algo que no me conviene: {f1} no te puedo garantizar ventas. Dependen de tu producto, tus precios y el mercado.',
      '{f2} Lo que sí hacemos es medir desde el primer pedido y mejorar lo que funciona.',
-     '{f3} Y acuérdate del vídeo 1: un local eran más de 50.000 euros antes de vender nada. {f4} En la llamada pones los dos números juntos.',
+     '{f3} Y acuérdate del vídeo 1: un local eran 54.000 euros antes de vender nada. {f4} En la llamada pones los dos números juntos.',
      '{@ALL} Si ya tienes web y no vende, {@N} el vídeo 6 es para ti. {nrec} {>>play}',
     ]
     return 5, '¿Cuánto cuesta y cuánto te devuelve?', frames, lines
