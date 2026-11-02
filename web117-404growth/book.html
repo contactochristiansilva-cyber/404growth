@@ -976,7 +976,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     var body={k:key||'',start:pick,name:v.name,email:v.email,phone:tel,biz:v.biz,bud:v.bud,sec:v.sec,n:(v.sec&&v.sec!=='otro'?v.sec:N||'tienda'),utm:UTM,tz:(Intl.DateTimeFormat().resolvedOptions().timeZone||TZ)};
     var done=function(j){go.disabled=false;go.firstChild.textContent='Confirmar llamada ';
       if(j&&j.ok){px('Schedule',{content_name:v.bud,content_category:v.sec,value:{b0:1,b1:2,b2:3,b3:4,b4:2}[v.bud]||1,currency:'EUR'});ev('bk','',0);flush();
-        try{sessionStorage.setItem('c404bk',JSON.stringify({name:v.name.split(' ')[0],email:v.email,start:j.start||pick,join:j.join||'',gcal:j.gcal||'',mailed:!!j.mailed,google:/meet\.google\.com/.test(j.join||'')}))}catch(x){}
+        try{sessionStorage.setItem('c404bk',JSON.stringify({c:j.id||'',name:v.name.split(' ')[0],email:v.email,start:j.start||pick,join:j.join||'',gcal:j.gcal||'',mailed:!!j.mailed,google:/meet\.google\.com/.test(j.join||'')}))}catch(x){}
         go.disabled=true;go.firstChild.textContent='¡Reservada! ';setTimeout(function(){location.href='/gracias'},PROD?350:700);return}
       if(!(j&&j.ok))ev('bkerr',(j&&j.error)||'red',0);
       if(j&&j.error==='taken'){SL=j.slots||SL;err.textContent='Esa hora se acaba de ocupar. Elige otra, por favor.';err.hidden=false;setTimeout(function(){$('bk-2').hidden=true;$('bk-1').hidden=false;drawDays()},1400);return}

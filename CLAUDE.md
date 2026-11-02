@@ -23,3 +23,15 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Espaciado ancho entre palabras: el de los espacios de Noto Color Emoji, con las letras en Inter.
 - Sombras mínimas: nada de sombras difusas grandes que se vean como un fondo.
 - Minimalista, sin sobrecargar.
+
+## Vídeos de /metodo (página que se envía tras reservar)
+
+- Archivo: `web117-404growth/metodo.html`. Los 8 vídeos están en el array `V` del script: `src`, `poster` y `dur` (duración real, «4:32»). Sin `src`, la tarjeta sale como «Muy pronto».
+- Cloudflare (assets del Worker) no acepta archivos de más de 25 MB: cada vídeo se publica en **HLS** dentro de `web117-404growth/v/metodo/0N/` (vertical 720×1280, segmentos de 6 s). Safari lo reproduce solo; el resto usa `/v/hls.light.min.js` (hls.js 1.5.20, ya incluido).
+  ```bash
+  ffmpeg -i entrada.mov -vf "scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" \
+    -c:v libx264 -preset veryfast -crf 23 -maxrate 1800k -bufsize 3600k -g 50 -keyint_min 50 -sc_threshold 0 \
+    -c:a aac -b:a 96k -ac 2 -hls_time 6 -hls_playlist_type vod -hls_segment_filename "v/metodo/0N/s%03d.ts" v/metodo/0N/index.m3u8
+  ffmpeg -ss 2 -i entrada.mov -frames:v 1 -vf "scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" -q:v 3 v/metodo/0N/poster.jpg
+  ```
+- Enlace personal: `404growth.com/metodo?c=<id del lead>`. Va solo en la invitación de Google al reservar; en el admin › Llamadas hay botones para mandarlo por WhatsApp o email. La página avisa a Chris cuando el lead la abre y cuando termina cada vídeo, y el admin muestra cuántos ha visto.

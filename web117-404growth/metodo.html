@@ -3,165 +3,526 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>El método, antes de tu llamada | 404 Growth</title>
-<meta name="description" content="8 vídeos cortos para llegar a tu llamada con todo claro: tiempo, clientes, inversión y qué pasa después.">
+<title>Antes de tu llamada | 404 Growth</title>
+<meta name="description" content="8 vídeos cortos con las dudas de siempre antes de llevar tu tienda online: tiempo, clientes, inversión y qué pasa después.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#040706">
+<meta property="og:title" content="Antes de tu llamada · 404 Growth">
+<meta property="og:description" content="8 vídeos cortos con las dudas de siempre antes de llevar tu tienda online.">
+<meta property="og:image" content="https://404growth.com/og-404-tiendas.jpg">
+<meta property="og:type" content="website">
 <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap">
 <style>
-/* /metodo: los vídeos que resuelven las dudas antes de la llamada. Mismo lenguaje que /book y /gracias. */
-:root{color-scheme:dark;--bg:#040706;--ink:#F3F4F1;--mute:#9AA49F;--line:rgba(255,255,255,.1);--t:#6FC2A6;--t2:#A6E3CD;
---f:"Inter Tight",Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
-*{box-sizing:border-box}html,body{margin:0}html{background:var(--bg)}
-body{background:var(--bg);color:var(--ink);font:400 16.5px/1.55 var(--f);letter-spacing:-.01em;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip}
-body::before{content:"";position:fixed;inset:-20% -10% auto;height:70vh;background:radial-gradient(60% 60% at 50% 0%,rgba(111,194,166,.26),transparent 70%);pointer-events:none;z-index:0}
-a{color:inherit}button{font:inherit;color:inherit}
-.w{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:22px max(20px,env(safe-area-inset-left,0px)) 64px}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
-.logo{font-weight:700;letter-spacing:-.02em;font-size:17px;text-decoration:none}
+/* /metodo (v42): la página que recibe quien ha reservado (por WhatsApp, por email y en la invitación de Google).
+   Confirma la llamada, resuelve las dudas con 8 vídeos y le dice a Chris qué ha visto cada uno (?c=<lead>). */
+:root{color-scheme:dark;
+--bg:#040706;--bg2:#08100E;--ink:#F3F4F1;--mute:#9AA49F;--dim:#86908B;--line:rgba(255,255,255,.1);
+--t:#6FC2A6;--t2:#A6E3CD;--sand:#D9C9A0;
+--f:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter Tight",Inter,"Segoe UI",Roboto,Arial,sans-serif;
+--fd:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter Tight",Inter,"Segoe UI",Roboto,Arial,sans-serif;
+--ease:cubic-bezier(.32,.72,0,1)}
+*{box-sizing:border-box}html,body{margin:0}html{background:var(--bg);-webkit-text-size-adjust:100%;overflow-x:clip}
+main{position:relative;overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font:400 16.5px/1.55 var(--f);letter-spacing:-.011em;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip}
+a{color:inherit}button{font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}
+img{display:block;max-width:100%}
+.glow{position:absolute;left:50%;top:-140px;width:1100px;max-width:160vw;height:720px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(111,194,166,.22),transparent);pointer-events:none;z-index:0}
+.w{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px))}
+h1,h2,h3{font-family:var(--fd)}
+em{font-style:normal}
+.grad{background:linear-gradient(180deg,#E9FFF6 0%,var(--t2) 55%,var(--t) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* barra superior */
+.top{position:sticky;top:0;z-index:40;padding:calc(10px + env(safe-area-inset-top,0px)) 0 10px;transition:background .3s,box-shadow .3s}
+.top.on{background:rgba(4,7,6,.82);-webkit-backdrop-filter:saturate(160%) blur(16px);backdrop-filter:saturate(160%) blur(16px);box-shadow:0 1px 0 rgba(255,255,255,.07)}
+.top .w{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-weight:700;letter-spacing:-.02em;font-size:16px;text-decoration:none;white-space:nowrap}
+.tpill{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:99px;font-size:13px;font-weight:500;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.09);color:var(--ink);text-decoration:none;opacity:0;transform:translateY(-4px);transition:opacity .35s,transform .45s var(--ease);pointer-events:none;white-space:nowrap}
+.top.on .tpill{opacity:1;transform:none;pointer-events:auto}
+.tpill i{width:7px;height:7px;border-radius:50%;background:var(--t);box-shadow:0 0 0 3px rgba(111,194,166,.22)}
+
+/* portada */
+.hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:44px;align-items:center;padding:42px 0 30px}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:99px;border:1px solid rgba(166,227,205,.3);background:rgba(111,194,166,.1);font-size:13.5px;color:var(--t2);font-weight:500}
 .chip i{width:8px;height:8px;border-radius:50%;background:var(--t);box-shadow:0 0 0 4px rgba(111,194,166,.2)}
-.hd{text-align:center}
-h1{margin:16px auto 0;font-size:clamp(32px,6.2vw,54px);font-weight:600;letter-spacing:-.045em;line-height:1.06;text-wrap:balance;max-width:720px}
-h1 em{font-style:normal;background:linear-gradient(180deg,#E9FFF6 0%,var(--t2) 55%,var(--t) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--mute);margin:14px auto 0;max-width:560px;font-size:17.5px;line-height:1.5;text-wrap:pretty}
+h1{margin:18px 0 0;font-size:clamp(38px,6.4vw,66px);font-weight:600;letter-spacing:-.045em;line-height:1.02;text-wrap:balance}
+.lead{color:var(--mute);margin:18px 0 0;max-width:520px;font-size:18px;line-height:1.5;text-wrap:pretty}
 .lead b{color:var(--ink);font-weight:600}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;color:var(--mute);font-size:14px}
+.facts span{display:inline-flex;align-items:center;gap:7px}.facts svg{width:16px;height:16px;color:var(--t)}
+
+/* tarjeta de la llamada */
+.call{position:relative;border-radius:30px;padding:22px;background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.025));box-shadow:inset 0 0 0 1px rgba(255,255,255,.11),0 40px 90px -40px rgba(0,0,0,.95)}
+.who{display:flex;align-items:center;gap:12px}
+.who img{width:46px;height:46px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px rgba(166,227,205,.35)}
+.who b{display:block;font-size:15.5px;font-weight:600}.who span{display:block;font-size:13px;color:var(--mute)}
+.when{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.cal{width:78px;border-radius:18px;overflow:hidden;text-align:center;background:#fff;color:#0B1210;box-shadow:0 14px 30px -14px rgba(0,0,0,.8)}
+.cal small{display:block;background:#C42E33;color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.08em;padding:5px 0 4px;text-transform:uppercase}
+.cal b{display:block;font-family:var(--fd);font-size:34px;font-weight:600;letter-spacing:-.04em;line-height:1;padding:9px 0 3px}
+.cal span{display:block;font-size:11.5px;font-weight:600;color:#5B6762;padding-bottom:8px;text-transform:uppercase;letter-spacing:.06em}
+.when h2{margin:0;font-size:21px;font-weight:600;letter-spacing:-.025em;line-height:1.25}
+.when p{margin:5px 0 0;color:var(--mute);font-size:14.5px}
+.left{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:8px 14px;border-radius:14px;background:rgba(111,194,166,.12);color:var(--t2);font-size:14px;font-weight:600}
+.left.now{background:var(--t);color:#04110D}
+.cacts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:99px;border:0;background:#fff;color:#07100D;font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),background .2s}
+.btn:active{transform:scale(.97)}
+.btn svg{width:17px;height:17px}
+.btn.o{background:rgba(255,255,255,.07);color:var(--ink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+@media (hover:hover){.btn.o:hover{background:rgba(255,255,255,.12)}}
+.btn.sm{padding:10px 14px;font-size:14px}
+.cnote{margin:14px 0 0;font-size:13px;color:var(--dim)}
+
+/* secciones */
+.sec{padding:76px 0 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.eyb{display:block;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--t);margin-bottom:10px}
+h2{margin:0;font-size:clamp(30px,4.4vw,44px);font-weight:600;letter-spacing:-.04em;line-height:1.06;text-wrap:balance}
+.sub{margin:12px 0 0;color:var(--mute);font-size:17px;max-width:560px;text-wrap:pretty}
+
 /* progreso */
-.prog{margin:30px auto 0;max-width:560px;padding:16px 18px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid var(--line);display:grid;gap:10px}
-.prog-h{display:flex;justify-content:space-between;align-items:baseline;font-size:14.5px;color:var(--mute)}.prog-h b{color:var(--ink);font-weight:600;font-size:15.5px}
-.bar{height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--t),var(--t2));border-radius:6px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
-/* grupos y tarjetas */
-.grp{margin-top:44px}
-.grp-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px;padding:0 4px}
-.grp-h span{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--t)}
-.grp-h h2{margin:0;font-size:20px;font-weight:600;letter-spacing:-.02em}
-.list{display:grid;gap:12px}
-.v{position:relative;display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:16px;align-items:center;width:100%;text-align:left;padding:18px;border-radius:22px;background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer;transition:background .2s,border-color .2s,transform .15s}
-@media (hover:hover){.v:hover{background:rgba(255,255,255,.06);border-color:rgba(166,227,205,.3)}}
-.v:active{transform:scale(.995)}
-.v:focus-visible{outline:2px solid var(--t2);outline-offset:3px}
-.n{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:rgba(111,194,166,.14);color:var(--t2);font-weight:600;font-size:18px}
-.v .q{display:block;font-size:14px;color:var(--mute);font-style:italic;margin-bottom:3px}
-.v .tt{display:block;font-size:17.5px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
-.v .m{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
-.v .m em{font-style:normal;font-size:12.5px;padding:3px 9px;border-radius:99px;background:rgba(255,255,255,.06);color:var(--mute)}
-.pl{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#07100D;flex:none}
-.pl svg{width:16px;height:16px;margin-left:2px}
-.v.seen .n{background:var(--t);color:#04110D}
-.v.seen .pl{background:rgba(111,194,166,.18);color:var(--t2)}
-.v.soon{cursor:default;opacity:.62}.v.soon .pl{background:rgba(255,255,255,.08);color:var(--mute)}
-.rec{position:absolute;top:-9px;left:84px;font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:3px 9px;border-radius:99px;background:var(--t);color:#04110D}
-/* reproductor */
-dialog{border:0;padding:0;background:transparent;color:var(--ink);max-width:min(440px,92vw);width:100%}
-dialog::backdrop{background:rgba(2,4,3,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.pv{position:relative;border-radius:26px;overflow:hidden;background:#0B1412;border:1px solid rgba(255,255,255,.14)}
-.pv video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#000}
-.pv-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px}
-.pv-h b{font-size:15.5px;font-weight:600;letter-spacing:-.02em}
-.x{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.06);cursor:pointer;flex:none}
+.prog{min-width:260px;padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--line)}
+.prog-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px;color:var(--mute)}.prog-h b{color:var(--ink);font-weight:600;font-size:15px}
+.bar{height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--t),var(--t2));border-radius:6px;transition:width .8s var(--ease)}
+
+/* el primero, destacado */
+.feat{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:34px;align-items:center;padding:18px;border-radius:30px;background:linear-gradient(160deg,rgba(111,194,166,.13),rgba(111,194,166,.03));box-shadow:inset 0 0 0 1px rgba(166,227,205,.22);margin-bottom:18px}
+.feat .vc{width:100%}
+.feat .ft{padding:6px 10px 6px 0}
+.feat .q{font-size:15px;color:var(--mute);font-style:italic}
+.feat h3{margin:8px 0 0;font-size:clamp(25px,3.2vw,34px);font-weight:600;letter-spacing:-.035em;line-height:1.1}
+.feat p{margin:12px 0 0;color:var(--mute);font-size:16.5px;max-width:460px}
+.feat .btn{margin-top:22px}
+.tag{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:99px;background:var(--t);color:#04110D}
+
+/* tarjetas 9:16 */
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.vc{position:relative;display:block;width:100%;aspect-ratio:9/16;border-radius:24px;overflow:hidden;border:0;padding:0;text-align:left;cursor:pointer;background:#0C1513;isolation:isolate;
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);transition:transform .45s var(--ease),box-shadow .3s}
+@media (hover:hover){.vc:not(.soon):hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px rgba(166,227,205,.4),0 30px 60px -30px rgba(0,0,0,.9)}.vc:not(.soon):hover .pb{transform:scale(1.08)}}
+.vc:active{transform:scale(.98)}
+.vc:focus-visible{outline:2px solid var(--t2);outline-offset:3px}
+.vc .ph{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-2}
+.vc .ph.gen{background:radial-gradient(120% 70% at 20% 0%,var(--c1),transparent 60%),radial-gradient(90% 60% at 100% 100%,var(--c2),transparent 65%),#0B1311}
+.vc .ph.gen:after{content:attr(data-n);position:absolute;right:-6%;bottom:16%;font-family:var(--fd);font-size:min(46vw,190px);font-weight:700;letter-spacing:-.08em;line-height:.8;color:rgba(255,255,255,.05)}
+.vc:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,transparent 26%,transparent 42%,rgba(3,6,5,.92) 100%)}
+.vc .top2{position:absolute;left:12px;right:12px;top:12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.vc .num{font-size:12.5px;font-weight:700;padding:5px 9px;border-radius:99px;background:rgba(4,7,6,.62);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.vc .grp{font-size:11.5px;font-weight:600;padding:5px 9px;border-radius:99px;background:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vc .bt{position:absolute;left:14px;right:14px;bottom:14px}
+.vc .bt .qq{display:block;font-size:12.5px;color:rgba(243,244,241,.7);font-style:italic;line-height:1.3;margin-bottom:6px}
+.vc .bt b{display:block;font-family:var(--fd);font-size:17px;font-weight:600;letter-spacing:-.025em;line-height:1.2;text-wrap:balance}
+.vc .bt .mt{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:12.5px;color:rgba(243,244,241,.75)}
+.vc .pb{width:34px;height:34px;flex:none;border-radius:50%;display:grid;place-items:center;background:#fff;color:#07100D;transition:transform .35s var(--ease)}
+.vc .pb svg{width:13px;height:13px;margin-left:2px}
+.vc .rs{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.12)}.vc .rs i{display:block;height:100%;background:var(--t2)}
+.vc.seen .pb{background:var(--t);color:#04110D}.vc.seen .pb svg{margin:0}
+.vc.soon{cursor:default}
+.vc.soon .pb{background:rgba(255,255,255,.12);color:var(--ink)}
+.vc .soonb{font-size:11.5px;font-weight:600;padding:5px 9px;border-radius:99px;background:rgba(217,201,160,.18);color:var(--sand)}
+
+/* la llamada */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:s}
+.st{position:relative;padding:24px 22px 22px;border-radius:26px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--line)}
+.st .n{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:rgba(111,194,166,.14);color:var(--t2);font-weight:700;font-size:15px}
+.st h3{margin:18px 0 0;font-size:21px;font-weight:600;letter-spacing:-.025em;line-height:1.2}
+.st p{margin:8px 0 0;color:var(--mute);font-size:15.5px}
+.promise{margin-top:14px;display:flex;align-items:center;gap:14px;padding:18px 22px;border-radius:22px;background:linear-gradient(160deg,rgba(111,194,166,.13),rgba(111,194,166,.03));box-shadow:inset 0 0 0 1px rgba(166,227,205,.22);font-size:16px}
+.promise svg{width:26px;height:26px;color:var(--t2);flex:none}.promise b{font-weight:600}
+
+/* quién */
+.me{display:grid;grid-template-columns:auto minmax(0,1fr);gap:30px;align-items:center;padding:28px;border-radius:30px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--line)}
+.me img{width:150px;height:150px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px rgba(166,227,205,.3),0 30px 60px -30px rgba(0,0,0,.9)}
+.me blockquote{margin:0;font-family:var(--fd);font-size:clamp(21px,2.6vw,27px);font-weight:500;letter-spacing:-.03em;line-height:1.3;text-wrap:pretty}
+.me p{margin:14px 0 0;color:var(--mute);font-size:16px;max-width:620px}
+.me .sig{margin-top:16px;font-size:14.5px;color:var(--ink);font-weight:600}.me .sig span{color:var(--mute);font-weight:400}
+
+/* tiendas */
+.strip{overflow:hidden;margin-top:6px;padding:6px 0 10px}
+.track{display:flex;gap:14px;width:max-content;animation:mq 40s linear infinite;will-change:transform}
+@keyframes mq{to{transform:translate3d(calc(-50% - 7px),0,0)}}
+.strip.off .track{animation-play-state:paused}
+.shop{flex:none;width:230px;aspect-ratio:760/1040;border-radius:20px;overflow:hidden;background:#0C1513 center/cover no-repeat;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 24px 50px -30px rgba(0,0,0,.9)}
+
+/* dudas rápidas */
+.faq{display:grid;gap:10px;max-width:780px}
+.faq details{border-radius:20px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--line);transition:background .25s}
+.faq details[open]{background:rgba(255,255,255,.06)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;font-size:16.5px;font-weight:600;letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.08);position:relative;transition:transform .35s var(--ease)}
+.faq summary i:before,.faq summary i:after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.6px;background:var(--ink);transform:translate(-50%,-50%)}
+.faq summary i:after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] summary i{transform:rotate(45deg)}
+.faq summary:focus-visible{outline:2px solid var(--t2);outline-offset:3px;border-radius:20px}
+.faq p{margin:0;padding:0 20px 18px;color:var(--mute);font-size:15.5px;max-width:660px}
+
 /* cierre */
-.end{margin-top:52px;padding:30px 24px;border-radius:26px;text-align:center;background:linear-gradient(160deg,rgba(111,194,166,.14),rgba(111,194,166,.04));border:1px solid rgba(166,227,205,.25)}
-.end h2{margin:0;font-size:clamp(24px,4.4vw,32px);font-weight:600;letter-spacing:-.035em;line-height:1.15}
-.end p{margin:10px auto 0;max-width:480px;color:var(--mute)}
-.acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 20px;border-radius:99px;background:#fff;color:#07100D;font-weight:600;font-size:15.5px;text-decoration:none}
-.btn.o{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
-.foot{margin-top:30px;text-align:center;color:var(--mute);font-size:13.5px}
-@media (max-width:560px){.v{grid-template-columns:44px minmax(0,1fr) auto;gap:12px;padding:16px}.n{width:44px;height:44px;border-radius:14px;font-size:16px}.pl{width:38px;height:38px}.rec{left:70px}}
-@media (prefers-reduced-motion:no-preference){.in{animation:up .6s cubic-bezier(.2,.8,.2,1) both}.d1{animation-delay:.08s}.d2{animation-delay:.16s}@keyframes up{from{opacity:0;transform:translateY(12px)}}}
+.end{margin-top:76px;padding:44px 26px;border-radius:32px;text-align:center;background:radial-gradient(80% 120% at 50% 0%,rgba(111,194,166,.2),transparent 70%),rgba(255,255,255,.03);box-shadow:inset 0 0 0 1px rgba(166,227,205,.22)}
+.end h2{font-size:clamp(28px,4vw,40px)}
+.end p{margin:12px auto 0;max-width:520px;color:var(--mute);font-size:17px}
+.end .cacts{justify-content:center;margin-top:24px}
+.foot{padding:34px 0 calc(40px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--dim);font-size:13.5px}
+.foot a{color:var(--mute)}
+
+/* reproductor */
+.pl{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:rgba(2,4,3,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;transition:opacity .3s}
+.pl.on{opacity:1}
+.pl[hidden]{display:none}
+.pl-in{position:relative;display:flex;flex-direction:column;gap:12px;width:min(440px,100vw);max-height:100dvh;padding:calc(12px + env(safe-area-inset-top,0px)) 14px calc(12px + env(safe-area-inset-bottom,0px));transform:translateY(16px) scale(.98);transition:transform .45s var(--ease)}
+.pl.on .pl-in{transform:none}
+.pl-top{display:flex;align-items:center;gap:12px}
+.pl-top span{flex:none;font-size:12.5px;font-weight:700;padding:5px 9px;border-radius:99px;background:rgba(255,255,255,.1)}
+.pl-top b{flex:1;min-width:0;font-size:15px;font-weight:600;letter-spacing:-.015em;line-height:1.25;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.ib{flex:none;width:40px;height:40px;border-radius:50%;border:0;display:grid;place-items:center;background:rgba(255,255,255,.1);cursor:pointer}
+.ib svg{width:16px;height:16px}
+.pl-v{position:relative;flex:1;min-height:0;display:flex;justify-content:center}
+.pl-v video{display:block;width:100%;max-height:calc(100dvh - 150px);aspect-ratio:9/16;object-fit:contain;background:#000;border-radius:22px}
+.pl-end{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:26px;text-align:center;border-radius:22px;background:rgba(4,7,6,.86);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.pl-end[hidden]{display:none}
+.pl-end small{font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--t)}
+.pl-end b{font-family:var(--fd);font-size:22px;font-weight:600;letter-spacing:-.03em;line-height:1.2;max-width:300px}
+.pl-end .cacts{justify-content:center}
+.ring{width:54px;height:54px;margin-bottom:4px}.ring circle{fill:none;stroke-width:3}.ring .bg{stroke:rgba(255,255,255,.12)}.ring .fg{stroke:var(--t2);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;stroke-dasharray:150.8;stroke-dashoffset:150.8}
+.ring.go .fg{transition:stroke-dashoffset 6s linear;stroke-dashoffset:0}
+.pl-nav{display:flex;justify-content:space-between;gap:10px}
+.pl-nav .btn{flex:1}
+.pl-nav .btn[disabled]{opacity:.35;pointer-events:none}
+html.lock,html.lock body{overflow:hidden}
+
+/* aparición */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.track{animation:none}.ring.go .fg{transition:none}}
+
+@media (max-width:900px){
+ .hero{grid-template-columns:minmax(0,1fr);gap:30px;padding-top:26px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .steps{grid-template-columns:minmax(0,1fr)}
+ .feat{grid-template-columns:minmax(0,1fr);gap:18px;padding:14px}
+ .feat .vc{max-width:none;aspect-ratio:4/5}
+ .feat .ft{padding:2px 6px 8px}
+}
+@media (max-width:560px){
+ .w{padding:0 16px}
+ .lead{font-size:17px}
+ .call{padding:18px;border-radius:26px}
+ .cal{width:68px;border-radius:16px}.cal b{font-size:29px}
+ .when h2{font-size:19px}
+ .cacts .btn{flex:1 1 auto}
+ .sec{padding-top:60px}
+ .prog{min-width:0;width:100%}
+ .vc{border-radius:20px}
+ .vc .top2{left:9px;right:9px;top:9px}.vc .grp{display:none}
+ .vc .bt{left:11px;right:11px;bottom:11px}.vc .bt b{font-size:15px}.vc .bt .qq{display:none}
+ .vc .pb{width:30px;height:30px}
+ .me{grid-template-columns:minmax(0,1fr);text-align:left;padding:22px;gap:18px}.me img{width:96px;height:96px}
+ .shop{width:170px;border-radius:16px}
+ .end{padding:34px 20px;border-radius:28px}
+ .pl-in{padding-left:10px;padding-right:10px}
+}
 </style>
 </head>
 <body>
-<main class="w">
-  <div class="top"><a class="logo" href="/">404/GROWTH<sup style="font-size:.5em">®</sup></a><span class="chip"><i></i>Antes de tu llamada</span></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 16 16"><path fill="currentColor" d="M4 2.6v10.8c0 .6.6.9 1.1.6l8.6-5.4c.5-.3.5-1 0-1.2L5.1 2c-.5-.3-1.1 0-1.1.6z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3.2 8.4l3 3 6.6-6.8"/></symbol>
+  <symbol id="i-x" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3.5 3.5l9 9m0-9l-9 9"/></symbol>
+  <symbol id="i-l" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10 3L5 8l5 5"/></symbol>
+  <symbol id="i-r" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 3l5 5-5 5"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2A9.8 9.8 0 0 0 3.6 17l-1.3 4.8 4.9-1.3A9.8 9.8 0 1 0 12 2.2zm0 17.9c-1.5 0-2.9-.4-4.2-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 1 1 12 20.1zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.7-.3z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></g></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13.5" height="12" rx="3"/><path d="M16 10.5l5-3v9l-5-3"/></g></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></g></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.4-7.5 9.5-4.3-1.1-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></g></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3.5-3.5M20 16H7l3.5 3.5"/></g></symbol>
+</svg>
 
-  <header class="hd">
-    <h1 class="in" id="h1">El método. <em>Todo lo que necesitas saber antes de hablar.</em></h1>
-    <p class="lead in d1" id="lead">8 vídeos cortos con las dudas que más nos hacen los dueños de tiendas físicas. Mira los que te interesen antes de la llamada y la aprovecharemos mucho más.</p>
-    <div class="prog in d2" aria-live="polite"><div class="prog-h"><b id="pc">0 de 8 vistos</b><span id="pm">Empieza por el 1</span></div><div class="bar"><i id="pb"></i></div></div>
-  </header>
+<header class="top" id="top"><div class="w"><a class="logo" href="/">404/GROWTH<sup style="font-size:.5em">®</sup></a><a class="tpill" id="tpill" href="#llamada"><i></i><span id="tpt">Tu llamada</span></a></div></header>
 
-  <div id="groups"></div>
+<main>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="w">
+    <section class="hero" id="llamada">
+      <div>
+        <span class="chip rv"><i></i><span id="chipt">Llamada confirmada</span></span>
+        <h1 class="rv d1" id="h1">Antes de nuestra llamada, <span class="grad">lo que todos preguntan.</span></h1>
+        <p class="lead rv d2" id="lead">Te he preparado 8 vídeos cortos con las dudas que tiene cualquier dueño de tienda antes de dar el paso. No hace falta verlos todos: <b>elige los tuyos y en la llamada hablamos solo de tu tienda.</b></p>
+        <div class="facts rv d3"><span><svg><use href="#i-cam"/></svg>8 vídeos cortos</span><span><svg><use href="#i-clock"/></svg><span id="tot">Entre 3 y 8 minutos cada uno</span></span><span><svg><use href="#i-check"/></svg>Sin registrarte</span></div>
+      </div>
+      <div class="call rv d2" id="call">
+        <div class="who"><img src="/christian-hola.jpg" alt="Christian Silva" width="46" height="46"><div><b>Llamada con Christian</b><span>Fundador de 404 Growth</span></div></div>
+        <div class="when" id="when">
+          <div class="cal" aria-hidden="true"><small id="cw">Meet</small><b id="cd">30</b><span id="cm">min</span></div>
+          <div><h2 id="wt">Tu llamada de 30 minutos</h2><p id="wp">Por Google Meet. La fecha y el enlace están en la invitación que te llegó al email.</p></div>
+        </div>
+        <div id="left"></div>
+        <div class="cacts" id="cacts"></div>
+        <p class="cnote" id="cnote">¿Te surge algo antes? Escríbeme por WhatsApp.</p>
+      </div>
+    </section>
 
-  <section class="end">
-    <h2>¿Te ha surgido alguna duda?</h2>
-    <p>Escríbeme y la vemos en la llamada. Si algo no te encaja, también me lo puedes decir antes.</p>
-    <div class="acts" id="acts"><a class="btn" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20he%20visto%20los%20v%C3%ADdeos%20del%20m%C3%A9todo%20y%20tengo%20una%20duda." target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
-  </section>
-  <p class="foot">404 Growth · <a href="/legal">Privacidad</a></p>
+    <section class="sec" id="videos">
+      <div class="sh">
+        <div><span class="eyb rv">Los vídeos</span><h2 class="rv d1">Las 8 dudas antes de dar el paso.</h2><p class="sub rv d2">Grabados por mí, sin rodeos. Empieza por el primero o ve directo a lo que más te preocupa.</p></div>
+        <div class="prog rv d2" aria-live="polite"><div class="prog-h"><b id="pc">0 de 8 vistos</b><span id="pm">Empieza por el 1</span></div><div class="bar"><i id="pbar"></i></div></div>
+      </div>
+      <div id="feat"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="sec">
+      <span class="eyb rv">La llamada</span><h2 class="rv d1">30 minutos, como un café.</h2><p class="sub rv d2">No tienes que preparar nada. Ten a mano tu web o tu Instagram y listo.</p>
+      <div class="steps" style="margin-top:26px">
+        <div class="st rv"><span class="n">1</span><h3>Me cuentas tu tienda</h3><p>Qué vendes, cómo vendes hoy y hasta dónde quieres llegar.</p></div>
+        <div class="st rv d1"><span class="n">2</span><h3>Te digo qué haría yo</h3><p>Antes de hablar habré mirado tu tienda y tu Instagram. Te digo con sinceridad si tiene sentido llevarla online y cómo lo haría.</p></div>
+        <div class="st rv d2"><span class="n">3</span><h3>Precio y plazos cerrados</h3><p>Si encaja, sales de la llamada con el precio y los plazos cerrados.</p></div>
+      </div>
+      <div class="promise rv"><svg><use href="#i-shield"/></svg><span><b>No es una llamada de ventas.</b> Si no encajamos, te lo digo y te llevas el diagnóstico igualmente.</span></div>
+    </section>
+
+    <section class="sec">
+      <div class="me rv">
+        <img src="/christian-hola.jpg" alt="Christian Silva, fundador de 404 Growth" width="150" height="150" loading="lazy">
+        <div>
+          <blockquote>«Me dedico a una sola cosa: coger tiendas físicas que ya venden y convertirlas en tiendas que venden también por internet.»</blockquote>
+          <p>En 15 días tienes tu tienda online abierta, con tu marca, tus productos y la forma de que te lleguen pedidos de toda España. Tu parte es pequeña: contarnos tu negocio y darnos tus productos. Lo demás es nuestro.</p>
+          <div class="sig">Christian Silva <span>· Fundador de 404 Growth</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <span class="eyb rv">Tiendas diseñadas por 404 Growth</span><h2 class="rv d1">Así podría verse la tuya.</h2><p class="sub rv d2">Cada marca, con su propia identidad. En la llamada te enseño cómo quedaría con tu catálogo.</p>
+    </section>
+  </div>
+  <div class="strip rv" id="strip" aria-hidden="true"><div class="track" id="track"></div></div>
+
+  <div class="w">
+    <section class="sec">
+      <span class="eyb rv">Dudas rápidas</span><h2 class="rv d1" style="margin-bottom:24px">Antes de que me lo preguntes.</h2>
+      <div class="faq rv d2">
+        <details><summary>¿Tengo que preparar algo?<i></i></summary><p>No. Ven como si fuera un café. Si quieres aprovecharla más, ten a mano tu web o tu Instagram y mira los vídeos que te interesen.</p></details>
+        <details><summary>¿Es una llamada de ventas?<i></i></summary><p>No. Te digo qué haría yo con tu tienda. Si encajamos, lo vemos; si no, te lo digo y te llevas el diagnóstico igualmente.</p></details>
+        <details><summary>¿Y si no me viene bien la hora?<i></i></summary><p>Escríbeme por WhatsApp y la cambiamos, sin problema.</p></details>
+        <details><summary>¿Desde dónde me conecto?<i></i></summary><p>Mejor desde el ordenador: entras con el enlace de Google Meet de tu invitación, sin instalar nada. Desde el móvil te pedirá la app de Google Meet.</p></details>
+      </div>
+    </section>
+
+    <section class="end rv">
+      <h2>¿Te ha surgido alguna duda?</h2>
+      <p>Escríbeme y la vemos en la llamada. Si algo no te encaja, también me lo puedes decir antes.</p>
+      <div class="cacts" id="eacts"></div>
+    </section>
+    <p class="foot">404 Growth · <a href="/legal">Privacidad</a></p>
+  </div>
 </main>
 
-<dialog id="dlg" aria-label="Vídeo">
-  <div class="pv"><div class="pv-h"><b id="dt"></b><button class="x" id="dx" type="button" aria-label="Cerrar">✕</button></div><video id="dv" controls playsinline preload="metadata"></video></div>
-</dialog>
+<div class="pl" id="pl" hidden role="dialog" aria-modal="true" aria-labelledby="plt">
+  <div class="pl-in">
+    <div class="pl-top"><span id="pln">1/8</span><b id="plt"></b><button class="ib" id="plx" type="button" aria-label="Cerrar"><svg><use href="#i-x"/></svg></button></div>
+    <div class="pl-v">
+      <video id="plv" playsinline controls preload="metadata"></video>
+      <div class="pl-end" id="ple" hidden>
+        <svg class="ring" id="plr" viewBox="0 0 54 54" aria-hidden="true"><circle class="bg" cx="27" cy="27" r="24"/><circle class="fg" cx="27" cy="27" r="24"/></svg>
+        <small id="pls">Siguiente</small><b id="plnt"></b>
+        <div class="cacts"><button class="btn" id="plgo" type="button">Ver ahora</button><button class="btn o" id="plno" type="button">Quedarme aquí</button></div>
+      </div>
+    </div>
+    <div class="pl-nav"><button class="btn o sm" id="plp" type="button"><svg><use href="#i-l"/></svg>Anterior</button><button class="btn o sm" id="pln2" type="button">Siguiente<svg><use href="#i-r"/></svg></button></div>
+  </div>
+</div>
 
 <script>
 (function(){
   'use strict';
-  /* LOS VÍDEOS: cuando estén grabados, pon el archivo (mp4 vertical) en src. Sin src, la tarjeta sale como «Próximamente». */
+  /* ---------- LOS VÍDEOS ----------
+     Para publicar uno: src = '/v/metodo/0N/index.m3u8' (HLS, ver CLAUDE.md) o un .mp4 de menos de 25 MB,
+     poster = '/v/metodo/0N/poster.jpg' y dur = su duración real ('4:32'). Sin src, la tarjeta sale como «Muy pronto». */
   var V=[
-    {g:0,q:'«Mi tienda ya va bien, no lo necesito»',t:'¿Por qué tu próxima tienda debería ser online, y no otro local?',d:'4–6 min',f:'Números',src:'',poster:''},
-    {g:1,q:'«No tengo tiempo, ya tengo bastante con la tienda»',t:'¿Cuánto tiempo te quita de verdad una tienda online?',d:'3–5 min',f:'Quién hace qué',src:'',poster:''},
-    {g:1,q:'«No entiendo de tecnología»',t:'¿Cómo es una tienda online por dentro?',d:'5–7 min',f:'Pedido, stock y envío',src:'',poster:''},
-    {g:2,q:'«Abro la web y nadie entra»',t:'¿De dónde salen los clientes de una tienda online?',d:'5–8 min',f:'Captación',src:'',poster:''},
-    {g:2,q:'«Es mucho dinero. ¿Y si no funciona?»',t:'¿Cuánto cuesta y cuánto te devuelve?',d:'4–6 min',f:'Inversión y garantía',src:'',poster:''},
-    {g:2,q:'«Ya tengo web, y no vende»',t:'¿Por qué tu web actual no vende?',d:'3–5 min',f:'Antes y después',src:'',poster:''},
-    {g:3,q:'«Me la montan y me dejan tirado»',t:'¿Qué pasa después del día 15?',d:'3–4 min',f:'Acompañamiento',src:'',poster:''},
-    {g:3,q:'«¿Mi producto se puede vender online?»',t:'¿Tu producto se puede vender online?',d:'3–5 min',f:'Por sector',src:'',poster:''}
+    {g:0,q:'«Mi tienda ya va bien, no lo necesito»',t:'¿Por qué tu próxima tienda debería ser online, y no otro local?',s:'Lo que cuesta abrir otro local frente a abrir tu tienda en internet, con números de ejemplo.',d:'4–6 min',src:'',poster:'',dur:''},
+    {g:1,q:'«No tengo tiempo, ya tengo bastante con la tienda»',t:'¿Cuánto tiempo te quita de verdad una tienda online?',s:'Qué haces tú y qué hacemos nosotros, durante los 15 días y después.',d:'3–5 min',src:'',poster:'',dur:''},
+    {g:1,q:'«No entiendo de tecnología»',t:'¿Cómo es una tienda online por dentro?',s:'Un pedido de principio a fin: el pago, el stock y el envío, sin tecnicismos.',d:'5–7 min',src:'',poster:'',dur:''},
+    {g:2,q:'«Abro la web y nadie entra»',t:'¿De dónde salen los clientes de una tienda online?',s:'Por qué abrir la web no basta y cómo llegan las visitas que compran.',d:'5–8 min',src:'',poster:'',dur:''},
+    {g:2,q:'«Es mucho dinero. ¿Y si no funciona?»',t:'¿Cuánto cuesta y cuánto te devuelve?',s:'Qué inversión hace falta, qué incluye y cómo se recupera.',d:'4–6 min',src:'',poster:'',dur:''},
+    {g:2,q:'«Ya tengo web, y no vende»',t:'¿Por qué tu web actual no vende?',s:'Los fallos más comunes de las webs de tienda y cómo se arreglan.',d:'3–5 min',src:'',poster:'',dur:''},
+    {g:3,q:'«Me la montan y me dejan tirado»',t:'¿Qué pasa después del día 15?',s:'Cómo seguimos contigo cuando tu tienda ya está abierta.',d:'3–4 min',src:'',poster:'',dur:''},
+    {g:3,q:'«¿Mi producto se puede vender online?»',t:'¿Tu producto se puede vender online?',s:'Qué funciona mejor online y qué hacer si lo tuyo es delicado o voluminoso.',d:'3–5 min',src:'',poster:'',dur:''}
   ];
-  var G=[['01','¿Merece la pena?'],['02','¿Puedo yo con esto?'],['03','¿Va a funcionar?'],['04','¿Me fío?']];
-  var REC=[0,1]; /* «empieza por aquí» */
-  var d=document,$=function(i){return d.getElementById(i)};
+  var G=['¿Merece la pena?','¿Puedo yo con esto?','¿Va a funcionar?','¿Me fío?'];
+  var COL=[['rgba(111,194,166,.55)','rgba(15,59,49,.9)'],['rgba(217,201,160,.45)','rgba(70,58,30,.8)'],['rgba(120,170,220,.42)','rgba(20,40,70,.85)'],['rgba(200,140,120,.42)','rgba(70,30,22,.85)']];
+  var SHOPS=['solenne','pulso','forma','aurea','nacar','velia','orbe','nucleo','dstrto'];
+  var WA='34610594450',TZ='Europe/Madrid',DUR=30;
+
+  var d=document,$=function(i){return d.getElementById(i)},RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  var seen={};try{seen=JSON.parse(localStorage.getItem('c404met')||'{}')||{}}catch(e){}
-  function save(){try{localStorage.setItem('c404met',JSON.stringify(seen))}catch(e){}}
+  function cap(s){return s?s.charAt(0).toUpperCase()+s.slice(1):''}
+  function ls(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||'null');localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
+  function post(p,b){try{return fetch('/l/'+p,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(b),keepalive:true}).then(function(r){return r.json()})}catch(e){return Promise.reject(e)}}
 
-  /* saludo: ?n=Nombre&t=2026-11-05T10:00:00Z en el enlace del email, o la reserva hecha en este navegador */
+  /* ---------- quién es: ?c=<lead> (enlace personal), ?n=&t= (a mano) o la reserva hecha en este navegador ---------- */
   var P=new URLSearchParams(location.search),B=null;try{B=JSON.parse(sessionStorage.getItem('c404bk')||'null')}catch(e){}
-  var nm=(P.get('n')||(B&&B.name)||'').trim().slice(0,40),st=P.get('t')||(B&&B.start)||'';
-  nm=nm?nm.charAt(0).toUpperCase()+nm.slice(1):'';
-  var dt=st?new Date(st):null;if(dt&&isNaN(dt))dt=null;
-  if(nm||dt){
-    var f=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',weekday:'long',day:'numeric',month:'long'}),h=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',hour:'2-digit',minute:'2-digit'});
-    $('h1').innerHTML=(nm?'Hola, '+esc(nm)+'. ':'')+(dt?'<em>Nos vemos el '+esc(f.format(dt))+' a las '+esc(h.format(dt))+'.</em>':'<em>Esto es lo que vamos a ver juntos.</em>');
-    $('lead').innerHTML='Antes de la llamada, mira los vídeos que te interesen: son cortos y responden a las dudas que más nos hacen. <b>Así aprovechamos la llamada para hablar de tu tienda.</b>';
-  }
-  if(B&&B.gcal&&!B.google)$('acts').insertAdjacentHTML('beforeend','<a class="btn o" href="'+esc(B.gcal)+'" target="_blank" rel="noopener">Añadir a mi calendario</a>');
+  var C=(P.get('c')||(B&&B.c)||'').trim();if(!/^L[A-Za-z0-9_-]{6,14}$/.test(C))C='';
+  var S={name:(P.get('n')||(B&&B.name)||'').trim().slice(0,40),start:P.get('t')||(B&&B.start)||'',join:(B&&B.join)||''};
+  var seen=ls('c404met')||{},pos=ls('c404metp')||{};   /* seen: % visto de cada vídeo; pos: segundo donde se quedó */
 
-  var PLAY='<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>',CHECK='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>';
-  function draw(){
-    var html='';
-    G.forEach(function(g,gi){
-      html+='<section class="grp"><div class="grp-h"><span>'+g[0]+'</span><h2>'+g[1]+'</h2></div><div class="list">';
-      V.forEach(function(v,i){if(v.g!==gi)return;
-        var s=!!seen[i],soon=!v.src;
-        html+='<button type="button" class="v'+(s?' seen':'')+(soon?' soon':'')+'" data-i="'+i+'"'+(soon?' aria-disabled="true"':'')+'>'
-          +(REC.indexOf(i)>-1&&!s?'<span class="rec">Empieza por aquí</span>':'')
-          +'<span class="n">'+(s?CHECK:(i+1))+'</span>'
-          +'<span><span class="q">'+esc(v.q)+'</span><span class="tt">'+esc(v.t)+'</span><span class="m"><em>'+esc(v.d)+'</em><em>'+esc(v.f)+'</em>'+(soon?'<em>Próximamente</em>':'')+'</span></span>'
-          +'<span class="pl">'+(s?CHECK:PLAY)+'</span></button>';
-      });
-      html+='</div></section>';
-    });
-    $('groups').innerHTML=html;
-    [].forEach.call(d.querySelectorAll('.v'),function(b){b.onclick=function(){open(+b.getAttribute('data-i'))}});
-    var n=Object.keys(seen).length;
-    $('pc').textContent=n+' de '+V.length+' vistos';$('pb').style.width=(n/V.length*100)+'%';
-    var next=-1;for(var i=0;i<V.length;i++){if(!seen[i]){next=i;break}}
-    $('pm').textContent=n===V.length?'¡Todo visto! Nos vemos en la llamada':(next>-1?'Siguiente: el '+(next+1):'');
+  function fmt(o,dt){return new Intl.DateTimeFormat('es-ES',Object.assign({timeZone:TZ},o)).format(dt)}
+  function drawCall(){
+    var dt=S.start?new Date(isNaN(+S.start)?S.start:+S.start):null;if(dt&&isNaN(dt))dt=null;
+    var nm=cap(S.name.split(' ')[0]);
+    if(nm||dt){
+      var rel='';if(dt){var t0=new Date(),k=Math.round((new Date(fmt({year:'numeric',month:'2-digit',day:'2-digit'},dt).split('/').reverse().join('-'))-new Date(fmt({year:'numeric',month:'2-digit',day:'2-digit'},t0).split('/').reverse().join('-')))/864e5);
+        rel=k===0?'hoy':k===1?'mañana':k>1&&k<7?'el '+fmt({weekday:'long'},dt):'el '+fmt({weekday:'long',day:'numeric',month:'long'},dt)}
+      $('h1').innerHTML=(nm?'Hola, '+esc(nm)+'. ':'')+'<span class="grad">'+(dt?'Nos vemos '+esc(rel)+'.':'Nos vemos muy pronto.')+'</span>';
+      $('lead').innerHTML=(rel==='hoy'?'Antes de vernos':'Mientras llega el día')+', te he preparado 8 vídeos cortos con las dudas que tiene cualquier dueño de tienda antes de dar el paso. No hace falta verlos todos: <b>elige los tuyos y en la llamada hablamos solo de tu tienda.</b>';
+    }
+    if(dt){
+      $('cw').textContent=fmt({weekday:'short'},dt).replace('.','');$('cd').textContent=fmt({day:'numeric'},dt);$('cm').textContent=fmt({month:'short'},dt).replace('.','');
+      $('wt').textContent=cap(fmt({weekday:'long',day:'numeric',month:'long'},dt))+', '+fmt({hour:'2-digit',minute:'2-digit'},dt);
+      var mine='';try{var tz=Intl.DateTimeFormat().resolvedOptions().timeZone;if(tz&&tz!==TZ&&fmt({hour:'2-digit',minute:'2-digit'},dt)!==new Intl.DateTimeFormat('es-ES',{hour:'2-digit',minute:'2-digit'}).format(dt))mine=' ('+new Intl.DateTimeFormat('es-ES',{hour:'2-digit',minute:'2-digit'}).format(dt)+' en tu hora)'}catch(e){}
+      $('wp').textContent='Hora de España'+mine+' · '+DUR+' min por Google Meet';
+      $('tpt').textContent=cap(fmt({weekday:'short',day:'numeric'},dt).replace('.',''))+' · '+fmt({hour:'2-digit',minute:'2-digit'},dt);
+      $('chipt').textContent=nm?'Llamada confirmada, '+nm:'Llamada confirmada';
+    }
+    S.dt=dt;tick();acts();
   }
-  var dlg=$('dlg'),vid=$('dv'),cur=-1;
-  function open(i){var v=V[i];if(!v||!v.src)return;cur=i;$('dt').textContent=(i+1)+'. '+v.t;vid.src=v.src;if(v.poster)vid.poster=v.poster;
-    if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');vid.play().catch(function(){})}
-  function close(){vid.pause();if(dlg.close)dlg.close();else dlg.removeAttribute('open')}
-  $('dx').onclick=close;dlg.addEventListener('click',function(e){if(e.target===dlg)close()});dlg.addEventListener('close',function(){vid.pause()});
-  /* cuenta como visto al pasar del 80 % */
-  vid.addEventListener('timeupdate',function(){if(cur<0||seen[cur]||!vid.duration)return;if(vid.currentTime/vid.duration>.8){seen[cur]=1;save();draw()}});
-  draw();
+  function tick(){
+    var dt=S.dt,el=$('left');if(!dt){el.innerHTML='';return}
+    var ms=dt-Date.now(),end=+dt+DUR*6e4-Date.now(),t;
+    if(end<0){t='La llamada ya pasó. ¿Seguimos hablando?'}
+    else if(ms<=5*6e4){t='Es ahora. Entra cuando quieras'}
+    else if(ms<36e5){t='Empieza en '+Math.ceil(ms/6e4)+' min'}
+    else if(ms<864e5){var h=Math.floor(ms/36e5),m=Math.round(ms%36e5/6e4);t='Faltan '+h+' h'+(m?' y '+m+' min':'')}
+    else{var dd=Math.floor(ms/864e5),hh=Math.round(ms%864e5/36e5);t='Faltan '+dd+(dd===1?' día':' días')+(hh&&dd<3?' y '+hh+' h':'')}
+    el.innerHTML='<span class="left'+(ms<=15*6e4&&end>0?' now':'')+'"><svg width="16" height="16"><use href="#i-clock"/></svg>'+esc(t)+'</span>';
+    var near=ms<=15*6e4&&end>0;if(near!==S.near){S.near=near;acts()}
+  }
+  function waTxt(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t)}
+  function acts(){
+    var dt=S.dt,nm=cap(S.name.split(' ')[0]),whenT=dt?' del '+fmt({weekday:'long',day:'numeric'},dt)+' a las '+fmt({hour:'2-digit',minute:'2-digit'},dt):'';
+    var me=nm?'Hola Christian, soy '+nm+'.':'Hola Christian.';
+    var h='';
+    if(S.join)h+='<a class="btn'+(S.near?'':' o')+'" href="'+esc(S.join)+'" target="_blank" rel="noopener"><svg><use href="#i-cam"/></svg>'+(S.near?'Entrar a la llamada':'Enlace de la llamada')+'</a>';
+    if(dt&&+dt+DUR*6e4>Date.now())h+='<button class="btn o" type="button" id="ics"><svg><use href="#i-cal"/></svg>Añadir al calendario</button>';
+    h+='<a class="btn o" href="'+esc(waTxt(me+' Tengo la llamada'+whenT+' y necesito cambiar la hora.'))+'" target="_blank" rel="noopener" data-wa="cambiar"><svg><use href="#i-swap"/></svg>Cambiar la hora</a>';
+    $('cacts').innerHTML=h;
+    $('eacts').innerHTML='<a class="btn" href="'+esc(waTxt(me+' He visto los vídeos del método y tengo una duda: '))+'" target="_blank" rel="noopener" data-wa="duda"><svg><use href="#i-wa"/></svg>Escribir por WhatsApp</a>'+
+      '<a class="btn o" href="'+esc(waTxt(me+' Tengo la llamada'+whenT+' y necesito cambiar la hora.'))+'" target="_blank" rel="noopener" data-wa="cambiar"><svg><use href="#i-swap"/></svg>Cambiar la hora</a>';
+    var ic=$('ics');if(ic)ic.onclick=ics;
+  }
+  function ics(){
+    var dt=S.dt;if(!dt)return;var z=function(x){return new Date(x).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'')};
+    var url=location.origin+'/metodo'+(C?'?c='+C:'');
+    var body=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//404 Growth//Metodo//ES','CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT','UID:metodo-'+(C||+dt)+'@404growth.com','DTSTAMP:'+z(Date.now()),'DTSTART:'+z(dt),'DTEND:'+z(+dt+DUR*6e4),
+      'SUMMARY:Llamada con Christian · 404 Growth','DESCRIPTION:'+(S.join?'Enlace: '+S.join+'\\n':'')+'Antes de la llamada: '+url,'LOCATION:'+(S.join||'Google Meet'),'BEGIN:VALARM','TRIGGER:-PT15M','ACTION:DISPLAY','DESCRIPTION:Llamada con Christian','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+    var a=d.createElement('a');a.href=URL.createObjectURL(new Blob([body],{type:'text/calendar;charset=utf-8'}));a.download='llamada-404-growth.ics';d.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},1500);
+  }
+
+  /* ---------- las tarjetas ---------- */
+  var PLAY='<svg><use href="#i-play"/></svg>',CHECK='<svg><use href="#i-check"/></svg>';
+  function card(i,feat){
+    var v=V[i],p=seen[i]||0,s=p>=80,soon=!v.src,r=!s&&pos[i]&&!soon?Math.min(95,Math.round(pos[i]/(v.sec||1)*100)):0,c=COL[v.g];
+    return '<button type="button" class="vc'+(s?' seen':'')+(soon?' soon':'')+'" data-i="'+i+'"'+(soon?' aria-disabled="true"':'')+' aria-label="'+esc((i+1)+'. '+v.t+(soon?' (muy pronto)':s?' (visto)':''))+'">'+
+      (v.poster?'<span class="ph" style="background-image:url(\''+esc(v.poster)+'\')"></span>':'<span class="ph gen" data-n="'+(i+1)+'" style="--c1:'+c[0]+';--c2:'+c[1]+'"></span>')+
+      '<span class="top2"><span class="num">'+(i+1)+'/'+V.length+'</span>'+(soon?'<span class="soonb">Muy pronto</span>':feat?'':'<span class="grp">'+esc(G[v.g])+'</span>')+'</span>'+
+      (feat?'':'<span class="bt"><span class="qq">'+esc(v.q)+'</span><b>'+esc(v.t)+'</b><span class="mt"><span class="pb">'+(s?CHECK:PLAY)+'</span>'+(s?'Visto':soon?'Muy pronto':esc(v.dur||v.d))+'</span></span>')+
+      (feat?'<span class="bt"><span class="mt"><span class="pb">'+(s?CHECK:PLAY)+'</span>'+(s?'Visto':soon?'Muy pronto':esc(v.dur||v.d))+'</span></span>':'')+
+      (r?'<span class="rs"><i style="width:'+r+'%"></i></span>':'')+'</button>';
+  }
+  function draw(){
+    var first=-1,i;for(i=0;i<V.length;i++){if((seen[i]||0)<80&&V[i].src){first=i;break}}if(first<0)for(i=0;i<V.length;i++){if((seen[i]||0)<80){first=i;break}}if(first<0)first=0;
+    var f=V[first],fs=!f.src;
+    $('feat').innerHTML='<div class="feat rv in">'+card(first,true)+'<div class="ft"><span class="tag">'+(Object.keys(seen).length?'Sigue por aquí':'Empieza por aquí')+'</span><p class="q" style="margin-top:14px">'+esc(f.q)+'</p><h3>'+esc(f.t)+'</h3><p>'+esc(f.s)+'</p>'+
+      '<button class="btn" type="button" data-i="'+first+'"'+(fs?' disabled style="opacity:.5;pointer-events:none"':'')+'><svg><use href="#i-play"/></svg>'+(fs?'Muy pronto':(pos[first]?'Seguir viendo':'Ver ahora')+' · '+esc(f.dur||f.d))+'</button></div></div>';
+    var h='';V.forEach(function(v,i){h+=card(i,false)});$('grid').innerHTML=h;
+    [].forEach.call(d.querySelectorAll('[data-i]'),function(b){b.onclick=function(){open(+b.getAttribute('data-i'))}});
+    var n=V.filter(function(v,i){return (seen[i]||0)>=80}).length,ready=V.filter(function(v){return v.src}).length;
+    $('pc').textContent=n+' de '+V.length+' vistos';$('pbar').style.width=(n/V.length*100)+'%';
+    var nx=-1;for(var j=0;j<V.length;j++){if((seen[j]||0)<80&&V[j].src){nx=j;break}}
+    $('pm').textContent=n===V.length?'Todo visto. Nos vemos en la llamada':!ready?'Los subo en breve':nx>-1?'Siguiente: el '+(nx+1):'El resto, muy pronto';
+  }
+
+  /* ---------- el reproductor ---------- */
+  var pl=$('pl'),vid=$('plv'),cur=-1,hls=null,hlsP=null,ring=null,fromHash=false,MS=[25,50,80,100];
+  function loadHls(){return hlsP||(hlsP=new Promise(function(ok,ko){var s=d.createElement('script');s.src='/v/hls.light.min.js';s.onload=ok;s.onerror=ko;d.head.appendChild(s)}))}
+  function attach(src){
+    if(hls){hls.destroy();hls=null}
+    if(/\.m3u8(\?|$)/.test(src)&&!vid.canPlayType('application/vnd.apple.mpegurl')){
+      return loadHls().then(function(){if(window.Hls&&Hls.isSupported()){hls=new Hls({capLevelToPlayerSize:true});hls.loadSource(src);hls.attachMedia(vid)}else vid.src=src})}
+    vid.src=src;return Promise.resolve();
+  }
+  function nextOf(i,k){for(var j=i+k;j>=0&&j<V.length;j+=k){if(V[j].src)return j}return -1}
+  function open(i,noPush){
+    var v=V[i];if(!v||!v.src)return;cur=i;hideEnd();
+    $('pln').textContent=(i+1)+'/'+V.length;$('plt').textContent=v.t;
+    $('plp').disabled=nextOf(i,-1)<0;$('pln2').disabled=nextOf(i,1)<0;
+    vid.poster=v.poster||'';
+    attach(v.src).then(function(){
+      var at=pos[i]||0;if(at>5&&(seen[i]||0)<100){var go=function(){try{if(vid.duration&&at<vid.duration-8)vid.currentTime=at}catch(e){}vid.removeEventListener('loadedmetadata',go)};vid.addEventListener('loadedmetadata',go)}
+      var pr=vid.play();if(pr&&pr.catch)pr.catch(function(){});
+    });
+    if(pl.hidden){pl.hidden=false;d.documentElement.classList.add('lock');requestAnimationFrame(function(){pl.classList.add('on')});
+      if(!noPush){try{history.pushState({v:i},'','#v'+(i+1))}catch(e){}}}
+    else{try{history.replaceState({v:i},'','#v'+(i+1))}catch(e){}}
+    setTimeout(function(){$('plx').focus()},60);
+  }
+  function close(fromPop){
+    if(pl.hidden)return;vid.pause();savePos();pl.classList.remove('on');d.documentElement.classList.remove('lock');hideEnd();
+    setTimeout(function(){pl.hidden=true;if(hls){hls.destroy();hls=null}vid.removeAttribute('src');vid.load()},280);
+    if(!fromPop){if(history.state&&history.state.v!=null)history.back();else try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}}
+    draw();
+  }
+  function savePos(){if(cur<0||!vid.duration)return;V[cur].sec=vid.duration;pos[cur]=vid.currentTime>=vid.duration-3?0:Math.floor(vid.currentTime);ls('c404metp',pos)}
+  function mark(p){
+    var was=seen[cur]||0;if(p<=was)return;
+    var hit=MS.filter(function(m){return was<m&&p>=m}).pop();seen[cur]=Math.max(was,p);
+    if(hit||p>=100){ls('c404met',seen);if(C)post('mv',{c:C,i:cur,p:hit||p}).catch(function(){})}
+  }
+  vid.addEventListener('timeupdate',function(){if(cur<0||!vid.duration)return;V[cur].sec=vid.duration;mark(Math.floor(vid.currentTime/vid.duration*100));
+    if(Math.floor(vid.currentTime)%5===0)savePos()});
+  vid.addEventListener('ended',function(){mark(100);pos[cur]=0;ls('c404metp',pos);showEnd()});
+  vid.addEventListener('pause',savePos);
+  function showEnd(){
+    var n=nextOf(cur,1),e=$('ple');e.hidden=false;
+    if(n<0){$('plr').style.display='none';$('pls').textContent=(V.filter(function(v,i){return (seen[i]||0)>=80}).length===V.length)?'Todo visto':'Hecho';
+      $('plnt').textContent='Nos vemos en la llamada.';$('plgo').textContent='Volver a los vídeos';$('plgo').onclick=function(){close()};$('plno').style.display='none';return}
+    $('plr').style.display='';$('pls').textContent='Siguiente';$('plnt').textContent=V[n].t;$('plgo').textContent='Ver ahora';$('plno').style.display='';
+    $('plgo').onclick=function(){open(n)};$('plno').onclick=hideEnd;
+    if(!RM){ring=$('plr');ring.classList.remove('go');void ring.getBoundingClientRect();ring.classList.add('go');clearTimeout(S.auto);S.auto=setTimeout(function(){if(!e.hidden)open(n)},6000)}
+  }
+  function hideEnd(){clearTimeout(S.auto);$('ple').hidden=true;var r=$('plr');if(r)r.classList.remove('go')}
+  $('plx').onclick=function(){close()};
+  $('plp').onclick=function(){var n=nextOf(cur,-1);if(n>-1){savePos();open(n)}};
+  $('pln2').onclick=function(){var n=nextOf(cur,1);if(n>-1){savePos();open(n)}};
+  pl.addEventListener('click',function(e){if(e.target===pl)close()});
+  d.addEventListener('keydown',function(e){if(pl.hidden)return;if(e.key==='Escape')close();else if(e.key==='ArrowRight'&&e.target.tagName!=='VIDEO')$('pln2').click();else if(e.key==='ArrowLeft'&&e.target.tagName!=='VIDEO')$('plp').click()});
+  addEventListener('popstate',function(e){var st=e.state;if(st&&st.v!=null&&V[st.v]&&V[st.v].src)open(st.v,true);else close(true)});
+  addEventListener('pagehide',savePos);
+
+  /* ---------- tiendas ---------- */
+  var tr=$('track'),sh=SHOPS.concat(SHOPS).map(function(k){return '<div class="shop" style="background-image:url(\'/demos/cards/'+k+'.webp\')"></div>'}).join('');tr.innerHTML=sh;
+
+  /* ---------- aparición, barra de arriba ---------- */
+  if('IntersectionObserver' in window&&!RM){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    [].forEach.call(d.querySelectorAll('.rv'),function(el){io.observe(el)});
+    new IntersectionObserver(function(es){$('top').classList.toggle('on',!es[0].isIntersecting)},{rootMargin:'-60px 0px 0px 0px'}).observe($('call'));
+    new IntersectionObserver(function(es){$('strip').classList.toggle('off',!es[0].isIntersecting)}).observe($('strip'));
+  }else{[].forEach.call(d.querySelectorAll('.rv'),function(el){el.classList.add('in')});addEventListener('scroll',function(){$('top').classList.toggle('on',scrollY>400)},{passive:true})}
+
+  /* ---------- en marcha ---------- */
+  draw();drawCall();setInterval(tick,30000);
+  if(C){post('m',{c:C}).then(function(j){if(!j||!j.ok)return;
+    S.name=j.name||S.name;if(j.start)S.start=j.start;if(j.join)S.join=j.join;if(j.dur)DUR=j.dur;
+    if(j.seen)Object.keys(j.seen).forEach(function(k){seen[k]=Math.max(seen[k]||0,+j.seen[k]||0)});ls('c404met',seen);
+    drawCall();draw();}).catch(function(){})}
+  var hv=/^#v(\d)$/.exec(location.hash);if(hv&&V[+hv[1]-1]&&V[+hv[1]-1].src)open(+hv[1]-1,true);
 })();
 </script>
 </body>
