@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>El método, antes de tu llamada | 404 Growth</title>
+<meta name="description" content="8 vídeos cortos para llegar a tu llamada con todo claro: tiempo, clientes, inversión y qué pasa después.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#040706">
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap">
+<style>
+/* /metodo: los vídeos que resuelven las dudas antes de la llamada. Mismo lenguaje que /book y /gracias. */
+:root{color-scheme:dark;--bg:#040706;--ink:#F3F4F1;--mute:#9AA49F;--line:rgba(255,255,255,.1);--t:#6FC2A6;--t2:#A6E3CD;
+--f:"Inter Tight",Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0}html{background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font:400 16.5px/1.55 var(--f);letter-spacing:-.01em;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:clip}
+body::before{content:"";position:fixed;inset:-20% -10% auto;height:70vh;background:radial-gradient(60% 60% at 50% 0%,rgba(111,194,166,.26),transparent 70%);pointer-events:none;z-index:0}
+a{color:inherit}button{font:inherit;color:inherit}
+.w{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:22px max(20px,env(safe-area-inset-left,0px)) 64px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+.logo{font-weight:700;letter-spacing:-.02em;font-size:17px;text-decoration:none}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:99px;border:1px solid rgba(166,227,205,.3);background:rgba(111,194,166,.1);font-size:13.5px;color:var(--t2);font-weight:500}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--t);box-shadow:0 0 0 4px rgba(111,194,166,.2)}
+.hd{text-align:center}
+h1{margin:16px auto 0;font-size:clamp(32px,6.2vw,54px);font-weight:600;letter-spacing:-.045em;line-height:1.06;text-wrap:balance;max-width:720px}
+h1 em{font-style:normal;background:linear-gradient(180deg,#E9FFF6 0%,var(--t2) 55%,var(--t) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mute);margin:14px auto 0;max-width:560px;font-size:17.5px;line-height:1.5;text-wrap:pretty}
+.lead b{color:var(--ink);font-weight:600}
+/* progreso */
+.prog{margin:30px auto 0;max-width:560px;padding:16px 18px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid var(--line);display:grid;gap:10px}
+.prog-h{display:flex;justify-content:space-between;align-items:baseline;font-size:14.5px;color:var(--mute)}.prog-h b{color:var(--ink);font-weight:600;font-size:15.5px}
+.bar{height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--t),var(--t2));border-radius:6px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+/* grupos y tarjetas */
+.grp{margin-top:44px}
+.grp-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px;padding:0 4px}
+.grp-h span{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--t)}
+.grp-h h2{margin:0;font-size:20px;font-weight:600;letter-spacing:-.02em}
+.list{display:grid;gap:12px}
+.v{position:relative;display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:16px;align-items:center;width:100%;text-align:left;padding:18px;border-radius:22px;background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer;transition:background .2s,border-color .2s,transform .15s}
+@media (hover:hover){.v:hover{background:rgba(255,255,255,.06);border-color:rgba(166,227,205,.3)}}
+.v:active{transform:scale(.995)}
+.v:focus-visible{outline:2px solid var(--t2);outline-offset:3px}
+.n{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:rgba(111,194,166,.14);color:var(--t2);font-weight:600;font-size:18px}
+.v .q{display:block;font-size:14px;color:var(--mute);font-style:italic;margin-bottom:3px}
+.v .tt{display:block;font-size:17.5px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+.v .m{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.v .m em{font-style:normal;font-size:12.5px;padding:3px 9px;border-radius:99px;background:rgba(255,255,255,.06);color:var(--mute)}
+.pl{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#07100D;flex:none}
+.pl svg{width:16px;height:16px;margin-left:2px}
+.v.seen .n{background:var(--t);color:#04110D}
+.v.seen .pl{background:rgba(111,194,166,.18);color:var(--t2)}
+.v.soon{cursor:default;opacity:.62}.v.soon .pl{background:rgba(255,255,255,.08);color:var(--mute)}
+.rec{position:absolute;top:-9px;left:84px;font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:3px 9px;border-radius:99px;background:var(--t);color:#04110D}
+/* reproductor */
+dialog{border:0;padding:0;background:transparent;color:var(--ink);max-width:min(440px,92vw);width:100%}
+dialog::backdrop{background:rgba(2,4,3,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.pv{position:relative;border-radius:26px;overflow:hidden;background:#0B1412;border:1px solid rgba(255,255,255,.14)}
+.pv video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#000}
+.pv-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px}
+.pv-h b{font-size:15.5px;font-weight:600;letter-spacing:-.02em}
+.x{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.06);cursor:pointer;flex:none}
+/* cierre */
+.end{margin-top:52px;padding:30px 24px;border-radius:26px;text-align:center;background:linear-gradient(160deg,rgba(111,194,166,.14),rgba(111,194,166,.04));border:1px solid rgba(166,227,205,.25)}
+.end h2{margin:0;font-size:clamp(24px,4.4vw,32px);font-weight:600;letter-spacing:-.035em;line-height:1.15}
+.end p{margin:10px auto 0;max-width:480px;color:var(--mute)}
+.acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 20px;border-radius:99px;background:#fff;color:#07100D;font-weight:600;font-size:15.5px;text-decoration:none}
+.btn.o{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.foot{margin-top:30px;text-align:center;color:var(--mute);font-size:13.5px}
+@media (max-width:560px){.v{grid-template-columns:44px minmax(0,1fr) auto;gap:12px;padding:16px}.n{width:44px;height:44px;border-radius:14px;font-size:16px}.pl{width:38px;height:38px}.rec{left:70px}}
+@media (prefers-reduced-motion:no-preference){.in{animation:up .6s cubic-bezier(.2,.8,.2,1) both}.d1{animation-delay:.08s}.d2{animation-delay:.16s}@keyframes up{from{opacity:0;transform:translateY(12px)}}}
+</style>
+</head>
+<body>
+<main class="w">
+  <div class="top"><a class="logo" href="/">404/GROWTH<sup style="font-size:.5em">®</sup></a><span class="chip"><i></i>Antes de tu llamada</span></div>
+
+  <header class="hd">
+    <h1 class="in" id="h1">El método. <em>Todo lo que necesitas saber antes de hablar.</em></h1>
+    <p class="lead in d1" id="lead">8 vídeos cortos con las dudas que más nos hacen los dueños de tiendas físicas. Mira los que te interesen antes de la llamada y la aprovecharemos mucho más.</p>
+    <div class="prog in d2" aria-live="polite"><div class="prog-h"><b id="pc">0 de 8 vistos</b><span id="pm">Empieza por el 1</span></div><div class="bar"><i id="pb"></i></div></div>
+  </header>
+
+  <div id="groups"></div>
+
+  <section class="end">
+    <h2>¿Te ha surgido alguna duda?</h2>
+    <p>Escríbeme y la vemos en la llamada. Si algo no te encaja, también me lo puedes decir antes.</p>
+    <div class="acts" id="acts"><a class="btn" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20he%20visto%20los%20v%C3%ADdeos%20del%20m%C3%A9todo%20y%20tengo%20una%20duda." target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
+  </section>
+  <p class="foot">404 Growth · <a href="/legal">Privacidad</a></p>
+</main>
+
+<dialog id="dlg" aria-label="Vídeo">
+  <div class="pv"><div class="pv-h"><b id="dt"></b><button class="x" id="dx" type="button" aria-label="Cerrar">✕</button></div><video id="dv" controls playsinline preload="metadata"></video></div>
+</dialog>
+
+<script>
+(function(){
+  'use strict';
+  /* LOS VÍDEOS: cuando estén grabados, pon el archivo (mp4 vertical) en src. Sin src, la tarjeta sale como «Próximamente». */
+  var V=[
+    {g:0,q:'«Mi tienda ya va bien, no lo necesito»',t:'Por qué tu próxima tienda debería ser online, y no otro local',d:'4–6 min',f:'Números',src:'',poster:''},
+    {g:1,q:'«No tengo tiempo, ya tengo bastante con la tienda»',t:'Cuánto tiempo te quita de verdad: 15 minutos al día',d:'3–5 min',f:'Quién hace qué',src:'',poster:''},
+    {g:1,q:'«No entiendo de tecnología»',t:'Así se ve una tienda online por dentro',d:'5–7 min',f:'Pedido, stock y envío',src:'',poster:''},
+    {g:2,q:'«Abro la web y nadie entra»',t:'De dónde salen los clientes: Instagram y Meta, desde cero',d:'5–8 min',f:'Captación',src:'',poster:''},
+    {g:2,q:'«Es mucho dinero. ¿Y si no funciona?»',t:'Lo que cuesta y lo que devuelve, con números reales',d:'4–6 min',f:'Inversión y garantía',src:'',poster:''},
+    {g:2,q:'«Ya tengo web, y no vende»',t:'Por qué tu web actual no vende, y qué cambia',d:'3–5 min',f:'Antes y después',src:'',poster:''},
+    {g:3,q:'«Me la montan y me dejan tirado»',t:'Qué pasa después del día 15',d:'3–4 min',f:'Acompañamiento',src:'',poster:''},
+    {g:3,q:'«¿Mi producto se puede vender online?»',t:'Qué negocios funcionan online y cuáles no',d:'3–5 min',f:'Por sector',src:'',poster:''}
+  ];
+  var G=[['01','¿Merece la pena?'],['02','¿Puedo yo con esto?'],['03','¿Va a funcionar?'],['04','¿Me fío?']];
+  var REC=[0,1]; /* «empieza por aquí» */
+  var d=document,$=function(i){return d.getElementById(i)};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var seen={};try{seen=JSON.parse(localStorage.getItem('c404met')||'{}')||{}}catch(e){}
+  function save(){try{localStorage.setItem('c404met',JSON.stringify(seen))}catch(e){}}
+
+  /* saludo: ?n=Nombre&t=2026-11-05T10:00:00Z en el enlace del email, o la reserva hecha en este navegador */
+  var P=new URLSearchParams(location.search),B=null;try{B=JSON.parse(sessionStorage.getItem('c404bk')||'null')}catch(e){}
+  var nm=(P.get('n')||(B&&B.name)||'').trim().slice(0,40),st=P.get('t')||(B&&B.start)||'';
+  nm=nm?nm.charAt(0).toUpperCase()+nm.slice(1):'';
+  var dt=st?new Date(st):null;if(dt&&isNaN(dt))dt=null;
+  if(nm||dt){
+    var f=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',weekday:'long',day:'numeric',month:'long'}),h=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',hour:'2-digit',minute:'2-digit'});
+    $('h1').innerHTML=(nm?'Hola, '+esc(nm)+'. ':'')+(dt?'<em>Nos vemos el '+esc(f.format(dt))+' a las '+esc(h.format(dt))+'.</em>':'<em>Esto es lo que vamos a ver juntos.</em>');
+    $('lead').innerHTML='Antes de la llamada, mira los vídeos que te interesen: son cortos y responden a las dudas que más nos hacen. <b>Así aprovechamos la llamada para hablar de tu tienda.</b>';
+  }
+  if(B&&B.gcal&&!B.google)$('acts').insertAdjacentHTML('beforeend','<a class="btn o" href="'+esc(B.gcal)+'" target="_blank" rel="noopener">Añadir a mi calendario</a>');
+
+  var PLAY='<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>',CHECK='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>';
+  function draw(){
+    var html='';
+    G.forEach(function(g,gi){
+      html+='<section class="grp"><div class="grp-h"><span>'+g[0]+'</span><h2>'+g[1]+'</h2></div><div class="list">';
+      V.forEach(function(v,i){if(v.g!==gi)return;
+        var s=!!seen[i],soon=!v.src;
+        html+='<button type="button" class="v'+(s?' seen':'')+(soon?' soon':'')+'" data-i="'+i+'"'+(soon?' aria-disabled="true"':'')+'>'
+          +(REC.indexOf(i)>-1&&!s?'<span class="rec">Empieza por aquí</span>':'')
+          +'<span class="n">'+(s?CHECK:(i+1))+'</span>'
+          +'<span><span class="q">'+esc(v.q)+'</span><span class="tt">'+esc(v.t)+'</span><span class="m"><em>'+esc(v.d)+'</em><em>'+esc(v.f)+'</em>'+(soon?'<em>Próximamente</em>':'')+'</span></span>'
+          +'<span class="pl">'+(s?CHECK:PLAY)+'</span></button>';
+      });
+      html+='</div></section>';
+    });
+    $('groups').innerHTML=html;
+    [].forEach.call(d.querySelectorAll('.v'),function(b){b.onclick=function(){open(+b.getAttribute('data-i'))}});
+    var n=Object.keys(seen).length;
+    $('pc').textContent=n+' de '+V.length+' vistos';$('pb').style.width=(n/V.length*100)+'%';
+    var next=-1;for(var i=0;i<V.length;i++){if(!seen[i]){next=i;break}}
+    $('pm').textContent=n===V.length?'¡Todo visto! Nos vemos en la llamada':(next>-1?'Siguiente: el '+(next+1):'');
+  }
+  var dlg=$('dlg'),vid=$('dv'),cur=-1;
+  function open(i){var v=V[i];if(!v||!v.src)return;cur=i;$('dt').textContent=(i+1)+'. '+v.t;vid.src=v.src;if(v.poster)vid.poster=v.poster;
+    if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');vid.play().catch(function(){})}
+  function close(){vid.pause();if(dlg.close)dlg.close();else dlg.removeAttribute('open')}
+  $('dx').onclick=close;dlg.addEventListener('click',function(e){if(e.target===dlg)close()});dlg.addEventListener('close',function(){vid.pause()});
+  /* cuenta como visto al pasar del 80 % */
+  vid.addEventListener('timeupdate',function(){if(cur<0||seen[cur]||!vid.duration)return;if(vid.currentTime/vid.duration>.8){seen[cur]=1;save();draw()}});
+  draw();
+})();
+</script>
+</body>
+</html>
