@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Pizarra · Vídeo 1</title>
+<style>
+:root{--bg:#F3F2EE;--ink:#16191A;--mute:#6E736F;--line:#E3E0D9;--red:#C2513A;--g1:#7FD3B6;--g2:#2E7A64;
+ --yel:#FFF0A6;--rose:#FFD8CC;--mint:#CDEFE0;--lil:#E3DDFB}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1340px;background:#0B0D0C;overflow:hidden;font-family:'Inter',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+#view{position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:hidden;background:var(--bg)}
+#grid{position:absolute;inset:0;background-image:radial-gradient(circle,#CFCCC4 1.3px,transparent 1.6px)}
+#world{position:absolute;left:0;top:0;width:10px;height:10px;transform-origin:0 0;will-change:transform}
+.abs{position:absolute}
+.disp{font-family:'Inter Display','Inter',sans-serif}
+.tn{font-feature-settings:'tnum' 1}
+.gt{background:linear-gradient(100deg,var(--g1) -15%,var(--g2) 62%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* frames */
+.fr{position:absolute;background:#fff;border:1.5px solid var(--line);border-radius:14px;box-shadow:0 1px 0 rgba(0,0,0,.02),0 30px 60px -40px rgba(30,30,20,.25)}
+.fname{position:absolute;left:4px;top:-40px;font-size:22px;color:#8A8E8A;font-weight:500;letter-spacing:-.01em;white-space:nowrap}
+.kick{position:absolute;left:56px;top:56px;font-size:18px;font-weight:600;letter-spacing:.14em}
+.h2{position:absolute;left:54px;top:84px;font-size:60px;font-weight:300;letter-spacing:-.035em;line-height:1.05;white-space:nowrap}
+.pill{position:absolute;right:56px;top:66px;border:1.5px solid #DAD7CF;border-radius:99px;padding:8px 16px 9px;font-size:17px;color:var(--mute);white-space:nowrap}
+.red{color:var(--red)}.grn{color:var(--g2)}
+
+/* stickies */
+.st{position:absolute;width:272px;height:214px;padding:22px 22px 20px;border-radius:4px;display:flex;flex-direction:column;
+ box-shadow:0 1px 1px rgba(0,0,0,.05),0 14px 24px -14px rgba(40,30,0,.35)}
+.st .l{font-size:21px;font-weight:500;color:rgba(22,25,26,.78);letter-spacing:-.01em}
+.st .v{font-size:48px;font-weight:600;letter-spacing:-.04em;margin-top:auto;line-height:1}
+.st .s{font-size:18px;color:rgba(22,25,26,.62);margin-top:8px;letter-spacing:-.005em}
+.yel{background:var(--yel)}.rose{background:var(--rose)}.mint{background:var(--mint)}.lil{background:var(--lil)}
+
+.card{position:absolute;background:#fff;border:1.5px solid var(--line);border-radius:12px;box-shadow:0 14px 30px -22px rgba(30,30,20,.35)}
+
+/* map */
+.map path.es{fill:#EFEDE7;stroke:#C9C5BB;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.mlab{position:absolute;font-size:17px;font-weight:600;white-space:nowrap;padding:5px 10px;border-radius:99px;background:#fff;box-shadow:0 4px 14px -6px rgba(0,0,0,.25)}
+
+/* chrome */
+.chrome{position:absolute;background:#fff;border-radius:12px;box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 22px -12px rgba(0,0,0,.25)}
+#tb{left:16px;top:300px;width:52px;padding:8px 0;display:flex;flex-direction:column;align-items:center;gap:6px}
+#tb i{width:36px;height:36px;border-radius:8px;display:grid;place-items:center;color:#3B403D}
+#tb i.on{background:#E6F4EE;color:var(--g2)}
+#tb svg{width:20px;height:20px}
+#brd{left:16px;top:16px;height:46px;display:flex;align-items:center;gap:10px;padding:0 16px 0 8px;font-size:17px;font-weight:500}
+#brd b{width:30px;height:30px;border-radius:8px;background:linear-gradient(140deg,var(--g1),var(--g2));display:grid;place-items:center;color:#fff;font-size:12px;font-weight:700;letter-spacing:-.02em}
+#brd span{color:var(--mute);font-weight:400}
+#who{right:16px;top:16px;height:46px;display:flex;align-items:center;gap:8px;padding:0 8px 0 14px;font-size:16px;color:var(--mute)}
+#who b{width:32px;height:32px;border-radius:50%;background:#16191A;color:#fff;display:grid;place-items:center;font-size:14px;font-weight:600;box-shadow:0 0 0 2.5px #fff,0 0 0 4.5px var(--g2)}
+#zm{right:16px;bottom:16px;height:40px;display:flex;align-items:center;gap:14px;padding:0 14px;font-size:15px;color:#3B403D;font-weight:500}
+#zm em{font-style:normal;min-width:44px;text-align:center}
+
+/* cursor */
+#cur{position:absolute;left:0;top:0;width:0;height:0;z-index:9}
+#cur svg{position:absolute;left:-3px;top:-2px;width:30px;height:30px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+#cur .nm{position:absolute;left:24px;top:24px;background:var(--g2);color:#fff;font-size:15px;font-weight:600;padding:5px 10px 6px;border-radius:7px 99px 99px 99px;white-space:nowrap}
+#rip{position:absolute;left:0;top:0;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;border:3px solid var(--g2);opacity:0;z-index:8}
+
+/* guide strip */
+#guide{position:absolute;left:0;top:1080px;width:1080px;height:260px;background:#0B0D0C;color:#fff;padding:26px 44px}
+#gnow{position:absolute;left:44px;top:62px;font-size:38px;line-height:1.22;font-weight:500;letter-spacing:-.02em;max-width:990px}
+#gnext{position:absolute;left:44px;bottom:24px;font-size:22px;color:#7E8580;max-width:990px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gtc{position:absolute;right:44px;top:20px;font-size:20px;color:#7E8580;font-feature-settings:'tnum' 1}
+#gbar{position:absolute;left:0;top:0;height:5px;background:linear-gradient(90deg,var(--g1),var(--g2));width:0}
+#glab{position:absolute;left:44px;top:24px;font-size:16px;color:#4E5551;letter-spacing:.12em;font-weight:600}
+</style></head><body>
+<div id="view">
+ <div id="grid"></div>
+ <div id="world">
+
+  <!-- board title -->
+  <div class="abs disp" style="left:0;top:-330px;font-size:112px;font-weight:300;letter-spacing:-.045em;white-space:nowrap">¿Otro local o tu tienda <span class="gt" style="font-weight:400">online</span>?</div>
+  <div class="abs" style="left:6px;top:-160px;font-size:28px;color:var(--mute);white-space:nowrap">El método · Vídeo 1 de 8 · con números de ejemplo</div>
+
+  <!-- A1 · otro local -->
+  <div class="fr" id="A1" style="left:0;top:0;width:1000px;height:940px">
+   <div class="fname">Opción A · Otro local</div>
+   <div class="kick red">OPCIÓN A</div>
+   <div class="h2 disp">Abrir otro local</div>
+   <div class="pill" id="a_pill">Números de ejemplo</div>
+   <div class="st yel" id="a1" style="left:56px;top:210px"><div class="l">Alquiler</div><div class="v tn">2.000 €</div><div class="s">al mes</div></div>
+   <div class="st yel" id="a2" style="left:364px;top:210px"><div class="l">Fianza (2 meses)</div><div class="v tn">4.000 €</div><div class="s">para firmar</div></div>
+   <div class="st rose" id="a3" style="left:672px;top:210px"><div class="l">Obra y muebles</div><div class="v tn">30.000 €</div><div class="s">antes de abrir</div></div>
+   <div class="st rose" id="a4" style="left:56px;top:456px"><div class="l">Stock para llenarlo</div><div class="v tn">20.000 €</div><div class="s">producto nuevo</div></div>
+   <div class="st yel" id="a5" style="left:364px;top:456px"><div class="l">Una persona</div><div class="v tn">2.000 €</div><div class="s">al mes, de sueldo</div></div>
+   <div class="st lil" id="a6" style="left:672px;top:456px"><div class="l">¿Cuándo abre?</div><div class="v">Meses</div><div class="s">local, permisos, obra…</div></div>
+   <div class="card" id="atot" style="left:56px;top:712px;width:888px;height:172px">
+    <div class="abs" style="left:30px;top:24px;font-size:18px;color:var(--mute)">Antes de vender una sola cosa</div>
+    <div class="abs tn red" style="left:28px;top:52px;font-size:74px;font-weight:600;letter-spacing:-.045em;line-height:1"><span id="cnt">54.000</span> €</div>
+    <div class="abs" style="left:30px;top:136px;font-size:16px;color:#9A9E9A">fianza + obra + stock</div>
+    <svg class="abs" id="ring" style="left:0;top:0;width:500px;height:172px;overflow:visible" viewBox="0 0 500 172"><path pathLength="1" d="M380 -14 C 240 -34, 20 -24, -6 52 C -24 120, 60 196, 250 198 C 430 200, 498 150, 490 86 C 482 26, 420 -6, 300 -18" fill="none" stroke="#C2513A" stroke-width="4" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+    <div class="abs" id="amon" style="left:500px;top:0;width:388px;height:172px;border-left:1.5px solid var(--line);padding:30px 0 0 34px">
+     <div class="tn" style="font-size:42px;font-weight:500;letter-spacing:-.035em">+ 4.000 €<span style="font-size:24px;color:var(--mute);font-weight:400;letter-spacing:-.01em"> al mes</span></div>
+     <div style="font-size:18px;color:var(--mute);margin-top:12px;line-height:1.35">alquiler + sueldo,<br>vendas o no vendas</div>
+    </div>
+   </div>
+  </div>
+
+  <!-- B1 · tienda online -->
+  <div class="fr" id="B1" style="left:1200px;top:0;width:1000px;height:940px">
+   <div class="fname">Opción B · Tu tienda online</div>
+   <div class="kick grn">OPCIÓN B</div>
+   <div class="h2 disp">Tu tienda online</div>
+   <div class="pill" id="b_pill">Números de ejemplo</div>
+   <div class="st mint" id="b1" style="left:56px;top:210px"><div class="l">Alquiler</div><div class="v tn">0 €</div><div class="s">no hay local</div></div>
+   <div class="st mint" id="b2" style="left:364px;top:210px"><div class="l">Fianza</div><div class="v tn">0 €</div><div class="s">no hay contrato</div></div>
+   <div class="st mint" id="b3" style="left:672px;top:210px"><div class="l">Obra y muebles</div><div class="v tn">0 €</div><div class="s">es una web</div></div>
+   <div class="st mint" id="b4" style="left:56px;top:456px"><div class="l">Stock nuevo</div><div class="v tn">0 €</div><div class="s">vendes el que ya tienes</div></div>
+   <div class="st mint" id="b5" style="left:364px;top:456px"><div class="l">Contratar a alguien</div><div class="v">Nadie</div><div class="s">la montamos nosotros</div></div>
+   <div class="st mint" id="b6" style="left:672px;top:456px"><div class="l">¿A quién vende?</div><div class="v" style="font-size:38px">Toda España</div><div class="s">no solo a tu calle</div></div>
+   <div class="card" id="btl" style="left:56px;top:712px;width:888px;height:172px">
+    <div class="abs" style="left:30px;top:24px;font-size:18px;color:var(--mute)">¿Cuándo abre?</div>
+    <div class="abs" style="left:30px;top:68px;font-size:19px;color:var(--mute)">Otro local</div>
+    <div class="abs" style="left:30px;top:118px;font-size:19px;font-weight:600">Tu tienda online</div>
+    <div class="abs" id="bar1" style="left:212px;top:66px;width:560px;height:26px;border-radius:7px;background:repeating-linear-gradient(135deg,#E5E2DA 0 10px,#EDEBE4 10px 20px);transform-origin:0 50%"></div>
+    <div class="abs" id="bar1t" style="left:786px;top:66px;font-size:20px;color:var(--mute)">meses</div>
+    <div class="abs" id="bar2" style="left:212px;top:116px;width:120px;height:26px;border-radius:7px;background:linear-gradient(90deg,var(--g1),var(--g2));transform-origin:0 50%"></div>
+    <div class="abs gt" id="bar2t" style="left:346px;top:106px;font-size:38px;font-weight:600;letter-spacing:-.035em">15 días</div>
+   </div>
+  </div>
+
+  <!-- A2 · mapa local -->
+  <div class="fr" id="A2" style="left:0;top:1180px;width:1000px;height:940px">
+   <div class="fname">Opción A · A quién le vende</div>
+   <div class="kick red">OPCIÓN A · OTRO LOCAL</div>
+   <div class="h2 disp">¿A quién le vende?</div>
+   <div class="abs" id="a_cap" style="left:56px;top:170px;font-size:22px;color:var(--mute)">A quien pasa por esa calle. En horario de tienda.</div>
+   <div class="abs map" id="mapA" style="left:120px;top:230px;width:760px;height:659px"></div>
+  </div>
+
+  <!-- B2 · mapa online -->
+  <div class="fr" id="B2" style="left:1200px;top:1180px;width:1000px;height:940px">
+   <div class="fname">Opción B · A quién le vende</div>
+   <div class="kick grn">OPCIÓN B · TIENDA ONLINE</div>
+   <div class="h2 disp">¿A quién le vende?</div>
+   <div class="abs" id="b_cap" style="left:56px;top:170px;font-size:22px;color:var(--mute)">A toda España. A cualquier hora.</div>
+   <div class="abs map" id="mapB" style="left:120px;top:230px;width:760px;height:659px"></div>
+   <div class="card" id="noti" style="left:520px;top:770px;width:430px;height:112px;border-radius:24px;display:flex;align-items:center;gap:16px;padding:0 20px">
+    <i style="flex:none;width:58px;height:58px;border-radius:15px;background:linear-gradient(140deg,var(--g1),var(--g2));display:grid;place-items:center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></i>
+    <div style="flex:1"><div style="display:flex;justify-content:space-between;font-size:15px;color:var(--mute)"><span>Tu tienda online</span><span>23:04</span></div>
+    <div style="font-size:21px;font-weight:600;letter-spacing:-.02em;margin-top:3px">Nuevo pedido · Bilbao</div>
+    <div style="font-size:16px;color:var(--mute);margin-top:2px">Domingo, con la tienda cerrada</div></div>
+   </div>
+  </div>
+
+  <!-- C · dinero -->
+  <div class="fr" id="C" style="left:0;top:2360px;width:1000px;height:940px">
+   <div class="fname">Dónde va tu dinero</div>
+   <div class="kick" style="color:var(--mute)">TU DINERO</div>
+   <div class="h2 disp">¿Dónde va tu dinero?</div>
+   <div class="abs" style="left:56px;top:212px;width:420px">
+    <div style="font-size:17px;font-weight:600;letter-spacing:.12em" class="red">OTRO LOCAL</div>
+    <div class="disp" style="font-size:54px;font-weight:300;letter-spacing:-.04em;margin-top:4px">Paredes</div>
+   </div>
+   <div class="abs" style="left:524px;top:212px;width:420px">
+    <div style="font-size:17px;font-weight:600;letter-spacing:.12em" class="grn">TIENDA ONLINE</div>
+    <div class="disp gt" style="font-size:54px;font-weight:400;letter-spacing:-.04em;margin-top:4px">Clientes</div>
+   </div>
+   <div id="bricks">
+    <div class="abs brk" id="k1" style="left:56px;top:588px">Alquiler</div>
+    <div class="abs brk" id="k2" style="left:56px;top:496px">Fianza y obra</div>
+    <div class="abs brk" id="k3" style="left:56px;top:404px">Stock nuevo</div>
+    <div class="abs brk" id="k4" style="left:56px;top:312px">Sueldo</div>
+   </div>
+   <div class="abs" id="lock" style="left:56px;top:704px;width:420px;display:flex;gap:14px;align-items:center">
+    <i style="flex:none;width:52px;height:52px;border-radius:12px;background:#FBE6E0;display:grid;place-items:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C2513A" stroke-width="1.9" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path id="shk" d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></i>
+    <div style="font-size:20px;line-height:1.3">Contrato firmado.<br><span style="color:var(--mute)">No se cambia.</span></div>
+   </div>
+   <div class="card" id="cli" style="left:524px;top:312px;width:420px;height:356px;padding:26px">
+    <div style="font-size:24px;font-weight:600;letter-spacing:-.02em">Traer clientes nuevos</div>
+    <div style="display:flex;gap:10px;margin-top:16px">
+     <span style="font-size:17px;padding:8px 14px;border-radius:99px;background:#EEF7F3;color:var(--g2);font-weight:500">Anuncios</span>
+     <span style="font-size:17px;padding:8px 14px;border-radius:99px;background:#EEF7F3;color:var(--g2);font-weight:500">Email</span>
+    </div>
+    <div id="sl" style="position:absolute;left:26px;right:26px;top:176px">
+     <div style="display:flex;justify-content:space-between;font-size:15px;color:var(--mute)"><span>menos</span><span>Presupuesto</span><span>más</span></div>
+     <div style="position:relative;height:8px;border-radius:9px;background:#ECEAE4;margin-top:16px">
+      <div id="slf" style="position:absolute;left:0;top:0;bottom:0;border-radius:9px;background:linear-gradient(90deg,var(--g1),var(--g2));width:40%"></div>
+      <div id="slk" style="position:absolute;top:-11px;left:40%;width:30px;height:30px;margin-left:-15px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.25),0 0 0 1.5px #D9D6CE"></div>
+     </div>
+     <div style="font-size:20px;margin-top:30px;letter-spacing:-.01em">Se ajusta <b style="font-weight:600">cada semana</b>.</div>
+    </div>
+   </div>
+   <div class="abs" id="c_foot" style="left:524px;top:704px;width:420px;font-size:19px;color:var(--mute);line-height:1.35;padding-top:8px">Si algo no funciona, se cambia.<br>Cuánto cuesta de verdad: <b style="color:var(--ink);font-weight:600">vídeo 5</b>.</div>
+  </div>
+
+  <!-- D · la duda -->
+  <div class="fr" id="D" style="left:1200px;top:2360px;width:1000px;height:940px">
+   <div class="fname">La duda</div>
+   <div class="st yel" id="dq" style="left:56px;top:66px;width:430px;height:236px;padding:28px"><div class="disp" style="font-size:44px;line-height:1.08;font-weight:400;letter-spacing:-.035em">«Mi tienda<br>ya va bien»</div><div class="s" style="margin-top:auto">lo que piensas ahora</div></div>
+   <div class="abs disp" id="dpor" style="left:548px;top:142px;font-size:56px;font-weight:300;letter-spacing:-.04em;white-space:nowrap">Por eso mismo.</div>
+   <div class="card" id="dlist" style="left:56px;top:352px;width:888px;height:338px;padding:14px 30px">
+    <div class="row" id="d1"><i class="ok"></i><span>Un producto que se vende</span></div>
+    <div class="row" id="d2"><i class="ok"></i><span>Clientes que repiten</span></div>
+    <div class="row" id="d3"><i class="ok"></i><span>Una marca que ya conocen</span></div>
+    <div class="row last" id="d4"><i class="no"></i><span>Una puerta a toda España</span></div>
+   </div>
+   <div class="abs disp" id="dfin" style="left:56px;top:744px;font-size:50px;font-weight:300;letter-spacing:-.04em;line-height:1.12;white-space:nowrap">No te falta otro local.<br>Te falta <span class="gt" style="font-weight:400">otra puerta</span>.</div>
+  </div>
+
+  <!-- E · siguiente -->
+  <div class="fr" id="E" style="left:600px;top:3540px;width:1000px;height:600px">
+   <div class="fname">Siguiente</div>
+   <div class="kick" style="color:var(--mute)">SIGUIENTE</div>
+   <div class="st lil" id="e5" style="left:56px;top:120px;width:300px;height:250px"><div class="l">Cuánto cuesta y cuánto te devuelve</div><div class="v" style="font-size:46px">Vídeo 5</div><div class="s">números claros</div></div>
+   <div class="abs" id="e2" style="left:400px;top:110px;width:544px;height:430px;border-radius:20px;background:radial-gradient(120% 90% at 20% 0%,#1C3B32,#0B100E 70%);color:#fff;padding:34px;overflow:hidden">
+    <div style="font-size:16px;letter-spacing:.14em;font-weight:600;color:var(--g1)">VÍDEO 2 · ≈2 MIN</div>
+    <div class="disp" style="font-size:44px;font-weight:300;letter-spacing:-.035em;line-height:1.1;margin-top:16px">¿Cuánto tiempo te quita de verdad una tienda online?</div>
+    <div id="play" style="position:absolute;left:34px;bottom:34px;width:76px;height:76px;border-radius:50%;background:#fff;display:grid;place-items:center"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="#0B100E"/></svg></div>
+    <div style="position:absolute;left:128px;bottom:58px;font-size:19px;color:rgba(255,255,255,.7)">Míralo ahora</div>
+   </div>
+  </div>
+ </div>
+
+ <!-- screen chrome -->
+ <div class="chrome" id="brd"><b>404</b>El método <span>· Vídeo 1</span></div>
+ <div class="chrome" id="who"><span>En la pizarra</span><b>C</b></div>
+ <div class="chrome" id="zm"><span style="font-size:20px;color:#9A9E9A">−</span><em id="zmv">100 %</em><span style="font-size:20px;color:#9A9E9A">+</span></div>
+ <div id="rip"></div>
+ <div id="cur"><svg viewBox="0 0 24 24"><path d="M3.5 2.5l16 9.2-7 1.7-3.6 6.6z" fill="#16191A" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><div class="nm">Christian</div></div>
+</div>
+
+<div id="guide"><div id="gbar"></div><div id="gtc">0:00</div><div id="gnow"></div><div id="gnext"></div><div id="glab">GUÍA · NO SALE EN EL VÍDEO</div></div>
+
+<style>
+.brk{width:420px;height:82px;border-radius:8px;background:#F4E1DA;border:1.5px solid #EACBC0;display:flex;align-items:center;padding:0 24px;font-size:22px;font-weight:500;color:#6E3324}
+.row{display:flex;align-items:center;gap:18px;height:77px;border-bottom:1.5px solid #EFEDE8;font-size:30px;letter-spacing:-.02em}
+.row.last{border-bottom:0}
+.row i{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center}
+.row i.ok{background:#E3F4EC}.row i.no{background:#FBE6E0}
+.row i.ok::after{content:'';width:14px;height:8px;border-left:3px solid #2E7A64;border-bottom:3px solid #2E7A64;transform:translateY(-2px) rotate(-45deg)}
+.row i.no::before,.row i.no::after{content:'';position:absolute;width:18px;height:3px;background:#C2513A;border-radius:2px}
+.row i.no{position:relative}.row i.no::before{transform:rotate(45deg)}.row i.no::after{transform:rotate(-45deg)}
+.mdot{position:absolute;width:0;height:0}
+.mdot b{position:absolute;left:-9px;top:-9px;width:18px;height:18px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.mring{position:absolute;border-radius:50%}
+</style>
+<script>
+var MAP=__MAP__;
+var $=function(i){return document.getElementById(i)};
+function cl(x){return x<0?0:x>1?1:x}
+function lerp(a,b,p){return a+(b-a)*p}
+function eio(p){return p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2}
+function eout(p){return 1-Math.pow(1-p,3)}
+function bout(p){var c1=1.5,c3=c1+1;return 1+c3*Math.pow(p-1,3)+c1*Math.pow(p-1,2)}
+
+/* ---------- map ---------- */
+var SC=760/MAP.W;
+function mp(k){var p=MAP.pts[k];return [p[0]*SC,p[1]*SC]}
+function mkMap(id){var el=$(id);el.innerHTML='<svg viewBox="0 0 '+MAP.W+' '+MAP.H+'" style="position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible"><path class="es" d="'+MAP.d+'"/><g class="arcs"></g></svg>';return el}
+var mA=mkMap('mapA'),mB=mkMap('mapB');
+function dot(el,k,col,lab,side){var p=mp(k);var d=document.createElement('div');d.className='mdot';d.style.left=p[0]+'px';d.style.top=p[1]+'px';d.innerHTML='<b style="background:'+col+'"></b>';el.appendChild(d);
+ if(lab){var l=document.createElement('div');l.className='mlab';l.textContent=lab;l.style.color=col;l.style.top=(p[1]-17)+'px';if(side<0){l.style.right=(760-p[0]+18)+'px'}else{l.style.left=(p[0]+18)+'px'}el.appendChild(l);return [d,l]}return [d]}
+function ring(el,k,r,col,fill){var p=mp(k);var c=document.createElement('div');c.className='mring';c.style.cssText+='left:'+(p[0]-r)+'px;top:'+(p[1]-r)+'px;width:'+(2*r)+'px;height:'+(2*r)+'px;border:2.5px dashed '+col+';background:'+fill;el.insertBefore(c,el.children[1]);return c}
+// A: tu tienda + otro local, con su círculo
+var rA1=ring(mA,'madrid',46,'rgba(22,25,26,.45)','rgba(22,25,26,.06)'),rA2=ring(mA,'valladolid',46,'#C2513A','rgba(194,81,58,.12)');
+var dA1=dot(mA,'madrid','#16191A','Tu tienda',1),dA2=dot(mA,'valladolid','#C2513A','Otro local',-1);
+// B: tu tienda y pedidos por toda España
+var CITIES=['bilbao','barcelona','sevilla','valencia','coruna','malaga','zaragoza','palma','murcia','oviedo','alicante','granada','pamplona','vigo','santander','cadiz','girona','badajoz'];
+var arcG=mB.querySelector('.arcs'),ARCS=[],o=MAP.pts.madrid;
+CITIES.forEach(function(k,i){var p=MAP.pts[k],mx=(o[0]+p[0])/2,my=(o[1]+p[1])/2,dx=p[0]-o[0],dy=p[1]-o[1],L=Math.hypot(dx,dy),nx=-dy/L,ny=dx/L,b=L*.22;
+ var path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d','M'+o[0]+' '+o[1]+' Q'+(mx+nx*b)+' '+(my+ny*b)+' '+p[0]+' '+p[1]);path.setAttribute('pathLength','1');path.setAttribute('fill','none');path.setAttribute('stroke','#2E7A64');path.setAttribute('stroke-width','1.6');path.setAttribute('stroke-linecap','round');path.setAttribute('stroke-dasharray','1');path.setAttribute('stroke-dashoffset','1');path.setAttribute('opacity','.55');arcG.appendChild(path);
+ var d=dot(mB,k,'#2E7A64')[0];d.firstChild.style.cssText+='width:14px;height:14px;left:-7px;top:-7px;border-width:2.5px';
+ var r=document.createElement('div');r.className='mring';var pp=mp(k);r.style.cssText='left:'+(pp[0]-22)+'px;top:'+(pp[1]-22)+'px;width:44px;height:44px;border:2px solid #2E7A64;opacity:0';mB.appendChild(r);
+ ARCS.push({p:path,d:d,r:r,t:74.9+i*.2})});
+var dB1=dot(mB,'madrid','#16191A','Tu tienda',1);
+
+/* ---------- timeline ---------- */
+var FR={A1:[0,0,1000,940],B1:[1200,0,1000,940],A2:[0,1180,1000,940],B2:[1200,1180,1000,940],C:[0,2360,1000,940],D:[1200,2360,1000,940],E:[600,3540,1000,600]};
+function F(k,z){var f=FR[k];z=z||.93;return {x:f[0]+f[2]/2,y:f[1]+f[3]/2-23,z:z}}
+var OV1={x:1100,y:300,z:.44},OV2={x:1100,y:1905,z:.225};
+var CAM=[{t:0,s:OV1,dr:.05},{t:4,d:1.7,s:F('A1')},{t:31.9,d:1.2,s:{x:500,y:520,z:1.0},dip:0},{t:38.6,d:1.0,s:F('A1'),dip:0},
+ {t:45,d:1.6,s:F('A2')},{t:52,d:1.9,s:F('B1')},{t:67.6,d:1.0,s:{x:1700,y:520,z:1.0},dip:0},{t:71.9,d:.9,s:F('B1'),dip:0},
+ {t:73.2,d:1.5,s:F('B2')},{t:81,d:1.9,s:F('C')},{t:90,d:1.7,s:F('D')},{t:107.8,d:2.3,s:OV2,dip:0,dr:.02},{t:110.5,d:2,s:F('E',.98),dip:0}];
+function rest(i,t){var k=CAM[i],t0=k.t+(k.d||0),dr=k.dr==null?.025:k.dr;var p=cl((t-t0)/9);return {x:k.s.x,y:k.s.y,z:k.s.z*(1+dr*eio(p))}}
+function cam(t){var i=0;while(i+1<CAM.length&&CAM[i+1].t<=t)i++;var k=CAM[i];if(i===0||t>=k.t+k.d)return rest(i,t);
+ var a=rest(i-1,k.t),b=k.s,p=eio(cl((t-k.t)/k.d)),dist=Math.hypot(b.x-a.x,b.y-a.y),dip=k.dip==null?Math.min(.42,dist/3600):k.dip;
+ var lz=lerp(Math.log(a.z),Math.log(b.z),p)+Math.log(1-dip*Math.sin(Math.PI*p));
+ return {x:lerp(a.x,b.x,p),y:lerp(a.y,b.y,p),z:Math.exp(lz)}}
+
+/* cursor: [t llegada, x, y, viaje] en coordenadas del mundo */
+var A1x=0,B1x=1200;
+function sc(fx,col,row){return [fx+56+col*308+136,(row?456:210)+107]}
+var CUR=[[0,1650,620],[2.6,1500,330],[5.2,640,150,1.2],
+ [7.9].concat(sc(0,0,0)),[12.4].concat(sc(0,1,0)),[17.4].concat(sc(0,2,0)),[21.9].concat(sc(0,0,1)),[26.4].concat(sc(0,1,1)),
+ [31.6,260,800],[33.5,436,698,.5],[33.75,46,792,.25],[34.0,306,910,.25],[34.25,546,798,.25],[34.5,356,694,.25],[35.6,850,826,.8],
+ [39.5].concat(sc(0,2,1)),[45.9,334,1765,1.0],[49.4,430,1606,.9],
+ [52.9,1560,150,1.3],[56.1].concat(sc(B1x,0,0)).concat([.45]),[56.7].concat(sc(B1x,1,0)).concat([.45]),[57.3].concat(sc(B1x,2,0)).concat([.45]),[58.5].concat(sc(B1x,0,1)).concat([.6]),
+ [63.2].concat(sc(B1x,1,1)),[68.3,1530,850,.9],[72.3].concat(sc(B1x,2,1)).concat([.6]),
+ [74.8,1200+120+240.3*SC+40,1180+230+232.8*SC+40,1.0],[77.2,2138,2042,.9],
+ [82.2,270,2360+560,1.0],[83.9,740,2360+370,.7],[85.2,524+26+0.4*368,2360+312+176+40,.6],[86.0,524+26+0.75*368,2360+312+176+40,.6],[86.8,524+26+0.3*368,2360+312+176+40,.6],[87.6,524+26+0.62*368,2360+312+176+40,.6],[88.3,90,2360+730,.6],
+ [91.2,1200+270,2360+190,.9],[93.0,1960,2592,.7],[97.4,1200+76+20,2360+352+14+38,.8],[99.2,1200+96,2360+352+14+38+77,.5],[101.0,1200+96,2360+352+14+38+154,.5],[103.3,1200+96,2360+352+14+38+231,.5],[105.6,1200+560,2360+810,.8],
+ [109.6,1350,3050,1.4],[112.1,600+206,3540+260,1.2],[114.4,1072,4008,1.0],[118,600+400+300,3540+110+300,1.6]];
+var CLICK=[8.2,12.7,17.7,22.2,26.7,33.5,39.8,56.2,56.8,57.4,58.6,63.5,72.4,85.3,88.4,115.6];
+function curAt(t){var i=0;while(i+1<CUR.length&&CUR[i+1][0]<=t)i++;var k=CUR[i];if(i+1>=CUR.length)return [k[1],k[2]];
+ var n=CUR[i+1],d=n[3]||.7,s=n[0]-d;if(t<s)return [k[1],k[2]];var p=eio(cl((t-s)/d));return [lerp(k[1],n[1],p),lerp(k[2],n[2],p)]}
+
+/* appearances */
+var POP={a_pill:6.3,a1:8.3,a2:12.8,a3:17.8,a4:22.3,a5:26.8,atot:31.7,amon:35.6,a6:39.9,
+ b_pill:53.6,b1:56.3,b2:56.9,b3:57.5,b4:58.7,b5:63.6,btl:67.4,b6:72.5,
+ k1:82.4,k2:82.65,k3:82.9,k4:83.15,cli:83.9,lock:88.2,c_foot:88.9,
+ dq:91.3,dpor:93.0,dlist:96.2,d1:97.6,d2:99.4,d3:101.2,d4:103.4,dfin:105.6,
+ e5:111.9,e2:112.3};
+var ROT={a1:-1.2,a2:.8,a3:-.6,a4:1,a5:-.9,a6:.7,b1:.9,b2:-.8,b3:.6,b4:-1,b5:.8,b6:-.6,dq:-2.2,e5:-1.4};
+var KIND={atot:'up',amon:'fade',btl:'up',cli:'up',lock:'up',c_foot:'fade',dpor:'up',dlist:'up',d1:'row',d2:'row',d3:'row',d4:'row',dfin:'up',e2:'up',a_pill:'fade',b_pill:'fade'};
+var EL={};for(var k in POP)EL[k]=$(k);
+function show(id,t){var t0=POP[id],el=EL[id],kind=KIND[id]||'pop',r=ROT[id]||0,p;
+ if(kind==='pop'){p=cl((t-t0)/.5);var s=p<=0?.6:lerp(.6,1,bout(p));el.style.opacity=cl(p*3);el.style.transform='rotate('+lerp(r-4,r,eout(p))+'deg) scale('+s+')'}
+ else if(kind==='up'){p=eout(cl((t-t0)/.6));el.style.opacity=p;el.style.transform='translateY('+(20*(1-p))+'px)'}
+ else if(kind==='row'){p=eout(cl((t-t0)/.5));el.style.opacity=p;el.style.transform='translateX('+(-16*(1-p))+'px)'}
+ else {p=cl((t-t0)/.45);el.style.opacity=p}}
+
+var LINES=[[0,'Mira, lo pongo en la pizarra. Dos opciones.'],[4,'Opción A: abrir otro local. Con números de ejemplo.'],[8,'El alquiler: pongamos 2.000 euros al mes.'],[12.5,'Para firmar, fianza de dos meses: 4.000 euros.'],[17.5,'La obra y los muebles: otros 30.000.'],[22,'Y llenarlo de producto: 20.000 más.'],[26.5,'Y alguien que lo atienda: unos 2.000 al mes.'],[31.5,'Más de 50.000 euros antes de vender una sola cosa. Y 4.000 al mes, vendas o no vendas.'],[39,'Y no abre mañana: buscar local, permisos, obra… meses.'],[45,'¿Y a quién le vende? A la gente que pasa por esa calle. Un círculo así de pequeño.'],[52,'Opción B: tu tienda online.'],[56,'Alquiler, fianza y obra: cero. Stock nuevo: cero, vendes el que ya tienes.'],[63,'Para abrirla no contratas a nadie: la montamos nosotros.'],[67.5,'Y abre en 15 días. No en meses: en 15 días.'],[72,'Y no le vende a una calle: le vende a toda España. A las once de la noche y en domingo.'],[81,'El dinero no se va en paredes: se va en traer clientes. Y eso se ajusta cada semana. Un contrato de alquiler, no.'],[90,'¿Que tu tienda ya va bien? Por eso mismo.'],[96,'Ya tienes lo más difícil: un producto que se vende, clientes que repiten y una marca que ya conocen.'],[103,'Lo que te falta no es otro local. Es otra puerta.'],[108,'Cuánto cuesta y cuánto te devuelve, te lo enseño en el vídeo 5.'],[113,'Ahora mira el siguiente: cuánto tiempo te quita de verdad.'],[119,'']];
+
+var W=$('world'),G=$('grid'),CU=$('cur'),RP=$('rip'),ZM=$('zmv');
+function render(t){
+ var c=cam(t),z=c.z,tx=540-c.x*z,ty=540-c.y*z;
+ W.style.transform='translate('+tx.toFixed(2)+'px,'+ty.toFixed(2)+'px) scale('+z.toFixed(5)+')';
+ var gs=28*z;G.style.backgroundSize=gs+'px '+gs+'px';G.style.backgroundPosition=(tx%gs)+'px '+(ty%gs)+'px';G.style.opacity=cl((z-.2)/.35);
+ ZM.textContent=Math.round(z*100)+' %';
+ for(var k in POP)show(k,t);
+ // counter + ring
+ var pc=eout(cl((t-31.9)/1.1)),cv=Math.round(54000*pc/100)*100;$('cnt').textContent=String(cv).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+ $('ring').firstChild.style.strokeDashoffset=1-eio(cl((t-33.5)/1.05));
+ // A map
+ var pa=cl((t-46.2)/.6);mA.style.opacity=pa;
+ dA1.forEach(function(e){e.style.opacity=cl((t-46.6)/.3)});dA2.forEach(function(e){e.style.opacity=cl((t-47.4)/.3)});
+ var ra=bout(cl((t-49.2)/.7));[rA1,rA2].forEach(function(r){r.style.transform='scale('+(.2+.8*ra)+')';r.style.opacity=cl((t-49.2)/.25)});
+ $('a_cap').style.opacity=cl((t-48.6)/.5);
+ // B timeline bars
+ $('bar1').style.transform='scaleX('+eout(cl((t-68.1)/1.2))+')';$('bar1t').style.opacity=cl((t-69.1)/.4);
+ $('bar2').style.transform='scaleX('+bout(cl((t-69.6)/.6))+')';$('bar2t').style.opacity=cl((t-69.9)/.4);$('bar2t').style.transform='translateX('+(-10*(1-eout(cl((t-69.9)/.5))))+'px)';
+ // B map
+ mB.style.opacity=cl((t-73.8)/.5);dB1.forEach(function(e){e.style.opacity=cl((t-74.2)/.3)});$('b_cap').style.opacity=cl((t-75.4)/.5);
+ ARCS.forEach(function(a){var p=eio(cl((t-a.t)/.55));a.p.style.strokeDashoffset=1-p;var q=cl((t-a.t-.5)/.35);a.d.style.opacity=q;a.d.style.transform='scale('+(q>0?lerp(.3,1,bout(q)):0)+')';
+  var rr=cl((t-a.t-.5)/1.1);a.r.style.opacity=rr>0&&rr<1?(1-rr)*.8:0;a.r.style.transform='scale('+(.3+1.5*eout(rr))+')'});
+ var pn=eout(cl((t-77.1)/.55));$('noti').style.opacity=pn;$('noti').style.transform='translateY('+(24*(1-pn))+'px) scale('+lerp(.96,1,pn)+')';
+ // C slider + lock
+ var sv=.4;var keys=[[85.0,.4],[86.0,.75],[86.8,.3],[87.6,.62]];for(var i=0;i<keys.length;i++){if(t>=keys[i][0]-.6){var pv=eio(cl((t-(keys[i][0]-.6))/.6));sv=lerp(i?keys[i-1][1]:.4,keys[i][1],pv)}}
+ $('slf').style.width=(sv*100)+'%';$('slk').style.left=(sv*100)+'%';
+ var lk=eout(cl((t-88.5)/.35));document.getElementById('shk').setAttribute('transform','translate(0,'+(-3*(1-lk))+')');
+ // D: cross row emphasis
+ // cursor
+ var cp=curAt(t),sx=cp[0]*z+tx,sy=cp[1]*z+ty;var press=0;CLICK.forEach(function(ct){var d=t-ct;if(d>=-.08&&d<.12)press=1});
+ CU.style.transform='translate('+sx.toFixed(1)+'px,'+sy.toFixed(1)+'px) scale('+(press?.88:1)+')';
+ var rp=-1,rc=0;CLICK.forEach(function(ct){if(t>=ct&&t<ct+.6){rp=(t-ct)/.6;rc=ct}});
+ if(rp>=0){RP.style.opacity=(1-rp)*.9;RP.style.transform='translate('+sx+'px,'+sy+'px) scale('+(.2+eout(rp))+')'}else RP.style.opacity=0;
+ // play pressed
+ $('play').style.transform='scale('+(t>=115.5&&t<115.8?.92:1)+')';
+ // guide
+ var li=0;while(li+1<LINES.length&&LINES[li+1][0]<=t)li++;$('gnow').textContent=LINES[li][1];$('gnext').textContent=LINES[li+1]&&LINES[li+1][1]?('Después: '+LINES[li+1][1]):'';
+ var ln=LINES[li+1]?LINES[li+1][0]-LINES[li][0]:1;$('gbar').style.width=(cl((t-LINES[li][0])/ln)*100)+'%';
+ var s=Math.floor(t);$('gtc').textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+}
+window.render=render;render(0);
+</script>
+</body></html>

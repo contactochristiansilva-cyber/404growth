@@ -36,6 +36,8 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   ```
 - Enlace personal: `404growth.com/metodo?c=<id del lead>`. Va solo en la invitación de Google al reservar; en el admin › Landing (la ficha de cada visita que reservó) hay botones para mandarlo por WhatsApp o email. La página avisa a Chris cuando el lead la abre y cuando termina cada vídeo, y esa ficha muestra cuántos ha visto. (La página /admin/llamadas ya no existe.)
 
+- **Formato de los vídeos (desde el vídeo 1):** como el Ad 3. Intro a cámara en plano completo y después 50/50 hasta el final: Chris arriba (webcam, 1080×840) y abajo una pizarra tipo Miro en vídeo 1:1 (1080×1080, 25 fps, sin sonido) que él narra mientras la ve. La pizarra se genera con `ads/metodo-pizarra/` (`board.html` + `render.mjs`; guion y tiempos en `LEEME-video-01.md`). Se entregan la pizarra limpia, una versión guía con la frase que toca debajo (solo para grabar) y una maqueta 9:16.
+
 ## Ficha de arranque (llamada de arranque con cada cliente)
 
 - `/admin/arranque/<id del cliente>` (botón «Ficha de arranque» en Clientes). Se comparte en pantalla en la llamada y se guarda sola, campo a campo.
