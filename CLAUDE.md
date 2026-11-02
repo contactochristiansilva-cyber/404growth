@@ -34,4 +34,10 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
     -c:a aac -b:a 96k -ac 2 -hls_time 6 -hls_playlist_type vod -hls_segment_filename "v/metodo/0N/s%03d.ts" v/metodo/0N/index.m3u8
   ffmpeg -ss 2 -i entrada.mov -frames:v 1 -vf "scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" -q:v 3 v/metodo/0N/poster.jpg
   ```
-- Enlace personal: `404growth.com/metodo?c=<id del lead>`. Va solo en la invitación de Google al reservar; en el admin › Llamadas hay botones para mandarlo por WhatsApp o email. La página avisa a Chris cuando el lead la abre y cuando termina cada vídeo, y el admin muestra cuántos ha visto.
+- Enlace personal: `404growth.com/metodo?c=<id del lead>`. Va solo en la invitación de Google al reservar; en el admin › Landing (la ficha de cada visita que reservó) hay botones para mandarlo por WhatsApp o email. La página avisa a Chris cuando el lead la abre y cuando termina cada vídeo, y esa ficha muestra cuántos ha visto. (La página /admin/llamadas ya no existe.)
+
+## Ficha de arranque (llamada de arranque con cada cliente)
+
+- `/admin/arranque/<id del cliente>` (botón «Ficha de arranque» en Clientes). Se comparte en pantalla en la llamada y se guarda sola, campo a campo.
+- Los campos están en `ficha` (7 apartados, 38 campos) dentro de `PAGES.kick` y del portal: usa las claves del brief que ya existían (b_name, o_main, a_who…) y las suyas `k_…` (lista `KICK` en worker.js), todas en `clients.brief`.
+- El cliente la ve en su portal, en Onboarding → Bienvenida, como «Lo que hablamos en la llamada de arranque» (solo lectura).
