@@ -48,3 +48,13 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 
 - `404growth.com/onboarding` (ruta del Worker del admin; está en `wrangler.jsonc`): el cliente pone sus datos, su tienda y su contraseña, y entra directo a `/portal`. Crea el cliente (`clients.self = 1`, `clients.contact`) y su usuario. Freno: 5 altas al día por sitio y un campo oculto para bots. Avisa a Chris en cada alta.
 - En el Inicio del portal agenda su **llamada de arranque** (60 min, `KICK_MIN`): dos medias horas libres seguidas de `gbSlots`, evento en Google con Meet (`gbCreate`), se guarda en `clients.kcall` y, si no tenía, pone el día de arranque (empiezan sus 15 días).
+
+## Portal del cliente: contrato y facturas, y el chat (v47)
+
+- **Contrato y facturas** (vista `docs` del portal; en el admin, pestaña «Contrato y facturas» de cada cliente). El contrato es un PDF que Chris sube ahí (hasta 1,8 MB, tabla `cdocs` en D1); no se sustituye: las versiones anteriores siguen descargables hasta que las quite. Las facturas son las de Facturación con ese `client_id` y salen solas (`invPdf`). Descargas: `/portal/api/docs/<id>` y `/portal/api/invoices/<id>/pdf` (solo las suyas).
+- **Chat «Pregúntame»** (botón flotante del portal; en el admin, pestaña «Chat del portal»). Contesta una IA con el criterio de Chris (`pchatAI`, la clave de Anthropic de LinkedIn y blog): sabe `BOT_FACTS`, lo que Chris escribe en «Tu cerebro» (meta `bot_brain`, común a todos y manda sobre lo demás) y el estado de ese cliente (`pchatCtx`). Nunca dice que es Chris. Lo que no sabe seguro, o si piden cambiar precio, pagos, contrato o plazos, quejas o urgencias: se lo pasa a Chris (aviso push + chip en Clientes) y él contesta desde el admin. Tabla `pchat` (`esc` 1 = espera a Chris, 2 = ya contestó). Límite: 40 mensajes al día por cliente.
+- `portalView` da `who` (el nombre de la persona del cliente); `contact` es el de Chris (WhatsApp de los botones).
+
+## Formulario de /book (landing VSL)
+
+- Si marcan «Menos de 1.500 €» (`bud = b0`) no avanza: sale el mensaje de que con esas cantidades no trabajamos y que, si fue un error, pueden elegir otra opción. El Worker también rechaza `b0` (`vslBook` → 422 `budget`).

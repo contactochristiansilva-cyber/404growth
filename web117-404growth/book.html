@@ -181,6 +181,8 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(180deg,#fff 10%,var(--t
 .bk-ch button[aria-pressed=true]{background:var(--t);border-color:var(--t);color:#04110D}
 .bk-trust{list-style:none;margin:2px 0 14px;padding:0;display:grid;gap:8px;font-size:13.5px;color:var(--mute)}.bk-trust li{display:flex;gap:9px;align-items:center}.bk-trust svg{width:16px;height:16px;flex:none;color:var(--t2)}
 .bk-err{margin:4px 0 10px;color:var(--bad);font-size:14px}
+.bk-no{margin-top:14px;padding:16px 18px;border-radius:14px;background:rgba(111,194,166,.08);border:1px solid rgba(111,194,166,.28);font-size:15px;line-height:1.55;color:var(--mute)}.bk-no p{margin:0}.bk-no p+p{margin-top:8px}.bk-no b{color:var(--ink);font-weight:600}
+.bk-no:not([hidden]){animation:bkNo .35s cubic-bezier(.2,.8,.2,1)}@keyframes bkNo{from{opacity:0;transform:translateY(6px)}}@media (prefers-reduced-motion:reduce){.bk-no:not([hidden]){animation:none}}
 .bk-go{width:100%;justify-content:space-between;margin-top:6px}.bk-go[disabled]{opacity:.6;pointer-events:none}
 .bk-legal{font-size:12.5px;color:var(--mute);margin:12px 0 0}.bk-legal a{color:var(--t2)}
 .bk-ok{max-width:640px;margin:30px auto 0;border-radius:30px;padding:36px 30px;text-align:center}
@@ -617,7 +619,8 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
             <fieldset class="bk-q" data-q="1"><legend>¿Qué vendes en tu tienda?</legend>
               <div class="bk-ch" data-name="sec"><button type="button" data-v="moda">Moda</button><button type="button" data-v="calzado">Calzado</button><button type="button" data-v="joyeria">Joyería</button><button type="button" data-v="cosmetica">Cosmética</button><button type="button" data-v="deporte">Deporte</button><button type="button" data-v="deco">Hogar y deco</button><button type="button" data-v="otro" class="w">Otra cosa</button></div></fieldset>
             <fieldset class="bk-q" data-q="2" hidden><legend>¿Cuánto tienes pensado invertir para añadir a tu tienda física un canal de ventas online?</legend>
-              <div class="bk-ch one" data-name="bud"><button type="button" data-v="b0">Menos de 1.500 €</button><button type="button" data-v="b1">1.500 – 3.000 €</button><button type="button" data-v="b2">3.000 – 6.000 €</button><button type="button" data-v="b3">Más de 6.000 €</button></div></fieldset>
+              <div class="bk-ch one" data-name="bud"><button type="button" data-v="b0">Menos de 1.500 €</button><button type="button" data-v="b1">1.500 – 3.000 €</button><button type="button" data-v="b2">3.000 – 6.000 €</button><button type="button" data-v="b3">Más de 6.000 €</button></div>
+              <div class="bk-no" id="bk-no" role="status" hidden><p><b>Nuestros proyectos son muy seleccionados y buscan grandes retornos de inversión, y con menos de 1.500 € no trabajamos.</b></p><p>Si lo has marcado por error, elige otra opción arriba. Si no, gracias de verdad por tu tiempo: siempre estaremos encantados de que vuelvas.</p></div></fieldset>
             <fieldset class="bk-q" data-q="3" hidden><legend>¿Cómo se llama tu tienda?</legend>
               <div class="bk-f"><label for="f-biz">Nombre, web o Instagram</label><input id="f-biz" name="biz" maxlength="140" placeholder="Ej.: Calzados Lucía o @calzadoslucia" enterkeyhint="next"></div>
               <div class="bk-f"><label for="f-name">¿Y tú cómo te llamas?</label><input id="f-name" name="name" autocomplete="given-name" maxlength="80" placeholder="Tu nombre" enterkeyhint="next"></div>
@@ -955,7 +958,8 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     if(n===4){var nm=($('f-name').value.trim().split(' ')[0]||'');$('bk-q4').textContent=(nm?'Perfecto, '+nm.charAt(0).toUpperCase()+nm.slice(1)+'. ':'Perfecto. ')+'¿Dónde te mando el enlace de la llamada?'}
     var f=d.querySelector('.bk-q[data-q="'+n+'"] input');if(f&&innerWidth>820)try{f.focus({preventScroll:true})}catch(e){}}
   [].forEach.call(d.querySelectorAll('.bk-ch'),function(g){var nm=g.getAttribute('data-name');[].forEach.call(g.children,function(b){b.setAttribute('aria-pressed','false');b.onclick=function(){
-    [].forEach.call(g.children,function(x){x.setAttribute('aria-pressed',x===b)});A[nm]=b.getAttribute('data-v');ev('fa',nm+':'+A[nm],Q);setTimeout(function(){q(Q+1)},220)}})});
+    [].forEach.call(g.children,function(x){x.setAttribute('aria-pressed',x===b)});A[nm]=b.getAttribute('data-v');ev('fa',nm+':'+A[nm],Q);
+    if(nm==='bud'){var no=$('bk-no');no.hidden=A.bud!=='b0';if(A.bud==='b0')return}setTimeout(function(){q(Q+1)},220)}})});
   function nx3(){var b=$('f-biz'),n=$('f-name'),okb=b.value.trim().length>=2,okn=n.value.trim().length>=2;b.classList.toggle('bad',!okb);n.classList.toggle('bad',!okn);
     if(!okb)return b.focus();if(!okn)return n.focus();q(4)}
   $('bk-nx').onclick=nx3;
@@ -969,7 +973,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     if(Q<4){if(Q===3)nx3();return}var v={name:f.name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),biz:f.biz.value.trim(),bud:A.bud||'',sec:A.sec||''};var tel=v.phone.replace(/[^\d+]/g,'');
     var ok={name:v.name.length>=2,email:/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email),phone:/^\+?\d{9,15}$/.test(tel),biz:v.biz.length>=2},all=true;
     Object.keys(ok).forEach(function(k){f[k].classList.toggle('bad',!ok[k]);if(!ok[k])all=false});
-    if(!v.bud||!v.sec)return q(!v.sec?1:2);if(!ok.biz||!ok.name)return q(3);
+    if(!v.bud||!v.sec)return q(!v.sec?1:2);if(v.bud==='b0'){$('bk-no').hidden=false;return q(2)}if(!ok.biz||!ok.name)return q(3);
     if(!all){ev('ferr',Object.keys(ok).filter(function(k){return !ok[k]}).join(','),4);err.textContent=!ok.email&&v.email?'Revisa el email.':!ok.phone&&v.phone?'Revisa el número de WhatsApp.':'Rellena el email y el WhatsApp, por favor.';err.hidden=false;return}
     err.hidden=true;var go=$('bk-go');go.disabled=true;go.firstChild.textContent='Reservando… ';
     px('Lead',{content_name:v.bud,content_category:v.sec});
@@ -979,6 +983,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
         try{sessionStorage.setItem('c404bk',JSON.stringify({c:j.id||'',name:v.name.split(' ')[0],email:v.email,start:j.start||pick,join:j.join||'',gcal:j.gcal||'',mailed:!!j.mailed,google:/meet\.google\.com/.test(j.join||'')}))}catch(x){}
         go.disabled=true;go.firstChild.textContent='¡Reservada! ';setTimeout(function(){location.href='/gracias'},PROD?350:700);return}
       if(!(j&&j.ok))ev('bkerr',(j&&j.error)||'red',0);
+      if(j&&j.error==='budget'){$('bk-no').hidden=false;q(2);return}
       if(j&&j.error==='taken'){SL=j.slots||SL;err.textContent='Esa hora se acaba de ocupar. Elige otra, por favor.';err.hidden=false;setTimeout(function(){$('bk-2').hidden=true;$('bk-1').hidden=false;drawDays()},1400);return}
       err.innerHTML='No se ha podido reservar. <a href="https://wa.me/34610594450?text='+encodeURIComponent('Hola Christian, quiero reservar la llamada para '+fL.format(new Date(pick)))+'" target="_blank" rel="noopener" style="color:var(--t2)">Escríbeme por WhatsApp</a> y te la dejo hecha.';err.hidden=false};
     if(!PROD){setTimeout(function(){done({ok:true,demo:1,join:'',gcal:'#',mailed:true})},700);return}
