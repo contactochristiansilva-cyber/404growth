@@ -459,7 +459,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 .sd-card.on .sd-ord{opacity:1;transform:none}.sd-ord b{display:block;font-size:13.5px;font-weight:600}.sd-ord i{flex:none;width:32px;height:32px;border-radius:9px;background:linear-gradient(150deg,var(--t2),var(--t))}
 .sd .mnote{text-align:left}
 @media (max-width:820px){
- .sd{height:360vh}.sd-pin{gap:18px;padding:16px 14px 20px}.sd-h h2{font-size:32px}.sd-h .lead{font-size:15px;margin-top:8px}
+ .sd{height:250vh}.sd-pin{gap:18px;padding:16px 14px 20px}.sd-h h2{font-size:32px}.sd-h .lead{font-size:15px;margin-top:8px}
  .sd-g{grid-template-columns:52px 44px 1fr;height:min(520px,62vh)}
  .sd-it span{display:none}.sd-it i{width:46px;height:46px}.sd-it svg{width:20px;height:20px}
  .sd-dot span{display:none}.sd-r{padding-left:4px}
@@ -595,7 +595,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 <section class="sec" id="reservar" style="padding-top:44px">
   <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
-    <h2 class="rv">Elige tu hora.<br><em>Hablamos 15&nbsp;minutos.</em></h2>
+    <h2 class="rv">Elige tu hora.<br><em>Hablamos 30&nbsp;minutos.</em></h2>
     <div class="steps">
       <span class="step lg rv"><b>1</b>Me cuentas tu tienda</span>
       <span class="step lg rv d1"><b>2</b>Te la enseño online</span>
@@ -704,6 +704,8 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
       <details><summary>¿Se conecta con el stock de mi tienda?</summary><p>Depende de tu TPV o programa. Muchos permiten sincronizarlo con la web; otros no. Lo revisamos en la llamada.</p></details>
       <details><summary>¿Tengo que cerrar mi tienda física?</summary><p>No. La tienda online es un segundo canal con tu mismo stock.</p></details>
       <details><summary>Ya tengo web. ¿La perdemos?</summary><p>La rehacemos en tu dominio y redirigimos las direcciones antiguas para no perder lo que ya tienes en Google.</p></details>
+      <details><summary>¿La tienda es mía?</summary><p>Sí, todo a tu nombre: la tienda, el dominio y la cuenta de pagos. Si un día dejas de trabajar con nosotros, te lo quedas todo.</p></details>
+      <details><summary>¿Qué pasa después del día 15?</summary><p>Te enseñamos a usarla: cómo ver un pedido, subir un producto o cambiar un precio. Y lo tienes también en vídeo, en tu portal. A partir de ahí, a traer clientes: medimos qué funciona y ajustamos cada semana. El mantenimiento técnico y la captación continua se acuerdan en la propuesta, por escrito, antes de empezar.</p></details>
       <details><summary>¿Me garantizáis ventas?</summary><p>No. Dejamos la tienda lista y la captación en marcha, pero las ventas dependen de tu producto, tus precios y el mercado. Medimos desde el primer día y mejoramos lo que funciona.</p></details>
     </div>
     <div class="cta" style="margin-top:44px"><a class="btn" href="#reservar" data-cta="faq">Elegir mi hora <span class="ar"><svg><use href="#i-ne"/></svg></span></a></div>
@@ -724,7 +726,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
         <span class="it"><svg><use href="#i-cal"/></svg>Tienda abierta en 15 días</span>
         <span class="it"><svg><use href="#i-chart"/></svg>Todo medido desde el día 1</span>
       </div>
-      <div class="tags"><a href="https://wa.me/34610594450" target="_blank" rel="noopener" data-cta="whatsapp-final">WhatsApp</a><a href="/#nichos" target="_blank" rel="noopener">Tiendas de ejemplo</a></div>
+      <div class="tags"><a href="https://wa.me/34610594450" target="_blank" rel="noopener" data-cta="whatsapp-final">WhatsApp</a><a href="#casos">Tiendas de ejemplo</a></div>
     </div>
     </div>
   </div>
@@ -976,10 +978,9 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     if(!v.bud||!v.sec)return q(!v.sec?1:2);if(v.bud==='b0'){$('bk-no').hidden=false;return q(2)}if(!ok.biz||!ok.name)return q(3);
     if(!all){ev('ferr',Object.keys(ok).filter(function(k){return !ok[k]}).join(','),4);err.textContent=!ok.email&&v.email?'Revisa el email.':!ok.phone&&v.phone?'Revisa el número de WhatsApp.':'Rellena el email y el WhatsApp, por favor.';err.hidden=false;return}
     err.hidden=true;var go=$('bk-go');go.disabled=true;go.firstChild.textContent='Reservando… ';
-    px('Lead',{content_name:v.bud,content_category:v.sec});
     var body={k:key||'',start:pick,name:v.name,email:v.email,phone:tel,biz:v.biz,bud:v.bud,sec:v.sec,n:(v.sec&&v.sec!=='otro'?v.sec:N||'tienda'),utm:UTM,tz:(Intl.DateTimeFormat().resolvedOptions().timeZone||TZ)};
     var done=function(j){go.disabled=false;go.firstChild.textContent='Confirmar llamada ';
-      if(j&&j.ok){px('Schedule',{content_name:v.bud,content_category:v.sec,value:{b0:1,b1:2,b2:3,b3:4,b4:2}[v.bud]||1,currency:'EUR'});ev('bk','',0);flush();
+      if(j&&j.ok){px('Lead',{content_name:v.bud,content_category:v.sec});px('Schedule',{content_name:v.bud,content_category:v.sec,value:{b0:1,b1:2,b2:3,b3:4,b4:2}[v.bud]||1,currency:'EUR'});ev('bk','',0);flush();
         try{sessionStorage.setItem('c404bk',JSON.stringify({c:j.id||'',name:v.name.split(' ')[0],email:v.email,start:j.start||pick,join:j.join||'',gcal:j.gcal||'',mailed:!!j.mailed,google:/meet\.google\.com/.test(j.join||'')}))}catch(x){}
         go.disabled=true;go.firstChild.textContent='¡Reservada! ';setTimeout(function(){location.href='/gracias'},PROD?350:700);return}
       if(!(j&&j.ok))ev('bkerr',(j&&j.error)||'red',0);

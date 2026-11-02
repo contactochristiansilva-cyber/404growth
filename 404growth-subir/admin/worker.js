@@ -1020,6 +1020,7 @@ const BOT_FACTS = [
   "Costes aparte que pueden existir: dominio, comisión de la pasarela de pago por venta, envíos y el presupuesto de anuncios. Se detallan antes de empezar. El precio de 404 Growth es cerrado y se acuerda en la propuesta.",
   "No garantizamos ventas: dependen del producto, los precios y el mercado. Lo que sí hacemos es medir desde el primer pedido y mejorar lo que funciona.",
   "Después del día 15: le enseñamos a gestionar pedidos y productos (cómo ver un pedido, subir un producto o cambiar un precio) y tiene el vídeo «Cómo usar tu tienda» en el portal. El mantenimiento técnico y la captación continua se acuerdan en la propuesta, por escrito, según lo que necesite.",
+  "La tienda, el dominio y la cuenta de pagos están a nombre del cliente: si un día deja de trabajar con nosotros, se lo queda todo.",
   "La tienda física no se cierra: la tienda online es un segundo canal con el mismo stock. Si ya tenía web, se rehace en su dominio y se redirigen las direcciones antiguas para no perder lo que ya tenía en Google.",
   "En el portal, el contrato y las facturas están en «Contrato y facturas» y se descargan en PDF cuando quiera. Las novedades y lo que tiene que revisar le aparecen en el portal.",
 ];
