@@ -18,6 +18,8 @@
     { "pattern": "404growth.com/nl*", "zone_name": "404growth.com" },
     { "pattern": "404growth.com/portal*", "zone_name": "404growth.com" },
     { "pattern": "404growth.com/admin*", "zone_name": "404growth.com" },
+    { "pattern": "404growth.com/onboarding*", "zone_name": "404growth.com" },
+    { "pattern": "www.404growth.com/onboarding*", "zone_name": "404growth.com" },
     { "pattern": "404growth.com/blog*", "zone_name": "404growth.com" },
     { "pattern": "www.404growth.com/blog*", "zone_name": "404growth.com" }
   ],
