@@ -337,6 +337,11 @@ html.lock,html.lock body{overflow:hidden}
   </div>
 </div>
 
+<script src="/l/px.js"></script>
+<script>/* v48: el píxel de Meta, solo si aceptó la cookie en /book (el id llega del admin) */
+(function(){var id=window.PX404&&window.PX404.id,ok=false;try{ok=localStorage.getItem('c404meta')==='1'}catch(e){}if(!id||!ok)return;
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init',id);fbq('track','PageView')})();</script>
 <script>
 (function(){
   'use strict';

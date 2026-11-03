@@ -744,17 +744,18 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   <div class="row"><button class="pill2 solid" type="button" id="ck-yes">Aceptar</button><button class="pill2" type="button" id="ck-no">No, gracias</button></div>
 </div>
 
+<script src="/l/px.js"></script>
 <script>
 (function(){
   /* ---------- lo que hay que rellenar ----------
-     PIXEL:  id del píxel de Meta (15–16 cifras). Vacío = sin píxel y sin aviso de cookies.
+     PIXEL:  id del píxel de Meta: se pone en el admin (Landing › Meta) y llega por /l/px.js. Vacío = sin píxel y sin aviso de cookies.
      VSL:    src = mp4 con subtítulos quemados; poster = foto fija; ratio "16/9" o "9/16". src vacío = el hueco con el botón de play.
      AVATAR: foto pequeña de Christian (círculo del vídeo).
      PHOTO:  imagen final 16:9 (Christian con su nombre detrás, ya montada).
      CASES:  SOLO casos reales, con permiso del cliente (si está vacío se muestran las tiendas de demostración DEMOS):
              {tienda:'Nombre', sector:'Moda', ciudad:'Valencia', img:'/casos/x.webp', kpi:'+38 %', kpil:'ventas online en 3 meses', q:'cita literal', who:'Nombre, dueña'}
      Sector desde el anuncio: ?n=moda | joyeria | deporte | obrador | optica | deco (o utm_content con ese valor). */
-  var PIXEL='';
+  var PIXEL=(window.PX404&&/^\d{8,20}$/.test(window.PX404.id||'')&&window.PX404.id)||'';
   var VSL={src:'',poster:'',ratio:'16/9'};
   var AVATAR='/ind-me.webp';
   var PHOTO='/christian-404.webp';
@@ -855,11 +856,11 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 
   /* ---------- píxel de Meta, solo con consentimiento ---------- */
   var PQ=[],fbOn=false;window.__ev=[];
-  function px(name,data,custom){var p=Object.assign({content_category:N||'tiendas'},data||{});window.__ev.push([name,p]);
-    if(!PIXEL)return;if(fbOn)fbq(custom?'trackCustom':'track',name,p);else PQ.push([custom?'trackCustom':'track',name,p])}
+  function px(name,data,custom,eid){var p=Object.assign({content_category:N||'tiendas'},data||{});window.__ev.push([name,p]);
+    if(!PIXEL)return;var o=eid?{eventID:eid}:undefined;if(fbOn)fbq(custom?'trackCustom':'track',name,p,o);else PQ.push([custom?'trackCustom':'track',name,p,o])}
   function fbLoad(){if(fbOn||!PIXEL)return;fbOn=true;
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,d,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init',PIXEL);PQ.splice(0).forEach(function(a){fbq(a[0],a[1],a[2])})}
+    fbq('init',PIXEL);PQ.splice(0).forEach(function(a){fbq(a[0],a[1],a[2],a[3])})}
   var CK='c404meta',ck=null;try{ck=localStorage.getItem(CK)}catch(e){}
   if(PIXEL){if(ck==='1')fbLoad();else if(ck!=='0'){var box=$('ck');box.hidden=false;
     $('ck-yes').onclick=function(){try{localStorage.setItem(CK,'1')}catch(e){}box.hidden=true;fbLoad();ev('ck','si',0)};
@@ -894,6 +895,9 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   var LIVE=!INT&&!navigator.webdriver&&PROD;
   var UTM=(function(){var o={},ks=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];ks.forEach(function(k){var v=qs.get(k);if(v)o[k]=v.slice(0,120)});
     try{if(Object.keys(o).length)localStorage.setItem('c404utm',JSON.stringify(o));else o=JSON.parse(localStorage.getItem('c404utm')||'{}')}catch(e){}return o})();
+  /* v48: el clic del anuncio (fbclid) y las cookies de Meta, para la API de conversiones (solo se usan si acepta la cookie) */
+  var FBC=(function(){var f=qs.get('fbclid'),o='';try{if(f){o='fb.1.'+Date.now()+'.'+f.slice(0,400);localStorage.setItem('c404fbc',o)}else o=localStorage.getItem('c404fbc')||''}catch(e){}return o})();
+  function ckv(n){var m=d.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):''}
   function post(path,b,beacon){if(!LIVE)return Promise.resolve(null);var t=JSON.stringify(b);
     if(beacon&&navigator.sendBeacon){try{if(navigator.sendBeacon(API+path,new Blob([t],{type:'application/json'})))return Promise.resolve(null)}catch(e){}}
     return fetch(API+path,{method:'POST',body:t,keepalive:!!beacon,headers:{'content-type':'application/json'}}).then(function(r){return r.json().then(function(j){j.__s=r.status;return j})}).catch(function(){return null})}
@@ -978,9 +982,9 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
     if(!v.bud||!v.sec)return q(!v.sec?1:2);if(v.bud==='b0'){$('bk-no').hidden=false;return q(2)}if(!ok.biz||!ok.name)return q(3);
     if(!all){ev('ferr',Object.keys(ok).filter(function(k){return !ok[k]}).join(','),4);err.textContent=!ok.email&&v.email?'Revisa el email.':!ok.phone&&v.phone?'Revisa el número de WhatsApp.':'Rellena el email y el WhatsApp, por favor.';err.hidden=false;return}
     err.hidden=true;var go=$('bk-go');go.disabled=true;go.firstChild.textContent='Reservando… ';
-    var body={k:key||'',start:pick,name:v.name,email:v.email,phone:tel,biz:v.biz,bud:v.bud,sec:v.sec,n:(v.sec&&v.sec!=='otro'?v.sec:N||'tienda'),utm:UTM,tz:(Intl.DateTimeFormat().resolvedOptions().timeZone||TZ)};
+    var body={k:key||'',start:pick,name:v.name,email:v.email,phone:tel,biz:v.biz,bud:v.bud,sec:v.sec,n:(v.sec&&v.sec!=='otro'?v.sec:N||'tienda'),utm:UTM,tz:(Intl.DateTimeFormat().resolvedOptions().timeZone||TZ),mc:(function(){try{return !!PIXEL&&localStorage.getItem('c404meta')==='1'}catch(e){return false}})(),fbp:ckv('_fbp'),fbc:ckv('_fbc')||FBC};
     var done=function(j){go.disabled=false;go.firstChild.textContent='Confirmar llamada ';
-      if(j&&j.ok){px('Lead',{content_name:v.bud,content_category:v.sec});px('Schedule',{content_name:v.bud,content_category:v.sec,value:{b0:1,b1:2,b2:3,b3:4,b4:2}[v.bud]||1,currency:'EUR'});ev('bk','',0);flush();
+      if(j&&j.ok){px('Lead',{content_name:v.bud,content_category:v.sec},false,j.id?'lead_'+j.id:'');px('Schedule',{content_name:v.bud,content_category:v.sec,value:{b0:1,b1:2,b2:3,b3:4,b4:2}[v.bud]||1,currency:'EUR'},false,j.id?'sch_'+j.id:'');ev('bk','',0);flush();
         try{sessionStorage.setItem('c404bk',JSON.stringify({c:j.id||'',name:v.name.split(' ')[0],email:v.email,start:j.start||pick,join:j.join||'',gcal:j.gcal||'',mailed:!!j.mailed,google:/meet\.google\.com/.test(j.join||'')}))}catch(x){}
         go.disabled=true;go.firstChild.textContent='¡Reservada! ';setTimeout(function(){location.href='/gracias'},PROD?350:700);return}
       if(!(j&&j.ok))ev('bkerr',(j&&j.error)||'red',0);

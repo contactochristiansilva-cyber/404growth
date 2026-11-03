@@ -58,3 +58,13 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 ## Formulario de /book (landing VSL)
 
 - Si marcan «Menos de 1.500 €» (`bud = b0`) no avanza: sale el mensaje de que con esas cantidades no trabajamos y que, si fue un error, pueden elegir otra opción. El Worker también rechaza `b0` (`vslBook` → 422 `budget`).
+
+## Funnel de anuncios, llamadas y clientes (v48)
+
+- **Meta:** el ID del píxel, el token de la API de conversiones, la cuenta publicitaria y el token de lectura (ads_read) se ponen en Landing › Meta (cifrados en `meta`; nunca en las páginas). `/l/px.js` da el ID a /book, /gracias y /metodo. Solo si el visitante acepta la cookie de Meta (`ll.mc = 1`) se envían por servidor: Lead y Schedule al reservar (mismo `event_id` que el píxel: `lead_<id>`, `sch_<id>`), y LlamadaAsistida, LeadCualificado y Purchase (con importe) al marcarlo en Landing. Registro en `mevents`. Graph API `v26.0` (`META_V`).
+- **Gasto:** cada 3 h (`callCron` → `adsPull`) el gasto por anuncio y día en `mads`; se cruza con reservas y ventas por el nombre del anuncio (`utm_content={{ad.name}}`; línea completa en `UTM_LINE`).
+- **Llamadas:** Landing › Llamadas para marcar vino / encaja / cliente + importe (usa `llam/lead`). Emails 24 h y 1 h antes (`r24`, `r1`), aviso a Chris para marcar (`ap`), email a quien no vino (`ns`). Cambiar hora o cancelar: `/l/r/<lead>.<token>` (`rsTok`), mueve el evento de Google y el del admin.
+- **Lead → cliente:** `/onboarding?l=<lead>.<token>` rellena el alta y une `clients.lead` ↔ `ll.cid` (el cliente queda unido a su anuncio).
+- **Cliente:** email semanal los lunes (días 1–15, `weekCron`, tabla `wrep`); email de apertura al marcar «live» como hecho (`openMail`, `clients.opened`); satisfacción días 7 y 15 y testimonio si la nota es alta (`csat`); contrato firmado por los dos en el portal (`pkContract`/`pkSign`, mismas tablas que las obras: `bcontract`, `bsign`; PDF por impresión).
+- Los días se cuentan como en el portal: el día de arranque es el día 0 y la tienda abre el día 15.
+- Esquema nuevo: `v48Ready` (tablas `mevents`, `mads`, `wrep`, `csat` y columnas de `ll` y `clients`).
