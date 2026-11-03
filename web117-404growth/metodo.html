@@ -46,11 +46,11 @@ em{font-style:normal}
 .tpill i{width:7px;height:7px;border-radius:50%;background:var(--t);box-shadow:0 0 0 3px rgba(111,194,166,.22)}
 
 /* portada */
-.hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:44px;align-items:center;padding:42px 0 30px}
+.hero{padding:26px 0 0;max-width:760px}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:99px;border:1px solid rgba(166,227,205,.3);background:rgba(111,194,166,.1);font-size:13.5px;color:var(--t2);font-weight:500}
 .chip i{width:8px;height:8px;border-radius:50%;background:var(--t);box-shadow:0 0 0 4px rgba(111,194,166,.2)}
-h1{margin:18px 0 0;font-size:clamp(38px,6.4vw,66px);font-weight:600;letter-spacing:-.045em;line-height:1.02;text-wrap:balance}
-.lead{color:var(--mute);margin:18px 0 0;max-width:520px;font-size:18px;line-height:1.5;text-wrap:pretty}
+h1{margin:16px 0 0;font-size:clamp(34px,5.6vw,58px);font-weight:600;letter-spacing:-.045em;line-height:1.02;text-wrap:balance}
+.lead{color:var(--mute);margin:14px 0 0;max-width:560px;font-size:17.5px;line-height:1.5;text-wrap:pretty}
 .lead b{color:var(--ink);font-weight:600}
 .facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;color:var(--mute);font-size:14px}
 .facts span{display:inline-flex;align-items:center;gap:7px}.facts svg{width:16px;height:16px;color:var(--t)}
@@ -86,18 +86,15 @@ h2{margin:0;font-size:clamp(30px,4.4vw,44px);font-weight:600;letter-spacing:-.04
 .sub{margin:12px 0 0;color:var(--mute);font-size:17px;max-width:560px;text-wrap:pretty}
 
 /* progreso */
+.vids{padding-top:22px}
+.vids .prog{max-width:420px;margin-bottom:14px;padding:11px 14px}.vids .bar{margin-top:8px;height:5px}
+.cl2{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:14px;margin-top:26px;align-items:start}
+.cl2 .steps{grid-template-columns:minmax(0,1fr)}
 .prog{min-width:260px;padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px var(--line)}
 .prog-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14px;color:var(--mute)}.prog-h b{color:var(--ink);font-weight:600;font-size:15px}
 .bar{height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--t),var(--t2));border-radius:6px;transition:width .8s var(--ease)}
 
 /* el primero, destacado */
-.feat{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:34px;align-items:center;padding:18px;border-radius:30px;background:linear-gradient(160deg,rgba(111,194,166,.13),rgba(111,194,166,.03));box-shadow:inset 0 0 0 1px rgba(166,227,205,.22);margin-bottom:18px}
-.feat .vc{width:100%}
-.feat .ft{padding:6px 10px 6px 0}
-.feat .q{font-size:15px;color:var(--mute);font-style:italic}
-.feat h3{margin:8px 0 0;font-size:clamp(25px,3.2vw,34px);font-weight:600;letter-spacing:-.035em;line-height:1.1}
-.feat p{margin:12px 0 0;color:var(--mute);font-size:16.5px;max-width:460px}
-.feat .btn{margin-top:22px}
 .tag{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:99px;background:var(--t);color:#04110D}
 
 /* tarjetas 9:16 */
@@ -107,24 +104,22 @@ h2{margin:0;font-size:clamp(30px,4.4vw,44px);font-weight:600;letter-spacing:-.04
 @media (hover:hover){.vc:not(.soon):hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px rgba(166,227,205,.4),0 30px 60px -30px rgba(0,0,0,.9)}.vc:not(.soon):hover .pb{transform:scale(1.08)}}
 .vc:active{transform:scale(.98)}
 .vc:focus-visible{outline:2px solid var(--t2);outline-offset:3px}
-.vc .ph{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-2}
+.vc{container-type:inline-size;background:#F6F5F1;color:#14191A}
+.vc .ph{position:absolute;inset:0;background-size:100% auto;background-position:center top;background-repeat:no-repeat;z-index:-2}
 .vc .ph.gen{background:radial-gradient(120% 70% at 20% 0%,var(--c1),transparent 60%),radial-gradient(90% 60% at 100% 100%,var(--c2),transparent 65%),#0B1311}
-.vc .ph.gen:after{content:attr(data-n);position:absolute;right:-6%;bottom:16%;font-family:var(--fd);font-size:min(46vw,190px);font-weight:700;letter-spacing:-.08em;line-height:.8;color:rgba(255,255,255,.05)}
-.vc:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,transparent 26%,transparent 42%,rgba(3,6,5,.92) 100%)}
-.vc .top2{position:absolute;left:12px;right:12px;top:12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
-.vc .num{font-size:12.5px;font-weight:700;padding:5px 9px;border-radius:99px;background:rgba(4,7,6,.62);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.vc .grp{font-size:11.5px;font-weight:600;padding:5px 9px;border-radius:99px;background:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.vc .bt{position:absolute;left:14px;right:14px;bottom:14px}
-.vc .bt .qq{display:block;font-size:12.5px;color:rgba(243,244,241,.7);font-style:italic;line-height:1.3;margin-bottom:6px}
-.vc .bt b{display:block;font-family:var(--fd);font-size:17px;font-weight:600;letter-spacing:-.025em;line-height:1.2;text-wrap:balance}
-.vc .bt .mt{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:12.5px;color:rgba(243,244,241,.75)}
-.vc .pb{width:34px;height:34px;flex:none;border-radius:50%;display:grid;place-items:center;background:#fff;color:#07100D;transition:transform .35s var(--ease)}
-.vc .pb svg{width:13px;height:13px;margin-left:2px}
-.vc .rs{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.12)}.vc .rs i{display:block;height:100%;background:var(--t2)}
-.vc.seen .pb{background:var(--t);color:#04110D}.vc.seen .pb svg{margin:0}
+.vc:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.22) 0%,transparent 18%)}
+.vc .num{position:absolute;left:10px;top:10px;font-size:12.5px;font-weight:700;padding:5px 9px;border-radius:99px;color:#F3F4F1;background:rgba(4,7,6,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+/* abajo, donde en el vídeo está la pizarra: la frase del vídeo, grande */
+.vc .bt{position:absolute;left:0;right:0;bottom:0;top:43.5%;display:flex;flex-direction:column;padding:9% 8% 7.5%;background:linear-gradient(180deg,rgba(246,245,241,0) 0,#F6F5F1 7%)}
+.vc .fr{display:block;font-family:var(--fd);font-weight:600;font-size:clamp(19px,14.2cqw,40px);letter-spacing:-.04em;line-height:1.04;text-wrap:balance;color:#14191A}
+.vc .fr em{background:linear-gradient(100deg,#7FD3B6 -15%,#2E7A64 62%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.vc .mt{display:flex;align-items:center;gap:8px;margin-top:auto;font-size:clamp(12px,5.4cqw,14px);font-weight:500;color:#5E6561}
+.vc .pb{width:clamp(28px,13cqw,36px);height:clamp(28px,13cqw,36px);flex:none;border-radius:50%;display:grid;place-items:center;background:#14191A;color:#fff;transition:transform .35s var(--ease)}
+.vc .pb svg{width:38%;height:38%;margin-left:6%}
+.vc .rs{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(20,25,26,.08)}.vc .rs i{display:block;height:100%;background:#2E7A64}
+.vc.seen .pb{background:#2E7A64;color:#fff}.vc.seen .pb svg{margin:0}
 .vc.soon{cursor:default}
-.vc.soon .pb{background:rgba(255,255,255,.12);color:var(--ink)}
-.vc .soonb{font-size:11.5px;font-weight:600;padding:5px 9px;border-radius:99px;background:rgba(217,201,160,.18);color:var(--sand)}
+.vc.soon .pb{background:rgba(20,25,26,.12);color:#14191A}
 
 /* la llamada */
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:s}
@@ -211,12 +206,10 @@ html.lock,html.lock body{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.track{animation:none}.ring.go .fg{transition:none}.pl-snd .pill:before{animation:none;opacity:0}}
 
 @media (max-width:900px){
- .hero{grid-template-columns:minmax(0,1fr);gap:30px;padding-top:26px}
+ .hero{padding-top:20px}
  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
  .steps{grid-template-columns:minmax(0,1fr)}
- .feat{grid-template-columns:minmax(0,1fr);gap:18px;padding:14px}
- .feat .vc{max-width:none;aspect-ratio:4/5}
- .feat .ft{padding:2px 6px 8px}
+ .cl2{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:560px){
  .w{padding:0 16px}
@@ -228,9 +221,8 @@ html.lock,html.lock body{overflow:hidden}
  .sec{padding-top:60px}
  .prog{min-width:0;width:100%}
  .vc{border-radius:20px}
- .vc .top2{left:9px;right:9px;top:9px}.vc .grp{display:none}
- .vc .bt{left:11px;right:11px;bottom:11px}.vc .bt b{font-size:15px}.vc .bt .qq{display:none}
- .vc .pb{width:30px;height:30px}
+ .vc .num{left:8px;top:8px;font-size:11.5px;padding:4px 8px}
+ .st{padding:16px 18px;border-radius:22px}.st .n{width:32px;height:32px;border-radius:10px}.st h3{margin-top:10px;font-size:18px}.st p{font-size:15px}
  .me{grid-template-columns:minmax(0,1fr);text-align:left;padding:22px;gap:18px}.me img{width:96px;height:96px}
  .shop{width:170px;border-radius:16px}
  .end{padding:34px 20px;border-radius:28px}
@@ -258,14 +250,21 @@ html.lock,html.lock body{overflow:hidden}
 <main>
   <div class="glow" aria-hidden="true"></div>
   <div class="w">
-    <section class="hero" id="llamada">
-      <div>
-        <span class="chip rv"><i></i><span id="chipt">Llamada confirmada</span></span>
-        <h1 class="rv d1" id="h1">Antes de nuestra llamada, <span class="grad">lo que todos preguntan.</span></h1>
-        <p class="lead rv d2" id="lead">Te he preparado 8 vídeos cortos con las dudas que tiene cualquier dueño de tienda antes de dar el paso. No hace falta verlos todos: <b>elige los tuyos y en la llamada hablamos solo de tu tienda.</b></p>
-        <div class="facts rv d3"><span><svg><use href="#i-cam"/></svg>8 vídeos cortos</span><span><svg><use href="#i-clock"/></svg><span id="tot">Alrededor de 1 minuto cada uno</span></span><span><svg><use href="#i-check"/></svg>Sin registrarte</span></div>
-      </div>
-      <div class="call rv d2" id="call">
+    <section class="hero" id="inicio">
+      <span class="chip rv"><i></i><span id="chipt">Llamada confirmada</span></span>
+      <h1 class="rv d1" id="h1">Antes de nuestra llamada, <span class="grad">lo que todos preguntan.</span></h1>
+      <p class="lead rv d2" id="lead">8 vídeos de un minuto con lo que todos preguntan antes de dar el paso. <b>Empieza por el primero.</b></p>
+    </section>
+
+    <section class="vids" id="videos" aria-label="Los vídeos">
+      <div class="prog" aria-live="polite"><div class="prog-h"><b id="pc">0 de 8 vistos</b><span id="pm">Empieza por el 1</span></div><div class="bar"><i id="pbar"></i></div></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="sec" id="llamada">
+      <span class="eyb rv">Tu llamada</span><h2 class="rv d1">30 minutos, como un café.</h2><p class="sub rv d2">No tienes que preparar nada. Ten a mano tu web o tu Instagram y listo.</p>
+      <div class="cl2">
+      <div class="call rv" id="call">
         <div class="who"><img src="/christian-hola.jpg" alt="Christian Silva" width="46" height="46"><div><b>Llamada con Christian</b><span>Fundador de 404 Growth</span></div></div>
         <div class="when" id="when">
           <div class="cal" aria-hidden="true"><small id="cw">Meet</small><b id="cd">30</b><span id="cm">min</span></div>
@@ -275,23 +274,11 @@ html.lock,html.lock body{overflow:hidden}
         <div class="cacts" id="cacts"></div>
         <p class="cnote" id="cnote">¿Alguna duda antes? Escríbeme por WhatsApp.</p>
       </div>
-    </section>
-
-    <section class="sec" id="videos">
-      <div class="sh">
-        <div><span class="eyb rv">Los vídeos</span><h2 class="rv d1">Las 8 dudas antes de dar el paso.</h2><p class="sub rv d2">Grabados por mí, sin rodeos. Empieza por el primero o ve directo a lo que más te preocupa.</p></div>
-        <div class="prog rv d2" aria-live="polite"><div class="prog-h"><b id="pc">0 de 8 vistos</b><span id="pm">Empieza por el 1</span></div><div class="bar"><i id="pbar"></i></div></div>
-      </div>
-      <div id="feat"></div>
-      <div class="grid" id="grid"></div>
-    </section>
-
-    <section class="sec">
-      <span class="eyb rv">La llamada</span><h2 class="rv d1">30 minutos, como un café.</h2><p class="sub rv d2">No tienes que preparar nada. Ten a mano tu web o tu Instagram y listo.</p>
-      <div class="steps" style="margin-top:26px">
+      <div class="steps">
         <div class="st rv"><span class="n">1</span><h3>Me cuentas tu tienda</h3><p>Qué vendes, cómo vendes hoy y hasta dónde quieres llegar.</p></div>
         <div class="st rv d1"><span class="n">2</span><h3>Te digo qué haría yo</h3><p>Antes de hablar habré mirado tu tienda y tu Instagram. Te digo con sinceridad si tiene sentido llevarla online y cómo lo haría.</p></div>
         <div class="st rv d2"><span class="n">3</span><h3>Precio y plazos cerrados</h3><p>Si encaja, sales de la llamada con el precio y los plazos cerrados.</p></div>
+      </div>
       </div>
       <div class="promise rv"><svg><use href="#i-shield"/></svg><span><b>No es una llamada de ventas.</b> Si no encajamos, te lo digo y te llevas el diagnóstico igualmente.</span></div>
     </section>
@@ -360,14 +347,14 @@ fbq('init',id);fbq('track','PageView')})();</script>
      Para publicar uno: src = '/v/metodo/0N/index.m3u8' (HLS, ver CLAUDE.md) o un .mp4 de menos de 25 MB,
      poster = '/v/metodo/0N/poster.jpg' y dur = su duración real ('4:32'). Sin src, la tarjeta sale como «Muy pronto». */
   var V=[
-    {g:0,q:'«Mi tienda ya va bien, no lo necesito»',t:'¿Por qué tu próxima tienda debería ser online, y no otro local?',s:'Lo que cuesta abrir otro local frente a abrir tu tienda en internet, con números de ejemplo.',d:'1:28',src:'/v/metodo/01/index.m3u8',poster:'/v/metodo/01/poster.jpg',dur:'1:28'},
-    {g:1,q:'«No tengo tiempo, ya tengo bastante con la tienda»',t:'¿Cuánto tiempo te quita de verdad una tienda online?',s:'Qué haces tú y qué hacemos nosotros, durante los 15 días y después.',d:'1:10',src:'/v/metodo/02/index.m3u8',poster:'/v/metodo/02/poster.jpg',dur:'1:10'},
-    {g:1,q:'«No entiendo de tecnología»',t:'¿Cómo es una tienda online por dentro?',s:'Un pedido de principio a fin: el pago, el stock y el envío, sin tecnicismos.',d:'0:57',src:'/v/metodo/03/index.m3u8',poster:'/v/metodo/03/poster.jpg',dur:'0:57'},
-    {g:2,q:'«Abro la web y nadie entra»',t:'¿De dónde salen los clientes de una tienda online?',s:'Por qué abrir la web no basta y cómo llegan las visitas que compran.',d:'1:10',src:'/v/metodo/04/index.m3u8',poster:'/v/metodo/04/poster.jpg',dur:'1:10'},
-    {g:2,q:'«Es mucho dinero. ¿Y si no funciona?»',t:'¿Cuánto cuesta y cuánto te devuelve?',s:'Qué inversión hace falta, qué incluye y cómo se recupera.',d:'1:22',src:'/v/metodo/05/index.m3u8',poster:'/v/metodo/05/poster.jpg',dur:'1:22'},
-    {g:2,q:'«Ya tengo web, y no vende»',t:'¿Por qué tu web actual no vende?',s:'Los fallos más comunes de las webs de tienda y cómo se arreglan.',d:'0:59',src:'/v/metodo/06/index.m3u8',poster:'/v/metodo/06/poster.jpg',dur:'0:59'},
-    {g:3,q:'«Me la montan y me dejan tirado»',t:'¿Qué pasa después del día 15?',s:'Cómo seguimos contigo cuando tu tienda ya está abierta.',d:'0:53',src:'/v/metodo/07/index.m3u8',poster:'/v/metodo/07/poster.jpg',dur:'0:53'},
-    {g:3,q:'«¿Mi producto se puede vender online?»',t:'¿Tu producto se puede vender online?',s:'Qué funciona mejor online y qué hacer si lo tuyo es delicado o voluminoso.',d:'1:05',src:'/v/metodo/08/index.m3u8',poster:'/v/metodo/08/poster.jpg',dur:'1:05'}
+    {f:'¿Otro local o tienda *online*?',g:0,q:'«Mi tienda ya va bien, no lo necesito»',t:'¿Por qué tu próxima tienda debería ser online, y no otro local?',s:'Lo que cuesta abrir otro local frente a abrir tu tienda en internet, con números de ejemplo.',d:'1:28',src:'/v/metodo/01/index.m3u8',poster:'/v/metodo/01/poster.jpg',dur:'1:28'},
+    {f:'Quién hace qué en *15 días*',g:1,q:'«No tengo tiempo, ya tengo bastante con la tienda»',t:'¿Cuánto tiempo te quita de verdad una tienda online?',s:'Qué haces tú y qué hacemos nosotros, durante los 15 días y después.',d:'1:10',src:'/v/metodo/02/index.m3u8',poster:'/v/metodo/02/poster.jpg',dur:'1:10'},
+    {f:'*Un pedido*, de principio a fin',g:1,q:'«No entiendo de tecnología»',t:'¿Cómo es una tienda online por dentro?',s:'Un pedido de principio a fin: el pago, el stock y el envío, sin tecnicismos.',d:'0:57',src:'/v/metodo/03/index.m3u8',poster:'/v/metodo/03/poster.jpg',dur:'0:57'},
+    {f:'Las *4 puertas* de tus clientes',g:2,q:'«Abro la web y nadie entra»',t:'¿De dónde salen los clientes de una tienda online?',s:'Por qué abrir la web no basta y cómo llegan las visitas que compran.',d:'1:10',src:'/v/metodo/04/index.m3u8',poster:'/v/metodo/04/poster.jpg',dur:'1:10'},
+    {f:'Lo que pagas y lo que te *queda*',g:2,q:'«Es mucho dinero. ¿Y si no funciona?»',t:'¿Cuánto cuesta y cuánto te devuelve?',s:'Qué inversión hace falta, qué incluye y cómo se recupera.',d:'1:22',src:'/v/metodo/05/index.m3u8',poster:'/v/metodo/05/poster.jpg',dur:'1:22'},
+    {f:'Los *5 fallos* que frenan tu web',g:2,q:'«Ya tengo web, y no vende»',t:'¿Por qué tu web actual no vende?',s:'Los fallos más comunes de las webs de tienda y cómo se arreglan.',d:'0:59',src:'/v/metodo/06/index.m3u8',poster:'/v/metodo/06/poster.jpg',dur:'0:59'},
+    {f:'Qué hacemos después del *día 15*',g:3,q:'«Me la montan y me dejan tirado»',t:'¿Qué pasa después del día 15?',s:'Cómo seguimos contigo cuando tu tienda ya está abierta.',d:'0:53',src:'/v/metodo/07/index.m3u8',poster:'/v/metodo/07/poster.jpg',dur:'0:53'},
+    {f:'Qué vende bien *online* y qué no',g:3,q:'«¿Mi producto se puede vender online?»',t:'¿Tu producto se puede vender online?',s:'Qué funciona mejor online y qué hacer si lo tuyo es delicado o voluminoso.',d:'1:05',src:'/v/metodo/08/index.m3u8',poster:'/v/metodo/08/poster.jpg',dur:'1:05'}
   ];
   var G=['¿Merece la pena?','¿Puedo yo con esto?','¿Va a funcionar?','¿Me fío?'];
   var COL=[['rgba(111,194,166,.55)','rgba(15,59,49,.9)'],['rgba(217,201,160,.45)','rgba(70,58,30,.8)'],['rgba(120,170,220,.42)','rgba(20,40,70,.85)'],['rgba(200,140,120,.42)','rgba(70,30,22,.85)']];
@@ -394,7 +381,7 @@ fbq('init',id);fbq('track','PageView')})();</script>
       var rel='';if(dt){var t0=new Date(),k=Math.round((new Date(fmt({year:'numeric',month:'2-digit',day:'2-digit'},dt).split('/').reverse().join('-'))-new Date(fmt({year:'numeric',month:'2-digit',day:'2-digit'},t0).split('/').reverse().join('-')))/864e5);
         rel=k===0?'hoy':k===1?'mañana':k>1&&k<7?'el '+fmt({weekday:'long'},dt):'el '+fmt({weekday:'long',day:'numeric',month:'long'},dt)}
       $('h1').innerHTML=(nm?'Hola, '+esc(nm)+'. ':'')+'<span class="grad">'+(dt?'Nos vemos '+esc(rel)+'.':'Nos vemos muy pronto.')+'</span>';
-      $('lead').innerHTML=(rel==='hoy'?'Antes de vernos':'Mientras llega el día')+', te he preparado 8 vídeos cortos con las dudas que tiene cualquier dueño de tienda antes de dar el paso. No hace falta verlos todos: <b>elige los tuyos y en la llamada hablamos solo de tu tienda.</b>';
+      $('lead').innerHTML=(rel==='hoy'?'Antes de vernos':'Mientras llega el día')+', aquí tienes 8 vídeos de un minuto con lo que todos preguntan antes de dar el paso. <b>Empieza por el primero.</b>';
     }
     if(dt){
       $('cw').textContent=fmt({weekday:'short'},dt).replace('.','');$('cd').textContent=fmt({day:'numeric'},dt);$('cm').textContent=fmt({month:'short'},dt).replace('.','');
@@ -413,7 +400,7 @@ fbq('init',id);fbq('track','PageView')})();</script>
     else if(ms<=5*6e4){t='Es ahora. Entra cuando quieras'}
     else if(ms<36e5){t='Empieza en '+Math.ceil(ms/6e4)+' min'}
     else if(ms<864e5){var h=Math.floor(ms/36e5),m=Math.round(ms%36e5/6e4);t='Faltan '+h+' h'+(m?' y '+m+' min':'')}
-    else{var dd=Math.floor(ms/864e5),hh=Math.round(ms%864e5/36e5);t='Faltan '+dd+(dd===1?' día':' días')+(hh&&dd<3?' y '+hh+' h':'')}
+    else{var dd=Math.floor(ms/864e5),hh=Math.floor(ms%864e5/36e5);t='Faltan '+dd+(dd===1?' día':' días')+(hh&&dd<3?' y '+hh+' h':'')}
     el.innerHTML='<span class="left'+(ms<=15*6e4&&end>0?' now':'')+'"><svg width="16" height="16"><use href="#i-clock"/></svg>'+esc(t)+'</span>';
     var near=ms<=15*6e4&&end>0;if(near!==S.near){S.near=near;acts()}
   }
@@ -438,21 +425,17 @@ fbq('init',id);fbq('track','PageView')})();</script>
 
   /* ---------- las tarjetas ---------- */
   var PLAY='<svg><use href="#i-play"/></svg>',CHECK='<svg><use href="#i-check"/></svg>';
-  function card(i,feat){
+  function frase(f){return esc(f).replace(/\*([^*]+)\*/g,'<em>$1</em>')}
+  function card(i){   /* arriba, Christian explicando la pizarra (poster); abajo, la frase del vídeo en grande */
     var v=V[i],p=seen[i]||0,s=p>=100,soon=!v.src,r=!s&&!soon&&p>0?Math.min(97,p):0,c=COL[v.g];
     return '<button type="button" class="vc'+(s?' seen':'')+(soon?' soon':'')+'" data-i="'+i+'"'+(soon?' aria-disabled="true"':'')+' aria-label="'+esc((i+1)+'. '+v.t+(soon?' (muy pronto)':s?' (visto)':''))+'">'+
       (v.poster?'<span class="ph" style="background-image:url(\''+esc(v.poster)+'\')"></span>':'<span class="ph gen" data-n="'+(i+1)+'" style="--c1:'+c[0]+';--c2:'+c[1]+'"></span>')+
-      '<span class="top2"><span class="num">'+(i+1)+'/'+V.length+'</span>'+(soon?'<span class="soonb">Muy pronto</span>':feat?'':'<span class="grp">'+esc(G[v.g])+'</span>')+'</span>'+
-      (feat?'':'<span class="bt"><span class="qq">'+esc(v.q)+'</span><b>'+esc(v.t)+'</b><span class="mt"><span class="pb">'+(s?CHECK:PLAY)+'</span>'+(s?'Visto':soon?'Muy pronto':esc(v.dur||v.d))+'</span></span>')+
-      (feat?'<span class="bt"><span class="mt"><span class="pb">'+(s?CHECK:PLAY)+'</span>'+(s?'Visto':soon?'Muy pronto':esc(v.dur||v.d))+'</span></span>':'')+
+      '<span class="num">'+(i+1)+'/'+V.length+'</span>'+
+      '<span class="bt"><b class="fr">'+frase(v.f||v.t)+'</b><span class="mt"><span class="pb">'+(s?CHECK:PLAY)+'</span>'+(s?'Visto':soon?'Muy pronto':esc(v.dur||v.d))+'</span></span>'+
       (r?'<span class="rs"><i style="width:'+r+'%"></i></span>':'')+'</button>';
   }
   function draw(){
-    var first=-1,i;for(i=0;i<V.length;i++){if((seen[i]||0)<100&&V[i].src){first=i;break}}if(first<0)for(i=0;i<V.length;i++){if((seen[i]||0)<100){first=i;break}}if(first<0)first=0;
-    var f=V[first],fs=!f.src;
-    $('feat').innerHTML='<div class="feat rv in">'+card(first,true)+'<div class="ft"><span class="tag">'+(Object.keys(seen).length?'Sigue por aquí':'Empieza por aquí')+'</span><p class="q" style="margin-top:14px">'+esc(f.q)+'</p><h3>'+esc(f.t)+'</h3><p>'+esc(f.s)+'</p>'+
-      '<button class="btn" type="button" data-i="'+first+'"'+(fs?' disabled style="opacity:.5;pointer-events:none"':'')+'><svg><use href="#i-play"/></svg>'+(fs?'Muy pronto':'Ver ahora'+' · '+esc(f.dur||f.d))+'</button></div></div>';
-    var h='';V.forEach(function(v,i){h+=card(i,false)});$('grid').innerHTML=h;
+    var h='';V.forEach(function(v,i){h+=card(i)});$('grid').innerHTML=h;
     [].forEach.call(d.querySelectorAll('[data-i]'),function(b){b.onclick=function(){open(+b.getAttribute('data-i'))}});
     var n=V.filter(function(v,i){return (seen[i]||0)>=100}).length,ready=V.filter(function(v){return v.src}).length;
     $('pc').textContent=n+' de '+V.length+' vistos';$('pbar').style.width=(n/V.length*100)+'%';
