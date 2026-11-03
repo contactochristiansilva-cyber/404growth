@@ -11,6 +11,8 @@ _to_delete/
 *.png
 *.mp4
 *.pdf
+# vídeos de /metodo en HLS (240 MB): se quedan en el Mac
+web117-404growth/v/metodo/
 
 # clave de Apimart (nunca al repositorio)
 .ak

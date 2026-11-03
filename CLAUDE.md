@@ -27,13 +27,17 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 ## Vídeos de /metodo (página que se envía tras reservar)
 
 - Archivo: `web117-404growth/metodo.html`. Los 8 vídeos están en el array `V` del script: `src`, `poster` y `dur` (duración real, «4:32»). Sin `src`, la tarjeta sale como «Muy pronto».
-- Cloudflare (assets del Worker) no acepta archivos de más de 25 MB: cada vídeo se publica en **HLS** dentro de `web117-404growth/v/metodo/0N/` (vertical 720×1280, segmentos de 6 s). Safari lo reproduce solo; el resto usa `/v/hls.light.min.js` (hls.js 1.5.20, ya incluido).
+- Cloudflare (assets del Worker) no acepta archivos de más de 25 MB: cada vídeo se publica en **HLS** dentro de `web117-404growth/v/metodo/0N/`, con dos calidades: `1080/` (1080×1920, CRF 21) y `720/` (720×1280, CRF 22), x264 `slow`, GOP de 2 s cerrado, segmentos de 4 s y audio AAC 128k. `0N/index.m3u8` es la lista maestra (1080 primero) y `0N/poster.jpg` el póster (720×1280). Safari lo reproduce solo; el resto usa `/v/hls.light.min.js` (hls.js 1.5.20) con `abrEwmaDefaultEstimate: 5e6`, para que empiece en 1080 si la conexión da. Los segmentos no van al repositorio (se quedan en el Mac).
+- Los originales están en `~/Contenidos/Videos Metodo/Metodo N def.mov` (HEVC 10 bits). Se comprimieron el 4/11/2026 en el Cowork del Mac (las llamadas duran 180 s como máximo): por trozos de 60 s (los dos tamaños a la vez), uniéndolos con `concat -c copy` y troceando a HLS con `-c copy`. Con CRF 21 el SSIM frente al original es 0,993: no se nota. De 436 MB a 168 MB en 1080.
   ```bash
-  ffmpeg -i entrada.mov -vf "scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" \
-    -c:v libx264 -preset veryfast -crf 23 -maxrate 1800k -bufsize 3600k -g 50 -keyint_min 50 -sc_threshold 0 \
-    -c:a aac -b:a 96k -ac 2 -hls_time 6 -hls_playlist_type vod -hls_segment_filename "v/metodo/0N/s%03d.ts" v/metodo/0N/index.m3u8
-  ffmpeg -ss 2 -i entrada.mov -frames:v 1 -vf "scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" -q:v 3 v/metodo/0N/poster.jpg
+  # cada trozo K (de 60 s) del vídeo N
+  ffmpeg -ss $((K*60)) -i "Metodo N def.mov" -an -filter_complex "[0:v]split=2[a][b];[a]format=yuv420p[a2];[b]scale=720:1280:flags=lanczos,format=yuv420p[b2]" \
+    -map "[a2]" -frames:v 1500 -c:v libx264 -preset slow -profile:v high -g 50 -keyint_min 50 -sc_threshold 0 -crf 21 -maxrate 6000k -bufsize 12000k -level 4.0 cK_1080.mp4 \
+    -map "[b2]" -frames:v 1500 -c:v libx264 -preset slow -profile:v high -g 50 -keyint_min 50 -sc_threshold 0 -crf 22 -maxrate 3000k -bufsize 6000k -level 3.1 cK_720.mp4
+  # después, por calidad: concat de los trozos + audio (-c:a aac -b:a 128k) y
+  ffmpeg -i v1080.mp4 -i a.m4a -map 0:v -map 1:a -c copy -f hls -hls_time 4 -hls_playlist_type vod -hls_flags independent_segments -hls_segment_filename "0N/1080/s%03d.ts" 0N/1080/index.m3u8
   ```
+- **Reproductor:** cada vídeo arranca sin sonido, en bucle y con el botón «Activar audio» encima; al tocarlo vuelve al principio con sonido. Una vez activado, los siguientes empiezan ya con sonido (si el navegador no lo permite, vuelve a salir el botón). Solo cuenta lo que se ve con el audio activado, segundo a segundo: «Visto» es verlo entero (todos los segundos salvo 2–3 y hasta el final); saltar al final no cuenta. Se envían a `/l/mv` los hitos 25, 50, 80 y 100; el admin cuenta como visto solo el 100 y avisa a Chris en ese momento.
 - Enlace personal: `404growth.com/metodo?c=<id del lead>`. Va solo en la invitación de Google al reservar; en el admin › Landing (la ficha de cada visita que reservó) hay botones para mandarlo por WhatsApp o email. La página avisa a Chris cuando el lead la abre y cuando termina cada vídeo, y esa ficha muestra cuántos ha visto. (La página /admin/llamadas ya no existe.)
 
 - **Formato de los vídeos (desde el vídeo 1):** como el Ad 3. Intro a cámara en plano completo y después 50/50 hasta el final: Chris arriba (webcam, 1080×840) y abajo una pizarra tipo Miro en vídeo 1:1 (1080×1080, 25 fps, sin sonido) que él narra mientras la ve. Las pizarras se generan con `ads/metodo-pizarra/` (vídeo 1: `board.html`; vídeos 2–8: `motor/`, ver `LEEME.md`). Se entrega solo la pizarra limpia (sin franja de guion), PNG sin pérdida → x264 veryslow CRF 18. Los guiones (intro a cámara + frases con tiempo) están en el doc «Guiones de /metodo · cámara + pizarra».

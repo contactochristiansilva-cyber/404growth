@@ -183,7 +183,16 @@ h2{margin:0;font-size:clamp(30px,4.4vw,44px);font-weight:600;letter-spacing:-.04
 .ib svg{width:16px;height:16px}
 .pl-v{position:relative;flex:1;min-height:0;display:flex;justify-content:center}
 .pl-v video{display:block;width:100%;max-height:calc(100dvh - 150px);aspect-ratio:9/16;object-fit:contain;background:#000;border-radius:22px}
-.pl-end{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:26px;text-align:center;border-radius:22px;background:rgba(4,7,6,.86);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.pl-snd{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;margin:0;padding:24px;border:0;border-radius:22px;cursor:pointer;color:#fff;font:inherit;background:radial-gradient(75% 42% at 50% 50%,rgba(0,0,0,.45),rgba(0,0,0,0) 75%);-webkit-tap-highlight-color:transparent}
+.pl-snd[hidden]{display:none}
+.pl-snd .pill{position:relative;display:inline-flex;align-items:center;gap:10px;padding:15px 24px 15px 19px;border-radius:99px;background:#fff;color:#0B1311;font-family:var(--fd);font-size:17px;font-weight:600;letter-spacing:-.01em;box-shadow:0 18px 40px -16px rgba(0,0,0,.75);transition:transform .25s var(--ease)}
+.pl-snd .pill:before{content:"";position:absolute;inset:-6px;border-radius:99px;border:2px solid rgba(255,255,255,.6);animation:snd 1.8s var(--ease) infinite;pointer-events:none}
+.pl-snd:active .pill{transform:scale(.96)}
+.pl-snd svg{width:22px;height:22px}
+.pl-snd small{font-size:13px;font-weight:500;color:rgba(255,255,255,.9);text-shadow:0 1px 10px rgba(0,0,0,.65)}
+.pl-snd:focus-visible{outline:none}.pl-snd:focus-visible .pill{outline:2px solid var(--t2);outline-offset:6px}
+@keyframes snd{0%{opacity:.9;transform:scale(.97)}100%{opacity:0;transform:scale(1.18)}}
+.pl-end{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:26px;text-align:center;border-radius:22px;background:rgba(4,7,6,.86);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .pl-end[hidden]{display:none}
 .pl-end small{font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--t)}
 .pl-end b{font-family:var(--fd);font-size:22px;font-weight:600;letter-spacing:-.03em;line-height:1.2;max-width:300px}
@@ -199,7 +208,7 @@ html.lock,html.lock body{overflow:hidden}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform 1s var(--ease)}
 .rv.in{opacity:1;transform:none}
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.track{animation:none}.ring.go .fg{transition:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.track{animation:none}.ring.go .fg{transition:none}.pl-snd .pill:before{animation:none;opacity:0}}
 
 @media (max-width:900px){
  .hero{grid-template-columns:minmax(0,1fr);gap:30px;padding-top:26px}
@@ -232,6 +241,7 @@ html.lock,html.lock body{overflow:hidden}
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-play" viewBox="0 0 16 16"><path fill="currentColor" d="M4 2.6v10.8c0 .6.6.9 1.1.6l8.6-5.4c.5-.3.5-1 0-1.2L5.1 2c-.5-.3-1.1 0-1.1.6z"/></symbol>
+  <symbol id="i-snd" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M4 9.5h3.2L12 5.5v13l-4.8-4H4z"/><path d="M15.6 9.2a4 4 0 0 1 0 5.6M18.4 6.6a7.6 7.6 0 0 1 0 10.8"/></g></symbol>
   <symbol id="i-check" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3.2 8.4l3 3 6.6-6.8"/></symbol>
   <symbol id="i-x" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3.5 3.5l9 9m0-9l-9 9"/></symbol>
   <symbol id="i-l" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10 3L5 8l5 5"/></symbol>
@@ -253,7 +263,7 @@ html.lock,html.lock body{overflow:hidden}
         <span class="chip rv"><i></i><span id="chipt">Llamada confirmada</span></span>
         <h1 class="rv d1" id="h1">Antes de nuestra llamada, <span class="grad">lo que todos preguntan.</span></h1>
         <p class="lead rv d2" id="lead">Te he preparado 8 vídeos cortos con las dudas que tiene cualquier dueño de tienda antes de dar el paso. No hace falta verlos todos: <b>elige los tuyos y en la llamada hablamos solo de tu tienda.</b></p>
-        <div class="facts rv d3"><span><svg><use href="#i-cam"/></svg>8 vídeos cortos</span><span><svg><use href="#i-clock"/></svg><span id="tot">Unos 2 minutos cada uno</span></span><span><svg><use href="#i-check"/></svg>Sin registrarte</span></div>
+        <div class="facts rv d3"><span><svg><use href="#i-cam"/></svg>8 vídeos cortos</span><span><svg><use href="#i-clock"/></svg><span id="tot">Alrededor de 1 minuto cada uno</span></span><span><svg><use href="#i-check"/></svg>Sin registrarte</span></div>
       </div>
       <div class="call rv d2" id="call">
         <div class="who"><img src="/christian-hola.jpg" alt="Christian Silva" width="46" height="46"><div><b>Llamada con Christian</b><span>Fundador de 404 Growth</span></div></div>
@@ -326,7 +336,8 @@ html.lock,html.lock body{overflow:hidden}
   <div class="pl-in">
     <div class="pl-top"><span id="pln">1/8</span><b id="plt"></b><button class="ib" id="plx" type="button" aria-label="Cerrar"><svg><use href="#i-x"/></svg></button></div>
     <div class="pl-v">
-      <video id="plv" playsinline controls preload="metadata"></video>
+      <video id="plv" playsinline muted preload="metadata"></video>
+      <button class="pl-snd" id="plu" type="button" hidden><span class="pill"><svg><use href="#i-snd"/></svg>Activar audio</span><small>El vídeo empieza desde el principio</small></button>
       <div class="pl-end" id="ple" hidden>
         <svg class="ring" id="plr" viewBox="0 0 54 54" aria-hidden="true"><circle class="bg" cx="27" cy="27" r="24"/><circle class="fg" cx="27" cy="27" r="24"/></svg>
         <small id="pls">Siguiente</small><b id="plnt"></b>
@@ -349,14 +360,14 @@ fbq('init',id);fbq('track','PageView')})();</script>
      Para publicar uno: src = '/v/metodo/0N/index.m3u8' (HLS, ver CLAUDE.md) o un .mp4 de menos de 25 MB,
      poster = '/v/metodo/0N/poster.jpg' y dur = su duración real ('4:32'). Sin src, la tarjeta sale como «Muy pronto». */
   var V=[
-    {g:0,q:'«Mi tienda ya va bien, no lo necesito»',t:'¿Por qué tu próxima tienda debería ser online, y no otro local?',s:'Lo que cuesta abrir otro local frente a abrir tu tienda en internet, con números de ejemplo.',d:'≈2 min',src:'',poster:'',dur:''},
-    {g:1,q:'«No tengo tiempo, ya tengo bastante con la tienda»',t:'¿Cuánto tiempo te quita de verdad una tienda online?',s:'Qué haces tú y qué hacemos nosotros, durante los 15 días y después.',d:'≈2 min',src:'',poster:'',dur:''},
-    {g:1,q:'«No entiendo de tecnología»',t:'¿Cómo es una tienda online por dentro?',s:'Un pedido de principio a fin: el pago, el stock y el envío, sin tecnicismos.',d:'≈2 min',src:'',poster:'',dur:''},
-    {g:2,q:'«Abro la web y nadie entra»',t:'¿De dónde salen los clientes de una tienda online?',s:'Por qué abrir la web no basta y cómo llegan las visitas que compran.',d:'≈2 min',src:'',poster:'',dur:''},
-    {g:2,q:'«Es mucho dinero. ¿Y si no funciona?»',t:'¿Cuánto cuesta y cuánto te devuelve?',s:'Qué inversión hace falta, qué incluye y cómo se recupera.',d:'≈2 min',src:'',poster:'',dur:''},
-    {g:2,q:'«Ya tengo web, y no vende»',t:'¿Por qué tu web actual no vende?',s:'Los fallos más comunes de las webs de tienda y cómo se arreglan.',d:'≈2 min',src:'',poster:'',dur:''},
-    {g:3,q:'«Me la montan y me dejan tirado»',t:'¿Qué pasa después del día 15?',s:'Cómo seguimos contigo cuando tu tienda ya está abierta.',d:'≈2 min',src:'',poster:'',dur:''},
-    {g:3,q:'«¿Mi producto se puede vender online?»',t:'¿Tu producto se puede vender online?',s:'Qué funciona mejor online y qué hacer si lo tuyo es delicado o voluminoso.',d:'≈2 min',src:'',poster:'',dur:''}
+    {g:0,q:'«Mi tienda ya va bien, no lo necesito»',t:'¿Por qué tu próxima tienda debería ser online, y no otro local?',s:'Lo que cuesta abrir otro local frente a abrir tu tienda en internet, con números de ejemplo.',d:'1:28',src:'/v/metodo/01/index.m3u8',poster:'/v/metodo/01/poster.jpg',dur:'1:28'},
+    {g:1,q:'«No tengo tiempo, ya tengo bastante con la tienda»',t:'¿Cuánto tiempo te quita de verdad una tienda online?',s:'Qué haces tú y qué hacemos nosotros, durante los 15 días y después.',d:'1:10',src:'/v/metodo/02/index.m3u8',poster:'/v/metodo/02/poster.jpg',dur:'1:10'},
+    {g:1,q:'«No entiendo de tecnología»',t:'¿Cómo es una tienda online por dentro?',s:'Un pedido de principio a fin: el pago, el stock y el envío, sin tecnicismos.',d:'0:57',src:'/v/metodo/03/index.m3u8',poster:'/v/metodo/03/poster.jpg',dur:'0:57'},
+    {g:2,q:'«Abro la web y nadie entra»',t:'¿De dónde salen los clientes de una tienda online?',s:'Por qué abrir la web no basta y cómo llegan las visitas que compran.',d:'1:10',src:'/v/metodo/04/index.m3u8',poster:'/v/metodo/04/poster.jpg',dur:'1:10'},
+    {g:2,q:'«Es mucho dinero. ¿Y si no funciona?»',t:'¿Cuánto cuesta y cuánto te devuelve?',s:'Qué inversión hace falta, qué incluye y cómo se recupera.',d:'1:22',src:'/v/metodo/05/index.m3u8',poster:'/v/metodo/05/poster.jpg',dur:'1:22'},
+    {g:2,q:'«Ya tengo web, y no vende»',t:'¿Por qué tu web actual no vende?',s:'Los fallos más comunes de las webs de tienda y cómo se arreglan.',d:'0:59',src:'/v/metodo/06/index.m3u8',poster:'/v/metodo/06/poster.jpg',dur:'0:59'},
+    {g:3,q:'«Me la montan y me dejan tirado»',t:'¿Qué pasa después del día 15?',s:'Cómo seguimos contigo cuando tu tienda ya está abierta.',d:'0:53',src:'/v/metodo/07/index.m3u8',poster:'/v/metodo/07/poster.jpg',dur:'0:53'},
+    {g:3,q:'«¿Mi producto se puede vender online?»',t:'¿Tu producto se puede vender online?',s:'Qué funciona mejor online y qué hacer si lo tuyo es delicado o voluminoso.',d:'1:05',src:'/v/metodo/08/index.m3u8',poster:'/v/metodo/08/poster.jpg',dur:'1:05'}
   ];
   var G=['¿Merece la pena?','¿Puedo yo con esto?','¿Va a funcionar?','¿Me fío?'];
   var COL=[['rgba(111,194,166,.55)','rgba(15,59,49,.9)'],['rgba(217,201,160,.45)','rgba(70,58,30,.8)'],['rgba(120,170,220,.42)','rgba(20,40,70,.85)'],['rgba(200,140,120,.42)','rgba(70,30,22,.85)']];
@@ -373,7 +384,7 @@ fbq('init',id);fbq('track','PageView')})();</script>
   var P=new URLSearchParams(location.search),B=null;try{B=JSON.parse(sessionStorage.getItem('c404bk')||'null')}catch(e){}
   var C=(P.get('c')||(B&&B.c)||'').trim();if(!/^L[A-Za-z0-9_-]{6,14}$/.test(C))C='';
   var S={name:(P.get('n')||(B&&B.name)||'').trim().slice(0,40),start:P.get('t')||(B&&B.start)||'',join:(B&&B.join)||''};
-  var seen=ls('c404met')||{},pos=ls('c404metp')||{};   /* seen: % visto de cada vídeo; pos: segundo donde se quedó */
+  var seen=ls('c404met')||{};   /* seen: % de cada vídeo visto con el audio activado (100 = entero) */
 
   function fmt(o,dt){return new Intl.DateTimeFormat('es-ES',Object.assign({timeZone:TZ},o)).format(dt)}
   function drawCall(){
@@ -428,7 +439,7 @@ fbq('init',id);fbq('track','PageView')})();</script>
   /* ---------- las tarjetas ---------- */
   var PLAY='<svg><use href="#i-play"/></svg>',CHECK='<svg><use href="#i-check"/></svg>';
   function card(i,feat){
-    var v=V[i],p=seen[i]||0,s=p>=80,soon=!v.src,r=!s&&pos[i]&&!soon?Math.min(95,Math.round(pos[i]/(v.sec||1)*100)):0,c=COL[v.g];
+    var v=V[i],p=seen[i]||0,s=p>=100,soon=!v.src,r=!s&&!soon&&p>0?Math.min(97,p):0,c=COL[v.g];
     return '<button type="button" class="vc'+(s?' seen':'')+(soon?' soon':'')+'" data-i="'+i+'"'+(soon?' aria-disabled="true"':'')+' aria-label="'+esc((i+1)+'. '+v.t+(soon?' (muy pronto)':s?' (visto)':''))+'">'+
       (v.poster?'<span class="ph" style="background-image:url(\''+esc(v.poster)+'\')"></span>':'<span class="ph gen" data-n="'+(i+1)+'" style="--c1:'+c[0]+';--c2:'+c[1]+'"></span>')+
       '<span class="top2"><span class="num">'+(i+1)+'/'+V.length+'</span>'+(soon?'<span class="soonb">Muy pronto</span>':feat?'':'<span class="grp">'+esc(G[v.g])+'</span>')+'</span>'+
@@ -437,61 +448,74 @@ fbq('init',id);fbq('track','PageView')})();</script>
       (r?'<span class="rs"><i style="width:'+r+'%"></i></span>':'')+'</button>';
   }
   function draw(){
-    var first=-1,i;for(i=0;i<V.length;i++){if((seen[i]||0)<80&&V[i].src){first=i;break}}if(first<0)for(i=0;i<V.length;i++){if((seen[i]||0)<80){first=i;break}}if(first<0)first=0;
+    var first=-1,i;for(i=0;i<V.length;i++){if((seen[i]||0)<100&&V[i].src){first=i;break}}if(first<0)for(i=0;i<V.length;i++){if((seen[i]||0)<100){first=i;break}}if(first<0)first=0;
     var f=V[first],fs=!f.src;
     $('feat').innerHTML='<div class="feat rv in">'+card(first,true)+'<div class="ft"><span class="tag">'+(Object.keys(seen).length?'Sigue por aquí':'Empieza por aquí')+'</span><p class="q" style="margin-top:14px">'+esc(f.q)+'</p><h3>'+esc(f.t)+'</h3><p>'+esc(f.s)+'</p>'+
-      '<button class="btn" type="button" data-i="'+first+'"'+(fs?' disabled style="opacity:.5;pointer-events:none"':'')+'><svg><use href="#i-play"/></svg>'+(fs?'Muy pronto':(pos[first]?'Seguir viendo':'Ver ahora')+' · '+esc(f.dur||f.d))+'</button></div></div>';
+      '<button class="btn" type="button" data-i="'+first+'"'+(fs?' disabled style="opacity:.5;pointer-events:none"':'')+'><svg><use href="#i-play"/></svg>'+(fs?'Muy pronto':'Ver ahora'+' · '+esc(f.dur||f.d))+'</button></div></div>';
     var h='';V.forEach(function(v,i){h+=card(i,false)});$('grid').innerHTML=h;
     [].forEach.call(d.querySelectorAll('[data-i]'),function(b){b.onclick=function(){open(+b.getAttribute('data-i'))}});
-    var n=V.filter(function(v,i){return (seen[i]||0)>=80}).length,ready=V.filter(function(v){return v.src}).length;
+    var n=V.filter(function(v,i){return (seen[i]||0)>=100}).length,ready=V.filter(function(v){return v.src}).length;
     $('pc').textContent=n+' de '+V.length+' vistos';$('pbar').style.width=(n/V.length*100)+'%';
-    var nx=-1;for(var j=0;j<V.length;j++){if((seen[j]||0)<80&&V[j].src){nx=j;break}}
+    var nx=-1;for(var j=0;j<V.length;j++){if((seen[j]||0)<100&&V[j].src){nx=j;break}}
     $('pm').textContent=n===V.length?'Todo visto. Nos vemos en la llamada':!ready?'Los subo en breve':nx>-1?'Siguiente: el '+(nx+1):'El resto, muy pronto';
   }
 
-  /* ---------- el reproductor ---------- */
-  var pl=$('pl'),vid=$('plv'),cur=-1,hls=null,hlsP=null,ring=null,fromHash=false,MS=[25,50,80,100];
+  /* ---------- el reproductor ----------
+     Cada vídeo arranca sin sonido, en bucle y con «Activar audio» encima. Al tocarlo vuelve al principio con sonido.
+     Activado una vez, los siguientes ya empiezan con sonido (si el navegador no lo deja, vuelve a salir el botón).
+     Solo cuenta lo visto con sonido, segundo a segundo: «Visto» = verlo entero (casi todos los segundos y hasta el final). */
+  var pl=$('pl'),vid=$('plv'),snd=$('plu'),cur=-1,hls=null,hlsP=null,ring=null,fromHash=false,MS=[25,50,80],AUD=false,act=false,W=[];
   function loadHls(){return hlsP||(hlsP=new Promise(function(ok,ko){var s=d.createElement('script');s.src='/v/hls.light.min.js';s.onload=ok;s.onerror=ko;d.head.appendChild(s)}))}
   function attach(src){
     if(hls){hls.destroy();hls=null}
     if(/\.m3u8(\?|$)/.test(src)&&!vid.canPlayType('application/vnd.apple.mpegurl')){
-      return loadHls().then(function(){if(window.Hls&&Hls.isSupported()){hls=new Hls({capLevelToPlayerSize:true});hls.loadSource(src);hls.attachMedia(vid)}else vid.src=src})}
+      return loadHls().then(function(){if(window.Hls&&Hls.isSupported()){hls=new Hls({capLevelToPlayerSize:false,abrEwmaDefaultEstimate:5e6});hls.loadSource(src);hls.attachMedia(vid)}else vid.src=src})}
     vid.src=src;return Promise.resolve();
   }
   function nextOf(i,k){for(var j=i+k;j>=0&&j<V.length;j+=k){if(V[j].src)return j}return -1}
+  function preview(){act=false;W=[];vid.loop=true;vid.controls=false;vid.muted=true;snd.hidden=false}
+  function live(){act=true;W=[];vid.loop=false;vid.controls=true;snd.hidden=true}
+  function go(){var p=vid.play();if(p&&p.catch)p.catch(function(e){if(e&&e.name==='NotAllowedError'&&!vid.muted){preview();var q=vid.play();if(q&&q.catch)q.catch(function(){})}})}
+  function unmute(){if(cur<0)return;AUD=true;live();vid.muted=false;try{vid.currentTime=0}catch(e){}go()}
+  snd.onclick=unmute;
+  vid.addEventListener('volumechange',function(){if(cur>-1&&!act&&!vid.muted)unmute()});
   function open(i,noPush){
     var v=V[i];if(!v||!v.src)return;cur=i;hideEnd();
     $('pln').textContent=(i+1)+'/'+V.length;$('plt').textContent=v.t;
     $('plp').disabled=nextOf(i,-1)<0;$('pln2').disabled=nextOf(i,1)<0;
     vid.poster=v.poster||'';
-    attach(v.src).then(function(){
-      var at=pos[i]||0;if(at>5&&(seen[i]||0)<100){var go=function(){try{if(vid.duration&&at<vid.duration-8)vid.currentTime=at}catch(e){}vid.removeEventListener('loadedmetadata',go)};vid.addEventListener('loadedmetadata',go)}
-      var pr=vid.play();if(pr&&pr.catch)pr.catch(function(){});
-    });
+    if(AUD){live();vid.muted=false}else preview();
+    attach(v.src).then(function(){try{vid.currentTime=0}catch(e){}go()});
     if(pl.hidden){pl.hidden=false;d.documentElement.classList.add('lock');requestAnimationFrame(function(){pl.classList.add('on')});
       if(!noPush){try{history.pushState({v:i},'','#v'+(i+1))}catch(e){}}}
     else{try{history.replaceState({v:i},'','#v'+(i+1))}catch(e){}}
-    setTimeout(function(){$('plx').focus()},60);
+    setTimeout(function(){try{(snd.hidden?$('plx'):snd).focus({preventScroll:true})}catch(e){}},60);
   }
   function close(fromPop){
-    if(pl.hidden)return;vid.pause();savePos();pl.classList.remove('on');d.documentElement.classList.remove('lock');hideEnd();
+    if(pl.hidden)return;vid.pause();act=false;pl.classList.remove('on');d.documentElement.classList.remove('lock');hideEnd();
     setTimeout(function(){pl.hidden=true;if(hls){hls.destroy();hls=null}vid.removeAttribute('src');vid.load()},280);
     if(!fromPop){if(history.state&&history.state.v!=null)history.back();else try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}}
     draw();
   }
-  function savePos(){if(cur<0||!vid.duration)return;V[cur].sec=vid.duration;pos[cur]=vid.currentTime>=vid.duration-3?0:Math.floor(vid.currentTime);ls('c404metp',pos)}
+  function got(){var n=Math.ceil(vid.duration||0),g=0;for(var k=0;k<n;k++)if(W[k])g++;return [g,n]}
   function mark(p){
-    var was=seen[cur]||0;if(p<=was)return;
-    var hit=MS.filter(function(m){return was<m&&p>=m}).pop();seen[cur]=Math.max(was,p);
-    if(hit||p>=100){ls('c404met',seen);if(C)post('mv',{c:C,i:cur,p:hit||p}).catch(function(){})}
+    var was=seen[cur]||0;if(p<=was)return;seen[cur]=p;ls('c404met',seen);
+    var hit=p>=100?100:MS.filter(function(m){return was<m&&p>=m}).pop();
+    if(hit&&C)post('mv',{c:C,i:cur,p:hit}).catch(function(){});
   }
-  vid.addEventListener('timeupdate',function(){if(cur<0||!vid.duration)return;V[cur].sec=vid.duration;mark(Math.floor(vid.currentTime/vid.duration*100));
-    if(Math.floor(vid.currentTime)%5===0)savePos()});
-  vid.addEventListener('ended',function(){mark(100);pos[cur]=0;ls('c404metp',pos);showEnd()});
-  vid.addEventListener('pause',savePos);
+  vid.addEventListener('timeupdate',function(){
+    if(cur<0||!act||vid.paused||vid.seeking||!vid.duration)return;
+    var n=Math.ceil(vid.duration),s=Math.floor(vid.currentTime);if(s<n)W[s]=1;
+    var c=got();mark(Math.min(99,Math.floor(c[0]/c[1]*100)));
+  });
+  vid.addEventListener('ended',function(){
+    if(cur<0||!act)return;
+    var c=got();if(c[1]&&c[0]>=c[1]-Math.max(2,Math.ceil(c[1]*.03)))mark(100);
+    showEnd();
+  });
   function showEnd(){
     var n=nextOf(cur,1),e=$('ple');e.hidden=false;
-    if(n<0){$('plr').style.display='none';$('pls').textContent=(V.filter(function(v,i){return (seen[i]||0)>=80}).length===V.length)?'Todo visto':'Hecho';
+    if(n<0){$('plr').style.display='none';$('pls').textContent=(V.filter(function(v,i){return (seen[i]||0)>=100}).length===V.length)?'Todo visto':'Hecho';
       $('plnt').textContent='Nos vemos en la llamada.';$('plgo').textContent='Volver a los vídeos';$('plgo').onclick=function(){close()};$('plno').style.display='none';return}
     $('plr').style.display='';$('pls').textContent='Siguiente';$('plnt').textContent=V[n].t;$('plgo').textContent='Ver ahora';$('plno').style.display='';
     $('plgo').onclick=function(){open(n)};$('plno').onclick=hideEnd;
@@ -499,12 +523,11 @@ fbq('init',id);fbq('track','PageView')})();</script>
   }
   function hideEnd(){clearTimeout(S.auto);$('ple').hidden=true;var r=$('plr');if(r)r.classList.remove('go')}
   $('plx').onclick=function(){close()};
-  $('plp').onclick=function(){var n=nextOf(cur,-1);if(n>-1){savePos();open(n)}};
-  $('pln2').onclick=function(){var n=nextOf(cur,1);if(n>-1){savePos();open(n)}};
+  $('plp').onclick=function(){var n=nextOf(cur,-1);if(n>-1)open(n)};
+  $('pln2').onclick=function(){var n=nextOf(cur,1);if(n>-1)open(n)};
   pl.addEventListener('click',function(e){if(e.target===pl)close()});
   d.addEventListener('keydown',function(e){if(pl.hidden)return;if(e.key==='Escape')close();else if(e.key==='ArrowRight'&&e.target.tagName!=='VIDEO')$('pln2').click();else if(e.key==='ArrowLeft'&&e.target.tagName!=='VIDEO')$('plp').click()});
   addEventListener('popstate',function(e){var st=e.state;if(st&&st.v!=null&&V[st.v]&&V[st.v].src)open(st.v,true);else close(true)});
-  addEventListener('pagehide',savePos);
 
   /* ---------- tiendas ---------- */
   var tr=$('track'),sh=SHOPS.concat(SHOPS).map(function(k){return '<div class="shop" style="background-image:url(\'/demos/cards/'+k+'.webp\')"></div>'}).join('');tr.innerHTML=sh;
