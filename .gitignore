@@ -11,3 +11,6 @@ _to_delete/
 *.png
 *.mp4
 *.pdf
+
+# clave de Apimart (nunca al repositorio)
+.ak

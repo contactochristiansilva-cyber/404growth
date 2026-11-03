@@ -77,3 +77,9 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Debajo, «Lo demás, lo hacemos nosotros»: los cambios grandes (diseño, categorías, pagos y envíos, dominio y apps, TPV, devoluciones, legal, Instagram Shopping, píxel y anuncios, subidas masivas) los hace siempre Chris. El botón abre el chat con el texto puesto.
 - Textos en `SH` (es/en) dentro de `PAGES.portal`. Los rótulos entre «» son los del panel de Shopify en español, comprobados en help.shopify.com/es el 3/11/2026; si Shopify los cambia, se cambian ahí. No sale en portales con plan propio (`PL`, como Open Fit). En Inicio sale una tarjeta con las guías cuando la tienda ya está abierta.
 - El chat «Pregúntame» lo sabe (`BOT_FACTS`): explica lo básico en dos o tres pasos y manda a la guía; los cambios grandes se los pasa a Chris.
+
+## Propuestas de tienda online con Apimart (lote 31)
+
+- Generador en `prospeccion/lote31/` (ver `LEEME.md`): formato del lote 30, con todas las fotos de la tienda (hero, productos, ficha, categorías y banner) hechas con Apimart a partir de sus productos reales de Instagram. Nano Banana Pro (`gemini-3-pro-image-preview`) a 2K cuesta 0,02 $ por imagen; 15 por tienda.
+- Se publican en `404growth.com/p/<slug>/` (archivos en `web117-404growth/`, líneas en `_redirects`). Los botones van a `/book` con `utm_campaign=<slug>`, no a Calendly. El plan de la propuesta es el de 15 días del portal.
+- Las fotos descargadas de Instagram solo sirven de referencia: cuando las propuestas están publicadas se borran del Mac (Chris solo quiere `subir.command` y las imágenes de IA).
