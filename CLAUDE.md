@@ -68,3 +68,12 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - **Cliente:** email semanal los lunes (días 1–15, `weekCron`, tabla `wrep`); email de apertura al marcar «live» como hecho (`openMail`, `clients.opened`); satisfacción días 7 y 15 y testimonio si la nota es alta (`csat`); contrato firmado por los dos en el portal (`pkContract`/`pkSign`, mismas tablas que las obras: `bcontract`, `bsign`; PDF por impresión).
 - Los días se cuentan como en el portal: el día de arranque es el día 0 y la tienda abre el día 15.
 - Esquema nuevo: `v48Ready` (tablas `mevents`, `mads`, `wrep`, `csat` y columnas de `ll` y `clients`).
+- Meta quedó conectado el 3/11/2026: el token de la API de conversiones salió del píxel (Configuración › «Generar identificador de acceso»); el del gasto, del usuario del sistema «Conversions API System User» con la app «404 Growth Admin» (caso de uso «Mide los datos de rendimiento de tus anuncios», permiso `ads_read`, sin caducidad). El código de prueba se deja vacío.
+
+## Guías de Shopify en el portal (v49)
+
+- En «Tu tienda» (vista `entrega`), sección «Aprende a usar tu tienda»: 9 guías paso a paso, en el ordenador y en el móvil, de lo básico que hace el cliente solo: entrar, añadir un producto, cambiar fotos, precio u oferta («Precio de comparación»), código de descuento, stock, ocultar o archivar, preparar un pedido e imagen de la portada.
+- Cada guía tiene su dirección `#entrega/<clave>` (`entrar`, `producto`, `fotos`, `precio`, `descuento`, `stock`, `ocultar`, `pedido`, `portada`); `#entrega/aprende` baja a la lista. Las vistas se marcan en el navegador del cliente.
+- Debajo, «Lo demás, lo hacemos nosotros»: los cambios grandes (diseño, categorías, pagos y envíos, dominio y apps, TPV, devoluciones, legal, Instagram Shopping, píxel y anuncios, subidas masivas) los hace siempre Chris. El botón abre el chat con el texto puesto.
+- Textos en `SH` (es/en) dentro de `PAGES.portal`. Los rótulos entre «» son los del panel de Shopify en español, comprobados en help.shopify.com/es el 3/11/2026; si Shopify los cambia, se cambian ahí. No sale en portales con plan propio (`PL`, como Open Fit). En Inicio sale una tarjeta con las guías cuando la tienda ya está abierta.
+- El chat «Pregúntame» lo sabe (`BOT_FACTS`): explica lo básico en dos o tres pasos y manda a la guía; los cambios grandes se los pasa a Chris.
