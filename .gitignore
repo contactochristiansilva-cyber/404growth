@@ -16,3 +16,4 @@ web117-404growth/v/metodo/
 
 # clave de Apimart (nunca al repositorio)
 .ak
+__pycache__/
