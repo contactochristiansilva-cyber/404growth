@@ -1,0 +1,119 @@
+{
+  "slug": "guia/requisitos-legales-tienda-online",
+  "type": "guia",
+  "title": "Requisitos legales de una tienda online en España | 404 Growth",
+  "h1": "Requisitos legales de una tienda online si ya tienes tienda física",
+  "descr": "Requisitos legales de una tienda online en España si ya tienes tienda física: aviso legal, devoluciones de 14 días, garantía, cookies, privacidad e IVA.",
+  "kicker": "Legal",
+  "lead": "Si ya tienes tienda física, ya eres autónomo o empresa. Estos son los requisitos legales que añade la tienda online, con sus fuentes oficiales. No es asesoramiento legal: confírmalo con tu gestoría.",
+  "kw": [
+    "requisitos legales tienda online",
+    "requisitos legales para abrir una tienda online en españa",
+    "aviso legal tienda online",
+    "ley devoluciones españa tienda online",
+    "politica de devoluciones tienda online",
+    "para abrir tienda online hay que ser autonomo",
+    "iva tienda online"
+  ],
+  "nav": "Legal",
+  "card": "Aviso legal, devoluciones, garantía, cookies, privacidad e IVA: lo que pide la ley a tu tienda online.",
+  "sections": [
+    {
+      "h2": "Requisitos legales de una tienda online: lo que ya tienes y lo que falta",
+      "md": "Esta guía no es asesoramiento legal ni fiscal. Resume lo que dicen las normas a noviembre de 2026 para que vayas a tu gestoría con las preguntas claras.\n\n**¿Para abrir una tienda online hay que ser autónomo?** Vender de forma habitual es una actividad económica, y para eso hay que estar dado de alta, como autónomo o como empresa. Si ya tienes tienda física, ya lo estás: no tienes que darte de alta otra vez. Pregunta a tu gestoría si conviene actualizar tu alta en Hacienda (el epígrafe de actividad) para la venta online.\n\nLos requisitos legales para abrir una tienda online en España, cuando ya tienes local, se reducen a lo propio de la web:\n\n- Aviso legal con tus datos.\n- Condiciones de venta y política de devoluciones.\n- Garantía de los productos.\n- Privacidad y cookies.\n- El IVA, sobre todo si vendes a otros países.\n\nAlgunos productos tienen normas propias: alimentación, alcohol, cosmética. Si vendes [productos gourmet](/tienda-online/gourmet), por ejemplo, revisa con tu gestoría o con el organismo de tu comunidad el etiquetado, el registro sanitario y la venta a menores antes de subirlos."
+    },
+    {
+      "h2": "Aviso legal de una tienda online: los datos obligatorios",
+      "md": "La Ley de Servicios de la Sociedad de la Información (LSSI, artículo 10) obliga a que tu web dé acceso fácil a estos datos:\n\n- Tu nombre o el de tu empresa, tu domicilio y un email u otro medio de contacto directo.\n- Tu NIF.\n- Los datos del Registro Mercantil, si tu empresa está inscrita.\n- Si tu actividad necesita autorización previa, los datos de esa autorización y del organismo que la supervisa.\n- Si ejerces una profesión regulada, tu colegio profesional y tu título.\n- Los precios, indicando si incluyen impuestos y, en su caso, los gastos de envío.\n- Los códigos de conducta a los que estés adherido, si los hay.\n\nPara vender, la LSSI pide además que expliques antes de la compra los pasos para comprar, si guardas el contrato, cómo corregir errores al rellenar el pedido y en qué idioma se contrata (artículo 27). Y que confirmes el pedido: por email en las 24 horas siguientes o en pantalla al terminar, si el cliente puede guardarlo (artículo 28).\n\nLa ley de consumidores añade un detalle que se olvida: el botón final tiene que dejar claro que ese clic obliga a pagar («pedido con obligación de pago» o una fórmula igual de clara). Si no, el cliente no queda obligado."
+    },
+    {
+      "h2": "Ley de devoluciones en España: 14 días para desistir",
+      "md": "En la venta online, el cliente tiene derecho a desistir, es decir, a devolver sin dar motivo, durante **14 días naturales desde que recibe el producto**. Lo esencial:\n\n- Tienes que informarle de ese derecho antes de la compra, con el modelo de formulario de desistimiento. Si no lo haces, el plazo se alarga 12 meses.\n- Tienes que devolverle el dinero, **incluido el envío estándar**, en un máximo de 14 días naturales desde que te dice que desiste, y con el mismo medio de pago. Puedes esperar a recibir el producto o la prueba de que lo ha enviado.\n- El cliente tiene otros 14 días naturales, desde que te comunica que desiste, para devolverte el producto. El envío de vuelta lo paga él solo si se lo avisaste.\n- Si el producto vuelve usado más allá de lo necesario para probarlo, el cliente responde de esa pérdida de valor.\n\n**Excepciones**, entre otras: productos personalizados o hechos a medida, productos perecederos, productos precintados que no se pueden devolver por higiene o salud una vez abiertos, y periódicos y revistas sueltos.\n\n**Botón de desistimiento.** Una directiva europea (la 2023/2673) prevé que, desde el 19 de junio de 2026, las tiendas online tengan una función visible para desistir («desistir del contrato aquí»), con un paso de confirmación y un acuse de recibo con fecha y hora. En julio de 2026 España aún no la había pasado a su ley. Pregunta a tu gestoría cómo está ahora.\n\n### Política de devoluciones de tu tienda online\nLa ley marca el mínimo. Puedes dar más: 30 días, cambios gratis o devolver en tu tienda física. Escríbelo claro en una página propia y enlázala desde cada ficha. Cómo organizar la logística, en la [guía de envíos](/guia/envios-tienda-online)."
+    },
+    {
+      "h2": "Garantía: 3 años en productos nuevos",
+      "md": "La garantía es otra cosa: cubre el producto que sale defectuoso o que no es como se anunciaba. Para compras desde el 1 de enero de 2022:\n\n- **Productos nuevos: 3 años.** Si el fallo aparece en los 2 primeros años desde la entrega, se presume que ya venía así.\n- **Segunda mano: no menos de 1 año.**\n- **Responde el vendedor**, o sea, tú: reparar, sustituir, rebajar el precio o devolver el dinero.\n\nDesistir es cambiar de opinión (14 días). La garantía es un defecto (3 años). En tu web, explícalos por separado para que el cliente no los confunda."
+    },
+    {
+      "h2": "Privacidad, cookies y emails",
+      "md": "- **Política de privacidad** (RGPD): qué datos pides, para qué, cuánto tiempo los guardas y cómo puede el cliente pedir que los borres. La Agencia Española de Protección de Datos (AEPD) tiene una herramienta gratuita para pequeños negocios, Facilita_RGPD, que te ayuda con el registro de actividades y los textos informativos.\n- **Cookies**: las que no son técnicas (estadísticas, publicidad, el píxel de Meta) solo se pueden activar si el cliente las acepta. Según la guía de la AEPD actualizada en 2023, rechazar tiene que ser igual de fácil que aceptar, con los dos botones al mismo nivel.\n- **Emails comerciales** (LSSI, artículo 21): necesitas permiso previo. La excepción son tus clientes, si les escribes de productos tuyos parecidos a los que compraron. En cada email, una forma sencilla y gratuita de darse de baja."
+    },
+    {
+      "h2": "IVA en la tienda online",
+      "md": "En España, cada producto lleva en la web el mismo IVA que en tu tienda física, y al cliente particular le enseñas el precio final, con impuestos.\n\n**Ventas a particulares de otros países de la UE.** Mientras esas ventas a distancia no pasen de 10.000 € al año (sin IVA), tributan en España, con IVA español. Por encima, aplicas el IVA del país del cliente. Para no darte de alta en cada país existe la Ventanilla Única (OSS): declaras y pagas ese IVA desde España. También puedes elegir el IVA del país de destino antes de llegar al límite.\n\n**Canarias** no aplica IVA, sino IGIC. Las ventas desde la Península se tratan como exportación exenta de IVA y la mercancía necesita documentación de aduana. Antes de activar envíos a Canarias, Ceuta o Melilla, pregúntalo a tu gestoría y a tu transportista.\n\nFacturas, modelos y plazos de cada declaración: con tu gestoría."
+    },
+    {
+      "h2": "Lista rápida antes de abrir",
+      "md": "- Aviso legal con tus datos y tu NIF.\n- Condiciones de venta: pasos de compra, precios con impuestos, envíos y plazos.\n- Política de devoluciones con los 14 días, el formulario y las excepciones que te afecten.\n- La garantía, explicada aparte.\n- Privacidad, aviso de cookies con botón de rechazar y casilla para el email.\n- Botón final de compra que deje claro que se paga.\n- Revisión de tu gestoría.\n\nCuando montamos una tienda en **404 Growth**, dejamos configurados los pagos, los envíos, la recogida en tienda y las compras de prueba, con la tienda a tu nombre. Los textos legales y el IVA llévalos a tu gestoría antes de abrir. Si te falta el resto del plan, está en [cómo pasar tu tienda física a online](/guia/pasar-tienda-fisica-a-online)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Qué necesito legalmente para abrir una tienda online si ya tengo tienda física?",
+      "a": "El alta ya la tienes. Te falta lo propio de la web: aviso legal, condiciones de venta, política de devoluciones, privacidad y cookies, y revisar el IVA si vendes fuera de España. Confírmalo con tu gestoría."
+    },
+    {
+      "q": "¿Es obligatorio aceptar devoluciones en una tienda online?",
+      "a": "En general, sí: el cliente tiene 14 días naturales desde que recibe el pedido para desistir sin dar motivo. Hay excepciones, como los productos personalizados, los perecederos o los precintados por higiene que se han abierto. Puedes dar más plazo, nunca menos."
+    },
+    {
+      "q": "¿Quién paga el envío de una devolución?",
+      "a": "El de vuelta lo paga el cliente si se lo avisaste antes de la compra; si no, lo pagas tú. El envío de ida, en su modalidad estándar, se devuelve siempre con el reembolso. Si tienes local, puedes ofrecer la devolución gratis en tienda."
+    },
+    {
+      "q": "¿Necesito aviso de cookies en mi tienda online?",
+      "a": "Si usas cookies que no son técnicas, como las de estadísticas, publicidad o el píxel de Meta, sí. El cliente tiene que poder aceptarlas o rechazarlas con la misma facilidad. Las técnicas, como las del carrito, no necesitan consentimiento."
+    },
+    {
+      "q": "¿Qué IVA cobro si vendo a Francia o a Alemania?",
+      "a": "Mientras tus ventas a particulares de otros países de la UE no pasen de 10.000 € al año sin IVA, puedes aplicar IVA español. Por encima, aplicas el IVA del país del cliente y lo declaras desde España por la Ventanilla Única (OSS). Tu gestoría te dirá cómo darte de alta en ella."
+    }
+  ],
+  "related": [
+    "/guia/pasar-tienda-fisica-a-online",
+    "/guia/envios-tienda-online",
+    "/guia/cuanto-cuesta-una-tienda-online"
+  ],
+  "sources": [
+    {
+      "t": "BOE: Ley 34/2002, de servicios de la sociedad de la información y de comercio electrónico (LSSI), texto consolidado",
+      "u": "https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758"
+    },
+    {
+      "t": "BOE: Real Decreto Legislativo 1/2007, Ley General para la Defensa de los Consumidores y Usuarios, texto consolidado (actualizado el 28 de febrero de 2026)",
+      "u": "https://boe.es/eli/es/rdlg/2007/11/16/1/con"
+    },
+    {
+      "t": "Consumo Responde (Junta de Andalucía): derecho de desistimiento en contratos a distancia (consultado el 4 de noviembre de 2026)",
+      "u": "https://www.consumoresponde.es/art%C3%ADculos/derecho_de_desistimiento_en_contratos_distancia_y_contratos_fuera_de_establecimiento"
+    },
+    {
+      "t": "Centro Europeo del Consumidor en España (Ministerio de Consumo): garantías en compras online",
+      "u": "https://portal-cec.consumo.gob.es/es/informacion-general/compras-online/garantias"
+    },
+    {
+      "t": "OCU: nota de prensa sobre el botón de desistimiento (19 de junio de 2026)",
+      "u": "https://www.ocu.org/organizacion/prensa/notas-de-prensa/2026/normabotondesistimiento190626"
+    },
+    {
+      "t": "EUR-Lex: Directiva (UE) 2023/2673",
+      "u": "https://eur-lex.europa.eu/eli/dir/2023/2673/oj"
+    },
+    {
+      "t": "AEPD: orientación a pymes y herramienta Facilita_RGPD",
+      "u": "https://www.aepd.es/derechos-y-deberes/cumple-tus-deberes/directrices-de-aplicacion/pymes"
+    },
+    {
+      "t": "Cuatrecasas: entra en vigor el nuevo criterio de la AEPD sobre el uso de cookies (11 de enero de 2024)",
+      "u": "https://www.cuatrecasas.com/es/spain/propiedad-intelectual/art/entra-vigor-nuevo-criterio-aepd-uso-de-cookies"
+    },
+    {
+      "t": "Agencia Tributaria: Manual práctico de IVA 2025, regímenes especiales de ventas a distancia (Ventanilla Única)",
+      "u": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-iva-2025/capitulo-06-regimenes-especiales-iva/reg-espec-ventas-distancia-entreg-servic.html"
+    },
+    {
+      "t": "Legálitas: el tratamiento del IVA en las operaciones con Canarias",
+      "u": "https://www.legalitas.com/actualidad/iva-operaciones-empresas-canarias"
+    }
+  ]
+}

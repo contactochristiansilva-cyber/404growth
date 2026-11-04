@@ -1,0 +1,91 @@
+{
+  "slug": "guia/sincronizar-stock-tienda-fisica-y-online",
+  "type": "guia",
+  "title": "Cómo sincronizar stock de tienda física y online | 404 Growth",
+  "h1": "Sincronizar el stock de tu tienda física y online",
+  "descr": "Cómo sincronizar el stock de tu tienda física y online: Shopify POS, conectar tu TPV con Shopify o stock de seguridad. Qué elegir y qué preguntar antes.",
+  "kicker": "Stock y TPV",
+  "lead": "Vender online la última unidad que acabas de vender en el mostrador es el miedo número uno. Así puedes sincronizar el stock de tu tienda física y online según el TPV que tengas y lo que muevas cada día.",
+  "kw": [
+    "sincronizar stock tienda fisica y online",
+    "tpv tienda fisica y online",
+    "tpv con tienda online",
+    "conectar tpv con shopify",
+    "shopify pos españa",
+    "gestion stock tienda fisica y online",
+    "inventario tienda fisica y online"
+  ],
+  "nav": "Stock",
+  "card": "Shopify POS, conectar tu TPV o stock de seguridad: cómo no vender dos veces la misma unidad.",
+  "sections": [
+    {
+      "h2": "El problema: un mismo producto en dos escaparates",
+      "md": "En cuanto abres la web, cada producto se vende en dos sitios a la vez. Si solo te queda un bolso y lo vendes en la tienda a las 11:00, la web tiene que saberlo antes de que alguien lo compre a las 11:05. Si no, toca llamar al cliente, disculparte y devolverle el dinero. Tiene arreglo, pero queda mal.\n\nLa gestión del stock de tienda física y online depende de tres cosas:\n\n- **Tu TPV**: si es el mismo sistema que la web, si se puede conectar o si no hay forma.\n- **Cuántas referencias** tienes y cuántas unidades de cada una.\n- **Lo rápido que se mueven**: no es lo mismo una joyería con piezas únicas que una papelería con cajas de 50 bolígrafos.\n\nAntes de elegir, haz el trabajo que sirve para todas las opciones: que cada producto, y cada talla o color, tenga una referencia única y, si puedes, su código de barras. Es el primer paso de [pasar tu tienda física a online](/guia/pasar-tienda-fisica-a-online)."
+    },
+    {
+      "h2": "Cómo sincronizar stock de tienda física y online: 3 formas",
+      "md": "| Opción | Cómo funciona | Para quién |\n|---|---|---|\n| Un solo sistema (Shopify POS) | La tienda y la web venden del mismo inventario | Si puedes cambiar de TPV o empiezas de cero |\n| Tu TPV conectado | Tu TPV y la web se pasan el stock con una integración o un conector | Si tu TPV lo permite y no lo quieres cambiar |\n| Stock de seguridad | Publicas online menos unidades de las que tienes y ajustas a mano | Pocas referencias o poco movimiento |\n\nLas tres valen. La mejor es la que vas a mantener cada día sin que te cueste."
+    },
+    {
+      "h2": "Shopify POS en España: la tienda y la web en el mismo sistema",
+      "md": "Si buscas un TPV para tienda física y online a la vez, Shopify POS es el de Shopify: una app en iPad, iPhone o Android con la que cobras en el mostrador. La tienda física y la online venden del mismo inventario, así que lo que vendes en caja se descuenta de la web y al revés. Los pedidos y los clientes también quedan en el mismo sitio.\n\nLo que conviene saber:\n\n- Los planes de Shopify incluyen funciones básicas de venta en persona. **POS Pro** se paga aparte, por cada local, y añade lo que usa una tienda con equipo: permisos para empleados, cambios de producto, traspasos de stock e informes diarios de ventas.\n- En España puedes cobrar con tarjeta con Shopify Payments y el lector WisePad 3, disponible para tiendas españolas desde 2022.\n- Si tienes más de un local o un almacén, cada uno es una ubicación con su propio stock, y la web puede ofrecer recogida en la tienda que tenga el producto.\n\nEs la opción más limpia si tu TPV está viejo, si pagas una cuota que no te convence o si abres la web desde cero. El inconveniente: cambiar de TPV es cambiar costumbres, tuyas y de tu equipo, y hay que pasar el catálogo con referencias y códigos de barras."
+    },
+    {
+      "h2": "Conectar tu TPV con Shopify: qué preguntar antes",
+      "md": "Si estás contento con tu TPV, no hace falta cambiarlo. Algunos TPV tienen integración directa con Shopify, otros se conectan con una app de la tienda de apps de Shopify o con un conector de otra empresa, y otros no se pueden conectar. Antes de decidir, pregunta a tu proveedor:\n\n1. **¿Qué se sincroniza?** Solo el stock, o también productos, precios y pedidos.\n2. **¿En qué sentido?** Del TPV a la web, de la web al TPV o en los dos.\n3. **¿Cada cuánto?** Al momento o cada cierto tiempo. Si es cada hora, hay un hueco en el que puedes vender dos veces.\n4. **¿Cómo empareja los productos?** Por referencia (SKU) o por código de barras. Si tus productos no tienen referencia única, ese es el primer trabajo.\n5. **¿Funciona con tallas y colores?** Cada variante necesita su referencia y su stock.\n6. **¿Cuánto cuesta?** Algunas integraciones cobran su propia cuota mensual.\n\nAntes de conectar el catálogo entero, prueba con cinco productos: vende uno en tienda y comprueba que baja en la web, y al revés. Si tu TPV ya trae una tienda online propia, compárala con lo que necesitas: pagos, envíos, diseño y anuncios, no solo el stock."
+    },
+    {
+      "h2": "Sin conexión: stock de seguridad y una rutina diaria",
+      "md": "Si tu TPV no se conecta, o tienes pocas referencias, puedes llevar el inventario de la tienda física y la online a mano sin volverte loco:\n\n- **Publica online menos de lo que tienes.** Si tienes 4 unidades, pon 3 en la web. Esa unidad de margen cubre la venta de mostrador que aún no has apuntado.\n- **Piezas únicas**: en cuanto se venda en tienda, quítala de la web desde el móvil. Con la app de Shopify es un minuto.\n- **Dos repasos al día**: al abrir y al cerrar, revisa lo vendido en caja y ajusta la web.\n- **Stock solo para la web**, si te da tranquilidad: una caja o una estantería reservada, dada de alta en Shopify como otra ubicación.\n\nFunciona bien con pocas decenas de referencias. Cuando la web venda todos los días, plantéate conectar el TPV o cambiar a uno que comparta stock."
+    },
+    {
+      "h2": "Cómo lo hacemos en 404 Growth",
+      "md": "Cuando montamos una tienda en **404 Growth**, el stock es una de las cosas que dejamos configuradas. Si el TPV de tu tienda lo permite, sincronizamos el stock con la web; si no, lo dejamos preparado para llevarlo con stock de seguridad. Depende de tu TPV, y por eso lo miramos en la llamada de diagnóstico: conectar el TPV es una de las cosas que cambian el precio.\n\nLo básico, como cambiar el stock de un producto, lo aprendes con las guías de tu portal. Para el resto de la decisión, mira [cuánto cuesta una tienda online](/guia/cuanto-cuesta-una-tienda-online) y cómo funciona la [recogida en tienda](/guia/click-and-collect)."
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Se puede conectar cualquier TPV con Shopify?",
+      "a": "No. Algunos tienen integración directa, otros se conectan con una app o un conector y otros no tienen forma. Pregunta a tu proveedor qué sincroniza, en qué sentido y cada cuánto, y pruébalo con pocos productos antes de conectarlo todo."
+    },
+    {
+      "q": "¿Shopify POS funciona en España?",
+      "a": "Sí. Puedes usar la app de Shopify POS en iPad, iPhone o Android y cobrar con tarjeta con Shopify Payments y el lector WisePad 3, que se vende para España. Las funciones de tienda más completas están en POS Pro, que se paga por cada local."
+    },
+    {
+      "q": "¿Qué pasa si vendo online algo que ya no tengo?",
+      "a": "Avisas al cliente enseguida y le ofreces una alternativa o le devuelves el dinero completo. Si pasa alguna vez, no es grave. Si pasa a menudo, necesitas stock de seguridad o conectar el TPV."
+    },
+    {
+      "q": "¿Tengo que poner todo mi stock en la web?",
+      "a": "No. Puedes publicar solo una parte o reservar unas unidades para la web en otra ubicación. Lo que importa es que lo que se ve online exista de verdad."
+    },
+    {
+      "q": "¿Necesito códigos de barras para sincronizar el stock?",
+      "a": "No es imprescindible, pero ayuda. Lo que sí necesitas es que cada producto, y cada talla o color, tenga una referencia única. Con código de barras además cobras más rápido y te equivocas menos."
+    }
+  ],
+  "related": [
+    "/guia/click-and-collect",
+    "/guia/pasar-tienda-fisica-a-online",
+    "/guia/tienda-fisica-vs-tienda-online"
+  ],
+  "sources": [
+    {
+      "t": "Shopify Changelog: Shopify Payments for POS now available in Spain (1 de febrero de 2022)",
+      "u": "https://changelog.shopify.com/posts/shopify-payments-for-pos-now-available-in-spain"
+    },
+    {
+      "t": "Shopify: WisePad 3 Reader (Spain) (consultado el 4 de noviembre de 2026)",
+      "u": "https://www.shopify.com/eu/pos/store/products/wisepad-3-reader-es"
+    },
+    {
+      "t": "Ayuda de Shopify: Identify your POS needs, funciones de POS Pro (consultado el 4 de noviembre de 2026)",
+      "u": "https://help.shopify.com/en/manual/sell-in-person/getting-started/identify-your-pos-needs?locale=es"
+    },
+    {
+      "t": "Ayuda de Shopify: Setting up pickup in store for online orders (consultado el 4 de noviembre de 2026)",
+      "u": "https://help.shopify.com/en/manual/fulfillment/setup/delivery-methods/pickup-in-store"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "guia/por-que-mi-tienda-online-no-vende",
+  "type": "guia",
+  "title": "Por qué mi tienda online no vende y qué arreglar | 404 Growth",
+  "h1": "¿Por qué mi tienda online no vende?",
+  "descr": "¿Por qué mi tienda online no vende? Los cinco fallos típicos, cómo encontrar el tuyo mirando visitas, producto, carrito y pago, y qué arreglar primero.",
+  "kicker": "Diagnóstico",
+  "lead": "Si te preguntas por qué tu tienda online no vende, casi nunca es mala suerte: suele ser uno de cinco fallos. Aquí ves cómo encontrar el tuyo, en orden (visitas, producto, carrito, compra), y qué arreglar primero.",
+  "kw": ["por que mi tienda online no vende", "mi tienda online no vende", "tengo una tienda online y no vendo nada", "como hacer que mi tienda online venda", "como conseguir ventas en mi tienda online", "como atraer clientes a mi tienda online", "porque mi tienda de shopify no vende"],
+  "nav": "No vende",
+  "card": "Los cinco fallos que frenan las ventas y cómo encontrar el tuyo mirando visitas, carrito y pago.",
+  "sections": [
+    {
+      "h2": "Por qué mi tienda online no vende: los cinco fallos de siempre",
+      "md": "Cuando alguien dice «tengo una tienda online y no vendo nada», casi siempre aparece uno de estos cinco fallos. A veces, varios a la vez.\n\n1. **No se puede comprar.** La web enseña productos pero termina en «escríbenos» o «pide información». Quien quiere comprar a las once de la noche no va a esperar a que contestes.\n2. **Precio y talla escondidos.** Si hay que preguntar cuánto cuesta o qué tallas quedan, mucha gente se va sin preguntar.\n3. **Lenta en el móvil.** Si tus clientes llegan desde Instagram, llegan desde el móvil. Si la página tarda en cargar, se van antes de verla.\n4. **Pagar es un lío.** Registro obligatorio, pocas formas de pago, gastos de envío que aparecen al final, errores en el formulario.\n5. **Nadie la empuja.** La web está bien, pero nadie sabe que existe: no hay anuncios, no se enlaza desde Instagram y no se manda ningún email.\n\nLos cuatro primeros son problemas de la web. El quinto es de visitas. Saber cuál es el tuyo cambia por completo lo que tienes que hacer, y para eso hay que mirar los números."
+    },
+    {
+      "h2": "Antes de tocar nada, mira los números en este orden",
+      "md": "Una venta online pasa por cuatro escalones. Busca en cuál se te cae la gente:\n\n| Escalón | Qué mirar | Si se cae aquí, el problema es… |\n|---|---|---|\n| 1. Visitas | Cuántas personas entran a la semana | Que nadie la empuja |\n| 2. Producto | Cuántas añaden algo al carrito | La ficha: fotos, precio, talla, confianza |\n| 3. Carrito | Cuántas empiezan el pago | Costes sorpresa o dudas sin resolver |\n| 4. Compra | Cuántas terminan de pagar | El pago es un lío o da errores |\n\nSi tu tienda está en Shopify, el informe de conversión (en Análisis) te da justo estos cuatro datos: sesiones, sesiones con productos añadidos al carrito, sesiones que llegaron al pago y sesiones que completaron el pago. En otras plataformas, Google Analytics te da algo parecido.\n\nDos reglas para leerlo bien:\n\n- **Ve en orden.** Si entran 40 personas a la semana, da igual lo bonita que sea la ficha: primero hay que traer gente.\n- **Compárate contigo, no con medias de internet.** Lo útil es ver si, después de un cambio, esta semana mejora respecto a la anterior."
+    },
+    {
+      "h2": "Si no entra nadie: cómo atraer clientes a tu tienda online",
+      "md": "Una tienda online sin visitas es un local sin cartel en una calle por la que no pasa nadie. La buena noticia: tú ya tienes clientes. En una tienda física, las visitas salen de cuatro sitios:\n\n- **Tus clientes de siempre.** Un cartel con QR en el mostrador, una tarjeta en la bolsa, la web impresa en el ticket. Y dilo en voz alta: «si no te queda tu talla, te la mando a casa».\n- **Tu Instagram.** Enlace en la biografía, stories con enlace al producto, precio en las publicaciones. Lo contamos en [cómo vender por Instagram](/guia/vender-por-instagram).\n- **Anuncios en Instagram y Facebook.** Para llegar a gente que no te conoce, en tu ciudad o en toda España. Empieza con poco dinero y con lo que mejor vendes en la tienda.\n- **El email.** Pide el correo en el mostrador a cambio de algo útil (aviso de novedades, un detalle en la primera compra online) y escribe cuando haya algo que contar: novedades, rebajas, la vuelta de un producto agotado.\n\nEl posicionamiento en Google (SEO) también ayuda, pero tarda meses en dar resultado. No cuentes con él para las primeras ventas."
+    },
+    {
+      "h2": "Si entran pero no añaden al carrito: la ficha de producto",
+      "md": "Si tienes visitas pero casi nadie añade al carrito, el problema está en lo que ven. Revisa cada ficha como si fueras un cliente que no puede tocar el producto:\n\n- **Fotos de verdad.** Varias, con buena luz, de cerca y puesto o en uso. Que se vea el tamaño: en la mano, sobre una mesa, en una persona.\n- **Precio a la vista.** Nada de «consultar precio».\n- **Tallas y medidas.** Guía de tallas, medidas en centímetros y cómo queda («talla grande, coge una menos»). Es lo que dices en la tienda: escríbelo.\n- **Stock.** Si una talla no queda, que se vea antes de elegirla.\n- **Envío y devoluciones cerca del botón de comprar.** Cuánto cuesta, cuándo llega y cómo se devuelve. Más en la [guía de envíos](/guia/envios-tienda-online).\n- **Confianza.** Que se note que detrás hay una tienda de verdad: dirección, fotos del local, teléfono o WhatsApp.\n\nHaz esta prueba: dale tu móvil a un cliente de confianza, pídele que compre un producto concreto y no le ayudes. Mira dónde duda. Ahí está tu problema."
+    },
+    {
+      "h2": "Si añaden al carrito pero no pagan",
+      "md": "Llegar al carrito y no pagar suele tener una de estas causas:\n\n- **Gastos de envío que aparecen al final.** Dilos antes, en la ficha y en la barra de arriba de la web.\n- **Registro obligatorio.** Deja comprar sin crear cuenta.\n- **Pocas formas de pago.** Además de tarjeta, mucha gente en España quiere pagar con Bizum, Apple Pay o Google Pay. Si solo das transferencia, pierdes ventas.\n- **Errores.** Un código de descuento que no funciona, un campo de dirección que no deja poner el piso, un pago que falla en un móvil concreto.\n- **Dudas de última hora.** ¿Llega antes del sábado? ¿Puedo recogerlo en la tienda? Si la respuesta no está a la vista, se van a preguntarlo y no vuelven.\n\nCompra tú en tu propia tienda una vez al mes, desde el móvil, con tarjeta y con Bizum, como haría un cliente. Es la forma más rápida de encontrar estos fallos."
+    },
+    {
+      "h2": "Qué arreglar primero",
+      "md": "Si tienes varios problemas, este es el orden que recomendamos, de más a menos urgente:\n\n1. **Que se pueda comprar de principio a fin**, con pago en la web. Sin esto, lo demás no sirve.\n2. **Que pagar funcione en el móvil**, con tarjeta, Bizum y Apple Pay.\n3. **Precio, tallas, envío y devoluciones a la vista** en cada ficha.\n4. **Velocidad.** Quita lo que sobra: vídeos pesados en la portada, fotos enormes, aplicaciones que no usas. Puedes medirla gratis con PageSpeed Insights, de Google.\n5. **Empujarla cada semana:** Instagram, email y, cuando lo anterior esté bien, anuncios.\n\nFíjate en que los anuncios van al final. Pagar por llevar gente a una web que no convierte es tirar el dinero.\n\n### ¿Y si mi tienda de Shopify no vende?\n\nShopify no es el problema: es la herramienta. Cuando una tienda de Shopify no vende, suele ser por los mismos cinco fallos. Un fallo típico de Shopify es una plantilla cargada de aplicaciones que se instalaron para probar y nunca se quitaron, y que hacen la web más lenta. Revisa cuáles usas de verdad. Si dudas entre plataformas, mira [Shopify vs WooCommerce](/guia/shopify-vs-woocommerce)."
+    },
+    {
+      "h2": "Cómo lo hacemos en 404 Growth",
+      "md": "Cuando montamos una tienda en 404 Growth, los cuatro primeros fallos se resuelven antes de abrir: fichas con precio, tallas y stock; pagos con tarjeta, Bizum y Apple Pay; envíos y recogida en tienda; y pruebas de compra reales. Después viene lo que casi nadie hace: traer clientes con anuncios en Meta y email, medir desde el primer pedido y ajustar cada semana.\n\nNo prometemos ventas, porque dependen del producto, del precio y del mercado. Lo que sí hacemos es mirar los números contigo y cambiar lo que no funciona. Si ya tienes una tienda online que no vende, en la llamada de diagnóstico (gratis, 30 minutos, por videollamada) la miramos juntos."
+    }
+  ],
+  "faq": [
+    {"q": "¿Por qué tengo visitas pero no ventas en mi tienda online?", "a": "Porque algo falla entre la ficha de producto y el pago. Mira cuánta gente añade al carrito y cuánta llega a pagar. Si casi nadie añade, revisa fotos, precio y tallas; si añaden pero no pagan, revisa gastos de envío, formas de pago y errores en el móvil."},
+    {"q": "¿Cuánto tarda una tienda online en empezar a vender?", "a": "Depende sobre todo de cuánta gente le llevas. Una tienda física que avisa a sus clientes, la mueve en Instagram y manda emails puede recibir pedidos poco después de abrir. Una web que nadie conoce puede pasar meses sin vender, y el SEO por sí solo tarda meses."},
+    {"q": "¿Mi tienda de Shopify no vende por culpa de Shopify?", "a": "Casi nunca. Shopify es la plataforma; las ventas dependen de las fichas, el pago, la velocidad y las visitas. Revisa los cinco fallos típicos y las aplicaciones que tienes instaladas antes de pensar en cambiar de plataforma."},
+    {"q": "¿Hace falta pagar anuncios para vender online?", "a": "Para empezar, no: tus clientes de la tienda, tu Instagram y el email ya traen visitas. Los anuncios sirven para llegar a gente que no te conoce, pero conviene ponerlos cuando la web ya convierte. Si no, pagas por visitas que se van."},
+    {"q": "¿Cómo sé si mi tienda online va lenta en el móvil?", "a": "Ábrela desde tu móvil con datos, no con el wifi de la tienda, y fíjate en cuánto tarda en verse la primera foto. Para una medida más objetiva, usa PageSpeed Insights, de Google, que es gratis. Suelen pesar mucho las fotos sin comprimir, los vídeos en portada y las aplicaciones que sobran."}
+  ],
+  "related": ["/guia/vender-por-instagram", "/guia/envios-tienda-online", "/guia/pasar-tienda-fisica-a-online"],
+  "sources": [
+    {"t": "Shopify: informes de comportamiento y desglose de la tasa de conversión", "u": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/behaviour-reports"}
+  ]
+}

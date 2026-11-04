@@ -1,0 +1,54 @@
+{
+  "slug": "guia/click-and-collect",
+  "type": "guia",
+  "title": "Click and collect: la recogida en tienda | 404 Growth",
+  "h1": "Click and collect: vende online y entrega en tu mostrador",
+  "descr": "Click and collect para tu tienda física: por qué la recogida en tienda te da ventaja, cómo montarla en Shopify, cómo avisar al cliente y qué plazos dar.",
+  "kicker": "Recogida en tienda",
+  "lead": "El click and collect (comprar online y recoger en tienda) es la gran ventaja de quien ya tiene local: sin envíos, con ventas extra en el mostrador y devoluciones fáciles. Así se monta y así se avisa al cliente.",
+  "kw": ["click and collect", "recogida en tienda", "comprar online y recoger en tienda", "como hacer que mi tienda sea un punto de recogida", "shopify recogida en tienda", "ventajas del click and collect", "click and collect que es"],
+  "nav": "Recogida",
+  "card": "Por qué la recogida en tienda es tu mejor arma frente a las grandes tiendas online y cómo montarla bien.",
+  "sections": [
+    {
+      "h2": "Qué es el click and collect y por qué es tu gran ventaja",
+      "md": "**Click and collect** es comprar online y recoger en tienda. El cliente elige y paga en tu web, y pasa a por el pedido cuando le viene bien. En español lo verás como «recogida en tienda».\n\nUna tienda que solo vende por internet no puede ofrecerlo. Tú, que ya tienes local, sí. Es tu ventaja más clara frente a las grandes tiendas online:\n\n- **Cero coste de envío.** Ni agencia, ni embalaje, ni paquetes perdidos. Compáralo con todo lo que cuesta un [envío desde una tienda online](/guia/envios-tienda-online).\n- **Ventas extra en el mostrador.** El cliente entra a recoger y ve lo demás: el cinturón para el vestido, las pilas para el juguete, la vela que va con el jarrón.\n- **Devoluciones y cambios fáciles.** Si la talla no va, se prueba otra ahí mismo. Sin envíos de vuelta.\n- **Rapidez.** Si lo tienes en stock, puede estar listo en unas horas. Dentro de tu ciudad, ninguna agencia te gana.\n- **Confianza.** Hay quien prefiere comprar online a una tienda que puede visitar si algo sale mal.\n- **Pedido ya pagado.** Lo que apartas está cobrado, no como una reserva por teléfono que a veces nadie viene a buscar."
+    },
+    {
+      "h2": "Cómo montar la recogida en tienda en tu web",
+      "md": "Casi todas las plataformas tienen esta opción. En Shopify se llama **retiro en tienda** y se configura por cada local, en Configuración › Envío y entrega. Lo que decides ahí:\n\n- **Activar la recogida** en el local, o en cada local si tienes varios.\n- **El plazo de preparación** que verá el cliente al pagar.\n- **Las instrucciones de recogida**, que van en el email de pedido listo para recoger: horario, dirección y qué tiene que traer.\n\nCosas que conviene saber de cómo funciona en Shopify, según su centro de ayuda (noviembre de 2026):\n\n- Por defecto, solo se ofrece la recogida si **todo el pedido está en stock** en ese local.\n- En un mismo pedido, el cliente puede elegir unos productos para recoger y otros para enviar.\n- Solo ve puntos de recogida de su propio país.\n- Que la ficha de producto diga si se puede recoger en tienda depende de la plantilla: Dawn y las de la familia Horizon lo permiten.\n\nPara que todo esto sea fiable, la web tiene que saber lo que vendes en el mostrador. Si tu TPV se conecta, el stock se sincroniza solo; si no, hay que ajustarlo. Lo explicamos en [sincronizar el stock de la tienda física y la online](/guia/sincronizar-stock-tienda-fisica-y-online)."
+    },
+    {
+      "h2": "El día a día: del pedido al mostrador",
+      "md": "Un circuito sencillo que puede llevar cualquiera del equipo:\n\n1. **Entra el pedido.** Activa los avisos en el móvil o por email para no perderlo de vista.\n2. **Prepáralo y apártalo.** Bolsa cerrada con el número de pedido y el nombre, en una balda solo para recogidas, fuera del alcance del público.\n3. **Márcalo como listo para recoger.** Shopify envía al cliente el email de aviso con tus instrucciones.\n4. **Entrega.** Cuando venga, comprueba el número de pedido y el nombre, y dáselo.\n5. **Márcalo como recogido.** Así el pedido se cierra y tus números cuadran.\n\nEn Shopify, los pasos 3 y 5 se hacen desde el panel o desde la app del móvil. Si usas el TPV de Shopify y quieres llevar las recogidas desde la caja, necesitas el plan POS Pro en esa tienda.\n\nCuando montamos una tienda en 404 Growth, dejamos la recogida en tienda configurada junto con los envíos y hacemos un pedido de prueba con recogida antes de abrir, para que el aviso salga con tu horario y tu dirección. Después, preparar los pedidos es lo mismo que ya haces en el mostrador."
+    },
+    {
+      "h2": "Cómo avisar al cliente y qué plazos prometer",
+      "md": "El email de pedido listo es el momento más importante. Que diga, sin rodeos:\n\n- **Dirección y cómo llegar**, con enlace a Google Maps y, si ayuda, dónde aparcar.\n- **Horario de recogida**, incluido si cierras a mediodía o algún día de la semana.\n- **Qué traer:** el número de pedido o el email de compra, y el DNI si el pedido es caro o lo recoge otra persona.\n- **Cuánto tiempo lo guardas** y qué pasa después.\n\nSobre plazos, promete solo lo que puedas cumplir siempre, también el día que no hay nadie más en la tienda:\n\n- **Con stock en el local:** «listo en 2 horas» o «listo hoy si pides antes de las 13:00».\n- **Si hay que traerlo del almacén o de otro local:** «listo en 24-48 horas».\n- **Recordatorio:** si a los pocos días no ha venido, un segundo aviso por email o WhatsApp.\n\nDecide cuántos días guardas un pedido sin recoger y ponlo por escrito en las condiciones de la web y en el aviso. Deja claro también qué pasa si no lo recogen, por ejemplo que se cancela y se devuelve el dinero, y confirma la redacción con tu gestoría."
+    },
+    {
+      "h2": "Vender algo más cuando vienen a recoger",
+      "md": "La recogida es la única vez que un cliente online pisa tu tienda. Aprovéchala sin convertirla en una encerrona:\n\n- **Pon la zona de recogidas junto a productos que combinan.** Complementos junto a la ropa, tarjetas junto a los regalos, premios para perro junto a las correas.\n- **Ofrece probar.** «¿Quieres probártelo antes de irte?» evita una devolución y a veces acaba en otra talla o en otra prenda.\n- **Dale un motivo para volver.** Una muestra, un detalle para la próxima compra o la invitación a tu lista de email.\n- **Pregunta cómo ha ido la compra online.** Lo que te cuenten en el mostrador te dice qué falla en la web mejor que cualquier informe.\n\nY al revés: a quien compra en la tienda, cuéntale que puede pedir online y recoger. Es la forma más fácil de que tus clientes de siempre empiecen a usar la web."
+    },
+    {
+      "h2": "Que todo el mundo sepa que pueden recoger en tu tienda",
+      "md": "Si no lo cuentas, nadie lo usa:\n\n- **En la web:** en la barra de arriba («Recogida gratis en tienda en 2 horas»), en la ficha de producto y en el carrito.\n- **En Instagram:** una destacada «Recogida en tienda» y una mención cada vez que publiques novedades. Más ideas en [cómo vender por Instagram](/guia/vender-por-instagram).\n- **En el local:** un cartel en el escaparate y otro en el mostrador.\n- **En Google:** si usas el TPV de Shopify, puedes mandar tu stock a Google con la aplicación Google y YouTube y aparecer en las fichas locales gratuitas, las que ve la gente que busca cerca.\n\n### ¿Y ser punto de recogida de paquetes de otros?\n\nMucha gente busca «cómo hacer que mi tienda sea un punto de recogida» pensando en otra cosa: ser punto de entrega de empresas de transporte, donde los vecinos recogen paquetes de compras hechas en otras webs. Es un servicio distinto. Se solicita a la red de puntos de cada empresa, y conviene leer bien sus condiciones, el espacio que ocupa y lo que pagan por paquete. Atrae gente al local, pero no es lo mismo que vender lo tuyo."
+    }
+  ],
+  "faq": [
+    {"q": "¿Qué es el click and collect?", "a": "Es comprar online y recoger en tienda: el cliente compra y paga en la web y pasa a por el pedido al local. La tienda no paga envío y el cliente no espera a la agencia. También se llama recogida en tienda."},
+    {"q": "¿Puedo ofrecer recogida en tienda en Shopify sin usar su TPV?", "a": "Sí. La recogida se activa en la configuración de envíos de Shopify, y los pedidos se marcan como listos y recogidos desde el panel o la app del móvil. El plan POS Pro solo hace falta si quieres gestionar las recogidas desde el TPV de Shopify en la tienda."},
+    {"q": "¿Cobro el pedido online o cuando lo recogen?", "a": "Mejor online. Si pagan al recoger, corres el riesgo de apartar producto para alguien que no viene. Cobrar al hacer el pedido también evita colas en la caja."},
+    {"q": "¿Cuánto tiempo tengo que guardar un pedido sin recoger?", "a": "Lo decides tú, pero tiene que estar escrito en las condiciones de la web y en el email de aviso. Una o dos semanas, con un recordatorio a mitad de plazo, es razonable para la mayoría de productos. Confirma con tu gestoría cómo redactar qué pasa si no lo recogen."},
+    {"q": "¿Puede devolver en la tienda algo que compró online?", "a": "Sí, y es una de las ventajas de tener local: el cliente lo prueba, lo cambia o lo devuelve en el mostrador. Los derechos de las compras a distancia siguen valiendo: en general, 14 días naturales desde que tiene el producto. Indica en tu política de devoluciones que se puede hacer en la tienda."},
+    {"q": "¿Cómo hago que mi tienda sea un punto de recogida de paquetes?", "a": "Eso es ser punto de entrega de empresas de transporte, algo distinto del click and collect. Se solicita a la red de puntos de cada empresa, que tiene sus propias condiciones. Atrae gente al local, pero ocupa espacio y tiempo de mostrador."}
+  ],
+  "related": ["/guia/envios-tienda-online", "/guia/sincronizar-stock-tienda-fisica-y-online", "/guia/tienda-fisica-vs-tienda-online"],
+  "sources": [
+    {"t": "Shopify: configurar el retiro en tienda para pedidos online", "u": "https://help.shopify.com/en/manual/fulfillment/setup/delivery-methods/pickup-in-store"},
+    {"t": "Shopify: recogida local de pedidos online en Shopify POS (requiere POS Pro)", "u": "https://help.shopify.com/en/manual/sell-in-person/shopify-pos/order-management/local-pickup-for-online-orders"},
+    {"t": "Shopify: inventario local en Google (requisitos)", "u": "https://help.shopify.com/en/manual/online-sales-channels/marketplaces/google/shopping-on-google/local-inventory"},
+    {"t": "Google Merchant Center: ventajas de las fichas locales sin coste", "u": "https://support.google.com/merchants/answer/15310605?hl=es"},
+    {"t": "Centro Europeo del Consumidor en España: derecho de desistimiento (julio de 2026)", "u": "https://portal-cec.consumo.gob.es/sites/default/files/documentos/FOLLETO_DERECHO_DESISTIMIENTO_JULIO_2026_0.pdf"}
+  ]
+}
