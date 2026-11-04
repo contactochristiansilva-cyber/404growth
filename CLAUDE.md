@@ -86,6 +86,12 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Textos en `SH` (es/en) dentro de `PAGES.portal`. Los rótulos entre «» son los del panel de Shopify en español, comprobados en help.shopify.com/es el 3/11/2026; si Shopify los cambia, se cambian ahí. No sale en portales con plan propio (`PL`, como Open Fit). En Inicio sale una tarjeta con las guías cuando la tienda ya está abierta.
 - El chat «Pregúntame» lo sabe (`BOT_FACTS`): explica lo básico en dos o tres pasos y manda a la guía; los cambios grandes se los pasa a Chris.
 
+## Métricas del blog (v54, 4/11/2026)
+
+- En el admin: LinkedIn y blog › «Métricas del blog» (o `/admin#blog`). Visitas, leídos hasta el final, clics en «Reservar» y reservas, con 7/30/90 días y comparación con el periodo anterior (solo si antes hubo 5 o más), visitas por día, de dónde vienen y una tabla por artículo. En «Publicados» cada artículo lleva sus visitas desde el inicio.
+- Cada página del blog llama a `/l/bl` (`blHit`): `v` al abrirla, `r` al ver `#fin` (el final del artículo) y `c` al tocar un `a[data-cta]`. Sin cookies ni nada guardado en el navegador del lector: cuenta una vez al día por persona, artículo y cosa con una huella (sha de sal `bl_salt` + IP + navegador + día) en `bseen`, que solo guarda hoy y ayer (se limpia en `socialCron`). Totales por día, artículo y origen en `bstat` (`blSrc`: LinkedIn, Google, otros buscadores, IA, redes, 404growth.com, directo, otras). No cuenta robots, ni la sesión del admin, ni navegadores con `c404int` (`/book?interno=1`).
+- Los botones del blog (menú y recuadro final) van a `/book?utm_source=blog&utm_medium=menu|articulo&utm_campaign=<slug>` (`portada` desde /blog), ya no a Calendly; el recuadro dice `GB_DUR` minutos (30). Las reservas del blog son los leads con `utm_source=blog` (`blStats`). El prompt del artículo con IA también dice 30 minutos.
+
 ## Propuestas de tienda online con Apimart (lote 31)
 
 - Generador en `prospeccion/lote31/` (ver `LEEME.md`): formato del lote 30, con todas las fotos de la tienda (hero, productos, ficha, categorías y banner) hechas con Apimart a partir de sus productos reales de Instagram. Nano Banana Pro (`gemini-3-pro-image-preview`) a 2K cuesta 0,02 $ por imagen; 15 por tienda.
