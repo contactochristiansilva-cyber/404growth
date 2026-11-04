@@ -7,8 +7,9 @@ KEEP = {
     'obj': ("Use the EXACT product from the reference image: identical shape, colour, material, hardware and proportions. "
             "Do not redesign it. No people, no hands."),
     'moda': ("Use the EXACT garment(s) from the reference image: identical cut, length, fabric, colour, print, buttons, "
-             "trims and details. Do not redesign, recolour or add garments. The model must be a different woman from the "
-             "person in the reference (new face), elegant and natural, Spanish look. If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose."),
+             "trims and details. Do not redesign, recolour or add garments. The model must be a completely different woman from anyone in the "
+             "reference: a new face and a different hairstyle, and no glasses unless they are the product; never reproduce the face or "
+             "likeness of a real person from the reference. Elegant and natural, Spanish look. If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose."),
     'joya': ("Use the EXACT piece(s) of jewellery from the reference image: identical design, metal colour, stones, chain "
              "and proportions. Do not redesign or add elements. Remove any price tags, hands holding cards or text."),
     'obrador': ("Use the EXACT cake / pastry from the reference image: identical shape, decoration, colours, toppings and "
@@ -42,7 +43,7 @@ def studio_moda(slug, iid, n, garment, bg, extra=''):
 def build(slug, niche, bg, hero, prods, pdp, look, cats, banner, city='', grid=None):
     """hero=(refs, prompt) · prods=[(ref, desc)]×5 (p1..p5) · pdp=(desc_p1, x1_prompt, x2_prompt, x3_prompt)
     look=(refs, prompt) · cats=[(refs, prompt)]×4 · banner=(refs, prompt)"""
-    J = [job(slug, 'hero', hero[0], '16:9', hero[1] + ' The subject sits in the right half of the frame; the left 45% is calm, softly blurred background for a headline. Wide editorial campaign image, cinematic natural light.', niche)]
+    J = [job(slug, 'hero', hero[0], '16:9', hero[1] + ' One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light.', niche)]
     for k, pr in enumerate(prods):
         r, d = pr[0], pr[1]
         if len(pr) > 2 and pr[2] == 'obj':
@@ -61,7 +62,7 @@ def build(slug, niche, bg, hero, prods, pdp, look, cats, banner, city='', grid=N
     J.append(job(slug, 'look', look[0], '4:5', look[1], niche))
     for k, (r, p) in enumerate(cats):
         J.append(job(slug, 'l%d' % (k + 1), r, '4:5', p, niche))
-    J.append(job(slug, 'l5', banner[0], '16:9', banner[1] + ' Wide banner composition, inviting, no people unless described.', niche))
+    J.append(job(slug, 'l5', banner[0], '16:9', banner[1] + ' Wide banner composition, inviting.' + ('' if re.search(r'\b(a woman|a man|a model|models|people|a person|hands?)\b', banner[1]) else ' No people at all.'), niche))
     return to_grid(slug, J, niche) if (GRID if grid is None else grid) else J
 
 
@@ -95,6 +96,9 @@ def grid_job(slug, name, panels, niche, res='2K'):
         s += ("Each panel uses ONLY the reference image(s) named for it; never swap or mix items between panels. "
               "Panels that name the same reference show the same item, identical. Rules for every panel: "
               + KEEP[niche].replace('from the reference image', "from that panel's own reference image") + ' ')
+        if niche == 'moda':
+            s += ("Never copy a reference photo: every panel has a new pose and a new setting, and any person in it has a different face, "
+                  "a different hair colour and a different hairstyle from the person in the reference. ")
     for k, j in enumerate(panels):
         mid = re.sub(r"^Category photo '[^']*':\s*", '', j['mid']).strip()
         if j['nk'] == 'obj' and niche != 'obj':
