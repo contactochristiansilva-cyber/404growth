@@ -9,6 +9,25 @@ CFG = {  # slug: crop box in fractions (x0, y0, x1, y1)
     'modas-pascual': (.05, .3, .95, .7), 'oliver-shopping': (.05, .35, .95, .65), 'rasa-murcia': (.2, .3, .8, .7),
 }
 
+CFG.update({  # lote 32
+    'forn-sant-francesc': (0.0, 0.08, 1, 0.72),
+    'estela-hojaldre': (0.02, 0.12, 0.98, 0.62),
+    'patxes-pasteleria': (0.15, 0.22, 0.9, 0.82),
+    'ignacio-de-pilar': (0.0, 0.33, 1, 0.72),
+    'ricca-pasteleria': (0.15, 0.15, 0.85, 0.75),
+    'corazon-sevilla': (0.0, 0.3, 1, 0.72),
+    'veintiseis-moda': (0.12, 0.15, 0.88, 0.72),
+    'la-cote-las-arenas': (0.03, 0.03, 0.97, 0.97),
+    'raza-moda': (0.12, 0.33, 0.88, 0.695),
+    'provenza-store': (0.08, 0.37, 0.92, 0.61),
+    'dewe-gran-canaria': (0.05, 0.4, 0.95, 0.6),
+    'mono-mona': (0.1, 0.32, 0.9, 0.74),
+    'kiss-of-life': (0.06, 0.3, 0.97, 0.7),
+    'coccu-moda': (0.05, 0.32, 0.95, 0.68),
+    'berta-ferrol': (0.15, 0.36, 0.85, 0.66),
+    'matilda-ferrol': (0.1, 0.26, 0.9, 0.82),
+})
+
 
 def make(slug, ink=(0x14, 0x11, 0x10)):
     im = Image.open(f'{L31}/src/l31/{slug}/logo.jpg').convert('RGB'); w, h = im.size

@@ -545,3 +545,9 @@ mk('pasteleria-zoya', **OB, name='Pastelería Zoya', short='Zoya', handle='paste
              assets=[('21K', 'Comunidad propia', 'Seguidores en @pasteleriazoya que ya conocen vuestras tartas.'), ('2.160', 'Publicaciones', 'Un catálogo de tartas ya fotografiado.')]),
    the_store='el mismo obrador de Loja', stock_where='el obrador',
    ads=dict(a1='Tartas para<br>cada celebración.'))
+
+
+# ---------- lote 32 (4/11/2026): una ficha por tienda en l32/entries/<slug>.shop.py ----------
+import glob as _glob
+for _f in sorted(_glob.glob(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'l32', 'entries', '*.shop.py'))):
+    exec(open(_f).read())

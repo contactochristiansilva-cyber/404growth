@@ -289,6 +289,12 @@ S['pasteleria-zoya'] = lambda s: build(s, 'obrador', 'soft cream (#F4EEE8)',
     ([1], "Wide photo of a candy bar dessert table at an event like the reference: mini desserts with red decorations, candles, glass jars and flowers, soft warm light."))
 
 
+# ---------- lote 32 (4/11/2026): l32/entries/<slug>.jobs.py ----------
+import glob as _glob, os as _os
+for _f in sorted(_glob.glob(_os.path.join(L31, 'l32', 'entries', '*.jobs.py'))):
+    exec(open(_f).read())
+
+
 if __name__ == '__main__':
     import jobs_lib
     if '--rejilla' in sys.argv:   # 6 llamadas por tienda en vez de 15 (ver GROUPS en jobs_lib)

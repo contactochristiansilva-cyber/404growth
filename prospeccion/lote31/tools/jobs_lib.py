@@ -68,39 +68,46 @@ def build(slug, niche, bg, hero, prods, pdp, look, cats, banner, city='', grid=N
 # ---------------- rejillas: 4 fotos por llamada (probado el 4/11/2026 con brilla-fashion) ----------------
 # 15 fotos en 6 llamadas: hero, l5 y look sueltas; ficha (p1, x1, x2, x3: el mismo producto), productos (p2–p5)
 # y categorías (l1–l4) en rejillas 2x2 a 2K. Cada trozo sale de ~910x1140 y gen.py publica a 1100 px como máximo.
-GRID = False
+GRID = False   # False = 15 llamadas · True (o 2) = rejillas 2x2 · 3 = una rejilla 3x3 a 4K + categorías 2x2 (en prueba)
 GROUPS = [('ficha', ['p1', 'x1', 'x2', 'x3']), ('productos', ['p2', 'p3', 'p4', 'p5']), ('categorias', ['l1', 'l2', 'l3', 'l4'])]
-POS = ['top-left', 'top-right', 'bottom-left', 'bottom-right']
+GROUPS3 = [('todo', ['p1', 'x1', 'x2', 'x3', 'p2', 'p3', 'p4', 'p5', 'look']), ('categorias', ['l1', 'l2', 'l3', 'l4'])]
+POS = {4: ['top-left', 'top-right', 'bottom-left', 'bottom-right'],
+       9: ['top-left', 'top-centre', 'top-right', 'middle-left', 'centre', 'middle-right', 'bottom-left', 'bottom-centre', 'bottom-right']}
 NO_G = ("Photorealistic, high-end commercial photography, natural skin texture, crisp fabric and material detail, "
         "no text, no letters, no watermark, no logos added.")
 
 
 def grid_job(slug, name, panels, niche, res='2K'):
-    ids = [os.path.basename(j['out'])[:-4] for j in panels]
-    same = all(j['refs'] == panels[0]['refs'] for j in panels)
-    s = ("A 2x2 grid of FOUR separate, independent photographs of identical size, each with a 4:5 vertical frame, "
+    ids = [os.path.basename(j['out'])[:-4] for j in panels]; n = len(panels); side = 3 if n == 9 else 2
+    refs = []
+    for j in panels:
+        for r in j['refs']:
+            if r not in refs:
+                refs.append(r)
+    word = {4: 'FOUR', 9: 'NINE'}[n]
+    s = (f"A {side}x{side} grid of {word} separate, independent photographs of identical size, each with a 4:5 vertical frame, "
          "separated by perfectly straight thin pure black (#000000) gutters, about 1.5% of the image width, with no outer border. "
          "Every panel is a complete photo on its own (nothing crosses the gutters). ")
-    if same:
-        refs = list(panels[0]['refs'])
-        s += ("All four panels show the SAME product from the reference, identical in every panel. Rules for every panel: "
+    if len(refs) == 1:
+        s += ("All panels show the SAME product from the reference, identical in every panel. Rules for every panel: "
               + KEEP[niche] + " If there is a model, it is the same model in every panel. ")
     else:
-        refs, own = [], []
-        for j in panels:
-            a = len(refs) + 1; refs += j['refs']; b = len(refs)
-            own.append('reference image %d' % a if a == b else 'reference images %d-%d' % (a, b))
-        s += ("Each panel uses ONLY its own reference image(s); never swap or mix items between panels. Rules for every panel: "
+        s += ("Each panel uses ONLY the reference image(s) named for it; never swap or mix items between panels. "
+              "Panels that name the same reference show the same item, identical. Rules for every panel: "
               + KEEP[niche].replace('from the reference image', "from that panel's own reference image") + ' ')
     for k, j in enumerate(panels):
         mid = re.sub(r"^Category photo '[^']*':\s*", '', j['mid']).strip()
         if j['nk'] == 'obj' and niche != 'obj':
             mid += ' Product only, no people, no hands.'
-        s += 'Panel %d (%s)%s: %s ' % (k + 1, POS[k], '' if same else ', from ' + own[k], mid)
+        own = '' if len(refs) == 1 else ', from ' + ' and '.join('reference image %d' % (refs.index(r) + 1) for r in j['refs'])
+        s += 'Panel %d (%s)%s: %s ' % (k + 1, POS[n][k], own, mid)
     return {'out': '%s/ai/%s/_grid_%s.jpg' % (L31, slug, name), 'refs': refs, 'size': '4:5', 'res': res,
             'model': 'gemini-3-pro-image-preview', 'prompt': s + NO_G, 'split': ids}
 
 
 def to_grid(slug, J, niche):
     by = {os.path.basename(j['out'])[:-4]: j for j in J}
+    if GRID == 3:
+        return [by['hero'], by['l5'], grid_job(slug, 'todo', [by[i] for i in GROUPS3[0][1]], niche, '4K'),
+                grid_job(slug, 'categorias', [by[i] for i in GROUPS3[1][1]], niche)]
     return [by['hero'], by['l5'], by['look']] + [grid_job(slug, n, [by[i] for i in ids], niche) for n, ids in GROUPS]
