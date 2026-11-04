@@ -4120,9 +4120,11 @@ async function metPublic(env, b, p, now) {
   const first = String(l.name || "").trim().split(/\s+/)[0] || "", who = first + (l.biz ? " · " + l.biz : "");
   const done = () => Object.keys(m.v).filter((x) => m.v[x] >= 100).length;   // v50: «visto» = entero, con el audio activado
   if (p === "m") {
-    const back = m.l && now - m.l > 6 * 3600000; m.o = Math.min((m.o || 0) + 1, 9999); m.f = m.f || now; m.l = now;
+    // v52: /book lleva a /metodo al reservar (fr = esa visita automática): no avisa; avisa la primera vez que lo abre él (desde la invitación) y cuando vuelve tras 6 h
+    const fr = !!b.fr, back = !fr && m.l && now - m.l > 6 * 3600000; m.o = Math.min((m.o || 0) + 1, 9999); m.f = m.f || now; m.l = now;
+    let first = false; if (fr) m.fr = 1; else if (!m.r) { m.r = 1; first = m.fr ? true : m.o === 1; }
     await DBq.prepare("UPDATE ll SET met = ?2 WHERE id = ?1").bind(id, JSON.stringify(m)).run();
-    if (m.o === 1 || back) { try { await pushAll(env, { title: m.o === 1 ? "Ha abierto el método" : "Ha vuelto al método", body: who + (l.start ? " · llamada " + vslWhen(new Date(l.start).toISOString(), CAL_TZ) : "") + (done() ? " · lleva " + done() + " de " + MET_T.length + " vídeos" : ""), tag: "met" + id, url: where }); } catch (e) {} }
+    if (first || back) { try { await pushAll(env, { title: first ? "Ha abierto el método" : "Ha vuelto al método", body: who + (l.start ? " · llamada " + vslWhen(new Date(l.start).toISOString(), CAL_TZ) : "") + (done() ? " · lleva " + done() + " de " + MET_T.length + " vídeos" : ""), tag: "met" + id, url: where }); } catch (e) {} }
     return json({ ok: true, name: first, biz: l.biz || "", start: l.start || null, dur: GB_DUR, join: l.join_url || "", seen: m.v });
   }
   const i = llInt(b.i, -1, MET_T.length - 1), pc = llInt(b.p, 0, 100); if (i < 0 || b.i == null) return json({ ok: false });
