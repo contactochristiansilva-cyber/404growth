@@ -48,7 +48,113 @@ V32 = ('<style id="v32">'
        '.nav .cta{padding:12px 20px!important;font-size:15px!important}.hi{border-radius:20px;padding:10px 14px 10px 10px}.hi p{font-size:13.5px}'
        '.wa-fab{left:12px;right:12px;bottom:12px;justify-content:center;padding-right:16px}.fun{grid-template-columns:1fr!important}}'
        '</style>')
+# v33 (4/11/2026): página más corta. Primer pantallazo con poco texto y la tienda a la vista: el portátil y el móvil
+# recorren solos su tienda (TOUR_JS). Fuera «antes y después», «mercado», «lo que cambia» y el embudo; los anuncios son «ideas de campaña».
+V33 = ('<style id="v33">'
+       # hero
+       '.hero{padding-top:122px!important}'
+       '.hero .hi{gap:10px;padding:5px 18px 5px 5px;margin:0 auto 24px}.hero .hi img{width:32px;height:32px}'
+       '.hero .hi span{font-size:14px;line-height:1.2;color:var(--ink);letter-spacing:-.005em}.hero .hi b{font-weight:600}'
+       '.hero h1{font-size:clamp(44px,5.6vw,80px)!important;line-height:1!important}'
+       '.hero .stage{margin-top:46px}'
+       '.stage .glow{position:absolute;left:12%;right:12%;top:8%;bottom:-6%;z-index:-1;border-radius:50%;filter:blur(64px) saturate(1.25);opacity:.42;pointer-events:none}'
+       '.hero .stage .ph{animation:rise33 1.3s .55s cubic-bezier(.16,1,.3,1) backwards}'
+       '@keyframes rise33{from{translate:0 70px;scale:.9;opacity:0}to{translate:0 0;scale:1;opacity:1}}'
+       '.hb{padding:110px 40px 72px}.lede{display:flex;flex-direction:column;align-items:center;gap:26px;text-align:center}'
+       '.lede p{font-size:20px;line-height:1.42;color:var(--mute);max-width:640px;margin:0;letter-spacing:-.015em}'
+       '.hero .kpis{margin-top:64px}'
+       '.tw{position:relative;z-index:1;will-change:transform}'
+       '.shop>.s-ann,.shop>.s-hdr{position:relative;z-index:2}.shop>.s-hdr{background:#fff}'
+       '.s-hero.m.bn{height:400px}.s-hero.m.bn:after{background:linear-gradient(transparent 35%,rgba(20,14,10,.55))!important}'
+       '.s-hero.m.bn .s-ht{color:#fff!important}.s-hero.m.bn .s-ht a{border-color:#fff!important}.s-hero.m.bn h4{font-size:30px}'
+       # secciones
+       '.sec{padding:96px 0}.head{margin-bottom:52px}'
+       # ficha
+       '.pdpz{position:relative;padding-right:150px}'
+       '.pdpz .bw .scaler{height:auto!important;aspect-ratio:1280/800}'
+       '.pdpz .ph{position:absolute;right:0;bottom:-44px;width:250px;box-shadow:0 2px 4px rgba(0,0,0,.05),0 30px 60px -20px rgba(var(--sh),.45),0 70px 120px -40px rgba(var(--sh),.5),0 0 0 1px rgba(0,0,0,.08)}'
+       '.pts{display:grid;grid-template-columns:repeat(4,1fr);gap:0 28px;margin-top:84px;border-top:1px solid var(--line)}'
+       '.pts div{padding-top:22px}.pts b{display:block;font-size:18px;letter-spacing:-.02em}.pts p{margin:6px 0 0;color:var(--mute);font-size:15px;line-height:1.42}'
+       # diagnóstico
+       '.cmp{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}'
+       '.cmp .rw{display:grid;grid-template-columns:190px 1fr;gap:28px;align-items:center;padding:28px 32px}'
+       '.cmp .rw+.rw{border-top:1px solid var(--line);background:var(--cream)}'
+       '.cmp .lb2 b{display:block;font-size:60px;font-weight:700;letter-spacing:-.06em;line-height:.85}'
+       '.cmp .lb2 span{display:block;margin-top:8px;font-size:14px;line-height:1.3;color:var(--mute)}.cmp .on .lb2 b{color:var(--t)}'
+       '.cmp .st{display:flex;flex-wrap:wrap;align-items:center;gap:8px}'
+       '.cmp .st span{display:inline-flex;flex-direction:column;padding:9px 14px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-size:14.5px;font-weight:600;letter-spacing:-.01em;line-height:1.25}'
+       '.cmp .st small{font-size:12px;font-weight:400;color:var(--mute);letter-spacing:0}.cmp .st i{font-style:normal;color:var(--mute);opacity:.6}'
+       '.cmp .on .st span{background:var(--t);color:#fff;box-shadow:none}.cmp .on .st small{color:rgba(255,255,255,.78)}'
+       '.gs{display:flex;gap:14px;align-items:center;margin-top:16px;padding:18px 22px;border-radius:16px;background:var(--ink);color:#fff}'
+       '.gs .ic{width:22px;height:22px;flex:none;color:#fff;opacity:.8}.gs p{margin:0;font-size:17px;line-height:1.4;letter-spacing:-.01em;color:#fff}'
+       # ideas de campaña
+       '#captacion .adsx{margin-top:0}.adsx .al .ix{display:block;margin-bottom:4px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ta)}'
+       '.adsx .al .ob{display:block;margin-top:2px}'
+       '.swp{display:none}'
+       # plan
+       '.ms{display:grid;grid-template-columns:repeat(4,1fr);position:relative}'
+       '.ms:before{content:"";position:absolute;left:0;right:0;top:7px;height:2px;background:linear-gradient(90deg,var(--t),rgba(var(--tr),.2))}'
+       '.ms div{position:relative;padding:34px 24px 0 0}'
+       '.ms div:before{content:"";position:absolute;left:0;top:0;width:16px;height:16px;border-radius:50%;background:var(--cream);box-shadow:inset 0 0 0 2px var(--t)}'
+       '.ms div:last-child:before{background:var(--t)}'
+       '.ms small{font-size:13px;font-weight:600;color:var(--t)}.ms b{display:block;font-size:22px;letter-spacing:-.03em;margin:8px 0 6px}.ms p{margin:0;color:var(--mute);font-size:15px;line-height:1.42}'
+       '.inc{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:60px}'
+       '.inc>span{margin-right:6px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}'
+       '.inc em{font-style:normal;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);font-size:14.5px;font-weight:500}'
+       '.inc .i2{width:17px;height:17px;color:var(--t)}'
+       # cierre
+       '.close{min-height:640px}.close .cn{display:flex;gap:16px;align-items:center;max-width:520px}'
+       '.close .cn img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 2px rgba(255,255,255,.55)}.close .cn p{font-size:19px;line-height:1.4}'
+       '@media (prefers-reduced-motion:reduce){.hero .stage .ph{animation:none}}'
+       # móvil
+       '@media (max-width:760px){'
+       '.hero{padding-top:90px!important}.hero .hi{margin-bottom:16px;padding:4px 14px 4px 4px}.hero .hi img{width:28px;height:28px}.hero .hi span{font-size:13px}'
+       '.hero h1{font-size:clamp(31px,9.2vw,40px)!important}'
+       '.hero .stage{margin-top:24px;padding:0;max-width:none}.hero .stage .lap{display:none}'
+       '.hero .stage .ph{position:relative;right:auto;bottom:auto;margin:0 auto;border-radius:26px;transform:none!important;width:min(64vw,290px);width:clamp(210px,min(64vw,calc((100svh - 205px) * .486)),290px)}'
+       '.stage .glow{left:4%;right:4%;top:4%;bottom:0;opacity:.5;filter:blur(48px) saturate(1.3)}'
+       '.hb{padding:46px 20px 56px}.lede{gap:20px}.lede p{font-size:17px}.lede .btns{flex-direction:column;align-items:stretch;width:100%;max-width:340px}.lede .cta{justify-content:center}'
+       '.hero .kpis{margin-top:40px}'
+       '.sec{padding:64px 0}.head{margin-bottom:28px}'
+       '.pdpz{padding:0}.pdpz .bw{display:none}.pdpz .ph{position:relative;right:auto;bottom:auto;width:min(68vw,300px);margin:0 auto}'
+       '.pts{grid-template-columns:1fr 1fr;gap:0 18px;margin-top:40px}.pts div{padding-top:18px}.pts b{font-size:16px}.pts p{font-size:14px}'
+       '.cmp .rw{grid-template-columns:1fr;gap:14px;padding:22px 18px}.cmp .lb2{display:flex;align-items:baseline;gap:10px}.cmp .lb2 b{font-size:46px}.cmp .lb2 span{margin:0}'
+       '.cmp .st{gap:6px}.cmp .st span{font-size:13.5px;padding:8px 11px}.cmp .st small{display:none}.gs{padding:16px 18px}.gs p{font-size:15.5px}'
+       '#captacion .adsx .adg{display:grid;grid-template-columns:none!important;grid-auto-flow:column;grid-auto-columns:80%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;'
+       'margin:0 -20px;padding:6px 20px 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}'
+       '#captacion .adg::-webkit-scrollbar{display:none}#captacion .adg>*{scroll-snap-align:center}'
+       '.swp{display:block;margin:4px 0 0;font-size:13.5px;color:var(--mute2)}'
+       '.ms{grid-template-columns:1fr}.ms:before{left:7px;right:auto;top:8px;bottom:30px;width:2px;height:auto;background:linear-gradient(var(--t),rgba(var(--tr),.2))}'
+       '.ms div{padding:0 0 24px 36px}.ms div:before{top:1px}.ms b{font-size:19px;margin:4px 0}.ms p{font-size:14.5px}'
+       '.inc{margin-top:24px}.inc>span{width:100%;margin-bottom:2px}.inc em{font-size:13.5px;padding:9px 13px}'
+       '.close{min-height:560px}.close .cn p{font-size:17px}'
+       '}'
+       '</style>')
 WA_JS = "<script>(function(){var b=document.querySelector('.wa-fab');if(!b)return;function f(){b.classList.toggle('on',scrollY>600)}addEventListener('scroll',f,{passive:true});f()})();</script>"
+TOUR_JS = ("<script>/* v33: el portátil y el móvil del inicio recorren la tienda solos (se para fuera de pantalla y al pasar el ratón) */"
+           "(function(){var d=document,RM=matchMedia('(prefers-reduced-motion: reduce)').matches;"
+           # aparición de los bloques nuevos
+           "var R=[].slice.call(d.querySelectorAll('.pdpz,.pts>div,.cmp .rw,.gs,.ms>div,.inc'));"
+           "if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -10% 0px',threshold:.08});"
+           "R.forEach(function(el){var k=[].indexOf.call(el.parentNode.children,el);el.classList.add('rv');el.style.setProperty('--d',Math.min(k*.08,.4)+'s');io.observe(el)})}"
+           "if(RM)return;var T=[];"
+           "function ez(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}"
+           "[].forEach.call(d.querySelectorAll('.hero .tw'),function(tr){var box=tr.closest('.scaler,.scr');if(!box)return;"
+           "var o={tr:tr,box:box,base:box.classList.contains('scr')?375:1280,y:0,seq:null,i:0,t0:0,vis:true,hov:false,off:false};o.wait=o.base===375?3400:3000;T.push(o);"
+           "if('IntersectionObserver' in window)new IntersectionObserver(function(e){o.vis=e[0].isIntersecting}).observe(box);"
+           "if(matchMedia('(pointer:fine)').matches){box.addEventListener('pointerenter',function(){o.hov=true});box.addEventListener('pointerleave',function(){o.hov=false})}});"
+           "if(!T.length)return;"
+           "function plan(o){var w=o.box.clientWidth;if(!w){o.off=true;return null}var k=w/o.base,vh=o.box.clientHeight/k,top=o.tr.offsetTop,max=Math.max(0,o.tr.offsetHeight-(vh-top));if(max<40)return null;"
+           "var st=[0];[].forEach.call(o.tr.children,function(ch){var y=Math.min(ch.offsetTop,max);if(y-st[st.length-1]>vh*.36)st.push(y)});if(max-st[st.length-1]>40)st.push(max);"
+           "var q=[];for(var i=1;i<st.length;i++)q.push([st[i-1],st[i],1150,i==st.length-1?2300:1500]);q.push([st[st.length-1],0,1600,2600]);return q}"
+           "var last=performance.now(),t00=last;function ld(){t00=performance.now()}if(d.readyState==='complete')ld();else addEventListener('load',ld);"
+           "function frame(now){var dt=now-last;last=now;T.forEach(function(o){if(o.off)return;"
+           "if(now-t00<o.wait||!o.vis||o.hov||d.hidden){o.t0+=dt;return}"
+           "if(!o.seq){o.seq=plan(o);o.i=0;o.t0=now;if(!o.seq)return}"
+           "var s=o.seq[o.i],t=now-o.t0;if(t<s[2])o.y=s[0]+(s[1]-s[0])*ez(t/s[2]);else{o.y=s[1];if(t>s[2]+s[3]){o.i++;o.t0=now;if(o.i>=o.seq.length)o.seq=null}}"
+           "o.tr.style.transform='translate3d(0,'+(-o.y).toFixed(1)+'px,0)'});requestAnimationFrame(frame)}"
+           "requestAnimationFrame(frame);addEventListener('resize',function(){T.forEach(function(o){o.off=false;o.seq=null;o.y=0;o.tr.style.transform=''})})"
+           "})();</script>")
 WA_IC = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 12a8 8 0 0 1-11.7 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>'
 
 IC = {
@@ -107,9 +213,9 @@ def pc(c, i, new=False):
             f'<b>{E(p["name"])}</b><span>{E(p.get("price") or c.get("price_txt", "Vuestro precio"))}</span></div>')
 
 
-def shop_home(c, full=True):
+def shop_home(c, full=True, tour=False):
     N = NICHE[c['niche']]; h = c['hero']
-    s = f'<div class="shop"><div class="s-ann">{E(c["ann"])}</div>{hdr(c)}'
+    s = f'<div class="shop"><div class="s-ann">{E(c["ann"])}</div>{hdr(c)}' + ('<div class="tw">' if tour else '')
     s += (f'<div class="s-hero2"><div class="a" {bi("h", c.get("hero_pos", "center"))}></div><div class="s-ht2"><small>{E(h["small"])}</small>'
           f'<h4>{h["h4"]}</h4><div class="bt2"><a class="w">{E(h["b1"])}</a><a>{E(h["b2"])}</a></div></div></div>')
     s += mq(c)
@@ -134,16 +240,21 @@ def shop_home(c, full=True):
     s += '<div class="s-trust">' + ''.join(f'<div>{ic(a)}<b>{E(b_)}</b><span>{E(cc)}</span></div>' for a, b_, cc in tr) + '</div>'
     s += (f'<div class="s-foot"><div>{wm(c)}<p>{E(c["foot_addr"])}</p></div><div><b>Tienda</b><p>{E(c["foot_store"])}</p></div>'
           f'<div><b>Ayuda</b><p>Envíos y cambios<br>{E(N["help2"])}<br>WhatsApp</p></div><div><b>Síguenos</b><p>@{E(c["handle"])}<br>{E(c["followers"])} seguidores</p></div></div>')
-    return s + '</div>'
+    return s + ('</div>' if tour else '') + '</div>'
 
 
-def shop_home_m(c):
+def shop_home_m(c, tour=False):
     h = c['hero']
-    s = f'<div class="shop sm"><div class="s-ann">{E(c["ann_m"])}</div>{hdr(c, True)}'
+    s = f'<div class="shop sm"><div class="s-ann">{E(c["ann_m"])}</div>{hdr(c, True)}' + ('<div class="tw">' if tour else '')
     s += f'<div class="s-hero m"><div {bi("h", c.get("hero_pos_m", "72% center"))}></div><div class="s-ht"><small>{E(h["small_m"])}</small><h4>{h["h4"]}</h4><a>{E(h["b1"])}</a></div></div>'
     s += '<div class="s-mq m"><div>' + ''.join(f'<span>{E(x)}</span><i>✦</i>' for x in c['mq']) + '</div></div>'
     s += '<div class="s-cats m">' + ''.join(f'<div><i {bi(k["id"], k.get("pos", "center 30%"))}></i><span>{E(k["label"])}</span></div>' for k in c['cats'][:3]) + '</div>'
-    s += f'<div class="s-sec"><div class="s-h"><h5>{E(c.get("new_h", "Recién llegado"))}</h5><a>Ver todo</a></div><div class="s-grid">' + pc(c, 1, True) + pc(c, 2, True) + '</div></div>'
+    s += (f'<div class="s-sec"><div class="s-h"><h5>{E(c.get("new_h", "Recién llegado"))}</h5><a>Ver todo</a></div><div class="s-grid">' + pc(c, 1, True) + pc(c, 2, True)
+          + (pc(c, 3) + pc(c, 4) if tour else '') + '</div></div>')
+    if tour:
+        b = c['big']
+        s += (f'<div class="s-hero m bn"><div {bi("l5", b.get("pos", "center"))}></div><div class="s-ht"><small>{E(b["small"])}</small><h4>{b["h5"]}</h4><a>{E(b["btn"])}</a></div></div>'
+              '</div>')
     return s + '</div>'
 
 
@@ -189,130 +300,96 @@ def cta(c, n, label, small=''):
             + (f'<small>{E(small)}</small>' if small else ''))
 
 
-# ---------------- the proposal ----------------
+# ---------------- the proposal (v33, 4/11/2026: más corta; la tienda se recorre sola en el primer pantallazo) ----------------
 def body(c):
-    N = NICHE[c['niche']]; nm = E(c['name']); sh = E(c['short'])
+    N = NICHE[c['niche']]; nm = E(c['name']); sh = E(c['short']); d = c['diag']
     o = ('<body>\n<div class="nav"><div class="wrap"><a class="br" href="#inicio">' + wm(c) + '</a>'
          '<div class="lk2"><a href="#tienda">Tienda</a><a href="#diagnostico">Diagnóstico</a><a href="#captacion">Anuncios</a><a href="#plan">Plan</a></div>'
          f'<a class="cta" href="{wa(c)}" target="_blank" rel="noopener">Hablamos<span>→</span></a></div></div>\n')
-    o += (f'<header class="hero" id="inicio"><div class="wrap"><div class="hi"><img src="/christian-hola.jpg" alt="Christian" width="46" height="46">'
-          f'<p><b>Hola, soy Christian.</b> He preparado esta propuesta solo para {nm}, con vuestros productos. Si os encaja, escribidme por WhatsApp.</p></div>'
-          f'<div class="hmeta mono"><span>Propuesta privada</span><span>{nm} · {E(c["city"])}</span><span>Noviembre 2026</span></div>'
-          f'<h1>{c.get("h1", "Vuestra tienda. <br><span class=\"t\">Abierta 24&nbsp;horas.</span>")}</h1>'
-          f'<div class="sub"><p>{c["sub"]}</p><div class="btns">{cta(c, 2, "Quiero mi tienda")}<a class="cta ghost" href="#tienda">Ver la tienda</a></div></div></div>'
-          f'<div class="stage"><div class="lap">{bw(c, shop_home(c, False))}</div>{phone(c, shop_home_m(c))}</div>'
-          '<div style="padding:0 40px 70px"><div class="kpis">' + ''.join(f'<div><b{" class=t" if k == 3 else ""}>{a}</b><span>{E(b)}</span></div>' for k, (a, b) in enumerate(c['kpis'])) + '</div></div></header>\n')
-    o += (f'<section class="sec ba" id="antes"><div class="wrap"><div class="chap"><span class="num">↔</span><span class="lb">Antes y después</span></div>'
-          f'<div class="head"><h2>{c["ba_h2"]}</h2><p>{c["ba_p"]}</p></div>'
-          f'<div class="baw" style="--p:50%"><img class="b0" src="/p-{c["slug"]}--antes.jpg" width="1280" height="697" alt="{E(c["before_label"])} hoy">'
-          f'<img class="b1" src="/p-{c["slug"]}--despues.jpg" width="1280" height="697" alt="La tienda online de {nm} que proponemos">'
-          f'<span class="bl l">Hoy · {E(c["before_label"])}</span><span class="bl r">Con 404 Growth</span><div class="bh"><i>‹ ›</i></div>'
-          '<input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después"></div>'
-          '<p class="bahint">Arrastrad el círculo hacia los lados</p></div></section>\n')
-    o += (f'<section class="sec shopsec" id="tienda"><div class="wrap"><div class="chap"><span class="num">01</span><span class="lb">La tienda</span></div>'
-          f'<div class="head"><h2>Así se vería<br>{nm} online.</h2><p>{E(N["tienda_p"])}</p></div>'
-          f'{bw(c, shop_home(c))}<div class="ctarow">{cta(c, 3, "Quiero esta tienda para " + sh)}</div>'
-          f'<div class="pdpx"><div><h3 style="font-size:44px;letter-spacing:-.04em;margin-bottom:30px">{N["pdp_h3"]}</h3><div class="cas">'
-          + ''.join(f'<div class="ca"><span class="n">{k + 1:02d}</span><div><b>{E(a)}</b><p>{E(b)}</p></div></div>' for k, (a, b) in enumerate(N['pdp_points']))
-          + f'</div></div>{phone(c, shop_pdp_m(c))}</div><div class="pdpd">{bw(c, shop_pdp(c))}</div></div></section>\n')
-    d = c['diag']
+    # hero: poco texto y la tienda a la vista (portátil + móvil que se recorren solos)
+    o += (f'<header class="hero" id="inicio"><div class="wrap"><div class="hi"><img src="/christian-hola.jpg" alt="Christian" width="32" height="32">'
+          f'<span><b>Christian</b> · propuesta para {sh}</span></div>'
+          f'<h1>{c.get("h1", sh + ",<br><span class=\"t\">abierta 24&nbsp;horas.</span>")}</h1></div>'
+          f'<div class="stage"><i class="glow" data-i="h"></i><div class="lap">{bw(c, shop_home(c, True, True))}</div>{phone(c, shop_home_m(c, True))}</div>'
+          f'<div class="hb"><div class="lede"><p>{c["sub"]}</p><div class="btns"><a class="cta" href="{wa(c)}" target="_blank" rel="noopener">Quiero mi tienda<span>→</span></a>'
+          f'<a class="cta ghost" href="{BOOK}{c["slug"]}&amp;utm_content=cta-2" target="_blank" rel="noopener">Reservar 30 min</a></div></div>'
+          '<div class="kpis">' + ''.join(f'<div><b{" class=t" if k == 3 else ""}>{a}</b><span>{E(b)}</span></div>' for k, (a, b) in enumerate(c['kpis'])) + '</div></div></header>\n')
+    # 01 · la ficha
+    o += (f'<section class="sec shopsec" id="tienda"><div class="wrap"><div class="chap"><span class="num">01</span><span class="lb">La ficha de producto</span></div>'
+          f'<div class="head"><h2>{N["pdp_h3"]}</h2><p>{E(N["item_art"]).capitalize()} que enseñáis en Instagram, con su ficha, cesta y pago con tarjeta, Bizum o Apple&nbsp;Pay.</p></div>'
+          f'<div class="pdpz">{bw(c, shop_pdp(c))}{phone(c, shop_pdp_m(c))}</div>'
+          '<div class="pts">' + ''.join(f'<div><b>{E(a)}</b><p>{E(b)}</p></div>' for a, b in N['pdp_points']) + '</div>'
+          f'<div class="ctarow">{cta(c, 3, "Quiero esta tienda para " + sh)}</div></div></section>\n')
+    # 02 · diagnóstico: lo suyo, con sus datos, y los pasos de hoy frente a los de la tienda
+    today = [(a, b.replace('{city}', c['city'])) for a, b in N['flow_today']]
+    row = lambda st: '<i>›</i>'.join(f'<span>{E(a)}<small>{E(b)}</small></span>' for a, b in st)
     o += (f'<section class="sec" id="diagnostico"><div class="wrap"><div class="chap"><span class="num">02</span><span class="lb">Diagnóstico</span></div>'
-          f'<div class="head"><h2>{d["h2"]}</h2><p>{d["p"]}</p></div><div class="flowx">'
-          f'<div class="fx"><div class="top"><span class="mono" style="color:var(--mute)">Cómo se compra hoy</span><b>{len(N["flow_today"])}<small>pasos</small></b></div><div class="tl">'
-          + ''.join(f'<div class="nd"><i></i><b>{E(a)}</b><span>{E(b.replace("{city}", c["city"]))}</span></div>' for a, b in N['flow_today'])
-          + f'</div></div><div class="fx"><div class="top"><span class="mono t">Con vuestra tienda</span><b class="t">{len(N["flow_new"])}<small>pasos</small></b></div><div class="tl on">'
-          + ''.join(f'<div class="nd"><i></i><b>{E(a)}</b><span>{E(b)}</span></div>' for a, b in N['flow_new'])
-          + '</div><div class="note">Sin esperas · a cualquier hora · desde cualquier sitio</div></div></div>')
-    o += '<div class="assets">' + ''.join(f'<div class="as"><div class="big t">{a}</div><b>{E(b)}</b><p>{E(p)}</p></div>' for a, b, p in d['assets'])
-    o += ('<div class="as"><div class="ph5">' + ''.join(f'<i data-i="{k}"></i>' for k in ['l1', 'p2', 'l3', 'p4', 'x2', 'l4']) +
-          '</div><b>Contenido que vende</b><p>Fotos con nivel de marca, listas para la tienda y para anuncios.</p></div></div>')
-    o += ('<h3 style="font-size:34px;letter-spacing:-.035em;margin:110px 0 30px">Dónde se escapan hoy las ventas</h3><div class="leaks">'
-          + ''.join(f'<div class="lk"><span class="n">{k + 1:02d}</span><b>{E(a)}</b><p>{E(b)}</p></div>' for k, (a, b) in enumerate(d['leaks']))
-          + f'</div><div class="ctarow">{cta(c, 4, "Recuperar esas ventas", "30 minutos · sin compromiso")}</div></div></section>\n')
-    o += ('<section class="sec dark" id="mercado"><div class="wrap"><div class="chap"><span class="num">+</span><span class="lb">Contexto de mercado</span></div><div class="mkt two">'
-          '<div class="mk"><b>114.800<em> M€</em></b><p>facturó el comercio electrónico en España en 2025.</p><small>Fuente: CNMC · <a href="https://www.alimarket.es/electro/noticia/428689/el-comercio-electronico-supero-en-espana-los-114-800-m-en-2025" target="_blank" rel="noopener">CNMCData, 2026</a></small></div>'
-          '<div class="mk"><b>70<em>%</em></b><p>de los carritos se abandonan. Por eso la tienda recupera cada uno con un email automático.</p><small>Fuente: <a href="https://baymard.com/lists/cart-abandonment-rate" target="_blank" rel="noopener">Baymard Institute</a> · media de 50 estudios</small></div>'
-          f'</div><div class="takeaway"><p>El comercio online no deja de crecer en España. <em>{E(N["take"])}</em></p></div></div></section>\n')
-    o += ('<section class="sec dark" id="captacion"><div class="wrap"><div class="chap"><span class="num">03</span><span class="lb">Captación</span></div>'
-          '<div class="head"><h2>Una tienda sin tráfico<br>es un escaparate cerrado.</h2><p>Por eso no entregamos solo una web: la conectamos con vuestro Instagram y con anuncios que llevan al cliente del post a la compra.</p></div>'
-          '<div class="fun-h"><span>Descubre</span><span>Considera</span><span>Compra</span></div><div class="fun">'
-          + ''.join(f'<div class="fs"><span class="n">{k + 1:02d}</span><b>{a}</b><em>{b}</em><p>{p}</p><small>{s_}</small></div>' for k, (a, b, p, s_) in enumerate([
-              ('Contenido', f'Instagram · {E(c["followers"])}', f'Los reels y posts que ya hacéis, ahora con {N["item_pl"]} etiquetadas.', 'Alcance · guardados'),
-              ('Anuncios', 'Meta Ads', f'Captación en toda España y retargeting a quien ya os vio.', 'CTR · CPC'),
-              ('Tienda', 'Ficha + checkout', N['fun_shop'], 'Conversión · ticket medio')]))
-          + '</div>' + ads(c) + f'<div class="ctarow dk">{cta(c, 5, "Lanzar estas campañas", "Os preparamos la primera tanda")}</div></div></section>\n')
-    o += (f'<section class="sec" id="cambia"><div class="wrap"><div class="chap"><span class="num">+</span><span class="lb">Lo que cambia</span></div>'
-          f'<div class="head"><h2>Más ventas.<br>Sin abrir otro local.</h2><p>Un segundo canal de ingresos que trabaja con el mismo stock, el mismo equipo y {E(c["the_store"])}.</p></div><div class="chg">'
-          '<div class="cg w"><span class="n">01</span><div><b>24/7</b><p>Compran solas: de noche, en festivos y también en vacaciones.</p></div></div>'
-          f'<div class="cg"><span class="n">02</span><div><b>{len(N["flow_new"])}</b><p>pasos para comprar, en lugar de {len(N["flow_today"])}.</p></div></div>'
-          '<div class="cg"><span class="n">03</span><div><b>2º</b><p>canal de ingresos, sin alquiler ni personal extra.</p></div></div>'
-          f'<div class="cg im" data-i="l2"><div><span class="n" style="color:#fff">04</span><b style="margin-top:12px">Cada post,<br>comprable.</b><p>De la foto de Instagram a la cesta en un toque.</p></div></div>'
-          f'<div class="cg"><span class="n">05</span><div><b>+</b><p>{E(N["cambia5"])}</p></div></div>'
-          '<div class="cg"><span class="n">06</span><div><b>100%</b><p>de las ventas medidas: qué, a quién y desde dónde.</p></div></div>'
-          f'<div class="cg c2"><span class="n">07</span><div><b style="font-size:34px;letter-spacing:-.04em">Sin riesgo</b><p>{E(N["cambia7"])}</p></div></div>'
-          '<div class="cg c2"><span class="n">08</span><div><b style="font-size:34px;letter-spacing:-.04em">Datos</b><p>Saber en qué ciudades os compran antes de dar el siguiente paso.</p></div></div>'
-          f'</div><div class="ctarow">{cta(c, 6, "Lo quiero para " + sh)}</div></div></section>\n')
+          f'<div class="head"><h2>{d["h2"]}</h2><p>{d["p"]}</p></div><div class="cmp">'
+          f'<div class="rw"><div class="lb2"><b>{len(today)}</b><span>pasos para comprar hoy</span></div><div class="st">{row(today)}</div></div>'
+          f'<div class="rw on"><div class="lb2"><b>{len(N["flow_new"])}</b><span>con vuestra tienda online</span></div><div class="st">{row(N["flow_new"])}</div></div></div>'
+          + (f'<div class="gs">{ic("search")}<p>{E(d["leaks"][0][1])}</p></div>' if c['web_state'] == 'none' else '')
+          + '</div></section>\n')
+    # 03 · ideas de campaña (los creativos estáticos)
+    o += ('<section class="sec dark" id="captacion"><div class="wrap"><div class="chap"><span class="num">03</span><span class="lb">Ideas de campaña</span></div>'
+          f'<div class="head"><h2>Seis anuncios,<br>listos para lanzar.</h2><p>Hechos con vuestras fotos. Cada uno con un objetivo: vender fuera de {E(c["city_short"])}, recuperar a quien ya os vio o subir el ticket medio.</p></div>'
+          + ads(c) + '<p class="swp">Deslizad para ver las seis →</p>'
+          + f'<div class="ctarow dk">{cta(c, 5, "Lanzar estas campañas", "Os preparamos la primera tanda")}</div></div></section>\n')
     o += plan(c)
     o += (f'<section class="close" id="hablar" data-i="h"><div class="wrap"><div class="chap"><span class="num">→</span><span class="lb">Siguiente paso</span></div>'
-          f'<h2>¿Abrimos {sh}<br><span class="t">a toda España?</span></h2><div class="row"><p>Os lo enseñamos en 30 minutos, con vuestro catálogo y en directo.</p>'
-          f'<div class="btns"><a class="cta" href="{wa(c)}" target="_blank" rel="noopener">Escribidnos por WhatsApp<span>→</span></a>'
+          f'<h2>¿Abrimos {sh}<br><span class="t">a toda España?</span></h2><div class="row"><div class="cn"><img src="/christian-hola.jpg" alt="Christian" width="56" height="56">'
+          '<p>Soy Christian. Os enseño esta tienda en 30 minutos, con vuestro catálogo y en directo.</p></div>'
+          f'<div class="btns"><a class="cta" href="{wa(c)}" target="_blank" rel="noopener">Escribidme por WhatsApp<span>→</span></a>'
           f'<a class="cta ghost" href="{BOOK}{c["slug"]}&amp;utm_content=cta-8" target="_blank" rel="noopener">Reservar videollamada</a></div></div></div></section>\n'
           f'<footer id="pie"><div class="wrap"><span>Demo de concepto de 404 Growth. No es la web oficial.</span><span>Marca y productos: {nm} · @{E(c["handle"])}. Fotos de la tienda creadas con IA a partir de sus productos reales.</span></div></footer>\n'
           f'<a class="wa-fab" href="{wa(c)}" target="_blank" rel="noopener"><img src="/christian-hola.jpg" alt="" width="38" height="38"><span>Escribir a Christian<small>por WhatsApp</small></span>{WA_IC}</a>\n')
     return o
 
 
-def ad(c, inner, foot, label):
+def ad(c, inner, foot, label, n):
     a = E(c['handle']); ini = E(c['name'][0].upper())
     return (f'<div class="adw"><div class="ad"><div class="ah"><span class="av"><i>{ini}</i></span><b>{a}</b><small>Publicidad</small><em>···</em></div>'
-            f'<div class="am">{inner}</div><div class="af"><span>{E(foot)}</span><b>›</b></div></div><p class="al">{label}</p></div>')
+            f'<div class="am">{inner}</div><div class="af"><span>{E(foot)}</span><b>›</b></div></div><p class="al"><span class="ix">Idea {n}</span>{_lab(label)}</p></div>')
+
+
+def _lab(label):
+    """'<b>Envío</b> · captación fuera de X' → título y objetivo en dos líneas, sin el punto"""
+    m = re.match(r'(<b>.*?</b>)\s*·\s*(.+)$', label)
+    if not m:
+        return label
+    ob = m.group(2)
+    return m.group(1) + f'<span class="ob">{ob[0].upper() + ob[1:]}</span>'
 
 
 def ads(c):
     N = NICHE[c['niche']]; A = c['ads']; p = c['prods']
     g = ad(c, f'<div class="ab" {bi("x2", "center 30%")}></div><div class="ao bl"><small>{E(A.get("a1s", "Nueva colección"))}</small><h6 style="font-size:26px">{A["a1"]}</h6><span class="pill">Comprar</span></div>',
-           'Comprar ahora', '<b>Producto estrella</b> · retargeting a quien vio el post')
+           'Comprar ahora', '<b>Producto estrella</b> · retargeting a quien vio el post', 1)
     g += ad(c, f'<div class="ab" {bi("l1", "center 30%")}></div><div class="ao tp"><h6>De {E(c["city_short"])}<br>a toda España.</h6></div>',
-            'Comprar ahora', f'<b>Envío</b> · captación fuera de {E(c["city_short"])}')
+            'Comprar ahora', f'<b>Envío</b> · captación fuera de {E(c["city_short"])}', 2)
     g += ad(c, f'<div class="ab cr"><div class="col"><i data-i="{p[1]["id"]}"></i><b>+</b><i data-i="{p[2]["id"]}"></i><b>+</b><i data-i="{p[3]["id"]}"></i></div><h6 class="dk">{A["a3"]}</h6></div>',
-            N['ad3_btn'], f'<b>{E(N["complete"])}</b> · sube el ticket medio')
+            N['ad3_btn'], f'<b>{E(N["complete"])}</b> · sube el ticket medio', 3)
     g += ad(c, f'<div class="ab tc"><div class="qt">“{E(c["quotes"][0][0])}”<small>{E(c["quotes"][0][1])}</small></div><i class="rd" data-i="l3"></i></div>',
-            'Comprar ahora', '<b>Vuestra voz</b> · lo que ya contáis en Instagram')
+            'Comprar ahora', '<b>Vuestra voz</b> · lo que ya contáis en Instagram', 4)
     g += ad(c, f'<div class="ab sp"><i data-i="look"></i><div class="bl2"><small>En {E(c["short"])}</small>' + ''.join(f'<span>{E(k["label"])}</span>' for k in c['cats']) + '<span>Novedades</span></div></div>',
-            'Descubrir', '<b>Catálogo</b> · todo lo que tenéis, a un toque')
+            'Descubrir', '<b>Catálogo</b> · todo lo que tenéis, a un toque', 5)
     g += ad(c, f'<div class="ab" {bi("l4", "center 30%")}></div><div class="ao bl"><small>{E(A["a6s"])}</small><h6>{A["a6"]}</h6><span class="pill">{E(A["a6b"])}</span></div>',
-            'Enviar mensaje', A['a6l'])
-    return ('<div class="adsx"><div class="adsh"><h3>Primeras creatividades</h3><p>Hechas con vuestras fotos. Cada una con un objetivo distinto dentro del embudo.</p></div>'
-            f'<div class="adg">{g}</div></div>')
+            'Enviar mensaje', A['a6l'], 6)
+    return f'<div class="adsx"><div class="adg">{g}</div></div>'
 
 
 def plan(c):
     N = NICHE[c['niche']]
-    st = [('store', 'Tienda online propia', N['stack1']), ('card', 'Pagos', 'Tarjeta, Bizum y Apple Pay en el checkout.'),
-          ('box', 'Stock unificado', f'Lo que se vende en {c["stock_where"]} se descuenta online, y al revés.'),
-          ('insta', 'Instagram Shopping', f'Cada post y cada reel, con {N["item_art"]} etiquetada.'),
-          ('chart', 'Píxel + API de conversiones', 'Medición fiable de cada venta que llega por anuncios.'),
-          ('spark', 'Anuncios en Meta', f'Campañas con vuestras fotos para vender fuera de {c["city_short"]}.')]
-    ph = [('Día 0', 'Llamada de arranque', 'Os escuchamos y nos contáis cómo funciona la tienda.', 0, 1),
-          ('Días 0–3', 'Accesos y vuestra tienda', 'Dominio, pagos y lo que haga falta, con vosotros.', 0, 3),
-          ('Días 3–8', 'Diseño', 'La tienda con vuestra marca y vuestras fotos.', 3, 5),
-          ('Días 3–10', 'Catálogo', N['plan_cat'], 3, 7),
-          ('Días 8–13', 'Pagos, envíos y stock', 'Checkout, tarifas de envío y stock unificado.', 8, 5),
-          ('Días 13–14', 'Pedido de prueba', 'Compramos de verdad para comprobarlo todo.', 13, 2),
-          ('Día 15', 'Lanzamiento', 'Tienda abierta, Instagram Shopping y medición activa.', 14, 1)]
-    g = ('<div class="gantt g15"><div class="gh"><span style="border:0;padding-left:0">Los 15 días</span><div>'
-         + ''.join(f'<span>{k}</span>' for k in range(1, 16)) + '</div></div>')
-    for a, b, p, s0, w in ph:
-        g += (f'<div class="gr"><div class="gl"><small>{a}</small><b>{b}</b><p>{p}</p></div><div class="gt">' + '<i></i>' * 15 +
-              f'<span style="left:{s0 / 15 * 100:.2f}%;width:{w / 15 * 100:.2f}%"></span></div></div>')
-    g += '</div>'
-    return (f'<section class="sec" id="plan" style="background:var(--cream)"><div class="wrap"><div class="chap"><span class="num">04</span><span class="lb">Plan y sistema</span></div>'
-            '<div class="head"><h2>Todo lo que montamos,<br>conectado.</h2><p>Una sola pieza: tienda, pagos, stock, Instagram y anuncios hablando entre sí desde el primer día.</p></div>'
-            '<div class="stack">' + ''.join(f'<div class="sk">{ic(i)}<b>{E(b)}</b><p>{E(p)}</p></div>' for i, b, p in st) + '</div>' + g +
-            '<div class="next"><div class="nx"><span class="n">Paso 1</span><b>Llamada de 30 min</b><p>Os enseñamos esta propuesta con vuestro catálogo, en directo.</p></div>'
-            f'<div class="nx"><span class="n">Paso 2</span><b>{E(N["next2"][0])}</b><p>{E(N["next2"][1])}</p></div>'
-            f'<div class="nx"><span class="n">Paso 3</span><b>Arrancamos</b><p>En 15 días, {E(c["short"])} vende online.</p></div></div>'
-            f'<div class="ctarow">{cta(c, 7, "Reservar la llamada", "Sin compromiso")}</div></div></section>\n')
+    ms = [('Día 0', 'Llamada de arranque', 'Nos contáis cómo funciona la tienda y preparamos los accesos.'),
+          ('Días 3–10', 'Diseño y catálogo', f'Vuestra marca, vuestras fotos y las primeras {N["item_pl"]} subidas.'),
+          ('Días 8–14', 'Pagos, envíos y prueba', 'Checkout, envíos, stock unificado y un pedido de prueba real.'),
+          ('Día 15', 'Lanzamiento', 'Tienda abierta, Instagram Shopping y medición activa.')]
+    inc = [('store', 'Tienda online propia'), ('card', 'Tarjeta, Bizum y Apple Pay'), ('box', 'Stock unificado con la tienda'),
+           ('insta', 'Instagram Shopping'), ('spark', 'Anuncios en Meta'), ('chart', 'Medición de cada venta')]
+    return (f'<section class="sec" id="plan" style="background:var(--cream)"><div class="wrap"><div class="chap"><span class="num">04</span><span class="lb">Plan</span></div>'
+            '<div class="head"><h2>En 15 días,<br>vendiendo online.</h2><p>Lo montamos nosotros, con vosotros, mientras la tienda sigue abierta como siempre.</p></div>'
+            '<div class="ms">' + ''.join(f'<div><small>{a}</small><b>{E(b)}</b><p>{E(p)}</p></div>' for a, b, p in ms) + '</div>'
+            '<div class="inc"><span>Incluye</span>' + ''.join(f'<em>{ic(i, "i2")}{E(t)}</em>' for i, t in inc) + '</div>'
+            f'<div class="ctarow">{cta(c, 7, "Reservar la llamada", "30 minutos · sin compromiso")}</div></div></section>\n')
 
 
 def _rgb(h):
@@ -362,14 +439,14 @@ def head(c, ids):
             f'<title>{title}</title><meta name="description" content="{desc}"><meta property="og:type" content="website"><meta property="og:site_name" content="404 Growth">'
             f'<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><meta property="og:image" content="https://404growth.com/p-{s}--b--og.jpg">'
             '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">'
-            '<link rel="icon" href="/favicon.svg" type="image/svg+xml">' + P['scripts_head'][0] + st0 + v2 + P['styles'][2] + P['styles'][3] + v3i + V32 + '</head>')
+            '<link rel="icon" href="/favicon.svg" type="image/svg+xml">' + P['scripts_head'][0] + st0 + v2 + P['styles'][2] + P['styles'][3] + v3i + V32 + V33 + '</head>')
 
 
 def scripts(c):
     sb = P['scripts_body']
     cnt = sb[2].replace('var slug="lola-shop-madrid"', f'var slug="{c["slug"]}"')
     assert f'var slug="{c["slug"]}"' in cnt
-    return sb[0] + sb[1] + cnt + sb[4] + sb[5] + WA_JS + '</body></html>'
+    return sb[0] + sb[1] + cnt + sb[4] + WA_JS + TOUR_JS + '</body></html>'
 
 
 def images(c):
