@@ -106,6 +106,12 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Generador en `prospeccion/lote31/` (ver `LEEME.md`): formato del lote 30, con todas las fotos de la tienda (hero, productos, ficha, categorías y banner) hechas con Apimart a partir de sus productos reales de Instagram. Nano Banana Pro (`gemini-3-pro-image-preview`) a 2K cuesta 0,02 $ por imagen; 15 por tienda.
 - Se publican en `404growth.com/p/<slug>/` (archivos en `web117-404growth/`, líneas en `_redirects`). Los botones van a `/book` con `utm_campaign=<slug>`, no a Calendly. El plan de la propuesta es el de 15 días del portal.
 - Las fotos descargadas de Instagram solo sirven de referencia: cuando las propuestas están publicadas se borran del Mac (Chris solo quiere `subir.command` y las imágenes de IA).
+- **Lote 32 (4/11/2026, 21 de 30 publicadas en el Mac a falta de `subir.command`):** rejilla 3x3 a 4K (`jobs_lib.GRID = 3`, `run32.py`): 4 llamadas y 0,09 $ por tienda. Lo que se aprendió:
+  - Cuando en sus fotos posa la dueña o alguien del equipo, la IA tiende a copiar su cara. La regla de `KEEP['moda']` y la de las rejillas lo frenan, pero se revisa siempre con `cmpref.py <slug>` (referencias frente a resultado) y, si alguna se parece, se recorta la cara a la altura de los labios con `topcrop.py <slug> <id>=<fracción>` (el original queda en `<id>.orig.jpg`). El banner (l5) con referencias de su tienda también puede sacar a la dueña: se rehace sin referencias.
+  - El hero salía a veces como pantalla partida (una franja borrosa a la izquierda): el prompt ya pide «one single continuous photograph». Revisarlos antes de publicar.
+  - Apimart no deja lanzar una imagen con menos de 0,05 $ de saldo.
+  - Higgsfield (plan gratis): una generación a la vez (si no, error 429) y unos 4,25 créditos por imagen a 2K.
+  - El puente con el Mac no acepta archivos de más de 20 MB: el paquete para publicar se parte con `split -b 19m` y se une con `cat` en el Mac.
 - **Rejillas (4/11/2026):** `jobs_all.py --rejilla <slug>` hace las 15 fotos en 6 llamadas (hero, banner y look sueltas; ficha, productos y categorías en rejillas 2x2 que `runjobs.py` corta). Misma calidad en la página y 0,12 $ por tienda en vez de 0,30 $. También se puede generar en Higgsfield (créditos gratis; la prueba a 2K descontó 3,5 créditos): referencias con `media_import_url` y resultado descargado con Chrome (ver `prospeccion/lote31/LEEME.md`).
 
 ## Portada en el móvil (v56, 4/11/2026)

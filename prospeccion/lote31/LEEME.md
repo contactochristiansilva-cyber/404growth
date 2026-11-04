@@ -29,3 +29,11 @@ Los botones de la propuesta van a `404growth.com/book?utm_source=propuesta&utm_c
 - 30 tiendas del CRM (lote del 4/11). Fotos de Instagram con `igdl.py` (más rápido: la función se guarda en `localStorage.__igdl` de la pestaña de Instagram y cada tienda es navegar + `await (eval(localStorage.getItem('__igdl')))('<slug>')`), comprimidas en un zip en Descargas y pasadas a `src/l31/<slug>/`.
 - `igsheet.py <slug>` hace la hoja de contacto de sus 24 fotos (`l32/sheets/`). Los datos del scrapeo están en `l32/data.json`.
 - Cada tienda tiene dos archivos en `l32/entries/`: `<slug>.jobs.py` (encargos) y `<slug>.shop.py` (textos y datos); `jobs_all.py` y `shops.py` los cargan solos. `check32.py <slug>` comprueba sin gastar que todo monta. Las instrucciones que se siguieron para escribirlos están en `l32/BRIEF.md`.
+
+### Revisión antes de publicar (lote 32)
+
+1. `aisheet32.py <slug>`: hoja con las 15 fotos de IA.
+2. `cmpref.py <slug>`: cada encargo con sus referencias al lado. Si una cara se parece a la de la dueña o su equipo, `topcrop.py <slug> p1=.07 look=.19 …` la recorta a la altura de los labios.
+3. Heroes: que no salgan como pantalla partida.
+4. Banner (l5) con gente parecida a la dueña o hecho collage: se rehace sin referencias, solo con el texto del prompt y «No people at all».
+5. `gen.py` + `shots.py` otra vez y se revisan las capturas.
