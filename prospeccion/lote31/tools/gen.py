@@ -1,6 +1,6 @@
 """Lote 31 · propuesta de tienda online (formato del lote 30) con imágenes de Apimart.
 uso: python3 gen.py <slug> [<slug> ...]   → escribe en ../out/: p-<slug>.html y p-<slug>--b--*.jpg (+ og)"""
-import colorsys, html, json, os, re, sys
+import colorsys, html, json, os, re, sys, urllib.parse
 from PIL import Image
 HERE = os.path.dirname(os.path.abspath(__file__)); L31 = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
@@ -11,6 +11,43 @@ E = html.escape
 OUT = os.path.join(L31, 'out')
 BOOK = 'https://404growth.com/book?utm_source=propuesta&utm_medium=web&utm_campaign='
 WA = 'https://wa.me/34610594450'
+
+
+def wa(c):
+    """WhatsApp de Christian con el mensaje ya escrito (lote 32)"""
+    return WA + '?text=' + urllib.parse.quote(f'Hola Christian, he visto la propuesta de {c["name"]}. ')
+
+
+# v32 (4/11/2026): menú en píldora oscura con su logo, letra SF Pro donde antes era monoespaciada, nota de Christian
+# arriba y botón fijo de WhatsApp. Sin asistente ni CRM: solo tienda y anuncios.
+V32 = ('<style id="v32">'
+       ':root{--m:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Inter,Arial,sans-serif}'
+       '.mono,.chap .lb,.fun-h,.gl small,.fs small,.mk small,.src,footer,.fx .note{letter-spacing:.07em;font-weight:500}'
+       '.nav{position:sticky;top:0;z-index:60;background:transparent!important;border:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;padding:12px 16px 0;pointer-events:none}'
+       '.nav .wrap{pointer-events:auto;width:max-content;max-width:100%;height:auto;margin:0 auto;display:flex;align-items:center;gap:4px;padding:7px 7px 7px 24px;border-radius:999px;'
+       'background:rgba(58,58,58,.8);backdrop-filter:saturate(160%) blur(18px);-webkit-backdrop-filter:saturate(160%) blur(18px);box-shadow:0 12px 32px rgba(0,0,0,.18),inset 0 0 0 1px rgba(255,255,255,.08)}'
+       '.nav .br{color:#fff!important;margin-right:14px;text-decoration:none;display:flex;align-items:center}'
+       '.nav .br .wm{color:#fff!important}.nav .br img{height:26px;width:auto;max-width:150px;object-fit:contain;filter:brightness(0) invert(1)}.nav .br svg{height:30px;width:auto}'
+       '.nav .lk2{display:flex;gap:2px;margin:0}'
+       '.nav .lk2 a{font-family:var(--f);font-size:16px;font-weight:500;letter-spacing:-.01em;text-transform:none;color:#fff;padding:12px 16px;border-radius:999px;text-decoration:none;transition:background .2s}'
+       '.nav .lk2 a:hover{background:rgba(255,255,255,.12)}'
+       '.nav .cta{margin-left:8px!important;background:#fff!important;color:#111!important;border:0!important;border-radius:999px!important;padding:14px 26px!important;font-size:16px!important;font-weight:500;box-shadow:none!important}'
+       '.nav .cta span{display:none}'
+       '.hi{display:flex;align-items:center;gap:12px;width:max-content;max-width:100%;margin:0 auto 26px;padding:8px 20px 8px 8px;border-radius:999px;background:rgba(255,255,255,.78);'
+       'box-shadow:inset 0 0 0 1px rgba(0,0,0,.05),0 10px 26px rgba(0,0,0,.06);text-align:left}'
+       '.hi img{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none}.hi p{margin:0;max-width:470px;font-size:14.5px;line-height:1.38;color:var(--ink)}.hi b{display:inline;font-weight:600;font-size:inherit;letter-spacing:0;margin:0}'
+       '.wa-fab{position:fixed;right:20px;bottom:20px;z-index:70;display:flex;align-items:center;gap:12px;padding:8px 22px 8px 8px;border-radius:999px;background:rgba(58,58,58,.88);'
+       'backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px);color:#fff;text-decoration:none;font:500 15.5px/1.2 var(--f);'
+       'box-shadow:0 14px 34px rgba(0,0,0,.24),inset 0 0 0 1px rgba(255,255,255,.08);transform:translateY(140%);opacity:0;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .4s}'
+       '.wa-fab.on{transform:none;opacity:1}.wa-fab img{width:38px;height:38px;border-radius:50%;object-fit:cover}'
+       '.wa-fab small{display:block;font-size:12px;font-weight:400;color:rgba(255,255,255,.7)}'
+       '.fun{grid-template-columns:repeat(3,1fr)!important}'
+       '@media (max-width:760px){.nav{padding:10px 12px 0}.nav .lk2{display:none}.nav .wrap{padding-left:18px}.nav .br img{height:22px;max-width:120px}'
+       '.nav .cta{padding:12px 20px!important;font-size:15px!important}.hi{border-radius:20px;padding:10px 14px 10px 10px}.hi p{font-size:13.5px}'
+       '.wa-fab{left:12px;right:12px;bottom:12px;justify-content:center;padding-right:16px}.fun{grid-template-columns:1fr!important}}'
+       '</style>')
+WA_JS = "<script>(function(){var b=document.querySelector('.wa-fab');if(!b)return;function f(){b.classList.toggle('on',scrollY>600)}addEventListener('scroll',f,{passive:true});f()})();</script>"
+WA_IC = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 12a8 8 0 0 1-11.7 7.1L4 20l1-4.1A8 8 0 1 1 20 12z"/></svg>'
 
 IC = {
  'truck': '<path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/>',
@@ -115,7 +152,7 @@ def pdp_inf(c, m=False):
             f'<div class="price">{E(p.get("price") or c.get("price_txt", "Vuestro precio"))} <small>IVA incluido</small></div>'
             + (N['variant'](c) if not m and N.get('variant') else '') +
             f'<div class="add">Añadir a la cesta</div><div class="pay"><span>Apple Pay</span><span>Bizum</span><span>Visa</span><span>Mastercard</span></div>'
-            f'<div class="acc">{acc}</div><div class="wa">{ic("chat")}<div><b>{E(N["wa_q"])}</b><span>Te contestamos al momento por WhatsApp.</span></div></div></div>')
+            f'<div class="acc">{acc}</div><div class="wa">{ic("chat")}<div><b>{E(N["wa_q"])}</b><span>Escribidnos por WhatsApp y os ayudamos.</span></div></div></div>')
 
 
 def shop_pdp(c):
@@ -153,10 +190,12 @@ def cta(c, n, label, small=''):
 # ---------------- the proposal ----------------
 def body(c):
     N = NICHE[c['niche']]; nm = E(c['name']); sh = E(c['short'])
-    o = ('<body>\n<div class="nav"><div class="wrap"><div class="br">' + wm(c) + '<em>×</em>404 Growth</div>'
-         '<div class="lk2"><a href="#tienda">01 Tienda</a><a href="#diagnostico">02 Diagnóstico</a><a href="#captacion">03 Captación</a><a href="#plan">04 Plan</a></div>'
-         + cta(c, 1, 'Hablamos') + '</div></div>\n')
-    o += (f'<header class="hero" id="inicio"><div class="wrap"><div class="hmeta mono"><span>Propuesta privada</span><span>{nm} · {E(c["city"])}</span><span>Noviembre 2026</span></div>'
+    o = ('<body>\n<div class="nav"><div class="wrap"><a class="br" href="#inicio">' + wm(c) + '</a>'
+         '<div class="lk2"><a href="#tienda">Tienda</a><a href="#diagnostico">Diagnóstico</a><a href="#captacion">Anuncios</a><a href="#plan">Plan</a></div>'
+         f'<a class="cta" href="{wa(c)}" target="_blank" rel="noopener">Hablamos<span>→</span></a></div></div>\n')
+    o += (f'<header class="hero" id="inicio"><div class="wrap"><div class="hi"><img src="/christian-hola.jpg" alt="Christian" width="46" height="46">'
+          f'<p><b>Hola, soy Christian.</b> He preparado esta propuesta solo para {nm}, con vuestros productos. Si os encaja, escribidme por WhatsApp.</p></div>'
+          f'<div class="hmeta mono"><span>Propuesta privada</span><span>{nm} · {E(c["city"])}</span><span>Noviembre 2026</span></div>'
           f'<h1>{c.get("h1", "Vuestra tienda. <br><span class=\"t\">Abierta 24&nbsp;horas.</span>")}</h1>'
           f'<div class="sub"><p>{c["sub"]}</p><div class="btns">{cta(c, 2, "Quiero mi tienda")}<a class="cta ghost" href="#tienda">Ver la tienda</a></div></div></div>'
           f'<div class="stage"><div class="lap">{bw(c, shop_home(c, False))}</div>{phone(c, shop_home_m(c))}</div>'
@@ -187,20 +226,18 @@ def body(c):
           '</div><b>Contenido que vende</b><p>Fotos con nivel de marca, listas para la tienda y para anuncios.</p></div></div>')
     o += ('<h3 style="font-size:34px;letter-spacing:-.035em;margin:110px 0 30px">Dónde se escapan hoy las ventas</h3><div class="leaks">'
           + ''.join(f'<div class="lk"><span class="n">{k + 1:02d}</span><b>{E(a)}</b><p>{E(b)}</p></div>' for k, (a, b) in enumerate(d['leaks']))
-          + f'</div><div class="ctarow">{cta(c, 4, "Recuperar esas ventas", "15 minutos · sin compromiso")}</div></div></section>\n')
+          + f'</div><div class="ctarow">{cta(c, 4, "Recuperar esas ventas", "30 minutos · sin compromiso")}</div></div></section>\n')
     o += ('<section class="sec dark" id="mercado"><div class="wrap"><div class="chap"><span class="num">+</span><span class="lb">Contexto de mercado</span></div><div class="mkt two">'
           '<div class="mk"><b>114.800<em> M€</em></b><p>facturó el comercio electrónico en España en 2025.</p><small>Fuente: CNMC · <a href="https://www.alimarket.es/electro/noticia/428689/el-comercio-electronico-supero-en-espana-los-114-800-m-en-2025" target="_blank" rel="noopener">CNMCData, 2026</a></small></div>'
-          '<div class="mk"><b>70<em>%</em></b><p>de los carritos se abandonan. Por eso la tienda recupera cada uno por email y WhatsApp.</p><small>Fuente: <a href="https://baymard.com/lists/cart-abandonment-rate" target="_blank" rel="noopener">Baymard Institute</a> · media de 50 estudios</small></div>'
+          '<div class="mk"><b>70<em>%</em></b><p>de los carritos se abandonan. Por eso la tienda recupera cada uno con un email automático.</p><small>Fuente: <a href="https://baymard.com/lists/cart-abandonment-rate" target="_blank" rel="noopener">Baymard Institute</a> · media de 50 estudios</small></div>'
           f'</div><div class="takeaway"><p>El comercio online no deja de crecer en España. <em>{E(N["take"])}</em></p></div></div></section>\n')
     o += ('<section class="sec dark" id="captacion"><div class="wrap"><div class="chap"><span class="num">03</span><span class="lb">Captación</span></div>'
-          '<div class="head"><h2>Una tienda sin tráfico<br>es un escaparate cerrado.</h2><p>Por eso no entregamos solo una web: montamos el sistema completo que lleva al cliente del post a la compra, y de la compra a la siguiente.</p></div>'
-          '<div class="fun-h"><span>Descubre</span><span>Considera</span><span>Compra</span><span>Resuelve</span><span>Repite</span></div><div class="fun">'
+          '<div class="head"><h2>Una tienda sin tráfico<br>es un escaparate cerrado.</h2><p>Por eso no entregamos solo una web: la conectamos con vuestro Instagram y con anuncios que llevan al cliente del post a la compra.</p></div>'
+          '<div class="fun-h"><span>Descubre</span><span>Considera</span><span>Compra</span></div><div class="fun">'
           + ''.join(f'<div class="fs"><span class="n">{k + 1:02d}</span><b>{a}</b><em>{b}</em><p>{p}</p><small>{s_}</small></div>' for k, (a, b, p, s_) in enumerate([
               ('Contenido', f'Instagram · {E(c["followers"])}', f'Los reels y posts que ya hacéis, ahora con {N["item_pl"]} etiquetadas.', 'Alcance · guardados'),
               ('Anuncios', 'Meta Ads', f'Captación en toda España y retargeting a quien ya os vio.', 'CTR · CPC'),
-              ('Tienda', 'Ficha + checkout', N['fun_shop'], 'Conversión · ticket medio'),
-              ('Asistente IA', 'WhatsApp 24/7', N['fun_bot'], 'Respuesta · recuperadas'),
-              ('Recompra', 'CRM + email', N['fun_crm'], 'Recompra · valor de cliente')]))
+              ('Tienda', 'Ficha + checkout', N['fun_shop'], 'Conversión · ticket medio')]))
           + '</div>' + ads(c) + f'<div class="ctarow dk">{cta(c, 5, "Lanzar estas campañas", "Os preparamos la primera tanda")}</div></div></section>\n')
     o += (f'<section class="sec" id="cambia"><div class="wrap"><div class="chap"><span class="num">+</span><span class="lb">Lo que cambia</span></div>'
           f'<div class="head"><h2>Más ventas.<br>Sin abrir otro local.</h2><p>Un segundo canal de ingresos que trabaja con el mismo stock, el mismo equipo y {E(c["the_store"])}.</p></div><div class="chg">'
@@ -215,10 +252,11 @@ def body(c):
           f'</div><div class="ctarow">{cta(c, 6, "Lo quiero para " + sh)}</div></div></section>\n')
     o += plan(c)
     o += (f'<section class="close" id="hablar" data-i="h"><div class="wrap"><div class="chap"><span class="num">→</span><span class="lb">Siguiente paso</span></div>'
-          f'<h2>¿Abrimos {sh}<br><span class="t">a toda España?</span></h2><div class="row"><p>Os lo enseñamos en 15 minutos, con vuestro catálogo y en directo.</p>'
-          f'<div class="btns"><a class="cta" href="{WA}" target="_blank" rel="noopener">Escribidnos por WhatsApp<span>→</span></a>'
+          f'<h2>¿Abrimos {sh}<br><span class="t">a toda España?</span></h2><div class="row"><p>Os lo enseñamos en 30 minutos, con vuestro catálogo y en directo.</p>'
+          f'<div class="btns"><a class="cta" href="{wa(c)}" target="_blank" rel="noopener">Escribidnos por WhatsApp<span>→</span></a>'
           f'<a class="cta ghost" href="{BOOK}{c["slug"]}&amp;utm_content=cta-8" target="_blank" rel="noopener">Reservar videollamada</a></div></div></div></section>\n'
-          f'<footer id="pie"><div class="wrap"><span>Demo de concepto de 404 Growth. No es la web oficial.</span><span>Marca y productos: {nm} · @{E(c["handle"])}. Fotos de la tienda creadas con IA a partir de sus productos reales.</span></div></footer>\n')
+          f'<footer id="pie"><div class="wrap"><span>Demo de concepto de 404 Growth. No es la web oficial.</span><span>Marca y productos: {nm} · @{E(c["handle"])}. Fotos de la tienda creadas con IA a partir de sus productos reales.</span></div></footer>\n'
+          f'<a class="wa-fab" href="{wa(c)}" target="_blank" rel="noopener"><img src="/christian-hola.jpg" alt="" width="38" height="38"><span>Escribir a Christian<small>por WhatsApp</small></span>{WA_IC}</a>\n')
     return o
 
 
@@ -252,7 +290,7 @@ def plan(c):
           ('box', 'Stock unificado', f'Lo que se vende en {c["stock_where"]} se descuenta online, y al revés.'),
           ('insta', 'Instagram Shopping', f'Cada post y cada reel, con {N["item_art"]} etiquetada.'),
           ('chart', 'Píxel + API de conversiones', 'Medición fiable de cada venta que llega por anuncios.'),
-          ('bot', 'Asistente IA + CRM', 'WhatsApp que responde 24/7 y ficha de cada cliente.')]
+          ('spark', 'Anuncios en Meta', f'Campañas con vuestras fotos para vender fuera de {c["city_short"]}.')]
     ph = [('Día 0', 'Llamada de arranque', 'Os escuchamos y nos contáis cómo funciona la tienda.', 0, 1),
           ('Días 0–3', 'Accesos y vuestra tienda', 'Dominio, pagos y lo que haga falta, con vosotros.', 0, 3),
           ('Días 3–8', 'Diseño', 'La tienda con vuestra marca y vuestras fotos.', 3, 5),
@@ -267,9 +305,9 @@ def plan(c):
               f'<span style="left:{s0 / 15 * 100:.2f}%;width:{w / 15 * 100:.2f}%"></span></div></div>')
     g += '</div>'
     return (f'<section class="sec" id="plan" style="background:var(--cream)"><div class="wrap"><div class="chap"><span class="num">04</span><span class="lb">Plan y sistema</span></div>'
-            '<div class="head"><h2>Todo lo que montamos,<br>conectado.</h2><p>Una sola pieza: tienda, pagos, stock, Instagram, anuncios, asistente y CRM hablando entre sí desde el primer día.</p></div>'
+            '<div class="head"><h2>Todo lo que montamos,<br>conectado.</h2><p>Una sola pieza: tienda, pagos, stock, Instagram y anuncios hablando entre sí desde el primer día.</p></div>'
             '<div class="stack">' + ''.join(f'<div class="sk">{ic(i)}<b>{E(b)}</b><p>{E(p)}</p></div>' for i, b, p in st) + '</div>' + g +
-            '<div class="next"><div class="nx"><span class="n">Paso 1</span><b>Llamada de 15 min</b><p>Os enseñamos esta propuesta con vuestro catálogo, en directo.</p></div>'
+            '<div class="next"><div class="nx"><span class="n">Paso 1</span><b>Llamada de 30 min</b><p>Os enseñamos esta propuesta con vuestro catálogo, en directo.</p></div>'
             f'<div class="nx"><span class="n">Paso 2</span><b>{E(N["next2"][0])}</b><p>{E(N["next2"][1])}</p></div>'
             f'<div class="nx"><span class="n">Paso 3</span><b>Arrancamos</b><p>En 15 días, {E(c["short"])} vende online.</p></div></div>'
             f'<div class="ctarow">{cta(c, 7, "Reservar la llamada", "Sin compromiso")}</div></div></section>\n')
@@ -322,14 +360,14 @@ def head(c, ids):
             f'<title>{title}</title><meta name="description" content="{desc}"><meta property="og:type" content="website"><meta property="og:site_name" content="404 Growth">'
             f'<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><meta property="og:image" content="https://404growth.com/p-{s}--b--og.jpg">'
             '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">'
-            '<link rel="icon" href="/favicon.svg" type="image/svg+xml">' + P['scripts_head'][0] + st0 + v2 + P['styles'][2] + P['styles'][3] + v3i + '</head>')
+            '<link rel="icon" href="/favicon.svg" type="image/svg+xml">' + P['scripts_head'][0] + st0 + v2 + P['styles'][2] + P['styles'][3] + v3i + V32 + '</head>')
 
 
 def scripts(c):
     sb = P['scripts_body']
     cnt = sb[2].replace('var slug="lola-shop-madrid"', f'var slug="{c["slug"]}"')
     assert f'var slug="{c["slug"]}"' in cnt
-    return sb[0] + sb[1] + cnt + sb[4] + sb[5] + '</body></html>'
+    return sb[0] + sb[1] + cnt + sb[4] + sb[5] + WA_JS + '</body></html>'
 
 
 def images(c):

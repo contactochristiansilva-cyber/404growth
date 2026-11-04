@@ -29,6 +29,9 @@ for s in sys.argv[1:]:
             cache[n] = img(n)
         return m.group(1) + cache[n]
     h = re.sub(r'(src="|url\()/(p-[a-z0-9-]+--[a-z0-9-]+\.(?:jpg|png))', sub, h)
+    ch = os.path.join(OUT, 'christian-hola.jpg')
+    if os.path.exists(ch):
+        h = h.replace('src="/christian-hola.jpg"', 'src="data:image/jpeg;base64,' + base64.b64encode(open(ch, 'rb').read()).decode() + '"')
     h = h.replace('url(/inter-tight.woff2)', 'url(' + font('inter-tight.woff2') + ')').replace('url(/_f/tenor.woff2)', 'url(' + font('_f/tenor.woff2') + ')')
     h = h.replace('href="/favicon.svg"', 'href="data:image/svg+xml;base64,' + base64.b64encode(open(os.path.join(WEB, 'favicon.svg'), 'rb').read()).decode() + '"')
     os.makedirs(os.path.join(L31, 'l32', 'html'), exist_ok=True)
