@@ -46,14 +46,31 @@ em{font-style:normal}
 .tpill i{width:7px;height:7px;border-radius:50%;background:var(--t);box-shadow:0 0 0 3px rgba(111,194,166,.22)}
 
 /* portada */
-.hero{padding:26px 0 0}.hero-t{max-width:760px}
-.hero.has-ty{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:48px;align-items:center}
-.conf{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;margin-top:18px;padding:16px 18px;border-radius:20px;background:rgba(111,194,166,.08);box-shadow:inset 0 0 0 1px rgba(166,227,205,.35);max-width:560px}
-.conf[hidden]{display:none}
-.conf .ci{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(111,194,166,.16);color:var(--t2)}.conf .ci svg{width:20px;height:20px}
-.conf b{display:block;font-size:16px;font-weight:600;letter-spacing:-.015em}
-.conf p{margin:4px 0 0;color:var(--mute);font-size:14.5px;line-height:1.5}.conf p b{display:inline;color:var(--ink);font-size:inherit;letter-spacing:inherit}
-.conf .cacts{margin-top:12px}.conf .cacts:empty{display:none}
+.hero{padding:26px 0 0;transition:opacity .35s}.hero.wait{opacity:0}.hero-t{max-width:760px}
+.hero.has-ty{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:56px;align-items:center}
+/* confirmación: el círculo se dibuja, luego el check, y un pequeño latido */
+.ok{width:58px;height:58px;margin-bottom:18px}.ok[hidden]{display:none}
+.ok svg{display:block;width:100%;height:100%;overflow:visible}
+.okr{fill:rgba(111,194,166,.12);stroke:var(--t);stroke-width:2.5;stroke-dasharray:1;stroke-dashoffset:1;transform:rotate(-90deg);transform-origin:50% 50%}
+.okp{fill:none;stroke:var(--t2);stroke-width:3.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.ok.go .okr{animation:okd .75s cubic-bezier(.65,0,.35,1) forwards}
+.ok.go .okp{animation:okd .42s .62s cubic-bezier(.65,0,.35,1) forwards}
+.ok.go svg{animation:okpop .55s 1s var(--ease)}
+@keyframes okd{to{stroke-dashoffset:0}}
+@keyframes okpop{40%{transform:scale(1.1)}}
+.when2{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;margin-top:22px}.when2[hidden]{display:none}
+.when2 .cal{width:66px;border-radius:16px}.when2 .cal b{font-size:28px;padding:7px 0 2px}
+.wtx b{display:block;font-family:var(--fd);font-size:22px;font-weight:600;letter-spacing:-.025em;line-height:1.2}
+.wtx span{display:block;margin-top:3px;color:var(--mute);font-size:15px}
+.inv{display:flex;gap:10px;align-items:flex-start;margin:16px 0 0;max-width:560px;color:var(--mute);font-size:14.5px;line-height:1.5}.inv[hidden]{display:none}
+.inv svg{flex:none;width:18px;height:18px;margin-top:2px;color:var(--t2)}.inv b{color:var(--ink);font-weight:600}.inv a{color:var(--t2)}
+.down{display:flex;align-items:center;gap:14px;margin-top:22px;max-width:520px;padding:14px 14px 14px 18px;border-radius:18px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px var(--line);text-decoration:none;color:var(--mute);font-size:15.5px;line-height:1.4}
+.down b{color:var(--ink);font-weight:600}
+.down i{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#07100D;margin-left:auto}
+.down svg{width:15px;height:15px}
+@media (prefers-reduced-motion:no-preference){.down i svg{animation:bob 1.8s ease-in-out infinite}}
+@keyframes bob{50%{transform:translateY(3px)}}
+#videos{scroll-margin-top:70px}
 .ty{position:relative;width:100%;aspect-ratio:9/16;border-radius:26px;overflow:hidden;background:#0B1412;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 30px 70px -34px rgba(0,0,0,.85)}
 .ty[hidden]{display:none}
 .ty video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
@@ -195,6 +212,7 @@ h2{margin:0;font-size:clamp(30px,4.4vw,44px);font-weight:600;letter-spacing:-.04
 .pl-snd .pill{position:relative;display:inline-flex;align-items:center;gap:10px;padding:15px 24px 15px 19px;border-radius:99px;background:#fff;color:#0B1311;font-family:var(--fd);font-size:17px;font-weight:600;letter-spacing:-.01em;box-shadow:0 18px 40px -16px rgba(0,0,0,.75);transition:transform .25s var(--ease)}
 .pl-snd .pill:before{content:"";position:absolute;inset:-6px;border-radius:99px;border:2px solid rgba(255,255,255,.6);animation:snd 1.8s var(--ease) infinite;pointer-events:none}
 .pl-snd:active .pill{transform:scale(.96)}
+.pl-snd .pill{white-space:nowrap}.ty .pl-snd{gap:9px;padding:14px}.ty .pl-snd .pill{font-size:15px;padding:11px 17px 11px 14px;gap:8px}.ty .pl-snd svg{width:19px;height:19px}.ty .pl-snd small{font-size:12px;text-align:center}
 .pl-snd svg{width:22px;height:22px}
 .pl-snd small{font-size:13px;font-weight:500;color:rgba(255,255,255,.9);text-shadow:0 1px 10px rgba(0,0,0,.65)}
 .pl-snd:focus-visible{outline:none}.pl-snd:focus-visible .pill{outline:2px solid var(--t2);outline-offset:6px}
@@ -215,13 +233,16 @@ html.lock,html.lock body{overflow:hidden}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform 1s var(--ease)}
 .rv.in{opacity:1;transform:none}
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.track{animation:none}.ring.go .fg{transition:none}.pl-snd .pill:before{animation:none;opacity:0}}
+@media (prefers-reduced-motion:reduce){.okr,.okp{stroke-dashoffset:0;animation:none!important}.rv{opacity:1;transform:none;transition:none}.track{animation:none}.ring.go .fg{transition:none}.pl-snd .pill:before{animation:none;opacity:0}}
 
 @media (max-width:900px){
  .hero{padding-top:20px}
  .hero.has-ty{display:flex;flex-direction:column;gap:0}.hero.has-ty .hero-t{display:contents}
- .hero.has-ty .chip{align-self:flex-start;order:1}.hero.has-ty h1{order:2}.hero.has-ty .conf{order:3}.hero.has-ty .lead{order:5}
- .ty{order:4;width:min(84%,340px);margin:22px auto 0}
+ .hero.has-ty .ok{order:1;align-self:flex-start}.hero.has-ty h1{order:2}.hero.has-ty .when2{order:3}.hero.has-ty .inv{order:4}.hero.has-ty .down{order:6}
+ .ty{order:5;width:min(300px,64vw);margin:18px auto 0}
+ .ok{width:44px;height:44px;margin-bottom:12px}
+ .when2{margin-top:16px;gap:14px}.when2 .cal{width:58px}.when2 .cal b{font-size:25px}.wtx b{font-size:19px}.wtx span{font-size:14px}
+ .down{margin-top:18px;font-size:14.5px;padding:12px 12px 12px 16px}
  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
  .steps{grid-template-columns:minmax(0,1fr)}
  .cl2{grid-template-columns:minmax(0,1fr)}
@@ -250,6 +271,7 @@ html.lock,html.lock body{overflow:hidden}
   <symbol id="i-play" viewBox="0 0 16 16"><path fill="currentColor" d="M4 2.6v10.8c0 .6.6.9 1.1.6l8.6-5.4c.5-.3.5-1 0-1.2L5.1 2c-.5-.3-1.1 0-1.1.6z"/></symbol>
   <symbol id="i-snd" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M4 9.5h3.2L12 5.5v13l-4.8-4H4z"/><path d="M15.6 9.2a4 4 0 0 1 0 5.6M18.4 6.6a7.6 7.6 0 0 1 0 10.8"/></g></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></g></symbol>
+  <symbol id="i-dn" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 2.5v11M3.5 9L8 13.5 12.5 9"/></symbol>
   <symbol id="i-check" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3.2 8.4l3 3 6.6-6.8"/></symbol>
   <symbol id="i-x" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3.5 3.5l9 9m0-9l-9 9"/></symbol>
   <symbol id="i-l" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10 3L5 8l5 5"/></symbol>
@@ -268,15 +290,16 @@ html.lock,html.lock body{overflow:hidden}
   <div class="w">
     <section class="hero" id="inicio">
       <div class="hero-t">
-        <span class="chip rv"><i></i><span id="chipt">Llamada confirmada</span></span>
+        <div class="ok" id="ok" hidden aria-hidden="true"><svg viewBox="0 0 56 56"><circle class="okr" cx="28" cy="28" r="25" pathLength="1"/><path class="okp" d="M17 29l7.5 7.5L40 21" pathLength="1"/></svg></div>
         <h1 class="rv d1" id="h1">Antes de nuestra llamada, <span class="grad">lo que todos preguntan.</span></h1>
-        <div class="conf" id="conf" hidden><span class="ci"><svg><use href="#i-mail"/></svg></span><div><b>Acepta la invitación de tu correo</b><p id="confp"></p><div class="cacts" id="confa"></div></div></div>
-        <p class="lead rv d2" id="lead">8 vídeos de un minuto con lo que todos preguntan antes de dar el paso. <b>Empieza por el primero.</b></p>
+        <div class="when2" id="when2" hidden><div class="cal" aria-hidden="true"><small id="cw2"></small><b id="cd2"></b><span id="cm2"></span></div><div class="wtx"><b id="w2d"></b><span id="w2h"></span></div></div>
+        <p class="inv" id="conf" hidden><svg><use href="#i-mail"/></svg><span id="confp"></span></p>
+        <a class="down" href="#videos"><span>Justo debajo tienes <b>las 8 dudas que más nos preguntan</b>, resueltas en vídeo.</span><i><svg><use href="#i-dn"/></svg></i></a>
       </div>
       <div class="ty" id="ty" hidden>
         <video id="tyv" playsinline muted preload="metadata" aria-label="Vídeo de Christian antes de la llamada"></video>
         <button class="pl-snd" id="tyu" type="button"><span class="pill"><svg><use href="#i-snd"/></svg>Activar audio</span><small>El vídeo empieza desde el principio</small></button>
-        <span class="tytag">Christian · un mensaje antes de vernos</span>
+        <span class="tytag">Un mensaje de Christian</span>
       </div>
     </section>
 
@@ -397,30 +420,35 @@ fbq('init',id);fbq('track','PageView')})();</script>
   var P=new URLSearchParams(location.search),B=null;try{B=JSON.parse(sessionStorage.getItem('c404bk')||'null')}catch(e){}
   var C=(P.get('c')||(B&&B.c)||'').trim();if(!/^L[A-Za-z0-9_-]{6,14}$/.test(C))C='';
   var S={name:(P.get('n')||(B&&B.name)||'').trim().slice(0,40),start:P.get('t')||(B&&B.start)||'',join:(B&&B.join)||''};
-  var JB=!!(B&&B.c&&B.c===C);   /* JB: acaba de reservar en /book (misma pestaña): sale «Llamada reservada» y el aviso de la invitación */
+  var JB=!!(B&&B.c&&B.c===C),WAIT=!!(C&&!S.start);   /* WAIT: llega con ?c= y aún no sabemos su nombre ni su hora */   /* JB: acaba de reservar en /book (misma pestaña): sale «Llamada reservada» y el aviso de la invitación */
   var seen=ls('c404met')||{};   /* seen: % de cada vídeo visto con el audio activado (100 = entero) */
 
   function fmt(o,dt){return new Intl.DateTimeFormat('es-ES',Object.assign({timeZone:TZ},o)).format(dt)}
   function drawCall(){
     var dt=S.start?new Date(isNaN(+S.start)?S.start:+S.start):null;if(dt&&isNaN(dt))dt=null;
-    var nm=cap(S.name.split(' ')[0]);
-    if(nm||dt){
-      var rel='';if(dt){var t0=new Date(),k=Math.round((new Date(fmt({year:'numeric',month:'2-digit',day:'2-digit'},dt).split('/').reverse().join('-'))-new Date(fmt({year:'numeric',month:'2-digit',day:'2-digit'},t0).split('/').reverse().join('-')))/864e5);
-        rel=k===0?'hoy':k===1?'mañana':k>1&&k<7?'el '+fmt({weekday:'long'},dt):'el '+fmt({weekday:'long',day:'numeric',month:'long'},dt)}
-      $('h1').innerHTML=JB?(nm?'Hecho, '+esc(nm)+'. ':'Hecho. ')+'<span class="grad">'+(dt?'Nos vemos '+esc(rel)+' a las '+esc(fmt({hour:'2-digit',minute:'2-digit'},dt))+'.':'Tu llamada está reservada.')+'</span>'
-        :(nm?'Hola, '+esc(nm)+'. ':'')+'<span class="grad">'+(dt?'Nos vemos '+esc(rel)+'.':'Nos vemos muy pronto.')+'</span>';
-      $('lead').innerHTML=(rel==='hoy'?'Antes de vernos':'Mientras llega el día')+', aquí tienes 8 vídeos de un minuto con lo que todos preguntan antes de dar el paso. <b>Empieza por el primero.</b>';
-    }
+    var nm=cap(S.name.split(' ')[0]),past=dt&&+dt+DUR*6e4<Date.now(),hm=dt?fmt({hour:'2-digit',minute:'2-digit'},dt):'';
+    var mine='';if(dt)try{var tz=Intl.DateTimeFormat().resolvedOptions().timeZone,loc=new Intl.DateTimeFormat('es-ES',{hour:'2-digit',minute:'2-digit'}).format(dt);if(tz&&tz!==TZ&&loc!==hm)mine=loc}catch(e){}
+    if(dt&&!past){   /* llamada por delante: su nombre, el check y el día y la hora que eligió */
+      $('ok').hidden=false;
+      $('h1').innerHTML=(nm?esc(nm)+', tu':'Tu')+' llamada está <span class="grad">confirmada.</span>';
+      $('when2').hidden=false;$('cw2').textContent=fmt({weekday:'short'},dt).replace('.','');$('cd2').textContent=fmt({day:'numeric'},dt);$('cm2').textContent=fmt({month:'short'},dt).replace('.','');
+      $('w2d').textContent=cap(fmt({weekday:'long',day:'numeric',month:'long'},dt))+', '+hm+' h';
+      $('w2h').textContent=(mine?'Hora de España ('+mine+' en tu hora) · ':'')+DUR+' min por Google Meet';
+    }else if(nm){$('h1').innerHTML='Hola, '+esc(nm)+'. <span class="grad">'+(past?'Seguimos hablando.':'Antes de vernos, lo que todos preguntan.')+'</span>'}
     if(dt){
       $('cw').textContent=fmt({weekday:'short'},dt).replace('.','');$('cd').textContent=fmt({day:'numeric'},dt);$('cm').textContent=fmt({month:'short'},dt).replace('.','');
       $('wt').textContent=cap(fmt({weekday:'long',day:'numeric',month:'long'},dt))+', '+fmt({hour:'2-digit',minute:'2-digit'},dt);
-      var mine='';try{var tz=Intl.DateTimeFormat().resolvedOptions().timeZone;if(tz&&tz!==TZ&&fmt({hour:'2-digit',minute:'2-digit'},dt)!==new Intl.DateTimeFormat('es-ES',{hour:'2-digit',minute:'2-digit'}).format(dt))mine=' ('+new Intl.DateTimeFormat('es-ES',{hour:'2-digit',minute:'2-digit'}).format(dt)+' en tu hora)'}catch(e){}
-      $('wp').textContent='Hora de España'+mine+' · '+DUR+' min por Google Meet';
+      $('wp').textContent='Hora de España'+(mine?' ('+mine+' en tu hora)':'')+' · '+DUR+' min por Google Meet';
       $('tpt').textContent=cap(fmt({weekday:'short',day:'numeric'},dt).replace('.',''))+' · '+fmt({hour:'2-digit',minute:'2-digit'},dt);
-      $('chipt').textContent=JB?'Llamada reservada':nm?'Llamada confirmada, '+nm:'Llamada confirmada';
     }
-    S.dt=dt;tick();acts();
+    S.dt=dt;tick();acts();if(!WAIT)reveal();
   }
+  function fitTy(){   /* móvil: el vídeo de gracias se ajusta para que él y la frase de abajo quepan en la primera pantalla */
+    var box=$('ty');if(box.hidden)return;box.style.width='';if(!matchMedia('(max-width:900px)').matches)return;
+    var top=box.getBoundingClientRect().top+scrollY,dn=d.querySelector('.down'),avail=innerHeight-top-dn.offsetHeight-36;
+    box.style.width=Math.round(Math.max(190,Math.min(300,innerWidth*.64,avail*.5625)))+'px';
+  }
+  function reveal(){$('inicio').classList.remove('wait');fitTy();var o=$('ok');if(!o.hidden&&!S.okd){S.okd=1;setTimeout(function(){o.classList.add('go')},150)}}
   function tick(){
     var dt=S.dt,el=$('left');if(!dt){el.innerHTML='';return}
     var ms=dt-Date.now(),end=+dt+DUR*6e4-Date.now(),t;
@@ -553,9 +581,8 @@ fbq('init',id);fbq('track','PageView')})();</script>
 
   /* ---------- en marcha ---------- */
   function confirmBox(){
-    if(!JB)return;var c=$('conf');c.hidden=false;
-    $('confp').innerHTML='Te ha llegado un email de <b>hola@404growth.com</b>'+(B.email?' a <b>'+esc(B.email)+'</b>':'')+(B.google?' con la invitación de Google Calendar. <b>Acéptala</b> para que quede en tu calendario.':' con todos los detalles.')+' Si no lo ves, mira en Promociones o en Spam.';
-    $('confa').innerHTML=B.gcal&&!B.google?'<a class="btn sm" href="'+esc(B.gcal)+'" target="_blank" rel="noopener"><svg><use href="#i-cal"/></svg>Añadir a mi calendario</a>':'';
+    if(!JB)return;$('conf').hidden=false;
+    $('confp').innerHTML='Acepta la invitación que te ha llegado'+(B.email?' a <b>'+esc(B.email)+'</b>':' a tu correo')+'. Si no la ves, mira en Spam.'+(B.gcal&&!B.google?' <a href="'+esc(B.gcal)+'" target="_blank" rel="noopener">Añadir a mi calendario</a>':'');
   }
   function tyInit(){   /* como los 8: sin sonido y en bucle con «Activar audio»; al tocarlo, desde el principio con sonido */
     if(!TY.src)return;var box=$('ty'),tv=$('tyv'),tb=$('tyu'),on=false,th=null,vis=true;
@@ -567,12 +594,13 @@ fbq('init',id);fbq('track','PageView')})();</script>
     tv.addEventListener('volumechange',function(){if(!on&&!tv.muted)tb.onclick()});
     if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(!vis){if(!tv.paused)tv.pause()}else if(!on&&pl.hidden)tp()},{threshold:.25}).observe(box);
   }
-  draw();drawCall();confirmBox();tyInit();setInterval(tick,30000);
+  if(WAIT){$('inicio').classList.add('wait');setTimeout(function(){if(WAIT){WAIT=false;reveal()}},1500)}
+  draw();drawCall();confirmBox();tyInit();fitTy();addEventListener('resize',fitTy);setInterval(tick,30000);
   var FRESH=JB&&B.fresh;if(FRESH){try{B.fresh=0;sessionStorage.setItem('c404bk',JSON.stringify(B))}catch(e){}}
   if(C){post('m',FRESH?{c:C,fr:1}:{c:C}).then(function(j){if(!j||!j.ok)return;
     S.name=j.name||S.name;if(j.start)S.start=j.start;if(j.join)S.join=j.join;if(j.dur)DUR=j.dur;
     if(j.seen)Object.keys(j.seen).forEach(function(k){seen[k]=Math.max(seen[k]||0,+j.seen[k]||0)});ls('c404met',seen);
-    drawCall();draw();}).catch(function(){})}
+    WAIT=false;drawCall();draw();}).catch(function(){if(WAIT){WAIT=false;reveal()}})}
   var hv=/^#v(\d)$/.exec(location.hash);if(hv&&V[+hv[1]-1]&&V[+hv[1]-1].src)open(+hv[1]-1,true);
 })();
 </script>
