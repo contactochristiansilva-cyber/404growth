@@ -113,3 +113,10 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - A 360 px el botón «Reservar» del menú salía vacío (una regla vieja ocultaba todos sus `span`): arreglado.
 - El carrusel de sectores (`#nichos`) en el móvil se para en cada sector (20 % del recorrido antes y después) y cada paso dura 1,5 veces el ancho de pantalla; en el ordenador no cambia.
 - Se revisa con Playwright a 360, 375 y 390 px: sin scroll lateral y sin palabras partidas.
+
+## Scrapeos de tiendas con +20k en Instagram (lotes del 3 y 4/11/2026)
+
+- Filtros: tienda física en España (calle en la bio, su web o Google), +20.000 seguidores comprobados en Instagram, sin tienda online o floja (ayer y hoy: menos de ~30 productos para su tamaño, web caída o en mantenimiento, web sin carrito), nicho que se pueda enviar o recoger, sin cadenas ni franquicias, y que no estén ya en el CRM. Contacto solo de fuentes públicas del negocio (bio, su web, Google).
+- Cómo se buscan (lo que funciona): Yahoo (`search.yahoo.com`, en Chrome) con `site:instagram.com` + palabras de la bio que delatan venta sin web («Bizum», «pedidos por WhatsApp», «pedidos por MD») + ciudad; el resultado trae los seguidores. DuckDuckGo y Brave piden CAPTCHA tras ~10-20 búsquedas (no se resuelve). Los seguidores se confirman con `fetch('/<cuenta>/')` desde una pestaña de instagram.com (meta `og:description`); la bio y los enlaces, abriendo el perfil. La web se comprueba en su propia pestaña: Shopify `/products.json`, WooCommerce `/wp-json/wc/store/v1/products` (`x-wp-total`).
+- Ojo: muchas cuentas con «Córdoba», «Cartagena», «Toledo» o «boutique» son de Argentina, Colombia, Venezuela o Brasil; se miran la calle y el país.
+- Entran en el CRM como Scrapeados con el `SEED` del worker del admin (`SEED_KEY` nuevo cada lote; los que ya existen no se tocan) y Chris ejecuta `subir.command`.
