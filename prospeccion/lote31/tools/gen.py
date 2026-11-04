@@ -70,6 +70,7 @@ V33 = ('<style id="v33">'
        # secciones
        '.sec{padding:96px 0}.head{margin-bottom:52px}'
        # ficha
+       '.fh{margin-top:130px}.fh h3{font-size:clamp(34px,4.2vw,52px);letter-spacing:-.045em;line-height:1.02;margin:0}'
        '.pdpz{position:relative;padding-right:150px}'
        '.pdpz .bw .scaler{height:auto!important;aspect-ratio:1280/800}'
        '.pdpz .ph{position:absolute;right:0;bottom:-44px;width:250px;box-shadow:0 2px 4px rgba(0,0,0,.05),0 30px 60px -20px rgba(var(--sh),.45),0 70px 120px -40px rgba(var(--sh),.5),0 0 0 1px rgba(0,0,0,.08)}'
@@ -116,6 +117,7 @@ V33 = ('<style id="v33">'
        '.hb{padding:46px 20px 56px}.lede{gap:20px}.lede p{font-size:17px}.lede .btns{flex-direction:column;align-items:stretch;width:100%;max-width:340px}.lede .cta{justify-content:center}'
        '.hero .kpis{margin-top:40px}'
        '.sec{padding:64px 0}.head{margin-bottom:28px}'
+       '.fh{margin-top:72px}.fh h3{font-size:30px}'
        '.pdpz{padding:0}.pdpz .bw{display:none}.pdpz .ph{position:relative;right:auto;bottom:auto;width:min(68vw,300px);margin:0 auto}'
        '.pts{grid-template-columns:1fr 1fr;gap:0 18px;margin-top:40px}.pts div{padding-top:18px}.pts b{font-size:16px}.pts p{font-size:14px}'
        '.cmp .rw{grid-template-columns:1fr;gap:14px;padding:22px 18px}.cmp .lb2{display:flex;align-items:baseline;gap:10px}.cmp .lb2 b{font-size:46px}.cmp .lb2 span{margin:0}'
@@ -314,12 +316,13 @@ def body(c):
           f'<div class="hb"><div class="lede"><p>{c["sub"]}</p><div class="btns"><a class="cta" href="{wa(c)}" target="_blank" rel="noopener">Quiero mi tienda<span>→</span></a>'
           f'<a class="cta ghost" href="{BOOK}{c["slug"]}&amp;utm_content=cta-2" target="_blank" rel="noopener">Reservar 30 min</a></div></div>'
           '<div class="kpis">' + ''.join(f'<div><b{" class=t" if k == 3 else ""}>{a}</b><span>{E(b)}</span></div>' for k, (a, b) in enumerate(c['kpis'])) + '</div></div></header>\n')
-    # 01 · la ficha
-    o += (f'<section class="sec shopsec" id="tienda"><div class="wrap"><div class="chap"><span class="num">01</span><span class="lb">La ficha de producto</span></div>'
-          f'<div class="head"><h2>{N["pdp_h3"]}</h2><p>{E(N["item_art"]).capitalize()} que enseñáis en Instagram, con su ficha, cesta y pago con tarjeta, Bizum o Apple&nbsp;Pay.</p></div>'
+    # 01 · la tienda completa (como en v32) y su ficha de producto
+    o += (f'<section class="sec shopsec" id="tienda"><div class="wrap"><div class="chap"><span class="num">01</span><span class="lb">La tienda</span></div>'
+          f'<div class="head"><h2>Así se vería<br>{nm} online.</h2><p>{E(N["tienda_p"])}</p></div>'
+          f'{bw(c, shop_home(c))}<div class="ctarow">{cta(c, 3, "Quiero esta tienda para " + sh)}</div>'
+          f'<div class="head fh"><h3>{N["pdp_h3"]}</h3><p>{E(N["item_art"]).capitalize()} que enseñáis en Instagram, con su ficha, cesta y pago con tarjeta, Bizum o Apple&nbsp;Pay.</p></div>'
           f'<div class="pdpz">{bw(c, shop_pdp(c))}{phone(c, shop_pdp_m(c))}</div>'
-          '<div class="pts">' + ''.join(f'<div><b>{E(a)}</b><p>{E(b)}</p></div>' for a, b in N['pdp_points']) + '</div>'
-          f'<div class="ctarow">{cta(c, 3, "Quiero esta tienda para " + sh)}</div></div></section>\n')
+          '<div class="pts">' + ''.join(f'<div><b>{E(a)}</b><p>{E(b)}</p></div>' for a, b in N['pdp_points']) + '</div></div></section>\n')
     # 02 · diagnóstico: lo suyo, con sus datos, y los pasos de hoy frente a los de la tienda
     today = [(a, b.replace('{city}', c['city'])) for a, b in N['flow_today']]
     row = lambda st: '<i>›</i>'.join(f'<span>{E(a)}<small>{E(b)}</small></span>' for a, b in st)
