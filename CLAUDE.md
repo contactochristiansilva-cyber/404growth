@@ -106,3 +106,10 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Generador en `prospeccion/lote31/` (ver `LEEME.md`): formato del lote 30, con todas las fotos de la tienda (hero, productos, ficha, categorías y banner) hechas con Apimart a partir de sus productos reales de Instagram. Nano Banana Pro (`gemini-3-pro-image-preview`) a 2K cuesta 0,02 $ por imagen; 15 por tienda.
 - Se publican en `404growth.com/p/<slug>/` (archivos en `web117-404growth/`, líneas en `_redirects`). Los botones van a `/book` con `utm_campaign=<slug>`, no a Calendly. El plan de la propuesta es el de 15 días del portal.
 - Las fotos descargadas de Instagram solo sirven de referencia: cuando las propuestas están publicadas se borran del Mac (Chris solo quiere `subir.command` y las imágenes de IA).
+
+## Portada en el móvil (v56, 4/11/2026)
+
+- Los ajustes del móvil de la portada (`index.html`) van juntos en `<style id="m404">`, justo antes de `</body>`: menos aire entre bloques (secciones a 56 px), tarjetas con su relleno, cifras que no se salen, títulos sin cortes a media palabra (`text-wrap:balance`), las cuatro tarjetas pequeñas de «Lo que cambia» en una columna (≤560 px), los pasos de «Cómo te compran» con la explicación debajo, botones del mismo ancho (hasta 340 px) en una sola línea y el teléfono del pie como enlace `tel:`.
+- A 360 px el botón «Reservar» del menú salía vacío (una regla vieja ocultaba todos sus `span`): arreglado.
+- El carrusel de sectores (`#nichos`) en el móvil se para en cada sector (20 % del recorrido antes y después) y cada paso dura 1,5 veces el ancho de pantalla; en el ordenador no cambia.
+- Se revisa con Playwright a 360, 375 y 390 px: sin scroll lateral y sin palabras partidas.
