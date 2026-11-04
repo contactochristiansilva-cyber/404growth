@@ -106,7 +106,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Generador en `prospeccion/lote31/` (ver `LEEME.md`): formato del lote 30, con todas las fotos de la tienda (hero, productos, ficha, categorías y banner) hechas con Apimart a partir de sus productos reales de Instagram. Nano Banana Pro (`gemini-3-pro-image-preview`) a 2K cuesta 0,02 $ por imagen; 15 por tienda.
 - Se publican en `404growth.com/p/<slug>/` (archivos en `web117-404growth/`, líneas en `_redirects`). Los botones van a `/book` con `utm_campaign=<slug>`, no a Calendly. El plan de la propuesta es el de 15 días del portal.
 - Las fotos descargadas de Instagram solo sirven de referencia: cuando las propuestas están publicadas se borran del Mac (Chris solo quiere `subir.command` y las imágenes de IA).
-- **Rejillas (4/11/2026):** `jobs_all.py --rejilla <slug>` hace las 15 fotos en 6 llamadas (hero, banner y look sueltas; ficha, productos y categorías en rejillas 2x2 que `runjobs.py` corta). Misma calidad en la página y 0,12 $ por tienda en vez de 0,30 $. También se puede generar en Higgsfield (créditos gratis, 2 por llamada a 2K): referencias con `media_import_url` y resultado descargado con Chrome (ver `prospeccion/lote31/LEEME.md`).
+- **Rejillas (4/11/2026):** `jobs_all.py --rejilla <slug>` hace las 15 fotos en 6 llamadas (hero, banner y look sueltas; ficha, productos y categorías en rejillas 2x2 que `runjobs.py` corta). Misma calidad en la página y 0,12 $ por tienda en vez de 0,30 $. También se puede generar en Higgsfield (créditos gratis; la prueba a 2K descontó 3,5 créditos): referencias con `media_import_url` y resultado descargado con Chrome (ver `prospeccion/lote31/LEEME.md`).
 
 ## Portada en el móvil (v56, 4/11/2026)
 
