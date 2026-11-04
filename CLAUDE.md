@@ -92,6 +92,15 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Cada página del blog llama a `/l/bl` (`blHit`): `v` al abrirla, `r` al ver `#fin` (el final del artículo) y `c` al tocar un `a[data-cta]`. Sin cookies ni nada guardado en el navegador del lector: cuenta una vez al día por persona, artículo y cosa con una huella (sha de sal `bl_salt` + IP + navegador + día) en `bseen`, que solo guarda hoy y ayer (se limpia en `socialCron`). Totales por día, artículo y origen en `bstat` (`blSrc`: LinkedIn, Google, otros buscadores, IA, redes, 404growth.com, directo, otras). No cuenta robots, ni la sesión del admin, ni navegadores con `c404int` (`/book?interno=1`).
 - Los botones del blog (menú y recuadro final) van a `/book?utm_source=blog&utm_medium=menu|articulo&utm_campaign=<slug>` (`portada` desde /blog), ya no a Calendly; el recuadro dice `GB_DUR` minutos (30). Las reservas del blog son los leads con `utm_source=blog` (`blStats`). El prompt del artículo con IA también dice 30 minutos.
 
+## SEO (v55, 4/11/2026): todo sobre «de tienda física a tienda online»
+
+- Páginas estáticas generadas con `python3 seo/build.py` desde `seo/pages/*.json` (una por página; esquema y reglas de contenido en `seo/LEEME.md`) y `seo/hubs.json`: `/tienda-online` + 14 sectores (`/tienda-online/moda`…) y `/guia` + 10 guías (`/guia/cuanto-cuesta-una-tienda-online`…). Escribe también `sitemap.xml` y `seo/paginas.json` (títulos para las métricas del admin). Estilo en `seo/style.css` (el del blog). Botones a `/book?utm_source=seo&utm_medium=sector|guia|hub&utm_campaign=<slug>`.
+- Mapa de palabras clave en `seo/palabras-clave.json`, cargado en el admin › SEO (tabla `keywords`): «publicada» = ya tiene su página; «idea» = tema para el artículo diario del blog, con `page` = la página a la que debe enlazar. `liDraft` coge la primera «idea» (por `updated` desc), le pide a la IA que enlace a su página y la pasa a «en curso». Las palabras de la oferta antigua (chatbots, CRM, concesionarios) quedaron «descartada».
+- Los temas del blog (`SOC_PILLARS`) son todos de físico → online. El blog enlaza a Sectores y Guías en el menú, el pie y al final de cada artículo.
+- La portada: 15 días (ya no 21), llamada de 30 min, los 9 botones van a `/book?utm_source=web&utm_medium=portada&utm_campaign=<sitio>` (ya no Calendly), y enlaza a los sectores y guías. `/content` (404 Content) lleva `noindex`: tiene su propio dominio.
+- Las métricas del admin (LinkedIn y blog › Métricas) cuentan también estas páginas (`BL_PAGE`) y sus reservas (`utm_source=seo`).
+- Nada de páginas por ciudad ni de relleno: cada página tiene contenido propio del sector o de la duda. Cifras y datos legales, solo con fuente (campo `sources`).
+
 ## Propuestas de tienda online con Apimart (lote 31)
 
 - Generador en `prospeccion/lote31/` (ver `LEEME.md`): formato del lote 30, con todas las fotos de la tienda (hero, productos, ficha, categorías y banner) hechas con Apimart a partir de sus productos reales de Instagram. Nano Banana Pro (`gemini-3-pro-image-preview`) a 2K cuesta 0,02 $ por imagen; 15 por tienda.

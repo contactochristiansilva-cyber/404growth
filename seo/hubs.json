@@ -1,0 +1,35 @@
+{
+  "tienda-online": {
+    "title": "Tienda online para tiendas físicas, por sector | 404 Growth",
+    "descr": "Tienda online para tu tienda física: moda, joyería, calzado, gourmet, juguetes, decoración y más. Qué vende online tu sector y cómo abrirla en 15 días.",
+    "nav": "Tienda online por sector",
+    "kicker": "Tienda online por sector",
+    "h1": "Tienda online para tu tienda física, sector por sector",
+    "lead": "No se vende igual una joya que un queso o unas zapatillas. Elige tu sector y te contamos qué funciona online, qué no, y cómo pasamos tu tienda física a online en 15 días.",
+    "sections": [
+      {"h2": "Tu tienda física ya tiene lo más difícil", "md": "Producto que se vende, clientes que repiten y una marca que en tu barrio ya conocen. Eso es justo lo que le falta a casi todas las tiendas online que empiezan de cero.\n\nLo que te falta no es otro local: es otra puerta. Una **tienda online para tu tienda física** que venda a toda España, a cualquier hora, con el stock que ya tienes y sin contratar a nadie para montarla.\n\nCada sector tiene sus reglas: tallas en moda, confianza en joyería, caducidades en gourmet, la campaña de Navidad en juguetería. Por eso cada página de arriba está escrita para un tipo de tienda."},
+      {"h2": "Cómo lo hacemos en 404 Growth", "md": "- **15 días** desde la llamada de arranque hasta que la tienda abre.\n- **Shopify**, con tu marca y a tu nombre: la tienda, el dominio y la cuenta de pagos son tuyos.\n- **Tu parte:** una llamada de arranque de una hora y pasarnos fotos, precios y productos por WhatsApp. Después, preparar los pedidos.\n- **Nuestra parte:** fichas de producto, diseño, pagos con tarjeta, Bizum y Apple Pay, envíos y recogida en tienda, stock y conexión con Instagram. Y después, traer clientes con anuncios y email, medir y ajustar cada semana.\n\nSi quieres verlo con calma, empieza por la [guía para pasar tu tienda física a online](/guia/pasar-tienda-fisica-a-online) o por [cuánto cuesta una tienda online](/guia/cuanto-cuesta-una-tienda-online)."}
+    ],
+    "faq": [
+      {"q": "¿Mi sector no está en la lista, también podéis hacerlo?", "a": "Si vendes producto físico y tienes alguien que prepare los pedidos, casi seguro que sí. En la llamada lo vemos con tu catálogo delante y te decimos con sinceridad si tiene sentido."},
+      {"q": "¿Cuánto tarda en estar lista la tienda online?", "a": "15 días desde la llamada de arranque. Tu parte son esa llamada de una hora y pasarnos fotos, precios y productos; lo demás lo hacemos nosotros."},
+      {"q": "¿La tienda online es mía?", "a": "Sí. La tienda, el dominio y la cuenta de pagos quedan a tu nombre. Si un día dejas de trabajar con nosotros, te lo quedas todo."}
+    ],
+    "box_h": "¿Tu tienda podría vender online?",
+    "box_p": "En 30 minutos por Google Meet miramos tu tienda y te digo qué haría yo: qué productos subir primero, cómo traer clientes y cuánto costaría, con precio cerrado."
+  },
+  "guia": {
+    "title": "Guías para pasar tu tienda física a online | 404 Growth",
+    "descr": "Guías claras para vender online si tienes tienda física: cuánto cuesta, stock y TPV, envíos, requisitos legales, Instagram, click and collect y más.",
+    "nav": "Guías",
+    "kicker": "Guías",
+    "h1": "Guías para pasar tu tienda física a online",
+    "lead": "Todo lo que necesitas saber antes de vender online, explicado para el dueño de una tienda física: sin tecnicismos y con lo que de verdad importa.",
+    "sections": [
+      {"h2": "Por dónde empezar", "md": "Si tienes una tienda física y quieres vender online, empieza por la [guía paso a paso](/guia/pasar-tienda-fisica-a-online). Después, las dos preguntas que más nos hacen: [cuánto cuesta una tienda online](/guia/cuanto-cuesta-una-tienda-online) y cómo [sincronizar el stock de la tienda física y la online](/guia/sincronizar-stock-tienda-fisica-y-online).\n\n¿Ya tienes web y no vende? Mira [por qué tu tienda online no vende](/guia/por-que-mi-tienda-online-no-vende). Y si quieres ver cómo sería en tu sector, tienes una página para cada uno en [tienda online por sector](/tienda-online)."}
+    ],
+    "faq": [],
+    "box_h": "¿Prefieres que te lo contemos en tu caso?",
+    "box_p": "En 30 minutos por Google Meet miramos tu tienda y te digo qué haría yo, con precio cerrado y sin compromiso."
+  }
+}
