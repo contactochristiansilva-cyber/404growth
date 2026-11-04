@@ -1,5 +1,5 @@
 """Prompt building blocks for lote 31 (Apimart / Nano Banana Pro). Every image starts from the shop's real product photos."""
-import os
+import os, re
 L31 = os.environ.get('L31', os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 NO = ("Photorealistic, high-end commercial photography, natural skin texture, crisp fabric and material detail, "
       "no text, no letters, no watermark, no logos added, no frames, no collage.")
@@ -24,7 +24,7 @@ def ref(slug, n):
 
 def job(slug, iid, refs, size, prompt, niche, res='2K'):
     return {'out': '%s/ai/%s/%s.jpg' % (L31, slug, iid), 'refs': [ref(slug, r) for r in refs], 'size': size, 'res': res,
-            'model': 'gemini-3-pro-image-preview', 'prompt': KEEP[niche] + ' ' + prompt + ' ' + NO}
+            'model': 'gemini-3-pro-image-preview', 'prompt': KEEP[niche] + ' ' + prompt + ' ' + NO, 'mid': prompt, 'nk': niche}
 
 
 MODEL = {}
@@ -39,7 +39,7 @@ def studio_moda(slug, iid, n, garment, bg, extra=''):
                f"daylight from the left. {extra}", 'moda')
 
 
-def build(slug, niche, bg, hero, prods, pdp, look, cats, banner, city=''):
+def build(slug, niche, bg, hero, prods, pdp, look, cats, banner, city='', grid=None):
     """hero=(refs, prompt) · prods=[(ref, desc)]×5 (p1..p5) · pdp=(desc_p1, x1_prompt, x2_prompt, x3_prompt)
     look=(refs, prompt) · cats=[(refs, prompt)]×4 · banner=(refs, prompt)"""
     J = [job(slug, 'hero', hero[0], '16:9', hero[1] + ' The subject sits in the right half of the frame; the left 45% is calm, softly blurred background for a headline. Wide editorial campaign image, cinematic natural light.', niche)]
@@ -62,4 +62,45 @@ def build(slug, niche, bg, hero, prods, pdp, look, cats, banner, city=''):
     for k, (r, p) in enumerate(cats):
         J.append(job(slug, 'l%d' % (k + 1), r, '4:5', p, niche))
     J.append(job(slug, 'l5', banner[0], '16:9', banner[1] + ' Wide banner composition, inviting, no people unless described.', niche))
-    return J
+    return to_grid(slug, J, niche) if (GRID if grid is None else grid) else J
+
+
+# ---------------- rejillas: 4 fotos por llamada (probado el 4/11/2026 con brilla-fashion) ----------------
+# 15 fotos en 6 llamadas: hero, l5 y look sueltas; ficha (p1, x1, x2, x3: el mismo producto), productos (p2–p5)
+# y categorías (l1–l4) en rejillas 2x2 a 2K. Cada trozo sale de ~910x1140 y gen.py publica a 1100 px como máximo.
+GRID = False
+GROUPS = [('ficha', ['p1', 'x1', 'x2', 'x3']), ('productos', ['p2', 'p3', 'p4', 'p5']), ('categorias', ['l1', 'l2', 'l3', 'l4'])]
+POS = ['top-left', 'top-right', 'bottom-left', 'bottom-right']
+NO_G = ("Photorealistic, high-end commercial photography, natural skin texture, crisp fabric and material detail, "
+        "no text, no letters, no watermark, no logos added.")
+
+
+def grid_job(slug, name, panels, niche, res='2K'):
+    ids = [os.path.basename(j['out'])[:-4] for j in panels]
+    same = all(j['refs'] == panels[0]['refs'] for j in panels)
+    s = ("A 2x2 grid of FOUR separate, independent photographs of identical size, each with a 4:5 vertical frame, "
+         "separated by perfectly straight thin pure black (#000000) gutters, about 1.5% of the image width, with no outer border. "
+         "Every panel is a complete photo on its own (nothing crosses the gutters). ")
+    if same:
+        refs = list(panels[0]['refs'])
+        s += ("All four panels show the SAME product from the reference, identical in every panel. Rules for every panel: "
+              + KEEP[niche] + " If there is a model, it is the same model in every panel. ")
+    else:
+        refs, own = [], []
+        for j in panels:
+            a = len(refs) + 1; refs += j['refs']; b = len(refs)
+            own.append('reference image %d' % a if a == b else 'reference images %d-%d' % (a, b))
+        s += ("Each panel uses ONLY its own reference image(s); never swap or mix items between panels. Rules for every panel: "
+              + KEEP[niche].replace('from the reference image', "from that panel's own reference image") + ' ')
+    for k, j in enumerate(panels):
+        mid = re.sub(r"^Category photo '[^']*':\s*", '', j['mid']).strip()
+        if j['nk'] == 'obj' and niche != 'obj':
+            mid += ' Product only, no people, no hands.'
+        s += 'Panel %d (%s)%s: %s ' % (k + 1, POS[k], '' if same else ', from ' + own[k], mid)
+    return {'out': '%s/ai/%s/_grid_%s.jpg' % (L31, slug, name), 'refs': refs, 'size': '4:5', 'res': res,
+            'model': 'gemini-3-pro-image-preview', 'prompt': s + NO_G, 'split': ids}
+
+
+def to_grid(slug, J, niche):
+    by = {os.path.basename(j['out'])[:-4]: j for j in J}
+    return [by['hero'], by['l5'], by['look']] + [grid_job(slug, n, [by[i] for i in ids], niche) for n, ids in GROUPS]

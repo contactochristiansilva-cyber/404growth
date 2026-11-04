@@ -290,5 +290,8 @@ S['pasteleria-zoya'] = lambda s: build(s, 'obrador', 'soft cream (#F4EEE8)',
 
 
 if __name__ == '__main__':
+    import jobs_lib
+    if '--rejilla' in sys.argv:   # 6 llamadas por tienda en vez de 15 (ver GROUPS en jobs_lib)
+        jobs_lib.GRID = True; sys.argv.remove('--rejilla')
     for s in sys.argv[1:]:
         J = S[s](s); json.dump(J, open(f'{L31}/ai/jobs_{s}.json', 'w')); print(s, len(J))
