@@ -1,0 +1,1550 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tienda Antequera CF</title>
+<meta name="description" content="Tienda del Antequera CF: equipaciones oficiales 2026-27 y la Colección 01, camisetas de fútbol para vestir.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#1F4A2E">
+<link rel="icon" type="image/png" href="/antequeracf/img/crest.png">
+<link rel="apple-touch-icon" href="/antequeracf/img/crest-lg.png">
+<meta property="og:title" content="Tienda Antequera CF">
+<meta property="og:description" content="Equipaciones oficiales 2026-27 y la Colección 01.">
+<meta property="og:image" content="https://404growth.com/antequeracf/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="preload" as="image" href="/antequeracf/img/hero-torcal.jpg" fetchpriority="high">
+<style>
+/* Lenis (scroll suave) */
+html.lenis, html.lenis body { height: auto; }
+.lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent] { overscroll-behavior: contain; }
+
+/* Tienda Antequera CF · v4. Fondo blanco y tipografía de Apple (SF Pro). Orden de portada como el del Como 1907:
+   portada → equipación oficial para comprar al momento → dos colecciones → líneas con foto grande y productos al lado. */
+:root {
+  color-scheme: light;
+  --white: #FFFFFF;
+  --ink: #121412;
+  --ink2: #3A3D38;
+  --muted: #74776F;
+  --line: #E6E6E2;
+  --tint: #F4F4F2;
+  --bosque: #1F4A2E;
+  --bosque-2: #2B6140;
+  --ambar: #C98A2E;
+  --on-dark: #FFFFFF;
+  --sf: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --gut: clamp(16px, 3.4vw, 56px);
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --ease-io: cubic-bezier(.65, 0, .35, 1);
+  --nav: 72px;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { background: var(--white); }
+body { margin: 0; background: var(--white); color: var(--ink); font-family: var(--sf); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: clip; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 90; background: transparent; transition: background .4s; pointer-events: none; }
+html.hdr-solid body::before { background: var(--white); }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; color: inherit; }
+::selection { background: var(--bosque); color: var(--on-dark); }
+:focus-visible { outline: 2px solid var(--ambar); outline-offset: 3px; }
+.g { padding-left: max(var(--gut), env(safe-area-inset-left, 0px)); padding-right: max(var(--gut), env(safe-area-inset-right, 0px)); }
+.vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Tipografía */
+.label { display: block; font-size: 13.5px; line-height: 1.35; font-weight: 500; color: var(--muted); letter-spacing: -.005em; }
+.label.light { color: rgba(255,255,255,.86); }
+.thin { font-weight: 250; }
+.h-xl { margin: 0; font-size: clamp(42px, 6.2vw, 110px); line-height: .92; font-weight: 750; letter-spacing: -.05em; text-wrap: balance; }
+.h-l { margin: 0; font-size: clamp(32px, 4vw, 64px); line-height: .96; font-weight: 750; letter-spacing: -.045em; text-wrap: balance; }
+.h-m { margin: 0; font-size: clamp(24px, 2.2vw, 34px); line-height: 1.05; font-weight: 700; letter-spacing: -.035em; }
+.h-xl .thin, .h-l .thin { font-weight: 250; letter-spacing: -.04em; }
+.lede { margin: 0; font-size: clamp(16px, 1.15vw, 18px); line-height: 1.55; color: var(--ink2); max-width: 46ch; }
+.price { font-variant-numeric: tabular-nums; }
+.tag { font-size: 11px; font-weight: 650; letter-spacing: .05em; text-transform: uppercase; }
+
+/* Revelado al hacer scroll */
+[data-reveal] { opacity: 0; transform: translate3d(0, 40px, 0); transition: opacity 1.1s var(--ease), transform 1.3s var(--ease); transition-delay: var(--rd, 0s); }
+[data-reveal].in { opacity: 1; transform: none; }
+.lines .ln { display: block; clip-path: inset(-.5em -.4em -.32em -.4em); }
+.lines .ln > span { display: inline-block; padding-top: .3em; margin-top: -.3em; transform: translate3d(0, 160%, 0); transition: transform 1.3s var(--ease); transition-delay: calc(var(--i, 0) * .09s + var(--rd, 0s)); }
+.lines.in .ln > span { transform: none; }
+
+/* Botones con texto que rueda */
+.btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; border-radius: 999px; border: 0; background: var(--ink); color: var(--on-dark); font: 600 14.5px/1 var(--sf); letter-spacing: -.01em; cursor: pointer; white-space: nowrap; transition: color .5s var(--ease); }
+.btn::before { content: ""; position: absolute; inset: -1px; z-index: -1; border-radius: 50% 50% 0 0 / 60% 60% 0 0; background: var(--bosque); transform: translate3d(0, 104%, 0); transition: transform .7s var(--ease), border-radius .7s var(--ease); }
+.btn:hover::before { transform: none; border-radius: 0; }
+.btn .t { display: inline-flex; flex-direction: column; height: 1.15em; overflow: hidden; line-height: 1.15; }
+.btn .t > span { transition: transform .6s var(--ease); }
+.btn:hover .t > span { transform: translate3d(0, -100%, 0); }
+.btn-light { background: var(--white); color: var(--ink); }
+.btn-light:hover { color: var(--on-dark); }
+.btn-ghost { background: transparent; color: var(--on-dark); box-shadow: inset 0 0 0 1px rgba(255,255,255,.75); }
+.btn-ghost::before { background: var(--white); }
+.btn-ghost:hover { color: var(--ink); }
+.btn-block { width: 100%; min-height: 58px; font-size: 15.5px; }
+.btn:disabled { background: var(--tint); color: var(--muted); box-shadow: inset 0 0 0 1px var(--line); cursor: not-allowed; }
+.btn:disabled::before { display: none; }
+.arrow-link { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14.5px; position: relative; padding-bottom: 4px; align-self: flex-start; }
+.arrow-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform-origin: right; transition: transform .6s var(--ease); }
+.arrow-link:hover::after { transform: scaleX(0); }
+.arrow-link svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .6s var(--ease); }
+.arrow-link:hover svg { transform: translateX(5px); }
+
+/* Enlaces que ruedan */
+.roll { display: inline-flex; overflow: hidden; height: 1.25em; line-height: 1.25; }
+.roll > span { position: relative; display: inline-block; transition: transform .55s var(--ease); }
+.roll > span::after { content: attr(data-t); position: absolute; left: 0; top: 100%; }
+.roll:hover > span, .roll:focus-visible > span { transform: translate3d(0, -100%, 0); }
+
+/* ---------- CABECERA ---------- */
+.hdr { position: fixed; top: 0; left: 0; right: 0; z-index: 80; padding-top: env(safe-area-inset-top, 0px); color: var(--on-dark); transition: transform .7s var(--ease), color .4s; }
+.hdr::before { content: ""; position: absolute; inset: 0; background: rgba(255,255,255,.95); -webkit-backdrop-filter: saturate(1.6) blur(16px); backdrop-filter: saturate(1.6) blur(16px); opacity: 0; transition: opacity .45s; border-bottom: 1px solid var(--line); z-index: -1; }
+.hdr.solid { color: var(--ink); }
+.hdr.solid::before { opacity: 1; }
+.hdr.hide { transform: translate3d(0, -101%, 0); }
+.bar-wrap { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .6s var(--ease); }
+.hdr.solid .bar-wrap { grid-template-rows: 0fr; }
+.bar { min-height: 0; overflow: hidden; background: var(--bosque); color: var(--on-dark); }
+.bar p { margin: 0; padding-block: 10px; text-align: center; font-size: 13px; font-weight: 500; letter-spacing: -.005em; }
+.bar a { text-decoration: underline; text-underline-offset: 3px; margin-left: 8px; }
+.nav { position: relative; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: var(--nav); }
+.nav-l, .nav-r { display: flex; align-items: center; gap: clamp(16px, 2vw, 30px); font-size: 14px; font-weight: 600; letter-spacing: -.01em; }
+.nav-r { justify-content: flex-end; }
+.nav-l a, .nav-l button, .nav-r a, .nav-r button { background: none; border: 0; padding: 0; cursor: pointer; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand img { width: 47px; height: 40px; flex: none; transition: transform .8s var(--ease); }
+.brand:hover img { transform: rotate(-6deg) scale(1.06); }
+.brand b { font-size: 20px; font-weight: 800; letter-spacing: -.035em; line-height: 1; white-space: nowrap; }
+.bagbtn { display: inline-flex; align-items: center; gap: 8px; }
+.bagbtn .count { display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px; background: currentColor; font-size: 11px; font-weight: 700; }
+.bagbtn .count i { font-style: normal; color: var(--ink); }
+.hdr.solid .bagbtn .count i { color: var(--on-dark); }
+.bagbtn.bump .count { animation: bump .6s var(--ease); }
+@keyframes bump { 30% { transform: scale(1.35); } }
+.iconbtn { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; }
+.iconbtn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; }
+.only-m { display: none !important; }
+.nav-l .has-mega { position: relative; }
+.nav-l .has-mega::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1.5px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease); }
+.hdr.mega-open .has-mega::after { transform: none; }
+
+/* Megamenú */
+.mega { position: absolute; left: 0; right: 0; top: 100%; background: var(--white); color: var(--ink); border-bottom: 1px solid var(--line); clip-path: inset(0 0 100% 0); transition: clip-path .7s var(--ease); visibility: hidden; }
+.hdr.mega-open .mega { clip-path: inset(0 0 0 0); visibility: visible; }
+.mega-in { display: grid; grid-template-columns: minmax(240px, 1fr) 3fr; gap: 48px; padding-block: 34px 42px; }
+.mega-links { display: flex; flex-direction: column; gap: 2px; }
+.mega-links a { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 6px 0; font-size: 28px; font-weight: 700; letter-spacing: -.04em; line-height: 1.08; transition: color .4s, transform .6s var(--ease); }
+.mega-links a small { font-size: 13px; font-weight: 500; letter-spacing: 0; color: var(--muted); }
+.mega-links a:hover { color: var(--bosque); transform: translateX(10px); }
+.mega-prods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.mega-prods a { display: flex; flex-direction: column; gap: 8px; }
+.mega-prods .ph { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 6px; background: var(--tint); }
+.mega-prods .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease), opacity .6s; }
+.mega-prods .ph img.b { opacity: 0; }
+.mega-prods a:hover .ph img.b { opacity: 1; }
+.mega-prods a:hover .ph img { transform: scale(1.05); }
+.mega-prods b { font-size: 14px; font-weight: 700; }
+.mega-prods span { font-size: 13px; color: var(--muted); }
+
+/* Menú móvil */
+.mnav { position: fixed; inset: 0; z-index: 79; background: var(--white); color: var(--ink); padding-top: calc(env(safe-area-inset-top, 0px) + var(--nav) + 20px); padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 24px); display: flex; flex-direction: column; justify-content: space-between; clip-path: inset(0 0 100% 0); transition: clip-path .8s var(--ease); visibility: hidden; }
+.mnav.open { clip-path: inset(0 0 0 0); visibility: visible; }
+.mnav nav { display: flex; flex-direction: column; }
+.mnav nav a { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: clamp(30px, 9vw, 48px); font-weight: 750; letter-spacing: -.045em; line-height: 1.05; opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .8s var(--ease); }
+.mnav nav a small { font-size: 13px; font-weight: 500; letter-spacing: 0; color: var(--muted); }
+.mnav.open nav a { opacity: 1; transform: none; transition-delay: calc(var(--i) * .06s + .25s); }
+.mnav .foot-brand { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 13.5px; }
+.mnav .foot-brand img { width: 35px; height: 30px; }
+
+/* ---------- PORTADA ---------- */
+.hero { position: relative; height: 100vh; height: 100svh; min-height: 620px; overflow: hidden; background: #0D0F0D; color: var(--on-dark); }
+.hero-par { position: absolute; inset: 0; will-change: transform; }
+.slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 1.6s var(--ease-io); pointer-events: none; }
+.slide.is-active { opacity: 1; pointer-events: auto; }
+.slide .bg { position: absolute; inset: -6%; width: 112%; height: 112%; object-fit: cover; filter: blur(14px) saturate(1.05) brightness(.92); }
+.slide .media { position: absolute; inset: 0; transform: scale(var(--k, 1.1)); transition: transform 0s 1.7s; }
+.slide.is-active .media { transform: scale(1); transition: transform 10s cubic-bezier(.2,.6,.3,1); }
+.slide .fg { position: absolute; left: 0; top: 0; max-width: none; }
+.hero-shade { position: absolute; inset: 0; pointer-events: none; background:
+  linear-gradient(180deg, rgba(8,10,8,.5) 0%, rgba(8,10,8,0) 24%),
+  linear-gradient(90deg, rgba(8,10,8,.55) 0%, rgba(8,10,8,.18) 42%, rgba(8,10,8,0) 64%),
+  linear-gradient(0deg, rgba(8,10,8,.62) 0%, rgba(8,10,8,0) 46%); }
+.hero-copy { position: absolute; left: 0; right: 0; bottom: clamp(96px, 13vh, 132px); display: grid; pointer-events: none; }
+.copy { grid-area: 1 / 1; display: flex; flex-direction: column; gap: 18px; max-width: 980px; }
+.copy.is-active .ctas { pointer-events: auto; }
+.copy .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,.9); }
+.copy .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ambar); box-shadow: 0 0 0 4px rgba(201,138,46,.25); }
+.copy h1, .copy .title { margin: 0; color: var(--on-dark); font-size: clamp(48px, 6.4vw, 140px); line-height: .88; letter-spacing: -.055em; font-weight: 800; }
+.copy .title .thin, .copy h1 .thin { font-weight: 250; letter-spacing: -.045em; }
+.copy .ln { display: block; clip-path: inset(-.5em -.4em -.3em -.4em); }
+.copy .ln > span { display: inline-block; padding-top: .3em; margin-top: -.3em; transform: translate3d(0, 170%, 0); transition: none; }
+.copy.is-active .ln > span { transform: none; transition: transform 1.25s var(--ease); transition-delay: calc(var(--i) * .1s + .35s); }
+.copy.is-leaving .ln > span { transform: translate3d(0, -170%, 0); transition: transform .7s var(--ease-io); }
+.copy .row { display: flex; align-items: flex-end; gap: 28px; flex-wrap: wrap; }
+.copy .row p { margin: 0; max-width: 40ch; font-size: clamp(15px, 1.15vw, 17px); line-height: 1.5; color: rgba(255,255,255,.9); }
+.copy .ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+.copy .fade { opacity: 0; transform: translateY(16px); transition: opacity .5s, transform .6s var(--ease); }
+.copy.is-active .fade { opacity: 1; transform: none; transition: opacity 1s .8s, transform 1.2s var(--ease) .8s; }
+.hero-ui { position: absolute; left: 0; right: 0; bottom: 26px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.hero-place { color: rgba(255,255,255,.85); display: inline-flex; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 500; }
+.hero-place::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+.hero-ctrl { display: flex; align-items: center; gap: 18px; }
+.hero-count { color: rgba(255,255,255,.75); font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.hero-count b { color: var(--on-dark); font-weight: 650; }
+.hero-bars { display: flex; gap: 6px; }
+.hero-bars button { width: clamp(36px, 4.4vw, 64px); height: 22px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; align-items: center; }
+.hero-bars i { display: block; height: 2px; background: rgba(255,255,255,.28); overflow: hidden; border-radius: 2px; }
+.hero-bars b { display: block; height: 100%; width: 100%; background: var(--on-dark); transform-origin: left; transform: scaleX(0); }
+.hero-arrows { display: flex; gap: 6px; }
+.hero-arrows button, .rail-nav button { width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,.4); background: rgba(255,255,255,.04); color: var(--on-dark); cursor: pointer; display: grid; place-items: center; transition: background .4s, color .4s, border-color .4s, opacity .3s; }
+.hero-arrows button:hover { background: var(--white); color: var(--ink); border-color: var(--white); }
+.hero-arrows svg, .rail-nav svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Puntos de producto */
+.spot { position: absolute; left: 0; top: 0; z-index: 3; width: 30px; height: 30px; margin: -15px 0 0 -15px; padding: 0; border-radius: 50%; border: 1px solid rgba(255,255,255,.85); background: rgba(255,255,255,.22); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); cursor: pointer; display: grid; place-items: center; transition: transform .5s var(--ease), background .4s, opacity .5s; }
+.spot::before { content: ""; position: absolute; inset: -1px; border-radius: 50%; border: 1px solid rgba(255,255,255,.9); animation: pulse 2.4s var(--ease) infinite; }
+.spot .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--white); transition: transform .5s var(--ease); }
+.spot .plus { position: absolute; width: 12px; height: 12px; opacity: 0; transition: opacity .3s, transform .5s var(--ease); transform: rotate(-90deg); }
+.spot .plus::before, .spot .plus::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.6px; background: var(--ink); transform: translate(-50%, -50%); }
+.spot .plus::after { transform: translate(-50%, -50%) rotate(90deg); }
+.spot:hover, .spot:focus-visible { background: var(--white); transform: scale(1.15); }
+.spot:hover .dot, .spot:focus-visible .dot { transform: scale(0); }
+.spot:hover .plus, .spot:focus-visible .plus { opacity: 1; transform: none; }
+.spot .tip { position: absolute; left: calc(100% + 10px); top: 50%; display: flex; align-items: center; gap: 10px; padding: 9px 14px; border-radius: 999px; background: var(--white); color: var(--ink); white-space: nowrap; font-size: 13px; box-shadow: 0 10px 30px rgba(0,0,0,.18); opacity: 0; transform: translate3d(-8px, -50%, 0); transition: opacity .35s, transform .6s var(--ease); pointer-events: none; }
+.spot .tip b { font-weight: 750; }
+.spot .tip em { font-style: normal; color: var(--muted); font-variant-numeric: tabular-nums; }
+.spot.left .tip { left: auto; right: calc(100% + 10px); transform: translate3d(8px, -50%, 0); }
+.spot:hover .tip, .spot:focus-visible .tip { opacity: 1; transform: translate3d(0, -50%, 0); }
+.spot.off { opacity: 0; pointer-events: none; }
+@keyframes pulse { 0% { transform: scale(1); opacity: .9; } 70%, 100% { transform: scale(1.9); opacity: 0; } }
+
+/* ---------- EQUIPACIONES OFICIALES (compra directa) ---------- */
+.buy { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 96px); padding-block: clamp(56px, 7vw, 110px); align-items: start; }
+.buy-gal { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 14px; }
+.buy-thumbs { display: flex; flex-direction: column; gap: 10px; }
+.buy-thumbs button { position: relative; width: 84px; aspect-ratio: 4 / 5; padding: 0; border: 0; border-radius: 6px; overflow: hidden; cursor: pointer; background: var(--tint); opacity: .55; transition: opacity .4s, transform .5s var(--ease), box-shadow .3s; }
+.buy-thumbs button:hover { opacity: 1; transform: translateX(3px); }
+.buy-thumbs button[aria-current="true"] { opacity: 1; box-shadow: 0 0 0 1.5px var(--ink); }
+.buy-thumbs img { width: 100%; height: 100%; object-fit: cover; }
+.buy-thumbs span { position: absolute; left: 5px; top: 5px; background: var(--white); border-radius: 999px; padding: 2px 6px; font-size: 10.5px; font-weight: 700; }
+.buy-stage { position: relative; aspect-ratio: 4 / 5; border-radius: 10px; overflow: hidden; background: var(--tint); cursor: zoom-in; }
+.buy-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.03); transition: opacity .7s var(--ease), transform .9s var(--ease); }
+.buy-stage img.on { opacity: 1; transform: none; }
+.buy-stage.z img.on { transform: scale(1.9); transition: opacity .7s var(--ease), transform .4s var(--ease); }
+.buy-stage .badge-off { position: absolute; left: 14px; top: 14px; z-index: 2; background: var(--white); color: var(--ink); border-radius: 999px; padding: 7px 12px; font-size: 12.5px; font-weight: 650; display: inline-flex; align-items: center; gap: 8px; }
+.buy-stage .badge-off img { position: static; width: 20px; height: 17px; opacity: 1; transform: none; }
+.buy-info { position: sticky; top: calc(var(--nav) + 30px); display: flex; flex-direction: column; gap: 18px; }
+.buy-name { margin: 6px 0 0; font-size: clamp(46px, 5vw, 88px); font-weight: 850; letter-spacing: -.055em; line-height: .88; }
+.buy-sub { font-size: 16.5px; color: var(--ink2); margin-top: 10px; }
+.buy-price { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; border-block: 1px solid var(--line); }
+.buy-price .price { font-size: 22px; font-weight: 650; letter-spacing: -.02em; }
+.buy-perks { display: flex; gap: 18px; flex-wrap: wrap; font-size: 13.5px; color: var(--muted); }
+.buy-perks span { display: inline-flex; align-items: center; gap: 7px; }
+.buy-perks span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--bosque-2); }
+.seg { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 6px; }
+.seg button { min-height: 48px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--white); font-size: 14px; font-weight: 600; cursor: pointer; line-height: 1.2; transition: border-color .3s, background .3s, color .3s; }
+.seg button small { display: block; font-size: 12px; font-weight: 500; opacity: .7; }
+.seg button:hover { border-color: var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--on-dark); border-color: var(--ink); }
+.kit-tabs { --n: 3; }
+.kit-tabs button { min-height: 58px; text-align: left; padding: 8px 14px; }
+.perso { display: grid; grid-template-columns: minmax(0, 1fr) 110px; gap: 8px; }
+.perso input { height: 50px; border-radius: 8px; border: 1px solid var(--line); padding: 0 14px; font-size: 15px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; background: var(--white); }
+.perso input:focus { outline: none; border-color: var(--ink); }
+.perso-prev { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 8px; background: var(--tint); font-size: 13.5px; color: var(--ink2); }
+.perso-prev b { font-size: 16px; color: var(--ink); letter-spacing: .04em; }
+
+.sizes { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
+.size { height: 48px; border-radius: 8px; border: 1px solid var(--line); background: var(--white); font-size: 13.5px; font-weight: 650; cursor: pointer; transition: border-color .3s, background .3s, color .3s, transform .4s var(--ease); }
+.size:hover { border-color: var(--ink); }
+.size:active { transform: scale(.96); }
+.size[aria-pressed="true"] { background: var(--ink); color: var(--on-dark); border-color: var(--ink); }
+.lbl { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; font-weight: 650; }
+.lbl button { border: 0; background: none; padding: 0; cursor: pointer; color: var(--muted); font-size: 13.5px; text-decoration: underline; text-underline-offset: 3px; }
+.swatch { display: inline-flex; align-items: center; gap: 9px; font-size: 14px; color: var(--ink2); }
+.swatch i { width: 18px; height: 18px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0,0,0,.16), 0 0 0 3px var(--white), 0 0 0 4px var(--ink); }
+
+/* ---------- DOS COLECCIONES ---------- */
+.duo { display: grid; grid-template-columns: 1fr 1fr; }
+.tile { position: relative; height: clamp(520px, 86vh, 860px); overflow: hidden; color: var(--on-dark); display: block; }
+.tile > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform 1.8s var(--ease); }
+.tile:hover > img { transform: scale(1); }
+.tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(8,10,8,.62), rgba(8,10,8,0) 55%); }
+.tile-in { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: clamp(22px, 3vw, 48px); display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.tile-in h2 { margin: 0; font-size: clamp(38px, 4.4vw, 76px); font-weight: 800; letter-spacing: -.05em; line-height: .92; }
+.tile-in p { margin: 0; max-width: 34ch; font-size: 16px; color: rgba(255,255,255,.9); }
+.tile-in .btn { margin-top: 8px; min-height: 46px; padding: 0 22px; transform: translateY(8px); opacity: .92; transition: transform .7s var(--ease), opacity .5s, color .5s var(--ease); }
+.tile:hover .tile-in .btn { transform: none; opacity: 1; }
+
+/* ---------- LÍNEAS: foto grande + productos ---------- */
+.line { display: grid; grid-template-columns: 1fr 1fr; min-height: clamp(620px, 92vh, 900px); border-top: 1px solid var(--line); }
+.line-media { position: relative; overflow: hidden; background: var(--tint); }
+.line-media > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform 2s var(--ease); }
+.line:hover .line-media > img { transform: scale(1); }
+.line-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(8,10,8,.6), rgba(8,10,8,0) 50%); pointer-events: none; }
+.line-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; padding: clamp(22px, 3vw, 48px); color: var(--on-dark); display: flex; flex-direction: column; gap: 10px; align-items: flex-start; pointer-events: none; }
+.line-cap h2 { margin: 0; font-size: clamp(40px, 4.8vw, 82px); font-weight: 800; letter-spacing: -.05em; line-height: .9; }
+.line-cap p { margin: 0; max-width: 36ch; font-size: 16px; color: rgba(255,255,255,.9); }
+.line-cap .btn { pointer-events: auto; margin-top: 8px; min-height: 46px; padding: 0 22px; }
+.line-prods { display: flex; flex-direction: column; justify-content: center; gap: 26px; padding-block: clamp(36px, 5vw, 70px); padding-left: clamp(24px, 4vw, 72px); padding-right: max(var(--gut), env(safe-area-inset-right, 0px)); min-width: 0; }
+.line.rev .line-media { order: 2; }
+.line.rev .line-prods { padding-right: clamp(24px, 4vw, 72px); padding-left: max(var(--gut), env(safe-area-inset-left, 0px)); }
+.line-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; }
+.line-head .h-m { margin-top: 6px; }
+
+/* Carrusel */
+.rail { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; scroll-behavior: smooth; }
+.rail::-webkit-scrollbar { display: none; }
+.rail > * { scroll-snap-align: start; }
+.line .rail .card { width: calc((100% - 14px) / 2); }
+.rail-nav { display: flex; align-items: center; gap: 14px; }
+.rail-nav button { border-color: var(--line); background: var(--white); color: var(--ink); }
+.rail-nav button:hover:not(:disabled) { background: var(--ink); color: var(--on-dark); border-color: var(--ink); }
+.rail-nav button:disabled { opacity: .35; cursor: default; }
+.rail-bar { flex: 1; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.rail-bar i { display: block; height: 100%; background: var(--ink); transform-origin: left; transform: scaleX(.3); transition: transform .5s var(--ease); }
+
+/* Tarjeta de producto */
+.card { flex: none; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.card-media { position: relative; aspect-ratio: 4 / 5; border-radius: 8px; overflow: hidden; background: var(--tint); }
+.card-link { position: absolute; inset: 0; display: block; }
+.card-link img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .8s var(--ease), transform 1.6s var(--ease); }
+.card-link img.b { opacity: 0; transform: scale(1.08); }
+.card:hover .card-link img.a { transform: scale(1.04); }
+.card:hover .card-link img.b { opacity: 1; transform: scale(1); }
+.card-flag { position: absolute; left: 10px; top: 10px; z-index: 2; background: var(--ambar); color: var(--ink); padding: 6px 9px; border-radius: 999px; pointer-events: none; }
+.card-quick { position: absolute; left: 10px; right: 10px; bottom: 10px; z-index: 3; padding: 12px; border-radius: 8px; background: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transform: translate3d(0, calc(100% + 14px), 0); transition: transform .7s var(--ease); display: flex; flex-direction: column; gap: 9px; }
+.card:hover .card-quick, .card:focus-within .card-quick { transform: none; }
+.card-quick span { font-size: 12.5px; font-weight: 600; color: var(--ink2); }
+.qs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+.qs button { height: 32px; border-radius: 6px; border: 1px solid var(--line); background: var(--white); font-size: 11.5px; font-weight: 650; cursor: pointer; transition: background .3s, color .3s, border-color .3s; }
+.qs button:hover { background: var(--ink); color: var(--on-dark); border-color: var(--ink); }
+.card-plus { display: none; position: absolute; right: 10px; bottom: 10px; z-index: 3; width: 38px; height: 38px; border-radius: 50%; border: 0; background: var(--white); cursor: pointer; place-items: center; box-shadow: 0 6px 20px rgba(0,0,0,.14); }
+.card-plus svg { width: 16px; height: 16px; stroke: var(--ink); stroke-width: 1.8; fill: none; }
+.card-meta { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 12px; align-items: baseline; }
+.card-name { font-size: 15.5px; font-weight: 750; letter-spacing: -.005em; position: relative; justify-self: start; }
+.card-name::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 1.5px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
+.card:hover .card-name::after { transform: none; }
+.card-price { font-size: 15px; font-weight: 600; }
+.card-sub { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13.5px; }
+.card-sub i { width: 10px; height: 10px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0,0,0,.18); flex: none; }
+
+/* ---------- LOOKBOOK ---------- */
+.sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(28px, 3.4vw, 52px); }
+.sec-head .label { margin-bottom: 12px; }
+.sec-head .lede { max-width: 40ch; }
+.look { padding-block: clamp(80px, 10vw, 150px); border-top: 1px solid var(--line); }
+.look-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 2vw, 32px); align-items: start; }
+.look-col { display: flex; flex-direction: column; gap: clamp(12px, 2vw, 32px); will-change: transform; }
+.look-col.c2 { margin-top: clamp(60px, 10vw, 170px); }
+.look-col.c3 { margin-top: clamp(20px, 4vw, 60px); }
+.lk { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.lk-media { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 8px; background: var(--tint); }
+.lk-media > img { width: 100%; height: 100%; object-fit: cover; transition: transform 2s var(--ease); }
+.lk:hover .lk-media > img { transform: scale(1.03); }
+.lk figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 14.5px; }
+.lk figcaption b { font-weight: 650; }
+.lk figcaption button { border: 0; background: none; padding: 0 0 2px; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--ink); border-bottom: 1px solid var(--ink); white-space: nowrap; }
+.note { margin: 18px 0 0; color: var(--muted); font-size: 13px; max-width: 70ch; }
+
+/* ---------- ENTRADAS ---------- */
+.tix { position: relative; height: 90vh; min-height: 600px; overflow: hidden; color: var(--on-dark); background: #1A1D1A; display: flex; align-items: center; }
+.tix-media { position: absolute; inset: -10% 0; will-change: transform; }
+.tix-media img { width: 100%; height: 100%; object-fit: cover; }
+.tix::after { content: ""; position: absolute; inset: 0; background: rgba(8,10,8,.45); }
+.tix-in { position: relative; z-index: 2; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.tix h2 { margin: 10px 0 0; font-size: clamp(60px, 10vw, 180px); font-weight: 850; letter-spacing: -.06em; line-height: .86; }
+.tix p { margin: 18px 0 0; max-width: 40ch; color: rgba(255,255,255,.9); }
+.orb { position: relative; display: grid; place-items: center; width: clamp(140px, 13vw, 190px); aspect-ratio: 1; border-radius: 50%; background: var(--white); color: var(--ink); text-align: center; font-weight: 700; font-size: 15px; line-height: 1.2; transition: background .5s, color .5s; will-change: transform; }
+.orb:hover { background: var(--ambar); }
+.orb svg { width: 18px; height: 18px; margin: 6px auto 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- HISTORIA ---------- */
+.story { padding-block: clamp(80px, 10vw, 150px); }
+.story-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 90px); align-items: end; margin-bottom: clamp(40px, 5vw, 80px); }
+.years { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.year { padding: 22px 18px 0 0; display: flex; flex-direction: column; gap: 12px; cursor: default; }
+.year b { font-size: clamp(60px, 9vw, 160px); font-weight: 850; letter-spacing: -.065em; line-height: .84; transition: color .6s, transform .8s var(--ease); }
+.year:hover b { color: var(--bosque); transform: translateX(8px); }
+.year span { color: var(--ink2); font-size: 15px; max-width: 26ch; }
+
+/* ---------- CLUB ---------- */
+.club { padding-block: clamp(70px, 8vw, 120px); border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 90px); align-items: end; }
+.club form { display: flex; align-items: center; gap: 12px; border-bottom: 1.5px solid var(--ink); padding-bottom: 10px; }
+.club input { flex: 1; min-width: 0; border: 0; background: transparent; font: 500 clamp(18px, 1.8vw, 24px)/1.2 var(--sf); letter-spacing: -.02em; padding: 10px 0; color: var(--ink); }
+.club input::placeholder { color: #B9BBB5; }
+.club input:focus { outline: none; }
+.club form button { width: 54px; height: 54px; flex: none; border-radius: 50%; border: 0; background: var(--ink); color: var(--on-dark); cursor: pointer; display: grid; place-items: center; transition: background .4s, transform .6s var(--ease); }
+.club form button:hover { background: var(--bosque); transform: rotate(-45deg); }
+.club form button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.club .note { margin-top: 12px; }
+
+/* ---------- PIE ---------- */
+.foot { padding-block: clamp(50px, 6vw, 90px) 0; border-top: 1px solid var(--line); }
+.fcols { display: grid; grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr)); gap: 28px; }
+.fbrand { display: flex; flex-direction: column; gap: 16px; }
+.fbrand .row { display: flex; align-items: center; gap: 14px; }
+.fbrand img { width: 74px; height: 64px; }
+.fbrand b { font-size: 26px; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+.fbrand small { display: block; font-size: 13.5px; font-weight: 500; color: var(--muted); margin-top: 4px; letter-spacing: 0; }
+.fbrand p { margin: 0; color: var(--ink2); max-width: 36ch; font-size: 14.5px; }
+.fcols h4 { margin: 0 0 14px; font-size: 13.5px; font-weight: 600; color: var(--muted); }
+.fcols ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; font-size: 15px; font-weight: 550; }
+.fcols ul a { transition: color .3s; }
+.fcols ul a:hover { color: var(--bosque); }
+.fcols ul button { border: 0; background: none; padding: 0; cursor: pointer; font-weight: 550; font-size: 15px; }
+.legal { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-top: clamp(40px, 5vw, 70px); padding-block: 22px calc(22px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+
+/* ---------- FICHA DE PRODUCTO ---------- */
+.pdp { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 72px); padding-top: calc(var(--nav) + 34px); align-items: start; }
+.gal { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.gal .zoom { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 8px; background: var(--tint); cursor: zoom-in; }
+.gal .zoom.first { grid-column: 1 / -1; }
+.gal .zoom.wide { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+.gal .zoom img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+.gal .zoom.z img { transform: scale(2); transition: transform .35s var(--ease); }
+.pdp-info { position: sticky; top: calc(var(--nav) + 26px); display: flex; flex-direction: column; gap: 22px; padding-bottom: 40px; }
+.crumbs { display: flex; gap: 8px; flex-wrap: wrap; font-size: 13.5px; color: var(--muted); }
+.crumbs a:hover { color: var(--ink); }
+.pdp-info h1 { margin: 12px 0 0; font-size: clamp(48px, 5.6vw, 100px); font-weight: 850; letter-spacing: -.06em; line-height: .86; }
+.pdp-type { font-size: 17px; color: var(--ink2); margin-top: 10px; }
+.pdp-price { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 16px; border-block: 1px solid var(--line); }
+.pdp-price .price { font-size: 28px; font-weight: 650; letter-spacing: -.03em; }
+.perks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.perks div { padding: 12px 14px; border-radius: 8px; border: 1px solid var(--line); font-size: 13.5px; color: var(--ink2); display: flex; flex-direction: column; gap: 2px; }
+.perks b { color: var(--ink); font-size: 14px; }
+.acc details { border-bottom: 1px solid var(--line); }
+.acc details:first-child { border-top: 1px solid var(--line); }
+.acc summary { list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 16px 0; cursor: pointer; font-weight: 650; font-size: 15px; }
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary i { position: relative; width: 14px; height: 14px; }
+.acc summary i::before, .acc summary i::after { content: ""; position: absolute; left: 0; top: 50%; width: 14px; height: 1.6px; background: currentColor; transition: transform .5s var(--ease); }
+.acc summary i::after { transform: rotate(90deg); }
+.acc details[open] summary i::after { transform: rotate(0); }
+.acc .body { padding: 0 0 18px; color: var(--ink2); font-size: 14.5px; line-height: 1.6; animation: fadeup .6s var(--ease); }
+.acc ul { margin: 0; padding-left: 18px; }
+@keyframes fadeup { from { opacity: 0; transform: translateY(-6px); } }
+.worn { padding-block: clamp(80px, 10vw, 150px) 0; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 70px); align-items: center; }
+.worn .copyb { display: flex; flex-direction: column; gap: 18px; }
+.rel { padding-block: clamp(80px, 10vw, 150px); }
+.rel .rail { padding-left: max(var(--gut), env(safe-area-inset-left, 0px)); padding-right: max(var(--gut), env(safe-area-inset-right, 0px)); scroll-padding-left: max(var(--gut), env(safe-area-inset-left, 0px)); }
+.rel .card { width: clamp(230px, 24vw, 330px); }
+.atc { position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; padding-top: 12px; padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px)); background: rgba(255,255,255,.96); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-top: 1px solid var(--line); transform: translate3d(0, 105%, 0); transition: transform .7s var(--ease); }
+.atc.on { transform: none; }
+.atc-in { display: flex; align-items: center; gap: 14px; }
+.atc img { width: 46px; height: 56px; border-radius: 6px; object-fit: cover; background: var(--tint); }
+.atc .nm { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.atc .nm b { font-size: 15px; font-weight: 750; }
+.atc .nm span { color: var(--muted); font-size: 13px; }
+.atc .btn { min-height: 48px; }
+
+/* ---------- VENTANA EMERGENTE ---------- */
+.qv { position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 20px max(20px, env(safe-area-inset-right, 0px)) 20px max(20px, env(safe-area-inset-left, 0px)); }
+.qv-scrim { position: absolute; inset: 0; background: rgba(12,14,12,.5); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); opacity: 0; transition: opacity .5s; }
+.qv.open .qv-scrim { opacity: 1; }
+.qv-panel { position: relative; width: min(1000px, 100%); max-height: min(720px, calc(100vh - 40px)); overflow: auto; border-radius: 14px; background: var(--white); color: var(--ink); display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); opacity: 0; transform: translate3d(0, 36px, 0) scale(.97); transition: opacity .5s, transform .8s var(--ease); box-shadow: 0 60px 120px -40px rgba(0,0,0,.5); }
+.qv.open .qv-panel { opacity: 1; transform: none; }
+.qv-close { position: absolute; right: 14px; top: 14px; z-index: 5; width: 42px; height: 42px; border-radius: 50%; border: 0; background: var(--white); cursor: pointer; display: grid; place-items: center; box-shadow: 0 6px 18px rgba(0,0,0,.12); transition: transform .6s var(--ease); }
+.qv-close:hover { transform: rotate(90deg); }
+.qv-close svg { width: 16px; height: 16px; stroke: var(--ink); stroke-width: 1.8; fill: none; stroke-linecap: round; }
+.qv-media { position: relative; background: var(--tint); min-height: 100%; aspect-ratio: 4 / 5; }
+.qv-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .6s; }
+.qv-thumbs { position: absolute; left: 14px; bottom: 14px; z-index: 2; display: flex; gap: 6px; }
+.qv-thumbs button { width: 52px; height: 64px; padding: 0; border-radius: 6px; overflow: hidden; border: 2px solid var(--white); background: var(--white); cursor: pointer; transition: transform .4s var(--ease); }
+.qv-thumbs button:hover { transform: translateY(-3px); }
+.qv-thumbs button[aria-current="true"] { box-shadow: 0 0 0 1px var(--ink); }
+.qv-thumbs img { width: 100%; height: 100%; object-fit: cover; }
+.qv-info { padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 18px; }
+.qv-info h2 { margin: 6px 0 0; font-size: clamp(40px, 4vw, 64px); font-weight: 850; letter-spacing: -.055em; line-height: .88; padding-right: 40px; }
+.qv-info .type { color: var(--ink2); margin-top: 8px; }
+.qv-info .lede { font-size: 15px; }
+.qv-look { grid-column: 1 / -1; padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 18px; }
+.qv-look h2 { margin: 0; font-size: clamp(32px, 3.4vw, 52px); font-weight: 800; letter-spacing: -.05em; line-height: .92; padding-right: 48px; }
+.look-rows { display: flex; flex-direction: column; }
+.look-row { display: grid; grid-template-columns: 84px minmax(0, 1fr) minmax(0, 300px); gap: 18px; align-items: center; padding: 14px 0; border-top: 1px solid var(--line); }
+.look-row img { width: 84px; height: 104px; object-fit: cover; border-radius: 6px; background: var(--tint); }
+.look-row .nm b { display: block; font-size: 16px; font-weight: 750; }
+.look-row .nm span { color: var(--muted); font-size: 13.5px; }
+.look-row .nm a { font-size: 13.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Cesta */
+.scrim { position: fixed; inset: 0; z-index: 100; background: rgba(12,14,12,.45); opacity: 0; transition: opacity .5s; }
+.scrim.on { opacity: 1; }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; z-index: 110; width: min(440px, 100%); background: var(--white); color: var(--ink); display: flex; flex-direction: column; padding: calc(env(safe-area-inset-top, 0px) + 22px) max(24px, env(safe-area-inset-right, 0px)) calc(env(safe-area-inset-bottom, 0px) + 22px) 24px; transform: translate3d(102%, 0, 0); transition: transform .8s var(--ease); }
+.drawer.on { transform: none; }
+.drawer .top { display: flex; justify-content: space-between; align-items: center; }
+.drawer h3 { margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -.045em; }
+.ship { margin-top: 18px; padding: 14px; border-radius: 8px; border: 1px solid var(--line); font-size: 14px; display: flex; flex-direction: column; gap: 10px; }
+.ship i { display: block; height: 3px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.ship i b { display: block; height: 100%; width: 0; background: var(--bosque); transition: width .9s var(--ease); }
+.baglines { flex: 1; overflow: auto; margin-top: 10px; }
+.line-item { display: grid; grid-template-columns: 70px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.line-item img { width: 70px; height: 86px; object-fit: cover; border-radius: 6px; background: var(--tint); }
+.line-item b { display: block; font-weight: 750; }
+.line-item small { color: var(--muted); font-size: 13px; }
+.line-item button { border: 0; background: none; padding: 0; cursor: pointer; color: var(--muted); font-size: 12.5px; text-decoration: underline; text-underline-offset: 3px; }
+.empty { color: var(--muted); padding: 30px 0; }
+.total { display: flex; justify-content: space-between; padding: 18px 0; font-size: 18px; font-weight: 700; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 130; max-width: calc(100% - 32px); padding: 14px 20px; border-radius: 999px; background: var(--ink); color: var(--on-dark); font-size: 14px; font-weight: 550; transform: translate3d(-50%, 20px, 0); opacity: 0; transition: opacity .4s, transform .7s var(--ease); pointer-events: none; text-align: center; }
+.toast.on { opacity: 1; transform: translate3d(-50%, 0, 0); }
+
+/* Cursor */
+.cur { position: fixed; left: 0; top: 0; z-index: 140; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--white); mix-blend-mode: difference; pointer-events: none; display: grid; place-items: center; transition: width .45s var(--ease), height .45s var(--ease), margin .45s var(--ease), background .3s, opacity .3s; will-change: transform; }
+.cur span { font-size: 12.5px; font-weight: 650; color: var(--on-dark); opacity: 0; transition: opacity .3s; white-space: nowrap; }
+.cur.big { width: 86px; height: 86px; margin: -43px 0 0 -43px; background: var(--ink); mix-blend-mode: normal; }
+.cur.big span { opacity: 1; }
+.cur.hidden { opacity: 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .only-d { display: none !important; }
+  .only-m { display: inline-grid !important; }
+  .mega { display: none; }
+  .brand b { font-size: 17px; }
+  .brand img { width: 40px; height: 34px; }
+  .buy { grid-template-columns: 1fr; }
+  .buy-gal { grid-template-columns: 1fr; }
+  .buy-thumbs { flex-direction: row; order: 2; }
+  .buy-thumbs button { width: 72px; flex: none; }
+  .buy-info { position: static; }
+  .duo { grid-template-columns: 1fr; }
+  .tile { height: 70vh; min-height: 440px; }
+  .line, .line.rev { grid-template-columns: 1fr; min-height: 0; }
+  .line .line-media, .line.rev .line-media { order: 0; aspect-ratio: 4 / 5; max-height: 86vh; }
+  .line-prods, .line.rev .line-prods { padding-left: max(var(--gut), env(safe-area-inset-left, 0px)); padding-right: 0; }
+  .line .rail { padding-right: max(var(--gut), env(safe-area-inset-right, 0px)); }
+  .line .rail .card { width: min(64vw, 300px); }
+  .line-head, .rail-nav { padding-right: max(var(--gut), env(safe-area-inset-right, 0px)); }
+  .look-cols { grid-template-columns: 1fr 1fr; }
+  .look-col.c3 { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; margin-top: 0; }
+  .look-col.c2 { margin-top: 60px; }
+  .story-grid, .club { grid-template-columns: 1fr; }
+  .years { grid-template-columns: 1fr; }
+  .year { flex-direction: row; align-items: flex-end; justify-content: space-between; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .fcols { grid-template-columns: 1fr 1fr; }
+  .fcols > div:first-child { grid-column: 1 / -1; }
+  .pdp { grid-template-columns: 1fr; padding-top: calc(var(--nav) + 18px); }
+  .gal { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 8px; margin-inline: calc(-1 * max(var(--gut), env(safe-area-inset-left, 0px))); padding-inline: max(var(--gut), env(safe-area-inset-left, 0px)); scrollbar-width: none; }
+  .gal::-webkit-scrollbar { display: none; }
+  .gal .zoom, .gal .zoom.first, .gal .zoom.wide { flex: none; width: 86vw; aspect-ratio: 4 / 5; scroll-snap-align: center; }
+  .pdp-info { position: static; }
+  .worn { grid-template-columns: 1fr; }
+  .qv { padding: 0; align-items: end; }
+  .qv-panel { grid-template-columns: 1fr; max-height: 92vh; border-radius: 18px 18px 0 0; transform: translate3d(0, 100%, 0); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .qv-media { aspect-ratio: auto; height: 46vh; min-height: 0; }
+  .look-row { grid-template-columns: 70px minmax(0, 1fr); }
+  .look-row img { width: 70px; height: 88px; }
+  .look-row .qs { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .brand b { font-size: 16px; }
+  .hero-place { display: none; }
+  .hero-ui { justify-content: flex-end; }
+  .copy .row { gap: 16px; }
+  .copy .ctas .btn { min-height: 48px; padding: 0 20px; }
+  .kit-tabs button { padding: 8px 10px; font-size: 13px; }
+  .look-cols { grid-template-columns: 1fr; }
+  .look-col.c2, .look-col.c3 { margin-top: 0; }
+  .look-col.c3 { grid-template-columns: 1fr; }
+  .perks { grid-template-columns: 1fr; }
+  .tix-in { flex-direction: column; align-items: flex-start; }
+  .sizes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (hover: none) {
+  .card-quick { display: none; }
+  .card-plus { display: grid; }
+  .cur { display: none; }
+  .spot .tip { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; transition-duration: .001s !important; transition-delay: 0s !important; }
+  .slide .media { transform: none !important; }
+  [data-reveal] { opacity: 1; transform: none; }
+  .lines .ln > span { transform: none; }
+}
+/* Tienda publicada: formularios, buscador, guía y compra */
+.field { width: 100%; height: 50px; border-radius: 8px; border: 1px solid var(--line); background: var(--white); padding: 0 14px; font: 500 15px/1 var(--sf); color: var(--ink); transition: border-color .3s; }
+.field:focus { outline: none; border-color: var(--ink); }
+.field.bad { border-color: #B3261E; }
+.field.big { height: 58px; font-size: 18px; }
+.srow { grid-template-columns: 70px minmax(0, 1fr) auto; transition: background .3s; }
+.srow:hover { background: var(--tint); }
+.srow img { width: 70px; height: 88px; }
+.trow { grid-template-columns: minmax(0, 1fr) auto auto; }
+.tbl { overflow-x: auto; }
+.tbl table { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+.tbl th, .tbl td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); }
+.tbl th { font-weight: 600; color: var(--muted); font-size: 13.5px; }
+.nform { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.okbox { padding: 14px 16px; border-radius: 8px; background: #EAF2EC; color: var(--bosque); font-size: 15px; }
+.ck { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.ck-form { display: flex; flex-direction: column; gap: 14px; }
+.ck-form label { display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; font-weight: 600; color: var(--ink2); }
+.ck-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ck-ship { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.ck-ship legend { font-size: 13.5px; font-weight: 600; color: var(--ink2); margin-bottom: 6px; }
+.ck-ship .opt { flex-direction: row; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; cursor: pointer; transition: border-color .3s; }
+.ck-ship .opt:has(input:checked) { border-color: var(--ink); }
+.ck-ship .opt input { accent-color: var(--bosque); width: 18px; height: 18px; }
+.ck-ship .opt span { display: flex; flex-direction: column; gap: 2px; }
+.ck-ship .opt b { font-size: 15px; color: var(--ink); }
+.ck-ship .opt small { font-size: 13px; font-weight: 500; color: var(--muted); }
+.ck-sum { background: var(--tint); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.sum-row { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 12px; align-items: center; }
+.sum-row img { width: 52px; height: 64px; object-fit: cover; border-radius: 6px; background: var(--white); }
+.sum-row b { display: block; font-size: 14.5px; }
+.sum-row span { font-size: 13px; color: var(--muted); }
+.sum-tot { display: flex; justify-content: space-between; font-size: 14.5px; border-top: 1px solid var(--line); padding-top: 10px; }
+.sum-tot.big { font-size: 18px; font-weight: 700; }
+.okmark svg { width: 56px; height: 56px; fill: none; stroke: var(--bosque); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.okmark circle { stroke-dasharray: 151; stroke-dashoffset: 151; animation: draw .8s var(--ease) forwards; }
+.okmark path { stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw .5s var(--ease) .6s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.fcols ul button[data-tix] { color: inherit; }
+@media (max-width: 760px) { .ck { grid-template-columns: 1fr; } .trow { grid-template-columns: minmax(0, 1fr) auto; } .trow .label { grid-column: 1; } }
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="bar-wrap"><div class="bar" aria-label="Aviso"><p>Equipaciones oficiales 2026-27 · Colección 01 ya disponible<a href="#oficial">Ver equipaciones</a></p></div></div>
+  <div class="nav g">
+    <div class="nav-l">
+      <button class="iconbtn only-m" id="menuBtn" type="button" aria-label="Abrir el menú" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg></button>
+      <a class="roll only-d" href="#oficial"><span data-t="Equipaciones 26/27">Equipaciones 26/27</span></a>
+      <a class="roll has-mega only-d" href="#coleccion" id="megaTrigger" aria-haspopup="true"><span data-t="Colección 01">Colección 01</span></a>
+      <a class="roll only-d" href="#lookbook"><span data-t="Lookbook">Lookbook</span></a>
+      <a class="roll only-d" href="#historia"><span data-t="El club">El club</span></a>
+    </div>
+    <a class="brand" href="#inicio" aria-label="Antequera CF, inicio">
+      <img src="/antequeracf/img/crest.png" alt="" width="47" height="40">
+      <b>Antequera CF</b>
+    </a>
+    <div class="nav-r">
+      <a class="roll only-d" href="#entradas"><span data-t="Entradas">Entradas</span></a>
+      <button class="iconbtn" id="searchBtn" type="button" aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></button>
+      <button class="bagbtn" id="bagBtn" type="button" aria-label="Abrir la cesta"><span class="only-d">Cesta</span><span class="count"><i id="bagCount">0</i></span></button>
+    </div>
+    <div class="mega" id="mega">
+      <div class="mega-in g">
+        <div class="mega-links">
+          <a href="#oficial">Equipaciones 26/27 <small>Oficial</small></a>
+          <a href="#punto">Polos y punto <small>3 piezas</small></a>
+          <a href="#manga-larga">Manga larga <small>3 piezas</small></a>
+          <a href="#camisetas">Camisetas <small>4 piezas</small></a>
+          <a href="#lookbook">Lookbook <small>6 fotos</small></a>
+        </div>
+        <div class="mega-prods" id="megaProds"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mnav g" id="mnav" aria-label="Menú">
+  <nav>
+    <a href="#oficial" style="--i:0">Equipaciones <small>26/27</small></a>
+    <a href="#coleccion" style="--i:1">Colección 01 <small>10 piezas</small></a>
+    <a href="#lookbook" style="--i:2">Lookbook <small>6 fotos</small></a>
+    <a href="#entradas" style="--i:3">Entradas <small>El Maulí</small></a>
+    <a href="#historia" style="--i:4">El club <small>Desde 1992</small></a>
+  </nav>
+  <div class="foot-brand"><img src="/antequeracf/img/crest.png" alt="">Estadio El Maulí · Antequera</div>
+</div>
+
+<main>
+<div id="view-home">
+
+  <!-- PORTADA -->
+  <section class="hero" id="hero" aria-roledescription="carrusel" aria-label="Portada">
+    <div class="hero-par" id="heroPar">
+      <div id="slides"></div>
+      <div class="hero-shade"></div>
+    </div>
+    <div class="hero-copy g" id="heroCopy"></div>
+    <div class="hero-ui g">
+      <div class="hero-place" id="heroPlace">El Torcal · Antequera</div>
+      <div class="hero-ctrl">
+        <span class="hero-count"><b id="heroNum">01</b> / 03</span>
+        <div class="hero-bars" id="heroBars"></div>
+        <div class="hero-arrows">
+          <button type="button" id="heroPrev" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" id="heroNext" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPACIONES OFICIALES -->
+  <section class="buy g" id="oficial" aria-label="Equipaciones oficiales 2026-27">
+    <div class="buy-gal">
+      <div class="buy-thumbs" id="kitThumbs"></div>
+      <div class="buy-stage" id="kitStage" data-cursor="Zoom"></div>
+    </div>
+    <div class="buy-info">
+      <div>
+        <span class="label" data-reveal>Equipación oficial · Temporada 2026-27 · Hummel</span>
+        <h2 class="buy-name lines" data-reveal-lines><span class="ln"><span style="--i:0" id="kitName">Primera equipación</span></span></h2>
+        <div class="buy-sub" id="kitDesc">Verdiblanca a rayas, la de siempre en El Maulí.</div>
+      </div>
+      <div class="seg kit-tabs" id="kitTabs" role="group" aria-label="Elige la equipación"></div>
+      <div class="buy-price"><span class="price">Precio por confirmar</span><span class="swatch"><i id="kitSwatch"></i><span id="kitColor">Verde y blanco</span></span></div>
+      <div class="lbl"><span>Versión</span></div>
+      <div class="seg" id="kitVer" role="group" aria-label="Versión"></div>
+      <div class="lbl"><span>Talla</span><button type="button" data-guide>Guía de tallas</button></div>
+      <div class="sizes" data-sizes="kit"></div>
+      <div class="lbl"><span>Personalización</span></div>
+      <div class="seg" id="kitPerso" role="group" aria-label="Personalización" style="--n:2"></div>
+      <div class="perso" id="persoBox" hidden>
+        <label class="vh" for="persoName">Nombre</label><input id="persoName" maxlength="12" placeholder="Nombre" autocomplete="off">
+        <label class="vh" for="persoNum">Dorsal</label><input id="persoNum" inputmode="numeric" maxlength="2" placeholder="Dorsal" autocomplete="off">
+        <div class="perso-prev">En la espalda: <b id="persoPrev">NOMBRE · 00</b></div>
+      </div>
+      <button class="btn btn-block" type="button" id="kitReserve" disabled>Elige tu talla</button>
+      <div class="buy-perks"><span>Te avisamos en cuanto abra la venta</span><span>Recogida en El Maulí</span></div>
+    </div>
+  </section>
+
+  <!-- DOS COLECCIONES -->
+  <section class="duo" aria-label="Colecciones destacadas">
+    <a class="tile" href="#p-amanecer" data-qv="p-amanecer" data-cursor="Ver">
+      <img src="/antequeracf/img/amanecer.jpg" alt="Dos manos sostienen la camiseta AMANECER contra el cielo" loading="lazy">
+      <div class="tile-in"><span class="label light">Edición especial para la Copa</span><h2>Edición Amanecer</h2><p>Ámbar de los noventa, cuello de pico cruzado y «ANTEQUERA» en grande. Tirada corta.</p><span class="btn btn-light">Comprar · 55 €</span></div>
+    </a>
+    <a class="tile" href="#lookbook" data-cursor="Ver">
+      <img src="/antequeracf/img/l-alcazaba.jpg" alt="Chico con la camiseta ALCAZABA en la muralla de la Alcazaba" loading="lazy">
+      <div class="tile-in"><span class="label light">Colección 01 · Lookbook</span><h2>Por Antequera</h2><p>Diez camisetas para vestir, por la Alcazaba, el casco antiguo y la Vega.</p><span class="btn btn-light">Ver el lookbook</span></div>
+    </a>
+  </section>
+
+  <!-- LÍNEAS -->
+  <div id="coleccion">
+    <section class="line" id="punto" aria-label="Polos y punto"></section>
+    <section class="line rev" id="manga-larga" aria-label="Manga larga"></section>
+    <section class="line" id="camisetas" aria-label="Camisetas"></section>
+  </div>
+
+  <!-- LOOKBOOK -->
+  <section class="look g" id="lookbook" aria-label="Lookbook">
+    <div class="sec-head">
+      <div><span class="label">Lookbook · Colección 01</span><h2 class="h-xl lines" data-reveal-lines><span class="ln"><span style="--i:0"><span class="thin">Por</span> Antequera</span></span></h2></div>
+      <p class="lede" data-reveal>Seis fotos por la ciudad. Pasa por los puntos para ver cada prenda y ábrela sin salir de aquí.</p>
+    </div>
+    <div class="look-cols" id="lookCols"></div>
+  </section>
+
+  <!-- ENTRADAS -->
+  <section class="tix" id="entradas" aria-label="Entradas">
+    <div class="tix-media" data-par="0.16"><img src="/antequeracf/img/estadio.jpg" alt="Grada de un estadio pequeño al atardecer con bufandas verdiblancas" loading="lazy"></div>
+    <div class="tix-in g">
+      <div>
+        <span class="label light">Estadio El Maulí</span>
+        <h2 class="lines" data-reveal-lines><span class="ln"><span style="--i:0">Vive</span></span><span class="ln"><span style="--i:1" class="thin">El Maulí</span></span></h2>
+        <p data-reveal>Entradas y abonos de la temporada 2026-27, y packs de entrada con bufanda para quien viene a conocer Antequera.</p>
+      </div>
+      <button class="orb magnetic" type="button" data-tix style="border:0;cursor:pointer;font:inherit"><span>Comprar<br>entradas<svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></button>
+    </div>
+  </section>
+
+  <!-- HISTORIA -->
+  <section class="story g" id="historia" aria-label="El club">
+    <div class="story-grid">
+      <div><span class="label" style="margin-bottom:12px">El club</span><h2 class="h-l lines" data-reveal-lines><span class="ln"><span style="--i:0">La ciudad de los dólmenes</span></span><span class="ln"><span style="--i:1" class="thin">también juega al fútbol</span></span></h2></div>
+      <p class="lede" data-reveal>En Antequera se juega al fútbol desde el CD Antequerano, y el club de hoy nació en 1992. Esta colección lleva su historia a la calle: los colores apagados de la ciudad, la piedra de sus dólmenes y la palabra Antequera bordada en el pecho.</p>
+    </div>
+    <div class="years">
+      <div class="year" data-reveal><b>1939</b><span>Fútbol en la ciudad con el CD Antequerano</span></div>
+      <div class="year" data-reveal style="--rd:.1s"><b>1992</b><span>Nace el Antequera CF</span></div>
+      <div class="year" data-reveal style="--rd:.2s"><b>2016</b><span>Los Dólmenes de Antequera, Patrimonio Mundial</span></div>
+    </div>
+  </section>
+
+  <!-- CLUB -->
+  <section class="club g" aria-label="Únete al club">
+    <h2 class="h-l lines" data-reveal-lines><span class="ln"><span style="--i:0">Únete</span></span><span class="ln"><span style="--i:1" class="thin">al club</span></span></h2>
+    <div>
+      <p class="lede" style="margin-bottom:22px">Recibe antes que nadie cada colección y un 10 % de descuento en tu primer pedido.</p>
+      <form id="clubForm" novalidate>
+        <label for="clubEmail" class="vh">Correo electrónico</label>
+        <input id="clubEmail" type="email" placeholder="tu@correo.es" autocomplete="email">
+        <button type="submit" aria-label="Apuntarme"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- FICHA DE PRODUCTO -->
+<div id="view-pdp" hidden>
+  <div class="pdp g">
+    <div class="gal" id="gal"></div>
+    <aside class="pdp-info">
+      <div class="crumbs"><a href="#inicio">Inicio</a><span>/</span><a href="#coleccion">Colección 01</a><span>/</span><span id="crumbName">MAULÍ</span></div>
+      <div>
+        <span class="label" id="pTag">Piqué de algodón</span>
+        <h1 id="pName">MAULÍ</h1>
+        <div class="pdp-type" id="pType">Polo de fútbol</div>
+      </div>
+      <div class="pdp-price"><span class="price" id="pPrice">59 €</span><span class="swatch"><i id="pSwatch"></i><span id="pColor">Verde bosque</span></span></div>
+      <p class="lede" id="pLede"></p>
+      <div class="lbl" id="pdpSizes"><span>Talla</span><button type="button" data-guide>Guía de tallas</button></div>
+      <div class="sizes" data-sizes="pdp"></div>
+      <button class="btn btn-block" type="button" id="pdpAdd" disabled>Elige tu talla</button>
+      <div class="perks"><div><b>Envío gratis</b>desde 80 € a toda España</div><div><b>Cambios gratis</b>durante 30 días</div></div>
+      <div class="acc" id="pAcc"></div>
+    </aside>
+  </div>
+  <section class="worn g" id="worn"></section>
+  <section class="rel" aria-label="Combínalo con">
+    <div class="sec-head g"><div><span class="label">Combínalo con</span><h2 class="h-l">Del mismo <span class="thin">armario</span></h2></div></div>
+    <div class="rail" id="related"></div>
+  </section>
+  <div class="atc" id="atc" aria-hidden="true">
+    <div class="atc-in g"><img id="atcImg" src="/antequeracf/img/mauli-front.jpg" alt=""><div class="nm"><b id="atcName">MAULÍ</b><span id="atcInfo">59 €</span></div><button class="btn" type="button" id="atcBtn">Elegir talla</button></div>
+  </div>
+</div>
+</main>
+
+<footer class="foot g">
+  <div class="fcols">
+    <div class="fbrand">
+      <div class="row"><img src="/antequeracf/img/crest-lg.png" alt="Escudo del Antequera CF"><div><b>Antequera CF</b><small>Estadio El Maulí · Desde 1992</small></div></div>
+      <p>Tienda oficial del club. Equipaciones de juego, camisetas para vestir y entradas, en el mismo sitio.</p>
+    </div>
+    <div><h4>Tienda</h4><ul><li><a href="#oficial">Equipaciones 26/27</a></li><li><a href="#coleccion">Colección 01</a></li><li><a href="#mauli">MAULÍ</a></li><li><a href="#lookbook">Lookbook</a></li></ul></div>
+    <div><h4>Club</h4><ul><li><a href="#historia">Historia</a></li><li><button type="button" data-tix>Entradas</button></li><li><a href="https://antequeraclubdefutbol.com/" target="_blank" rel="noopener">Web del club ↗</a></li></ul></div>
+    <div><h4>Ayuda</h4><ul><li>Envíos en 3-5 días</li><li>Devoluciones en 30 días</li><li><button type="button" data-guide>Guía de tallas</button></li></ul></div>
+  </div>
+  <div class="legal"><span>© 2026 Antequera CF</span><span>Tienda de demostración preparada por 404 Growth: no se cobra nada ni se envía ningún dato. Precios orientativos e imágenes generadas con IA.</span></div>
+</footer>
+
+<!-- Ventana emergente -->
+<div class="qv" id="qv" role="dialog" aria-modal="true" aria-label="Vista rápida" hidden data-lenis-prevent>
+  <div class="qv-scrim" data-close></div>
+  <div class="qv-panel" id="qvPanel"></div>
+</div>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Cesta" hidden data-lenis-prevent>
+  <div class="top"><h3>Tu cesta</h3><button class="iconbtn" id="closeBag" type="button" aria-label="Cerrar la cesta"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="ship"><span id="shipTxt">Te faltan 80 € para el envío gratis</span><i><b id="shipBar"></b></i></div>
+  <div class="baglines" id="lines"></div>
+  <div class="total"><span>Subtotal</span><span id="subtotal" class="price">0 €</span></div>
+  <button class="btn btn-block" type="button" id="checkout">Finalizar compra</button>
+  <p class="note" style="margin:10px 0 0;text-align:center">Tienda de demostración: no se cobra nada.</p>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="cur" id="cur" aria-hidden="true"><span id="curLabel"></span></div>
+
+<script src="/antequeracf/lenis.min.js"></script>
+<script>
+const SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+const P = [
+  { id: 'mauli', name: 'MAULÍ', type: 'Polo de fútbol', tag: 'Piqué de algodón', color: 'Verde bosque', hex: '#24432F', price: 59, cat: ['polos'],
+    img: ['/antequeracf/img/mauli-front.jpg', '/antequeracf/img/mauli-back.jpg', '/antequeracf/img/mauli-detail.jpg', '/antequeracf/img/mauli-model-1.jpg', '/antequeracf/img/mauli-model-2.jpg'], life: '/antequeracf/img/mauli-model-1.jpg', more: ['/antequeracf/img/hero-torcal.jpg'],
+    alt: ['MAULÍ de frente', 'MAULÍ de espaldas', 'Detalle del cuello y del bordado Antequera', 'MAULÍ puesto, junto a una pared encalada', 'MAULÍ puesto, en unos escalones de piedra'],
+    lede: 'El polo que abre la colección. Verde bosque con raya fina crema, como las camisetas de antes, y «Antequera» bordado en letra caligráfica en el pecho. Lleva el nombre del estadio del club.',
+    details: ['Cuello de polo y tapeta crema con dos botones', 'Hombros y puños en crema', 'Escudo pequeño bordado y «1992» en el pecho', 'Corte amplio y bajo recto'],
+    care: 'Piqué de algodón orgánico de 220 g. Lavar a 30 °C del revés y secar en plano. Bordado en hilo de algodón.',
+    fit: 'Corte amplio. Si buscas un ajuste más clásico, elige una talla menos. El modelo mide 1,82 m y lleva una M.',
+    story: 'El Maulí es la casa del Antequera CF. La raya fina y el cuello crema vienen de las camisetas de fútbol de antes; la letra caligráfica, de los rótulos de las tiendas del centro.' },
+  { id: 'p-1939', name: '1939', type: 'Polo de punto', tag: 'Punto de algodón', color: 'Crema y verde', hex: '#EEE6D3', price: 79, cat: ['polos'], img: ['/antequeracf/img/p-1939.jpg'], life: '/antequeracf/img/punto.jpg', more: ['/antequeracf/img/hero-menga.jpg'],
+    lede: 'Punto crema con cuello y puños verdes ribeteados, tres botones y escudo bordado en hilo de oro. Por el fútbol que empezó en la ciudad en 1939.' },
+  { id: 'p-dolmenes', name: 'DÓLMENES', type: 'Camiseta de manga larga', tag: 'Jersey jacquard', color: 'Crema y marrón', hex: '#EEE6D3', price: 65, cat: ['larga'], img: ['/antequeracf/img/p-dolmenes.jpg'], life: '/antequeracf/img/manga-larga.jpg', more: ['/antequeracf/img/hero-torcal.jpg', '/antequeracf/img/hero.jpg'],
+    lede: 'Crema con relieve de rombos, cuello de polo y puños marrón oscuro, y «Antequera» en letra deportiva de lado a lado del pecho.' },
+  { id: 'p-vega', name: 'VEGA', type: 'Camiseta a rayas', tag: 'Piqué', color: 'Salvia y crudo', hex: '#A9B79A', price: 55, cat: ['camisetas'], img: ['/antequeracf/img/p-vega.jpg'], life: '/antequeracf/img/l-vega.jpg',
+    lede: 'Rayas anchas salvia y crudo con cuello de polo verde bosque. El verdiblanco de siempre, en suave.' },
+  { id: 'p-amanecer', name: 'AMANECER', type: 'Camiseta retro', tag: 'Edición especial', color: 'Ámbar', hex: '#D39A3A', price: 55, cat: ['camisetas'], img: ['/antequeracf/img/p-amanecer.jpg'], life: '/antequeracf/img/amanecer.jpg', more: ['/antequeracf/img/hero-torcal.jpg'], flag: 'Tirada corta',
+    lede: 'Ámbar de los noventa con rayas sublimadas, cuello de pico cruzado verde y «ANTEQUERA» en grande. Tirada corta para la Copa.' },
+  { id: 'p-92', name: 'NOVENTA Y DOS', type: 'Camiseta oversize', tag: 'Algodón 240 g', color: 'Blanco y verde', hex: '#F4F2EC', price: 45, cat: ['camisetas'], img: ['/antequeracf/img/p-92.jpg'], life: '/antequeracf/img/l-92.jpg',
+    lede: 'Blanca con mangas ranglan verdes. En la espalda, «Antequera» y un 92 enorme por el año de fundación del club.' },
+  { id: 'p-alcazaba', name: 'ALCAZABA', type: 'Camiseta de piqué', tag: 'Piqué', color: 'Terracota', hex: '#B65A3C', price: 49, cat: ['camisetas'], img: ['/antequeracf/img/p-alcazaba.jpg'], life: '/antequeracf/img/l-alcazaba.jpg',
+    lede: 'Terracota, como la piedra de la Alcazaba, con cuello redondo y puños de canalé a rayas.' },
+  { id: 'p-cal', name: 'CAL', type: 'Camiseta de manga larga', tag: 'Jersey jacquard', color: 'Verde agua y granate', hex: '#D5E3D8', price: 65, cat: ['larga'], img: ['/antequeracf/img/p-cal.jpg'], life: '/antequeracf/img/l-cal.jpg',
+    lede: 'Verde agua con relieve de rombos, cuello de polo y puños granate, y «Antequera» pequeño en el pecho.' },
+  { id: 'p-menga', name: 'MENGA', type: 'Camiseta de portero retro', tag: 'Jersey jacquard', color: 'Gris piedra', hex: '#B8B2A5', price: 69, cat: ['larga'], img: ['/antequeracf/img/p-menga.jpg'], life: '/antequeracf/img/l-menga.jpg',
+    lede: 'Gris piedra con triángulos tono sobre tono, coderas, cuello de polo negro y un 1 en el pecho. Por el dolmen de Menga.' },
+  { id: 'p-1992', name: '1992', type: 'Polo de punto de manga larga', tag: 'Punto de algodón', color: 'Verde bosque', hex: '#24432F', price: 89, cat: ['polos', 'larga'], img: ['/antequeracf/img/p-1992.jpg'], life: '/antequeracf/img/l-1992.jpg', more: ['/antequeracf/img/hero-menga.jpg'],
+    lede: 'Punto verde bosque con cuello, puños y bajo crema, tres botones y escudo bordado. El año en que nació el club.' }
+];
+const byId = Object.fromEntries(P.map(p => [p.id, p]));
+const ALT = {
+  '/antequeracf/img/hero-torcal.jpg': 'Tres jóvenes con MAULÍ, DÓLMENES y AMANECER sobre las rocas de El Torcal al amanecer',
+  '/antequeracf/img/hero-menga.jpg': 'Chica con el polo 1939 y chico con el 1992 dentro del Dolmen de Menga, con un rayo de luz',
+  '/antequeracf/img/hero.jpg': 'Chica con DÓLMENES y chico con MAULÍ en una azotea encalada, con la Peña de los Enamorados al fondo',
+  '/antequeracf/img/punto.jpg': 'Chico sentado con el polo de punto 1939 ante un fondo verde',
+  '/antequeracf/img/manga-larga.jpg': 'La camiseta DÓLMENES colgada en una pared encalada bajo un aplique',
+  '/antequeracf/img/amanecer.jpg': 'Dos manos sostienen la camiseta AMANECER contra el cielo',
+  '/antequeracf/img/l-vega.jpg': 'Chico con la camiseta VEGA apoyado en una pared encalada del casco antiguo',
+  '/antequeracf/img/l-92.jpg': 'Chica de espaldas con la camiseta NOVENTA Y DOS en una calle blanca con campanario',
+  '/antequeracf/img/l-alcazaba.jpg': 'Chico con la camiseta ALCAZABA sentado en la muralla de la Alcazaba, con la Peña de los Enamorados al fondo',
+  '/antequeracf/img/l-cal.jpg': 'Chica riendo con la camiseta CAL en la terraza de una plaza con naranjos',
+  '/antequeracf/img/l-menga.jpg': 'Portero con la camiseta MENGA agachado tras la red de un campo de tierra',
+  '/antequeracf/img/l-1992.jpg': 'Chico con el polo 1992 caminando por un olivar al atardecer',
+  '/antequeracf/img/mauli-model-1.jpg': 'Chico con MAULÍ junto a una pared encalada',
+  '/antequeracf/img/mauli-model-2.jpg': 'Chica con MAULÍ sentada en unos escalones de piedra'
+};
+// Puntos de producto: [id, x %, y %] sobre la imagen original
+const SPOTS = {
+  'hero-torcal': [['mauli', 51, 46], ['p-dolmenes', 66, 45], ['p-amanecer', 81, 42]],
+  'hero-menga': [['p-1939', 76, 46], ['p-1992', 88, 43]],
+  'hero': [['p-dolmenes', 73, 51], ['mauli', 85.5, 50]],
+  'mauli-model-1': [['mauli', 53, 50]],
+  'mauli-model-2': [['mauli', 50, 47]],
+  'punto': [['p-1939', 50, 40]],
+  'manga-larga': [['p-dolmenes', 50, 48]],
+  'amanecer': [['p-amanecer', 55, 47]],
+  'l-vega': [['p-vega', 50, 42]],
+  'l-92': [['p-92', 52, 56]],
+  'l-alcazaba': [['p-alcazaba', 53, 45]],
+  'l-cal': [['p-cal', 58, 63]],
+  'l-menga': [['p-menga', 51, 57]],
+  'l-1992': [['p-1992', 51, 49]]
+};
+const SLIDES = [
+  { img: '/antequeracf/img/hero-torcal.jpg', key: 'hero-torcal', box: [.455, .19, .86, .84], place: 'El Torcal · Antequera', eyebrow: 'Colección 01 · Otoño-Invierno 2026', l1: 'Camisetas', l2: 'para vestir', sub: 'Diez camisetas de fútbol en buen tejido y con el escudo en pequeño. Para la grada y para la calle.', look: ['mauli', 'p-dolmenes', 'p-amanecer'] },
+  { img: '/antequeracf/img/hero-menga.jpg', key: 'hero-menga', box: [.69, .185, .935, .99], place: 'Dolmen de Menga · Patrimonio Mundial', eyebrow: 'Punto de algodón', l1: 'Del dolmen', l2: 'a la calle', sub: 'El polo 1939 y el 1992, dentro de un dolmen de más de 5.000 años.', look: ['p-1939', 'p-1992'] },
+  { img: '/antequeracf/img/hero.jpg', key: 'hero', box: [.67, .285, .93, .965], place: 'Azotea del centro · Peña de los Enamorados', eyebrow: 'Desde 1992', l1: 'El escudo', l2: 'en pequeño', sub: 'DÓLMENES y MAULÍ, con la Peña de los Enamorados al fondo.', look: ['p-dolmenes', 'mauli'] }
+];
+const KITS = [
+  { n: '1.ª', t: 'Primera equipación', short: 'Primera', d: 'Verdiblanca a rayas, la de siempre en El Maulí.', color: 'Verde y blanco', sw: 'linear-gradient(90deg,#1E8A47 0 33%,#fff 33% 66%,#1E8A47 66%)', img: '/antequeracf/img/kit-1.jpg', alt: 'Primera equipación 2026-27, a rayas verdiblancas' },
+  { n: '2.ª', t: 'Segunda equipación', short: 'Segunda', d: 'Crema con cuello de polo marrón para los partidos fuera.', color: 'Crema y marrón', sw: '#EDE3CF', img: '/antequeracf/img/kit-2.jpg', alt: 'Segunda equipación 2026-27, crema con cuello de polo marrón' },
+  { n: '3.ª', t: 'Tercera equipación', short: 'Tercera', d: 'Negra con bandas diagonales grises.', color: 'Negro y gris', sw: '#1B1C1B', img: '/antequeracf/img/kit-3.jpg', alt: 'Tercera equipación 2026-27, negra con bandas diagonales grises' }
+];
+const LINES = [
+  { el: 'punto', img: '/antequeracf/img/punto.jpg', key: 'punto', kicker: 'Colección 01 · Línea 1', title: 'Polos y punto', text: 'Punto y piqué para ir del palco a la cena. Cuello de polo, escudo bordado y colores de la ciudad.', head: 'Polos de la Colección 01', ids: ['mauli', 'p-1939', 'p-1992'] },
+  { el: 'manga-larga', img: '/antequeracf/img/manga-larga.jpg', key: 'manga-larga', kicker: 'Colección 01 · Línea 2', title: 'Manga larga', text: 'Camisetas de fútbol de manga larga para el invierno andaluz, en jersey con relieve.', head: 'Manga larga', ids: ['p-dolmenes', 'p-cal', 'p-menga'] },
+  { el: 'camisetas', img: '/antequeracf/img/l-92.jpg', key: 'l-92', kicker: 'Colección 01 · Línea 3', title: 'Camisetas', text: 'Rayas, color de los noventa y el 92 en la espalda. Para la grada y para el verano.', head: 'Camisetas', ids: ['p-vega', 'p-amanecer', 'p-92', 'p-alcazaba'] }
+];
+const LOOK = [
+  { col: 0, img: '/antequeracf/img/l-alcazaba.jpg', key: 'l-alcazaba', place: 'Alcazaba de Antequera', id: 'p-alcazaba' },
+  { col: 0, img: '/antequeracf/img/l-vega.jpg', key: 'l-vega', place: 'Casco antiguo', id: 'p-vega' },
+  { col: 1, img: '/antequeracf/img/l-cal.jpg', key: 'l-cal', place: 'Terraza en la plaza', id: 'p-cal' },
+  { col: 1, img: '/antequeracf/img/l-menga.jpg', key: 'l-menga', place: 'Campo de tierra', id: 'p-menga' },
+  { col: 2, img: '/antequeracf/img/l-92.jpg', key: 'l-92', place: 'Calle del campanario', id: 'p-92' },
+  { col: 2, img: '/antequeracf/img/l-1992.jpg', key: 'l-1992', place: 'Olivar de la Vega', id: 'p-1992' }
+];
+const eur = n => n.toLocaleString('es-ES') + ' €';
+const $ = s => document.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const keyOf = src => src.split('/').pop().replace('.jpg', '');
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const ARROW = '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const viewHome = $('#view-home');
+
+function roll(el) {
+  if (el.dataset.rolled) return;
+  const t = el.textContent.trim();
+  el.innerHTML = `<span class="t"><span>${t}</span><span aria-hidden="true">${t}</span></span>`;
+  el.dataset.rolled = '1';
+}
+
+/* ---------- Lenis: scroll suave y lento ---------- */
+let lenis = null;
+if (!reduced && window.Lenis) lenis = new Lenis({ lerp: 0.065, wheelMultiplier: 0.78, touchMultiplier: 1.1, smoothWheel: true });
+function scrollToEl(el, immediate) {
+  const off = -(document.getElementById('hdr').offsetHeight - 2);
+  if (lenis) lenis.scrollTo(el, { offset: el === 0 ? 0 : off, immediate: !!immediate, duration: immediate ? 0 : 1.8 });
+  else if (el === 0) window.scrollTo(0, 0);
+  else window.scrollTo({ top: el.getBoundingClientRect().top + scrollY + off, behavior: immediate ? 'auto' : 'smooth' });
+}
+
+/* ---------- Tarjetas ---------- */
+function card(p) {
+  return `<article class="card" data-id="${p.id}">
+    <div class="card-media">
+      <a class="card-link" href="#${p.id}" data-cursor="Ver" aria-label="${p.name}, ${p.type.toLowerCase()}, ${eur(p.price)}">
+        <img class="a" src="${p.img[0]}" alt="${p.name}, ${p.type.toLowerCase()}" loading="lazy" decoding="async">
+        ${p.life ? `<img class="b" src="${p.life}" alt="" loading="lazy" decoding="async">` : ''}
+      </a>
+      ${p.flag ? `<span class="card-flag tag">${p.flag}</span>` : ''}
+      <div class="card-quick"><span>Añadir rápido · elige tu talla</span><div class="qs">${SIZES.map(s => `<button type="button" data-quick="${p.id}" data-size="${s}" aria-label="Añadir ${p.name} en talla ${s}">${s}</button>`).join('')}</div></div>
+      <button class="card-plus" type="button" data-qv="${p.id}" aria-label="Vista rápida de ${p.name}"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+    </div>
+    <div class="card-meta"><a class="card-name" href="#${p.id}">${p.name}</a><span class="card-price price">${eur(p.price)}</span><span class="card-sub"><i style="background:${p.hex}"></i>${p.type} · ${p.color}</span></div>
+  </article>`;
+}
+function railNav() {
+  return `<div class="rail-nav"><button type="button" data-rail-prev aria-label="Anteriores"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><div class="rail-bar"><i></i></div><button type="button" data-rail-next aria-label="Siguientes"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></div>`;
+}
+function initRail(wrap) {
+  const rail = wrap.querySelector('.rail'), prev = wrap.querySelector('[data-rail-prev]'), next = wrap.querySelector('[data-rail-next]'), bar = wrap.querySelector('.rail-bar i');
+  if (!rail) return;
+  const step = () => { const c = rail.querySelector('.card'); return c ? c.getBoundingClientRect().width + 14 : rail.clientWidth * .8; };
+  const upd = () => {
+    const max = rail.scrollWidth - rail.clientWidth, vis = rail.clientWidth / Math.max(1, rail.scrollWidth);
+    if (bar) bar.style.transform = `scaleX(${max > 2 ? clamp(vis + (1 - vis) * rail.scrollLeft / max, 0, 1) : 1})`;
+    if (prev) prev.disabled = rail.scrollLeft < 4;
+    if (next) next.disabled = rail.scrollLeft > max - 4;
+  };
+  prev && prev.addEventListener('click', () => rail.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next && next.addEventListener('click', () => rail.scrollBy({ left: step(), behavior: 'smooth' }));
+  rail.addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd(); setTimeout(upd, 400);
+}
+
+// Megamenú
+$('#megaProds').innerHTML = [['kit', 0], ['mauli'], ['p-1939'], ['p-amanecer']].map(([id, k]) => {
+  if (id === 'kit') return `<a href="#oficial"><div class="ph"><img src="${KITS[0].img}" alt="" loading="lazy"><img class="b" src="${KITS[1].img}" alt="" loading="lazy"></div><b>Equipaciones 26/27</b><span>Oficial · Hummel</span></a>`;
+  const p = byId[id]; return `<a href="#${id}"><div class="ph"><img src="${p.img[0]}" alt="" loading="lazy"><img class="b" src="${p.life}" alt="" loading="lazy"></div><b>${p.name}</b><span>${p.type} · ${eur(p.price)}</span></a>`;
+}).join('');
+
+/* ---------- Portada ---------- */
+$('#slides').innerHTML = SLIDES.map((s, i) => `<figure class="slide${i === 0 ? ' is-active' : ''}" aria-hidden="${i === 0 ? 'false' : 'true'}"><img class="bg" src="${s.img.replace('.jpg', '-blur.jpg')}" alt=""><div class="media" data-spots="${s.key}"><img class="fg" src="${s.img}" alt="${ALT[s.img]}" width="3200" height="1792" ${i === 0 ? 'fetchpriority="high"' : ''}></div></figure>`).join('');
+$('#heroCopy').innerHTML = SLIDES.map((s, i) => {
+  const T = i === 0 ? 'h1' : 'p';
+  return `<div class="copy${i === 0 ? ' is-active' : ''}" aria-hidden="${i === 0 ? 'false' : 'true'}">
+    <span class="eyebrow fade">${s.eyebrow}</span>
+    <${T} class="title"><span class="ln"><span class="thin" style="--i:0">${s.l1}</span></span><span class="ln"><span style="--i:1">${s.l2}</span></span></${T}>
+    <div class="row fade"><p>${s.sub}</p><div class="ctas"><a class="btn btn-light" href="#coleccion">Ver la colección</a><button class="btn btn-ghost" type="button" data-look="${i}">Comprar el look</button></div></div>
+  </div>`;
+}).join('');
+$('#heroBars').innerHTML = SLIDES.map((s, i) => `<button type="button" aria-label="Ir a la foto ${i + 1}"><i><b></b></i></button>`).join('');
+const slides = $$('.slide'), copies = $$('.copy'), bars = $$('#heroBars b');
+let cur = 0, elapsed = 0, heroPaused = false;
+const DUR = 7200;
+/* Encuadre de la portada: las personas (box) siempre enteras, también durante el zoom.
+   Se calcula el tamaño y la posición de la foto y un zoom máximo (k) centrado en ellas. */
+const HERO_IW = 3200, HERO_IH = 1792;
+function frameHero() {
+  const hero = $('#hero'), vw = hero.clientWidth, vh = hero.clientHeight; if (!vw || !vh) return;
+  const portrait = vw / vh < 1.05 || vw < 700;
+  const hdrH = $('#hdr').offsetHeight, barH = $('.bar-wrap').offsetHeight;
+  const copyTop = $('#heroCopy').getBoundingClientRect().top - hero.getBoundingClientRect().top;
+  const mx = Math.max(16, vw * .025), KMAX = 1.1, KMIN = 1.03;
+  const cands = portrait
+    ? [{ t: hdrH + 10, b: vh - copyTop + 14, x0: mx, x1: vw - mx }]
+    : [{ t: hdrH + 4, b: 78, x0: vw * .4, x1: vw - mx }, { t: hdrH + 4, b: 16, x0: vw * .4, x1: vw - mx }, { t: barH + 10, b: 16, x0: vw * .34, x1: vw - mx }, { t: barH + 10, b: 16, x0: mx, x1: vw - mx }];
+  slides.forEach((sl, i) => {
+    const S = SLIDES[i], [bx0, by0, bx1, by1] = S.box, media = sl.querySelector('.media'), fg = sl.querySelector('.fg');
+    let best = null;
+    for (const c of cands) {
+      const top = c.t, bot = vh - c.b, bandW = c.x1 - c.x0, bandH = bot - top;
+      if (bandH < 80 || bandW < 80) continue;
+      const cover = Math.max(vw / HERO_IW, vh / HERO_IH);
+      // escala máxima a la que las personas caben (con el zoom mínimo) en la franja libre
+      const fit = Math.min(bandW / ((bx1 - bx0) * HERO_IW * KMIN), bandH / ((by1 - by0) * HERO_IH * KMIN));
+      const s = Math.min(cover, fit), w = HERO_IW * s, h = HERO_IH * s;
+      const place = (len, vp, f0, f1, a, b) => {
+        const c0 = (a + b) / 2 - (f0 + f1) / 2 * len;
+        return len >= vp ? clamp(c0, vp - len, 0) : clamp(c0, Math.min(0, vp - len), Math.max(0, vp - len));
+      };
+      const ox = place(w, vw, bx0, bx1, c.x0, c.x1), oy = place(h, vh, by0, by1, top, bot);
+      const L = ox + bx0 * w, R = ox + bx1 * w, T = oy + by0 * h, B = oy + by1 * h, cx = (L + R) / 2, cy = (T + B) / 2;
+      const lim = (d, room) => d > 0.5 ? room / d : 9;
+      let k = Math.min(KMAX, lim(cx - L, cx - Math.min(c.x0, L)), lim(R - cx, Math.max(c.x1, R) - cx), lim(cy - T, cy - Math.min(top, T)), lim(B - cy, Math.max(bot, B) - cy));
+      // las personas no pueden salirse de la pantalla en ningún momento del zoom
+      k = Math.min(k, lim(cx - L, cx - 6), lim(R - cx, vw - 6 - cx), lim(cy - T, cy - 6), lim(B - cy, vh - 6 - cy));
+      const covers = w >= vw - .5 && h >= vh - .5;
+      const ok = L >= c.x0 - 1 && R <= c.x1 + 1 && T >= top - 1 && B <= bot + 1;
+      const cand = { s, w, h, ox, oy, cx, cy, k: Math.max(1, k), covers, ok };
+      best = cand;
+      if (ok && covers && k >= KMIN) break;
+    }
+    if (!best) return;
+    Object.assign(fg.style, { width: best.w + 'px', height: best.h + 'px', transform: `translate3d(${best.ox}px, ${best.oy}px, 0)` });
+    fg.dataset.box = [best.ox, best.oy, best.w, best.h].join(',');
+    const F = portrait ? 70 : 110, g = v => v ? F + 'px' : '0px';
+    const gl = best.ox > .5, gr = best.ox + best.w < vw - .5, gt = best.oy > .5, gb = best.oy + best.h < vh - .5;
+    const m = (gl || gr || gt || gb) ? `linear-gradient(to right, transparent 0, #000 ${g(gl)}, #000 calc(100% - ${g(gr)}), transparent 100%), linear-gradient(to bottom, transparent 0, #000 ${g(gt)}, #000 calc(100% - ${g(gb)}), transparent 100%)` : '';
+    fg.style.webkitMaskImage = m; fg.style.maskImage = m; fg.style.webkitMaskComposite = m ? 'source-in' : ''; fg.style.maskComposite = m ? 'intersect' : '';
+    media.style.transformOrigin = `${best.cx}px ${best.cy}px`;
+    media.style.setProperty('--k', reduced ? 1 : best.k.toFixed(3));
+  });
+  relayoutSpots();
+}
+function goSlide(n) {
+  if (n === cur) return;
+  const old = cur; cur = (n + SLIDES.length) % SLIDES.length;
+  slides[old].classList.remove('is-active'); slides[old].setAttribute('aria-hidden', 'true');
+  copies[old].classList.remove('is-active'); copies[old].classList.add('is-leaving'); copies[old].setAttribute('aria-hidden', 'true');
+  setTimeout(() => { if (old !== cur) copies[old].classList.remove('is-leaving'); }, 760);
+  slides[cur].classList.add('is-active'); slides[cur].setAttribute('aria-hidden', 'false');
+  copies[cur].classList.remove('is-leaving'); copies[cur].classList.add('is-active'); copies[cur].setAttribute('aria-hidden', 'false');
+  $('#heroNum').textContent = String(cur + 1).padStart(2, '0');
+  $('#heroPlace').textContent = SLIDES[cur].place;
+  elapsed = 0;
+}
+$('#heroPrev').addEventListener('click', () => goSlide(cur - 1));
+$('#heroNext').addEventListener('click', () => goSlide(cur + 1));
+$$('#heroBars button').forEach((b, i) => b.addEventListener('click', () => goSlide(i)));
+let tx0 = null;
+$('#hero').addEventListener('touchstart', e => { tx0 = e.touches[0].clientX; }, { passive: true });
+$('#hero').addEventListener('touchend', e => { if (tx0 === null) return; const dx = e.changedTouches[0].clientX - tx0; if (Math.abs(dx) > 50) goSlide(cur + (dx < 0 ? 1 : -1)); tx0 = null; });
+
+/* ---------- Equipaciones oficiales ---------- */
+const KIT_SIZES = { Hombre: SIZES, Mujer: ['XS', 'S', 'M', 'L', 'XL'], 'Niño': ['6 años', '8 años', '10 años', '12 años', '14 años'] };
+const kitState = { k: 0, ver: 'Hombre', perso: false };
+$('#kitStage').innerHTML = KITS.map((k, i) => `<img src="${k.img}" alt="${k.alt}" class="${i ? '' : 'on'}">`).join('') + `<span class="badge-off"><img src="/antequeracf/img/crest.png" alt="">Oficial 26/27</span>`;
+$('#kitThumbs').innerHTML = KITS.map((k, i) => `<button type="button" data-kt="${i}" aria-label="Ver la ${k.short.toLowerCase()} equipación" aria-current="${i ? 'false' : 'true'}"><img src="${k.img}" alt=""><span>${k.n}</span></button>`).join('');
+$('#kitTabs').innerHTML = KITS.map((k, i) => `<button type="button" data-kt="${i}" aria-pressed="${i ? 'false' : 'true'}">${k.n} ${k.short}<small>${k.color}</small></button>`).join('');
+$('#kitVer').innerHTML = Object.keys(KIT_SIZES).map((v, i) => `<button type="button" data-ver="${v}" aria-pressed="${i ? 'false' : 'true'}">${v}</button>`).join('');
+$('#kitPerso').innerHTML = `<button type="button" data-perso="0" aria-pressed="true">Sin personalizar</button><button type="button" data-perso="1" aria-pressed="false">Nombre y dorsal</button>`;
+function kitSizes() {
+  const box = $('[data-sizes="kit"]'); const list = KIT_SIZES[kitState.ver];
+  box.style.gridTemplateColumns = `repeat(${list.length}, minmax(0, 1fr))`;
+  box.innerHTML = list.map(s => `<button type="button" class="size" aria-pressed="false" data-size="${s}">${s}</button>`).join('');
+  delete chosen.kit; kitBtn();
+  $$('.size', box).forEach(b => b.addEventListener('click', () => { $$('.size', box).forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); chosen.kit = b.dataset.size; kitBtn(); }));
+}
+function kitBtn() {
+  const b = $('#kitReserve');
+  b.disabled = !chosen.kit; b.textContent = chosen.kit ? `Avísame · ${KITS[kitState.k].short} · Talla ${chosen.kit}` : 'Elige tu talla';
+}
+function setKit(i) {
+  kitState.k = i; const k = KITS[i];
+  $$('#kitStage > img').forEach((im, j) => im.classList.toggle('on', j === i));
+  $$('[data-kt]').forEach(b => { const on = +b.dataset.kt === i; b.hasAttribute('aria-pressed') ? b.setAttribute('aria-pressed', on ? 'true' : 'false') : b.setAttribute('aria-current', on ? 'true' : 'false'); });
+  $('#kitName').textContent = k.t; $('#kitDesc').textContent = k.d; $('#kitColor').textContent = k.color; $('#kitSwatch').style.background = k.sw;
+  kitBtn();
+}
+$$('[data-kt]').forEach(b => { b.addEventListener('click', () => setKit(+b.dataset.kt)); if (finePointer && b.closest('#kitThumbs')) b.addEventListener('mouseenter', () => setKit(+b.dataset.kt)); });
+$$('[data-ver]').forEach(b => b.addEventListener('click', () => { kitState.ver = b.dataset.ver; $$('[data-ver]').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); kitSizes(); }));
+$$('[data-perso]').forEach(b => b.addEventListener('click', () => { kitState.perso = b.dataset.perso === '1'; $$('[data-perso]').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); $('#persoBox').hidden = !kitState.perso; if (kitState.perso) $('#persoName').focus({ preventScroll: true }); }));
+function persoPrev() {
+  const n = $('#persoName').value.trim().toUpperCase() || 'NOMBRE';
+  const d = $('#persoNum').value.replace(/\D/g, '').slice(0, 2); $('#persoNum').value = d;
+  $('#persoPrev').textContent = `${n} · ${d || '00'}`;
+}
+$('#persoName').addEventListener('input', persoPrev); $('#persoNum').addEventListener('input', persoPrev);
+$('#kitReserve').addEventListener('click', () => {
+  const k = KITS[kitState.k]; const extra = kitState.perso && $('#persoName').value.trim() ? `, con ${$('#persoPrev').textContent}` : '';
+  openNotify(`${k.t}`, `Oficial 26/27 · ${kitState.ver} · Talla ${chosen.kit}${extra}`, 'Las equipaciones 2026-27 salen a la venta muy pronto. Déjanos tu correo y te avisamos el primer día, con tu talla reservada.');
+});
+const kitStage = $('#kitStage');
+if (finePointer) {
+  kitStage.addEventListener('mousemove', e => { const r = kitStage.getBoundingClientRect(); $$('#kitStage > img').forEach(im => im.style.transformOrigin = `${(e.clientX - r.left) / r.width * 100}% ${(e.clientY - r.top) / r.height * 100}%`); });
+  kitStage.addEventListener('mouseenter', () => kitStage.classList.add('z'));
+  kitStage.addEventListener('mouseleave', () => kitStage.classList.remove('z'));
+}
+
+/* ---------- Líneas: foto grande + productos ---------- */
+LINES.forEach((L, i) => {
+  $('#' + L.el).innerHTML = `
+    <div class="line-media" data-spots="${L.key}"><img src="${L.img}" alt="${ALT[L.img]}" loading="lazy">
+      <div class="line-cap"><span class="label light">${L.kicker}</span><h2>${L.title}</h2><p>${L.text}</p><button class="btn btn-light" type="button" data-line-look="${i}">Comprar la línea</button></div>
+    </div>
+    <div class="line-prods">
+      <div class="line-head"><h3 class="h-m">${L.head}</h3><span class="label">${L.ids.length} piezas</span></div>
+      <div class="rail">${L.ids.map(id => card(byId[id])).join('')}</div>
+      ${railNav()}
+    </div>`;
+  initRail($('#' + L.el + ' .line-prods'));
+});
+
+/* ---------- Lookbook ---------- */
+$('#lookCols').innerHTML = [0, 1, 2].map(c => `<div class="look-col c${c + 1}" data-speed="${[0, -0.07, 0.05][c]}">${LOOK.filter(l => l.col === c).map(l => { const p = byId[l.id]; return `<figure class="lk" data-reveal><div class="lk-media" data-spots="${l.key}"><img src="${l.img}" alt="${ALT[l.img]}" loading="lazy"></div><figcaption><b>${l.place}</b><button type="button" data-qv="${p.id}">${p.name} · ${eur(p.price)}</button></figcaption></figure>`; }).join('')}</div>`).join('');
+
+/* ---------- Puntos de producto ---------- */
+function buildSpots(box) {
+  const list = SPOTS[box.dataset.spots]; if (!list) return;
+  $$('.spot', box).forEach(s => s.remove());
+  list.forEach(([id, x, y]) => {
+    const p = byId[id]; const b = document.createElement('button');
+    b.type = 'button'; b.className = 'spot' + (x > 66 ? ' left' : ''); b.dataset.x = x; b.dataset.y = y; b.dataset.qv = id;
+    b.setAttribute('aria-label', `Ver ${p.name}, ${eur(p.price)}`);
+    b.innerHTML = `<span class="dot"></span><span class="plus"></span><span class="tip"><b>${p.name}</b><em>${eur(p.price)}</em></span>`;
+    b.addEventListener('mouseenter', () => { heroPaused = true; cursorHide(true); });
+    b.addEventListener('mouseleave', () => { heroPaused = false; cursorHide(false); });
+    box.appendChild(b);
+  });
+  const img = box.querySelector('img.fg') || box.querySelector('img');
+  if (img.complete && img.naturalWidth) layoutSpots(box); else img.addEventListener('load', () => layoutSpots(box), { once: true });
+}
+function layoutSpots(box) {
+  const fgImg = box.querySelector('img.fg');
+  if (fgImg && fgImg.dataset.box) {
+    const [ox, oy, w, h] = fgImg.dataset.box.split(',').map(Number), cw = box.clientWidth, ch = box.clientHeight;
+    $$('.spot', box).forEach(s => {
+      const x = ox + s.dataset.x / 100 * w, y = oy + s.dataset.y / 100 * h;
+      s.style.left = x + 'px'; s.style.top = y + 'px';
+      s.classList.toggle('off', x < 14 || x > cw - 14 || y < 14 || y > ch - 14);
+    });
+    return;
+  }
+  const img = box.querySelector('img');
+  if (!img || !img.naturalWidth) return;
+  const cw = box.clientWidth, ch = box.clientHeight; if (!cw) return;
+  const iw = img.naturalWidth, ih = img.naturalHeight, sc = Math.max(cw / iw, ch / ih), dw = iw * sc, dh = ih * sc;
+  const op = getComputedStyle(img).objectPosition.split(' ');
+  const px = (parseFloat(op[0]) || 50) / 100, py = (parseFloat(op[1]) || 50) / 100;
+  const ox = (cw - dw) * px, oy = (ch - dh) * py;
+  $$('.spot', box).forEach(s => {
+    const x = ox + s.dataset.x / 100 * dw, y = oy + s.dataset.y / 100 * dh;
+    s.style.left = x + 'px'; s.style.top = y + 'px';
+    s.classList.toggle('off', x < 14 || x > cw - 14 || y < 14 || y > ch - 14);
+  });
+}
+function initSpots(root = document) { $$('[data-spots]', root).forEach(buildSpots); }
+function relayoutSpots() { $$('[data-spots]').forEach(layoutSpots); }
+
+/* ---------- Tallas, cesta y aviso ---------- */
+const chosen = {};
+function sizeButtons(scope, onPick) {
+  const box = document.querySelector(`[data-sizes="${scope}"]`); if (!box) return;
+  box.innerHTML = SIZES.map(s => `<button type="button" class="size" aria-pressed="false" data-size="${s}">${s}</button>`).join('');
+  delete chosen[scope];
+  $$('.size', box).forEach(b => b.addEventListener('click', () => {
+    $$('.size', box).forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+    chosen[scope] = b.dataset.size; onPick && onPick(b.dataset.size);
+  }));
+}
+let bag = [];
+const toastEl = $('#toast'); let tt;
+function toast(msg) { toastEl.textContent = msg; toastEl.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => toastEl.classList.remove('on'), 3200); }
+function renderBag() {
+  const n = bag.length; $('#bagCount').textContent = n;
+  const sub = bag.reduce((s, it) => s + byId[it.id].price, 0);
+  $('#lines').innerHTML = n ? bag.map((it, i) => { const p = byId[it.id]; return `<div class="line-item"><img src="${p.img[0]}" alt=""><div><b>${p.name}</b><small>${p.type} · Talla ${it.size}</small></div><div style="text-align:right;display:flex;flex-direction:column;gap:6px"><span class="price">${eur(p.price)}</span><button type="button" data-rm="${i}">Quitar</button></div></div>`; }).join('') : '<p class="empty">Tu cesta está vacía.</p>';
+  $('#subtotal').textContent = eur(sub);
+  const left = Math.max(0, 80 - sub);
+  $('#shipTxt').textContent = left > 0 ? `Te faltan ${eur(left)} para el envío gratis` : 'Tienes el envío gratis';
+  $('#shipBar').style.width = Math.min(100, sub / 80 * 100) + '%';
+  $$('[data-rm]').forEach(b => b.addEventListener('click', () => { bag.splice(+b.dataset.rm, 1); renderBag(); }));
+}
+function addToBag(id, size) {
+  if (!size) return;
+  bag.push({ id, size }); renderBag();
+  const bb = $('#bagBtn'); bb.classList.remove('bump'); void bb.offsetWidth; bb.classList.add('bump');
+  toast(`${byId[id].name} en talla ${size}, añadido a la cesta`);
+}
+const drawer = $('#drawer'), scrim = $('#scrim'), qv = $('#qv'), qvPanel = $('#qvPanel');
+function openBag(o) {
+  if (o) { drawer.hidden = false; scrim.hidden = false; renderBag(); requestAnimationFrame(() => { drawer.classList.add('on'); scrim.classList.add('on'); }); lenis && lenis.stop(); }
+  else { drawer.classList.remove('on'); scrim.classList.remove('on'); setTimeout(() => { drawer.hidden = true; scrim.hidden = true; }, 700); if (qv.hidden) lenis && lenis.start(); }
+}
+$('#bagBtn').addEventListener('click', () => openBag(true));
+$('#closeBag').addEventListener('click', () => openBag(false));
+scrim.addEventListener('click', () => openBag(false));
+$('#checkout').addEventListener('click', () => openCheckout());
+$('#searchBtn').addEventListener('click', () => openSearch());
+$('#clubForm').addEventListener('submit', e => { e.preventDefault(); const v = $('#clubEmail').value.trim(); if (/.+@.+\..+/.test(v)) { const l = store('acf-club') || []; l.push(v); store('acf-club', l); $('#clubForm').outerHTML = '<div class="okbox"><b>Ya eres del club.</b> Tu 10 % de descuento llegará a ' + v.replace(/</g, '&lt;') + '.</div>'; } else toast('Escribe un correo válido, por ejemplo nombre@correo.es'); });
+
+/* ---------- Ventana emergente ---------- */
+const CLOSE = '<button class="qv-close" type="button" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>';
+let lastFocus = null;
+function showQV() {
+  lastFocus = document.activeElement;
+  qv.hidden = false; heroPaused = true; lenis && lenis.stop();
+  requestAnimationFrame(() => { qv.classList.add('open'); const c = qvPanel.querySelector('.qv-close'); c && c.focus({ preventScroll: true }); });
+}
+function closeQV() {
+  if (qv.hidden) return;
+  qv.classList.remove('open'); heroPaused = false;
+  setTimeout(() => { qv.hidden = true; qvPanel.innerHTML = ''; }, 520);
+  if (drawer.hidden) lenis && lenis.start();
+  lastFocus && lastFocus.focus && lastFocus.focus({ preventScroll: true });
+}
+function openQV(id) {
+  const p = byId[id]; const imgs = [p.img[0], p.life].filter(Boolean);
+  qvPanel.innerHTML = `${CLOSE}
+    <div class="qv-media">${imgs.map((s, i) => `<img src="${s}" alt="${i ? (ALT[s] || p.name) : p.name + ', ' + p.type.toLowerCase()}" style="opacity:${i ? 0 : 1}">`).join('')}
+      ${imgs.length > 1 ? `<div class="qv-thumbs">${imgs.map((s, i) => `<button type="button" data-qi="${i}" aria-current="${i ? 'false' : 'true'}" aria-label="Ver foto ${i + 1}"><img src="${s}" alt=""></button>`).join('')}</div>` : ''}</div>
+    <div class="qv-info">
+      <div><span class="label">${p.tag}</span><h2>${p.name}</h2><div class="type">${p.type}</div></div>
+      <div class="pdp-price"><span class="price">${eur(p.price)}</span><span class="swatch"><i style="background:${p.hex}"></i>${p.color}</span></div>
+      <p class="lede">${p.lede}</p>
+      <div class="lbl"><span>Talla</span><button type="button" data-guide>Guía de tallas</button></div>
+      <div class="sizes" data-sizes="qv"></div>
+      <button class="btn btn-block" type="button" id="qvAdd" disabled>Elige tu talla</button>
+      <a class="arrow-link" href="#${p.id}" data-close-nav>Ver la ficha completa ${ARROW}</a>
+    </div>`;
+  sizeButtons('qv', s => { const b = $('#qvAdd'); b.disabled = false; b.textContent = `Añadir talla ${s} · ${eur(p.price)}`; });
+  $('#qvAdd').addEventListener('click', () => { addToBag(id, chosen.qv); closeQV(); });
+  $$('[data-qi]', qvPanel).forEach(b => b.addEventListener('click', () => {
+    const k = +b.dataset.qi; $$('.qv-media > img', qvPanel).forEach((im, j) => im.style.opacity = j === k ? 1 : 0);
+    $$('[data-qi]', qvPanel).forEach(x => x.setAttribute('aria-current', x === b ? 'true' : 'false'));
+  }));
+  showQV();
+}
+function openLook(ids, kicker, title) {
+  qvPanel.innerHTML = `${CLOSE}<div class="qv-look"><span class="label">${kicker} · ${ids.length} piezas</span><h2>${title}</h2>
+    <div class="look-rows">${ids.map(id => { const p = byId[id]; return `<div class="look-row"><img src="${p.img[0]}" alt=""><div class="nm"><b>${p.name}</b><span>${p.type} · ${eur(p.price)}</span><br><a href="#${id}" data-close-nav>Ver ficha</a></div><div class="qs">${SIZES.map(s => `<button type="button" data-quick="${id}" data-size="${s}" aria-label="Añadir ${p.name} en talla ${s}">${s}</button>`).join('')}</div></div>`; }).join('')}</div>
+    <p class="note" style="margin:0">Toca una talla para añadir cada prenda a la cesta.</p></div>`;
+  showQV();
+}
+
+/* ---------- Clics delegados ---------- */
+document.addEventListener('click', e => {
+  const q = e.target.closest('[data-quick]');
+  if (q) { e.preventDefault(); addToBag(q.dataset.quick, q.dataset.size); q.style.background = 'var(--ink)'; q.style.color = '#fff'; setTimeout(() => { q.style.background = ''; q.style.color = ''; }, 700); return; }
+  const v = e.target.closest('[data-qv]');
+  if (v) { e.preventDefault(); openQV(v.dataset.qv); return; }
+  const lk = e.target.closest('[data-look]');
+  if (lk) { const s = SLIDES[+lk.dataset.look]; openLook(s.look, 'Comprar el look', `${s.l1} ${s.l2}`); return; }
+  const ll = e.target.closest('[data-line-look]');
+  if (ll) { const L = LINES[+ll.dataset.lineLook]; openLook(L.ids, L.kicker, L.title); return; }
+  if (e.target.closest('[data-close]')) { closeQV(); return; }
+  if (e.target.closest('[data-close-nav]')) { closeQV(); }
+  if (e.target.closest('[data-guide]')) { openGuide(); return; }
+  if (e.target.closest('[data-tix]')) { e.preventDefault(); openTickets(); return; }
+  const a = e.target.closest('a[href^="#"]');
+  if (a) {
+    closeMega(); closeMnav();
+    const id = a.getAttribute('href').slice(1), el = id && document.getElementById(id);
+    if (!viewHome.hidden && (id === 'inicio' || (el && viewHome.contains(el)))) {
+      e.preventDefault();
+      try { history.pushState(null, '', '#' + id); } catch (_) {}
+      scrollToEl(id === 'inicio' ? 0 : el);
+    } else if (a.getAttribute('href') === location.hash) { e.preventDefault(); route(); }
+  }
+});
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (!qv.hidden) closeQV(); else if (!drawer.hidden) openBag(false);
+  closeMega(); closeMnav();
+});
+
+/* ---------- Cabecera, megamenú y menú móvil ---------- */
+const hdr = $('#hdr');
+let megaOpen = false, megaT;
+function openMega() { clearTimeout(megaT); megaOpen = true; hdr.classList.add('mega-open'); }
+function closeMega() { clearTimeout(megaT); megaOpen = false; hdr.classList.remove('mega-open'); }
+$('#megaTrigger').addEventListener('mouseenter', openMega);
+$('#megaTrigger').addEventListener('focus', openMega);
+hdr.addEventListener('mouseleave', () => { megaT = setTimeout(closeMega, 160); });
+$('#mega').addEventListener('mouseenter', () => clearTimeout(megaT));
+$$('.nav-l > a:not(#megaTrigger), .nav-r > *, .brand').forEach(el => el.addEventListener('mouseenter', closeMega));
+const mnav = $('#mnav'), menuBtn = $('#menuBtn');
+function closeMnav() { mnav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.setAttribute('aria-label', 'Abrir el menú'); }
+menuBtn.addEventListener('click', () => {
+  const o = !mnav.classList.contains('open');
+  mnav.classList.toggle('open', o); menuBtn.setAttribute('aria-expanded', o ? 'true' : 'false'); menuBtn.setAttribute('aria-label', o ? 'Cerrar el menú' : 'Abrir el menú');
+});
+
+/* ---------- Cursor ---------- */
+const curEl = $('#cur'), curLabel = $('#curLabel');
+let mx = -100, my = -100, cx = -100, cy = -100;
+function cursorHide(h) { curEl.classList.toggle('hidden', h); }
+if (finePointer) {
+  addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
+  document.addEventListener('mouseover', e => {
+    const t = e.target.closest('[data-cursor]');
+    if (t) { curLabel.textContent = t.dataset.cursor; curEl.classList.add('big'); } else curEl.classList.remove('big');
+  });
+  document.documentElement.addEventListener('mouseleave', () => cursorHide(true));
+  document.documentElement.addEventListener('mouseenter', () => cursorHide(false));
+} else curEl.hidden = true;
+
+// Botón magnético
+if (finePointer && !reduced) $$('.magnetic').forEach(m => {
+  m.addEventListener('mousemove', e => { const r = m.getBoundingClientRect(); m.style.transform = `translate3d(${(e.clientX - r.left - r.width / 2) * .3}px, ${(e.clientY - r.top - r.height / 2) * .3}px, 0)`; });
+  m.addEventListener('mouseleave', () => { m.style.transition = 'transform .8s cubic-bezier(.22,1,.36,1), background .5s, color .5s'; m.style.transform = ''; setTimeout(() => m.style.transition = '', 800); });
+});
+
+/* ---------- Revelados ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -12% 0px' });
+function observeReveals(root = document) { $$('[data-reveal], [data-reveal-lines]', root).forEach(el => { if (el.hasAttribute('data-reveal-lines')) el.classList.add('lines'); io.observe(el); }); }
+
+/* ---------- Bucle de animación ---------- */
+let lastT = performance.now(), refY = scrollY;
+const SPEED = $$('[data-speed]'), PAR = $$('[data-par]');
+const heroPar = $('#heroPar'), heroCopyEl = $('#heroCopy');
+function inView(el, m = 0) { const r = el.getBoundingClientRect(); return r.bottom > -m && r.top < innerHeight + m; }
+function tick(t) {
+  if (lenis) lenis.raf(t);
+  const dt = Math.min(64, t - lastT); lastT = t;
+  const y = scrollY, home = !viewHome.hidden;
+  const solid = !home || y > 40 || megaOpen || mnav.classList.contains('open');
+  hdr.classList.toggle('solid', solid); document.documentElement.classList.toggle('hdr-solid', solid);
+  if (megaOpen || mnav.classList.contains('open') || y < 200) { hdr.classList.remove('hide'); refY = y; }
+  else if (y - refY > 50) { if (y > 600) hdr.classList.add('hide'); refY = y; }
+  else if (refY - y > 24) { hdr.classList.remove('hide'); refY = y; }
+  else if ((y > refY && hdr.classList.contains('hide')) || (y < refY && !hdr.classList.contains('hide'))) refY = y;
+  if (home && y < innerHeight) {
+    if (!heroPaused && !reduced && document.visibilityState === 'visible') { elapsed += dt; if (elapsed >= DUR) goSlide(cur + 1); }
+    bars.forEach((b, i) => b.style.transform = `scaleX(${i < cur ? 1 : i === cur ? Math.min(1, elapsed / DUR) : 0})`);
+    if (!reduced) { heroPar.style.transform = `translate3d(0, ${y * .35}px, 0)`; heroCopyEl.style.opacity = 1 - clamp(y / (innerHeight * .6), 0, 1); heroCopyEl.style.transform = `translate3d(0, ${y * .15}px, 0)`; }
+  }
+  if (!reduced) {
+    SPEED.forEach(el => { if (innerWidth < 641) { el.style.transform = ''; return; } if (!inView(el, 300)) return; const r = el.parentElement.getBoundingClientRect(); el.style.transform = `translate3d(0, ${(r.top + r.height / 2 - innerHeight / 2) * el.dataset.speed}px, 0)`; });
+    PAR.forEach(el => { const s = el.parentElement; if (!inView(s, 100)) return; const r = s.getBoundingClientRect(); el.style.transform = `translate3d(0, ${(r.top + r.height / 2 - innerHeight / 2) * -el.dataset.par}px, 0)`; });
+  }
+  if (finePointer) { cx += (mx - cx) * .2; cy += (my - cy) * .2; curEl.style.transform = `translate3d(${cx}px, ${cy}px, 0)`; }
+  requestAnimationFrame(tick);
+}
+
+/* ---------- Ficha de producto ---------- */
+let current = 'mauli';
+function gallery(p) {
+  const list = [...p.img]; if (p.life && !list.includes(p.life)) list.push(p.life); (p.more || []).forEach(m => { if (!list.includes(m)) list.push(m); });
+  return list;
+}
+function renderPdp(id) {
+  const p = byId[id]; current = id;
+  $('#crumbName').textContent = p.name; $('#pTag').textContent = p.tag; $('#pName').textContent = p.name; $('#pType').textContent = p.type;
+  $('#pPrice').textContent = eur(p.price); $('#pColor').textContent = p.color; $('#pSwatch').style.background = p.hex; $('#pLede').textContent = p.lede;
+  const imgs = gallery(p);
+  $('#gal').innerHTML = imgs.map((s, i) => { const wide = /hero/.test(s); const alt = (p.alt && p.alt[i]) || ALT[s] || `${p.name}, ${p.type.toLowerCase()}`; return `<div class="zoom${i === 0 ? ' first' : ''}${wide && i ? ' wide' : ''}" data-cursor="Zoom"><img src="${s}" alt="${alt}" ${i > 1 ? 'loading="lazy"' : ''}></div>`; }).join('');
+  if (finePointer) $$('#gal .zoom').forEach(z => {
+    const im = z.querySelector('img');
+    z.addEventListener('mousemove', e => { const r = z.getBoundingClientRect(); im.style.transformOrigin = `${(e.clientX - r.left) / r.width * 100}% ${(e.clientY - r.top) / r.height * 100}%`; });
+    z.addEventListener('mouseenter', () => z.classList.add('z')); z.addEventListener('mouseleave', () => z.classList.remove('z'));
+  });
+  const det = p.details ? `<ul>${p.details.map(d => `<li>${d}</li>`).join('')}</ul>` : `<p style="margin:0">${p.lede}</p>`;
+  $('#pAcc').innerHTML = `
+    <details open><summary>Detalles<i></i></summary><div class="body">${det}</div></details>
+    <details><summary>Composición y cuidado<i></i></summary><div class="body">${p.care || 'Algodón de primera calidad. Lavar a 30 °C del revés.'}</div></details>
+    <details><summary>Talla y corte<i></i></summary><div class="body">${p.fit || 'Corte amplio. Consulta la guía de tallas si dudas entre dos.'}</div></details>
+    ${p.story ? `<details><summary>La historia<i></i></summary><div class="body">${p.story}</div></details>` : ''}
+    <details><summary>Envíos y devoluciones<i></i></summary><div class="body">Envío en 3-5 días laborables a toda España, gratis desde 80 €. Cambios y devoluciones gratis durante 30 días. Recogida en la tienda de El Maulí.</div></details>`;
+  const add = $('#pdpAdd'); add.disabled = true; add.textContent = 'Elige tu talla';
+  sizeButtons('pdp', s => { add.disabled = false; add.textContent = `Añadir talla ${s} · ${eur(p.price)}`; $('#atcBtn').textContent = `Añadir · ${s}`; });
+  $('#atcImg').src = p.img[0]; $('#atcName').textContent = p.name; $('#atcInfo').textContent = `${eur(p.price)} · ${p.color}`; $('#atcBtn').textContent = 'Elegir talla';
+  const lifes = id === 'mauli' ? ['/antequeracf/img/mauli-model-1.jpg', '/antequeracf/img/mauli-model-2.jpg'] : [p.life];
+  $('#worn').innerHTML = `<div class="lk-media" data-spots="${keyOf(lifes[0])}"><img src="${lifes[0]}" alt="${ALT[lifes[0]] || ''}"></div>
+    <div class="copyb"><span class="label">Así se lleva</span><h2 class="h-l">${p.name} <span class="thin">por Antequera</span></h2><p class="lede">${p.fit || 'Corte amplio y cómodo. Si dudas entre dos tallas, elige la tuya de siempre.'}</p>
+    ${lifes[1] ? `<div class="lk-media" data-spots="${keyOf(lifes[1])}" style="max-width:320px"><img src="${lifes[1]}" alt="${ALT[lifes[1]] || ''}" loading="lazy"></div>` : ''}</div>`;
+  const rel = id === 'mauli' ? ['p-1939', 'p-dolmenes', 'p-vega', 'p-1992', 'p-cal'] : P.filter(x => x.id !== id).slice(0, 6).map(x => x.id);
+  $('#related').innerHTML = rel.map(r => card(byId[r])).join('');
+  initSpots($('#view-pdp'));
+}
+$('#pdpAdd').addEventListener('click', () => addToBag(current, chosen.pdp));
+$('#atcBtn').addEventListener('click', () => { if (chosen.pdp) addToBag(current, chosen.pdp); else scrollToEl($('#pdpSizes')); });
+const atc = $('#atc');
+new IntersectionObserver(es => es.forEach(e => { const show = !e.isIntersecting && e.boundingClientRect.top < 0 && !$('#view-pdp').hidden; atc.classList.toggle('on', show); atc.setAttribute('aria-hidden', show ? 'false' : 'true'); })).observe($('#pdpAdd'));
+
+/* ---------- Rutas ---------- */
+function route() {
+  const h = decodeURIComponent(location.hash.slice(1));
+  const pdp = $('#view-pdp');
+  closeQV(); closeMega(); closeMnav();
+  if (byId[h]) {
+    viewHome.hidden = true; pdp.hidden = false; renderPdp(h);
+    scrollToEl(0, true); observeReveals(pdp); requestAnimationFrame(relayoutSpots); return;
+  }
+  const wasHidden = viewHome.hidden;
+  viewHome.hidden = false; pdp.hidden = true; atc.classList.remove('on');
+  requestAnimationFrame(relayoutSpots);
+  const el = h && h !== 'inicio' && document.getElementById(h);
+  if (el) { if (wasHidden) scrollToEl(0, true); requestAnimationFrame(() => requestAnimationFrame(() => scrollToEl(el, wasHidden))); }
+  else scrollToEl(0, h !== 'inicio' || wasHidden);
+}
+addEventListener('hashchange', route);
+
+/* ---------- Inicio ---------- */
+$$('.btn').forEach(b => { if (!b.disabled && !b.id) roll(b); });
+kitSizes(); setKit(0); renderBag(); initSpots(); observeReveals();
+let rz; addEventListener('resize', () => { cancelAnimationFrame(rz); rz = requestAnimationFrame(() => { frameHero(); relayoutSpots(); }); });
+addEventListener('load', () => { frameHero(); relayoutSpots(); });
+frameHero();
+route();
+requestAnimationFrame(tick);
+</script>
+<script>
+/* ---------- Funciones de la tienda publicada (sin pagos) ---------- */
+const SHIP_FREE = 80, SHIP_HOME = 4.95;
+const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const eur2 = n => n.toLocaleString('es-ES', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 }) + ' €';
+function store(k, v) { try { if (v === undefined) return JSON.parse(localStorage.getItem(k) || 'null'); localStorage.setItem(k, JSON.stringify(v)); } catch (_) { return null; } }
+
+// Guía de tallas
+function openGuide() {
+  const rows = [['XS', 46, 68], ['S', 50, 70], ['M', 54, 72], ['L', 58, 74], ['XL', 62, 76], ['XXL', 66, 78]];
+  qvPanel.innerHTML = `${CLOSE}<div class="qv-look"><span class="label">Colección 01 · Corte amplio</span><h2>Guía de tallas</h2>
+    <div class="tbl"><table><thead><tr><th>Talla</th><th>Pecho (cm)</th><th>Largo (cm)</th></tr></thead><tbody>${rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</tbody></table></div>
+    <p class="lede" style="font-size:15px">Medidas de la prenda en plano: el pecho, de axila a axila por dos. Si te gusta más ajustada, elige una talla menos. Las equipaciones oficiales siguen la tabla de Hummel.</p></div>`;
+  showQV();
+}
+
+// Buscador
+function openSearch() {
+  qvPanel.innerHTML = `${CLOSE}<div class="qv-look"><span class="label">Buscar en la tienda</span>
+    <label class="vh" for="sq">Buscar</label><input id="sq" class="field big" type="search" placeholder="Polo, manga larga, verde, MAULÍ…" autocomplete="off">
+    <div class="look-rows" id="sres"></div></div>`;
+  const inp = $('#sq'), out = $('#sres');
+  const run = () => {
+    const q = norm(inp.value.trim());
+    const list = !q ? P : P.filter(p => norm([p.name, p.type, p.color, p.tag, p.lede].join(' ')).includes(q));
+    out.innerHTML = list.length ? list.map(p => `<a class="look-row srow" href="#${p.id}" data-close-nav><img src="${p.img[0]}" alt=""><div class="nm"><b>${p.name}</b><span>${p.type} · ${p.color}</span></div><span class="price">${eur(p.price)}</span></a>`).join('')
+      : `<p class="empty">No hay nada con «${inp.value.trim()}». Prueba con «polo», «manga larga» o un color.</p>`;
+  };
+  inp.addEventListener('input', run); run(); showQV(); setTimeout(() => inp.focus({ preventScroll: true }), 80);
+}
+
+// Avisos (equipaciones y entradas)
+function openNotify(title, kicker, detail) {
+  qvPanel.innerHTML = `${CLOSE}<div class="qv-look"><span class="label">${kicker}</span><h2>${title}</h2>
+    <p class="lede" style="font-size:15px">${detail}</p>
+    <form id="nf" novalidate class="nform"><label class="vh" for="nfe">Correo</label><input id="nfe" class="field" type="email" placeholder="tu@correo.es" autocomplete="email"><button class="btn" type="submit">Avísame</button></form>
+    <p class="note" id="nfm" style="margin:0"></p></div>`;
+  $('#nf').addEventListener('submit', e => {
+    e.preventDefault(); const v = $('#nfe').value.trim();
+    if (!/.+@.+\..+/.test(v)) { $('#nfm').textContent = 'Escribe un correo válido, por ejemplo nombre@correo.es'; return; }
+    const l = store('acf-avisos') || []; l.push({ v, t: title, d: Date.now() }); store('acf-avisos', l);
+    $('#nf').outerHTML = `<div class="okbox"><b>Apuntado.</b> Te avisaremos en ${v.replace(/</g, '&lt;')}.</div>`; $('#nfm').textContent = '';
+  });
+  showQV();
+}
+function openTickets() {
+  qvPanel.innerHTML = `${CLOSE}<div class="qv-look"><span class="label">Estadio El Maulí · Temporada 2026-27</span><h2>Entradas y abonos</h2>
+    <div class="look-rows">${[['Entrada de partido', 'Para cada partido en casa en El Maulí.'], ['Abono 2026-27', 'Toda la temporada en tu asiento.'], ['Pack entrada y bufanda', 'Para quien viene a conocer Antequera.']].map(([a, b]) => `<div class="look-row trow"><div class="nm"><b>${a}</b><span>${b}</span></div><span class="label">Precio por confirmar</span><button class="btn" type="button" data-tixn="${a}">Avísame</button></div>`).join('')}</div>
+    <p class="note" style="margin:0">La venta de entradas se integrará aquí, en la misma tienda.</p></div>`;
+  $$('[data-tixn]', qvPanel).forEach(b => b.addEventListener('click', () => openNotify(b.dataset.tixn, 'Entradas · Estadio El Maulí', 'Te escribimos en cuanto abra la venta online.')));
+  showQV();
+}
+
+// Cesta guardada en este navegador
+(function () { const s = store('acf-bag'); if (Array.isArray(s)) bag = s.filter(it => byId[it.id]); renderBag(); })();
+const _renderBag = renderBag;
+renderBag = function () { _renderBag(); store('acf-bag', bag); };
+
+// Finalizar compra (pedido de prueba, sin pago)
+function totals(ship) {
+  const sub = bag.reduce((s, it) => s + byId[it.id].price, 0);
+  const env = ship === 'pick' || sub >= SHIP_FREE ? 0 : SHIP_HOME;
+  return { sub, env, tot: sub + env };
+}
+function summary(ship) {
+  const t = totals(ship);
+  return `${bag.map(it => { const p = byId[it.id]; return `<div class="sum-row"><img src="${p.img[0]}" alt=""><div><b>${p.name}</b><span>Talla ${it.size}</span></div><span class="price">${eur(p.price)}</span></div>`; }).join('')}
+    <div class="sum-tot"><span>Subtotal</span><span class="price">${eur2(t.sub)}</span></div>
+    <div class="sum-tot"><span>Envío</span><span class="price">${t.env ? eur2(t.env) : 'Gratis'}</span></div>
+    <div class="sum-tot big"><span>Total</span><span class="price">${eur2(t.tot)}</span></div>`;
+}
+function openCheckout() {
+  if (!bag.length) { toast('Añade una pieza para continuar.'); return; }
+  openBag(false);
+  qvPanel.innerHTML = `${CLOSE}<div class="qv-look"><span class="label">Finalizar compra · ${bag.length} ${bag.length === 1 ? 'pieza' : 'piezas'}</span><h2>Tus datos</h2>
+    <div class="ck">
+      <form id="ck" novalidate class="ck-form">
+        <div class="ck-2"><label>Nombre<input class="field" name="n" autocomplete="given-name" required></label><label>Apellidos<input class="field" name="a" autocomplete="family-name" required></label></div>
+        <label>Correo electrónico<input class="field" name="e" type="email" autocomplete="email" required></label>
+        <label>Teléfono<input class="field" name="t" type="tel" autocomplete="tel" required></label>
+        <fieldset class="ck-ship"><legend>Entrega</legend>
+          <label class="opt"><input type="radio" name="s" value="home" checked><span><b>Envío a domicilio</b><small>3-5 días laborables · ${SHIP_HOME.toLocaleString('es-ES')} €, gratis desde ${SHIP_FREE} €</small></span></label>
+          <label class="opt"><input type="radio" name="s" value="pick"><span><b>Recogida en El Maulí</b><small>Tienda del estadio · gratis</small></span></label>
+        </fieldset>
+        <div id="addr"><label>Dirección<input class="field" name="d" autocomplete="street-address" required></label>
+          <div class="ck-2"><label>Código postal<input class="field" name="cp" inputmode="numeric" autocomplete="postal-code" required></label><label>Ciudad<input class="field" name="c" autocomplete="address-level2" required></label></div></div>
+        <p class="note" id="ckm" style="margin:0"></p>
+        <button class="btn btn-block" type="submit">Confirmar pedido de prueba</button>
+        <p class="note" style="margin:0">Tienda de demostración: no se pide ningún dato de pago ni se cobra nada.</p>
+      </form>
+      <aside class="ck-sum" id="cks">${summary('home')}</aside>
+    </div></div>`;
+  const f = $('#ck');
+  f.addEventListener('change', () => { const s = f.s.value; $('#addr').hidden = s === 'pick'; $('#cks').innerHTML = summary(s); });
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    const need = ['n', 'a', 'e', 't'].concat(f.s.value === 'pick' ? [] : ['d', 'cp', 'c']);
+    const miss = need.filter(k => !f[k].value.trim());
+    $$('.field', f).forEach(i => i.classList.toggle('bad', miss.includes(i.name)));
+    if (miss.length) { $('#ckm').textContent = 'Rellena los campos marcados.'; return; }
+    if (!/.+@.+\..+/.test(f.e.value.trim())) { f.e.classList.add('bad'); $('#ckm').textContent = 'Escribe un correo válido, por ejemplo nombre@correo.es'; return; }
+    const ship = f.s.value, t = totals(ship), num = 'ACF-' + String(Date.now()).slice(-6), items = bag.slice();
+    store('acf-last-order', { num, items, t, ship, d: Date.now() });
+    qvPanel.innerHTML = `${CLOSE}<div class="qv-look"><div class="okmark"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg></div>
+      <span class="label">Pedido ${num}</span><h2>Gracias, ${f.n.value.trim().replace(/</g, '&lt;')}</h2>
+      <p class="lede" style="font-size:15px">${ship === 'pick' ? 'Te avisaremos cuando esté listo para recoger en la tienda de El Maulí.' : 'Te lo enviamos en 3-5 días laborables.'} Este es un pedido de prueba: no se ha cobrado nada.</p>
+      <div class="ck-sum">${summary(ship)}</div>
+      <button class="btn" type="button" data-close>Seguir comprando</button></div>`;
+    bag = []; renderBag();
+  });
+  showQV();
+}
+</script>
+</body>
+</html>

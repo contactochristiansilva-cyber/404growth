@@ -129,3 +129,9 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Cómo se buscan (lo que funciona): Yahoo (`search.yahoo.com`, en Chrome) con `site:instagram.com` + palabras de la bio que delatan venta sin web («Bizum», «pedidos por WhatsApp», «pedidos por MD») + ciudad; el resultado trae los seguidores. DuckDuckGo y Brave piden CAPTCHA tras ~10-20 búsquedas (no se resuelve). Los seguidores se confirman con `fetch('/<cuenta>/')` desde una pestaña de instagram.com (meta `og:description`); la bio y los enlaces, abriendo el perfil. La web se comprueba en su propia pestaña: Shopify `/products.json`, WooCommerce `/wp-json/wc/store/v1/products` (`x-wp-total`).
 - Ojo: muchas cuentas con «Córdoba», «Cartagena», «Toledo» o «boutique» son de Argentina, Colombia, Venezuela o Brasil; se miran la calle y el país.
 - Entran en el CRM como Scrapeados con el `SEED` del worker del admin (`SEED_KEY` nuevo cada lote; los que ya existen no se tocan) y Chris ejecuta `subir.command`.
+
+## Tienda demo del Antequera CF (4/11/2026)
+
+- `404growth.com/antequeracf/` = carpeta `web117-404growth/antequeracf/` (`index.html`, `lenis.min.js` y `img/`, unos 7 MB; las imágenes se quedan en el Mac). Cloudflare sirve `index.html` de la carpeta y `/antequeracf` redirige solo a `/antequeracf/`. Todas las rutas son absolutas (`/antequeracf/img/…`).
+- Funciona entera sin pagos: cesta guardada en el navegador (`acf-bag`), finalizar compra con datos y entrega (domicilio 4,95 €, gratis desde 80 €, o recogida en El Maulí) que termina en un pedido de prueba `ACF-xxxxxx`, buscador, guía de tallas, avisos de equipaciones y entradas (sin enlace a la taquilla) y alta en el club. `noindex`.
+- Se genera desde la maqueta del artifact con `live/build.py` del scratchpad de la sesión (copia del HTML, rutas, textos y `extra.js`/`extra.css`).
