@@ -16,6 +16,9 @@ KEEP = {
                 "proportions, so a customer recognises it. Do not invent other decorations. Remove any text, stickers or logos."),
     'deco': ("Use the EXACT ceramic pieces from the reference image: identical shapes, glaze colours, hand-painted patterns "
              "and proportions. Do not redesign or add patterns. Remove any price signs or text."),
+    'hogar': ("Use the EXACT home textiles and pieces from the reference image: identical fabrics, colours, patterns, textures, ruffles, "
+              "fringes, trims and proportions. Do not redesign, recolour or add patterns. Remove any price signs, text or logos. "
+              "No people unless the prompt asks for them."),
 }
 
 
@@ -54,6 +57,8 @@ def build(slug, niche, bg, hero, prods, pdp, look, cats, banner, city='', grid=N
             J.append(job(slug, 'p%d' % (k + 1), [r], '4:5', f"Luxury e-commerce jewellery photo of {d} from the reference, alone, centred, on a seamless {bg} background with a soft shadow and a subtle reflection, soft studio light, macro sharpness, every detail and stone visible.", niche))
         elif niche == 'obrador':
             J.append(job(slug, 'p%d' % (k + 1), [r], '4:5', f"Appetising e-commerce photo of {d} from the reference, alone on a simple cake stand or plate, centred, on a seamless {bg} background, soft window light from the left, slight three-quarter top angle, crisp detail, mouth-watering.", niche))
+        elif niche == 'hogar':
+            J.append(job(slug, 'p%d' % (k + 1), [r], '4:5', f"E-commerce product photo of {d} from the reference, neatly styled and centred on a seamless {bg} background with a soft natural shadow, soft daylight, crisp detail of the fabric texture and trims.", niche))
         else:
             J.append(job(slug, 'p%d' % (k + 1), [r], '4:5', f"E-commerce product photo of {d} from the reference, centred on a seamless {bg} background with a soft natural shadow, soft daylight, crisp detail of the glaze and hand-painted pattern.", niche))
     J.append(job(slug, 'x1', [prods[0][0]], '3:4', pdp[0], niche))

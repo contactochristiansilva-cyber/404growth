@@ -49,19 +49,22 @@ SHOPS['puro-garbo'] = dict(
 
 
 # ---------- defaults for the rest of lote 31 ----------
-SEARCH = {'moda': 'ropa de mujer en {city}', 'joya': 'joyería en {city}', 'obrador': 'tartas por encargo en {city}', 'deco': 'vajilla de cerámica'}
+SEARCH = {'moda': 'ropa de mujer en {city}', 'joya': 'joyería en {city}', 'obrador': 'tartas por encargo en {city}', 'deco': 'vajilla de cerámica', 'hogar': 'textil para el hogar en {city}'}
 LEAK_MSG = {'moda': ('Todo pasa por mensajes', 'Talla, precio y stock se resuelven uno a uno por Instagram o WhatsApp: cada venta cuesta minutos.'),
             'joya': ('Todo pasa por mensajes', 'Precio, peso y medida se resuelven uno a uno por mensaje: cada venta cuesta minutos.'),
             'obrador': ('Encargos a mano', 'Raciones, día y sabor se cierran por WhatsApp, entre notas de voz y fotos, uno a uno.'),
-            'deco': ('Solo quien va a la tienda', 'Quien os sigue y no vive cerca de una de vuestras tiendas no tiene dónde compraros.')}
+            'deco': ('Solo quien va a la tienda', 'Quien os sigue y no vive cerca de una de vuestras tiendas no tiene dónde compraros.'),
+            'hogar': ('Todo pasa por mensajes', 'Precio, medidas y stock se resuelven uno a uno por mensaje privado: cada venta cuesta minutos.')}
 LEAK_5 = {'moda': ('Tallas sin guía', 'Sin guía de tallas, cada duda se convierte en un mensaje o en una venta que no llega.'),
           'joya': ('Regalos que se escapan', 'Navidad, aniversarios o San Valentín: quien busca un regalo a última hora compra donde puede pagar al momento.'),
           'obrador': ('Encargos que no se recogen', 'Sin pago por adelantado, una tarta sin recoger es trabajo y material perdidos.'),
-          'deco': ('Regalos que se escapan', 'Bodas, mudanzas y Navidad: quien busca un regalo compra donde puede pagar al momento.')}
+          'deco': ('Regalos que se escapan', 'Bodas, mudanzas y Navidad: quien busca un regalo compra donde puede pagar al momento.'),
+          'hogar': ('Solo quien está cerca', 'Quien os sigue y no vive cerca no tiene dónde comprar un juego de sábanas o unos cojines sin escribiros.')}
 ADS = {'moda': dict(a3='Un look. Tres prendas.<br>Un solo toque.', a6s='Nueva temporada', a6='Tu próximo look,<br>en casa en 24/48 h.', a6b='Ver novedades', a6l='<b>Temporada</b> · novedades a quien ya os sigue'),
        'joya': dict(a3='Una cadena. Una pulsera.<br>Un regalo redondo.', a6s='Para regalar', a6='El regalo<br>que se recuerda.', a6b='Ver regalos', a6l='<b>Regalo</b> · Navidad y fechas especiales'),
        'obrador': dict(a3='Tres dulces.<br>Un solo encargo.', a6s='Encargos', a6='Tu tarta,<br>lista el día que quieras.', a6b='Encargar', a6l='<b>Encargos</b> · cumpleaños y celebraciones'),
-       'deco': dict(a3='Plato, bowl y taza.<br>La mesa entera.', a6s='Para regalar', a6='La vajilla<br>que se regala.', a6b='Ver vajillas', a6l='<b>Regalo</b> · bodas, mudanzas y Navidad')}
+       'deco': dict(a3='Plato, bowl y taza.<br>La mesa entera.', a6s='Para regalar', a6='La vajilla<br>que se regala.', a6b='Ver vajillas', a6l='<b>Regalo</b> · bodas, mudanzas y Navidad'),
+       'hogar': dict(a3='Sábanas, cojines y colcha.<br>El dormitorio entero.', a6s='Nueva temporada', a6='Tu dormitorio,<br>nuevo esta semana.', a6b='Ver novedades', a6l='<b>Temporada</b> · novedades a quien ya os sigue')}
 
 
 def mk(slug, **k):

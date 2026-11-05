@@ -10,7 +10,7 @@ from shops import SHOPS
 from niches import NICHE
 E = html.escape
 CUT = 1500  # px de la captura (x2) por trozo
-NOUN = {'moda': 'vuestras prendas', 'joya': 'vuestras joyas', 'obrador': 'vuestros dulces', 'deco': 'vuestras piezas'}
+NOUN = {'moda': 'vuestras prendas', 'joya': 'vuestras joyas', 'obrador': 'vuestros dulces', 'deco': 'vuestras piezas', 'hogar': 'vuestros textiles'}
 
 
 def slices(slug):

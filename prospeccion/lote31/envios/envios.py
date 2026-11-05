@@ -6,7 +6,7 @@ S = os.path.dirname(os.path.abspath(__file__)); B = os.path.dirname(S); L31 = os
 sys.path.insert(0, os.path.join(L31, 'tools'))
 from shops import SHOPS
 E = html.escape
-NOUN = {'moda': 'vuestras prendas', 'joya': 'vuestras joyas', 'obrador': 'vuestros dulces', 'deco': 'vuestras piezas'}
+NOUN = {'moda': 'vuestras prendas', 'joya': 'vuestras joyas', 'obrador': 'vuestros dulces', 'deco': 'vuestras piezas', 'hogar': 'vuestros textiles'}
 D = {}
 for f in ['l31/l32/data.json', 'l33/data.json']:
     p = os.path.join(B, f)
@@ -21,7 +21,7 @@ def num(d):
     return w
 
 
-NOUN_TU = {'moda': 'tus prendas', 'joya': 'tus joyas', 'obrador': 'tus dulces', 'deco': 'tus piezas'}
+NOUN_TU = {'moda': 'tus prendas', 'joya': 'tus joyas', 'obrador': 'tus dulces', 'deco': 'tus piezas', 'hogar': 'tus textiles'}
 
 
 def msgs(c, d=None):

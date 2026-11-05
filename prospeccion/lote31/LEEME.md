@@ -37,3 +37,11 @@ Los botones de la propuesta van a `404growth.com/book?utm_source=propuesta&utm_c
 3. Heroes: que no salgan como pantalla partida.
 4. Banner (l5) con gente parecida a la dueña o hecho collage: se rehace sin referencias, solo con el texto del prompt y «No people at all».
 5. `gen.py` + `shots.py` otra vez y se revisan las capturas.
+
+## Pendiente (5/11/2026, para seguir)
+
+- De las 24 del día, hechas 9 (Mumbai, Corazón, De Rosa, Estela, Mono Mona, Provenza, Punto y Aparte, Quattro y Raza). Faltan 15.
+- A medias: **todo-textil** (Todo Textil, La Eliana, 47.800, «no tenemos web»; nicho nuevo `hogar`): fichas en `l32/entries`, 8 de 15 fotos hechas en Flow (proyecto «nov 05 - 15:38» de hola@); p2 y x2 dieron error de política y el mensaje de categorías y banner quedó a medio mandar. **flag-sevilla** (Flag, Sevilla, 58.100, flagsevilla.com con 3 productos): fichas listas, sin fotos. Referencias de las dos en `~/Downloads/l31src/` del Mac.
+- Por mirar: flamencapolnunez (34.000, Sevilla, trajes de flamenca a medida, sin web en la bio).
+- Descartadas el 5/11 por vender ya online: tacatucazaragoza, mamasitasmoda2024, impulsomodasgranada, anacamposcollection, aires_desoniaycris, princessnatalia_modas, ottro_shop, latiendadeluca, belaobisuteria, rafimora_huelva, belove.es, saroemmoda, bravebetty_moda (y atelier.badajoz, con la web en mantenimiento).
+- Búsqueda que mejor ha ido: Yahoo con `site:instagram.com <ciudad> ("Bizum" OR "pedidos por WhatsApp" OR "pedidos por MD" OR "pedidos por privado") ("20K Followers" OR … OR "30K Followers")` (los OR, entre paréntesis) y las «Cuentas similares» de Instagram de las tiendas que ya tenemos. Yahoo deja de responder tras unas 60 búsquedas seguidas.
