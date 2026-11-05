@@ -3,7 +3,6 @@ y llamada si solo hay fijo. uso: python3 envios.py <slug>... → l33/envios.html
 import base64, html, io, json, os, re, sys, urllib.parse
 from PIL import Image
 S = os.path.dirname(os.path.abspath(__file__)); B = os.path.dirname(S); L31 = os.path.join(B, 'l31')
-if not os.path.isdir(L31): L31 = B   # en el repositorio: prospeccion/lote31/envios
 sys.path.insert(0, os.path.join(L31, 'tools'))
 from shops import SHOPS
 E = html.escape
@@ -47,6 +46,8 @@ def card(k, s):
          f'<label class="ok"><input type="checkbox" data-k="{s}"> Hecho</label></header><div class="g">')
     if im: h += f'<a class="ph" href="{im}" download="{s}.jpg" title="Descargar captura"><img src="{im}" alt=""><em>Descargar captura</em></a>'
     h += '<div class="ch">'
+    if d.get('warn'): h += f'<p class="warn">{E(d["warn"])}</p>'
+    if d.get('contact_source'): h += f'<p class="src"><b>Contacto:</b> {E(d["contact_source"])}<br><b>Dueño/a:</b> {E(d.get("owner_note", ""))}</p>'
     h += f'<p class="ln"><a href="{page}" target="_blank">{page.replace("https://", "")}</a></p>'
     if w:
         h += (f'<section><h4>WhatsApp · variante {var}</h4><pre>{E(txt)}</pre><div class="bt"><a class="b1" href="https://wa.me/{w}?text={urllib.parse.quote(txt)}" target="_blank">Abrir WhatsApp</a>'
@@ -68,7 +69,7 @@ def card(k, s):
     return h + '</div></div></article>'
 
 
-def main(slugs, pend):
+def main(slugs, pend, fuera=()):
     css = ('*{box-sizing:border-box}body{margin:0;font:15px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;background:#f4f3f1;color:#161514}'
            '.w{max-width:1100px;margin:0 auto;padding:28px 16px 80px}h1{font:600 30px/1.1 -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;letter-spacing:-.02em;margin:0 0 6px}'
            '.lead{color:#6b6762;margin:0 0 22px}.tips{background:#fff;border-radius:16px;padding:16px 20px;margin-bottom:22px;box-shadow:inset 0 0 0 1px #e7e4e0}.tips b{display:block;margin-bottom:6px}'
@@ -80,7 +81,7 @@ def main(slugs, pend):
            'pre{white-space:pre-wrap;font-family:inherit;font-size:14px;line-height:1.45;background:#f7f6f4;border-radius:10px;padding:10px 12px;margin:0 0 8px}.bt{display:flex;gap:8px;flex-wrap:wrap}'
            '.bt a,.bt button{font:600 13px/1 inherit;padding:10px 14px;border-radius:99px;border:0;cursor:pointer;text-decoration:none;background:#ecebe8;color:#161514}'
            '.bt .b1{background:#161514;color:#fff}small{display:block;color:#8a857f;font-size:12px;margin-top:6px}.ln{margin:0 0 4px;font-size:13px}.ln a{color:#2e7a64}'
-           '.su{margin:0 0 8px;font-weight:600}.mu{color:#8a857f;margin:0}.pend{background:#fff;border-radius:14px;padding:14px 18px;color:#6b6762;box-shadow:inset 0 0 0 1px #e7e4e0}'
+           '.warn{background:#fdecea;color:#8a1f17;border-radius:10px;padding:10px 12px;margin:0 0 10px;font-weight:600}.src{font-size:13px;color:#4a4642;background:#f7f6f4;border-radius:10px;padding:8px 12px;margin:0 0 8px}.su{margin:0 0 8px;font-weight:600}.mu{color:#8a857f;margin:0}.pend{background:#fff;border-radius:14px;padding:14px 18px;color:#6b6762;box-shadow:inset 0 0 0 1px #e7e4e0}'
            '#t{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#161514;color:#fff;padding:10px 16px;border-radius:99px;font-size:13px;opacity:0;transition:opacity .2s}'
            '@media(max-width:640px){.g{grid-template-columns:1fr}.ph{max-width:200px}}')
     js = ("<script>(function(){var t=document.getElementById('t');function tip(s){t.textContent=s;t.style.opacity=1;setTimeout(function(){t.style.opacity=0},1600)}"
@@ -96,6 +97,7 @@ def main(slugs, pend):
             '<li>Correo: «Abrir Gmail» (para y asunto puestos), «Copiar correo» y pégalo en el cuerpo.</li>'
             '<li>Seguimiento: día 2 un recordatorio corto con un detalle suyo; día 4 llamada; día 7 Instagram; día 10 último mensaje.</li></ol></div>')
     body = ''.join(card(k, s) for k, s in enumerate(slugs))
+    if fuera: body += '<div class="pend"><b>Fuera del lote (no enviar):</b> ' + '; '.join(E(D.get(f, {}).get('name', f) + ': ' + D.get(f, {}).get('warn', '')) for f in fuera) + '</div>'
     if pend: body += '<div class="pend"><b>Pendientes de imágenes:</b> ' + ', '.join(E(p) for p in pend) + '</div>'
     out = (f'<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Envíos de propuestas</title><style>{css}</style></head>'
            f'<body><div class="w"><h1>Envíos de propuestas</h1><p class="lead">{len(slugs)} tiendas listas.</p>{tips}{body}</div><div id="t"></div>{js}</body></html>')
@@ -104,5 +106,7 @@ def main(slugs, pend):
 
 if __name__ == '__main__':
     a = sys.argv[1:]; pend = []
+    fuera = []
+    if '--fuera' in a: i = a.index('--fuera'); fuera = a[i + 1:]; a = a[:i]
     if '--pend' in a: i = a.index('--pend'); pend = a[i + 1:]; a = a[:i]
-    main(a, pend)
+    main(a, pend, fuera)
