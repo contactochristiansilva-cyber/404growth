@@ -125,6 +125,21 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - El carrusel de sectores (`#nichos`) en el móvil se para en cada sector (20 % del recorrido antes y después) y cada paso dura 1,5 veces el ancho de pantalla; en el ordenador no cambia.
 - Se revisa con Playwright a 360, 375 y 390 px: sin scroll lateral y sin palabras partidas.
 
+## Portada: visual del inicio (v61, 5/11/2026)
+
+- Ojo: la portada buena es la del Mac (`~/Downloads/web117-404growth/index.html`). Llegó a la v60 sin pasar por el repositorio; el 5/11/2026 se copió aquí con la v61. Antes de tocar la portada, comparar las dos copias.
+- Bajo «Tu tienda. Abierta 24 horas.» va el mapa de España (la opción D de 4; Chris la eligió el 5/11/2026): «Esta noche, desde tu tienda a toda España», con líneas que salen de «Tu tienda» hacia 6 ciudades y la lista de esos pedidos (en el móvil, 3). Pone «Ejemplo con pedidos de muestra». Sustituye a la foto de la tienda con las notificaciones «Nuevo pedido» (v60), que no se entendía.
+- Pensado para que el móvil no vaya a tirones (Chris no quiere animaciones lentas en el móvil):
+  - nada de `backdrop-filter` ni filtros;
+  - los puntos del mapa son una imagen fija (`mapa-es.svg`, 27 KB) y las líneas, un SVG pequeño encima;
+  - el pulso de «Tu tienda» solo usa transform y opacity, y se para fuera de pantalla;
+  - las miniaturas son `home--t--*.jpg` de 80×80 (unos 2 KB cada una).
+- Se anima una vez al verse (IntersectionObserver, clase `.od.in`). Con «reducir movimiento», sale ya completo.
+- Se genera con `tools/portada/`:
+  - `mk.py` hace los puntos con `es.json` (España de `world-atlas@2.0.2`, `countries-50m`, id 724) y Canarias en un recuadro;
+  - `mk_patch.py` crea `od_patch.py`, que cambia `index.html`, escribe `mapa-es.svg` y hace las miniaturas.
+- La copia de la v60 está en `~/Downloads/404growth-subir/anterior/index-portada-v60.html`.
+
 ## Scrapeos de tiendas con +20k en Instagram (lotes del 3 y 4/11/2026)
 
 - Filtros: tienda física en España (calle en la bio, su web o Google), +20.000 seguidores comprobados en Instagram, sin tienda online o floja (ayer y hoy: menos de ~30 productos para su tamaño, web caída o en mantenimiento, web sin carrito), nicho que se pueda enviar o recoger, sin cadenas ni franquicias, y que no estén ya en el CRM. Contacto solo de fuentes públicas del negocio (bio, su web, Google).
