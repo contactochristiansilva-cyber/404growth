@@ -542,6 +542,7 @@ button, input { font: inherit; color: inherit; }
 }
 @media (max-width: 640px) {
   .brand b { font-size: 16px; }
+  .hero-shade { background: linear-gradient(180deg, rgba(8,10,8,.45) 0%, rgba(8,10,8,0) 20%), linear-gradient(0deg, rgba(8,10,8,.9) 0%, rgba(8,10,8,.74) 30%, rgba(8,10,8,.3) 50%, rgba(8,10,8,0) 64%); }
   .hero-place { display: none; }
   .hero-ui { justify-content: flex-end; }
   .copy .row { gap: 16px; }
@@ -559,6 +560,13 @@ button, input { font: inherit; color: inherit; }
   .card-plus { display: grid; }
   .cur { display: none; }
   .spot .tip { display: none; }
+}
+/* Móvil y tableta: nada que recalcule desenfoques mientras se hace scroll */
+@media (hover: none), (pointer: coarse) {
+  .hero-par { will-change: auto; }
+  .slide.is-active .media { will-change: transform; }
+  .spot { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(255,255,255,.3); }
+  .hdr::before { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(255,255,255,.98); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; transition-duration: .001s !important; transition-delay: 0s !important; }
@@ -890,6 +898,9 @@ const SPOTS = {
   'hero-torcal': [['mauli', 51.5, 51], ['p-dolmenes', 66, 51], ['p-amanecer', 80.5, 46]],
   'hero-menga': [['p-1939', 76, 46], ['p-1992', 88, 43]],
   'hero': [['p-dolmenes', 72.5, 60], ['mauli', 85.5, 62]],
+  'hero-torcal-m': [['mauli', 24.2, 51.1], ['p-dolmenes', 50.5, 51.1], ['p-amanecer', 76.8, 48.1]],
+  'hero-menga-m': [['p-1939', 33.3, 46], ['p-1992', 71.4, 43]],
+  'hero-m': [['p-dolmenes', 27, 60], ['mauli', 68.3, 62]],
   'mauli-model-1': [['mauli', 53, 50]],
   'mauli-model-2': [['mauli', 50, 47]],
   'punto': [['p-1939', 50, 40]],
@@ -903,9 +914,9 @@ const SPOTS = {
   'l-1992': [['p-1992', 51, 49]]
 };
 const SLIDES = [
-  { img: '/antequeracf/img/hero-torcal.jpg', key: 'hero-torcal', box: [.455, .19, .86, .84], place: 'El Torcal · Antequera', eyebrow: 'Colección 01 · Otoño-Invierno 2026', l1: 'Antequera', l2: 'se lleva puesta', sub: 'Diez camisetas de fútbol en buen tejido y con el escudo en pequeño. Para la grada y para la calle.', look: ['mauli', 'p-dolmenes', 'p-amanecer'] },
-  { img: '/antequeracf/img/hero-menga.jpg', key: 'hero-menga', box: [.69, .185, .935, .99], place: 'Dolmen de Menga · Patrimonio Mundial', eyebrow: 'Punto de algodón', l1: '5.000 años', l2: 'de Antequera', sub: 'El polo 1939 y el 1992, dentro del dolmen de Menga.', look: ['p-1939', 'p-1992'] },
-  { img: '/antequeracf/img/hero.jpg', key: 'hero', box: [.67, .285, .925, .985], place: 'Azotea del centro · Peña de los Enamorados', eyebrow: 'Desde 1992', l1: 'De Antequera', l2: 'de corazón', sub: 'DÓLMENES y MAULÍ, con la Peña de los Enamorados al fondo.', look: ['p-dolmenes', 'mauli'] }
+  { img: '/antequeracf/img/hero-torcal.jpg', key: 'hero-torcal', box: [.455, .19, .86, .84], m: '/antequeracf/img/hero-torcal-m.jpg', mw: 1536, mh: 2572, mbox: [.1335, .317, .867, .711], place: 'El Torcal · Antequera', eyebrow: 'Colección 01 · Otoño-Invierno 2026', l1: 'Antequera', l2: 'se lleva puesta', sub: 'Diez camisetas de fútbol en buen tejido y con el escudo en pequeño. Para la grada y para la calle.', look: ['mauli', 'p-dolmenes', 'p-amanecer'] },
+  { img: '/antequeracf/img/hero-menga.jpg', key: 'hero-menga', box: [.69, .185, .935, .99], m: '/antequeracf/img/hero-menga-m.jpg', mw: 1008, mh: 1792, mbox: [.111, .185, .889, .99], place: 'Dolmen de Menga · Patrimonio Mundial', eyebrow: 'Punto de algodón', l1: '5.000 años', l2: 'de Antequera', sub: 'El polo 1939 y el 1992, dentro del dolmen de Menga.', look: ['p-1939', 'p-1992'] },
+  { img: '/antequeracf/img/hero.jpg', key: 'hero', box: [.67, .285, .925, .985], m: '/antequeracf/img/hero-m.jpg', mw: 1008, mh: 1792, mbox: [.095, .285, .905, .985], place: 'Azotea del centro · Peña de los Enamorados', eyebrow: 'Desde 1992', l1: 'De Antequera', l2: 'de corazón', sub: 'DÓLMENES y MAULÍ, con la Peña de los Enamorados al fondo.', look: ['p-dolmenes', 'mauli'] }
 ];
 const KITS = [
   { n: '1.ª', t: 'Primera equipación', short: 'Primera', d: 'Verdiblanca a rayas, la de siempre en El Maulí.', color: 'Verde y blanco', sw: 'linear-gradient(90deg,#1E8A47 0 33%,#fff 33% 66%,#1E8A47 66%)', img: '/antequeracf/img/kit-1.jpg', alt: 'Primera equipación 2026-27, a rayas verdiblancas' },
@@ -932,6 +943,7 @@ const keyOf = src => src.split('/').pop().replace('.jpg', '');
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const touchUI = matchMedia('(hover: none), (pointer: coarse)').matches;   // móvil y tableta: scroll nativo y sin parallax
 const ARROW = '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 const viewHome = $('#view-home');
 
@@ -944,7 +956,7 @@ function roll(el) {
 
 /* ---------- Lenis: scroll suave y lento ---------- */
 let lenis = null;
-if (!reduced && window.Lenis) lenis = new Lenis({ lerp: 0.065, wheelMultiplier: 0.78, touchMultiplier: 1.1, smoothWheel: true });
+if (!reduced && !touchUI && window.Lenis) lenis = new Lenis({ lerp: 0.065, wheelMultiplier: 0.78, touchMultiplier: 1.1, smoothWheel: true });
 function scrollToEl(el, immediate) {
   const off = -(document.getElementById('hdr').offsetHeight - 2);
   if (lenis) lenis.scrollTo(el, { offset: el === 0 ? 0 : off, immediate: !!immediate, duration: immediate ? 0 : 1.8 });
@@ -992,7 +1004,9 @@ $('#megaProds').innerHTML = [['kit', 0], ['mauli'], ['p-1939'], ['p-amanecer']].
 }).join('');
 
 /* ---------- Portada ---------- */
-$('#slides').innerHTML = SLIDES.map((s, i) => `<figure class="slide${i === 0 ? ' is-active' : ''}" aria-hidden="${i === 0 ? 'false' : 'true'}"><img class="bg" src="${s.img.replace('.jpg', '-blur.jpg')}" alt=""><div class="media" data-spots="${s.key}"><img class="fg" src="${s.img}" alt="${ALT[s.img]}" width="3200" height="1792" ${i === 0 ? 'fetchpriority="high"' : ''}></div></figure>`).join('');
+const heroMob = () => innerWidth < 700 || innerWidth / Math.max(1, innerHeight) < 1.05;
+const MOB0 = heroMob();
+$('#slides').innerHTML = SLIDES.map((s, i) => `<figure class="slide${i === 0 ? ' is-active' : ''}" aria-hidden="${i === 0 ? 'false' : 'true'}"><img class="bg" data-src="${s.img.replace('.jpg', '-blur.jpg')}" alt="" hidden><div class="media" data-spots="${MOB0 ? s.key + '-m' : s.key}"><img class="fg" src="${MOB0 ? s.m : s.img}" alt="${ALT[s.img]}" width="${MOB0 ? s.mw : 3200}" height="${MOB0 ? s.mh : 1792}" decoding="async" ${i === 0 ? 'fetchpriority="high"' : ''}></div></figure>`).join('');
 $('#heroCopy').innerHTML = SLIDES.map((s, i) => {
   const T = i === 0 ? 'h1' : 'p';
   return `<div class="copy${i === 0 ? ' is-active' : ''}" aria-hidden="${i === 0 ? 'false' : 'true'}">
@@ -1008,32 +1022,46 @@ const DUR = 7200;
 /* Encuadre de la portada: las personas (box) siempre enteras, también durante el zoom.
    Se calcula el tamaño y la posición de la foto y un zoom máximo (k) centrado en ellas. */
 const HERO_IW = 3200, HERO_IH = 1792;
-function frameHero() {
+let heroKey = '', heroCopyTop = 0;
+function frameHero(force) {
   const hero = $('#hero'), vw = hero.clientWidth, vh = hero.clientHeight; if (!vw || !vh) return;
+  /* en el móvil, al bajar la barra del navegador cambia la altura de la ventana pero no la de la portada: no se recalcula nada */
+  const key = vw + 'x' + vh; if (!force && key === heroKey) return; heroKey = key;
   const portrait = vw / vh < 1.05 || vw < 700;
   const hdrH = $('#hdr').offsetHeight, barH = $('.bar-wrap').offsetHeight;
   const copyTop = $('#heroCopy').getBoundingClientRect().top - hero.getBoundingClientRect().top;
+  heroCopyTop = portrait ? Math.min(...copies.map(c => c.getBoundingClientRect().top - hero.getBoundingClientRect().top)) : 0;
   const mx = Math.max(16, vw * .025), KMAX = 1.1, KMIN = 1.03;
-  const cands = portrait
-    ? [{ t: hdrH + 10, b: vh - copyTop + 14, x0: mx, x1: vw - mx }]
-    : [{ t: hdrH + 4, b: 78, x0: vw * .4, x1: vw - mx }, { t: hdrH + 4, b: 16, x0: vw * .4, x1: vw - mx }, { t: barH + 10, b: 16, x0: vw * .34, x1: vw - mx }, { t: barH + 10, b: 16, x0: mx, x1: vw - mx }];
+  const place = (len, vp, f0, f1, a, b) => {
+    const c0 = (a + b) / 2 - (f0 + f1) / 2 * len;
+    return len >= vp ? clamp(c0, vp - len, 0) : clamp(c0, Math.min(0, vp - len), Math.max(0, vp - len));
+  };
+  const lim = (d, room) => d > 0.5 ? room / d : 9;
+  const cands = [{ t: hdrH + 4, b: 78, x0: vw * .4, x1: vw - mx }, { t: hdrH + 4, b: 16, x0: vw * .4, x1: vw - mx }, { t: barH + 10, b: 16, x0: vw * .34, x1: vw - mx }, { t: barH + 10, b: 16, x0: mx, x1: vw - mx }];
   slides.forEach((sl, i) => {
-    const S = SLIDES[i], [bx0, by0, bx1, by1] = S.box, media = sl.querySelector('.media'), fg = sl.querySelector('.fg');
+    const S = SLIDES[i], mob = portrait && !!S.m, media = sl.querySelector('.media'), fg = sl.querySelector('.fg'), bg = sl.querySelector('.bg');
+    const IW = mob ? S.mw : HERO_IW, IH = mob ? S.mh : HERO_IH, [bx0, by0, bx1, by1] = mob ? S.mbox : S.box;
+    const want = mob ? S.m : S.img;
+    if (fg.getAttribute('src') !== want) { fg.src = want; fg.width = IW; fg.height = IH; }
+    const sk = mob ? S.key + '-m' : S.key;
+    if (media.dataset.spots !== sk) { media.dataset.spots = sk; buildSpots(media); }
     let best = null;
-    for (const c of cands) {
+    if (mob) {
+      /* móvil: la foto vertical llena toda la portada; se centra en las personas y el zoom nunca las corta */
+      const s = Math.max(vw / IW, vh / IH), w = IW * s, h = IH * s;
+      const ox = place(w, vw, bx0, bx1, 0, vw), oy = place(h, vh, by0, by1, 0, vh);
+      const L = ox + bx0 * w, R = ox + bx1 * w, T = oy + by0 * h, B = oy + by1 * h, cx = (L + R) / 2, cy = (T + B) / 2;
+      const k = Math.min(1.06, lim(cx - L, cx - 4), lim(R - cx, vw - 4 - cx), lim(cy - T, cy - 4), lim(B - cy, vh - 4 - cy));
+      best = { s, w, h, ox, oy, cx, cy, k: Math.max(1, k), covers: true, ok: true };
+    } else for (const c of cands) {
       const top = c.t, bot = vh - c.b, bandW = c.x1 - c.x0, bandH = bot - top;
       if (bandH < 80 || bandW < 80) continue;
-      const cover = Math.max(vw / HERO_IW, vh / HERO_IH);
+      const cover = Math.max(vw / IW, vh / IH);
       // escala máxima a la que las personas caben (con el zoom mínimo) en la franja libre
-      const fit = Math.min(bandW / ((bx1 - bx0) * HERO_IW * KMIN), bandH / ((by1 - by0) * HERO_IH * KMIN));
-      const s = Math.min(cover, fit), w = HERO_IW * s, h = HERO_IH * s;
-      const place = (len, vp, f0, f1, a, b) => {
-        const c0 = (a + b) / 2 - (f0 + f1) / 2 * len;
-        return len >= vp ? clamp(c0, vp - len, 0) : clamp(c0, Math.min(0, vp - len), Math.max(0, vp - len));
-      };
+      const fit = Math.min(bandW / ((bx1 - bx0) * IW * KMIN), bandH / ((by1 - by0) * IH * KMIN));
+      const s = Math.min(cover, fit), w = IW * s, h = IH * s;
       const ox = place(w, vw, bx0, bx1, c.x0, c.x1), oy = place(h, vh, by0, by1, top, bot);
       const L = ox + bx0 * w, R = ox + bx1 * w, T = oy + by0 * h, B = oy + by1 * h, cx = (L + R) / 2, cy = (T + B) / 2;
-      const lim = (d, room) => d > 0.5 ? room / d : 9;
       let k = Math.min(KMAX, lim(cx - L, cx - Math.min(c.x0, L)), lim(R - cx, Math.max(c.x1, R) - cx), lim(cy - T, cy - Math.min(top, T)), lim(B - cy, Math.max(bot, B) - cy));
       // las personas no pueden salirse de la pantalla en ningún momento del zoom
       k = Math.min(k, lim(cx - L, cx - 6), lim(R - cx, vw - 6 - cx), lim(cy - T, cy - 6), lim(B - cy, vh - 6 - cy));
@@ -1048,8 +1076,11 @@ function frameHero() {
     fg.dataset.box = [best.ox, best.oy, best.w, best.h].join(',');
     const F = portrait ? 70 : 110, g = v => v ? F + 'px' : '0px';
     const gl = best.ox > .5, gr = best.ox + best.w < vw - .5, gt = best.oy > .5, gb = best.oy + best.h < vh - .5;
-    const m = (gl || gr || gt || gb) ? `linear-gradient(to right, transparent 0, #000 ${g(gl)}, #000 calc(100% - ${g(gr)}), transparent 100%), linear-gradient(to bottom, transparent 0, #000 ${g(gt)}, #000 calc(100% - ${g(gb)}), transparent 100%)` : '';
+    const gap = gl || gr || gt || gb;
+    const m = gap ? `linear-gradient(to right, transparent 0, #000 ${g(gl)}, #000 calc(100% - ${g(gr)}), transparent 100%), linear-gradient(to bottom, transparent 0, #000 ${g(gt)}, #000 calc(100% - ${g(gb)}), transparent 100%)` : '';
     fg.style.webkitMaskImage = m; fg.style.maskImage = m; fg.style.webkitMaskComposite = m ? 'source-in' : ''; fg.style.maskComposite = m ? 'intersect' : '';
+    /* el fondo difuminado solo existe cuando la foto no llena la portada (nunca en el móvil) */
+    if (gap) { if (!bg.getAttribute('src')) bg.src = bg.dataset.src; bg.hidden = false; } else bg.hidden = true;
     media.style.transformOrigin = `${best.cx}px ${best.cy}px`;
     media.style.setProperty('--k', reduced ? 1 : best.k.toFixed(3));
   });
@@ -1160,7 +1191,7 @@ function layoutSpots(box) {
     $$('.spot', box).forEach(s => {
       const x = ox + s.dataset.x / 100 * w, y = oy + s.dataset.y / 100 * h;
       s.style.left = x + 'px'; s.style.top = y + 'px';
-      s.classList.toggle('off', x < 14 || x > cw - 14 || y < 14 || y > ch - 14);
+      s.classList.toggle('off', x < 14 || x > cw - 14 || y < 14 || y > ch - 14 || (heroCopyTop > 0 && box.closest('#hero') && y > heroCopyTop - 28));
     });
     return;
   }
@@ -1356,9 +1387,9 @@ function tick(t) {
   if (home && y < innerHeight) {
     if (!heroPaused && !reduced && document.visibilityState === 'visible') { elapsed += dt; if (elapsed >= DUR) goSlide(cur + 1); }
     bars.forEach((b, i) => b.style.transform = `scaleX(${i < cur ? 1 : i === cur ? Math.min(1, elapsed / DUR) : 0})`);
-    if (!reduced) { heroPar.style.transform = `translate3d(0, ${y * .35}px, 0)`; heroCopyEl.style.opacity = 1 - clamp(y / (innerHeight * .6), 0, 1); heroCopyEl.style.transform = `translate3d(0, ${y * .15}px, 0)`; }
+    if (!reduced && !touchUI) { heroPar.style.transform = `translate3d(0, ${y * .35}px, 0)`; heroCopyEl.style.opacity = 1 - clamp(y / (innerHeight * .6), 0, 1); heroCopyEl.style.transform = `translate3d(0, ${y * .15}px, 0)`; }
   }
-  if (!reduced) {
+  if (!reduced && !touchUI) {
     SPEED.forEach(el => { if (innerWidth < 641) { el.style.transform = ''; return; } if (!inView(el, 300)) return; const r = el.parentElement.getBoundingClientRect(); el.style.transform = `translate3d(0, ${(r.top + r.height / 2 - innerHeight / 2) * el.dataset.speed}px, 0)`; });
     PAR.forEach(el => { const s = el.parentElement; if (!inView(s, 100)) return; const r = s.getBoundingClientRect(); el.style.transform = `translate3d(0, ${(r.top + r.height / 2 - innerHeight / 2) * -el.dataset.par}px, 0)`; });
   }
@@ -1427,9 +1458,9 @@ addEventListener('hashchange', route);
 /* ---------- Inicio ---------- */
 $$('.btn').forEach(b => { if (!b.disabled && !b.id) roll(b); });
 kitSizes(); setKit(0); renderBag(); initSpots(); observeReveals();
-let rz; addEventListener('resize', () => { cancelAnimationFrame(rz); rz = requestAnimationFrame(() => { frameHero(); relayoutSpots(); }); });
-addEventListener('load', () => { frameHero(); relayoutSpots(); });
-frameHero();
+let rz, rzW = innerWidth; addEventListener('resize', () => { cancelAnimationFrame(rz); rz = requestAnimationFrame(() => { const wch = innerWidth !== rzW; rzW = innerWidth; frameHero(); if (wch || !touchUI) relayoutSpots(); }); });
+addEventListener('load', () => { frameHero(true); });
+frameHero(true);
 route();
 requestAnimationFrame(tick);
 </script>
