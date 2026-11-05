@@ -21,8 +21,18 @@ def num(d):
     return w
 
 
-def msgs(c):
-    sh = c['short']; noun = NOUN.get(c['niche'], 'vuestros productos')
+NOUN_TU = {'moda': 'tus prendas', 'joya': 'tus joyas', 'obrador': 'tus dulces', 'deco': 'tus piezas'}
+
+
+def msgs(c, d=None):
+    sh = c['short']; noun = NOUN.get(c['niche'], 'vuestros productos'); n = (d or {}).get('owner_first')
+    if n:  # sabemos quién la lleva (lo publica la propia tienda): de tú y por su nombre
+        nt = NOUN_TU.get(c['niche'], 'tus productos')
+        a = (f'Hola {n}, soy Christian, de 404 Growth. He visto el Instagram de {sh} y te he montado cómo quedaría como tienda online, '
+             f'con {nt} y tu marca (te dejo una captura). ¿Te paso el enlace para que la veas entera?')
+        b = (f'Hola {n}, soy Christian, de 404 Growth. Te he montado cómo quedaría {sh} como tienda online, con {nt} y tu marca. '
+             f'Aquí la tienes, se ve mejor en el móvil:\n404growth.com/p/{c["slug"]}/\nSi te gusta, te cuento por aquí o en una llamada corta cómo la dejamos vendiendo en 15 días.')
+        return a, b
     a = (f'Hola, ¿sois {sh}? Soy Christian, de 404 Growth. He visto vuestro Instagram y os he montado cómo quedaría {sh} como tienda online, '
          f'con {noun} y vuestra marca (os dejo una captura). ¿Os paso el enlace para que la veáis entera?')
     b = (f'Hola, soy Christian, de 404 Growth. Os he montado cómo quedaría {sh} como tienda online, con {noun} y vuestra marca. '
@@ -38,7 +48,7 @@ def thumb(s):
 
 
 def card(k, s):
-    c = SHOPS[s]; c['slug'] = s; d = D.get(s, {}); a, b = msgs(c); var = 'A' if k % 2 == 0 else 'B'; txt = a if var == 'A' else b
+    c = SHOPS[s]; c['slug'] = s; d = D.get(s, {}); a, b = msgs(c, d); var = 'A' if k % 2 == 0 else 'B'; txt = a if var == 'A' else b
     w = num(d); im = thumb(s); mail = MAIL.get(s, {}); em = (d.get('email') or '').strip()
     body = open(os.path.join(S, 'mail', s + '.html')).read() if os.path.exists(os.path.join(S, 'mail', s + '.html')) else ''
     page = f'https://404growth.com/p/{s}/'
@@ -59,12 +69,12 @@ def card(k, s):
     if ig:
         h += (f'<section><h4>Instagram · @{E(ig)}</h4><pre>{E(a)}</pre><div class="bt"><a class="b1" href="https://ig.me/m/{E(ig)}" target="_blank">Abrir mensaje</a>'
               f'<button data-copy="{E(a)}">Copiar texto</button></div><small>Adjunta la captura. El enlace, cuando contesten.</small></section>')
-    if em and body:
+    if em:
         su = mail.get('subject') or f'{c["name"]}: vuestra tienda online, ya montada'
-        gm = 'https://mail.google.com/mail/?authuser=hola@404growth.com&view=cm&fs=1&' + urllib.parse.urlencode({'to': em, 'su': su})
-        h += (f'<section><h4>Correo · {E(em)}</h4><p class="su">{E(su)}</p><div class="bt"><a class="b1" href="{E(gm)}" target="_blank">Abrir Gmail</a>'
-              f'<button data-mail="{s}">Copiar correo</button></div><small>Abre Gmail, pega el correo (⌘V) en el cuerpo y envía.</small><template id="m-{s}">{body}</template></section>')
-    elif body:
+        gm = 'https://mail.google.com/mail/?authuser=hola@404growth.com#search/' + urllib.parse.quote('in:draft "' + su + '"')
+        h += (f'<section><h4>Correo · {E(em)}</h4><p class="su">{E(su)}</p><div class="bt"><a class="b1" href="{E(gm)}" target="_blank">Abrir el borrador</a></div>'
+              f'<small>El borrador ya está en Gmail (hola@) con este destinatario: ábrelo y envía.</small></section>')
+    elif True:
         h += '<section><h4>Correo</h4><p class="mu">No tienen correo público.</p></section>'
     return h + '</div></div></article>'
 
@@ -81,7 +91,7 @@ def main(slugs, pend, fuera=()):
            'pre{white-space:pre-wrap;font-family:inherit;font-size:14px;line-height:1.45;background:#f7f6f4;border-radius:10px;padding:10px 12px;margin:0 0 8px}.bt{display:flex;gap:8px;flex-wrap:wrap}'
            '.bt a,.bt button{font:600 13px/1 inherit;padding:10px 14px;border-radius:99px;border:0;cursor:pointer;text-decoration:none;background:#ecebe8;color:#161514}'
            '.bt .b1{background:#161514;color:#fff}small{display:block;color:#8a857f;font-size:12px;margin-top:6px}.ln{margin:0 0 4px;font-size:13px}.ln a{color:#2e7a64}'
-           '.warn{background:#fdecea;color:#8a1f17;border-radius:10px;padding:10px 12px;margin:0 0 10px;font-weight:600}.src{font-size:13px;color:#4a4642;background:#f7f6f4;border-radius:10px;padding:8px 12px;margin:0 0 8px}.su{margin:0 0 8px;font-weight:600}.mu{color:#8a857f;margin:0}.pend{background:#fff;border-radius:14px;padding:14px 18px;color:#6b6762;box-shadow:inset 0 0 0 1px #e7e4e0}'
+           '.rs{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}.rs th{text-align:left;color:#6b6762;font-weight:600;padding:6px 8px;border-bottom:1px solid #e7e4e0}.rs td{padding:6px 8px;border-bottom:1px solid #f0eeeb;vertical-align:top}.rs a{color:#161514}@media(max-width:640px){.rs th:nth-child(4),.rs td:nth-child(4){display:none}}.warn{background:#fdecea;color:#8a1f17;border-radius:10px;padding:10px 12px;margin:0 0 10px;font-weight:600}.src{font-size:13px;color:#4a4642;background:#f7f6f4;border-radius:10px;padding:8px 12px;margin:0 0 8px}.su{margin:0 0 8px;font-weight:600}.mu{color:#8a857f;margin:0}.pend{background:#fff;border-radius:14px;padding:14px 18px;color:#6b6762;box-shadow:inset 0 0 0 1px #e7e4e0}'
            '#t{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#161514;color:#fff;padding:10px 16px;border-radius:99px;font-size:13px;opacity:0;transition:opacity .2s}'
            '@media(max-width:640px){.g{grid-template-columns:1fr}.ph{max-width:200px}}')
     js = ("<script>(function(){var t=document.getElementById('t');function tip(s){t.textContent=s;t.style.opacity=1;setTimeout(function(){t.style.opacity=0},1600)}"
@@ -94,9 +104,17 @@ def main(slugs, pend, fuera=()):
           "i.addEventListener('change',function(){st[i.dataset.k]=i.checked;c.classList.toggle('done',i.checked);try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}})})})();</script>")
     tips = ('<div class="tips"><b>Cómo enviar</b><ol><li>WhatsApp: descarga la captura, abre WhatsApp (el texto va puesto), adjunta la captura y envía. A la mitad les toca la variante A (pide permiso) y a la otra mitad la B (enlace).</li>'
             '<li>Instagram: abre el mensaje, pega el texto y adjunta la captura. El enlace, cuando contesten.</li>'
-            '<li>Correo: «Abrir Gmail» (para y asunto puestos), «Copiar correo» y pégalo en el cuerpo.</li>'
+            '<li>Correo: ya están los borradores en Gmail (hola@), con destinatario: solo abrir y enviar.</li>'
             '<li>Seguimiento: día 2 un recordatorio corto con un detalle suyo; día 4 llamada; día 7 Instagram; día 10 último mensaje.</li></ol></div>')
-    body = ''.join(card(k, s) for k, s in enumerate(slugs))
+    def row(s):
+        c = SHOPS[s]; d = D.get(s, {}); w = num(d); em = (d.get('email') or '').strip(); ig = d.get('handle') or c.get('handle')
+        who = d.get('owner_first') or ''
+        return (f'<tr><td><a href="#{s}">{E(c["name"])}</a>{(" · " + E(who)) if who else ""}{" ⚠️" if d.get("warn") else ""}</td>'
+                f'<td>{("WhatsApp +" + w) if w else (("Llamar " + E(d.get("phone", ""))) if d.get("phone") else "—")}</td>'
+                f'<td>{("Borrador → " + E(em)) if em else "—"}</td><td>@{E(ig)}</td></tr>')
+    resumen = ('<div class="tips"><b>Resumen: ' + str(len(slugs)) + ' tiendas</b><table class="rs"><tr><th>Tienda</th><th>WhatsApp / teléfono</th><th>Correo</th><th>Instagram</th></tr>'
+               + ''.join(row(s) for s in slugs) + '</table></div>')
+    body = resumen + ''.join(card(k, s) for k, s in enumerate(slugs))
     if fuera: body += '<div class="pend"><b>Fuera del lote (no enviar):</b> ' + '; '.join(E(D.get(f, {}).get('name', f) + ': ' + D.get(f, {}).get('warn', '')) for f in fuera) + '</div>'
     if pend: body += '<div class="pend"><b>Pendientes de imágenes:</b> ' + ', '.join(E(p) for p in pend) + '</div>'
     out = (f'<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Envíos de propuestas</title><style>{css}</style></head>'
