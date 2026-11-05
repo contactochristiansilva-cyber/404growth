@@ -124,6 +124,8 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Apimart no deja lanzar una imagen con menos de 0,05 $ de saldo.
   - Higgsfield (plan gratis): una generación a la vez (si no, error 429) y unos 4,25 créditos por imagen a 2K.
   - El puente con el Mac no acepta archivos de más de 20 MB: el paquete para publicar se parte con `split -b 19m` y se une con `cat` en el Mac.
+- **Fotos gratis con Google Flow (5/11/2026):** sin saldo en Apimart, las 15 fotos se hacen en Google Flow (cuenta hola@, `/u/1`) con su agente y Nano Banana 2.1 (Pro tiene unas 20 al día). Herramientas y pasos en `prospeccion/lote31/flow/LEEME.md`. Así salieron las 9 del 5/11/2026 (Mumbai, Corazón, De Rosa, Estela, Mono Mona, Provenza, Punto y Aparte, Quattro y Raza), con sus borradores de Gmail y la hoja `~/Downloads/envios-9-5nov.html`.
+- Antes de decir «sin web», abrir la web que salga en su bio, Facebook o Google: Provenza (provenzastore.com, Shopify con 39 productos) y Estela (estelahojaldre.es, catálogo sin compra) sí tenían; sus propuestas lo dicen así.
 - **Rejillas (4/11/2026):** `jobs_all.py --rejilla <slug>` hace las 15 fotos en 6 llamadas (hero, banner y look sueltas; ficha, productos y categorías en rejillas 2x2 que `runjobs.py` corta). Misma calidad en la página y 0,12 $ por tienda en vez de 0,30 $. También se puede generar en Higgsfield (créditos gratis; la prueba a 2K descontó 3,5 créditos): referencias con `media_import_url` y resultado descargado con Chrome (ver `prospeccion/lote31/LEEME.md`).
 
 ## Portada en el móvil (v56, 4/11/2026)

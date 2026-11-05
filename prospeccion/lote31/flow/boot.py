@@ -1,0 +1,15 @@
+# boot.py <slug> <prefix>: imprime el JS de arranque (helpers + __K) para una pestaña de Flow
+import json, sys
+s, pre = sys.argv[1], sys.argv[2]
+K = json.load(open(f'{s}.keys.json'))
+JS = r'''if(!window.__origClick){window.__origClick=HTMLInputElement.prototype.click;HTMLInputElement.prototype.click=function(){if(this.type==='file'){window.__fi=this;return;}return window.__origClick.call(this)}}
+window.__sleep=ms=>new Promise(r=>setTimeout(r,ms));
+window.__srch=()=>[...document.querySelectorAll('input')].find(i=>i.placeholder==='Buscar recursos');
+window.__attach=async function(names){const out=[];for(const n of names){let inp=__srch();if(!inp){const b=document.querySelector('[aria-label="Añadir ingredientes a ventana para peticiones"]');if(b){b.click();await __sleep(900)}else out.push('nobtn');inp=__srch()}if(!inp){out.push(n+':noinp');continue}const set=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set;set.call(inp,n);inp.dispatchEvent(new Event('input',{bubbles:true}));await __sleep(1300);const it=[...document.querySelectorAll('button[role=option]')].find(e=>{const t=e.querySelector('.asset-title');return t&&t.innerText.trim()===n});if(!it){out.push(n+':noitem');continue}it.click();await __sleep(900);out.push(n+':ok')}return out.join(',')};
+window.__ren=function(slug){const t=document.body.textContent;const ids=Object.keys(__K).filter(k=>t.includes(__K[k]));const inp=[...document.querySelectorAll('input')].find(i=>i.getBoundingClientRect().top<60);if(!inp)return 'noinput';if(ids.length!==1)return 'ids:'+ids.join('+')+' cur:'+inp.value;const nm=slug+'__'+ids[0];if(inp.value===nm)return 'same '+nm;inp.focus();Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(inp,nm);inp.dispatchEvent(new Event('input',{bubbles:true}));inp.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',code:'Enter',keyCode:13,bubbles:true}));inp.dispatchEvent(new Event('change',{bubbles:true}));inp.blur();return 'ok '+nm};
+window.__pos=function(n){const e=[...document.querySelectorAll('*')].find(e=>e.childElementCount===0&&(e.textContent||'').trim()===n);if(!e)return 'none';let t=e;for(let k=0;k<6;k++){t=t.parentElement;if(t.querySelector('img'))break}const img=t.querySelector('img');img.scrollIntoView({block:'center'});const r=img.getBoundingClientRect();return JSON.stringify([Math.round(r.left+r.width/2),Math.round(r.top+r.height/2)])};
+window.__xfer=function(pre){var x=document.getElementById('__myin');var dt=new DataTransfer();for(const f of x.files){dt.items.add(new File([f],pre+f.name,{type:f.type}))};window.__fi.files=dt.files;window.__fi.dispatchEvent(new Event('change',{bubbles:true}));x.remove();return 'sent '+dt.files.length};
+window.__mkin=function(){var x=document.getElementById('__myin');if(!x){x=document.createElement('input');x.type='file';x.multiple=true;x.id='__myin';x.setAttribute('aria-label','MIS REFERENCIAS');x.style.cssText='position:fixed;top:60px;left:300px;z-index:999999;width:300px;height:40px;background:#fff';document.body.appendChild(x)}return 'fi='+!!window.__fi};
+window.__K=''' + json.dumps(K, ensure_ascii=False) + ''';'ok'
+'''
+print(JS)

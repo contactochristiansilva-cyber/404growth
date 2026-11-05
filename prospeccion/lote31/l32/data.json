@@ -12,14 +12,15 @@
   "fails": "WooCommerce con solo 17 productos para 419.000 seguidores",
   "phone": "+34971504993",
   "phone_type": "fijo",
-  "whatsapp": "",
-  "contact_source": "Fijo publicado en mallorca.com",
+  "whatsapp": "+34971504993",
+  "contact_source": "teléfono 971 50 49 93 (en su Facebook también como WhatsApp); correo info@fornsantfrancesc.com (su web)",
   "person": "Joan Seguí (prensa: Última Hora)",
   "notes": "Panadería-pastelería desde 1906; «Mejor ensaimada del mundo 2017»; encargos por WhatsApp o teléfono",
   "web": "https://www.fornsantfrancesc.com/",
   "n_stores": 1,
-  "email": "",
-  "slug": "forn-sant-francesc"
+  "email": "info@fornsantfrancesc.com",
+  "slug": "forn-sant-francesc",
+  "owner_note": "empresa FORN GID SL (según su web); no publican perfil personal"
  },
  "panaderia-barrihuelo": {
   "id": "obr-panaderia-barrihuelo-elciego",
@@ -32,16 +33,17 @@
   "address": "C/ Barco 2",
   "store": "none",
   "fails": "sin web (ni en la bio ni en buscadores)",
-  "phone": "",
-  "phone_type": "",
-  "whatsapp": "",
-  "contact_source": "Sin teléfono en la bio: por Instagram",
+  "phone": "+34945606403",
+  "phone_type": "fijo",
+  "whatsapp": "+34619646687",
+  "contact_source": "todo de su Facebook: fijo 945 60 64 03, WhatsApp 619 64 66 87 y correo pandecampotrigo@gmail.com",
   "person": "Álvaro y Georgina Reinares (prensa: Vozpópuli)",
   "notes": "Obrador viral de la Rioja Alavesa; «The Baker 2024», premios a masa madre y bollería; colas en la puerta",
   "web": "",
   "n_stores": 1,
-  "email": "",
-  "slug": "panaderia-barrihuelo"
+  "email": "pandecampotrigo@gmail.com",
+  "slug": "panaderia-barrihuelo",
+  "owner_note": "no publican quién es el dueño ni un perfil suyo"
  },
  "estela-hojaldre": {
   "id": "obr-estela-hojaldre-madrid",
@@ -57,13 +59,15 @@
   "phone": "+34915554714",
   "phone_type": "fijo",
   "whatsapp": "",
-  "contact_source": "Teléfono de encargos de la bio",
+  "contact_source": "teléfono de encargos de la bio (91 555 47 14); correos estela@estelahojaldre.es e info@estelahojaldre.es en su web estelahojaldre.es (catálogo sin compra)",
   "person": "",
   "notes": "Obrador de hojaldre de Cantabria; Solete Repsol",
   "web": "",
   "n_stores": 1,
-  "email": "",
-  "slug": "estela-hojaldre"
+  "email": "estela@estelahojaldre.es",
+  "slug": "estela-hojaldre",
+  "owner_note": "Estela, por el correo con su nombre en su web; no publican un perfil personal",
+  "owner_first": "Estela"
  },
  "patxes-pasteleria": {
   "id": "obr-patxes-bilbao",
@@ -76,16 +80,17 @@
   "address": "Bilbao · Ugao (la bio no da la calle)",
   "store": "none",
   "fails": "sin web; carta y reservas por enlace",
-  "phone": "",
-  "phone_type": "",
+  "phone": "+34944654222",
+  "phone_type": "fijo",
   "whatsapp": "",
-  "contact_source": "Sin teléfono en la bio: por Instagram",
+  "contact_source": "sin teléfono en Instagram; fijo de la tienda de Ugao 944 65 42 22 en directorios; sin correo (su página de carta pide verificación)",
   "person": "",
   "notes": "Croissants artesanos de obrador propio; salió en Deia (2025)",
   "web": "",
   "n_stores": 2,
   "email": "",
-  "slug": "patxes-pasteleria"
+  "slug": "patxes-pasteleria",
+  "owner_note": "no publican quién es el dueño ni un perfil suyo"
  },
  "ignacio-de-pilar": {
   "id": "joy-ignacio-de-pilar-sevilla",
@@ -101,13 +106,15 @@
   "phone": "+34690918571",
   "phone_type": "móvil",
   "whatsapp": "",
-  "contact_source": "Móvil de la bio (WhatsApp sin confirmar)",
+  "contact_source": "móvil de la bio (690 91 85 71, WhatsApp sin confirmar); sin correo publicado",
   "person": "Ignacio de Pilar (nombre de la marca)",
   "notes": "Compraventa de joyas y diamantes; diseñador y experto en diamantes",
   "web": "",
   "n_stores": 2,
   "email": "",
-  "slug": "ignacio-de-pilar"
+  "slug": "ignacio-de-pilar",
+  "owner_note": "Ignacio de Pilar: la cuenta y la marca son suyas",
+  "owner_first": "Ignacio"
  },
  "ricca-pasteleria": {
   "id": "obr-ricca-pasteleria-murcia",
@@ -120,16 +127,17 @@
   "address": "Ronda de Levante 8 · Av. Río Segura 2",
   "store": "none",
   "fails": "sin web",
-  "phone": "",
-  "phone_type": "",
+  "phone": "+34614174216",
+  "phone_type": "móvil",
   "whatsapp": "",
-  "contact_source": "Sin teléfono en la bio: por Instagram",
+  "contact_source": "sin teléfono en Instagram; móvil 614 17 42 16 en el directorio Mil Tartas (Av. Río Segura 2): comprobar; sin correo",
   "person": "",
   "notes": "Cafetería y pastelería con obrador propio: tres leches, rollos de canela",
   "web": "",
   "n_stores": 2,
   "email": "",
-  "slug": "ricca-pasteleria"
+  "slug": "ricca-pasteleria",
+  "owner_note": "no publican quién es el dueño ni un perfil suyo"
  },
  "de-rosa-obrador": {
   "id": "obr-de-rosa-liencres",
@@ -145,13 +153,15 @@
   "phone": "",
   "phone_type": "",
   "whatsapp": "",
-  "contact_source": "Sin teléfono en la bio: por Instagram",
+  "contact_source": "correo info@derosaobrador.es en su Facebook (su web derosaobrador.es lleva a Facebook); sin teléfono en la bio: por Instagram",
   "person": "",
   "notes": "Panadería y pastelería artesana; mejor roscón de Cantabria 2024 y 2025; la bio dice «cerrado hasta el 11 de noviembre»",
   "web": "",
   "n_stores": 1,
-  "email": "",
-  "slug": "de-rosa-obrador"
+  "email": "info@derosaobrador.es",
+  "slug": "de-rosa-obrador",
+  "owner_note": "no publican quién es el dueño ni un perfil suyo",
+  "warn": "Cerrado por vacaciones del 26 de octubre al 10 de noviembre (lo dicen en Instagram): mejor enviar a partir del 10"
  },
  "punto-y-aparte": {
   "id": "mod-punto-y-aparte-sant-boi",
@@ -167,13 +177,14 @@
   "phone": "+34936304023",
   "phone_type": "fijo",
   "whatsapp": "",
-  "contact_source": "Teléfono de su web",
+  "contact_source": "fijo 936 30 40 23 (su Facebook y su web); correos puntoyaparte52@hotmail.com (Facebook) e info@vestidosceremonia.com (web)",
   "person": "",
   "notes": "Vestidos de ceremonia y fiesta, marcas nacionales, arreglos; atiende con cita",
   "web": "https://vestidosceremonia.com/",
   "n_stores": 1,
-  "email": "info@vestidosceremonia.com",
-  "slug": "punto-y-aparte"
+  "email": "puntoyaparte52@hotmail.com",
+  "slug": "punto-y-aparte",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "punto-caramelo": {
   "id": "obr-punto-caramelo-gijon",
@@ -189,13 +200,14 @@
   "phone": "+34984296618",
   "phone_type": "fijo",
   "whatsapp": "",
-  "contact_source": "Teléfono de la bio",
+  "contact_source": "fijo 984 29 66 18 (bio) y correo puntocaramelo@telecable.es (su Facebook). Su bio dice que los encargos son en tienda",
   "person": "",
   "notes": "Pastelería y cafetería de fusión argentina y europea",
   "web": "",
   "n_stores": 1,
-  "email": "",
-  "slug": "punto-caramelo"
+  "email": "puntocaramelo@telecable.es",
+  "slug": "punto-caramelo",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "corazon-sevilla": {
   "id": "mod-corazon-sevilla",
@@ -211,13 +223,14 @@
   "phone": "+34657314287",
   "phone_type": "móvil",
   "whatsapp": "",
-  "contact_source": "Móvil de la bio (WhatsApp sin confirmar)",
+  "contact_source": "móvil de la bio (657 31 42 87, WhatsApp sin confirmar; también en directorios); sin correo ni Facebook del negocio",
   "person": "",
   "notes": "Moda y complementos; envíos a España y Portugal 24/48 h",
   "web": "",
   "n_stores": 1,
   "email": "",
-  "slug": "corazon-sevilla"
+  "slug": "corazon-sevilla",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "veintiseis-moda": {
   "id": "mod-veintiseis-san-fernando",
@@ -232,14 +245,15 @@
   "fails": "web caída: veintiseismoda.es (la de la bio) no existe",
   "phone": "+34625129288",
   "phone_type": "móvil",
-  "whatsapp": "",
-  "contact_source": "Teléfono de pedidos de la bio",
+  "whatsapp": "+34625129288",
+  "contact_source": "WhatsApp 625 12 92 88 (bio y Facebook); correo veintiseisonline@gmail.com en su Facebook. Su web veintiseismoda.es no carga",
   "person": "",
   "notes": "Moda mujer; envíos a toda España",
   "web": "http://www.veintiseismoda.es/",
   "n_stores": 1,
-  "email": "",
-  "slug": "veintiseis-moda"
+  "email": "veintiseisonline@gmail.com",
+  "slug": "veintiseis-moda",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "cotte-cotte": {
   "id": "mod-cotte-cotte-granada",
@@ -255,13 +269,15 @@
   "phone": "+34619391616",
   "phone_type": "móvil",
   "whatsapp": "",
-  "contact_source": "Móvil de la bio (WhatsApp sin confirmar)",
+  "contact_source": "móvil de la bio (619 39 16 16); correo elena@cottecotte.es en su Facebook y cottecottegranada@gmail.com en su web (Shopify con 5 productos)",
   "person": "",
   "notes": "Multimarca de ropa y accesorios; ventas por Bizum o transferencia",
   "web": "https://www.cottecotte.es/",
   "n_stores": 1,
-  "email": "",
-  "slug": "cotte-cotte"
+  "email": "elena@cottecotte.es",
+  "slug": "cotte-cotte",
+  "owner_note": "Elena, por el correo de su Facebook; no publican un perfil personal",
+  "owner_first": "Elena"
  },
  "la-cote-las-arenas": {
   "id": "mod-la-cote-getxo",
@@ -274,16 +290,17 @@
   "address": "C/ Club 8",
   "store": "none",
   "fails": "sin web; «venta online personalizada solo por DM»",
-  "phone": "",
-  "phone_type": "",
+  "phone": "+34946526863",
+  "phone_type": "fijo",
   "whatsapp": "",
-  "contact_source": "Sin teléfono en la bio: por Instagram",
+  "contact_source": "solo DM en Instagram; fijo 946 52 68 63 en directorios (Cylex, Firmania) con su dirección antigua (C/ Las Mercedes 22): comprobar; sin correo",
   "person": "",
   "notes": "Moda mujer; envíos en 24 h",
   "web": "",
   "n_stores": 1,
   "email": "",
-  "slug": "la-cote-las-arenas"
+  "slug": "la-cote-las-arenas",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "raza-moda": {
   "id": "mod-raza-elche",
@@ -299,13 +316,14 @@
   "phone": "+34644751196",
   "phone_type": "móvil",
   "whatsapp": "+34644751196",
-  "contact_source": "Enlace wa.me de la bio",
+  "contact_source": "WhatsApp 644 75 11 96 (bio y Facebook); sin correo",
   "person": "",
   "notes": "Moda mujer: novedades, looks y básicos",
   "web": "",
   "n_stores": 1,
   "email": "",
-  "slug": "raza-moda"
+  "slug": "raza-moda",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "provenza-store": {
   "id": "mod-provenza-durango",
@@ -321,13 +339,15 @@
   "phone": "+34686459317",
   "phone_type": "móvil",
   "whatsapp": "+34686459317",
-  "contact_source": "Enlace wa.me de la bio",
+  "contact_source": "WhatsApp 686 45 93 17 (bio y Facebook); sin correo",
   "person": "",
   "notes": "Tiendas de ropa de mujer en Bizkaia y Gipuzkoa",
   "web": "",
   "n_stores": 2,
   "email": "",
-  "slug": "provenza-store"
+  "slug": "provenza-store",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo",
+  "warn": "Ya tienen web en Shopify (provenzastore.com) con 39 productos: la propuesta ya lo dice, pero decide si encaja antes de enviar"
  },
  "dewe-gran-canaria": {
   "id": "mod-dewe-las-palmas",
@@ -343,13 +363,15 @@
   "phone": "+34682532851",
   "phone_type": "móvil",
   "whatsapp": "+34682532851",
-  "contact_source": "Enlace wa.me de la bio",
+  "contact_source": "WhatsApp de la bio (682 53 28 51); sin correo",
   "person": "",
   "notes": "Sneakers y moda; envíos a toda Canarias",
   "web": "",
   "n_stores": 1,
   "email": "",
-  "slug": "dewe-gran-canaria"
+  "slug": "dewe-gran-canaria",
+  "owner_note": "no publican quién es el dueño ni un perfil suyo",
+  "warn": "OJO: puede ser de la cadena DEWE (dewe.es vende online y tiene tienda en Almería). Comprobar antes de enviar"
  },
  "quattro-moda": {
   "id": "mod-quattro-santander",
@@ -365,13 +387,14 @@
   "phone": "+34652922485",
   "phone_type": "móvil",
   "whatsapp": "",
-  "contact_source": "Móvil de la bio (WhatsApp sin confirmar)",
+  "contact_source": "móvil de la bio (652 92 24 85, WhatsApp sin confirmar); fijo 942 31 40 13 y correo issafer25@gmail.com en su Facebook (correo con nombre de persona: probablemente la dueña)",
   "person": "",
   "notes": "Espacio multimarca (Ba&sh, Twinset, Aniye By…); envíos en 24 h",
   "web": "https://www.quattromoda.es/",
   "n_stores": 1,
-  "email": "",
-  "slug": "quattro-moda"
+  "email": "issafer25@gmail.com",
+  "slug": "quattro-moda",
+  "owner_note": "el correo de su Facebook lleva nombre de persona; no publican un perfil personal"
  },
  "mono-mona": {
   "id": "mod-mono-mona-sevilla",
@@ -384,16 +407,17 @@
   "address": "C/ Cerrajería 10",
   "store": "none",
   "fails": "sin web; pedidos por mensaje directo",
-  "phone": "",
-  "phone_type": "",
+  "phone": "+34954227896",
+  "phone_type": "fijo",
   "whatsapp": "",
-  "contact_source": "Sin teléfono en la bio: por Instagram",
+  "contact_source": "sin teléfono ni correo en la bio: por Instagram; fijo 954 22 78 96 en directorios: comprobar",
   "person": "",
   "notes": "Moda mujer; pago con tarjeta, transferencia o Bizum; envíos 24-72 h",
   "web": "",
   "n_stores": 1,
   "email": "",
-  "slug": "mono-mona"
+  "slug": "mono-mona",
+  "owner_note": "no publican quién es la dueña; el Facebook «Mono Mona» es un perfil personal y no se usa"
  },
  "lenceshop": {
   "id": "mod-lenceshop-malaga",
@@ -406,16 +430,17 @@
   "address": "C/ La Unión 77",
   "store": "none",
   "fails": "sin web; pedidos por Instagram y Bizum",
-  "phone": "",
-  "phone_type": "",
+  "phone": "+34951286821",
+  "phone_type": "fijo",
   "whatsapp": "",
-  "contact_source": "Sin teléfono en la bio: por Instagram",
+  "contact_source": "fijo 951 28 68 21 (directorios) y correo lenceshopsl@gmail.com (su Facebook)",
   "person": "",
   "notes": "Lencería; envíos 24/48 h a la península, compra mínima 30 €",
   "web": "",
   "n_stores": 1,
-  "email": "",
-  "slug": "lenceshop"
+  "email": "lenceshopsl@gmail.com",
+  "slug": "lenceshop",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "kiss-of-life": {
   "id": "mod-kiss-of-life-oviedo",
@@ -431,13 +456,15 @@
   "phone": "+34618677974",
   "phone_type": "móvil",
   "whatsapp": "",
-  "contact_source": "Teléfono de pedidos de la bio",
+  "contact_source": "móvil de pedidos 618 67 79 74 y correo pedidos.kissoflife@gmail.com (bio); en su Facebook, fijo 985 23 33 06 y kissoflifeoviedo@gmail.com",
   "person": "Maria Riera Fernandez (nombre del perfil)",
   "notes": "Moda mujer; envíos a toda España",
   "web": "",
   "n_stores": 2,
   "email": "pedidos.kissoflife@gmail.com",
-  "slug": "kiss-of-life"
+  "slug": "kiss-of-life",
+  "owner_note": "María Riera Fernández (nombre del perfil de Instagram de la tienda)",
+  "owner_first": "María"
  },
  "coccu-moda": {
   "id": "mod-coccu-zaragoza",
@@ -453,13 +480,14 @@
   "phone": "+34722755441",
   "phone_type": "móvil",
   "whatsapp": "+34722755441",
-  "contact_source": "Enlace wa.me de la bio",
+  "contact_source": "WhatsApp de pedidos de la bio (722 75 54 41); en su Facebook, otro móvil (711 75 54 41) y el correo coccudress@gmail.com",
   "person": "",
   "notes": "Moda mujer; envío gratis desde 60 €",
   "web": "",
   "n_stores": 1,
-  "email": "",
-  "slug": "coccu-moda"
+  "email": "coccudress@gmail.com",
+  "slug": "coccu-moda",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "taleros-shop": {
   "id": "mod-taleros-sanlucar",
@@ -475,13 +503,14 @@
   "phone": "+34609512808",
   "phone_type": "móvil",
   "whatsapp": "+34609512808",
-  "contact_source": "WhatsApp de pedidos de la bio",
+  "contact_source": "WhatsApp de la bio (609 51 28 08); correo rousguardi@gmail.com en su Facebook (con nombre de persona: probablemente la dueña)",
   "person": "",
   "notes": "Moda y complementos",
   "web": "",
   "n_stores": 1,
-  "email": "",
-  "slug": "taleros-shop"
+  "email": "rousguardi@gmail.com",
+  "slug": "taleros-shop",
+  "owner_note": "el correo de su Facebook lleva nombre de persona; no publican un perfil personal"
  },
  "punto-lana": {
   "id": "mod-punto-lana-sanlucar",
@@ -497,13 +526,14 @@
   "phone": "+34615261336",
   "phone_type": "móvil",
   "whatsapp": "+34615261336",
-  "contact_source": "WhatsApp de la bio",
+  "contact_source": "WhatsApp de la bio (615 26 13 36); correo cristinamorgalan@gmail.com en su Facebook (correo con nombre de persona: probablemente la dueña)",
   "person": "",
   "notes": "Moda mujer de eventos y casual; envíos a toda España",
   "web": "",
   "n_stores": 1,
-  "email": "",
-  "slug": "punto-lana"
+  "email": "cristinamorgalan@gmail.com",
+  "slug": "punto-lana",
+  "owner_note": "el correo de su Facebook lleva nombre de persona; no publican un perfil personal"
  },
  "mumbai-clothing": {
   "id": "mod-mumbai-gandia",
@@ -516,16 +546,17 @@
   "address": "Pasaje Lombard 11B",
   "store": "none",
   "fails": "sin web; envíos por WhatsApp",
-  "phone": "",
-  "phone_type": "",
-  "whatsapp": "",
-  "contact_source": "Enlace de WhatsApp de la bio (sin número visible)",
+  "phone": "+34619683127",
+  "phone_type": "móvil",
+  "whatsapp": "+34619683127",
+  "contact_source": "móvil 619 68 31 27 con WhatsApp y correo mumbai.spain@gmail.com, los dos en su Facebook (en la bio solo hay enlace a WhatsApp, sin número)",
   "person": "",
   "notes": "Marcas seleccionadas y piezas especiales",
   "web": "",
   "n_stores": 1,
-  "email": "",
-  "slug": "mumbai-clothing"
+  "email": "mumbai.spain@gmail.com",
+  "slug": "mumbai-clothing",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "modas-matiz": {
   "id": "mod-matiz-mairena",
@@ -538,16 +569,17 @@
   "address": "Polígono PISA, C/ Manufactura 7, nave 3",
   "store": "weak",
   "fails": "web en mantenimiento: matizmoda.es no deja comprar",
-  "phone": "",
-  "phone_type": "",
+  "phone": "+34658375768",
+  "phone_type": "móvil",
   "whatsapp": "",
-  "contact_source": "Email de la bio",
+  "contact_source": "correo info@matizmoda.es (bio); móvil 658 37 57 68 en su Facebook (WhatsApp sin confirmar). Su web matizmoda.es está en mantenimiento",
   "person": "",
   "notes": "Tienda física de moda mujer en polígono",
   "web": "https://matizmoda.es/",
   "n_stores": 1,
   "email": "info@matizmoda.es",
-  "slug": "modas-matiz"
+  "slug": "modas-matiz",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "bonita-ganga": {
   "id": "mod-bonita-ganga-barakaldo",
@@ -562,14 +594,15 @@
   "fails": "sin web",
   "phone": "+34622929741",
   "phone_type": "móvil",
-  "whatsapp": "",
-  "contact_source": "Móvil de la bio (fijo 946 06 59 50; WhatsApp sin confirmar)",
+  "whatsapp": "+34622929741",
+  "contact_source": "WhatsApp 622 92 97 41 (lo confirma su Facebook) y fijo 946 06 59 50; sin correo",
   "person": "",
   "notes": "Moda low-cost (máx. 20 €): ropa, calzado y complementos; envíos 5-6 €",
   "web": "",
   "n_stores": 1,
   "email": "",
-  "slug": "bonita-ganga"
+  "slug": "bonita-ganga",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "babilonia-terreta": {
   "id": "mod-babilonia-sagunto",
@@ -585,13 +618,15 @@
   "phone": "+34607586477",
   "phone_type": "móvil",
   "whatsapp": "+34607586477",
-  "contact_source": "WhatsApp de pedidos de la bio",
+  "contact_source": "WhatsApp de la bio (607 58 64 77)",
   "person": "",
   "notes": "Envíos 24/48 h; transferencia o Bizum",
   "web": "",
   "n_stores": 1,
   "email": "",
-  "slug": "babilonia-terreta"
+  "slug": "babilonia-terreta",
+  "owner_note": "empresa Babilonia Shop S.L.",
+  "warn": "NO ENVIAR: es de Babilonia Shop S.L. (misma dirección, Av. 9 d'Octubre 110), que ya vende online en modababilonia.com (Shopify, más de 250 productos). Contacto de esa web: info@modababilonia.com, WhatsApp 667 93 54 30"
  },
  "mas-cosas-elda": {
   "id": "mod-mas-cosas-elda",
@@ -607,13 +642,14 @@
   "phone": "+34656425194",
   "phone_type": "móvil",
   "whatsapp": "+34656425194",
-  "contact_source": "WhatsApp de la bio",
+  "contact_source": "WhatsApp de la bio (656 42 51 94); correo mascosas_elda@hotmail.es en su Facebook (su web mascosas.es ya no es suya)",
   "person": "",
   "notes": "Moda, complementos y acero inoxidable; más de 20 años",
   "web": "",
   "n_stores": 1,
-  "email": "",
-  "slug": "mas-cosas-elda"
+  "email": "mascosas_elda@hotmail.es",
+  "slug": "mas-cosas-elda",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "berta-ferrol": {
   "id": "mod-berta-ferrol",
@@ -629,13 +665,14 @@
   "phone": "+34685883162",
   "phone_type": "móvil",
   "whatsapp": "",
-  "contact_source": "Móvil de la bio (WhatsApp sin confirmar)",
+  "contact_source": "móvil de la bio (685 88 31 62, WhatsApp sin confirmar); fijo 981 35 06 10 en su Facebook; sin correo (su antigua web bertastore.es no funciona)",
   "person": "",
   "notes": "Moda mujer; envíos a toda España",
   "web": "",
   "n_stores": 1,
   "email": "",
-  "slug": "berta-ferrol"
+  "slug": "berta-ferrol",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  },
  "matilda-ferrol": {
   "id": "mod-matilda-ferrol",
@@ -651,12 +688,13 @@
   "phone": "+34881510220",
   "phone_type": "fijo",
   "whatsapp": "",
-  "contact_source": "Teléfono de la bio",
+  "contact_source": "fijo de la bio (881 51 02 20) y DM; sin correo ni Facebook",
   "person": "",
   "notes": "Moda mujer; envíos a toda España 5 €",
   "web": "",
   "n_stores": 1,
   "email": "",
-  "slug": "matilda-ferrol"
+  "slug": "matilda-ferrol",
+  "owner_note": "no publican quién es la dueña ni un perfil suyo"
  }
 }
