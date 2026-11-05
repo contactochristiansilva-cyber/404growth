@@ -1613,7 +1613,7 @@ function openCheckout() {
 /* visit counter (22 oct 2026): tells our own counter (404growth-visits) that this page was opened, for how long it was read and how far it got.
    No cookies, nothing stored on the visitor's device, live site only. Our own devices opt out once with ?interno=1. */
 (function(){
-  var slug="antequeracf--web",EP='https://404growth-visits.contactochristiansilva.workers.dev',EV=['scroll','pointerdown','touchstart','keydown'],PARTS=[];
+  var slug="antequeracf-tienda",EP='https://404growth-visits.contactochristiansilva.workers.dev',EV=['scroll','pointerdown','touchstart','keydown'],PARTS=[["worn", 6]];
   try{var q=/[?&]interno=([01])/.exec(location.search);if(q){if(q[1]==='1')localStorage.setItem('c404int','1');else localStorage.removeItem('c404int')}if(localStorage.getItem('c404int'))return}catch(e){}
   if(!slug||!/(^|\.)404growth\.com$/.test(location.hostname)||navigator.webdriver||!window.fetch)return;
   var key=null,seen=0,since=0,depth=0,sent='',n=0,iv,gone=false,CQ=[];
