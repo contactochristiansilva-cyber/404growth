@@ -76,7 +76,7 @@ def main(slugs):
                 for vw, tag in [(1440, 'd'), (390, 'm')]:
                     pg = b.new_page(viewport={'width': vw, 'height': 900}, device_scale_factor=1)
                     pg.goto(f'http://localhost:{PORT}/p-{s}.html'); pg.wait_for_load_state('networkidle')
-                    pg.evaluate("document.documentElement.classList.remove('sk')"); pg.add_style_tag(content='*{transition:none!important;animation:none!important}.bw,.ph,.stage,.lap{transform:none!important;opacity:1!important;filter:none!important}')
+                    pg.evaluate("document.documentElement.classList.remove('sk')"); pg.add_style_tag(content='*{transition:none!important;animation:none!important}.hero h1 .sk-ln{display:block}.bw,.ph,.stage,.lap{transform:none!important;opacity:1!important;filter:none!important}')
                     h = pg.evaluate('document.documentElement.scrollHeight')
                     for y in range(0, h, 700):
                         pg.evaluate(f'scrollTo(0,{y})'); time.sleep(.08)

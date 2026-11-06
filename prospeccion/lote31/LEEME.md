@@ -38,10 +38,15 @@ Los botones de la propuesta van a `404growth.com/book?utm_source=propuesta&utm_c
 4. Banner (l5) con gente parecida a la dueña o hecho collage: se rehace sin referencias, solo con el texto del prompt y «No people at all».
 5. `gen.py` + `shots.py` otra vez y se revisan las capturas.
 
+## Hecho el 6/11/2026
+
+- Publicadas 5 más (fotos en Flow, gratis): **todo-textil**, **flag-sevilla**, **tartaisa**, **delia-nunez** (es @flamencapolnunez: delianunez.com tiene la tienda PrestaShop montada pero vacía) y **studio-vintage**. Correos visuales en `e/<slug>/`, borradores de Flag, Delia Núñez y Studio Vintage en Gmail (hola@) y hoja `~/Downloads/envios-5-6nov.html`. Todo Textil no tiene correo ni teléfono: solo Instagram.
+- Del CRM (7 con +20k sin propuesta) quedaron fuera, con su «AVISO (6/11)» en las notas: Samsara (WooCommerce con 541 productos), Morueco (Shopify con 250+ productos y cesta), Cocoon (PrestaShop con cesta), Mundo Alopeke (escuela infantil, no tienda) y Dekopalace (cerró a finales de 2023: liquidación y despedida en Instagram).
+- Todo Textil, Flag Sevilla y Delia Núñez entran al CRM con el `SEED` del admin (`seed_20261106a`); Tartaisa y Studio Vintage ya estaban y se les puso `slug` y `pageUrl`.
+- Flag Sevilla: celebraban sus 10 años el 5/11; mejor escribir a partir del lunes 9 (sale en la hoja).
+
 ## Pendiente (5/11/2026, para seguir)
 
-- De las 24 del día, hechas 9 (Mumbai, Corazón, De Rosa, Estela, Mono Mona, Provenza, Punto y Aparte, Quattro y Raza). Faltan 15.
-- A medias: **todo-textil** (Todo Textil, La Eliana, 47.800, «no tenemos web»; nicho nuevo `hogar`): fichas en `l32/entries`, 8 de 15 fotos hechas en Flow (proyecto «nov 05 - 15:38» de hola@); p2 y x2 dieron error de política y el mensaje de categorías y banner quedó a medio mandar. **flag-sevilla** (Flag, Sevilla, 58.100, flagsevilla.com con 3 productos): fichas listas, sin fotos. Referencias de las dos en `~/Downloads/l31src/` del Mac.
-- Por mirar: flamencapolnunez (34.000, Sevilla, trajes de flamenca a medida, sin web en la bio).
+- De las 24 del día, hechas 9 (Mumbai, Corazón, De Rosa, Estela, Mono Mona, Provenza, Punto y Aparte, Quattro y Raza), y el 6/11 las 5 de arriba.
 - Descartadas el 5/11 por vender ya online: tacatucazaragoza, mamasitasmoda2024, impulsomodasgranada, anacamposcollection, aires_desoniaycris, princessnatalia_modas, ottro_shop, latiendadeluca, belaobisuteria, rafimora_huelva, belove.es, saroemmoda, bravebetty_moda (y atelier.badajoz, con la web en mantenimiento).
 - Búsqueda que mejor ha ido: Yahoo con `site:instagram.com <ciudad> ("Bizum" OR "pedidos por WhatsApp" OR "pedidos por MD" OR "pedidos por privado") ("20K Followers" OR … OR "30K Followers")` (los OR, entre paréntesis) y las «Cuentas similares» de Instagram de las tiendas que ya tenemos. Yahoo deja de responder tras unas 60 búsquedas seguidas.
