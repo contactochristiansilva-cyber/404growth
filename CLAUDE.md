@@ -179,3 +179,12 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - el anual: 4.900 € IVA incluido, con la tienda y 2 meses gratis y la garantía x3 por contrato (si no venden 14.700 € online en el año, 12 meses más gratis).
 - Contador de visitas con el slug `kissoflife` (avisa a Chris al abrirla).
 - Se genera con `build2.py` en el scratchpad de la sesión del 6/11/2026; aquí solo está el HTML final.
+
+## Presupuestos (admin v62, 6/11/2026)
+
+- En el admin, Dinero › «Presupuestos» (`/admin#presupuestos`): los presupuestos enviados y pendientes de aceptación. Arriba van los totales pendientes (pagos únicos y cuotas al mes) y debajo tres pestañas: Pendientes, Aceptados y No aceptados.
+- Cada presupuesto se puede marcar como aceptado o no aceptado, volver a pendiente, editar y borrar (pide confirmación al segundo clic). «Nuevo presupuesto» está arriba y en el botón «+ Nuevo».
+- Cada uno guarda el cliente, qué incluye, el pago único, la cuota al mes, la fecha de envío, el enlace a la propuesta y una nota.
+- Se guardan en `docs` con `coll = 'quotes'` (`quotesApi`, rutas `/admin/api/quotes` y `/admin/api/quotes/<id>`); la interfaz es `vPres` en `PAGES.admin`.
+- La primera vez se cargan solos los cuatro del 6/11/2026: Carmen Valencia (1.380 €), Kiss of Life (1.140 € + 490 €/mes), Open Fit (3.350 €) y Antequera CF (2.800 €). La marca `meta.quotes_seed` evita que vuelvan si se borran.
+
