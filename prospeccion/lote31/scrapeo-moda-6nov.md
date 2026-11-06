@@ -1,4 +1,4 @@
-# Scrapeo moda +20k en Instagram (6/11/2026, seed_20261106b)
+# Scrapeo moda en Instagram (6/11/2026, seed_20261106b)
 1. myriambenidorm · 28,7K · Boutique Myriam Benidorm · C/ Ruzafa Ed. Rioja bajo, 03501 Benidorm · web boutique-myriam-benidorm.com da 503 (caída) · OK
 2. shivan_moda · 22,5K · Shivan · C. Polonia 169, 14014 Córdoba · tel 957 55 35 44 (Google Maps) · sin web (bio: Facebook, TikTok, mapa) · ropa low cost señora, talla grande, caballero, fiesta, calzado · L-S 10-21h · OK
 3. zaalc_official · 61,6K · Zaalc «The viral outlet» · Ctra. Valencia 26, 03550 Sant Joan d'Alacant (Alicante) · L-S 10-20:30 · web zaalc.com (Wix) solo con dirección y formulario, sin tienda · aviso legal: Brixbol S.L.U., tel 965 230 230, gestion@zaalc.com · OK
@@ -14,3 +14,16 @@ Contactos extra: Myriam → zoemy20@hotmail.com y +34 965 85 24 89 (Facebook /ab
 Descartadas tanda 5: cm-shop.es (Shopify 250), malvha (Shopify 137), carruselmoda (19,7K), elarmariodediana (Woo 240), carcui.co (marca), natashashop.es (online)
 9. amicotenerife · 27,5K · Amico Tenerife · C. El Coralito 56, 38205 San Cristóbal de La Laguna (Tenerife) · tel 922 19 29 80 (Google Maps) · compras por MD y WhatsApp (w.app/mbuq60), envíos 24/48h · sin web · ropa, calzado y complementos · OK (Canarias: envíos a península con aduana)
 10. imperiomodacastellon.cs · 188K (cuenta verificada) · Imperio Moda Castellón (perfil «Alfredo Suárez Garcia») · C/ Navarra 50, 12002 Castellón de la Plana · pedidos por WhatsApp 637 971 278, pago Bizum o transferencia, envíos a toda España en 24h · sin web (bio: WhatsApp y TikTok) · ropa urbana hombre, mujer y niños; viste a cantantes (JC Reyes, Chimbala) · OK (no usar fotos con niños)
+
+## Ronda WhatsApp (6/11 tarde, umbral 15K)
+Sin WhatsApp publicado (ni bio, ni 24 publicaciones, ni Facebook): Myriam, Shivan, Zaalc, Sara, Chic Glam; Amico (su enlace w.app está «Pausado»)
+W1. cattalina.shopp · 17,8K · Cattalina Shop · C/ Avenida 1 de Mayo 35, Coria del Río (Sevilla) · móvil/WhatsApp 622 814 687 (bio) + canal de WhatsApp · web cattalinashop.es: Shopify con contraseña («Opening soon»), no vende · OK
+W2. sincodigoshop · 16K · Sin Código · Plaza de los Alféreces, Badajoz · 678 800 973 + grupo de WhatsApp (bio) · sin web · ropa de mujer · OK
+Descartadas: qnipintaomodas (Woo 305), sarella_showroom (Presta con carrito), carruselmoda (Woo 95), carmelashop.es (14,7K)
+W3. eldesvandelregalo · 30,1K · El Desván del Regalo · C/ Alta y Baja 20, Lucena · móvil 604 979 844 · web Woo con 9 productos · OK
+W4. pimaramoda · 35,2K · Pimara Moda · C/ El Agua 2 Lucena + C/ Redondo Marqués 19 Cabra · móvil 744 62 85 01 · pimara.es no carga · OK
+W5. modasjade_ · 61,5K · Modas Jade · C/ Almirante 11, Sanlúcar · 661 066 256 / 613 823 557 · sin web · OK
+W6. marai020 · 16,9K · El Sueño de Marai · Albareda 109, Las Palmas · 666 065 867 · maraimoda.com Woo 26 productos · OK (Canarias)
+W7. mamenalbero · 59K · Mamen Albero · C/ Oliver 1, Alcoy · 683 270 233 · mamenalbero.com no existe · OK
+W8. serranoburgos1942 · 16,4K · Serrano · C/ Cordón 2, Burgos · móvil 618 423 427 · serranoburgos.com no carga · OK
+Descartadas: lamaquii_ (Woo 262), inariclothingoficial (Woo 153), nataly__shoop (Woo 369), modastuyyo (Presta), carlospinashop (14,9K), colocolooviedo (14,5K)

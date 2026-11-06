@@ -170,6 +170,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Solo 1 de cada 8 o 10 boutiques de +20k no vende ya online. Las que encajan suelen ser de pueblo o de barrio, outlets, low cost o tiendas que venden en directos y por WhatsApp.
   - Para teléfonos y correos: Google Maps (`google.com/maps/search/<nombre>+<calle>`) y la página de Facebook del negocio (`/about`).
   - Ojo con Facebook: los números sueltos de la pestaña Información pueden ser las visitas de los reels, no un teléfono.
+  - Chris prefiere las que publican móvil o WhatsApp: «con tantos fijos es muy difícil llegar a ellos». Desde el 6/11/2026 vale +15.000 seguidores. Las que solo tienen fijo entran con prioridad 50 y «AVISO: solo publican fijo». El móvil se busca en la bio, en los textos de sus últimas 24 publicaciones (`/p/<código>/embed/captioned/`, clase `Caption`), en Facebook `/about` y en Google Maps.
 
 ## Tienda demo del Antequera CF (4/11/2026)
 
