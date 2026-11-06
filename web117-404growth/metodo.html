@@ -48,6 +48,7 @@ em{font-style:normal}
 /* portada */
 .hero{padding:26px 0 0;transition:opacity .35s}.hero.wait{opacity:0}.hero-t{max-width:760px}
 .hero.has-ty{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:56px;align-items:center}
+.hero.has-ty.ty-h{grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:44px}.hero.ty-h h1{font-size:clamp(32px,4.2vw,48px)}
 /* confirmación: el círculo se dibuja, luego el check, y un pequeño latido */
 .ok{width:58px;height:58px;margin-bottom:18px}.ok[hidden]{display:none}
 .ok svg{display:block;width:100%;height:100%;overflow:visible}
@@ -73,6 +74,8 @@ em{font-style:normal}
 #videos{scroll-margin-top:70px}
 .ty{position:relative;width:100%;aspect-ratio:9/16;border-radius:26px;overflow:hidden;background:#0B1412;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 30px 70px -34px rgba(0,0,0,.85)}
 .ty[hidden]{display:none}
+.ty.h{aspect-ratio:16/9;border-radius:22px}
+.ty.h .pl-snd{justify-content:flex-end;padding-bottom:16px;border-radius:inherit;background:linear-gradient(to top,rgba(0,0,0,.6),rgba(0,0,0,0) 48%)}   /* en horizontal el botón va abajo, para que se le vea la cara */
 .ty video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
 .tytag{position:absolute;left:12px;top:12px;z-index:3;font-size:12.5px;font-weight:600;padding:5px 10px;border-radius:99px;background:rgba(4,7,6,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);pointer-events:none;transition:opacity .3s}
 .ty.on .tytag{opacity:0}
@@ -240,6 +243,7 @@ html.lock,html.lock body{overflow:hidden}
  .hero.has-ty{display:flex;flex-direction:column;gap:0}.hero.has-ty .hero-t{display:contents}
  .hero.has-ty .ok{order:1;align-self:flex-start}.hero.has-ty h1{order:2}.hero.has-ty .when2{order:3}.hero.has-ty .inv{order:4}.hero.has-ty .down{order:6}
  .ty{order:5;width:min(300px,64vw);margin:18px auto 0}
+ .hero.has-ty.ty-h{gap:0} .ty.h{width:100%;border-radius:18px}.hero.ty-h h1{font-size:clamp(30px,8.4vw,44px)}
  .ok{width:44px;height:44px;margin-bottom:12px}
  .when2{margin-top:16px;gap:14px}.when2 .cal{width:58px}.when2 .cal b{font-size:25px}.wtx b{font-size:19px}.wtx span{font-size:14px}
  .down{margin-top:18px;font-size:14.5px;padding:12px 12px 12px 16px}
@@ -404,7 +408,7 @@ fbq('init',id);fbq('track','PageView')})();</script>
     {f:'Qué vende bien *online* y qué no',g:3,q:'«¿Mi producto se puede vender online?»',t:'¿Tu producto se puede vender online?',s:'Qué funciona mejor online y qué hacer si lo tuyo es delicado o voluminoso.',d:'1:05',src:'/v/metodo/08/index.m3u8',poster:'/v/metodo/08/poster.jpg',dur:'1:05'}
   ];
   /* el vídeo de gracias (arriba, solo tras reservar o al volver): cuando esté, src = '/v/metodo/00/index.m3u8' y poster = '/v/metodo/00/poster.jpg' */
-  var TY={src:'',poster:''};
+  var TY={src:'/v/metodo/00/index.m3u8',poster:'/v/metodo/00/poster.jpg',h:1};   /* v63 (6/11/2026): el vídeo de gracias, en horizontal (1920×1080, 27 s) */
   var G=['¿Merece la pena?','¿Puedo yo con esto?','¿Va a funcionar?','¿Me fío?'];
   var COL=[['rgba(111,194,166,.55)','rgba(15,59,49,.9)'],['rgba(217,201,160,.45)','rgba(70,58,30,.8)'],['rgba(120,170,220,.42)','rgba(20,40,70,.85)'],['rgba(200,140,120,.42)','rgba(70,30,22,.85)']];
   var SHOPS=['solenne','pulso','forma','aurea','nacar','velia','orbe','nucleo','dstrto'];
@@ -432,7 +436,7 @@ fbq('init',id);fbq('track','PageView')})();</script>
       $('ok').hidden=false;
       $('h1').innerHTML=(nm?esc(nm)+', tu':'Tu')+' llamada está <span class="grad">confirmada.</span>';
       $('when2').hidden=false;$('cw2').textContent=fmt({weekday:'short'},dt).replace('.','');$('cd2').textContent=fmt({day:'numeric'},dt);$('cm2').textContent=fmt({month:'short'},dt).replace('.','');
-      $('w2d').textContent=cap(fmt({weekday:'long',day:'numeric',month:'long'},dt))+', '+hm+' h';
+      $('w2d').textContent=cap(fmt({weekday:'long',day:'numeric',month:'long'},dt))+', '+hm+'\u00a0h';
       $('w2h').textContent=(mine?'Hora de España ('+mine+' en tu hora) · ':'')+DUR+' min por Google Meet';
     }else if(nm){$('h1').innerHTML='Hola, '+esc(nm)+'. <span class="grad">'+(past?'Seguimos hablando.':'Antes de vernos, lo que todos preguntan.')+'</span>'}
     if(dt){
@@ -446,6 +450,7 @@ fbq('init',id);fbq('track','PageView')})();</script>
   function fitTy(){   /* móvil: el vídeo de gracias se ajusta para que él y la frase de abajo quepan en la primera pantalla */
     var box=$('ty');if(box.hidden)return;box.style.width='';if(!matchMedia('(max-width:900px)').matches)return;
     var top=box.getBoundingClientRect().top+scrollY,dn=d.querySelector('.down'),avail=innerHeight-top-dn.offsetHeight-36;
+    if(box.classList.contains('h')){var full=box.parentElement.clientWidth;box.style.width=Math.round(Math.max(Math.min(full,260),Math.min(full,avail*16/9)))+'px';return}
     box.style.width=Math.round(Math.max(190,Math.min(300,innerWidth*.64,avail*.5625)))+'px';
   }
   function reveal(){$('inicio').classList.remove('wait');fitTy();var o=$('ok');if(!o.hidden&&!S.okd){S.okd=1;setTimeout(function(){o.classList.add('go')},150)}}
@@ -586,7 +591,7 @@ fbq('init',id);fbq('track','PageView')})();</script>
   }
   function tyInit(){   /* como los 8: sin sonido y en bucle con «Activar audio»; al tocarlo, desde el principio con sonido */
     if(!TY.src)return;var box=$('ty'),tv=$('tyv'),tb=$('tyu'),on=false,th=null,vis=true;
-    box.hidden=false;$('inicio').classList.add('has-ty');tv.poster=TY.poster||'';tv.muted=true;tv.loop=true;tv.controls=false;
+    box.hidden=false;$('inicio').classList.add('has-ty');if(TY.h){box.classList.add('h');$('inicio').classList.add('ty-h')}tv.poster=TY.poster||'';tv.muted=true;tv.loop=true;tv.controls=false;
     function tp(){var p=tv.play();if(p&&p.catch)p.catch(function(){})}
     if(/\.m3u8(\?|$)/.test(TY.src)&&!tv.canPlayType('application/vnd.apple.mpegurl'))loadHls().then(function(){if(window.Hls&&Hls.isSupported()){th=new Hls({capLevelToPlayerSize:false,abrEwmaDefaultEstimate:5e6});th.loadSource(TY.src);th.attachMedia(tv)}else tv.src=TY.src;if(vis)tp()});
     else{tv.src=TY.src;tp()}
