@@ -166,3 +166,16 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Las correcciones de las fotos (escudos, letras, la Peña) se regeneran en Higgsfield, nunca retocadas a mano. La camiseta DÓLMENES colgada (`img/manga-larga.jpg`) se rehízo el 4/11/2026 con el escudo, como en su foto de producto.
 - **Propuesta al club (5/11/2026):** `404growth.com/antequeracf/propuesta/` = `antequeracf/propuesta/` (`index.html` e `img/`, unos 3,3 MB; las imágenes se quedan en el Mac). Rutas relativas, `noindex`, SF Pro. Calculadora de escenarios (prudente, base, ambicioso; año 1 y año 3) con cinco públicos: abonados, público de El Maulí, cantera, seguidores y turistas, más público nuevo con anuncios en Meta. Base: unos 122.000 € el año 1 y 203.000 € el año 3. Lo que no es público (abonados 2026-27, asistencia, cantera, contrato con Hummel) va como «a confirmar». La misma propuesta en diapositivas es el artifact de Slides «Antequera CF · Propuesta tienda oficial».
 - **Contador de visitas (5/11/2026):** la propuesta lleva el contador de las propuestas con el slug `antequeracf` (avisa a Chris al abrirla, como las de `/p/`) y la tienda con `antequeracf-tienda` (desde el 5/11/2026 cuenta como otra propuesta y también avisa al abrirla; antes era `antequeracf--web`, sin aviso). El PDF no se puede contar: lleva enlaces a la propuesta online y a la tienda en la última diapositiva. Si en el CRM no hay un lead con `slug` = `antequeracf`, el aviso sale con ese nombre.
+
+## Plan de Kiss of Life (6/11/2026)
+
+- `404growth.com/kissoflife/` = `web117-404growth/kissoflife/index.html`: un solo HTML (unos 1 MB, con las imágenes dentro), `noindex`, SF Pro. Es la página que Chris enseñó en la llamada con Kiss of Life (Oviedo y Gijón).
+- Contenido:
+  - el método de lanzamientos (2 o 3 por semana con stock ajustado, lista de espera, básicos siempre en la web);
+  - una simulación animada de un lanzamiento (story, web y pedidos);
+  - el círculo de lanzamientos;
+  - la tienda de ejemplo;
+  - los precios: tienda 1.140 €, plan socio online 490 €/mes sin permanencia y 8–12 lanzamientos al mes, con un estimador de ventas que se toca en directo;
+  - el anual: 4.900 € IVA incluido, con la tienda y 2 meses gratis y la garantía x3 por contrato (si no venden 14.700 € online en el año, 12 meses más gratis).
+- Contador de visitas con el slug `kissoflife` (avisa a Chris al abrirla).
+- Se genera con `build2.py` en el scratchpad de la sesión del 6/11/2026; aquí solo está el HTML final.
