@@ -32,3 +32,15 @@ Cuando Apimart no tiene saldo, las 15 fotos de cada propuesta se hacen gratis en
 - **Caras:** en Delia Núñez, el «look» copió la cara, el sombrero y la puerta de la foto 15: se recortó con `topcrop.py delia-nunez look=0.355`.
 - El nicho `deco` de `jobs_lib` está pensado para cerámica («ceramic pieces»); para muebles (Studio Vintage) se cambió esa frase en el mensaje por «furniture and design pieces».
 - Se pueden llevar varias tiendas a la vez, cada una en su pestaña y su proyecto.
+
+## Lo que se aprendió el 6/11/2026 por la tarde (14 tiendas de moda en paralelo)
+
+- **Varias tiendas a la vez:** un proyecto por pestaña. Con más de 4 o 5 generaciones a la vez, Flow contesta «Hay demasiadas generaciones en curso» (o «Hemos detectado actividad inusual»): se espera un minuto y se pulsa «Reintentar», que deja el mensaje otra vez en el cuadro; hay que volver a enviarlo.
+- **Ayudas en la pestaña:** `ayudas_flow.js` guarda en `localStorage.__fc` (de flow.google.com) `__attach`, `__put`, `__mkin`/`__xfer` (subir referencias), `__dl`, `__dlall`, `__findl` y `__dlid`. Cada tienda carga `P_<slug>.js` (claves `__K` y mensajes `__M`, que también se guardan en `localStorage['__P_<slug>']`).
+- **Ajustes del agente** (Confirmar «Nunca», 3:4, x1): son de cada proyecto; se ponen en cada uno.
+- **Descargar:** en la vista de una imagen, `__dlall(40)` va al principio con la flecha izquierda y recorre todas hacia la derecha bajando la imagen grande (`flow-content.google`, la de mejor calidad). Si la grande no carga, baja la miniatura `=s1600`. Solo funciona bien con la pestaña **delante**: en segundo plano Chrome frena los temporizadores y no carga las imágenes. Se bajan de una en una pestaña.
+- **Claves repetidas:** si la clave de una foto aparece también en el texto de otra («a model wearing the lo…» vale para «long» y «loose»), `__dlall` la salta. `final.py` ya busca claves que solo estén en su foto; si aun así falta una, se abre y se baja con `__dlid('<id>')`.
+- **Agente atascado:** a veces contesta «Voy a generar…» y solo escribe etiquetas `<gflux_tool_call>` sin generar nada. Se abre una sesión nueva del agente (icono de arriba del panel) y se manda otra vez.
+- **Referencias que no sube o que bloquean el mensaje:** se recorta la prenda sin la cara (Café con Bacon 23 → `23c.jpg`) o se cambia el producto (Modas Jade: la sudadera con dibujo bloqueaba todo el mensaje; se cambió por la parka, `17c.jpg`).
+- `file_upload` no acepta más de 10 MB por llamada: las referencias de más de 700 KB se reducen a 1600 px.
+- En el Mac, `~/org2.py <slug>` (en el $HOME del Cowork) mueve `~/Downloads/<slug>__<id>*.jpg` a `flow-out/<slug>/<id>.jpg` quedándose con la más grande.

@@ -18,6 +18,15 @@ for i in K:
         for o in range(0, len(seg) - 50, 5):
             c = seg[o:o + 60]
             if sum(c in v for v in SEG.values()) == 1: K[i] = c; break
+for i in K:
+    if sum(K[i] in v for v in SEG.values()) > 1:
+        seg = SEG[i]
+        for L in (60, 80, 100):
+            ok = False
+            for o in range(0, max(1, len(seg) - L), 5):
+                c = seg[o:o + L]
+                if sum(c in v for v in SEG.values()) == 1: K[i] = c; ok = True; break
+            if ok: break
 vals = list(K.values()); assert len(set(vals)) == len(vals), 'claves repetidas'
 json.dump(dict(msgs=msgs, K=K), open(f'{s}.final.json', 'w'), ensure_ascii=False)
 print(len(K), 'claves')

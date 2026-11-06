@@ -1,0 +1,17 @@
+__import__('jobs_lib').MEN.add('serrano-burgos')
+S['serrano-burgos'] = lambda s: build(s, 'moda', 'warm stone (#EEEAE3)',
+    ([4], "An elegant man in his forties wearing the dark navy padded jacket over a navy knit and the slim grey trousers from the reference, walking across the square in front of the Gothic Burgos Cathedral on a crisp sunny winter morning, refined and relaxed. Remove any logo or text from the clothes."),
+    [(23, 'the olive and brown check tweed bomber jacket with the ribbed knit collar, cuffs and hem, worn over a light blue shirt and a dark green knit'),
+     (1, 'the glossy dark brown quilted down jacket with the high collar and the contrast zip, worn with grey wool trousers. Remove any logo or text'),
+     (15, 'the beige technical parka with the hood and the many pockets, worn over a check flannel shirt with dark jeans and brown boots. Remove any logo or text'),
+     (8, 'the olive waxed canvas backpack with the brown leather trims, the diagonal zip and the brass hardware; remove any printed or embossed lettering and any brand plate', 'obj'),
+     (18, 'the pair of brown leather Chelsea boots with the elastic side panels', 'obj')],
+    ("E-commerce view of the olive and brown check tweed bomber jacket with the ribbed collar and hem from the reference worn by a man in three-quarter back view, face not visible, on a seamless warm stone background; calm empty space on both sides.",
+     "Lifestyle photo: a man wearing the olive and brown check tweed bomber jacket from the reference over a light blue shirt with chinos, walking along the tree-lined Paseo del Espolón in Burgos on an autumn afternoon, face partly turned away.",
+     "Macro detail photo of the olive and brown check tweed fabric and the ribbed knit collar of the bomber jacket from the reference, soft side light, shallow depth of field."),
+    ([24], "Shop-the-look editorial: a man wearing the light grey quilted down jacket with the hood and the beige chinos from the reference with brown suede shoes, standing in an elegant classic menswear shop with dark wooden shutters, full body, face turned slightly away. Remove any logo or text."),
+    [([12], "A man wearing the grey wool overcoat over a grey suit and a light grey knit beanie from the reference, from the shoulders to the knees, face not visible, elegant shop window with warm light. Remove any logo or text. The model is a different man from anyone in the reference."),
+     ([10], "Neatly folded fine knit jumpers in navy, charcoal and grey marl like in the reference, stacked on dark wooden shelves of a classic menswear shop, product only, no people, no hands, no readable labels, warm light."),
+     ([21], "The long olive waxed cotton coat with the corduroy collar from the reference displayed on a dress form in an elegant shop with warm light, product only, no people, no hands, no readable signs or labels."),
+     ([11], "A row of retro leather running sneakers in white, green, red and beige like in the reference on a white display table, product only, no people, no hands, remove any brand logos or text.")],
+    ([7, 13], "Wide interior photo of this classic men's and women's fashion shop in Burgos like the references: glossy dark wooden floors, white and navy shelving with knitwear, jackets and shoes, a long display table, leather armchairs, warm lights, elegant and tidy, no people, no readable signs."))

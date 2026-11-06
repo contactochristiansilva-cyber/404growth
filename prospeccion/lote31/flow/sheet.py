@@ -1,8 +1,11 @@
 # sheet.py <slug>: hoja con referencias (izq.) y resultado (der.) por foto, para revisar prendas y caras
 import json, sys, os
 from PIL import Image
-L31 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+L31 = '/tmp/claude-0/-home-claude/86561a8c-5895-52c1-874b-e63866019285/scratchpad/l31'
 s = sys.argv[1]; H = int(sys.argv[2]) if len(sys.argv) > 2 else 260
+if not os.path.exists(f'{L31}/ai/jobs15_{s}.json'):
+    sys.path.insert(0, L31 + '/tools'); import jobs_lib, jobs_all; jobs_lib.GRID = False
+    json.dump(jobs_all.S[s](s), open(f'{L31}/ai/jobs15_{s}.json', 'w'))
 J = json.load(open(f'{L31}/ai/jobs15_{s}.json'))
 rows = []
 for j in J:
