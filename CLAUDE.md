@@ -162,6 +162,30 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - `mk_patch.py` crea `od_patch.py`, que cambia `index.html`, escribe `mapa-es.svg` y hace las miniaturas.
 - La copia de la v60 está en `~/Downloads/404growth-subir/anterior/index-portada-v60.html`.
 
+## Portada v64 (6/11/2026): Designjoy + Ask Phill + cifras grandes
+
+- Chris eligió esta línea tras comparar 10 webs de agencias (artifact «Agencias de referencia»):
+  - la estructura de Designjoy: Christian delante, 3 pasos, qué incluye y preguntas con una tarjeta para hablar;
+  - el aspecto de Ask Phill: negro, titular enorme, botones en píldora y tiendas en abanico;
+  - de Product Hackers, una cifra enorme por tarjeta.
+- Colores de siempre: verde bosque, menta y lima. Letra SF Pro.
+- **Sin precio**, como antes: «Precio cerrado, sin sorpresas… te lo damos en la llamada». Las cifras son del proceso y del sector:
+  - 15 días;
+  - 114.800 M€ y +20,6 % (CNMC);
+  - 70 % de cestas abandonadas (Baymard).
+  Cuando haya casos reales de clientes, van ahí.
+- El abanico de la portada, la sección «Tiendas de ejemplo» y el abanico pequeño del cierre usan las tiendas de demostración de la landing VSL (`/demos/cards/<x>.webp`, enlazan a `/demo-<x>`): Áurea, Pulso, Solenne, Nácar y Forma. Se dice siempre que son proyectos de demostración, no tiendas de clientes.
+- El abanico se abre cuando termina el cargador (clase `.fan.pre`, solo transform).
+- Se conservan de la v61:
+  - el cargador 404;
+  - el mapa de España (`.od`), ahora en «Lo que cambia»;
+  - las 9 preguntas, que salen del schema FAQPage;
+  - los enlaces a sectores y guías y el pie;
+  - el WhatsApp flotante, que ahora se esconde mientras se ven los botones de la portada.
+- En el móvil se ocultan las píldoras de herramientas, 2 de las 6 ventajas y los textos de captación. «Lo que aportas tú» y «Costes externos» van plegados. No hay blur ni filtros. Revisada con Playwright a 360, 375, 390 y 1440 px.
+- Se genera con `tools/portada/v64/build.py <index-v61.html> <salida>` (estilos en `v64.css`; la v61 está al lado).
+- Copia de la v61 en `~/Downloads/404growth-subir/anterior/index-portada-v61.html`.
+
 ## Scrapeos de tiendas con +20k en Instagram (lotes del 3 y 4/11/2026)
 
 - Filtros: tienda física en España (calle en la bio, su web o Google), +20.000 seguidores comprobados en Instagram, sin tienda online o floja (ayer y hoy: menos de ~30 productos para su tamaño, web caída o en mantenimiento, web sin carrito), nicho que se pueda enviar o recoger, sin cadenas ni franquicias, y que no estén ya en el CRM. Contacto solo de fuentes públicas del negocio (bio, su web, Google).
