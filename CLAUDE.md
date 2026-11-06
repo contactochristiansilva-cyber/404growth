@@ -165,6 +165,11 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Cómo se buscan (lo que funciona): Yahoo (`search.yahoo.com`, en Chrome) con `site:instagram.com` + palabras de la bio que delatan venta sin web («Bizum», «pedidos por WhatsApp», «pedidos por MD») + ciudad; el resultado trae los seguidores. DuckDuckGo y Brave piden CAPTCHA tras ~10-20 búsquedas (no se resuelve). Los seguidores se confirman con `fetch('/<cuenta>/')` desde una pestaña de instagram.com (meta `og:description`); la bio y los enlaces, abriendo el perfil. La web se comprueba en su propia pestaña: Shopify `/products.json`, WooCommerce `/wp-json/wc/store/v1/products` (`x-wp-total`).
 - Ojo: muchas cuentas con «Córdoba», «Cartagena», «Toledo» o «boutique» son de Argentina, Colombia, Venezuela o Brasil; se miran la calle y el país.
 - Entran en el CRM como Scrapeados con el `SEED` del worker del admin (`SEED_KEY` nuevo cada lote; los que ya existen no se tocan) y Chris ejecuta `subir.command`.
+- Si cambias el `SEED_KEY` antes de que Chris haya subido el anterior, deja también los leads del anterior en `SEED`: con la clave nueva, el lote viejo ya no entraría.
+- **6/11/2026 (10 de moda, `seed_20261106b`):** lo que funcionó fue la búsqueda por palabra clave de Instagram (`instagram.com/explore/search/keyword/?q=boutique%20<ciudad>`): se juntan los enlaces de las publicaciones y, para cada una, se saca el dueño con `/p/<código>/embed/captioned/` (clase `UsernameText`) y sus seguidores con la meta de `/<cuenta>/`. Abrir la publicación directamente (`/p/<código>/`) da 429 enseguida; la versión `embed` no. Las frases de 3 palabras o más no dan resultados. Yahoo se bloqueó a las ~30 búsquedas.
+  - Solo 1 de cada 8 o 10 boutiques de +20k no vende ya online. Las que encajan suelen ser de pueblo o de barrio, outlets, low cost o tiendas que venden en directos y por WhatsApp.
+  - Para teléfonos y correos: Google Maps (`google.com/maps/search/<nombre>+<calle>`) y la página de Facebook del negocio (`/about`).
+  - Ojo con Facebook: los números sueltos de la pestaña Información pueden ser las visitas de los reels, no un teléfono.
 
 ## Tienda demo del Antequera CF (4/11/2026)
 
