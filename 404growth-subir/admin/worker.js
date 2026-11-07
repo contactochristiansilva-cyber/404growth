@@ -4481,13 +4481,15 @@ async function liDraft(env, auto) {
     (link ? "\nEn el artículo, enlaza una vez y con naturalidad a esta página de 404growth.com, en Markdown: [texto que describa la página](" + link + ")." : "") +
     (prev.length ? "\nNo repitas estos temas ya publicados: " + prev.slice(0, 25).map((r) => "«" + r.title + "»").join(", ") + "." : "") +
     (hooks.length ? "\nPrimeras frases de mis publicaciones de Instagram que mejor han funcionado (para el tono del gancho, no para copiarlas): " + hooks.map((h) => "«" + h + "»").join(" · ") + "." : "") +
-    "\n\nEl post: gancho en la primera línea de menos de 12 palabras, líneas cortas con aire, 900-1.300 caracteres, termina con una pregunta o una invitación suave a escribirme; como mucho 3 hashtags al final; sin enlaces.\nEl artículo: 700-1.000 palabras en Markdown (## para subtítulos, listas cuando ayuden), que desarrolle la misma idea con más profundidad y pasos prácticos, y que acabe con un párrafo que invite a la llamada de diagnóstico gratuita de " + GB_DUR + " minutos con 404 Growth.\n\nDevuelve SOLO un JSON: {\"titulo\":\"título del artículo, máximo 65 caracteres\",\"palabra_clave\":\"…\",\"descripcion\":\"meta descripción de 140-155 caracteres\",\"post\":\"texto del post de LinkedIn\",\"articulo\":\"Markdown del artículo, sin el título\"}", 5000);
+    "\n\nEl post: gancho en la primera línea de menos de 12 palabras, líneas cortas con aire, 900-1.300 caracteres, termina con una pregunta o una invitación suave a escribirme; como mucho 3 hashtags al final; sin enlaces (el enlace a mi web lo pongo yo encima del gancho).\nEl artículo: 700-1.000 palabras en Markdown (## para subtítulos, listas cuando ayuden), que desarrolle la misma idea con más profundidad y pasos prácticos, y que acabe con un párrafo que invite a la llamada de diagnóstico gratuita de " + GB_DUR + " minutos con 404 Growth.\n\nDevuelve SOLO un JSON: {\"titulo\":\"título del artículo, máximo 65 caracteres\",\"palabra_clave\":\"…\",\"descripcion\":\"meta descripción de 140-155 caracteres\",\"post\":\"texto del post de LinkedIn\",\"articulo\":\"Markdown del artículo, sin el título\"}", 5000);
   const title = str(out.titulo, 120) || pillar, now = Date.now(), slug = await blogSlug(env, title);
   if (pick) { try { await env.DB.prepare("UPDATE keywords SET status = 'en curso', notes = ?2, updated = ?3 WHERE id = ?1").bind(pick.id, ("artículo /blog/" + slug + (link ? " · enlaza a " + link : "")).slice(0, 600), now).run(); } catch (e) {} }   // v55: not used twice
   await env.DB.prepare("INSERT INTO lpost (slug, title, descr, kw, li, body, status, created, updated, auto) VALUES (?1, ?2, ?3, ?4, ?5, ?6, 'draft', ?7, ?7, ?8)")
-    .bind(slug, title, str(out.descripcion, 200), str(out.palabra_clave, 120) || kw, String(out.post || "").slice(0, 3000), String(out.articulo || "").slice(0, 40000), now, auto ? 1 : 0).run();
+    .bind(slug, title, str(out.descripcion, 200), str(out.palabra_clave, 120) || kw, liWeb(out.post).slice(0, 3000), String(out.articulo || "").slice(0, 40000), now, auto ? 1 : 0).run();
   return slug;
 }
+const LI_WEB = "Visita mi web: https://404growth.com";   // v65 (7 nov 2026): every LinkedIn post starts with a direct link to the web (only LinkedIn, not the blog)
+const liWeb = (t) => { t = String(t || "").trim(); return !t || /404growth\.com/i.test(t.split("\n")[0]) ? t : LI_WEB + "\n\n" + t; };
 const liLittle = (t) => String(t).replace(/[\\|{}@\[\]()<>*_~#]/g, "\\$&").replace(/\\#([\p{L}\p{N}]+)/gu, (m, w) => "{hashtag|\\#|" + w + "}");   // LinkedIn «little text»: reserved characters escaped, hashtags as hashtags
 async function liPost(env, text) {
   const tk = await socJ(env, "li_tok"); if (!tk || tk.exp < Date.now()) { const e = new Error("noli"); e.code = "noli"; throw e; }
@@ -4582,7 +4584,7 @@ async function socialApi(req, env, p) {
     const r = await DBq.prepare("SELECT * FROM lpost WHERE slug = ?1").bind(str(b.slug, 120)).first(); if (!r) return bad("missing", 404);
     if (!r.title || !r.body) return bad("empty");
     let li = r.li_url || null;
-    if (b.li && !r.li_url) { if (!r.li) return bad("nopost"); try { li = await liPost(env, r.li); } catch (e) { return json({ error: e.code || "lipost", detail: e.detail || String(e.message).slice(0, 200) }, e.code === "noli" ? 400 : 502); } }
+    if (b.li && !r.li_url) { if (!r.li) return bad("nopost"); try { li = await liPost(env, liWeb(r.li)); await DBq.prepare("UPDATE lpost SET li = ?1 WHERE slug = ?2").bind(liWeb(r.li).slice(0, 3000), r.slug).run(); } catch (e) { return json({ error: e.code || "lipost", detail: e.detail || String(e.message).slice(0, 200) }, e.code === "noli" ? 400 : 502); } }
     await DBq.prepare("UPDATE lpost SET status = 'published', published = COALESCE(published, ?1), updated = ?1, li_url = ?2 WHERE slug = ?3").bind(now, li, r.slug).run();
     await DBq.prepare("DELETE FROM lpost WHERE status = 'draft' AND auto = 1 AND slug != ?1 AND created >= ?2").bind(r.slug, now - 24 * 36e5).run();   // today's post is out: the day's automatic draft goes away
     return json({ ok: true, slug: r.slug, url: SITE + "/blog/" + r.slug, li }); }

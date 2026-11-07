@@ -98,6 +98,11 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Cada página del blog llama a `/l/bl` (`blHit`): `v` al abrirla, `r` al ver `#fin` (el final del artículo) y `c` al tocar un `a[data-cta]`. Sin cookies ni nada guardado en el navegador del lector: cuenta una vez al día por persona, artículo y cosa con una huella (sha de sal `bl_salt` + IP + navegador + día) en `bseen`, que solo guarda hoy y ayer (se limpia en `socialCron`). Totales por día, artículo y origen en `bstat` (`blSrc`: LinkedIn, Google, otros buscadores, IA, redes, 404growth.com, directo, otras). No cuenta robots, ni la sesión del admin, ni navegadores con `c404int` (`/book?interno=1`).
 - Los botones del blog (menú y recuadro final) van a `/book?utm_source=blog&utm_medium=menu|articulo&utm_campaign=<slug>` (`portada` desde /blog), ya no a Calendly; el recuadro dice `GB_DUR` minutos (30). Las reservas del blog son los leads con `utm_source=blog` (`blStats`). El prompt del artículo con IA también dice 30 minutos.
 
+## Post diario de LinkedIn: enlace a la web (v65, 7/11/2026)
+
+- Cada post de LinkedIn empieza con «Visita mi web: https://404growth.com» y una línea en blanco, encima del gancho (`LI_WEB` y `liWeb()` en el worker del admin). Chris lo pidió solo para LinkedIn: ni el artículo del blog ni Instagram lo llevan.
+- `liDraft` lo pone ya en el borrador (se ve y se puede tocar en el admin). Al publicar en LinkedIn (`li/publish`) se añade si falta, también en los posts escritos a mano, y se guarda así en `lpost.li`. Si la primera línea ya nombra 404growth.com, no se repite.
+
 ## SEO (v55, 4/11/2026): todo sobre «de tienda física a tienda online»
 
 - Páginas estáticas generadas con `python3 seo/build.py` desde `seo/pages/*.json` (una por página; esquema y reglas de contenido en `seo/LEEME.md`) y `seo/hubs.json`: `/tienda-online` + 14 sectores (`/tienda-online/moda`…) y `/guia` + 10 guías (`/guia/cuanto-cuesta-una-tienda-online`…). Escribe también `sitemap.xml` y `seo/paginas.json` (títulos para las métricas del admin). Estilo en `seo/style.css` (el del blog). Botones a `/book?utm_source=seo&utm_medium=sector|guia|hub&utm_campaign=<slug>`.
