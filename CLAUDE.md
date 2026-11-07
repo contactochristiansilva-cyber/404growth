@@ -207,6 +207,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Las 8 fotos de la primera versión (7/11/2026) salieron de Higgsfield con `z_image`, a 0,15 créditos cada una. Ahora quedan 0,05 créditos.
   - El plan gratis solo deja una generación a la vez; si no, da error 429.
   - Desde el Mac se bajan con `page.request.get` y se guardan haciendo una captura de la imagen a su tamaño real.
+- **Reels de la semana 9–15 nov:** en el doc «Contenido de la semana 9–15 nov» está cómo se graba cada reel: formato (A a cámara, B 50/50, C pantalla con la cara en un círculo, D plano de recurso), lo que hay que preparar, las tomas con segundos y frase, y el orden del domingo. Las piezas hechas por nosotros están en `~/Contenidos/Reels semana 9-15 nov/` (R6 web folleto de una joyería inventada, R7 bandeja de «¿precio?», R11 ticket; los HTML en `_src/`). Se graban como vídeo con el Playwright del Mac, fotograma a fotograma (JPEG q92), y se montan con ffmpeg a 1080×1920 y 25 fps.
 - **7/11/2026:** la cuenta de Google Workspace de hola@ está suspendida por un fallo en el pago, así que Flow no funciona con `/u/1`. Flow con la cuenta personal (`/u/0`) pide que Chris acepte las condiciones. Apimart tiene 0,05 $.
 
 ## Scrapeos de tiendas con +20k en Instagram (lotes del 3 y 4/11/2026)
