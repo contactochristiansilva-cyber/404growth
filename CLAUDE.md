@@ -232,6 +232,19 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - **Reels de la semana 9–15 nov:** en el doc «Contenido de la semana 9–15 nov» está cómo se graba cada reel: formato (A a cámara, B 50/50, C pantalla con la cara en un círculo, D plano de recurso), lo que hay que preparar, las tomas con segundos y frase, y el orden del domingo. Las piezas hechas por nosotros están en `~/Contenidos/Reels semana 9-15 nov/` (R6 web folleto de una joyería inventada, R7 bandeja de «¿precio?», R11 ticket; los HTML en `_src/`). Se graban como vídeo con el Playwright del Mac, fotograma a fotograma (JPEG q92), y se montan con ffmpeg a 1080×1920 y 25 fps.
 - **7/11/2026:** la cuenta de Google Workspace de hola@ está suspendida por un fallo en el pago, así que Flow no funciona con `/u/1`. Flow con la cuenta personal (`/u/0`) pide que Chris acepte las condiciones. Apimart tiene 0,05 $.
 
+## Banner de YouTube (7/11/2026)
+
+- Hay cinco opciones con la frase de siempre, «Todos podemos, pero / no todos estamos dispuestos.»: A Amanecer, B Foco, C Cumbre, D Rayo de luz y E Escalera.
+  - Están en `~/Contenidos/Banner YouTube/` como `opcion-a.png` … `opcion-e.png` (2560×1440), con `comparativa.jpg` al lado.
+  - La letra es SF Pro. El logo es la marca 404 del favicon, en gris claro (#D4D4D4) y sin fondo, abajo a la derecha de la zona segura.
+- Los fondos se hicieron con la IA de imágenes de Figma (`generate_image`, gpt-image-2.5-flare) en el archivo «Banner YouTube · fondos IA». Higgsfield se había quedado con 0,05 créditos.
+  - Desde el contenedor no se puede descargar de figma.com. Por eso se bajan con el Playwright del Mac (captura de la imagen) y se amplían de 1536×864 a 2560×1440 con ffmpeg lanczos.
+- Para cambiar una opción se toca `_src/banner.html` y se vuelve a capturar con el Playwright del Mac. Cada opción se elige con `#a`…`#e` en la dirección y tiene su escala, su posición y el estilo de la letra.
+- Zonas del banner:
+  - lo que se ve en el ordenador es la franja central de 2560×423 (y 508–931);
+  - lo que se ve en todos los dispositivos, 1546×423 (x 507–2053);
+  - el texto y el logo van siempre dentro de esa zona.
+
 ## Scrapeos de tiendas con +20k en Instagram (lotes del 3 y 4/11/2026)
 
 - Filtros: tienda física en España (calle en la bio, su web o Google), +20.000 seguidores comprobados en Instagram, sin tienda online o floja (ayer y hoy: menos de ~30 productos para su tamaño, web caída o en mantenimiento, web sin carrito), nicho que se pueda enviar o recoger, sin cadenas ni franquicias, y que no estén ya en el CRM. Contacto solo de fuentes públicas del negocio (bio, su web, Google).
