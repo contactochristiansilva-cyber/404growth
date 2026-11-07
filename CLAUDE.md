@@ -114,8 +114,15 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - API: `GET social/ig?a=<id>`, `ig/token` (con `role`), `ig/sync` e `ig/ai` (con `{a}`), `ig/role {a, role}` y `disconnect {k:'ig', a}`. Al desconectar una cuenta se quita de la lista, pero sus publicaciones se quedan guardadas.
 - El cron (`socialCron`) sincroniza, a partir de las 6, una cuenta por minuto y cada una una vez al día (`ig_sync_day:<id>`).
 - El análisis con IA de una cuenta de Christian usa su voz (`CHR_VOICE`); el resto, la de 404 (`SOC_VOICE`).
-  - Los ganchos del post de LinkedIn y los patrones del banco de ideas salen solo de las cuentas marcadas 404 Growth.
-  - En una cuenta de Christian no sale el banco de ideas de reels, porque es de 404.
+  - Los ganchos del post de LinkedIn salen solo de las cuentas marcadas 404 Growth.
+- **v66b (7/11/2026):** Chris quitó el «Banco de ideas · reels» de Redes. La página ya no lo pide ni lo enseña, pero la tabla `rideas` y las rutas `social/ideas*` siguen ahí. Las ideas solo se generaban con el botón, así que no hay nada programado que apagar.
+- El campo del formulario se llama «Número de la cuenta: 1784…». Es el número que sale bajo el nombre de la cuenta en Meta, en «2. Genera identificadores de acceso». Si alguien escribe el @usuario, el admin avisa y no envía nada: el 7/11/2026 Chris puso «@christiaansilva» y el admin no encontró la cuenta.
+- Conectadas el 7/11/2026:
+  - @1christiansilva (17841477418546809) → 404 Growth;
+  - @christiaansilva (17841402074027493, personal, 6.717 seguidores) → Christian;
+  - @404growth (17841441920710616) → 404 Growth. Aún falta pegar su token.
+
+  Las tres son «Evaluador de Instagram» en la app «404 Growth Admin», que no está publicada. Las invitaciones se aceptan en la web de Instagram: instagram.com/accounts/manage_access/ › «Invitaciones para evaluadores», con esa cuenta abierta. En la app del móvil no salen.
 - Prueba: `t_v66.mjs` en el scratchpad de la sesión del 7/11/2026 (23 comprobaciones con node:sqlite y la Graph API simulada).
 
 ## SEO (v55, 4/11/2026): todo sobre «de tienda física a tienda online»
