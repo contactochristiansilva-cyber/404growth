@@ -103,6 +103,21 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Cada post de LinkedIn empieza con «Visita mi web: https://404growth.com» y una línea en blanco, encima del gancho (`LI_WEB` y `liWeb()` en el worker del admin). Chris lo pidió solo para LinkedIn: ni el artículo del blog ni Instagram lo llevan.
 - `liDraft` lo pone ya en el borrador (se ve y se puede tocar en el admin). Al publicar en LinkedIn (`li/publish`) se añade si falta, también en los posts escritos a mano, y se guarda así en `lpost.li`. Si la primera línea ya nombra 404growth.com, no se repite.
 
+## Varias cuentas de Instagram en Redes (v66, 7/11/2026)
+
+- En el admin › Redes se conectan todas las cuentas que haga falta («+ Añadir cuenta»), cada una con su token. Arriba salen como pastillas para cambiar de una a otra, y cada cuenta tiene su selector «Marca»: Christian (B2C), 404 Growth (B2B) o sin asignar.
+- Las cuentas están en `meta.ig_accts` (lista con `id`, `t`, `fb`, `uid`, `user`, `exp` y `role`; helpers `igAccts`, `igSave`, `igPick` e `igIds`). Las cifras van por cuenta: `ig_acct:<id>`, `ig_fol:<id>`, `ig_sync:<id>` e `ig_ai:<id>`. Cada publicación de `igm` lleva su `acct`.
+  - La primera vez, la cuenta que había (`ig_tok`, @1christiansilva) pasa sola a la lista con sus publicaciones y su histórico de seguidores.
+- Dos tipos de token:
+  - `EAA…`, el del inicio de sesión unificado de Meta: va a graph.facebook.com y no caduca;
+  - `IG…`, el del inicio de sesión con Instagram: va a graph.instagram.com, dura 60 días y se renueva solo cada semana.
+- API: `GET social/ig?a=<id>`, `ig/token` (con `role`), `ig/sync` e `ig/ai` (con `{a}`), `ig/role {a, role}` y `disconnect {k:'ig', a}`. Al desconectar una cuenta se quita de la lista, pero sus publicaciones se quedan guardadas.
+- El cron (`socialCron`) sincroniza, a partir de las 6, una cuenta por minuto y cada una una vez al día (`ig_sync_day:<id>`).
+- El análisis con IA de una cuenta de Christian usa su voz (`CHR_VOICE`); el resto, la de 404 (`SOC_VOICE`).
+  - Los ganchos del post de LinkedIn y los patrones del banco de ideas salen solo de las cuentas marcadas 404 Growth.
+  - En una cuenta de Christian no sale el banco de ideas de reels, porque es de 404.
+- Prueba: `t_v66.mjs` en el scratchpad de la sesión del 7/11/2026 (23 comprobaciones con node:sqlite y la Graph API simulada).
+
 ## SEO (v55, 4/11/2026): todo sobre «de tienda física a tienda online»
 
 - Páginas estáticas generadas con `python3 seo/build.py` desde `seo/pages/*.json` (una por página; esquema y reglas de contenido en `seo/LEEME.md`) y `seo/hubs.json`: `/tienda-online` + 14 sectores (`/tienda-online/moda`…) y `/guia` + 10 guías (`/guia/cuanto-cuesta-una-tienda-online`…). Escribe también `sitemap.xml` y `seo/paginas.json` (títulos para las métricas del admin). Estilo en `seo/style.css` (el del blog). Botones a `/book?utm_source=seo&utm_medium=sector|guia|hub&utm_campaign=<slug>`.
