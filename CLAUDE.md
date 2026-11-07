@@ -190,12 +190,16 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 
 - Van a `~/Contenidos/Carruseles/<serie o semana>/<C# · título (día)>/` con las diapositivas en orden (`01.png`, `02.png`…, 1080×1350) y `texto del post.txt`. La primera semana es `Semana 9-15 nov` (C1–C7, tipográficos). El calendario, los guiones de reels y los textos están en el doc «Contenido de la semana 9–15 nov».
 - Se dibujan en HTML y se capturan con el Playwright del Mac, para que salga la letra de Apple (en el contenedor no está).
-- **Serie «Abierta 24 h» (con IA):** es la firma que hace reconocible a 404. En `Serie Abierta 24 h (IA)/` están C8 (POV 23:47), C9 (¿A o B?) y C10 (5 excusas).
-  - Las fotos son siempre de noche, en verde bosque y negro, con una sola luz lima (#B8E351).
-  - Cada diapositiva lleva arriba a la izquierda el sello lima «ABIERTA 24 H» y abajo una barra de avance lima.
-  - Cada carrusel termina pidiendo un comentario concreto.
-  - Plantillas en `tools/carruseles/abierta24h_gen.py`. Escribe `_src/C#.html` y las fotos van en `_src/img/<id>.jpg`.
-- Las 8 fotos del 7/11/2026 salieron de Higgsfield con `z_image`, a 0,15 créditos cada una. Ahora quedan 0,05 créditos.
+- **Serie «Abierta 24 h»:** es la firma que hace reconocible a 404. En `Serie Abierta 24 h (IA)/` están C8 (POV 23:47), C9 (¿A o B?) y C10 (5 excusas).
+  - **Estilo «etiqueta de envío»** (Chris lo eligió el 7/11/2026 entre 3 direcciones claras; muestras en `Carruseles/Direcciones de marca/`). La primera versión, con fotos de IA de noche, le pareció «tétrica»: está en `_to_delete/oscuro/`.
+  - Fondo crema #F6F1E7. En cada diapositiva va una cinta lima inclinada «ABIERTA 24 H ✦ 404 ✦», que es la firma.
+  - El mensaje va en una etiqueta blanca con borde negro: cabecera con la hora (23:47, 00:10, 09:30…), campos DE / PARA y código de barras.
+  - Para remarcar se usan sellos redondos verde bosque (POV, JUEGO, EXCUSA Nº 0X, 15 DÍAS) y el subrayado lima.
+  - Piezas propias de cada diapositiva: el móvil (pantalla de bloqueo o la tienda demo Solenne), los mensajes de chat, las cajas A y B, la tabla, los pedidos y las etiquetas de ciudades. Nada de fotos oscuras.
+  - Abajo va una barra de avance verde bosque. Cada carrusel termina con la etiqueta «REMITENTE» (foto de Christian y «Escríbeme TIENDA») y pidiendo un comentario concreto.
+  - Plantillas en `tools/carruseles/abierta24h_gen.py <carpeta>`, que escribe `C#.html`. Se copian a `_src/` y se capturan desde `file://` con el Playwright del Mac.
+  - Ojo: no uses `s` como clase de texto, porque `.s` es la diapositiva.
+- Las 8 fotos de la primera versión (7/11/2026) salieron de Higgsfield con `z_image`, a 0,15 créditos cada una. Ahora quedan 0,05 créditos.
   - El plan gratis solo deja una generación a la vez; si no, da error 429.
   - Desde el Mac se bajan con `page.request.get` y se guardan haciendo una captura de la imagen a su tamaño real.
 - **7/11/2026:** la cuenta de Google Workspace de hola@ está suspendida por un fallo en el pago, así que Flow no funciona con `/u/1`. Flow con la cuenta personal (`/u/0`) pide que Chris acepte las condiciones. Apimart tiene 0,05 $.
