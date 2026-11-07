@@ -186,6 +186,20 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Se genera con `tools/portada/v64/build.py <index-v61.html> <salida>` (estilos en `v64.css`; la v61 está al lado).
 - Copia de la v61 en `~/Downloads/404growth-subir/anterior/index-portada-v61.html`.
 
+## Carruseles de Instagram (7/11/2026)
+
+- Van a `~/Contenidos/Carruseles/<serie o semana>/<C# · título (día)>/` con las diapositivas en orden (`01.png`, `02.png`…, 1080×1350) y `texto del post.txt`. La primera semana es `Semana 9-15 nov` (C1–C7, tipográficos). El calendario, los guiones de reels y los textos están en el doc «Contenido de la semana 9–15 nov».
+- Se dibujan en HTML y se capturan con el Playwright del Mac, para que salga la letra de Apple (en el contenedor no está).
+- **Serie «Abierta 24 h» (con IA):** es la firma que hace reconocible a 404. En `Serie Abierta 24 h (IA)/` están C8 (POV 23:47), C9 (¿A o B?) y C10 (5 excusas).
+  - Las fotos son siempre de noche, en verde bosque y negro, con una sola luz lima (#B8E351).
+  - Cada diapositiva lleva arriba a la izquierda el sello lima «ABIERTA 24 H» y abajo una barra de avance lima.
+  - Cada carrusel termina pidiendo un comentario concreto.
+  - Plantillas en `tools/carruseles/abierta24h_gen.py`. Escribe `_src/C#.html` y las fotos van en `_src/img/<id>.jpg`.
+- Las 8 fotos del 7/11/2026 salieron de Higgsfield con `z_image`, a 0,15 créditos cada una. Ahora quedan 0,05 créditos.
+  - El plan gratis solo deja una generación a la vez; si no, da error 429.
+  - Desde el Mac se bajan con `page.request.get` y se guardan haciendo una captura de la imagen a su tamaño real.
+- **7/11/2026:** la cuenta de Google Workspace de hola@ está suspendida por un fallo en el pago, así que Flow no funciona con `/u/1`. Flow con la cuenta personal (`/u/0`) pide que Chris acepte las condiciones. Apimart tiene 0,05 $.
+
 ## Scrapeos de tiendas con +20k en Instagram (lotes del 3 y 4/11/2026)
 
 - Filtros: tienda física en España (calle en la bio, su web o Google), +20.000 seguidores comprobados en Instagram, sin tienda online o floja (ayer y hoy: menos de ~30 productos para su tamaño, web caída o en mantenimiento, web sin carrito), nicho que se pueda enviar o recoger, sin cadenas ni franquicias, y que no estén ya en el CRM. Contacto solo de fuentes públicas del negocio (bio, su web, Google).
