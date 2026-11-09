@@ -1,0 +1,55 @@
+{
+ "niche": "optica",
+ "name": "Óptica Miraflores",
+ "ig": "opticamiraflores.burgos",
+ "f": 1182,
+ "city": "Burgos",
+ "cityfull": "Burgos",
+ "address": "C/ San Juan 33",
+ "logo": {
+  "text": "Óptica Miraflores"
+ },
+ "cats": [
+  [
+   "De sol",
+   "p1"
+  ],
+  [
+   "Graduadas",
+   "p2"
+  ],
+  [
+   "Deporte",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa de sol azul"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa morada"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa de sol negra y oro"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa de sol cuadrada"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa negra gruesa"
+  },
+  {
+   "id": "p6",
+   "name": "Gafas deportivas"
+  }
+ ],
+ "theme": {
+  "acc": "#1C3F94"
+ }
+}

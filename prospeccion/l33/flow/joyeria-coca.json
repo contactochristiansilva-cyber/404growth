@@ -1,0 +1,50 @@
+{
+ "slug": "joyeria-coca",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "joyeria-coca-08.jpg",
+    "joyeria-coca-03.jpg",
+    "joyeria-coca-05.jpg",
+    "joyeria-coca-15.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia joyeria-coca-08.jpg, aplica la REGLA A): Luxury campaign still life of yellow gold Virgin medals with mother-of-pearl centres and filigree frames from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia joyeria-coca-08.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a yellow gold oval religious medal with a mother-of-pearl centre and an ornate filigree frame from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia joyeria-coca-03.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of stud earrings with an emerald, a sapphire and a ruby each surrounded by small white stones from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia joyeria-coca-05.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of beaded gemstone necklaces in ruby red, sapphire blue and emerald green with small gold pendants from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia joyeria-coca-15.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a yellow gold necklace of small round coin links with a matching bangle from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "joyeria-coca-09.jpg",
+    "joyeria-coca-04.jpg",
+    "joyeria-coca-14.jpg",
+    "joyeria-coca-18.jpg",
+    "joyeria-coca-16.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. The model must be a completely different woman from anyone in the reference: a new face and a different hairstyle; never reproduce the face or likeness of a real person from the reference. If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia joyeria-coca-09.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a silver vertical bar pendant on a fine silver chain from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia joyeria-coca-04.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a selection of delicate gold and silver rings with small stones from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia joyeria-coca-14.jpg, aplica la REGLA B): Lifestyle photo: a smiling woman's wrist wearing thin gold bracelets, cropped, no face, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia joyeria-coca-18.jpg, aplica la REGLA B): Lifestyle photo: a woman wearing a fine necklace of tiny multicolour beads with a green drop pendant, cropped at the lips, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia joyeria-coca-16.jpg, aplica la REGLA C): Wide interior photo: the inside of a classic jewellery shop with wooden showcases and white display trays of necklaces, rings and earrings, warm light, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of yellow gold Virgin medals with",
+  "p1": "Luxury jewellery e-commerce photo of a yellow gold oval reli",
+  "p2": "Luxury jewellery e-commerce photo of stud earrings with an e",
+  "p3": "Luxury jewellery e-commerce photo of beaded gemstone necklac",
+  "p4": "Luxury jewellery e-commerce photo of a yellow gold necklace ",
+  "p5": "Luxury jewellery e-commerce photo of a silver vertical bar p",
+  "p6": "Luxury jewellery e-commerce photo of a selection of delicate",
+  "l1": "Lifestyle photo: a smiling woman's wrist wearing thin gold b",
+  "l2": "Lifestyle photo: a woman wearing a fine necklace of tiny mul",
+  "b": "Wide interior photo: the inside of a classic jewellery shop "
+ }
+}

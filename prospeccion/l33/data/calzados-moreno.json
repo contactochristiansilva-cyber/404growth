@@ -1,0 +1,53 @@
+{
+ "niche": "calzado",
+ "name": "Calzados Moreno",
+ "ig": "calzados.moreno",
+ "f": 3140,
+ "city": "Mérida",
+ "cityfull": "Mérida (Badajoz)",
+ "address": "",
+ "logo": {
+  "text": "Calzados Moreno"
+ },
+ "cats": [
+  [
+   "Botines",
+   "p3"
+  ],
+  [
+   "Botas",
+   "p1"
+  ],
+  [
+   "Deportivas",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Bota arrugada"
+  },
+  {
+   "id": "p2",
+   "name": "Deportiva plataforma"
+  },
+  {
+   "id": "p3",
+   "name": "Botín de tacón alto"
+  },
+  {
+   "id": "p4",
+   "name": "Bota alta negra"
+  },
+  {
+   "id": "p5",
+   "name": "Botín de cuña"
+  },
+  {
+   "id": "p6",
+   "name": "Botín tacón medio"
+  }
+ ],
+ "theme": {}
+}

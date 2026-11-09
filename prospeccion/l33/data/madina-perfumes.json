@@ -1,0 +1,55 @@
+{
+ "niche": "cosmetica",
+ "name": "Madina Perfumes",
+ "ig": "madina.perfumes",
+ "f": 2017,
+ "city": "Pamplona",
+ "cityfull": "Pamplona (Navarra)",
+ "address": "C/ Doctor Simonena 8, bajo",
+ "logo": {
+  "text": "Madina Perfumes"
+ },
+ "cats": [
+  [
+   "De mujer",
+   "p1"
+  ],
+  [
+   "De hombre",
+   "p6"
+  ],
+  [
+   "Novedades",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Perfume vainilla"
+  },
+  {
+   "id": "p2",
+   "name": "Perfume blanco"
+  },
+  {
+   "id": "p3",
+   "name": "Perfume reloj"
+  },
+  {
+   "id": "p4",
+   "name": "Perfume ámbar"
+  },
+  {
+   "id": "p5",
+   "name": "Perfume cedro blanco"
+  },
+  {
+   "id": "p6",
+   "name": "Perfume negro"
+  }
+ ],
+ "theme": {
+  "acc": "#9A6B2F"
+ }
+}

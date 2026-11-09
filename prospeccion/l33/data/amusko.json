@@ -1,0 +1,55 @@
+{
+ "niche": "cosmetica",
+ "name": "Amusko",
+ "ig": "amusko_perfumeria",
+ "f": 2329,
+ "city": "A Coruña",
+ "cityfull": "A Coruña",
+ "address": "C/ Betanzos 4",
+ "logo": {
+  "text": "Amusko"
+ },
+ "cats": [
+  [
+   "Perfumes",
+   "p1"
+  ],
+  [
+   "Cosmética",
+   "l1"
+  ],
+  [
+   "Hogar",
+   "l2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Perfume amaderado"
+  },
+  {
+   "id": "p2",
+   "name": "Perfumes de autor"
+  },
+  {
+   "id": "p3",
+   "name": "Bolsa de regalo"
+  },
+  {
+   "id": "p4",
+   "name": "Formato viaje"
+  },
+  {
+   "id": "p5",
+   "name": "Prueba de olor"
+  },
+  {
+   "id": "p6",
+   "name": "Perfume floral"
+  }
+ ],
+ "theme": {
+  "acc": "#E2673A"
+ }
+}

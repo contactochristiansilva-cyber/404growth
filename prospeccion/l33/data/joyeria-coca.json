@@ -1,0 +1,53 @@
+{
+ "niche": "joya",
+ "name": "Joyería Coca",
+ "ig": "joyeriacoca",
+ "f": 6698,
+ "city": "Lora del Río",
+ "cityfull": "Lora del Río (Sevilla)",
+ "address": "C/ Guadalora 8",
+ "logo": {
+  "text": "Joyería Coca"
+ },
+ "cats": [
+  [
+   "Medallas",
+   "p1"
+  ],
+  [
+   "Pendientes",
+   "p2"
+  ],
+  [
+   "Collares",
+   "l2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Medalla de la Virgen"
+  },
+  {
+   "id": "p2",
+   "name": "Pendientes de piedras"
+  },
+  {
+   "id": "p3",
+   "name": "Collar de piedras"
+  },
+  {
+   "id": "p4",
+   "name": "Collar de monedas"
+  },
+  {
+   "id": "p5",
+   "name": "Colgante de barra"
+  },
+  {
+   "id": "p6",
+   "name": "Anillos finos"
+  }
+ ],
+ "theme": {}
+}

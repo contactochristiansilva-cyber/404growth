@@ -1,0 +1,55 @@
+{
+ "niche": "calzado",
+ "name": "Soul & Feet",
+ "ig": "soulandfeet",
+ "f": 1887,
+ "city": "Benicàssim",
+ "cityfull": "Benicàssim (Castellón)",
+ "address": "Avda. Castellón 12",
+ "logo": {
+  "text": "Soul & Feet"
+ },
+ "cats": [
+  [
+   "Barefoot",
+   "p1"
+  ],
+  [
+   "Botas",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Barefoot de ante"
+  },
+  {
+   "id": "p2",
+   "name": "Barefoot azul marino"
+  },
+  {
+   "id": "p3",
+   "name": "Bota alta barefoot"
+  },
+  {
+   "id": "p4",
+   "name": "Bolso tulipán"
+  },
+  {
+   "id": "p5",
+   "name": "Zapatilla retro barefoot"
+  },
+  {
+   "id": "p6",
+   "name": "Zuecos con charms"
+  }
+ ],
+ "theme": {},
+ "h1": "Pisa libre.<br>Pisa bonito.",
+ "eyebrow": "Barefoot y calzado respetuoso"
+}

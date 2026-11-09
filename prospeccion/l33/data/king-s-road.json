@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "King's Road",
+ "ig": "kingsroadgijonstore",
+ "f": 14235,
+ "city": "Gijón",
+ "cityfull": "Gijón (Asturias)",
+ "address": "C/ Instituto 35",
+ "logo": {
+  "text": "King's Road"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p2"
+  ],
+  [
+   "Chaquetas",
+   "l1"
+  ],
+  [
+   "Vestidos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Cazadora acolchada"
+  },
+  {
+   "id": "p2",
+   "name": "Abrigo azul cielo"
+  },
+  {
+   "id": "p3",
+   "name": "Traje oversize"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido lencero"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta de borrego"
+  },
+  {
+   "id": "p6",
+   "name": "Gabardina de piel"
+  }
+ ],
+ "theme": {}
+}

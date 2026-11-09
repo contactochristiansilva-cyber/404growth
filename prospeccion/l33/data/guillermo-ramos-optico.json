@@ -1,0 +1,57 @@
+{
+ "niche": "optica",
+ "name": "Guillermo Ramos Óptico",
+ "ig": "guillermoramosoptico",
+ "f": 1072,
+ "city": "Málaga",
+ "cityfull": "Málaga",
+ "address": "C/ Escultor Marín Higuero 11",
+ "logo": {
+  "text": "Guillermo Ramos Óptico"
+ },
+ "cats": [
+  [
+   "Graduadas",
+   "p2"
+  ],
+  [
+   "De sol",
+   "p1"
+  ],
+  [
+   "Revisión visual",
+   "l1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa de sol carey"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa negra"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa azul"
+  },
+  {
+   "id": "p4",
+   "name": "Gafas de sol"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa deportiva"
+  },
+  {
+   "id": "p6",
+   "name": "Gafa metálica"
+  }
+ ],
+ "theme": {
+  "acc": "#1F6FB2"
+ },
+ "domain": "guillermoramosoptico.com",
+ "web_note": "guillermoramosoptico.com enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Málaga solo puede escribiros."
+}

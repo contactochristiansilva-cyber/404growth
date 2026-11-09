@@ -1,0 +1,50 @@
+{
+ "slug": "calzados-carrillo",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "calzados-carrillo-12.jpg",
+    "calzados-carrillo-13.jpg",
+    "calzados-carrillo-09.jpg",
+    "calzados-carrillo-10.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. The model must be a completely different woman from anyone in the reference: a new face and a different hairstyle; never reproduce the face or likeness of a real person from the reference. If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia calzados-carrillo-12.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing burgundy leather ankle boots with a block heel, worn with jeans from the reference, walking at a sunny pedestrian street with orange trees in Atarfe, Granada, Spain, with Sierra Nevada far away, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia calzados-carrillo-13.jpg, aplica la REGLA B): Footwear e-commerce photo of black leather pointed ankle boots with a slim kitten heel, no logos from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 3 «p2» (formato 3:4, referencia calzados-carrillo-12.jpg, aplica la REGLA B): Footwear e-commerce photo of burgundy leather ankle boots with a block heel, no logos from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 4 «p3» (formato 3:4, referencia calzados-carrillo-09.jpg, aplica la REGLA B): Footwear e-commerce photo of beige suede short sheepskin-lined boots, no logos from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 5 «p4» (formato 3:4, referencia calzados-carrillo-10.jpg, aplica la REGLA B): Footwear e-commerce photo of dark brown leather lace-up men's derby shoes, no logos from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "calzados-carrillo-14.jpg",
+    "calzados-carrillo-06.jpg",
+    "calzados-carrillo-08.jpg",
+    "calzados-carrillo-07.jpg",
+    "calzados-carrillo-04.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia calzados-carrillo-14.jpg, aplica la REGLA A): Footwear e-commerce photo of retro sneakers in white, beige and black suede, no logos from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 2 «p6» (formato 3:4, referencia calzados-carrillo-06.jpg, aplica la REGLA A): Footwear e-commerce photo of a bronze leather wedge ankle boot and a brown metallic backpack, no logos from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 3 «l1» (formato 3:4, referencia calzados-carrillo-08.jpg, aplica la REGLA A): Lifestyle photo: dark brown and black suede ankle boots with a block heel on a jute rug, no logos, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia calzados-carrillo-07.jpg, aplica la REGLA A): Lifestyle photo: burgundy and grey suede sneakers on a white shelf, no logos, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia calzados-carrillo-04.jpg, aplica la REGLA B): Wide interior photo: the inside of a family shoe shop with white walls, shelves of shoes and handbags and a woven jute rug, no people, no logos, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing burgundy lea",
+  "p1": "Footwear e-commerce photo of black leather pointed ankle boo",
+  "p2": "Footwear e-commerce photo of burgundy leather ankle boots wi",
+  "p3": "Footwear e-commerce photo of beige suede short sheepskin-lin",
+  "p4": "Footwear e-commerce photo of dark brown leather lace-up men'",
+  "p5": "Footwear e-commerce photo of retro sneakers in white, beige ",
+  "p6": "Footwear e-commerce photo of a bronze leather wedge ankle bo",
+  "l1": "Lifestyle photo: dark brown and black suede ankle boots with",
+  "l2": "Lifestyle photo: burgundy and grey suede sneakers on a white",
+  "b": "Wide interior photo: the inside of a family shoe shop with w"
+ }
+}

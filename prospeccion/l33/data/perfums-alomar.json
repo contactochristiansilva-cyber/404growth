@@ -1,0 +1,55 @@
+{
+ "niche": "cosmetica",
+ "name": "Perfums Alomar",
+ "ig": "perfumsalomar",
+ "f": 1563,
+ "city": "Sóller",
+ "cityfull": "Sóller (Baleares)",
+ "address": "C/ de sa Lluna 22",
+ "logo": {
+  "text": "Perfums Alomar"
+ },
+ "cats": [
+  [
+   "Perfumes",
+   "p1"
+  ],
+  [
+   "Maquillaje",
+   "p2"
+  ],
+  [
+   "Tratamiento",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Perfume intenso"
+  },
+  {
+   "id": "p2",
+   "name": "Tinte de labios"
+  },
+  {
+   "id": "p3",
+   "name": "Set de regalo"
+  },
+  {
+   "id": "p4",
+   "name": "Mascarillas"
+  },
+  {
+   "id": "p5",
+   "name": "Aceite corporal"
+  },
+  {
+   "id": "p6",
+   "name": "Perfume blanco"
+  }
+ ],
+ "theme": {
+  "acc": "#2F4B3A"
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "niche": "cosmetica",
+ "name": "Rosa Rosae",
+ "ig": "rosarosae_olmedo",
+ "f": 2056,
+ "city": "Olmedo",
+ "cityfull": "Olmedo (Valladolid)",
+ "address": "C/ Diez de Octubre 2",
+ "logo": {
+  "text": "Rosa Rosae"
+ },
+ "cats": [
+  [
+   "Perfumes",
+   "p2"
+  ],
+  [
+   "Bisutería",
+   "p1"
+  ],
+  [
+   "Cuidado",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Collar de coral"
+  },
+  {
+   "id": "p2",
+   "name": "Colonias de colores"
+  },
+  {
+   "id": "p3",
+   "name": "Collar de corazón"
+  },
+  {
+   "id": "p4",
+   "name": "Protección solar"
+  },
+  {
+   "id": "p5",
+   "name": "Manteca corporal"
+  },
+  {
+   "id": "p6",
+   "name": "Colonias de verano"
+  }
+ ],
+ "theme": {
+  "acc": "#B5677A"
+ }
+}

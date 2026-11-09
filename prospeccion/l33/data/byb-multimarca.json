@@ -1,0 +1,53 @@
+{
+ "niche": "sneakers",
+ "name": "BYB Multimarca",
+ "ig": "bybmultimarca",
+ "f": 68510,
+ "city": "Granada",
+ "cityfull": "Granada",
+ "address": "C/ San Antón 35",
+ "logo": {
+  "text": "BYB Multimarca"
+ },
+ "cats": [
+  [
+   "Chándales",
+   "p2"
+  ],
+  [
+   "Sudaderas",
+   "p1"
+  ],
+  [
+   "Zapatillas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Sudadera burdeos"
+  },
+  {
+   "id": "p2",
+   "name": "Chándal verde"
+  },
+  {
+   "id": "p3",
+   "name": "Chándal gris salvia"
+  },
+  {
+   "id": "p4",
+   "name": "Zapatilla blanca"
+  },
+  {
+   "id": "p5",
+   "name": "Plumífero estampado"
+  },
+  {
+   "id": "p6",
+   "name": "Zapatilla negra"
+  }
+ ],
+ "theme": {}
+}

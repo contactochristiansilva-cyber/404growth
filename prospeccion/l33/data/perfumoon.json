@@ -1,0 +1,58 @@
+{
+ "niche": "cosmetica",
+ "name": "Perfumoon",
+ "ig": "perfumoon.es",
+ "f": 2780,
+ "city": "Alicante",
+ "cityfull": "Alicante",
+ "address": "Avda. Alfonso X el Sabio 4",
+ "logo": {
+  "text": "Perfumoon"
+ },
+ "cats": [
+  [
+   "De mujer",
+   "p1"
+  ],
+  [
+   "De hombre",
+   "p5"
+  ],
+  [
+   "Árabes",
+   "l1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Perfume lila y oro"
+  },
+  {
+   "id": "p2",
+   "name": "Perfume columna verde"
+  },
+  {
+   "id": "p3",
+   "name": "Perfume gourmand"
+  },
+  {
+   "id": "p4",
+   "name": "Perfume serpiente"
+  },
+  {
+   "id": "p5",
+   "name": "Perfume negro"
+  },
+  {
+   "id": "p6",
+   "name": "Perfume cristal turquesa"
+  }
+ ],
+ "theme": {
+  "acc": "#7A4FA0",
+  "bg": "#F5F1F7"
+ },
+ "domain": "perfumoon.es",
+ "web_note": "perfumoon.es está cerrada con contraseña: hoy no vende. Quien os encuentra fuera de Alicante solo puede escribiros."
+}

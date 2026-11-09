@@ -1,0 +1,49 @@
+{
+ "slug": "intenso-fragancias",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "intenso-fragancias-04.jpg",
+    "intenso-fragancias-05.jpg",
+    "intenso-fragancias-06.jpg",
+    "intenso-fragancias-11.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia intenso-fragancias-04.jpg, aplica la REGLA A): Luxury beauty campaign still life of a tall rectangular glass perfume bottle with amber juice, a black cap and a black label with a gold S-shaped emblem, on warm amber stone with autumn light from the reference. The product stands in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm cinematic light, rich textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia intenso-fragancias-04.jpg, aplica la REGLA A): Beauty e-commerce product photo of a tall rectangular glass perfume bottle with amber juice, a black cap and a black label with a gold S-shaped emblem from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «p2» (formato 3:4, referencia intenso-fragancias-05.jpg, aplica la REGLA A): Beauty e-commerce product photo of a tall rectangular glass perfume bottle with golden juice, black cap and a cream label with a black S-shaped emblem, with saffron and passion fruit around from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 4 «p3» (formato 3:4, referencia intenso-fragancias-06.jpg, aplica la REGLA A): Beauty e-commerce product photo of a glass reed diffuser bottle with a cream label and wooden sticks, next to vanilla flowers from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 5 «p4» (formato 3:4, referencia intenso-fragancias-11.jpg, aplica la REGLA A): Beauty e-commerce product photo of clear plastic home fragrance spray bottles with white labels and a black S-shaped emblem from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "intenso-fragancias-07.jpg",
+    "intenso-fragancias-09.jpg",
+    "intenso-fragancias-03.jpg",
+    "intenso-fragancias-12.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia intenso-fragancias-07.jpg, aplica la REGLA A): Beauty e-commerce product photo of a rectangular perfume bottle with golden juice and a black label with an S emblem and the number 7008, with lemon slices from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 2 «p6» (formato 3:4, referencia intenso-fragancias-09.jpg, aplica la REGLA A): Beauty e-commerce product photo of two rectangular perfume bottles with a black label and a gold S emblem on a wooden log in an autumn forest from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «l1» (formato 3:4, referencia intenso-fragancias-03.jpg, aplica la REGLA A): Lifestyle photo: a close up of large glass perfume dispenser jars with metal taps and white labels, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia intenso-fragancias-12.jpg, aplica la REGLA A): Lifestyle photo: a small amber reed diffuser bottle with an S emblem, beside a halved orange on driftwood, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia intenso-fragancias-03.jpg, aplica la REGLA B): Wide interior photo: a perfume bar with rows of large glass dispenser jars with metal taps and reed diffusers on wooden shelves, warm light, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury beauty campaign still life of a tall rectangular glas",
+  "p1": "t photo of a tall rectangular glass perfume bottle with ambe",
+  "p2": "t photo of a tall rectangular glass perfume bottle with gold",
+  "p3": "Beauty e-commerce product photo of a glass reed diffuser bot",
+  "p4": "Beauty e-commerce product photo of clear plastic home fragra",
+  "p5": "Beauty e-commerce product photo of a rectangular perfume bot",
+  "p6": "Beauty e-commerce product photo of two rectangular perfume b",
+  "l1": "Lifestyle photo: a close up of large glass perfume dispenser",
+  "l2": "Lifestyle photo: a small amber reed diffuser bottle with an ",
+  "b": "Wide interior photo: a perfume bar with rows of large glass "
+ }
+}

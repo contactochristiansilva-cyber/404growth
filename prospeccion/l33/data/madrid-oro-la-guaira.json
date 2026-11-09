@@ -1,0 +1,55 @@
+{
+ "niche": "joya",
+ "name": "Madrid Oro La Guaira",
+ "ig": "madrid_orolaguaira",
+ "f": 64602,
+ "city": "Madrid",
+ "cityfull": "Madrid",
+ "address": "C/ Marcelo Usera 141",
+ "logo": {
+  "text": "Madrid Oro La Guaira"
+ },
+ "cats": [
+  [
+   "Anillos",
+   "p1"
+  ],
+  [
+   "Cadenas",
+   "p4"
+  ],
+  [
+   "Colgantes",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Anillo corona"
+  },
+  {
+   "id": "p2",
+   "name": "Anillo con nombre"
+  },
+  {
+   "id": "p3",
+   "name": "Colgante ojo turco"
+  },
+  {
+   "id": "p4",
+   "name": "Cadena barbada"
+  },
+  {
+   "id": "p5",
+   "name": "Sello de caballero"
+  },
+  {
+   "id": "p6",
+   "name": "Cordón de oro"
+  }
+ ],
+ "theme": {
+  "acc": "#B8892F"
+ }
+}

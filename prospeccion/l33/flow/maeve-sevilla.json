@@ -1,0 +1,50 @@
+{
+ "slug": "maeve-sevilla",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "maeve-sevilla-02.jpg",
+    "maeve-sevilla-09.jpg",
+    "maeve-sevilla-12.jpg",
+    "maeve-sevilla-10.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia maeve-sevilla-02.jpg, aplica la REGLA A): Luxury campaign still life of colourful gold drop earrings with turquoise, coral and amethyst stones from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia maeve-sevilla-02.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of gold statement drop earrings with an oval turquoise stone and a coral teardrop from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia maeve-sevilla-09.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of long white bone bead necklaces and a white carved flamenco hair comb from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia maeve-sevilla-12.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a clutch bag covered in colourful mirrored mosaic glass stones from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia maeve-sevilla-10.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of folded embroidered silk Manila shawls in coral, fuchsia, ivory and black from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "maeve-sevilla-04.jpg",
+    "maeve-sevilla-11.jpg",
+    "maeve-sevilla-01.jpg",
+    "maeve-sevilla-06.jpg",
+    "maeve-sevilla-07.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. The model must be a completely different woman from anyone in the reference: a new face and a different hairstyle; never reproduce the face or likeness of a real person from the reference. If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia maeve-sevilla-04.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of large ivory resin drop earrings from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia maeve-sevilla-11.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a tiny red coral cross pendant on a fine gold chain from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia maeve-sevilla-01.jpg, aplica la REGLA B): Lifestyle photo: a woman in a brown turtleneck wearing a red coral cross on a red cord, cropped at the lips, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia maeve-sevilla-06.jpg, aplica la REGLA A): Lifestyle photo: two soft leather tote bags in black and navy hanging from a shoulder, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia maeve-sevilla-07.jpg, aplica la REGLA C): Wide interior photo: a jewellery shop window with necklace busts, statement necklaces and rows of colourful leather cuffs on a blue table, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of colourful gold drop earrings w",
+  "p1": "Luxury jewellery e-commerce photo of gold statement drop ear",
+  "p2": "Luxury jewellery e-commerce photo of long white bone bead ne",
+  "p3": "Luxury jewellery e-commerce photo of a clutch bag covered in",
+  "p4": "Luxury jewellery e-commerce photo of folded embroidered silk",
+  "p5": "Luxury jewellery e-commerce photo of large ivory resin drop ",
+  "p6": "Luxury jewellery e-commerce photo of a tiny red coral cross ",
+  "l1": "Lifestyle photo: a woman in a brown turtleneck wearing a red",
+  "l2": "Lifestyle photo: two soft leather tote bags in black and nav",
+  "b": "Wide interior photo: a jewellery shop window with necklace b"
+ }
+}

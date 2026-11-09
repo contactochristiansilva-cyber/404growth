@@ -1,0 +1,57 @@
+{
+ "niche": "optica",
+ "name": "Centro Óptico Plaza",
+ "ig": "centro_optico_plaza",
+ "f": 6330,
+ "city": "Madrid",
+ "cityfull": "Madrid",
+ "address": "C/ Infanta María Teresa 22",
+ "logo": {
+  "text": "Centro Óptico Plaza"
+ },
+ "cats": [
+  [
+   "Graduadas",
+   "p1"
+  ],
+  [
+   "De sol",
+   "p4"
+  ],
+  [
+   "Revisión visual",
+   "l1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa multicolor"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa roja"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa rosa"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa de sol carey"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa negra clásica"
+  },
+  {
+   "id": "p6",
+   "name": "Gafa de sol menta"
+  }
+ ],
+ "theme": {
+  "acc": "#D25A86"
+ },
+ "domain": "centroopticoplaza.com",
+ "web_note": "centroopticoplaza.com enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Madrid solo puede escribiros."
+}

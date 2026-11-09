@@ -1,0 +1,53 @@
+{
+ "niche": "sneakers",
+ "name": "Dewe Almería",
+ "ig": "dw_almeria",
+ "f": 4923,
+ "city": "Almería",
+ "cityfull": "Almería",
+ "address": "Paseo de Almería 45",
+ "logo": {
+  "text": "Dewe Almería"
+ },
+ "cats": [
+  [
+   "Zapatillas",
+   "p1"
+  ],
+  [
+   "Ropa",
+   "p4"
+  ],
+  [
+   "Novedades",
+   "l1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Zapatilla terrace"
+  },
+  {
+   "id": "p2",
+   "name": "Runner gris"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de cuello alto"
+  },
+  {
+   "id": "p4",
+   "name": "Chaqueta workwear"
+  },
+  {
+   "id": "p5",
+   "name": "Cárdigan verde"
+  },
+  {
+   "id": "p6",
+   "name": "Bota de montaña"
+  }
+ ],
+ "theme": {}
+}

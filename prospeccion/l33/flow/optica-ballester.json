@@ -1,0 +1,49 @@
+{
+ "slug": "optica-ballester",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "optica-ballester-02.jpg",
+    "optica-ballester-05.jpg",
+    "optica-ballester-06.jpg",
+    "optica-ballester-07.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia optica-ballester-02.jpg, aplica la REGLA A): Luxury campaign still life of bright green cat-eye acetate eyeglasses with a small red dot on the temple on white marble from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia optica-ballester-02.jpg, aplica la REGLA A): Eyewear e-commerce photo of bright green cat-eye acetate eyeglasses with a red dot on the hinge, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 3 «p2» (formato 3:4, referencia optica-ballester-05.jpg, aplica la REGLA A): Eyewear e-commerce photo of bold hot-pink acetate eyeglasses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 4 «p3» (formato 3:4, referencia optica-ballester-06.jpg, aplica la REGLA A): Eyewear e-commerce photo of burgundy and green octagonal thin eyeglasses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 5 «p4» (formato 3:4, referencia optica-ballester-07.jpg, aplica la REGLA A): Eyewear e-commerce photo of cat-eye eyeglasses in navy, red and tortoiseshell acetate, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "optica-ballester-10.jpg",
+    "optica-ballester-04.jpg",
+    "optica-ballester-11.jpg",
+    "optica-ballester-12.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. The model must be a completely different woman from anyone in the reference: a new face and a different hairstyle; never reproduce the face or likeness of a real person from the reference. If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia optica-ballester-10.jpg, aplica la REGLA A): Eyewear e-commerce photo of round black and white speckled acetate eyeglasses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 2 «p6» (formato 3:4, referencia optica-ballester-04.jpg, aplica la REGLA A): Eyewear e-commerce photo of round two-tone peach and grey sunglasses among pink carnations, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 3 «l1» (formato 3:4, referencia optica-ballester-11.jpg, aplica la REGLA B): Lifestyle photo: a laughing young woman with curly blonde hair wearing square burgundy eyeglasses, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia optica-ballester-12.jpg, aplica la REGLA B): Lifestyle photo: a young woman with a fringe wearing thin square metal eyeglasses, close up, soft light, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA C): Wide interior photo: the inside of an elegant optician shop with white walls, wooden shelves of colourful eyeglasses and a bright counter, no people, no logos, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of bright green cat-eye acetate e",
+  "p1": "Eyewear e-commerce photo of bright green cat-eye acetate eye",
+  "p2": "Eyewear e-commerce photo of bold hot-pink acetate eyeglasses",
+  "p3": "Eyewear e-commerce photo of burgundy and green octagonal thi",
+  "p4": "Eyewear e-commerce photo of cat-eye eyeglasses in navy, red ",
+  "p5": "Eyewear e-commerce photo of round black and white speckled a",
+  "p6": "Eyewear e-commerce photo of round two-tone peach and grey su",
+  "l1": "Lifestyle photo: a laughing young woman with curly blonde ha",
+  "l2": "Lifestyle photo: a young woman with a fringe wearing thin sq",
+  "b": "Wide interior photo: the inside of an elegant optician shop "
+ }
+}

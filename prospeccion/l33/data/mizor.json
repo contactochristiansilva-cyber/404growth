@@ -1,0 +1,55 @@
+{
+ "niche": "calzado",
+ "name": "Mizor",
+ "ig": "mizor_zapateria",
+ "f": 1677,
+ "city": "Onda",
+ "cityfull": "Onda (Castellón)",
+ "address": "C/ Ros d'Orsins 14",
+ "logo": {
+  "text": "Mizor"
+ },
+ "cats": [
+  [
+   "Zapatos",
+   "p1"
+  ],
+  [
+   "Bolsos",
+   "p2"
+  ],
+  [
+   "Hombre",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Salón Mary Jane"
+  },
+  {
+   "id": "p2",
+   "name": "Bolso vaca"
+  },
+  {
+   "id": "p3",
+   "name": "Mocasín de ante"
+  },
+  {
+   "id": "p4",
+   "name": "Zapatilla con flecos"
+  },
+  {
+   "id": "p5",
+   "name": "Zapatilla retro"
+  },
+  {
+   "id": "p6",
+   "name": "Deportiva de piel de hombre"
+  }
+ ],
+ "theme": {},
+ "h1": "Zapatos y bolsos<br>que se notan.",
+ "eyebrow": "Zapatos y bolsos"
+}

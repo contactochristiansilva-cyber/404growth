@@ -1,0 +1,55 @@
+{
+ "niche": "optica",
+ "name": "Deseover",
+ "ig": "opticadeseover",
+ "f": 2900,
+ "city": "Elche",
+ "cityfull": "Elche (Alicante)",
+ "address": "",
+ "logo": {
+  "text": "Deseover"
+ },
+ "cats": [
+  [
+   "De sol",
+   "p1"
+  ],
+  [
+   "Graduadas",
+   "p2"
+  ],
+  [
+   "Revisión visual",
+   "l2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa de sol miel"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa negra cuadrada"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa de sol metálica"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa de sol oversize"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa de sol con estuche"
+  },
+  {
+   "id": "p6",
+   "name": "Gafa de sol rosa"
+  }
+ ],
+ "theme": {
+  "acc": "#D03A2F"
+ }
+}

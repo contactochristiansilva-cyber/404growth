@@ -1,0 +1,55 @@
+{
+ "niche": "joya",
+ "name": "Maeve Sevilla",
+ "ig": "maeve_sevilla",
+ "f": 5056,
+ "city": "Sevilla",
+ "cityfull": "Sevilla",
+ "address": "C/ San Pablo 14",
+ "logo": {
+  "text": "Maeve Sevilla"
+ },
+ "cats": [
+  [
+   "Pendientes",
+   "p1"
+  ],
+  [
+   "Mantones",
+   "p4"
+  ],
+  [
+   "Bolsos",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Pendientes de piedra"
+  },
+  {
+   "id": "p2",
+   "name": "Collar de hueso y peina"
+  },
+  {
+   "id": "p3",
+   "name": "Bolso de mosaico"
+  },
+  {
+   "id": "p4",
+   "name": "Mantón bordado"
+  },
+  {
+   "id": "p5",
+   "name": "Pendientes de lágrima"
+  },
+  {
+   "id": "p6",
+   "name": "Cruz de coral"
+  }
+ ],
+ "theme": {
+  "acc": "#9C2F3A"
+ }
+}

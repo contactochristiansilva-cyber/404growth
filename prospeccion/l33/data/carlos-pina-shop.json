@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Carlos Pina Shop",
+ "ig": "carlospinashop",
+ "f": 14911,
+ "city": "Almansa",
+ "cityfull": "Almansa (Albacete)",
+ "address": "C/ Ferrero 9",
+ "logo": {
+  "text": "Carlos Pina Shop"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p2"
+  ],
+  [
+   "Camisas",
+   "p4"
+  ],
+  [
+   "Punto",
+   "l2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Americana beige"
+  },
+  {
+   "id": "p2",
+   "name": "Plumífero largo"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de cremallera"
+  },
+  {
+   "id": "p4",
+   "name": "Camisa blanca"
+  },
+  {
+   "id": "p5",
+   "name": "Cazadora acolchada"
+  },
+  {
+   "id": "p6",
+   "name": "Polo azul marino"
+  }
+ ],
+ "theme": {}
+}

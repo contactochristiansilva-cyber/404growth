@@ -1,0 +1,50 @@
+{
+ "slug": "perfumoon",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "perfumoon-04.jpg",
+    "perfumoon-08.jpg",
+    "perfumoon-09.jpg",
+    "perfumoon-10.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia perfumoon-04.jpg, aplica la REGLA A): Luxury beauty campaign still life of an ornate lilac and gold square perfume bottle on a white marble pedestal with purple light, no brand names from the reference. The product stands in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm cinematic light, rich textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia perfumoon-04.jpg, aplica la REGLA A): Beauty e-commerce product photo of an ornate lilac square perfume bottle with gold geometric decoration and a white cap, no brand name from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «p2» (formato 3:4, referencia perfumoon-08.jpg, aplica la REGLA A): Beauty e-commerce product photo of a tall sage-green column-shaped perfume bottle with an antique bronze cap, no brand name from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 4 «p3» (formato 3:4, referencia perfumoon-09.jpg, aplica la REGLA A): Beauty e-commerce product photo of a playful pink perfume bottle shaped like a cupcake with a strawberry on top, no brand name from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 5 «p4» (formato 3:4, referencia perfumoon-10.jpg, aplica la REGLA A): Beauty e-commerce product photo of a perfume bottle with a gold coiled snake wrapped around a gold cap, no brand name from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "perfumoon-11.jpg",
+    "perfumoon-12.jpg",
+    "perfumoon-06.jpg",
+    "perfumoon-07.jpg",
+    "perfumoon-01.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia perfumoon-11.jpg, aplica la REGLA A): Beauty e-commerce product photo of a tall black rectangular perfume bottle with a black cap, no brand name from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 2 «p6» (formato 3:4, referencia perfumoon-12.jpg, aplica la REGLA A): Beauty e-commerce product photo of a heavy faceted crystal perfume bottle with turquoise juice, no brand name from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «l1» (formato 3:4, referencia perfumoon-06.jpg, aplica la REGLA A): Lifestyle photo: a row of five colourful oriental perfume bottles on marble, no brand names, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia perfumoon-07.jpg, aplica la REGLA A): Lifestyle photo: two perfume bottles side by side, one pale green and one black, on a white surface, no brand names, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia perfumoon-01.jpg, aplica la REGLA B): Wide interior photo: the inside of a bright white perfume shop with backlit niches holding perfume bottles, soft lighting, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury beauty campaign still life of an ornate lilac and gol",
+  "p1": "Beauty e-commerce product photo of an ornate lilac square pe",
+  "p2": "Beauty e-commerce product photo of a tall sage-green column-",
+  "p3": "Beauty e-commerce product photo of a playful pink perfume bo",
+  "p4": "Beauty e-commerce product photo of a perfume bottle with a g",
+  "p5": "Beauty e-commerce product photo of a tall black rectangular ",
+  "p6": "Beauty e-commerce product photo of a heavy faceted crystal p",
+  "l1": "Lifestyle photo: a row of five colourful oriental perfume bo",
+  "l2": "Lifestyle photo: two perfume bottles side by side, one pale ",
+  "b": "Wide interior photo: the inside of a bright white perfume sh"
+ }
+}

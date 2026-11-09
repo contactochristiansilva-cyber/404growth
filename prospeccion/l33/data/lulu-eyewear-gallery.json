@@ -1,0 +1,56 @@
+{
+ "niche": "optica",
+ "name": "Lulu Eyewear Gallery",
+ "ig": "lulu.eyewear",
+ "f": 5446,
+ "city": "Marbella",
+ "cityfull": "Marbella (Málaga)",
+ "address": "Bulevar Príncipe Alfonso de Hohenlohe 7 (Forum)",
+ "logo": {
+  "text": "Lulu Eyewear Gallery"
+ },
+ "cats": [
+  [
+   "Gafas de sol",
+   "p1"
+  ],
+  [
+   "Novedades",
+   "l2"
+  ],
+  [
+   "Graduadas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa de sol cat-eye"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa de sol hexagonal"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa de sol rosa"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa de sol redonda"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa de sol deportiva"
+  },
+  {
+   "id": "p6",
+   "name": "Gafa de sol ámbar"
+  }
+ ],
+ "theme": {
+  "acc": "#9A6B4F",
+  "bg": "#FAF6F1"
+ }
+}

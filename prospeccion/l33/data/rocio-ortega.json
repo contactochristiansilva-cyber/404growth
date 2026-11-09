@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Rocío Ortega",
+ "ig": "rocioortegamoda",
+ "f": 55767,
+ "city": "Sanlúcar de Barrameda",
+ "cityfull": "Sanlúcar de Barrameda (Cádiz)",
+ "address": "C/ Santo Domingo 13 (local 3) y C/ Ancha 65",
+ "logo": {
+  "text": "Rocío Ortega"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p2"
+  ],
+  [
+   "Pieles y abrigos",
+   "l1"
+  ],
+  [
+   "Bolsos",
+   "l2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta con pelo"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido largo satinado"
+  },
+  {
+   "id": "p3",
+   "name": "Caftán de rayas"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido de rayas"
+  },
+  {
+   "id": "p5",
+   "name": "Abanico blanco"
+  },
+  {
+   "id": "p6",
+   "name": "Conjunto de cuadros"
+  }
+ ],
+ "theme": {}
+}

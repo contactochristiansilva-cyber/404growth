@@ -1,0 +1,55 @@
+{
+ "niche": "calzado",
+ "name": "Calzados Carrillo",
+ "ig": "calzados.carrillo",
+ "f": 23929,
+ "city": "Atarfe",
+ "cityfull": "Atarfe (Granada)",
+ "address": "C/ Doctor Jiménez Rueda 5 (frente a Correos)",
+ "logo": {
+  "text": "Calzados Carrillo"
+ },
+ "cats": [
+  [
+   "Botines",
+   "p1"
+  ],
+  [
+   "Hombre",
+   "p4"
+  ],
+  [
+   "Zapatillas",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botín de tacón"
+  },
+  {
+   "id": "p2",
+   "name": "Botín burdeos"
+  },
+  {
+   "id": "p3",
+   "name": "Bota australiana"
+  },
+  {
+   "id": "p4",
+   "name": "Zapato de piel de hombre"
+  },
+  {
+   "id": "p5",
+   "name": "Zapatilla retro"
+  },
+  {
+   "id": "p6",
+   "name": "Botín de cuña"
+  }
+ ],
+ "theme": {},
+ "h1": "Tus zapatos,<br>a un clic.",
+ "eyebrow": "Calzado para toda la familia"
+}

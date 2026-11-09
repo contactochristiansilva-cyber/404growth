@@ -1,0 +1,57 @@
+{
+ "niche": "optica",
+ "name": "Centro Óptico Emperatriz",
+ "ig": "centroopticoemperatriz",
+ "f": 1045,
+ "city": "Granada",
+ "cityfull": "Granada",
+ "address": "C/ Emperatriz Eugenia 3",
+ "logo": {
+  "text": "Centro Óptico Emperatriz"
+ },
+ "cats": [
+  [
+   "De sol",
+   "p1"
+  ],
+  [
+   "Graduadas",
+   "p2"
+  ],
+  [
+   "Lentillas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa de sol redonda"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa azul transparente"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa de sol cat-eye"
+  },
+  {
+   "id": "p4",
+   "name": "Lentillas"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa negra"
+  },
+  {
+   "id": "p6",
+   "name": "Gafas de sol"
+  }
+ ],
+ "theme": {
+  "acc": "#1A2A4A"
+ },
+ "domain": "centropticoemperatriz.es",
+ "web_note": "centropticoemperatriz.es enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Granada solo puede escribiros."
+}

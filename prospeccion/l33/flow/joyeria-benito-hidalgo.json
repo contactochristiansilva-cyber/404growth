@@ -1,0 +1,51 @@
+{
+ "slug": "joyeria-benito-hidalgo",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "joyeria-benito-hidalgo-12.jpg",
+    "joyeria-benito-hidalgo-02.jpg",
+    "joyeria-benito-hidalgo-05.jpg",
+    "joyeria-benito-hidalgo-09.jpg",
+    "joyeria-benito-hidalgo-10.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia joyeria-benito-hidalgo-12.jpg, aplica la REGLA A): Luxury campaign still life of a steel diver watch with a navy blue dial on a sunny Mediterranean table with lemons, no brand names from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia joyeria-benito-hidalgo-02.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a stack of four white gold eternity rings set with round diamonds from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia joyeria-benito-hidalgo-05.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a steel chronograph watch with a blue dial and an integrated steel bracelet, no brand name or logo on the dial from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia joyeria-benito-hidalgo-09.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a steel diver watch with a black dial and a turquoise rubber strap, no brand name or logo from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia joyeria-benito-hidalgo-10.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a steel watch with a mint green dial and a steel bracelet, no brand name or logo from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "joyeria-benito-hidalgo-12.jpg",
+    "joyeria-benito-hidalgo-01.jpg",
+    "joyeria-benito-hidalgo-11.jpg",
+    "joyeria-benito-hidalgo-03.jpg",
+    "joyeria-benito-hidalgo-08.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. The model must be a completely different woman from anyone in the reference: a new face and a different hairstyle; never reproduce the face or likeness of a real person from the reference. If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia joyeria-benito-hidalgo-12.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a steel diver watch with a navy blue dial and a steel bracelet, no brand name or logo from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia joyeria-benito-hidalgo-01.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a brown leather zip watch case from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia joyeria-benito-hidalgo-11.jpg, aplica la REGLA B): Lifestyle photo: a hand on the wheel of a classic convertible wearing a small steel watch, sunny, no brand names, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia joyeria-benito-hidalgo-03.jpg, aplica la REGLA B): Lifestyle photo: a woman in a beige trench coat by a stone fountain wearing a slim gold watch, cropped, no face, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia joyeria-benito-hidalgo-08.jpg, aplica la REGLA C): Wide interior photo: the inside of a modern watch and jewellery shop with dark wood panels, framed pictures and a showcase counter, no brand names or logos, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of a steel diver watch with a nav",
+  "p1": "Luxury jewellery e-commerce photo of a stack of four white g",
+  "p2": "Luxury jewellery e-commerce photo of a steel chronograph wat",
+  "p3": "ewellery e-commerce photo of a steel diver watch with a blac",
+  "p4": "Luxury jewellery e-commerce photo of a steel watch with a mi",
+  "p5": "ewellery e-commerce photo of a steel diver watch with a navy",
+  "p6": "Luxury jewellery e-commerce photo of a brown leather zip wat",
+  "l1": "Lifestyle photo: a hand on the wheel of a classic convertibl",
+  "l2": "Lifestyle photo: a woman in a beige trench coat by a stone f",
+  "b": "Wide interior photo: the inside of a modern watch and jewell"
+ }
+}

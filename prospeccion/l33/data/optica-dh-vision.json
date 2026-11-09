@@ -1,0 +1,55 @@
+{
+ "niche": "optica",
+ "name": "Óptica DH Visión",
+ "ig": "opticadhvision",
+ "f": 2158,
+ "city": "Dos Hermanas",
+ "cityfull": "Dos Hermanas (Sevilla)",
+ "address": "",
+ "logo": {
+  "text": "Óptica DH Visión"
+ },
+ "cats": [
+  [
+   "Graduadas",
+   "p1"
+  ],
+  [
+   "De sol",
+   "p5"
+  ],
+  [
+   "Clip solar",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa redonda carey"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa burdeos"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa negra"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa con clip solar"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa de sol negra"
+  },
+  {
+   "id": "p6",
+   "name": "Gafas de sol"
+  }
+ ],
+ "theme": {
+  "acc": "#3C5A4F"
+ }
+}

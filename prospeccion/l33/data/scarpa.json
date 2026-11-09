@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Scarpa",
+ "ig": "scarpa_erandio",
+ "f": 2872,
+ "city": "Erandio",
+ "cityfull": "Erandio (Bizkaia)",
+ "address": "C/ Jesús Aramburu 4",
+ "logo": {
+  "text": "Scarpa"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Conjuntos",
+   "p3"
+  ],
+  [
+   "Calzado y bolsos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gabardina de charol"
+  },
+  {
+   "id": "p2",
+   "name": "Gabardina de rayas"
+  },
+  {
+   "id": "p3",
+   "name": "Traje de cuadros"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto caqui"
+  },
+  {
+   "id": "p5",
+   "name": "Falda de rayas con volante"
+  },
+  {
+   "id": "p6",
+   "name": "Sandalias y capazo"
+  }
+ ],
+ "theme": {}
+}

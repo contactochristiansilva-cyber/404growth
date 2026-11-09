@@ -1,0 +1,55 @@
+{
+ "niche": "optica",
+ "name": "Óptica Constitución",
+ "ig": "opticaconstitucion",
+ "f": 2319,
+ "city": "Murcia",
+ "cityfull": "Murcia",
+ "address": "C/ Lepanto 3",
+ "logo": {
+  "text": "Óptica Constitución"
+ },
+ "cats": [
+  [
+   "Graduadas",
+   "p1"
+  ],
+  [
+   "De sol",
+   "p3"
+  ],
+  [
+   "Revisión visual",
+   "l1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa irrompible"
+  },
+  {
+   "id": "p2",
+   "name": "Lentes de sol a medida"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa de sol negra"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa de cerca"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa de sol carey"
+  },
+  {
+   "id": "p6",
+   "name": "Gafa metálica dorada"
+  }
+ ],
+ "theme": {
+  "acc": "#1F5FA8"
+ }
+}

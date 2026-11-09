@@ -1,0 +1,55 @@
+{
+ "niche": "joya",
+ "name": "Mr Gold Almería",
+ "ig": "joyeriamrgoldalmeria",
+ "f": 1571,
+ "city": "Almería",
+ "cityfull": "Almería",
+ "address": "Avda. de la Estación 26",
+ "logo": {
+  "text": "Mr Gold Almería"
+ },
+ "cats": [
+  [
+   "Brazaletes",
+   "p1"
+  ],
+  [
+   "Cadenas",
+   "p3"
+  ],
+  [
+   "Anillos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Brazalete de leones"
+  },
+  {
+   "id": "p2",
+   "name": "Brazalete de caballos"
+  },
+  {
+   "id": "p3",
+   "name": "Cordón de oro"
+  },
+  {
+   "id": "p4",
+   "name": "Cadena de eslabones"
+  },
+  {
+   "id": "p5",
+   "name": "Sello con ónix"
+  },
+  {
+   "id": "p6",
+   "name": "Esclava lisa"
+  }
+ ],
+ "theme": {
+  "acc": "#B58A2C"
+ }
+}

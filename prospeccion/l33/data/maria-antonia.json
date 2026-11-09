@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "María Antonia",
+ "ig": "maria_antonia_burgos",
+ "f": 14937,
+ "city": "Burgos",
+ "cityfull": "Burgos",
+ "address": "C/ Moneda 18",
+ "logo": {
+  "text": "María Antonia"
+ },
+ "cats": [
+  [
+   "Punto",
+   "p3"
+  ],
+  [
+   "Abrigos",
+   "l1"
+  ],
+  [
+   "Complementos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Falda de cuadros"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de rombos"
+  },
+  {
+   "id": "p3",
+   "name": "Rebeca larga de rayas"
+  },
+  {
+   "id": "p4",
+   "name": "Chaqueta de punto"
+  },
+  {
+   "id": "p5",
+   "name": "Rebeca de jacquard"
+  },
+  {
+   "id": "p6",
+   "name": "Paraguas de cuadros"
+  }
+ ],
+ "theme": {}
+}

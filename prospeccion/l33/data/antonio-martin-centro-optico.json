@@ -1,0 +1,55 @@
+{
+ "niche": "optica",
+ "name": "Antonio Martín Centro Óptico",
+ "ig": "antoniomartin_optica",
+ "f": 1287,
+ "city": "Almería",
+ "cityfull": "Almería",
+ "address": "C/ Navarro Rodrigo 19",
+ "logo": {
+  "text": "Antonio Martín Centro Óptico"
+ },
+ "cats": [
+  [
+   "De sol",
+   "p1"
+  ],
+  [
+   "Graduadas",
+   "p6"
+  ],
+  [
+   "Audición",
+   "l1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa de sol clásica"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa de sol ovalada"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa de sol ámbar"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa de sol carey"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa de sol con detalle dorado"
+  },
+  {
+   "id": "p6",
+   "name": "Gafa graduada redonda"
+  }
+ ],
+ "theme": {
+  "acc": "#1E5C5A"
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Cuñadas",
+ "ig": "cunadasboutique_",
+ "f": 13539,
+ "city": "Antequera",
+ "cityfull": "Antequera (Málaga)",
+ "address": "C/ Cantareros 29",
+ "logo": {
+  "text": "Cuñadas"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Conjuntos",
+   "p3"
+  ],
+  [
+   "Abrigos",
+   "l2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta de ante burdeos"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de leopardo"
+  },
+  {
+   "id": "p3",
+   "name": "Conjunto gris"
+  },
+  {
+   "id": "p4",
+   "name": "Blusa satinada"
+  },
+  {
+   "id": "p5",
+   "name": "Kimono animal print"
+  },
+  {
+   "id": "p6",
+   "name": "Chaleco de flecos"
+  }
+ ],
+ "theme": {}
+}

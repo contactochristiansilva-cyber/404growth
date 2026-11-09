@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Lluna de Drap",
+ "ig": "llunaddrap",
+ "f": 12683,
+ "city": "Mollerussa",
+ "cityfull": "Mollerussa (Lleida)",
+ "address": "Plaça Major 9 (Mollerussa) y C/ Sant Antoni 24 (Lleida)",
+ "logo": {
+  "text": "Lluna de Drap"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Camisas",
+   "p3"
+  ],
+  [
+   "Complementos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Abrigo acolchado"
+  },
+  {
+   "id": "p2",
+   "name": "Rebeca mostaza"
+  },
+  {
+   "id": "p3",
+   "name": "Camisa de cuadros"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto azul marino"
+  },
+  {
+   "id": "p5",
+   "name": "Abrigo de cuadros"
+  },
+  {
+   "id": "p6",
+   "name": "Fular geométrico"
+  }
+ ],
+ "theme": {}
+}

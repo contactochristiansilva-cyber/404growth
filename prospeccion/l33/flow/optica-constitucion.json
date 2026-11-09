@@ -1,0 +1,48 @@
+{
+ "slug": "optica-constitucion",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "optica-constitucion-02.jpg",
+    "optica-constitucion-09.jpg",
+    "optica-constitucion-06.jpg",
+    "optica-constitucion-11.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia optica-constitucion-02.jpg, aplica la REGLA A): Luxury campaign still life of flexible unbreakable black and blue eyeglasses on a light wooden table from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia optica-constitucion-02.jpg, aplica la REGLA A): Eyewear e-commerce photo of flexible black and blue unbreakable eyeglasses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 3 «p2» (formato 3:4, referencia optica-constitucion-09.jpg, aplica la REGLA A): E-commerce product photo of a tray of tinted sunglass lens samples in amber, rose and grey from the reference, centred and large in the frame on a seamless light (#EEF2F5) background with a soft shadow, crisp detail. IMAGEN 4 «p3» (formato 3:4, referencia optica-constitucion-06.jpg, aplica la REGLA A): Eyewear e-commerce photo of black wayfarer-style sunglasses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 5 «p4» (formato 3:4, referencia optica-constitucion-11.jpg, aplica la REGLA A): Eyewear e-commerce photo of simple black reading glasses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "optica-constitucion-12.jpg",
+    "optica-constitucion-07.jpg",
+    "optica-constitucion-10.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. The model must be a completely different woman from anyone in the reference: a new face and a different hairstyle; never reproduce the face or likeness of a real person from the reference. If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia optica-constitucion-12.jpg, aplica la REGLA A): Eyewear e-commerce photo of tortoiseshell round sunglasses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 2 «p6» (formato 3:4, referencia optica-constitucion-07.jpg, aplica la REGLA A): Eyewear e-commerce photo of thin gold metal round eyeglasses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 3 «l1» (formato 3:4, referencia optica-constitucion-07.jpg, aplica la REGLA B): Lifestyle photo: an optometrist in a white coat checking a young woman's vision with a trial frame, in a clinic room, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia optica-constitucion-12.jpg, aplica la REGLA B): Lifestyle photo: a smiling woman in a straw hat wearing tortoiseshell sunglasses on a sunny day, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia optica-constitucion-10.jpg, aplica la REGLA C): Wide interior photo: the inside of a classic optician shop with walls of eyeglasses, wooden counters and blue accents, no people, no logos, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of flexible unbreakable black and",
+  "p1": "Eyewear e-commerce photo of flexible black and blue unbreaka",
+  "p2": "E-commerce product photo of a tray of tinted sunglass lens s",
+  "p3": "Eyewear e-commerce photo of black wayfarer-style sunglasses,",
+  "p4": "Eyewear e-commerce photo of simple black reading glasses, no",
+  "p5": "Eyewear e-commerce photo of tortoiseshell round sunglasses, ",
+  "p6": "Eyewear e-commerce photo of thin gold metal round eyeglasses",
+  "l1": "Lifestyle photo: an optometrist in a white coat checking a y",
+  "l2": "Lifestyle photo: a smiling woman in a straw hat wearing tort",
+  "b": "Wide interior photo: the inside of a classic optician shop w"
+ }
+}

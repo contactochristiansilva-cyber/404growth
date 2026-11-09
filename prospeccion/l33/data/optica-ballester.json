@@ -1,0 +1,55 @@
+{
+ "niche": "optica",
+ "name": "Óptica Ballester",
+ "ig": "optica.ballester.vitoria",
+ "f": 2532,
+ "city": "Vitoria-Gasteiz",
+ "cityfull": "Vitoria-Gasteiz (Álava)",
+ "address": "C/ Reyes de Navarra 2",
+ "logo": {
+  "text": "Óptica Ballester"
+ },
+ "cats": [
+  [
+   "Graduadas",
+   "p1"
+  ],
+  [
+   "De sol",
+   "p6"
+  ],
+  [
+   "Revisión visual",
+   "l1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa verde ojo de gato"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa fucsia"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa octogonal"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa ojo de gato"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa redonda moteada"
+  },
+  {
+   "id": "p6",
+   "name": "Gafa de sol redonda"
+  }
+ ],
+ "theme": {
+  "acc": "#C23B5A"
+ }
+}
