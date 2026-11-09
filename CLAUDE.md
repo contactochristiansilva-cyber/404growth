@@ -334,3 +334,29 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Se guardan en `docs` con `coll = 'quotes'` (`quotesApi`, rutas `/admin/api/quotes` y `/admin/api/quotes/<id>`); la interfaz es `vPres` en `PAGES.admin`.
 - La primera vez se cargan solos los cuatro del 6/11/2026: Carmen Valencia (1.380 €), Kiss of Life (1.140 € + 490 €/mes), Open Fit (3.350 €) y Antequera CF (2.800 €). La marca `meta.quotes_seed` evita que vuelvan si se borran.
 
+
+## Contabilidad (admin v67, 9/11/2026)
+
+- En el admin, Dinero › «Contabilidad» (`/admin#contabilidad`), justo debajo de Facturación. Guarda todas las facturas de ingresos y de gastos y calcula lo que entra, lo que sale y lo que queda. Tres pestañas:
+  - **Resumen:** periodo (mes, trimestre, año o todo, con flechas para ir hacia atrás) y moneda. Ocho cifras: ingresos cobrados, gastos, beneficio neto, facturado, por cobrar, gastos fijos al mes, IVA del trimestre y gastos sin factura. Debajo, la gráfica de ingresos y gastos de los últimos 12 meses (con tabla), los gastos por categoría, el IVA del trimestre y «Para tu gestor» (CSV con `;`, decimales con coma y BOM, para Excel o Numbers).
+  - **Ingresos:** el generador de facturas de siempre (`invHtml`) y debajo «Facturas de ingresos hechas fuera», para apuntar y subir las que no salen del admin.
+  - **Gastos:** formulario «Apuntar un gasto» con dos modos: **Puntual** (una factura suelta) o **Cada mes** (se apunta solo cada mes el día del primer cargo). Debajo, la lista de gastos mensuales (parar, reanudar o borrar; los meses ya apuntados se quedan) y la de gastos del periodo con el filtro «Sin factura».
+- Cómo se calcula (todo con IVA incluido, en céntimos):
+  - ingresos = cobros de Facturación (`pay`) con fecha de cobro en el periodo;
+  - gastos = gastos apuntados con fecha de factura en el periodo;
+  - beneficio neto = ingresos − gastos;
+  - facturado = facturas del generador + facturas de ingresos hechas fuera;
+  - IVA del trimestre = IVA de las facturas (repercutido) − IVA de los gastos (soportado). Es una estimación: el 303 lo confirma el gestor.
+- Cada factura (PDF, JPG, PNG o WEBP, hasta 1,8 MB) se sube desde su fila («Subir», «Cambiar», «Ver», «Descargar»). Las fotos se reducen en el navegador (2000 px, JPEG). El tipo se comprueba por los primeros bytes.
+- «Nueva factura» (en Contabilidad, en un cliente o en el botón «+ Nuevo») abre el generador en Contabilidad › Ingresos; dentro de Entregables › Facturas se queda donde estaba. «+ Nuevo» tiene también «Nuevo gasto».
+- Facturación enseña arriba la tarjeta «Contabilidad · <mes>» (ingresos, gastos, beneficio y facturado) con un enlace a Contabilidad.
+- Las dos gráficas (Contabilidad y Facturación) se dibujan al ancho de su caja y se vuelven a dibujar si la caja cambia (`cbWatch`, con ResizeObserver). En el móvil, las tablas de gastos son tarjetas.
+- Datos (D1, se crean solos con `finReady`):
+  - `fin`: cada factura (`kind` `in`/`out`, `date`, `who`, `concept`, `cat`, `num`, `total`, `rate`, `cur`, `rec`, `note` y los datos del archivo);
+  - `finfile`: el archivo de cada una;
+  - `finrec`: los gastos mensuales (`start`, `upto`, `active`, `ended`). `finRecRun` apunta los meses que falten cada vez que se abre (id `x_<rec>_<k>`).
+- Categorías de gasto (`FIN_CATS`): publicidad, software, IA, equipo y colaboradores, gestoría, cuota de autónomo, equipos, viajes, formación, banco, oficina y otros.
+- API (`finApi`): `GET|POST fin`, `POST|DELETE fin/<id>`, `PUT|GET|DELETE fin/<id>/file`, `POST finrec` y `POST|DELETE finrec/<id>`.
+- Interfaz: `vConta` y las funciones `cb…` en `PAGES.admin`.
+- Se genera con `patch_v67.py` (con `cb_server.js` y `cb_client.js`) en el scratchpad de la sesión del 9/11/2026 (`fin68/`). Prueba: `t_v67.mjs` (37 comprobaciones con node:sqlite) y `ui67.cjs` (Playwright: apuntar, subir PDF, gasto mensual, editar, filtro y móvil). `t_v66.mjs` sigue pasando.
+- Copia del worker anterior en `~/Downloads/404growth-subir/anterior/worker-v66b.js`.
