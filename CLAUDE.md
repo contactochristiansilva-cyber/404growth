@@ -360,3 +360,16 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Interfaz: `vConta` y las funciones `cb…` en `PAGES.admin`.
 - Se genera con `patch_v67.py` (con `cb_server.js` y `cb_client.js`) en el scratchpad de la sesión del 9/11/2026 (`fin68/`). Prueba: `t_v67.mjs` (37 comprobaciones con node:sqlite) y `ui67.cjs` (Playwright: apuntar, subir PDF, gasto mensual, editar, filtro y móvil). `t_v66.mjs` sigue pasando.
 - Copia del worker anterior en `~/Downloads/404growth-subir/anterior/worker-v66b.js`.
+
+## Scrapeo de +5k seguidores con WhatsApp (10/11/2026, `seed_20261110`)
+
+- Criterios de Chris: +5.000 seguidores en Instagram, WhatsApp o móvil publicado, sin tienda online o con web que no vende, tienda física en España, sin cadenas y que no estén ya en el CRM. 20 por nicho, en este orden: moda multimarca y boutique, joyería y complementos, cosmética y perfumería, suplementación deportiva, sneakers y ópticas.
+- Resultado: 42 leads (moda 20, joyería 10, cosmética 5, suplementos 2, sneakers 3, ópticas 2), en `prospeccion/scrapeo-10nov/leads.json`; `mkseed.py` escribe el `SEED`.
+- Se revisaron unos 3.400 perfiles de 748 búsquedas. Fuera de moda casi todas las tiendas con +5k ya venden online (sobre todo suplementos, ópticas y joyerías grandes), o solo publican fijo, o son franquicias; muchas cuentas de «sneakers» venden réplicas sin tienda física (descartadas).
+- **Nichos nuevos en el CRM:** `cosmetica`, `suplementos`, `sneakers` y `optica` (`patch_niches.py`): pestaña propia, mismos textos por defecto que Deporte.
+- **Cómo se buscó, sin abrir páginas (lo que funciona):** desde una pestaña de instagram.com, con el cuerpo de la petición capturado de la propia web (enganchando `XMLHttpRequest` y navegando con `history.pushState` + `popstate`):
+  - `PolarisKeywordSearchExplorePageRelayQuery` (`POST /api/graphql`, `variables.query`) da unos 20 dueños por búsqueda con su `pk`;
+  - `PolarisProfilePageContentQuery` (`variables.id` = pk) da la bio completa, los enlaces, `follower_count`, `address_street` y `city_name`;
+  - unas 6-7 búsquedas por minuto, 4 perfiles a la vez, sin errores 429. `/api/v1/users/<id>/info/` y `web_profile_info` dan 429/404.
+  - Para leer mucho texto de la pestaña: volcarlo en un `<article>` a pantalla completa y leerlo con `get_page_text` (el resultado de `javascript_tool` se corta a unos 1.000 caracteres).
+  - Las webs se comprueban en otra pestaña (Shopify `/products.json`, Woo `x-wp-total`); WebFetch pide permiso por URL y desde el contenedor y el Mac no se llega a esas webs.
