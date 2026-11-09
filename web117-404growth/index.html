@@ -18,360 +18,493 @@
 <link rel="icon" href="/favicon-96.png?v=3" type="image/png" sizes="96x96">
 <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
-<link rel="preload" href="/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://404growth.com/#org","name":"404 Growth","url":"https://404growth.com/","logo":{"@type":"ImageObject","url":"https://404growth.com/logo-404.png","width":512,"height":512},"description":"Convertimos tiendas físicas en tiendas online que venden en toda España, las 24 horas.","areaServed":{"@type":"Country","name":"España"},"email":"hola@404growth.com","contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+34610594450","availableLanguage":["es"]}},{"@type":"WebSite","@id":"https://404growth.com/#site","url":"https://404growth.com/","name":"404 Growth","alternateName":["404growth.com","404 Growth tiendas online"],"inLanguage":"es","publisher":{"@id":"https://404growth.com/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto cuesta?","acceptedAnswer":{"@type":"Answer","text":"No publicamos un precio fijo porque depende de cuántos productos tienes, si se conecta tu TPV y si incluye anuncios y email marketing. En la llamada te damos un precio cerrado, sin sorpresas."}},{"@type":"Question","name":"¿Qué tengo que aportar yo?","acceptedAnswer":{"@type":"Answer","text":"Tus productos, precios y stock, las fotos que ya tengas y una persona que prepare los pedidos. Del diseño, la tienda, los pagos y los envíos nos encargamos nosotros."}},{"@type":"Question","name":"¿Se conecta con el stock de mi tienda?","acceptedAnswer":{"@type":"Answer","text":"Depende del TPV o programa que uses. Muchos permiten sincronizar el stock con la web; otros no. Lo revisamos en la llamada y te decimos qué se puede conectar."}},{"@type":"Question","name":"¿Hay costes aparte?","acceptedAnswer":{"@type":"Answer","text":"Pueden existir: el dominio si no tienes, la comisión de la pasarela de pago por cada venta, los envíos y el presupuesto de anuncios si haces campañas. Te los detallamos antes de empezar."}},{"@type":"Question","name":"¿Quién mantiene la tienda después?","acceptedAnswer":{"@type":"Answer","text":"Te enseñamos a gestionar pedidos y productos tú mismo. El mantenimiento técnico y la captación continua se acuerdan en la propuesta, según lo que necesites."}},{"@type":"Question","name":"¿Me garantizáis ventas?","acceptedAnswer":{"@type":"Answer","text":"No. Dejamos la tienda lista para vender y la captación en marcha, pero las ventas dependen de tu producto, tus precios y el mercado. Lo que sí hacemos es medir desde el primer día y mejorar lo que funciona."}},{"@type":"Question","name":"¿Tengo que cerrar mi tienda física?","acceptedAnswer":{"@type":"Answer","text":"No. La tienda online es un segundo canal que trabaja con tu mismo stock. Y cambia el ciclo: cuando el online funciona, decides con datos si abrir otra tienda física y dónde."}},{"@type":"Question","name":"¿Para qué tiendas es?","acceptedAnswer":{"@type":"Answer","text":"Para tiendas físicas independientes que venden producto: moda, joyería, deporte, obradores, ópticas, decoración, gourmet, juguetes… De una tienda a varias, en toda España."}},{"@type":"Question","name":"Ya tengo web. ¿La perdemos?","acceptedAnswer":{"@type":"Answer","text":"La rehacemos en tu dominio y redirigimos las direcciones antiguas, para no perder lo que ya tienes en Google."}}]}]}</script><style>/* 404 Growth · portada v64 (6/11/2026). Estructura de Designjoy (Christian delante, 3 pasos, qué incluye, preguntas), aspecto de Ask Phill (negro, titular enorme, píldoras de color, tiendas en abanico) y cifras grandes como Product Hackers. Colores de siempre: verde bosque, menta y lima. En el móvil: sin blur ni filtros; solo transform y opacity. */
-:root{--bg:#040806;--bg2:#06100B;--g1:#051F20;--g2:#0B2B26;--g3:#163832;--g4:#235347;--mint:#8EB69B;--mint2:#DAF1DE;--lime:#B8E351;--lime2:#D4F27A;--ink:#EEF3EC;--mute:rgba(226,238,228,.64);--line:rgba(218,241,222,.12);--wa:#25D366;--dk:#06120D;
---f:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter Tight","Helvetica Neue",Arial,sans-serif;--r:24px}
-*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 var(--f);letter-spacing:-.011em;-webkit-font-smoothing:antialiased;overflow-x:clip}
-a{color:inherit}img{display:block;max-width:100%}
-.wrap{width:min(1180px,100% - 40px);margin:0 auto}
-h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.04em;line-height:1.02;text-wrap:balance;hyphens:none}
-p{margin:0;text-wrap:pretty}
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://404growth.com/#org","name":"404 Growth","url":"https://404growth.com/","logo":{"@type":"ImageObject","url":"https://404growth.com/logo-404.png","width":512,"height":512},"description":"Convertimos tiendas físicas en tiendas online que venden en toda España, las 24 horas.","areaServed":{"@type":"Country","name":"España"},"email":"hola@404growth.com","contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+34610594450","availableLanguage":["es"]}},{"@type":"WebSite","@id":"https://404growth.com/#site","url":"https://404growth.com/","name":"404 Growth","alternateName":["404growth.com","404 Growth tiendas online"],"inLanguage":"es","publisher":{"@id":"https://404growth.com/#org"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto cuesta?","acceptedAnswer":{"@type":"Answer","text":"No publicamos un precio fijo porque depende de cuántos productos tienes, si se conecta tu TPV y si incluye anuncios y email marketing. En la llamada te damos un precio cerrado, sin sorpresas."}},{"@type":"Question","name":"¿Qué tengo que aportar yo?","acceptedAnswer":{"@type":"Answer","text":"Tus productos, precios y stock, las fotos que ya tengas y una persona que prepare los pedidos. Del diseño, la tienda, los pagos y los envíos nos encargamos nosotros."}},{"@type":"Question","name":"¿Se conecta con el stock de mi tienda?","acceptedAnswer":{"@type":"Answer","text":"Depende del TPV o programa que uses. Muchos permiten sincronizar el stock con la web; otros no. Lo revisamos en la llamada y te decimos qué se puede conectar."}},{"@type":"Question","name":"¿Hay costes aparte?","acceptedAnswer":{"@type":"Answer","text":"Pueden existir: el dominio si no tienes, la comisión de la pasarela de pago por cada venta, los envíos y el presupuesto de anuncios si haces campañas. Te los detallamos antes de empezar."}},{"@type":"Question","name":"¿Quién mantiene la tienda después?","acceptedAnswer":{"@type":"Answer","text":"Te enseñamos a gestionar pedidos y productos tú mismo. El mantenimiento técnico y la captación continua se acuerdan en la propuesta, según lo que necesites."}},{"@type":"Question","name":"¿Me garantizáis ventas?","acceptedAnswer":{"@type":"Answer","text":"No. Dejamos la tienda lista para vender y la captación en marcha, pero las ventas dependen de tu producto, tus precios y el mercado. Lo que sí hacemos es medir desde el primer día y mejorar lo que funciona."}},{"@type":"Question","name":"¿Tengo que cerrar mi tienda física?","acceptedAnswer":{"@type":"Answer","text":"No. La tienda online es un segundo canal que trabaja con tu mismo stock. Y cambia el ciclo: cuando el online funciona, decides con datos si abrir otra tienda física y dónde."}},{"@type":"Question","name":"¿Para qué tiendas es?","acceptedAnswer":{"@type":"Answer","text":"Para tiendas físicas independientes que venden producto: moda, joyería, deporte, obradores, ópticas, decoración, gourmet, juguetes… De una tienda a varias, en toda España."}},{"@type":"Question","name":"Ya tengo web. ¿La perdemos?","acceptedAnswer":{"@type":"Answer","text":"La rehacemos en tu dominio y redirigimos las direcciones antiguas, para no perder lo que ya tienes en Google."}}]}]}</script><style>
+/* Portada v67 · 404 Growth (9/11/2026) */
+:root{--bg:#040806;--ink:#EEF3EC;--lime:#D4F27A;--deep:#0B2B26;--txt:rgba(238,243,236,.78);--mut:rgba(238,243,236,.5);--line:rgba(238,243,236,.14);--wa:#25D366;
+--f:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+--gl:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.025));--glb:rgba(255,255,255,.14);
+--gx:linear-gradient(140deg,rgba(255,255,255,.15),rgba(255,255,255,.05) 45%,rgba(255,255,255,.08));--gxb:rgba(255,255,255,.22);
+--pad:40px;--ease:cubic-bezier(.2,.7,.2,1)}
+*,*:before,*:after{box-sizing:border-box}
+html{background:var(--bg);-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-stopped{overflow:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance;font-weight:700}
+p{text-wrap:pretty}
 ul,ol{margin:0;padding:0;list-style:none}
-.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:999;background:#fff;color:#000;padding:8px 12px;border-radius:8px}
-:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:8px}
-.gr{background:linear-gradient(95deg,var(--lime) 0%,var(--lime2) 35%,var(--mint2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lbl{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:0;color:var(--mint2);background:rgba(218,241,222,.07);border:1px solid rgba(218,241,222,.16)}
-.lbl i{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}
-.eb{font-size:13px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--lime)}
+button{font:inherit;color:inherit}
+.skip{position:absolute;left:-999px;top:0}.skip:focus{left:16px;top:16px;z-index:999;background:#fff;color:#000;padding:8px 12px;border-radius:8px}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:10px}
+.lm{color:var(--lime)}
+.w{width:100%;max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.m{display:none}
+@media (max-width:899px){.d{display:none!important}.m{display:initial}br.m{display:block}:root{--pad:20px}}
 
-/* botones en píldora */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;font:650 16.5px/1 var(--f);letter-spacing:-.01em;text-decoration:none;white-space:nowrap;transition:transform .2s,background .2s}
-.btn svg{width:20px;height:20px;flex:none}
-.btn:hover{transform:translateY(-2px)}
-.btn.lm{background:var(--lime);color:#0A1A06}
-.btn.lm:hover{background:var(--lime2)}
-.btn.gh{color:var(--ink);border:1px solid rgba(218,241,222,.22);background:rgba(218,241,222,.04)}
-.btn.gh:hover{background:rgba(218,241,222,.1)}
-.btn.dk{background:var(--bg);color:var(--mint2)}
-.btns{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.note{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--mute)}
-.note img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
+/* ---------- cristal: con desenfoque solo en el ordenador */
+.gl{background:var(--gl);border:1px solid var(--glb);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.gx{background:var(--gx);border:1px solid var(--gxb);box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 40px 100px rgba(0,0,0,.45)}
+.gm{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 16px 40px rgba(0,0,0,.4)}
+@media (min-width:900px) and (hover:hover){
+.gl{-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%)}
+.gx{-webkit-backdrop-filter:blur(26px) saturate(180%);backdrop-filter:blur(26px) saturate(180%)}
+.gm{-webkit-backdrop-filter:blur(16px) saturate(170%);backdrop-filter:blur(16px) saturate(170%)}}
+@media (max-width:899px){.gx{background:linear-gradient(140deg,rgba(30,44,37,.92),rgba(14,22,18,.9) 50%,rgba(22,32,27,.92));box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 24px 60px rgba(0,0,0,.45)}.gm{background:rgba(24,34,29,.92)}}
 
-/* cabecera: píldoras como Ask Phill */
-.nv{position:fixed;top:14px;left:0;right:0;z-index:60;pointer-events:none}
-.nv-in{pointer-events:auto;width:min(1180px,100% - 24px);margin:0 auto;display:flex;align-items:center;gap:18px;padding:7px 7px 7px 22px;border-radius:999px;background:rgba(4,8,6,.78);border:1px solid var(--line)}
-.nv-logo{text-decoration:none;font-weight:800;font-size:18px;letter-spacing:-.03em;color:#fff;margin-right:auto}
-.nv-logo sup{font-size:9px;font-weight:600;margin-left:1px;vertical-align:top;position:relative;top:2px}
-.nv-lk{display:flex;gap:22px;font-size:14.5px;font-weight:500;color:var(--mute)}
-.nv-lk a{text-decoration:none}.nv-lk a:hover{color:#fff}
-.nv .btn{min-height:42px;padding:0 18px;font-size:14.5px}
-.nv .btn svg{width:18px;height:18px}
-@media (min-width:861px){.nv-in{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}}
+/* ---------- piezas comunes */
+.chip{display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 14px;border-radius:999px;border:1px solid rgba(238,243,236,.18);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(238,243,236,.8);white-space:nowrap}
+.chip i{width:6px;height:6px;border-radius:50%;background:var(--lime)}
+.chip.dk{height:32px;padding:0 16px;background:rgba(4,8,6,.35);border-color:rgba(255,255,255,.14);color:rgba(238,243,236,.85)}
+.chip.dk i{width:7px;height:7px}
+.kk{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.note{font-size:13px;color:rgba(238,243,236,.55)}
+.sec{position:relative;isolation:isolate;padding:115px 0;scroll-margin-top:0;overflow-x:clip}
+@supports not (overflow:clip){.sec{overflow:hidden}}
+.ft{overflow:hidden}
+.sec:before{content:"";position:absolute;pointer-events:none;border-radius:50%;width:1000px;height:1000px;background:radial-gradient(closest-side,rgba(35,83,71,.6),rgba(35,83,71,0));z-index:-1}
+.sh{display:flex;flex-direction:column;gap:18px}
+.sh.c{align-items:center;text-align:center}
+.sh h2{font-size:clamp(34px,3.9vw,56px);line-height:1.04;letter-spacing:-.035em}
+.sh p{font-size:clamp(16px,1.3vw,19px);line-height:1.55;color:rgba(238,243,236,.75)}
+.sh .chip{align-self:flex-start}.sh.c .chip{align-self:center}
+.sh.row{flex-direction:row;justify-content:space-between;align-items:flex-start;gap:60px}
+.sh.row>div{display:flex;flex-direction:column;gap:18px;max-width:900px}
+.sh.row>p{max-width:360px;padding-top:56px}
+@media (max-width:899px){.sec{padding:84px 0}.sh{gap:14px}.sh h2{font-size:34px;line-height:1.06;letter-spacing:-.03em}.sh p{font-size:16px}.chip{height:28px;padding:0 12px;font-size:11px}.sh.row{flex-direction:column;gap:14px}.sh.row>div{gap:14px}.sh.row>p{padding-top:0;max-width:none}}
 
-/* portada */
-.hero{position:relative;padding:150px 0 40px;text-align:center;overflow:hidden;background:radial-gradient(70% 55% at 50% 62%,rgba(35,83,71,.42),transparent 70%)}
-.hero h1{margin-top:24px;font-size:clamp(50px,9.4vw,132px);line-height:.92;letter-spacing:-.055em;font-weight:750}
-.hero h1 span{display:block}
-@media (min-width:560px){.hero h1 .l2{white-space:nowrap}}
-/* abanico de tiendas */
-.fan{position:relative;height:clamp(250px,33vw,430px);margin:-70px auto 0;width:100%;max-width:1180px;z-index:2}
-.fc{position:absolute;left:50%;bottom:0;width:clamp(150px,19vw,252px);aspect-ratio:760/1040;border-radius:clamp(14px,1.6vw,22px);overflow:hidden;transform-origin:50% 115%;transform:translateX(-50%) translateX(var(--x)) rotate(var(--r));box-shadow:0 30px 60px -24px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.08);background:#0F1F19;transition:transform .95s cubic-bezier(.2,.85,.2,1);transition-delay:calc(var(--i) * 45ms);text-decoration:none}
-.fc img{width:100%;height:100%;object-fit:cover;object-position:top}
-.fc b{position:absolute;left:10px;bottom:10px;padding:5px 10px;border-radius:999px;background:rgba(4,8,6,.82);color:#fff;font-size:12px;font-weight:650;letter-spacing:0}
-.fc.c3{z-index:5}.fc.c2,.fc.c4{z-index:4}.fc.c1,.fc.c5{z-index:3}
-.fan.pre .fc{transform:translateX(-50%) rotate(0deg)}
-@media (hover:hover){.fan .fc:hover{transform:translateX(-50%) translateX(var(--x)) rotate(var(--r)) translateY(-14px)}}
-.hero-b{position:relative;z-index:3;margin-top:34px;display:grid;justify-items:center;gap:22px}
-.hero-b .sub{max-width:600px;font-size:19px;color:var(--mute)}
-.hero-b .sub b{color:#fff;font-weight:600}
-.ex{font-size:12px;color:rgba(226,238,228,.42)}
-.tools{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:6px}
-.tools span{padding:6px 12px;border-radius:999px;border:1px solid var(--line);font-size:13px;color:var(--mute)}
+/* botones */
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btns.col{flex-direction:column}
+.b-lime,.b-gl{display:inline-flex;align-items:center;height:56px;border-radius:999px;font-weight:650;font-size:16px;white-space:nowrap;transition:transform .2s var(--ease),background .2s,box-shadow .2s}
+.b-lime{gap:12px;padding:0 8px 0 24px;background:var(--lime);color:var(--bg)}
+.b-lime .ic{width:40px;height:40px;border-radius:50%;background:var(--bg);color:var(--lime);display:flex;align-items:center;justify-content:center;transition:transform .25s var(--ease)}
+.b-lime .ic svg{width:18px;height:18px}
+.b-lime.wa .ic{color:var(--wa)}.b-lime.wa .ic svg{width:21px;height:21px}
+.b-gl{gap:10px;padding:0 26px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.3);color:var(--ink);font-weight:600}
+.b-gl.wa-g svg{width:20px;height:20px;color:var(--wa)}
+.b-lime:hover,.b-gl:hover{transform:translateY(-2px)}
+.b-lime:hover .ic{transform:rotate(45deg)}.b-lime.wa:hover .ic{transform:none}
+.b-gl:hover{background:rgba(255,255,255,.13)}
+.full{width:100%;justify-content:space-between}
+.b-gl.full{justify-content:center}
+@media (max-width:899px){.b-lime,.b-gl{height:54px;font-size:15.5px}.b-lime .ic{width:38px;height:38px}}
 
-/* secciones */
-.sec{padding:110px 0}
-.sh{display:grid;gap:14px;max-width:760px;margin-bottom:44px}
-.sh.c{margin-inline:auto;text-align:center;justify-items:center}
-.sh h2{font-size:clamp(36px,5.2vw,64px);letter-spacing:-.05em}
-.sh p{font-size:18px;color:var(--mute)}
+/* aparición al hacer scroll: solo transform y opacity */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0ms)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
 
-/* 3 pasos (Designjoy) */
-.st3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:s}
-.s{position:relative;border-radius:28px;padding:26px 26px 30px;display:flex;flex-direction:column;gap:10px;min-height:440px;overflow:hidden}
-.s .vis{flex:1;display:flex;align-items:center;justify-content:center;padding:6px 0 18px}
-.s .d{align-self:flex-start;font-size:13px;font-weight:700;padding:5px 11px;border-radius:999px}
-.s h3{font-size:34px;letter-spacing:-.045em}
-.s p{font-size:15.5px;line-height:1.45}
-.s1{background:linear-gradient(160deg,var(--lime2),var(--lime) 55%,#8FC23A);color:#0A1A06}
-.s1 .d{background:rgba(10,26,6,.12)}
-.s1 p{color:rgba(10,26,6,.78)}
-.s2{background:linear-gradient(160deg,var(--g4),var(--g3) 55%,var(--g2));color:#fff;border:1px solid rgba(218,241,222,.12)}
-.s2 .d{background:rgba(218,241,222,.12);color:var(--mint2)}
-.s2 p{color:rgba(238,243,236,.75)}
-.s3{background:linear-gradient(160deg,#F1FAF2,var(--mint2) 55%,#BFE0C6);color:#06120D}
-.s3 .d{background:rgba(6,18,13,.08)}
-.s3 p{color:rgba(6,18,13,.72)}
-.bub{max-width:270px;background:#fff;color:#0B1A10;border-radius:20px 20px 20px 6px;padding:14px 16px;font-size:15px;line-height:1.4;box-shadow:0 18px 40px -18px rgba(10,26,6,.55);text-align:left}
-.bub small{display:block;margin-top:6px;font-size:11.5px;color:#5A6B5E}
-.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:290px}
-.chips span{padding:8px 13px;border-radius:999px;background:rgba(218,241,222,.1);border:1px solid rgba(218,241,222,.2);font-size:14px;font-weight:600}
-.open{display:grid;gap:10px;justify-items:center}
-.open .st{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;background:#06120D;color:#fff;font-size:17px;font-weight:700}
-.open .st i{width:10px;height:10px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px rgba(184,227,81,.25)}
-.open small{font-size:13.5px;font-weight:600;color:rgba(6,18,13,.6)}
+/* ---------- cabecera */
+.nv{position:fixed;left:0;right:0;top:20px;z-index:80;display:flex;justify-content:center;padding:0 20px;pointer-events:none}
+.nv-in{pointer-events:auto;width:100%;max-width:880px;height:60px;padding:0 8px 0 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 12px 40px rgba(0,0,0,.4);transition:background .3s}
+@media (hover:hover) and (min-width:900px){.nv-in{-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%)}}
+.nv.sc .nv-in{background:linear-gradient(180deg,rgba(30,42,36,.78),rgba(12,20,16,.7))}
+.nv-logo{display:flex;align-items:center;gap:9px;font-weight:700;font-size:16px;letter-spacing:-.01em}
+.nv-logo .mk{width:30px;height:23px}
+.nv-lk{display:flex;gap:28px;font-size:14px;color:rgba(238,243,236,.82)}
+.nv-lk a{transition:color .2s}.nv-lk a:hover{color:var(--lime)}
+.nv-cta{display:flex;align-items:center;height:44px;padding:0 20px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:650;font-size:14px;transition:background .2s}
+.nv-cta:hover{background:var(--lime)}
+.nv-mb{display:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);align-items:center;justify-content:center;padding:0;cursor:pointer}
+.nv-mb svg{width:18px;height:18px}
+.mm{position:fixed;left:14px;right:14px;top:80px;z-index:79;padding:14px 18px 18px;border-radius:26px;background:linear-gradient(160deg,#1C2A23,#0C1410);border:1px solid rgba(255,255,255,.18);box-shadow:0 30px 70px rgba(0,0,0,.6)}
+.mm nav{display:flex;flex-direction:column}
+.mm nav a{padding:14px 2px;font-size:19px;font-weight:650;border-bottom:1px solid var(--line)}
+.mm-b{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+@media (max-width:899px){.nv{top:14px;padding:0 14px}.nv-in{height:54px;padding:0 5px 0 16px;gap:8px}.nv-logo{font-size:15px}.nv-logo .mk{width:26px;height:20px}.nv-lk{display:none}.nv-cta{padding:0 16px;margin-left:auto}.nv-mb{display:flex}.nv-r{display:flex;gap:6px}
+.nv-in{background:linear-gradient(180deg,rgba(36,50,43,.9),rgba(14,22,18,.86))}}
+@media (min-width:900px){.mm{display:none!important}}
 
-/* Christian (Designjoy: lo lleva una persona) */
-.me{display:grid;grid-template-columns:220px minmax(0,1fr);gap:40px;align-items:center;padding:36px;border-radius:32px;background:linear-gradient(160deg,#0D2621,#060E0A 70%);border:1px solid rgba(218,241,222,.12)}
-.me img{width:220px;height:220px;border-radius:28px;object-fit:cover}
-.me h2{font-size:clamp(32px,4vw,48px);letter-spacing:-.05em}
-.me p{margin-top:12px;font-size:18px;color:var(--mute);max-width:620px}
-.me .btns{margin-top:22px}
+/* ---------- 1 · portada */
+.hero{position:relative;min-height:max(100svh,760px);display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:120px 0 90px}
+.wall{position:absolute;inset:0;overflow:hidden}
+.wall-in{position:absolute;left:-120px;top:-260px;width:1720px;display:flex;gap:26px;transform:rotate(-8deg)}
+.wc{flex:none;width:250px;display:flex;flex-direction:column;gap:26px}
+.wc:nth-child(1){transform:translateY(-40px)}.wc:nth-child(2){transform:translateY(-210px)}.wc:nth-child(3){transform:translateY(-90px)}.wc:nth-child(4){transform:translateY(-250px)}.wc:nth-child(5){transform:translateY(-20px)}.wc:nth-child(6){transform:translateY(-180px)}
+.wc img{width:250px;height:342px;border-radius:20px;object-fit:cover;object-position:top}
+@media (min-width:1500px){.wall-in{left:calc(50% - 860px)}}
+@media (min-width:900px) and (prefers-reduced-motion:no-preference){.wall-in{animation:drift 60s linear infinite alternate}}
+@keyframes drift{to{transform:rotate(-8deg) translateY(-120px)}}
+.hero-ov{position:absolute;inset:0;background:radial-gradient(70% 70% at 50% 46%,rgba(4,8,6,.55),rgba(4,8,6,.88) 70%,#040806),linear-gradient(to bottom,rgba(4,8,6,0) 75%,#040806)}
+.hero-in{position:relative;display:flex;flex-direction:column;align-items:center;gap:30px;padding:0 20px}
+.hero-p{width:100%;max-width:1040px;padding:54px 64px 56px;border-radius:40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:26px}
+.hero-p h1{font-size:clamp(32px,4.2vw,60px);line-height:1.06;letter-spacing:-.035em}
+.hero-p p{max-width:720px;font-size:clamp(15px,1.4vw,20px);line-height:1.5;color:rgba(238,243,236,.82)}
+.hero-p .btns{justify-content:center;margin-top:6px}
+.hchips{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.hchips li{display:flex;align-items:center;gap:10px;height:52px;padding:0 22px;border-radius:999px;font-size:15px;color:rgba(238,243,236,.8);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.hchips b{font-size:18px;color:var(--lime)}
+@media (hover:hover) and (min-width:900px){.hchips li{-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}}
+.hnote{position:absolute;left:0;right:0;bottom:30px;text-align:center;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(238,243,236,.55)}
+@media (max-width:899px){
+.hero{min-height:auto;justify-content:flex-start;padding:98px 0 64px}
+.wall-in{left:-70px;top:-120px;width:600px;gap:14px}
+.wc{width:128px;gap:14px}.wc img{width:128px;height:175px;border-radius:12px}
+.wc:nth-child(1){transform:translateY(-20px)}.wc:nth-child(2){transform:translateY(-110px)}.wc:nth-child(3){transform:translateY(-50px)}.wc:nth-child(4){transform:translateY(-140px)}.wc:nth-child(n+5){display:none}
+.hero-ov{background:radial-gradient(90% 70% at 50% 45%,rgba(4,8,6,.55),rgba(4,8,6,.9) 75%,#040806),linear-gradient(to bottom,rgba(4,8,6,0) 80%,#040806)}
+.hero-in{padding:0 14px;gap:22px}
+.hero-p{padding:30px 22px 24px;border-radius:30px;gap:18px}
+.hero-p h1{font-size:32px;line-height:1.1;letter-spacing:-.03em}
+.hero-p p{font-size:15px}
+.hero-p .btns{width:100%;flex-direction:column;gap:10px;margin-top:0}
+.hero-p .b-lime{width:100%;justify-content:space-between;padding-left:22px}.hero-p .b-gl{width:100%;justify-content:center;height:52px;font-size:15px}
+.chip.dk{height:28px;padding:0 12px;font-size:10.5px;letter-spacing:.1em}
+.hchips{gap:8px}.hchips li{height:40px;padding:0 14px;font-size:13px;gap:7px}.hchips b{font-size:14px}
+.hnote{display:none}}
 
-/* tiendas de ejemplo (Ask Phill: casos con foto grande y nombre grande) */
-.tk{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
-.tc{position:relative;display:block;border-radius:22px;overflow:hidden;aspect-ratio:760/1040;text-decoration:none;background:#0F1F19;border:1px solid var(--line)}
-.tc img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-@media (hover:hover){.tc:hover img{transform:scale(1.04)}}
-.tc .in{position:absolute;left:8px;right:8px;bottom:8px;padding:14px 14px 13px;border-radius:16px;background:rgba(4,8,6,.88);border:1px solid rgba(255,255,255,.08)}
-.tc .sc{font-size:12px;font-weight:650;color:var(--lime);letter-spacing:.02em}
-.tc h3{margin-top:2px;font-size:26px;letter-spacing:-.04em;color:#fff}
-.tc p{margin-top:6px;font-size:13px;line-height:1.35;color:var(--mute)}
-.tc .go{margin-top:9px;font-size:13px;font-weight:650;color:#fff}
-.tk-n{margin-top:16px;font-size:13px;color:rgba(226,238,228,.5)}
+/* ---------- 2 · cómo funciona */
+.como:before{left:-200px;top:300px}
+.tl{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:70px;counter-reset:s}
+.tl:before,.tl:after{content:"";position:absolute;top:47px;left:calc(100%/6);height:2px}
+.tl:before{right:calc(100%/6);background:var(--line)}
+.tl:after{width:calc(100%/3 + 13px);background:linear-gradient(90deg,var(--lime),rgba(212,242,122,.2))}
+.st{display:flex;flex-direction:column;align-items:center}
+.st .day{font-size:15px;font-weight:700;color:var(--lime);height:26px}
+.st .dot{position:relative;z-index:1;width:18px;height:18px;margin:6px 0 34px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 7px rgba(212,242,122,.16),0 0 30px rgba(212,242,122,.6)}
+.card{width:100%;min-height:330px;padding:30px 30px 28px;border-radius:28px;display:flex;flex-direction:column;gap:14px}
+.card h3{font-size:28px;letter-spacing:-.02em}
+.card p{font-size:16px;line-height:1.55;color:var(--txt)}
+.tags{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+.tags span{display:flex;align-items:center;height:30px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:600;color:rgba(238,243,236,.9);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14)}
+.day-m{display:none}
+@media (max-width:899px){
+.tl{grid-template-columns:1fr;gap:26px;margin-top:40px;padding-left:0}
+.tl:before,.tl:after{top:10px;left:9px;width:2px;height:auto;bottom:0}
+.tl:before{right:auto}.tl:after{bottom:auto;height:50%;background:linear-gradient(180deg,var(--lime),rgba(212,242,122,.2))}
+.st{flex-direction:row;align-items:flex-start;gap:16px}
+.st .day{display:none}.st .dot{flex:none;margin:4px 0 0;width:20px;height:20px;box-shadow:0 0 0 6px rgba(212,242,122,.16)}
+.card{min-height:0;padding:22px 20px;border-radius:24px;gap:10px}
+.day-m{display:block;font-size:13px;font-weight:700;color:var(--lime)}
+.card h3{font-size:23px}.card p{font-size:15px}
+.tags{gap:6px;margin-top:4px}.tags span{height:28px;padding:0 10px;font-size:12px}}
 
-/* lo que cambia */
-.ben{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
-.bc{padding:22px 22px 24px;border-radius:22px;background:#0A1712;border:1px solid var(--line)}
-.bc b{display:block;font-size:24px;font-weight:750;letter-spacing:-.04em;color:#fff}
-.bc b em{font-style:normal;color:var(--lime)}
-.bc p{margin-top:6px;font-size:15px;color:var(--mute)}
+/* ---------- 3 · tiendas de ejemplo */
+.tnd:before{right:-220px;top:120px}
+.tnd-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-areas:"h pv" "list pv" "note pv";grid-template-rows:auto auto 1fr;column-gap:clamp(40px,5.5vw,80px);align-items:start}
+.tnd-h,.tnd-list,.tnd-note{max-width:560px}
+.tnd-h{grid-area:h}.tnd-h h2{font-size:clamp(34px,3.6vw,52px)}
+.tnd-list{grid-area:list;margin-top:48px;display:flex;flex-direction:column;border-bottom:1px solid var(--line)}
+.ts{display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:12px;width:100%;padding:16px 0;border:0;border-top:1px solid var(--line);background:none;text-align:left;cursor:pointer;color:var(--ink);transition:color .25s}
+.ts .n{font-size:13px;font-weight:600;color:var(--mut)}
+.ts .nm{font-size:clamp(30px,2.8vw,40px);line-height:1;font-weight:700;letter-spacing:-.03em;transition:transform .35s var(--ease)}
+.ts .sc{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,243,236,.6)}
+.ts .sc i{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(238,243,236,.18);color:var(--bg);transition:background .25s}
+.ts .sc i svg{width:14px;height:14px}
+.ts:hover .nm{transform:translateX(6px)}
+.ts.on{color:var(--lime)}.ts.on .sc i{background:var(--lime)}
+.tnd-note{grid-area:note;margin-top:24px}
+.tnd-pv{grid-area:pv;margin:0;height:clamp(560px,50vw,720px);padding:14px;border-radius:30px;display:flex;flex-direction:column;gap:12px}
+.tnd-pv .bar{display:flex;align-items:center;gap:12px;padding:4px 8px}
+.tl3{display:flex;gap:6px}.tl3 i{width:11px;height:11px;border-radius:50%;background:rgba(238,243,236,.25)}
+.tnd-pv .url{flex:1;height:30px;display:flex;align-items:center;justify-content:center;gap:5px;border-radius:999px;background:rgba(4,8,6,.4);font-size:13px;color:rgba(238,243,236,.75)}
+.tnd-pv .url b{font-weight:600;color:var(--ink)}
+.scr{flex:1;min-height:0;border-radius:18px;overflow:hidden;background:#141c18}
+.scr img{width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity .35s ease}
+.scr img.ld{opacity:0}
+.tnd-pv figcaption{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:6px 8px 4px}
+.tnd-pv figcaption p{font-size:15px;line-height:1.45;color:rgba(238,243,236,.82)}
+.tnd-pv figcaption span{flex:none;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+@media (max-width:899px){
+.tnd-g{grid-template-columns:1fr;grid-template-areas:"h" "pv" "list" "note";grid-template-rows:none}
+.tnd-h p{display:none}
+.tnd-pv{height:470px;margin-top:28px;padding:10px;border-radius:26px;gap:10px}
+.tnd-pv .bar{padding:0}.tl3{display:none}.tnd-pv .url{height:28px;font-size:12px}
+.scr{border-radius:16px}
+.tnd-pv figcaption{justify-content:center;padding:4px 0 6px}.tnd-pv figcaption p{display:none}
+.tnd-list{margin-top:24px}
+.ts{grid-template-columns:34px minmax(0,1fr) auto;gap:8px;min-height:56px;padding:10px 0}
+.ts .n{font-size:12px}.ts .nm{font-size:26px;letter-spacing:-.02em}.ts .sc{font-size:11px}.ts .sc i{display:none}
+.tnd-note{text-align:center;font-size:12px}}
 
-/* captación */
-.cap{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.cp{position:relative;padding:20px 18px 22px;border-radius:22px;background:#0A1712;border:1px solid var(--line)}
-.cp .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--lime);color:#0A1A06;font-size:14px;font-weight:800}
-.cp small{display:block;margin-top:14px;font-size:12px;font-weight:650;color:var(--mint);letter-spacing:.02em}
-.cp h3{margin-top:4px;font-size:22px;letter-spacing:-.035em;color:#fff}
-.cp p{margin-top:8px;font-size:14.5px;color:var(--mute)}
+/* ---------- 4 · más canales de venta */
+.can:before{left:640px;top:40px;width:900px;height:900px}
+.can-g{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);grid-template-areas:"h map" "ben map" ". note";column-gap:clamp(36px,4vw,60px);align-items:start}
+.can-h,.ben{max-width:520px}
+.can-h{grid-area:h}.can-h h2{font-size:clamp(34px,3.6vw,52px)}
+.ben{grid-area:ben;margin-top:60px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;row-gap:26px}
+.ben li{display:flex;flex-direction:column;gap:6px;padding-top:14px;border-top:1px solid var(--line)}
+.ben b{font-size:17px;color:var(--lime)}
+.ben span{font-size:14px;line-height:1.5;color:rgba(238,243,236,.75)}
+.map{grid-area:map;position:relative;margin-top:40px}
+.map-in{position:relative;aspect-ratio:616/474}
+.map-in img,.map-in svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.map-in img{opacity:.9}
+.rt{stroke-width:2}
+.map.in .rt{animation:dash 2.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-40}}
+.lb text{font-size:12px;font-weight:600;fill:var(--ink);font-family:var(--f)}
+.lt{font-size:13px;font-weight:700;fill:var(--lime);font-family:var(--f)}
+.pu{transform-origin:256.7px 203.3px;animation:pls 2s ease-out infinite}
+@keyframes pls{0%{transform:scale(1);opacity:.7}100%{transform:scale(3.2);opacity:0}}
+.tk{position:absolute;width:min(230px,33%);min-width:190px;padding:12px 14px;border-radius:16px;display:flex;flex-direction:column;gap:2px}
+.tk-c{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lime)}
+.tk-p{display:flex;justify-content:space-between;gap:10px;font-size:14px;font-weight:600}
+.t1{right:0;top:7%}.t2{left:1.5%;top:74%}.t3{right:5%;top:61%}
+.can-note{grid-area:note;margin-top:20px;font-size:12px;color:var(--mut)}
+@media (prefers-reduced-motion:reduce){.map.in .rt,.pu{animation:none}}
+@media (max-width:899px){
+.can-g{grid-template-columns:1fr;grid-template-areas:"h" "map" "note" "ben"}
+.map{margin-top:30px}
+.rt{stroke-width:3}.lb text{font-size:20px}.lb .lx{display:none}.lt{font-size:21px}
+.map-in svg circle[r="4.5"]{r:7}
+.tks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}
+.tk{position:static;width:auto;min-width:0;padding:10px 12px;border-radius:14px}
+.tk-p{flex-direction:column;gap:0;font-size:13px}.tk-p span:last-child{font-weight:700}
+.t3{display:none!important}
+.can-note{margin-top:12px;font-size:11px}
+.ben{grid-template-columns:1fr;row-gap:18px;margin-top:32px}
+.ben b{font-size:17px}.ben span{font-size:14px}}
 
-/* cifras (Product Hackers: una cifra enorme por tarjeta) · sección clara como las de Ask Phill */
-.lt{background:var(--mint2);color:#06120D}
-.lt .eb{color:#235347}
-.lt .sh p{color:rgba(6,18,13,.66)}
-.kp{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px}
-.k.wide{grid-column:span 2}
-.k{padding:26px 26px 22px;border-radius:26px;background:#fff;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 0 rgba(6,18,13,.06)}
-.k b{font-size:clamp(44px,5vw,76px);white-space:nowrap;font-weight:750;letter-spacing:-.06em;line-height:.95;color:#06120D;font-variant-numeric:tabular-nums}
-.k p{font-size:16px;color:rgba(6,18,13,.75)}
-.k small{margin-top:auto;padding-top:10px;font-size:12.5px;color:rgba(6,18,13,.5)}
-.k small a{color:inherit}
-.k.big{grid-row:span 2;background:#06120D;color:#fff;justify-content:flex-end}
-.k.big b{font-size:clamp(84px,11vw,168px);color:var(--lime)}
-.k.big p{color:rgba(238,243,236,.75);font-size:18px;max-width:340px}
-.k.big small{color:rgba(238,243,236,.45);margin-top:0}
+/* ---------- 5 · captación (pajarita) */
+.cap:before{left:260px;top:300px;width:920px;height:920px}
+.bt{position:relative;margin-top:60px}
+.brk{position:relative;height:40px;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));column-gap:0}
+.brk span{position:relative;height:30px;border:1px solid rgba(212,242,122,.55);border-bottom:0;border-radius:10px 10px 0 0}
+.brk .b1{grid-column:1/6;margin-right:-1px;width:calc(100% + 1px)}.brk .b2{grid-column:6/11}
+.brk em{position:absolute;left:50%;top:-11px;transform:translateX(-50%);padding:0 12px;background:var(--bg);font-style:normal;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lime);white-space:nowrap}
+.bow{display:flex;align-items:center;gap:20px;height:460px;margin-top:10px}
+.fc{display:none}
+.fs{flex:1;min-width:0;padding:24px 22px;border-radius:28px;display:flex;flex-direction:column;justify-content:space-between;background:var(--gl);border:1px solid var(--glb);box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+@media (hover:hover) and (min-width:900px){.fs{-webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%)}}
+.f1,.f5{height:440px}.f2,.f4{height:360px}.f3{height:280px}
+.fs-t{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.fs .lab{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lime)}
+.fs .num{font-size:13px;font-weight:600;color:var(--mut)}
+.fs-b{display:flex;flex-direction:column;gap:8px}
+.fs .vb{font-size:clamp(22px,2vw,28px);line-height:1.05;letter-spacing:-.025em;font-weight:700}
+.fs .ds{font-size:14.5px;line-height:1.5;color:rgba(238,243,236,.72)}
+.fs.on{background:var(--lime);border-color:var(--lime);color:var(--deep);box-shadow:0 20px 60px rgba(212,242,122,.18)}
+.fs.on .lab{color:var(--deep)}.fs.on .num{color:rgba(11,43,38,.55)}.fs.on .ds{color:rgba(11,43,38,.72)}
+@media (max-width:1099px){
+.brk{display:none}
+.bt{margin-top:36px}
+.bow{height:auto;flex-direction:column;gap:10px;margin-top:0}
+.fc{display:flex;align-items:center;gap:8px;padding:6px 0 2px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--lime)}
+.fc svg{width:12px;height:12px}
+.fs{flex:none;height:auto!important;display:grid;grid-template-columns:30px minmax(0,1fr);gap:4px;padding:16px 18px;border-radius:22px}
+.fs-t{display:contents}.fs .num{order:-1;padding-top:1px}.fs .lab{grid-column:2;font-size:11px}
+.fs-b{grid-column:2;gap:4px}.fs .vb{font-size:21px;line-height:1.1}.fs .ds{font-size:13.5px;line-height:1.45}
+.f1,.f5{width:min(100%,640px)}.f2,.f4{width:min(90%,576px)}.f3{width:min(80%,512px)}}
 
-/* qué incluye (Designjoy: tarjeta del plan, aquí sin precio) */
-.pl{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px}
-.pk{padding:34px;border-radius:32px;background:linear-gradient(160deg,#0D2621,#060E0A 70%);border:1px solid rgba(184,227,81,.35);display:flex;flex-direction:column;gap:18px}
-.pk .lbl{align-self:flex-start}
-.pk h3{font-size:clamp(34px,4vw,48px);letter-spacing:-.05em;color:#fff}
-.ck{display:grid;gap:10px}
-.ck li{display:flex;gap:12px;font-size:16.5px;color:var(--ink)}
-.ck li:before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--lime) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A1A06' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/13px no-repeat}
-.pr{padding-top:18px;border-top:1px solid var(--line);display:grid;gap:6px}
-.pr b{font-size:30px;font-weight:750;letter-spacing:-.045em;color:#fff}
-.pr span{font-size:15px;color:var(--mute)}
-.ps{display:grid;gap:16px;align-content:start}
-.pc{padding:26px;border-radius:26px;background:#0A1712;border:1px solid var(--line)}
-.pc h3{font-size:22px;letter-spacing:-.035em;color:#fff}
-.pc summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer}
-.pc summary::-webkit-details-marker{display:none}
-.pc summary i{width:22px;height:22px;flex:none;position:relative}
-.pc summary i:before,.pc summary i:after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.6px;background:var(--mint2);transform:translate(-50%,-50%)}
-.pc summary i:after{transform:translate(-50%,-50%) rotate(90deg)}
-.pc[open] summary i:after{transform:translate(-50%,-50%)}
-.pc .dl{margin-top:14px}
-@media (min-width:861px){.pc summary{pointer-events:none}.pc summary i{display:none}}
-.dl{display:grid;gap:8px}
-.dl li{display:flex;gap:10px;font-size:15.5px;color:var(--mute)}
-.dl li:before{content:"";flex:none;width:6px;height:6px;margin-top:9px;border-radius:50%;background:var(--mint)}
-.tw{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
-.tw div{padding:16px 18px;border-radius:20px;border:1px solid var(--line);font-size:14.5px;color:var(--mute)}
-.tw b{display:block;color:#fff;font-size:15.5px;margin-bottom:2px}
-.disc{margin-top:16px;font-size:13.5px;color:rgba(226,238,228,.5);max-width:820px}
+/* ---------- 6 · en cifras (bento) */
+.cif:before{left:-80px;top:300px;width:900px;height:900px}
+.bento{margin-top:60px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:270px 290px;gap:20px}
+.bento>article{border-radius:28px;padding:28px}
+.bb{grid-column:1;grid-row:1/3;padding:32px!important;border-radius:30px!important;background:var(--lime);color:var(--deep);display:flex;flex-direction:column;justify-content:space-between}
+.bb-n{display:flex;align-items:baseline;gap:10px;font-weight:700;letter-spacing:-.04em;font-size:60px;line-height:1}
+.bb-n .big{font-size:clamp(120px,11vw,160px);line-height:.82;letter-spacing:-.07em}
+.bb p{font-size:18px;line-height:1.45;color:rgba(11,43,38,.78);margin-top:-30px}
+.tl2{display:flex;flex-direction:column;gap:14px}
+.tl2 .ln{position:relative;height:14px;margin:0 7px}
+.tl2 .ln:before{content:"";position:absolute;left:0;right:0;top:6px;height:2px;background:rgba(11,43,38,.35)}
+.tl2 .ln i{position:absolute;top:50%;border-radius:50%;background:#0B2B26;transform:translate(-50%,-50%)}
+.tl2 .a{left:0;width:14px;height:14px}.tl2 .b{left:50%;width:8px;height:8px}.tl2 .c{left:100%;width:14px;height:14px}
+.lbs{display:flex;justify-content:space-between;gap:8px;font-size:14px;color:rgba(11,43,38,.72)}
+.lbs span{display:flex;flex-direction:column;gap:2px}.lbs span:nth-child(2){text-align:center}.lbs span:nth-child(3){text-align:right}
+.lbs b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--deep)}
+.num{font-weight:700;letter-spacing:-.045em;line-height:.95;white-space:nowrap}
+.bw{grid-column:2/4;grid-row:1;padding:32px!important;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.bw .num{font-size:clamp(64px,7.2vw,104px);letter-spacing:-.05em}
+.bw .tx{display:flex;flex-direction:column;gap:10px;width:250px;flex:none;font-size:18px;line-height:1.45;color:var(--txt)}
+.src{font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--mut);text-decoration:underline;text-decoration-color:rgba(238,243,236,.2);text-underline-offset:3px}
+.src:hover{color:var(--ink)}
+.br2{grid-column:2;grid-row:2;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.br2>.tx{display:flex;flex-direction:column;justify-content:space-between;height:100%;gap:10px;min-width:0}
+.br2 .num,.bg2 .num{font-size:clamp(48px,4.4vw,64px)}
+.tx2{display:flex;flex-direction:column;gap:8px;font-size:15.5px;line-height:1.45;color:var(--txt)}
+.bars{display:flex;align-items:flex-end;gap:12px;height:132px;flex:none}
+.bars>span{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;height:100%}
+.bars i{width:34px;border-radius:6px 6px 0 0;background:rgba(238,243,236,.22);transform-origin:bottom;transition:transform 1.1s var(--ease) .3s}
+.bars .on i{background:var(--lime)}
+.bars em{font-style:normal;font-size:11px;color:var(--mut)}.bars .on em{font-weight:700;color:var(--ink)}
+.bars>span{height:110px}.bars>span i{max-height:110px}
+.js .bars:not(.in) i{transform:scaleY(0)}
+.bg2{grid-column:3;grid-row:2;display:flex;flex-direction:column;justify-content:space-between;gap:12px}
+.bags{display:flex;gap:6px}
+.bags i{width:27px;height:27px;display:block}
+.bags svg{width:100%;height:100%}
+.bags .bx svg{fill:none;stroke:rgba(238,243,236,.35)}
+.bags .bo svg{fill:rgba(212,242,122,.25);stroke:var(--lime)}
+@media (max-width:1099px){.bw{flex-direction:column;align-items:flex-start}.bw .tx{width:auto}.bento{grid-template-rows:auto auto}.bags{gap:4px}.bags i{width:22px;height:22px}}
+@media (max-width:899px){
+.bento{display:flex;flex-direction:column;gap:12px;margin-top:36px}
+.bento>article{padding:22px!important;border-radius:24px!important}
+.bb{gap:18px}.bb-n{font-size:40px}.bb-n .big{font-size:110px}.bb p{margin-top:0;font-size:15.5px}
+.lbs{font-size:12.5px}.lbs b{font-size:11px}
+.bw{gap:10px}.bw .num{font-size:54px}.bw .tx{font-size:15px}
+.br2 .num,.bg2 .num{font-size:50px}
+.tx2{font-size:15px}
+.bars{height:110px}.bars>span{height:88px}.bars i{width:32px}
+.bags i{width:26px;height:26px}}
 
-/* sectores */
-.sx{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
-.sx a{position:relative;display:block;border-radius:20px;overflow:hidden;aspect-ratio:4/5;text-decoration:none;background:#0F1F19}
-.sx img{width:100%;height:100%;object-fit:cover}
-.sx span{position:absolute;left:8px;right:8px;bottom:8px;padding:9px 12px;border-radius:999px;background:rgba(4,8,6,.84);font-size:14px;font-weight:650;color:#fff;display:flex;justify-content:space-between}
-.sx-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px}
-.sx-h h3{font-size:24px;letter-spacing:-.035em}
-.sx-h a{font-size:14.5px;color:var(--lime);text-decoration:none;font-weight:600;white-space:nowrap}
+/* ---------- 7 · qué incluye */
+.inc:before{left:-160px;top:200px;width:900px;height:900px}
+.inc-g{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);grid-template-areas:"h acc" "price acc" "disc acc";grid-template-rows:auto auto 1fr;column-gap:clamp(40px,5.5vw,80px);align-items:start}
+.inc-h,.price,.disc{max-width:480px}
+.inc-h{grid-area:h}.inc-h h2{font-size:clamp(34px,3.6vw,52px)}
+.price{grid-area:price;margin-top:28px;padding:30px;border-radius:30px;display:flex;flex-direction:column;gap:12px}
+.price .kk{color:var(--lime)}
+.price h3{font-size:26px;line-height:1.12;letter-spacing:-.02em}
+.price p{font-size:16px;line-height:1.55;color:var(--txt)}
+.price .btns{margin-top:8px;gap:10px}
+.disc{grid-area:disc;margin-top:22px;font-size:12.5px;line-height:1.55;color:var(--mut)}
+.inc-acc{grid-area:acc;margin-top:30px}
+.acc{border-bottom:1px solid var(--line)}
+.acc details{border-top:1px solid var(--line)}
+.acc summary{display:flex;align-items:center;gap:12px;padding:26px 0;cursor:pointer;list-style:none;color:var(--ink);transition:color .25s}
+.acc summary::-webkit-details-marker{display:none}
+.acc .q{flex:1;font-size:22px;font-weight:700;letter-spacing:-.01em}
+.acc .cnt{min-width:26px;height:24px;padding:0 8px;border-radius:999px;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;background:rgba(238,243,236,.1);color:var(--txt)}
+.acc .pl{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid rgba(238,243,236,.2);display:flex;align-items:center;justify-content:center;transition:transform .3s var(--ease),background .25s,border-color .25s}
+.acc .pl svg{width:14px;height:14px}
+.acc details[open] summary{color:var(--lime)}
+.acc details[open] .pl{transform:rotate(45deg);border-color:rgba(212,242,122,.5)}
+.acc summary:hover .pl{background:rgba(255,255,255,.08)}
+.ans{padding:0 0 30px}
+.ans p{font-size:17px;line-height:1.6;color:var(--txt);max-width:720px}
+.ck{display:flex;flex-direction:column;gap:12px}
+.ck li{display:flex;align-items:flex-start;gap:12px;font-size:17px;line-height:1.4}
+.ck i{flex:none;width:22px;height:22px;border-radius:50%;background:rgba(212,242,122,.16);border:1px solid rgba(212,242,122,.45);color:var(--lime);display:flex;align-items:center;justify-content:center}
+.ck i svg{width:12px;height:12px}
+.dl{display:flex;flex-direction:column;gap:10px}
+.dl li{display:grid;grid-template-columns:16px minmax(0,1fr);font-size:16.5px;line-height:1.45;color:var(--txt)}
+.dl li:before{content:"–";color:var(--mut)}
+@media (max-width:899px){
+.inc-g{grid-template-columns:1fr;grid-template-areas:"h" "acc" "price" "disc";grid-template-rows:none}
+.inc-acc{margin-top:26px}
+.price{margin-top:26px;padding:24px 22px;border-radius:26px}.price h3{font-size:22px}.price p{font-size:15px}
+.disc{font-size:12px}
+.acc summary{padding:18px 0}.acc .q{font-size:17px}
+.ans{padding-bottom:22px}.ans p{font-size:15px}
+.ck li{font-size:15px}.dl li{font-size:14.5px}}
 
-/* preguntas (Designjoy: lista + tarjeta para hablar) */
-.fq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:start}
-.fq-l{position:sticky;top:100px;display:grid;gap:18px}
-.fq-l h2{font-size:clamp(36px,4.6vw,56px);letter-spacing:-.05em}
-.fq-c{padding:22px;border-radius:26px;background:linear-gradient(160deg,var(--lime2),var(--lime));color:#0A1A06;display:grid;gap:14px}
-.fq-c .who{display:flex;align-items:center;gap:12px}
-.fq-c img{width:52px;height:52px;border-radius:50%;object-fit:cover}
-.fq-c b{font-size:19px;letter-spacing:-.03em}
-.fq-c p{font-size:15px;color:rgba(10,26,6,.75)}
-.fq-c .btn{justify-self:start}
-.qs details{border-bottom:1px solid var(--line)}
-.qs summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-size:18.5px;font-weight:600;letter-spacing:-.02em;color:#fff}
-.qs summary::-webkit-details-marker{display:none}
-.qs summary i{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);position:relative}
-.qs summary i:before,.qs summary i:after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.6px;background:var(--mint2);transform:translate(-50%,-50%)}
-.qs summary i:after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .2s}
-.qs details[open] summary i:after{transform:translate(-50%,-50%) rotate(0)}
-.qs details p{padding:0 44px 22px 0;color:var(--mute);font-size:16px}
-.seo-lk{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:28px;font-size:14px;color:var(--mute)}
-.seo-lk b{font-weight:600;margin-right:4px}
-.seo-lk a{padding:6px 12px;border-radius:999px;border:1px solid var(--line);text-decoration:none}
-.seo-lk a:hover{color:#fff;border-color:rgba(218,241,222,.3)}
+/* ---------- 8 · quién te atiende */
+.chr{overflow:hidden;padding:150px 0 130px}
+.chr:before{left:calc(50% - 450px);top:40px;width:900px;height:900px;background:radial-gradient(closest-side,rgba(35,83,71,.7),rgba(35,83,71,0))}
+.chr-bg{position:absolute;left:0;right:0;top:70px;text-align:center;font-weight:800;letter-spacing:-.04em;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(238,243,236,.14);white-space:nowrap;pointer-events:none;font-size:min(236px,16.4vw)}
+.chr-c{position:relative;max-width:900px;margin:0 auto;padding:48px 64px 52px;border-radius:40px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+.av{position:relative;display:block;width:112px;height:112px;flex:none}
+.av img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 30%;border:3px solid rgba(238,243,236,.9)}
+.av i{position:absolute;right:4px;bottom:6px;width:18px;height:18px;border-radius:50%;background:var(--lime);border:3px solid #0E1A15}
+.av.sm{width:64px;height:64px}.av.sm img{border-width:2px}.av.sm i{right:0;bottom:2px;width:14px;height:14px}
+.chr-c .kk{color:var(--txt)}
+.chr-c h2{font-size:clamp(32px,3.8vw,54px);line-height:1.04;letter-spacing:-.035em}
+.chr-c p{max-width:640px;font-size:18px;line-height:1.55;color:var(--txt)}
+.chr-c .btns{justify-content:center;margin-top:8px}
+.micro{font-size:13.5px;color:var(--mut)}
+@media (max-width:899px){
+.chr{padding:84px 0}
+.chr-bg{top:40px;left:16px;right:auto;text-align:left;font-size:96px;line-height:.95;-webkit-text-stroke:1px rgba(238,243,236,.16)}
+.chr-c{margin-top:110px;padding:30px 22px 28px;border-radius:30px;gap:16px}
+.av{width:96px;height:96px}.av i{right:2px;bottom:4px;width:16px;height:16px}
+.chr-c .kk{font-size:11px}
+.chr-c h2{font-size:32px;letter-spacing:-.03em}
+.chr-c p{font-size:15.5px}
+.chr-c .btns{width:100%;flex-direction:column;gap:10px;margin-top:4px}
+.chr-c .btns a{width:100%;justify-content:space-between}.chr-c .btns .b-gl{justify-content:center;font-size:15px}
+.micro{font-size:12.5px}}
 
-/* cierre */
-.end{position:relative;overflow:hidden;text-align:center;padding:80px 32px 0;border-radius:36px;background:radial-gradient(80% 70% at 50% 100%,rgba(35,83,71,.7),transparent 70%),#06100B;border:1px solid var(--line);display:grid;justify-items:center;gap:20px}
-.end h2{font-size:clamp(40px,6vw,84px);letter-spacing:-.055em;line-height:.95}
-.end p{max-width:560px;font-size:18px;color:var(--mute)}
-.mini{position:relative;width:100%;height:clamp(150px,18vw,230px);margin-top:20px}
-.mini .fc{width:clamp(110px,13vw,170px);transform-origin:50% 130%}
+/* ---------- 9 · preguntas */
+.faq:before{left:-160px;top:160px;width:900px;height:900px}
+.faq-g{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);grid-template-areas:"h acc" "duda acc";grid-template-rows:auto 1fr;column-gap:clamp(40px,5.5vw,80px);align-items:start}
+.faq-h,.duda{max-width:400px}
+.faq-h{grid-area:h}.faq-h h2{font-size:clamp(34px,3.6vw,52px)}
+.faq-acc{grid-area:acc}
+.faq-acc .q{font-size:20px}
+.duda{grid-area:duda;margin-top:38px;padding:28px;border-radius:30px;display:flex;flex-direction:column;gap:14px;position:sticky;top:110px}
+.duda h3{font-size:24px;letter-spacing:-.02em}
+.duda p{font-size:16px;line-height:1.5;color:var(--txt)}
+.duda .b-lime{margin-top:6px}
+@media (max-width:899px){
+.faq-g{grid-template-columns:1fr;grid-template-areas:"h" "acc" "duda";grid-template-rows:none}
+.faq-acc{margin-top:26px}.faq-acc .q{font-size:16.5px}
+.duda{position:static;margin-top:28px;padding:22px;border-radius:26px}.av.sm{width:56px;height:56px}.duda h3{font-size:21px}.duda p{font-size:15px}}
 
-footer{padding:40px 0 120px;font-size:13.5px;color:rgba(226,238,228,.5)}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px}
-footer .lk{display:flex;flex-wrap:wrap;gap:8px 18px}
-footer a{text-decoration:none}footer a:hover{color:#fff}
+/* ---------- 10 · cierre y pie */
+.cie{padding:90px 0 60px}
+.cie:before{left:calc(50% - 450px);top:200px;width:900px;height:900px;background:radial-gradient(closest-side,rgba(35,83,71,.65),rgba(35,83,71,0))}
+.sect{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.sect-t{font-size:15px;font-weight:700;white-space:nowrap}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills a{display:flex;align-items:center;gap:8px;height:42px;padding:0 16px;border-radius:999px;font-size:14.5px;font-weight:600;white-space:nowrap;background:var(--gl);border:1px solid var(--glb);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);transition:background .2s,transform .2s var(--ease)}
+.pills a span{color:var(--lime)}
+.pills a:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.all{font-size:14.5px;font-weight:600;color:var(--lime);white-space:nowrap}
+.guides{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;margin-top:26px;padding-bottom:40px;border-bottom:1px solid rgba(238,243,236,.12);font-size:14.5px}
+.guides span{color:var(--mut)}
+.guides a{text-decoration:underline;text-decoration-color:rgba(238,243,236,.3);text-underline-offset:4px;transition:color .2s}
+.guides a:hover{color:var(--lime)}
+.close{display:flex;flex-direction:column;align-items:center;gap:26px;text-align:center;padding:110px 0 120px}
+.close h2{font-size:clamp(46px,7.2vw,104px);line-height:.98;letter-spacing:-.05em}
+.close p{max-width:620px;font-size:19px;line-height:1.55;color:var(--txt)}
+.close .btns{justify-content:center}
+.ft{position:relative;overflow:hidden;padding-bottom:0}
+.ft .w{display:flex;flex-direction:column;gap:16px;padding-top:22px;border-top:1px solid rgba(238,243,236,.12);max-width:1280px;width:calc(100% - 2*var(--pad));padding-left:0;padding-right:0}
+.ft-r1,.ft-r2{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.ct{font-size:13.5px;line-height:1.6;color:var(--txt);text-align:right}
+.ct a{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(238,243,236,.3);text-underline-offset:3px}
+.fl{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13.5px;color:var(--txt)}
+.fl a:hover{color:var(--lime)}
+.cp{font-size:13px;color:var(--mut);white-space:nowrap}
+.wm{width:calc(100% - 80px);max-width:1360px;height:auto;margin:30px auto 0;overflow:visible}
+.wm text{font-family:var(--f)}
+@media (max-width:899px){
+.cie{padding:64px 0 40px}
+.sect{flex-wrap:wrap;gap:16px}.sect-t{order:0}.all{order:1;font-size:13px}.pills{order:2;width:100%}
+.pills a{height:40px;font-size:14px;padding:0 14px}
+.guides{font-size:14px;gap:6px 14px;padding-bottom:30px;margin-top:20px}
+.close{align-items:stretch;text-align:left;padding:56px 0 64px;gap:16px}
+.close h2{font-size:46px;line-height:1;letter-spacing:-.045em}
+.close p{font-size:16px}
+.close .btns{flex-direction:column;gap:10px;margin-top:4px}
+.close .btns a{width:100%;justify-content:space-between}.close .btns .b-gl{justify-content:center;font-size:15px}
+.close .micro{text-align:center;font-size:13px}
+.ft .w{gap:12px}
+.ft-r1,.ft-r2{flex-direction:column;align-items:flex-start;gap:12px}
+.ct{text-align:left;font-size:13px}.fl{gap:8px 16px;font-size:13px}.cp{font-size:12.5px}
+.wm{width:calc(100% - 28px);margin-top:20px}}
 
-/* WhatsApp flotante */
-.waf{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:70;display:flex;align-items:center;gap:10px;height:60px;padding:0 22px 0 18px;border-radius:999px;background:var(--wa);color:#05210F;font:700 16px/1 var(--f);text-decoration:none;box-shadow:0 0 0 1px rgba(255,255,255,.3) inset,0 16px 36px -10px rgba(37,211,102,.55),0 8px 20px -8px rgba(0,0,0,.6);transition:transform .2s}
+/* ---------- WhatsApp flotante y degradado inferior */
+.waf{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:70;display:flex;align-items:center;gap:10px;height:56px;padding:0 22px 0 16px;border-radius:999px;background:var(--wa);color:#05210F;font-weight:700;font-size:15px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3),0 16px 36px -10px rgba(37,211,102,.55),0 8px 20px -8px rgba(0,0,0,.6);transition:transform .25s var(--ease),opacity .25s}
+.waf svg{width:26px;height:26px}
 .waf:hover{transform:translateY(-2px)}
-.waf{transition:transform .25s,opacity .25s}.waf.off{opacity:0;transform:translateY(16px);pointer-events:none}
-.waf svg{width:28px;height:28px}
+.waf.off{opacity:0;transform:translateY(16px);pointer-events:none}
+.fade{position:fixed;left:0;right:0;bottom:0;height:120px;z-index:60;pointer-events:none;background:linear-gradient(to bottom,rgba(4,8,6,0),rgba(4,8,6,.88));transition:opacity .4s}
+.fade.off{opacity:0}
+@media (max-width:899px){.waf{width:56px;padding:0;justify-content:center}.waf span{display:none}.waf svg{width:28px;height:28px}.fade{height:80px}}
 
-/* ordenador mediano */
-@media (max-width:1100px){
-.tk{grid-template-columns:repeat(3,minmax(0,1fr))}.tk .tc:nth-child(n+4){display:none}
-.cap{grid-template-columns:repeat(3,minmax(0,1fr))}
-.sx{grid-template-columns:repeat(3,minmax(0,1fr))}
-}
-/* móvil y tableta */
-@media (max-width:860px){
-body{font-size:16px}.wrap{width:calc(100% - 32px)}
-.nv{top:10px}.nv-in{padding:6px 6px 6px 18px;gap:10px}.nv-lk,.nv .btn.gh{display:none}
-.hero{padding:124px 0 28px}
-.tools{display:none}
-.ben .bc:nth-child(n+5){display:none}
-.cp p{display:none}
-.pc{padding:18px 20px}
-.hero h1{margin-top:18px}
-.fan{height:clamp(220px,62vw,330px);margin-top:-6px}
-.fc{width:clamp(128px,36vw,190px)}
-.fc b{font-size:11px;left:7px;bottom:7px;padding:4px 8px}
-.hero-b{margin-top:26px;gap:18px}
-.hero-b .sub{font-size:17px}
-.hero-b .btns{flex-direction:column;align-items:stretch;width:100%;max-width:340px}
-.sec{padding:64px 0}
-.sh{margin-bottom:28px}
-.sh p{font-size:16.5px}
-.st3{grid-template-columns:1fr;gap:12px}
-.s{min-height:0;padding:22px 22px 24px}
-.s .vis{padding:4px 0 14px}
-.s h3{font-size:28px}
-.me{grid-template-columns:1fr;gap:20px;padding:24px;border-radius:26px}
-.me img{width:96px;height:96px;border-radius:22px}
-.me p{font-size:16.5px}
-.me .btns .btn{width:100%;max-width:340px}
-.tk{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none}
-.tk::-webkit-scrollbar{display:none}
-.tk .tc,.tk .tc:nth-child(n+4){display:block;flex:none;width:72vw;max-width:300px;scroll-snap-align:center}
-.ben{grid-template-columns:1fr 1fr;gap:10px}
-.bc{padding:16px 16px 18px;border-radius:18px}
-.bc b{font-size:20px}.bc p{font-size:14px}
-.cap{grid-template-columns:1fr;gap:10px}
-.cp{display:grid;grid-template-columns:30px 1fr;column-gap:14px;padding:16px 18px}
-.cp .n{grid-row:span 3}.cp small{margin-top:0}.cp h3{font-size:20px}.cp p{margin-top:4px;font-size:14.5px}
-.kp{grid-template-columns:1fr 1fr;gap:10px}
-.k{padding:18px 18px 16px;border-radius:20px}
-.k b{font-size:34px}.k p{font-size:14px}
-.k.wide{grid-column:1/-1}
-.k.big{grid-column:1/-1;grid-row:auto;padding:24px}
-.k.big b{font-size:86px}
-.pl{grid-template-columns:1fr}
-.pk{padding:24px;border-radius:26px}
-.ck li{font-size:15.5px}
-.tw{grid-template-columns:1fr}
-.sx{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.sx a{border-radius:16px}
-.sx span{left:6px;right:6px;bottom:6px;padding:6px 9px;font-size:12.5px}
-.sx span em{display:none}
-.fq{grid-template-columns:1fr;gap:24px}
-.fq-l{position:static}
-.qs summary{font-size:16.5px;padding:17px 0}
-.qs details p{padding-right:0;font-size:15px}
-.end{padding:52px 18px 0;border-radius:28px}
-.end p{font-size:16.5px}
-.end{grid-template-columns:minmax(0,1fr)}
-.btn{padding:0 20px}
-.end .btns{flex-direction:column;align-items:stretch;width:100%;max-width:340px}
-.waf{height:54px;padding:0 18px 0 15px;font-size:15px}
-.waf svg{width:24px;height:24px}
-footer{padding-bottom:110px}
-}
-@media (max-width:380px){.k b{font-size:30px}.btn{font-size:15.5px;padding:0 16px}}
-@media (prefers-reduced-motion:reduce){.fc,.tc img,.btn{transition:none}.fan.pre .fc{transform:translateX(-50%) translateX(var(--x)) rotate(var(--r))}}
+/* cargador: el 404 vuela al logo de la cabecera */
+html.l404 .nv-logo .mk{opacity:0}
+html.l404.l404-land .nv-logo .mk{opacity:1;transition:opacity .4s}
 
-/* mapa de España (v61) */
-.od{display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:center;padding:36px 36px 30px 40px;border-radius:32px;text-align:left;background:linear-gradient(160deg,#0D2621,#060E0A 60%);border:1px solid rgba(218,241,222,.14);box-shadow:0 50px 100px -50px rgba(0,0,0,.9)}
-.od-t{font-size:clamp(26px,3vw,34px);font-weight:700;letter-spacing:-.04em;line-height:1.1;color:#fff;text-wrap:balance}
-.od-t span{color:var(--lime)}
-.od-ls{margin-top:24px;display:flex;flex-direction:column;gap:8px}
-.od-o{display:flex;align-items:center;gap:12px;padding:8px 14px 8px 8px;border-radius:16px;background:#0F1F19;border:1px solid rgba(255,255,255,.08);opacity:.2}
-.od.in .od-o{opacity:1;transition:opacity .5s;transition-delay:calc(1.4s + var(--d)*1.1s)}
-.od-o img{width:40px;height:40px;border-radius:10px;object-fit:cover;background:#1A2A23}
-.od-o div{flex:1;min-width:0}
-.od-o b{display:block;font-size:15px;font-weight:650;color:#fff}
-.od-o span{display:block;font-size:12.5px;color:rgba(226,238,228,.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.od-o em{font-style:normal;font-weight:650;font-size:15px;color:#fff;font-variant-numeric:tabular-nums}
-.od-mw{position:relative;contain:layout paint}
-.od-bg{display:block;width:100%;height:auto}
-.od-ov{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.od-a{fill:none;stroke:var(--lime);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
-.od.in .od-a{stroke-dashoffset:0;transition:stroke-dashoffset .9s cubic-bezier(.5,0,.3,1);transition-delay:calc(.5s + var(--d)*1.1s)}
-.od-p{opacity:0}
-.od.in .od-p{opacity:1;transition:opacity .4s;transition-delay:calc(1.3s + var(--d)*1.1s)}
-.od-p circle{fill:#fff;stroke:rgba(184,227,81,.5);stroke-width:4}
-.od-ov text{font:600 14px var(--f);fill:#fff;letter-spacing:-.01em;paint-order:stroke;stroke:#08130F;stroke-width:5px;stroke-linejoin:round}
-.od-shop circle{fill:var(--lime)}
-.od-shop text{font-weight:700;fill:var(--lime)}
-.od-pu{position:absolute;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;border:2px solid var(--lime);opacity:0;pointer-events:none;animation:odP 2.4s ease-out infinite paused}
-.od.vis .od-pu{animation-play-state:running}
-@keyframes odP{0%{transform:scale(1);opacity:.9}100%{transform:scale(3.2);opacity:0}}
-.od-ex{margin-top:14px;text-align:center;font-size:12px;color:rgba(226,238,228,.4)}
-@media (max-width:860px){
-.scene{margin-top:38px}
-.od{grid-template-columns:1fr;gap:6px;padding:24px 16px 18px;border-radius:24px}
-.od-tx{display:contents}.od-t{order:0;font-size:25px;padding:0 4px}.od-mw{order:1;margin:10px -4px 0}.od-ls{order:2;margin-top:6px}
-.od-o:nth-child(n+4){display:none}
-.od-ov text{font-size:22px;stroke-width:7px}
-.od-a{stroke-width:2.8}
-}
-@media (prefers-reduced-motion:reduce){.od-a{stroke-dashoffset:0}.od-p,.od-o{opacity:1}.od-pu{display:none}}
-.od-wrap{margin-top:8px}
-</style></head><body><!-- 404 loader v3 · el isotipo se dibuja, vuela a la cabecera y se funde en 404/GROWTH -->
-<style id="l404-css">
+/* cargador 404 (de la v64) */
 #l404{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center}
 #l404 .bg{position:absolute;inset:0;background:radial-gradient(90% 80% at 70% 20%,#4E6A55 0%,#2C3F32 55%,#18241C 100%);transition:opacity .8s cubic-bezier(.4,0,.2,1) .1s}
 #l404 .bg:before{content:"";position:absolute;inset:0;opacity:.12;background:repeating-linear-gradient(80deg,rgba(255,255,255,.5) 0 1px,transparent 1px 6px)}
 #l404 .lw{position:relative;transform-origin:0 0;will-change:transform,filter,opacity}
 #l404 svg{display:block;width:min(56vw,260px);height:auto;overflow:visible}
 #l404 .d{stroke-dasharray:1;stroke-dashoffset:1;animation:l404draw .9s cubic-bezier(.65,0,.35,1) forwards}
-#l404 .d1{animation-delay:.1s}#l404 .d2{animation-delay:.32s}#l404 .d3{animation-delay:.48s}
+#l404 .d1{animation-delay:.1s}
+#l404 .d2{animation-delay:.32s}
+#l404 .d3{animation-delay:.48s}
 #l404 .tr{stroke-dasharray:1;stroke-dashoffset:1;opacity:0;animation:l404trail .7s cubic-bezier(.2,.7,.2,1) 1.2s forwards}
 #l404 .sh{opacity:0;animation:l404fade .5s ease 1.3s forwards}
-#l404.fly{pointer-events:none}#l404.fly .bg{opacity:0}#l404.fly .sh{visibility:hidden}
+#l404.fly{pointer-events:none}
+#l404.fly .bg{opacity:0}
+#l404.fly .sh{visibility:hidden}
+#l404 .d,#l404 .tr,#l404 .sh{animation:none;stroke-dashoffset:0}
+#l404 .tr{opacity:0}
+#l404 .lw{transition:opacity .3s!important}
 @keyframes l404draw{to{stroke-dashoffset:0}}
 @keyframes l404trail{0%{opacity:1;stroke-dashoffset:1}55%{opacity:1;stroke-dashoffset:0}100%{opacity:0;stroke-dashoffset:-1}}
 @keyframes l404fade{to{opacity:.85}}
-.nv-logo .w404{display:inline-block;transition:opacity .6s ease,filter .7s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1),letter-spacing .75s cubic-bezier(.2,.7,.2,1)}
-html.l404 .nv-logo .w404{opacity:0;filter:blur(10px);transform:scale(.62,1.5);letter-spacing:.12em}
-html.l404.l404-land .nv-logo .w404{opacity:1;filter:blur(0);transform:none;letter-spacing:-.03em}
-@media (prefers-reduced-motion:reduce){#l404 .d,#l404 .tr,#l404 .sh{animation:none;stroke-dashoffset:0}#l404 .tr{opacity:0}#l404 .lw{transition:opacity .3s!important}.nv-logo .w404{transition:opacity .4s}html.l404 .nv-logo .w404{filter:none;transform:none;letter-spacing:-.03em}}
+@media (prefers-reduced-motion:reduce){#l404 .d,#l404 .tr,#l404 .sh{animation:none;stroke-dashoffset:0}#l404 .tr{opacity:0}#l404 .lw{transition:opacity .3s!important}}
 </style>
-<script>document.documentElement.classList.add('l404')</script>
+</head>
+<body>
+<script>document.documentElement.classList.add('js','l404')</script>
 <div id="l404" aria-hidden="true"><div class="bg"></div><div class="lw">
 <svg viewBox="20 60 362 280" fill="none" stroke-linecap="round" stroke-linejoin="round">
 <defs><linearGradient id="l404g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#fff" stop-opacity=".86"/><stop offset="1" stop-color="#CFE0C9" stop-opacity=".94"/></linearGradient>
@@ -384,141 +517,180 @@ html.l404.l404-land .nv-logo .w404{opacity:1;filter:blur(0);transform:none;lette
 </g>
 <g transform="skewX(-12) translate(52 0)"><path class="sh" d="M160 120 A 46 46 0 0 1 200 104" stroke="#fff" stroke-width="3"/></g>
 </svg></div></div>
-<script>(function(){var H=document.documentElement,l=document.getElementById('l404');if(!l){H.classList.remove('l404');return}
-var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-function end(ms){setTimeout(function(){H.classList.remove('l404','l404-land');l.remove()},ms)}
-setTimeout(function(){var w=l.querySelector('.lw'),t=document.querySelector('.nv-logo .w404');
- var b=t&&t.getBoundingClientRect();
- if(!b||rm||!b.width){w.style.transition='opacity .4s';w.style.opacity='0';l.classList.add('fly');H.classList.add('l404-land');end(900);return}
- var a=w.getBoundingClientRect(),cx=b.left+b.width/2,cy=b.top+b.height/2,s=b.height*1.7/a.height;
- /* 1 · vuela y se encoge hasta el centro del 404/GROWTH */
- w.style.transition='transform .85s cubic-bezier(.65,0,.2,1)';
- w.style.transform='translate('+(cx-a.width*s/2-a.left)+'px,'+(cy-a.height*s/2-a.top)+'px) scale('+s+')';
- l.classList.add('fly');
- /* 2 · se estira a lo ancho de la palabra y se funde con ella */
- setTimeout(function(){w.style.transition='transform .7s cubic-bezier(.3,0,.2,1),filter .6s ease,opacity .55s ease .05s';
-  w.style.transform='translate('+(b.left-a.left)+'px,'+(b.top-a.top)+'px) scale('+(b.width/a.width)+','+(b.height/a.height)+')';
-  w.style.filter='blur(7px)';w.style.opacity='0';H.classList.add('l404-land')},820);
- end(1750)},rm?500:1900)})()</script>
-<!-- /404 loader v3 -->
 <a class="skip" href="#contenido">Saltar al contenido</a>
-<header class="nv"><div class="nv-in"><a class="nv-logo" href="/" aria-label="404 Growth, inicio"><span class="w404">404/GROWTH<sup>®</sup></span></a>
+<header class="nv" id="nv"><div class="nv-in">
+<a class="nv-logo" href="/" aria-label="404 Growth, inicio"><svg class="mk" viewBox="20 60 362 280" aria-hidden="true"><g transform="skewX(-12) translate(52 0)" fill="none" stroke="#D4F27A" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"><rect x="140" y="90" width="120" height="220" rx="60"/><path d="M155.1 110.2 L40 240 L140 240"/><path d="M244.9 110.2 L360 240 L260 240"/></g></svg><span>404 Growth</span></a>
 <nav class="nv-lk" aria-label="Secciones"><a href="#como">Cómo funciona</a><a href="#tiendas">Tiendas</a><a href="#plan">Qué incluye</a><a href="#preguntas">Preguntas</a><a href="/guia">Guías</a></nav>
-<a class="btn gh" href="/book?utm_source=web&amp;utm_medium=portada&amp;utm_campaign=cabecera" data-cta="cabecera">Reservar llamada<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn lm" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="wa-cabecera"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg>Escríbeme</a></div></header>
+<a class="nv-cta" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="wa-cabecera">Hablamos</a>
+<button class="nv-mb" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mm"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
+</div></header>
+<div class="mm" id="mm" hidden><nav aria-label="Menú"><a href="#como">Cómo funciona</a><a href="#tiendas">Tiendas de ejemplo</a><a href="#plan">Qué incluye</a><a href="#preguntas">Preguntas</a><a href="/guia">Guías</a></nav>
+<div class="mm-b"><a class="b-lime full" href="/book?utm_source=web&amp;utm_medium=portada&amp;utm_campaign=menu" data-cta="menu">Reservar llamada de 30 min<span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span></a><a class="b-gl full" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="wa-menu">Escríbeme por WhatsApp</a></div></div>
 <main id="contenido">
-<section class="hero">
- <div class="wrap"><p class="lbl"><i></i>De tienda física a tienda online · toda España</p>
- <h1><span class="l1">Tu tienda.</span> <span class="l2 gr">Abierta 24 horas.</span></h1></div>
- <div class="fan pre" id="fan"><a class="fc c1" href="/demo-aurea" style="--x:-112%;--r:-17deg;--i:2" aria-label="Tienda de ejemplo Áurea, Joyería"><img src="/demos/cards/aurea.webp" alt="" width="760" height="1040" loading=lazy decoding="async"><b>Áurea</b></a><a class="fc c2" href="/demo-pulso" style="--x:-58%;--r:-8deg;--i:1" aria-label="Tienda de ejemplo Pulso, Sneakers"><img src="/demos/cards/pulso.webp" alt="" width="760" height="1040" loading=lazy decoding="async"><b>Pulso</b></a><a class="fc c3" href="/demo-solenne" style="--x:0%;--r:0deg;--i:0" aria-label="Tienda de ejemplo Solenne, Moda mujer"><img src="/demos/cards/solenne.webp" alt="" width="760" height="1040" decoding="async"><b>Solenne</b></a><a class="fc c4" href="/demo-nacar" style="--x:58%;--r:8deg;--i:1" aria-label="Tienda de ejemplo Nácar, Cosmética"><img src="/demos/cards/nacar.webp" alt="" width="760" height="1040" loading=lazy decoding="async"><b>Nácar</b></a><a class="fc c5" href="/demo-forma" style="--x:112%;--r:17deg;--i:2" aria-label="Tienda de ejemplo Forma, Suplementos"><img src="/demos/cards/forma.webp" alt="" width="760" height="1040" loading=lazy decoding="async"><b>Forma</b></a></div>
- <div class="wrap hero-b">
-  <p class="sub">Convertimos tu tienda física en una tienda online que vende en toda España, también de noche y en festivos. <b>Lista en 15 días</b>, sin abrir otro local.</p>
-  <div class="btns"><a class="btn lm" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="portada-wa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg>Escríbeme por WhatsApp</a><a class="btn gh" href="/book?utm_source=web&amp;utm_medium=portada&amp;utm_campaign=portada" data-cta="portada">Reserva una llamada de 30 min<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-  <p class="note"><img src="/christian-hola.jpg" alt="" width="30" height="30">Te contesto yo, Christian. Sin compromiso.</p>
-  <div class="tools"><span>Shopify</span><span>Bizum</span><span>Apple Pay</span><span>Instagram Shopping</span><span>Anuncios en Meta</span><span>Email marketing</span></div>
-  <p class="ex">Arriba, tiendas de ejemplo diseñadas por 404 Growth.</p>
- </div>
+<section class="hero" id="inicio">
+<div class="wall" aria-hidden="true"><div class="wall-in"><div class="wc"><img src="/home--w--solenne.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--pulso.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--nacar.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--aurea.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--forma.webp" alt="" width="380" height="520" decoding="async"></div><div class="wc"><img src="/home--w--nacar.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--aurea.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--forma.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--solenne.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--pulso.webp" alt="" width="380" height="520" decoding="async"></div><div class="wc"><img src="/home--w--forma.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--solenne.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--pulso.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--nacar.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--aurea.webp" alt="" width="380" height="520" decoding="async"></div><div class="wc"><img src="/home--w--pulso.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--nacar.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--aurea.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--forma.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--solenne.webp" alt="" width="380" height="520" decoding="async"></div><div class="wc"><img src="/home--w--aurea.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--forma.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--solenne.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--pulso.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--nacar.webp" alt="" width="380" height="520" decoding="async"></div><div class="wc"><img src="/home--w--solenne.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--pulso.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--nacar.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--aurea.webp" alt="" width="380" height="520" decoding="async"><img src="/home--w--forma.webp" alt="" width="380" height="520" decoding="async"></div></div></div>
+<div class="hero-ov" aria-hidden="true"></div>
+<div class="hero-in">
+<div class="hero-p gx">
+<span class="chip dk"><i></i>De tienda física a tienda online</span>
+<h1>Pasamos tu tienda física <br class="d"><span class="lm">a tienda online en 15 días.</span></h1>
+<p>Tienda en Shopify con tu marca y a tu nombre, y anuncios y contenido que te traen clientes de toda España. Abierta 24 horas; tú sigues en tu local.</p>
+<div class="btns" id="hero-btns"><a class="b-lime" href="/book?utm_source=web&amp;utm_medium=portada&amp;utm_campaign=portada" data-cta="portada">Reservar llamada de 30 min<span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span></a><a class="b-gl" href="#tiendas">Ver tiendas de ejemplo</a></div>
+</div>
+<ul class="hchips"><li><b>15 días</b><span>hasta abrir</span></li><li><b>Shopify</b><span>a tu nombre</span></li><li><b>30 min</b><span>de llamada<span class="d"> para empezar</span></span></li></ul>
+</div>
+<p class="hnote">Tiendas de demostración de fondo</p>
 </section>
-
-<section class="sec" id="como"><div class="wrap">
- <div class="sh c"><p class="eb">Cómo funciona</p><h2>Tres pasos. <span class="gr">Quince días.</span></h2><p>De tu mostrador a toda España, sin que tengas que saber de tecnología.</p></div>
- <ol class="st3">
-  <li class="s s1"><div class="vis"><div class="bub">Hola Christian, tengo una tienda física y quiero venderla online. Mi tienda es: …<small>Tu primer mensaje, ya escrito</small></div></div><span class="d">Día 0</span><h3>Hablamos</h3><p>Me escribes por WhatsApp o reservas una llamada. En la llamada de arranque (una hora) hacemos juntos lo más técnico, como los accesos.</p></li>
-  <li class="s s2"><div class="vis"><div class="chips"><span>Tu marca</span><span>Fichas de producto</span><span>Bizum y Apple Pay</span><span>Envíos</span><span>Stock</span><span>Pruebas de compra</span></div></div><span class="d">Días 1–14</span><h3>Montamos tu tienda</h3><p>Nos pasas fotos, precios y productos por WhatsApp. Nosotros diseñamos la tienda con tu marca y dejamos pagos y envíos listos.</p></li>
-  <li class="s s3"><div class="vis"><div class="open"><span class="st"><i></i>Tienda abierta</span><small>Instagram Shopping · ventas medidas</small></div></div><span class="d">Día 15</span><h3>Abres online</h3><p>Tu tienda abierta y midiendo ventas. Después, anuncios en Meta y email marketing para traer compradores.</p></li>
- </ol>
+<section class="sec como" id="como"><div class="w">
+<header class="sh c rv"><span class="chip"><i></i>Cómo funciona</span><h2>Tres pasos. <br class="m"><span class="lm">Quince días.</span></h2><p>De tu mostrador a toda España, sin que tengas que saber de tecnología.</p></header>
+<ol class="tl"><li class="st rv" style="--d:0ms"><span class="day">Día 0</span><span class="dot" aria-hidden="true"></span>
+<article class="card gl"><span class="day-m">Día 0</span><h3>Hablamos</h3><p>Me escribes por WhatsApp o reservas una llamada. En la llamada de arranque, de una hora, hacemos juntos lo más técnico, como los accesos.</p><div class="tags"><span>WhatsApp</span><span>Llamada de arranque</span></div></article></li><li class="st rv" style="--d:90ms"><span class="day">Días 1–14</span><span class="dot" aria-hidden="true"></span>
+<article class="card gl"><span class="day-m">Días 1–14</span><h3>Montamos tu tienda</h3><p>Nos pasas fotos, precios y productos por WhatsApp. Nosotros diseñamos la tienda con tu marca y dejamos pagos y envíos listos.</p><div class="tags"><span>Tu marca</span><span>Fichas de producto</span><span>Bizum y Apple Pay</span><span>Envíos</span><span>Stock</span></div></article></li><li class="st rv" style="--d:180ms"><span class="day">Día 15</span><span class="dot" aria-hidden="true"></span>
+<article class="card gl"><span class="day-m">Día 15</span><h3>Abres online</h3><p>Tu tienda abierta y midiendo ventas. Después, anuncios en Meta y email marketing para traer compradores.</p><div class="tags"><span>Tienda abierta</span><span>Instagram Shopping</span><span>Ventas medidas</span></div></article></li></ol>
 </div></section>
-
-<section class="sec" style="padding-top:0"><div class="wrap"><div class="me">
- <img src="/christian-hola.jpg" alt="Christian Silva, fundador de 404 Growth" width="400" height="400" loading="lazy">
- <div><p class="eb">Quién te atiende</p><h2 style="margin-top:10px">Hablas conmigo, no con un formulario.</h2>
- <p>Soy Christian, fundador de 404 Growth. Mándame un WhatsApp con el nombre de tu tienda o tu Instagram y te digo, sin compromiso, cómo la pasaría a online y qué haría primero para que venda.</p>
- <div class="btns"><a class="btn lm" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="quien"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg>Escribir a Christian</a></div></div>
-</div></div></section>
-
-<section class="sec" id="tiendas" style="padding-top:0"><div class="wrap">
- <div class="sh"><p class="eb">Tiendas de ejemplo</p><h2>Así puede verse la tuya.</h2><p>Tiendas de demostración que hemos diseñado en 404 Growth. Ábrelas y pruébalas: fichas, tallas, cesta y pago.</p></div>
- <div class="tk"><a class="tc" href="/demo-solenne"><img src="/demos/cards/solenne.webp" alt="Tienda de ejemplo Solenne" width="760" height="1040" loading="lazy" decoding="async"><div class="in"><span class="sc">Moda mujer</span><h3>Solenne</h3><p>Moda mediterránea premium: campaña editorial, tallas y «completa el look».</p><div class="go">Ver la tienda →</div></div></a><a class="tc" href="/demo-aurea"><img src="/demos/cards/aurea.webp" alt="Tienda de ejemplo Áurea" width="760" height="1040" loading="lazy" decoding="async"><div class="in"><span class="sc">Joyería</span><h3>Áurea</h3><p>Joyería de oro de 18 k con grabado, caja de regalo y envío asegurado.</p><div class="go">Ver la tienda →</div></div></a><a class="tc" href="/demo-pulso"><img src="/demos/cards/pulso.webp" alt="Tienda de ejemplo Pulso" width="760" height="1040" loading="lazy" decoding="async"><div class="in"><span class="sc">Sneakers</span><h3>Pulso</h3><p>Tienda multimarca: lanzamientos, stock por talla y entrega en 24 h.</p><div class="go">Ver la tienda →</div></div></a><a class="tc" href="/demo-nacar"><img src="/demos/cards/nacar.webp" alt="Tienda de ejemplo Nácar" width="760" height="1040" loading="lazy" decoding="async"><div class="in"><span class="sc">Cosmética</span><h3>Nácar</h3><p>Skincare moderno: rutinas en packs, muestras de regalo y envío en 24 h.</p><div class="go">Ver la tienda →</div></div></a><a class="tc" href="/demo-forma"><img src="/demos/cards/forma.webp" alt="Tienda de ejemplo Forma" width="760" height="1040" loading="lazy" decoding="async"><div class="in"><span class="sc">Suplementos</span><h3>Forma</h3><p>Nutrición deportiva premium con suscripción y precios por toma.</p><div class="go">Ver la tienda →</div></div></a></div>
- <p class="tk-n">Proyectos de demostración de 404 Growth, no son tiendas de clientes.</p>
+<section class="sec tnd" id="tiendas"><div class="w tnd-g">
+<header class="sh tnd-h rv"><span class="chip"><i></i>Tiendas de ejemplo</span><h2>Así puede verse <span class="lm">la tuya.</span></h2><p>Tiendas de demostración que hemos diseñado. Elige una y mira cómo queda.</p></header>
+<div class="tnd-list" role="tablist" aria-label="Tiendas de demostración"><button type="button" class="ts on" role="tab" aria-selected="true" aria-controls="pv" data-i="0"><span class="n">01</span><span class="nm">Solenne</span><span class="sc">Moda mujer<i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></i></span></button><button type="button" class="ts" role="tab" aria-selected="false" aria-controls="pv" data-i="1"><span class="n">02</span><span class="nm">Áurea</span><span class="sc">Joyería<i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></i></span></button><button type="button" class="ts" role="tab" aria-selected="false" aria-controls="pv" data-i="2"><span class="n">03</span><span class="nm">Pulso</span><span class="sc">Sneakers<i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></i></span></button><button type="button" class="ts" role="tab" aria-selected="false" aria-controls="pv" data-i="3"><span class="n">04</span><span class="nm">Nácar</span><span class="sc">Cosmética<i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></i></span></button><button type="button" class="ts" role="tab" aria-selected="false" aria-controls="pv" data-i="4"><span class="n">05</span><span class="nm">Forma</span><span class="sc">Suplementos<i aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></i></span></button></div>
+<figure class="tnd-pv gx rv" id="pv" role="tabpanel" aria-live="polite">
+<div class="bar"><span class="tl3" aria-hidden="true"><i></i><i></i><i></i></span><span class="url">Tienda de demostración · <b id="pvn">Solenne</b></span></div>
+<div class="scr"><img id="pvi" src="/demos/cards/solenne.webp" alt="Tienda de demostración Solenne" width="760" height="1040" loading="lazy" decoding="async"></div>
+<figcaption><p id="pvd">Moda mediterránea premium: campaña editorial, tallas y «completa el look».</p><span id="pvs">Moda mujer</span></figcaption>
+</figure>
+<p class="note tnd-note">Proyectos de demostración de 404 Growth, no son tiendas de clientes.</p>
+</div><script type="application/json" id="tnd-data">[["solenne","Solenne","Moda mujer","Moda mediterránea premium: campaña editorial, tallas y «completa el look»."],["aurea","Áurea","Joyería","Joyería de oro de 18 k con grabado, caja de regalo y envío asegurado."],["pulso","Pulso","Sneakers","Tienda multimarca: lanzamientos, stock por talla y entrega en 24 h."],["nacar","Nácar","Cosmética","Skincare moderno: rutinas en packs, muestras de regalo y envío en 24 h."],["forma","Forma","Suplementos","Nutrición deportiva premium con suscripción y precios por toma."]]</script></section>
+<section class="sec can" id="cambia"><div class="w can-g">
+<header class="sh can-h rv"><span class="chip"><i></i>Lo que cambia</span><h2>Más canales de venta. <span class="lm">Sin abrir otro local.</span></h2><p>Esta noche, desde tu tienda a toda España.</p></header>
+<div class="map rv" id="map">
+<div class="map-in"><img src="/mapa-es.svg" alt="" width="616" height="474" loading="lazy">
+<svg viewBox="0 0 616 474" role="img" aria-label="Pedidos de muestra desde tu tienda a seis ciudades de España">
+<defs><linearGradient id="lnA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D4F27A" stop-opacity=".95"/><stop offset="1" stop-color="#D4F27A" stop-opacity=".35"/></linearGradient></defs>
+<g class="rt" fill="none" stroke="url(#lnA)" stroke-linecap="round" stroke-dasharray="6 4"><path d="M256.7 203.3Q172.7 269.5 157.5 375.4"/><path d="M256.7 203.3Q305.7 129.3 290.2 42.0"/><path d="M256.7 203.3Q318.1 259.2 401.2 257.3"/><path d="M256.7 203.3Q187.6 78.9 51.8 36.4"/><path d="M256.7 203.3Q395.4 226.8 512.1 148.2"/><path d="M256.7 203.3Q385.2 282.7 533.0 251.6"/></g>
+<g fill="#D4F27A"><circle cx="157.5" cy="375.4" r="4.5"/><circle cx="290.2" cy="42.0" r="4.5"/><circle cx="401.2" cy="257.3" r="4.5"/><circle cx="51.8" cy="36.4" r="4.5"/><circle cx="512.1" cy="148.2" r="4.5"/><circle cx="533.0" cy="251.6" r="4.5"/></g>
+<g class="lb"><text x="168" y="380">Sevilla</text><text x="300" y="38">Bilbao</text><text x="401" y="281" text-anchor="middle">Valencia</text><text class="lx" x="62" y="32">A Coruña</text><text x="512" y="134" text-anchor="middle">Barcelona</text><text class="lx" x="533" y="275" text-anchor="middle">Palma</text></g>
+<circle class="pu" cx="256.7" cy="203.3" r="8" fill="#D4F27A"/>
+<circle cx="256.7" cy="203.3" r="8" fill="#D4F27A" stroke="#040806" stroke-width="3"/>
+<text class="lt" x="240" y="197" text-anchor="end">Tu tienda</text>
+</svg></div>
+<div class="tks"><div class="tk t1 gm"><span class="tk-c">Barcelona · 00:32</span><span class="tk-p"><span>Gafas de sol</span><span>119&nbsp;€</span></span></div><div class="tk t2 gm"><span class="tk-c">Sevilla · 23:14</span><span class="tk-p"><span>Abrigo de lana</span><span>129&nbsp;€</span></span></div><div class="tk t3 gm"><span class="tk-c">Palma · 07:40</span><span class="tk-p"><span>Jersey de punto</span><span>69&nbsp;€</span></span></div></div>
+</div>
+<p class="note can-note">Ejemplo con pedidos de muestra.</p>
+<ul class="ben"><li class="rv" style="--d:0ms"><b>24/7</b><span>Pueden comprarte fuera de horario, en festivos y en vacaciones.</span></li><li class="rv" style="--d:60ms"><b>Toda España</b><span>Vendes fuera de tu zona, no solo a quien pasa por la puerta.</span></li><li class="rv" style="--d:120ms"><b>Menos mensajes</b><span>Precio, talla y pago en la ficha: menos ventas a golpe de DM.</span></li><li class="rv" style="--d:180ms"><b>Recogida en tienda</b><span>Compran online y recogen en tu tienda: más visitas al mostrador.</span></li><li class="rv" style="--d:240ms"><b>Datos</b><span>Ves qué vende, a quién y desde dónde, sin suposiciones.</span></li><li class="rv" style="--d:300ms"><b>Recompra</b><span>«Completa el look», productos relacionados y novedades para quien ya te compró.</span></li></ul>
 </div></section>
-
-<section class="sec" id="cambia" style="padding-top:0"><div class="wrap">
- <div class="sh"><p class="eb">Lo que cambia</p><h2>Más canales de venta. Sin abrir otro local.</h2></div>
- <div class="od-wrap"><div class="od" aria-hidden="true"><div class="od-tx"><p class="od-t">Esta noche, desde tu tienda a <span>toda España</span>.</p><div class="od-ls"><div class="od-o" style="--d:0"><img src="/home--t--abrigo-camel.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"><div><b>Sevilla</b><span>Abrigo de lana · 23:14</span></div><em>129&nbsp;€</em></div><div class="od-o" style="--d:1"><img src="/home--t--opt-sol.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"><div><b>Barcelona</b><span>Gafas de sol · 00:32</span></div><em>119&nbsp;€</em></div><div class="od-o" style="--d:2"><img src="/home--t--joya-colgante.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"><div><b>Bilbao</b><span>Colgante de oro · 01:50</span></div><em>149&nbsp;€</em></div><div class="od-o" style="--d:3"><img src="/home--t--joya-cuello.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"><div><b>A Coruña</b><span>Pendientes de plata · 03:05</span></div><em>59&nbsp;€</em></div><div class="od-o" style="--d:4"><img src="/home--t--bolso-cuero.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"><div><b>Valencia</b><span>Bolso de piel · 07:05</span></div><em>89&nbsp;€</em></div><div class="od-o" style="--d:5"><img src="/home--t--punto-crudo.jpg" width="40" height="40" alt="" loading="lazy" decoding="async"><div><b>Palma</b><span>Jersey de punto · 07:40</span></div><em>69&nbsp;€</em></div></div></div><div class="od-mw"><img class="od-bg" src="/mapa-es.svg" width="616" height="474" alt="" decoding="async"><svg class="od-ov" viewBox="0 0 616 474" aria-hidden="true"><path class="od-a" style="--d:0" d="M256.7 203.3Q158.9 261.6 157.5 375.4" pathLength="1"/><path class="od-a" style="--d:1" d="M256.7 203.3Q369.0 104.2 512.1 148.2" pathLength="1"/><path class="od-a" style="--d:2" d="M256.7 203.3Q228.3 113.3 290.2 42.0" pathLength="1"/><path class="od-a" style="--d:3" d="M256.7 203.3Q201.0 62.5 51.8 36.4" pathLength="1"/><path class="od-a" style="--d:4" d="M256.7 203.3Q344.1 189.8 401.2 257.3" pathLength="1"/><path class="od-a" style="--d:5" d="M256.7 203.3Q408.4 150.1 533.0 251.6" pathLength="1"/><g class="od-p" style="--d:0"><circle cx="157.5" cy="375.4" r="5"/><text x="168.5" y="380.4" text-anchor="start">Sevilla</text></g><g class="od-p" style="--d:1"><circle cx="512.1" cy="148.2" r="5"/><text x="512.1" y="134.2" text-anchor="middle">Barcelona</text></g><g class="od-p" style="--d:2"><circle cx="290.2" cy="42.0" r="5"/><text x="301.2" y="36.0" text-anchor="start">Bilbao</text></g><g class="od-p" style="--d:3"><circle cx="51.8" cy="36.4" r="5"/><text x="62.8" y="30.4" text-anchor="start">A Coruña</text></g><g class="od-p" style="--d:4"><circle cx="401.2" cy="257.3" r="5"/><text x="401.2" y="281.3" text-anchor="middle">Valencia</text></g><g class="od-p" style="--d:5"><circle cx="533.0" cy="251.6" r="5"/><text x="533.0" y="275.6" text-anchor="middle">Palma</text></g><g class="od-shop"><circle cx="256.7" cy="203.3" r="8"/><text x="240.7" y="208.3" text-anchor="end">Tu tienda</text></g></svg><i class="od-pu" style="left:41.67%;top:42.89%"></i></div></div></div>
- <div class="ben">
-  <div class="bc"><b><em>24/7</em></b><p>Pueden comprarte fuera de horario, en festivos y en vacaciones.</p></div>
-  <div class="bc"><b>Toda España</b><p>Vendes fuera de tu zona, no solo a quien pasa por la puerta.</p></div>
-  <div class="bc"><b>Menos mensajes</b><p>Precio, talla y pago en la ficha: menos ventas a golpe de DM.</p></div>
-  <div class="bc"><b>Recogida en tienda</b><p>Compran online y recogen en tu tienda: más visitas al mostrador.</p></div>
-  <div class="bc"><b>Datos</b><p>Ves qué vende, a quién y desde dónde, sin suposiciones.</p></div>
-  <div class="bc"><b>Recompra</b><p>«Completa el look», productos relacionados y novedades para quien ya te compró.</p></div>
- </div>
+<section class="sec cap" id="captacion"><div class="w">
+<header class="sh row rv"><div><span class="chip"><i></i>Captación</span><h2>Una tienda sin visitas es un <span class="lm">escaparate cerrado.</span></h2></div><p>Por eso no entregamos solo una web: con anuncios y email marketing llevamos a tus clientes del anuncio a la compra, y de la compra a la siguiente.</p></header>
+<div class="bt">
+<div class="brk" aria-hidden="true"><span class="b1"><em>Del anuncio a la compra</em></span><span class="b2"><em>Y de la compra a la siguiente</em></span></div>
+<div class="bow"><div class="fc" aria-hidden="true">Del anuncio a la compra<svg viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1v10M2 7l4 4 4-4"/></svg></div><article class="fs f1 rv" style="--d:0ms"><span class="fs-t"><span class="lab">Anuncios en Meta</span><span class="num">01</span></span><span class="fs-b"><span class="vb">Te descubren</span><span class="ds">Tus productos delante de quien aún no te conoce, en toda España.</span></span></article><article class="fs f2 rv" style="--d:70ms"><span class="fs-t"><span class="lab">Retargeting</span><span class="num">02</span></span><span class="fs-b"><span class="vb">Te consideran</span><span class="ds">Volvemos a mostrar tus productos a quien ya visitó la tienda.</span></span></article><article class="fs f3 on rv" style="--d:140ms"><span class="fs-t"><span class="lab">Tienda</span><span class="num">03</span></span><span class="fs-b"><span class="vb">Te compran</span><span class="ds">Talla, stock y pago en tres pasos. Sin escribir a nadie.</span></span></article><div class="fc" aria-hidden="true">Y de la compra a la siguiente<svg viewBox="0 0 12 12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 1v10M2 7l4 4 4-4"/></svg></div><article class="fs f4 rv" style="--d:210ms"><span class="fs-t"><span class="lab">Email de cesta</span><span class="num">04</span></span><span class="fs-b"><span class="vb">Vuelven</span><span class="ds">Cada cesta abandonada recibe un recordatorio para terminar la compra.</span></span></article><article class="fs f5 rv" style="--d:280ms"><span class="fs-t"><span class="lab">Email marketing</span><span class="num">05</span></span><span class="fs-b"><span class="vb">Repiten</span><span class="ds">Novedades y «vuelve a estar disponible» para quien ya te compró.</span></span></article></div>
+</div>
 </div></section>
-
-<section class="sec" id="captacion" style="padding-top:0"><div class="wrap">
- <div class="sh"><p class="eb">Captación</p><h2>Una tienda sin visitas es un escaparate cerrado.</h2><p>Por eso no entregamos solo una web: con anuncios y email marketing llevamos a tus clientes del anuncio a la compra, y de la compra a la siguiente.</p></div>
- <ol class="cap">
-  <li class="cp"><span class="n">1</span><small>Anuncios en Meta</small><h3>Te descubren</h3><p>Tus productos delante de quien aún no te conoce, en toda España.</p></li>
-  <li class="cp"><span class="n">2</span><small>Retargeting</small><h3>Te consideran</h3><p>Volvemos a mostrar tus productos a quien ya visitó la tienda.</p></li>
-  <li class="cp"><span class="n">3</span><small>Tienda</small><h3>Te compran</h3><p>Talla, stock y pago en tres pasos. Sin escribir a nadie.</p></li>
-  <li class="cp"><span class="n">4</span><small>Email de cesta</small><h3>Vuelven</h3><p>Cada cesta abandonada recibe un recordatorio para terminar la compra.</p></li>
-  <li class="cp"><span class="n">5</span><small>Email marketing</small><h3>Repiten</h3><p>Novedades y «vuelve a estar disponible» para quien ya te compró.</p></li>
- </ol>
+<section class="sec cif" id="cifras"><div class="w">
+<header class="sh row rv"><div><span class="chip"><i></i>En cifras</span><h2>Las cifras <span class="lm">que importan.</span></h2></div><p>Lo que tarda tu tienda en abrir y lo que se mueve hoy en el comercio online en España.</p></header>
+<div class="bento">
+<article class="bb rv"><span class="kk">Nuestro plazo</span><span class="bb-n"><span class="big">15</span><span>días</span></span><p>Desde la llamada de arranque hasta que tu tienda abre online.</p>
+<div class="tl2"><div class="ln" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div><div class="lbs"><span><b>Día 0</b>Hablamos</span><span><b>Días 1–14</b>Montamos tu tienda</span><span><b>Día 15</b>Abres online</span></div></div></article>
+<article class="bw gl rv" style="--d:80ms"><span class="num">114.800&nbsp;M€</span><span class="tx"><span>facturó el comercio electrónico en España en 2025.</span><a class="src" href="https://www.ondavasca.com/el-comercio-electronico-factura-114-800-millones-en-2025/" target="_blank" rel="noopener nofollow">Fuente: CNMC, 2025</a></span></article>
+<article class="br2 gl rv" style="--d:140ms"><span class="tx"><span class="num">+20,6&nbsp;%</span><span class="tx2"><span>creció en un solo año, de 2024 a 2025.</span><a class="src" href="https://www.ondavasca.com/el-comercio-electronico-factura-114-800-millones-en-2025/" target="_blank" rel="noopener nofollow">Fuente: CNMC, 2025</a></span></span>
+<span class="bars" role="img" aria-label="Facturación de 2025 frente a 2024: un 20,6 % más"><span><i style="height:82.9%"></i><em>2024</em></span><span class="on"><i style="height:100%"></i><em>2025</em></span></span></article>
+<article class="bg2 gl rv" style="--d:200ms"><span class="num">70&nbsp;%</span><span class="bags" role="img" aria-label="De cada 10 cestas, 7 se abandonan"><i class="bx"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1" fill="none"/></svg></i><i class="bx"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1" fill="none"/></svg></i><i class="bx"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1" fill="none"/></svg></i><i class="bx"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1" fill="none"/></svg></i><i class="bx"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1" fill="none"/></svg></i><i class="bx"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1" fill="none"/></svg></i><i class="bx"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1" fill="none"/></svg></i><i class="bo"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1" fill="none"/></svg></i><i class="bo"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1" fill="none"/></svg></i><i class="bo"><svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V7a3 3 0 0 1 6 0v1" fill="none"/></svg></i></span><span class="tx2"><span>de las cestas online se abandonan antes de pagar. Por eso las recuperamos por email.</span><a class="src" href="https://baymard.com/lists/cart-abandonment-rate" target="_blank" rel="noopener nofollow">Fuente: Baymard Institute</a></span></article>
+</div>
 </div></section>
-
-<section class="sec lt" id="cifras"><div class="wrap">
- <div class="sh"><p class="eb">En cifras</p><h2>Las cifras que importan.</h2><p>Lo que tarda tu tienda en abrir y lo que se mueve hoy en el comercio online en España.</p></div>
- <div class="kp">
-  <div class="k big"><b>15 días</b><p>Desde la llamada de arranque hasta que tu tienda abre online.</p><small>Nuestro plazo</small></div>
-  <div class="k wide"><b>114.800&nbsp;M€</b><p>facturó el comercio electrónico en España en 2025.</p><small>Fuente: <a href="https://www.ondavasca.com/el-comercio-electronico-factura-114-800-millones-en-2025/" target="_blank" rel="noopener">CNMC, 2025</a></small></div>
-  <div class="k"><b>+20,6&nbsp;%</b><p>creció en un solo año, de 2024 a 2025.</p><small>Fuente: <a href="https://www.ondavasca.com/el-comercio-electronico-factura-114-800-millones-en-2025/" target="_blank" rel="noopener">CNMC, 2025</a></small></div>
-  <div class="k"><b>70&nbsp;%</b><p>de las cestas online se abandonan antes de pagar. Por eso las recuperamos por email.</p><small>Fuente: <a href="https://baymard.com/lists/cart-abandonment-rate" target="_blank" rel="noopener">Baymard Institute</a></small></div>
- </div>
+<section class="sec inc" id="plan"><div class="w inc-g">
+<header class="sh inc-h rv"><span class="chip"><i></i>Qué incluye</span><h2>Tu tienda online, <br class="d"><span class="lm">lista en 15 días.</span></h2></header>
+<div class="price gx rv"><span class="kk">Tienda online · 15 días</span><h3>Precio cerrado, sin sorpresas.</h3><p>Depende de cuántos productos tienes, si se conecta tu TPV y si incluye anuncios y email marketing. Te lo damos en la llamada.</p>
+<div class="btns col"><a class="b-lime full" href="/book?utm_source=web&amp;utm_medium=portada&amp;utm_campaign=plan" data-cta="plan">Reservar la llamada<span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span></a><a class="b-gl full wa-g" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="wa-plan"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg>Empezar por WhatsApp</a></div></div>
+<p class="disc">Abrir la tienda no garantiza ventas desde el primer día: dependen de tu producto, tus precios y la captación. Por eso medimos desde el primer pedido y ajustamos.</p>
+<div class="acc inc-acc rv"><details name="inc" open><summary><span class="q">Incluido en tu tienda</span><span class="cnt">5</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><ul class="ck"><li><i><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Diseño y desarrollo de la tienda con tu marca</span></li><li><i><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Fichas de producto, catálogo y pago</span></li><li><i><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Pagos, envíos y recogida en tienda configurados</span></li><li><i><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Instagram Shopping y medición de ventas</span></li><li><i><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>Te enseñamos a gestionar pedidos y productos</span></li></ul></div></details><details name="inc"><summary><span class="q">Lo que aportas tú</span><span class="cnt">4</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><ul class="dl"><li>Tus productos, precios y stock</li><li>Las fotos que ya tienes (si faltan, lo vemos contigo)</li><li>Acceso a tu dominio y redes, si ya los tienes</li><li>Una persona que prepare los pedidos</li></ul></div></details><details name="inc"><summary><span class="q">Costes externos posibles</span><span class="cnt">5</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><ul class="dl"><li>Dominio, si aún no tienes</li><li>Cuota de Shopify</li><li>Comisión de la pasarela de pago por venta</li><li>Envíos, según transportista</li><li>Presupuesto de anuncios, si haces campañas</li></ul></div></details><details name="inc"><summary><span class="q">Todo queda a tu nombre</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>La tienda, el dominio y la cuenta de pagos son tuyos. Si un día dejamos de trabajar juntos, te lo quedas todo.</p></div></details><details name="inc"><summary><span class="q">La tienda la manejas tú</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>Subir productos, cambiar fotos o poner una oferta lo haces tú en minutos. Los cambios grandes, nosotros.</p></div></details></div>
 </div></section>
-
-<section class="sec" id="plan"><div class="wrap">
- <div class="sh"><p class="eb">Qué incluye</p><h2>Tu tienda online, <span class="gr">lista en 15 días.</span></h2></div>
- <div class="pl">
-  <div class="pk"><span class="lbl"><i></i>Tienda online · 15 días</span><h3>Todo listo para vender.</h3>
-   <ul class="ck"><li>Diseño y desarrollo de la tienda con tu marca</li><li>Fichas de producto, catálogo y pago</li><li>Pagos, envíos y recogida en tienda configurados</li><li>Instagram Shopping y medición de ventas</li><li>Te enseñamos a gestionar pedidos y productos</li></ul>
-   <div class="pr"><b>Precio cerrado, sin sorpresas.</b><span>Depende de cuántos productos tienes, si se conecta tu TPV y si incluye anuncios y email marketing. Te lo damos en la llamada.</span></div>
-   <div class="btns"><a class="btn lm" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="plan-wa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg>Empezar por WhatsApp</a><a class="btn gh" href="/book?utm_source=web&amp;utm_medium=portada&amp;utm_campaign=plan" data-cta="plan">Reservar la llamada<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-  </div>
-  <div class="ps">
-   <details class="pc"><summary><h3>Lo que aportas tú</h3><i></i></summary><ul class="dl"><li>Tus productos, precios y stock</li><li>Las fotos que ya tienes (si faltan, lo vemos contigo)</li><li>Acceso a tu dominio y redes, si ya los tienes</li><li>Una persona que prepare los pedidos</li></ul></details>
-   <details class="pc"><summary><h3>Costes externos posibles</h3><i></i></summary><ul class="dl"><li>Dominio, si aún no tienes</li><li>Cuota de Shopify</li><li>Comisión de la pasarela de pago por venta</li><li>Envíos, según transportista</li><li>Presupuesto de anuncios, si haces campañas</li></ul></details>
-  </div>
- </div>
- <div class="tw"><div><b>Todo queda a tu nombre</b>La tienda, el dominio y la cuenta de pagos son tuyos. Si un día dejamos de trabajar juntos, te lo quedas todo.</div><div><b>La tienda la manejas tú</b>Subir productos, cambiar fotos o poner una oferta lo haces tú en minutos. Los cambios grandes, nosotros.</div></div>
- <p class="disc">Abrir la tienda no garantiza ventas desde el primer día: dependen de tu producto, tus precios y la captación. Por eso medimos desde el primer pedido y ajustamos.</p>
+<section class="sec chr" id="christian">
+<div class="chr-bg" aria-hidden="true"><span class="d">CHRISTIAN</span><span class="m">CHRIS<br>TIAN</span></div>
+<div class="w"><div class="chr-c gx rv">
+<span class="av"><img src="/christian-hola.jpg" alt="Christian, fundador de 404 Growth" width="400" height="400" loading="lazy"><i></i></span>
+<span class="kk"><span class="d">Quién te atiende · Christian, fundador de 404 Growth</span><span class="m">Quién te atiende</span></span>
+<h2>Hablas conmigo, <br class="d"><span class="lm">no con un formulario.</span></h2>
+<p>Soy Christian, fundador de 404 Growth. Mándame un WhatsApp con el nombre de tu tienda o tu Instagram y te digo, sin compromiso, cómo la pasaría a online y qué haría primero para que venda.</p>
+<div class="btns"><a class="b-lime wa" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="wa-christian">Escribir a Christian<span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg></span></a><a class="b-gl" href="/book?utm_source=web&amp;utm_medium=portada&amp;utm_campaign=christian" data-cta="christian">Reservar una llamada de 30 min</a></div>
+<span class="micro">Te contesto yo, Christian. Sin compromiso.</span>
+</div></div>
+</section>
+<section class="sec faq" id="preguntas"><div class="w faq-g">
+<header class="sh faq-h rv"><span class="chip"><i></i>Preguntas</span><h2>Lo que suelen <br class="d"><span class="lm">preguntarnos.</span></h2></header>
+<div class="acc faq-acc rv"><details name="faq" open><summary><span class="q">¿Cuánto cuesta?</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>No publicamos un precio fijo porque depende de cuántos productos tienes, si se conecta tu TPV y si incluye anuncios y email marketing. En la llamada te damos un precio cerrado, sin sorpresas.</p></div></details><details name="faq"><summary><span class="q">¿Qué tengo que aportar yo?</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>Tus productos, precios y stock, las fotos que ya tengas y una persona que prepare los pedidos. Del diseño, la tienda, los pagos y los envíos nos encargamos nosotros.</p></div></details><details name="faq"><summary><span class="q">¿Se conecta con el stock de mi tienda?</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>Depende del TPV o programa que uses. Muchos permiten sincronizar el stock con la web; otros no. Lo revisamos en la llamada y te decimos qué se puede conectar.</p></div></details><details name="faq"><summary><span class="q">¿Hay costes aparte?</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>Pueden existir: el dominio si no tienes, la comisión de la pasarela de pago por cada venta, los envíos y el presupuesto de anuncios si haces campañas. Te los detallamos antes de empezar.</p></div></details><details name="faq"><summary><span class="q">¿Quién mantiene la tienda después?</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>Te enseñamos a gestionar pedidos y productos tú mismo. El mantenimiento técnico y la captación continua se acuerdan en la propuesta, según lo que necesites.</p></div></details><details name="faq"><summary><span class="q">¿Me garantizáis ventas?</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>No. Dejamos la tienda lista para vender y la captación en marcha, pero las ventas dependen de tu producto, tus precios y el mercado. Lo que sí hacemos es medir desde el primer día y mejorar lo que funciona.</p></div></details><details name="faq"><summary><span class="q">¿Tengo que cerrar mi tienda física?</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>No. La tienda online es un segundo canal que trabaja con tu mismo stock. Y cambia el ciclo: cuando el online funciona, decides con datos si abrir otra tienda física y dónde.</p></div></details><details name="faq"><summary><span class="q">¿Para qué tiendas es?</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>Para tiendas físicas independientes que venden producto: moda, joyería, deporte, obradores, ópticas, decoración, gourmet, juguetes… De una tienda a varias, en toda España.</p></div></details><details name="faq"><summary><span class="q">Ya tengo web. ¿La perdemos?</span><span class="pl" aria-hidden="true"><svg viewBox="0 0 14 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 1v12M1 7h12"/></svg></span></summary><div class="ans"><p>La rehacemos en tu dominio y redirigimos las direcciones antiguas, para no perder lo que ya tienes en Google.</p></div></details></div>
+<aside class="duda gx rv"><span class="av sm"><img src="/christian-hola.jpg" alt="" width="400" height="400" loading="lazy"><i></i></span><h3>¿No está tu duda?</h3><p>Pregúntamela por WhatsApp y te contesto yo.</p><a class="b-lime wa full" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="wa-preguntas">Escribir a Christian<span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg></span></a></aside>
 </div></section>
-
-<section class="sec" style="padding-top:0"><div class="wrap">
- <div class="sx-h"><h3>Mira cómo sería en tu sector</h3><a href="/tienda-online">Todos los sectores →</a></div>
- <div class="sx"><a href="/tienda-online/moda"><img src="/home--a--abrigo-beige.jpg" alt="Tienda online de moda" width="980" height="1225" loading="lazy" decoding="async"><span>Moda<em>→</em></span></a><a href="/tienda-online/joyeria"><img src="/home--a--joya-cuello.jpg" alt="Tienda online de joyería" width="980" height="1225" loading="lazy" decoding="async"><span>Joyería<em>→</em></span></a><a href="/tienda-online/deportes"><img src="/home--a--dep-zapatillas.jpg" alt="Tienda online de deporte" width="980" height="1225" loading="lazy" decoding="async"><span>Deporte<em>→</em></span></a><a href="/tienda-online/decoracion-y-hogar"><img src="/home--a--deco-jarron.jpg" alt="Tienda online de decoración" width="980" height="1225" loading="lazy" decoding="async"><span>Decoración<em>→</em></span></a><a href="/tienda-online/pasteleria"><img src="/home--a--obr-vitrina.jpg" alt="Tienda online de obradores" width="980" height="1225" loading="lazy" decoding="async"><span>Obradores<em>→</em></span></a><a href="/tienda-online/regalos-y-artesania"><img src="/home--a--opt-sol.jpg" alt="Tienda online de regalos" width="980" height="1225" loading="lazy" decoding="async"><span>Regalos<em>→</em></span></a></div>
+<section class="sec cie" id="cierre"><div class="w">
+<div class="sect"><span class="sect-t">Mira cómo sería en tu sector</span><div class="pills"><a href="/tienda-online/moda">Moda<span aria-hidden="true">→</span></a><a href="/tienda-online/joyeria">Joyería<span aria-hidden="true">→</span></a><a href="/tienda-online/deportes">Deporte<span aria-hidden="true">→</span></a><a href="/tienda-online/decoracion-y-hogar">Decoración<span aria-hidden="true">→</span></a><a href="/tienda-online/pasteleria">Obradores<span aria-hidden="true">→</span></a><a href="/tienda-online/regalos-y-artesania">Regalos<span aria-hidden="true">→</span></a></div><a class="all" href="/tienda-online"><span class="d">Todos los sectores</span><span class="m">Todos</span> →</a></div>
+<div class="guides"><span>Por si quieres leer antes:</span><a href="/diseno-tienda-online">Diseño de tienda online</a><a href="/crear-tienda-online">Cómo crear una tienda online</a><a href="/guia/cuanto-cuesta-una-tienda-online">Cuánto cuesta hacer una tienda online</a><a href="/guia/pasar-tienda-fisica-a-online">Pasar tu tienda física a online</a><a href="/tienda-online">Tienda online por sector</a><a href="/guia/shopify-vs-woocommerce">Shopify o WooCommerce</a></div>
+<div class="close rv"><h2>¿Abrimos <br class="m">tu tienda<br><span class="lm">a toda España?</span></h2>
+<p>Escríbeme por WhatsApp con el nombre de tu tienda. Te digo cómo la pasaría a online y si tiene sentido en tu caso.</p>
+<div class="btns"><a class="b-lime wa" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="wa-cierre">Escríbeme por WhatsApp<span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg></span></a><a class="b-gl" href="/book?utm_source=web&amp;utm_medium=portada&amp;utm_campaign=cierre" data-cta="cierre">Reserva una llamada de 30 min</a></div>
+<span class="micro">Te contesto yo, Christian.</span></div>
 </div></section>
-
-<section class="sec" id="preguntas" style="padding-top:0"><div class="wrap"><div class="fq">
- <div class="fq-l"><p class="eb">Preguntas</p><h2>Lo que suelen preguntarnos.</h2>
-  <div class="fq-c"><div class="who"><img src="/christian-hola.jpg" alt="" width="52" height="52" loading="lazy"><b>¿No está tu duda?</b></div><p>Pregúntamela por WhatsApp y te contesto yo.</p><a class="btn dk" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="preguntas"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg>Preguntar por WhatsApp</a></div></div>
- <div><div class="qs"><details><summary>¿Cuánto cuesta?<i></i></summary><p>No publicamos un precio fijo porque depende de cuántos productos tienes, si se conecta tu TPV y si incluye anuncios y email marketing. En la llamada te damos un precio cerrado, sin sorpresas.</p></details><details><summary>¿Qué tengo que aportar yo?<i></i></summary><p>Tus productos, precios y stock, las fotos que ya tengas y una persona que prepare los pedidos. Del diseño, la tienda, los pagos y los envíos nos encargamos nosotros.</p></details><details><summary>¿Se conecta con el stock de mi tienda?<i></i></summary><p>Depende del TPV o programa que uses. Muchos permiten sincronizar el stock con la web; otros no. Lo revisamos en la llamada y te decimos qué se puede conectar.</p></details><details><summary>¿Hay costes aparte?<i></i></summary><p>Pueden existir: el dominio si no tienes, la comisión de la pasarela de pago por cada venta, los envíos y el presupuesto de anuncios si haces campañas. Te los detallamos antes de empezar.</p></details><details><summary>¿Quién mantiene la tienda después?<i></i></summary><p>Te enseñamos a gestionar pedidos y productos tú mismo. El mantenimiento técnico y la captación continua se acuerdan en la propuesta, según lo que necesites.</p></details><details><summary>¿Me garantizáis ventas?<i></i></summary><p>No. Dejamos la tienda lista para vender y la captación en marcha, pero las ventas dependen de tu producto, tus precios y el mercado. Lo que sí hacemos es medir desde el primer día y mejorar lo que funciona.</p></details><details><summary>¿Tengo que cerrar mi tienda física?<i></i></summary><p>No. La tienda online es un segundo canal que trabaja con tu mismo stock. Y cambia el ciclo: cuando el online funciona, decides con datos si abrir otra tienda física y dónde.</p></details><details><summary>¿Para qué tiendas es?<i></i></summary><p>Para tiendas físicas independientes que venden producto: moda, joyería, deporte, obradores, ópticas, decoración, gourmet, juguetes… De una tienda a varias, en toda España.</p></details><details><summary>Ya tengo web. ¿La perdemos?<i></i></summary><p>La rehacemos en tu dominio y redirigimos las direcciones antiguas, para no perder lo que ya tienes en Google.</p></details></div>
- <nav class="seo-lk" aria-label="Guías para crear tu tienda online"><b>Por si quieres leer antes:</b><a href="/diseno-tienda-online">Diseño de tienda online</a><a href="/crear-tienda-online">Cómo crear una tienda online</a><a href="/guia/cuanto-cuesta-una-tienda-online">Cuánto cuesta hacer una tienda online</a><a href="/guia/pasar-tienda-fisica-a-online">Pasar tu tienda física a online</a><a href="/tienda-online">Tienda online por sector</a><a href="/guia/shopify-vs-woocommerce">Shopify o WooCommerce</a></nav></div>
-</div></div></section>
-
-<section class="sec" id="contacto" style="padding-top:0"><div class="wrap"><div class="end">
- <h2>¿Abrimos tu tienda<br><span class="gr">a toda España?</span></h2>
- <p>Escríbeme por WhatsApp con el nombre de tu tienda. Te digo cómo la pasaría a online y si tiene sentido en tu caso.</p>
- <div class="btns"><a class="btn lm" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="cierre-wa"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg>Escríbeme por WhatsApp</a><a class="btn gh" href="/book?utm_source=web&amp;utm_medium=portada&amp;utm_campaign=cierre" data-cta="cierre">Reserva una llamada de 30 min<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
- <p class="note"><img src="/christian-hola.jpg" alt="" width="30" height="30" loading="lazy">Te contesto yo, Christian.</p>
- <div class="fan mini"><a class="fc" href="/demo-solenne" style="--x:-60%;--r:-10deg;--i:1" tabindex="-1" aria-hidden="true"><img src="/demos/cards/solenne.webp" alt="" width="760" height="1040" loading="lazy" decoding="async"></a><a class="fc" href="/demo-aurea" style="--x:0%;--r:0deg;--i:0" tabindex="-1" aria-hidden="true"><img src="/demos/cards/aurea.webp" alt="" width="760" height="1040" loading="lazy" decoding="async"></a><a class="fc" href="/demo-pulso" style="--x:60%;--r:10deg;--i:1" tabindex="-1" aria-hidden="true"><img src="/demos/cards/pulso.webp" alt="" width="760" height="1040" loading="lazy" decoding="async"></a></div>
-</div></div></section>
 </main>
-<footer id="pie"><div class="wrap"><span>404 Growth · De tienda física a tienda online · Toda España · <a href="mailto:hola@404growth.com">hola@404growth.com</a> · <a href="tel:+34610594450">+34 610 594 450</a></span>
-<span class="lk"><a href="/diseno-tienda-online">Diseño de tienda online</a><a href="/crear-tienda-online">Crear tienda online</a><a href="/tienda-online">Tienda online por sector</a><a href="/guia">Guías</a><a href="/blog">Blog</a><a href="/legal">Aviso legal y privacidad</a><span>© <span id="yr">2026</span> 404 Growth</span></span></div></footer>
-<a class="waf" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="wa-flotante" aria-label="Escríbeme por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg><span>Escríbeme</span></a>
-<script>try{document.getElementById("yr").textContent=new Date().getFullYear()}catch(e){}if(innerWidth>860)document.querySelectorAll("details.pc").forEach(function(d){d.open=true})</script>
-<script>/*od61*/(function(){var o=document.querySelector('.od');if(!o)return;if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){o.classList.add('in');return}new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)o.classList.add('in','vis');else o.classList.remove('vis')})},{threshold:.3}).observe(o)})()</script>
-<script>/*v64 abanico: se abre cuando termina el cargador*/(function(){var f=document.getElementById('fan');if(!f)return;var H=document.documentElement,done=0;function go(){if(done)return;done=1;requestAnimationFrame(function(){f.classList.remove('pre')})}
-if(matchMedia('(prefers-reduced-motion: reduce)').matches){go();return}
-if(H.classList.contains('l404')&&'MutationObserver' in window){var mo=new MutationObserver(function(){if(!H.classList.contains('l404')){mo.disconnect();go()}});mo.observe(H,{attributes:true,attributeFilter:['class']});setTimeout(go,4000)}else setTimeout(go,150)})()</script>
-<script>/*v64: el WhatsApp flotante se esconde mientras se ven los botones de la portada*/(function(){var w=document.querySelector('.waf'),t=document.querySelector('.hero-b .btns');if(!w||!t||!('IntersectionObserver' in window))return;new IntersectionObserver(function(e){w.classList.toggle('off',e[0].isIntersecting)}).observe(t)})()</script>
+<footer class="ft"><div class="w">
+<div class="ft-r1"><a class="nv-logo" href="/" aria-label="404 Growth, inicio"><svg class="mk" viewBox="20 60 362 280" aria-hidden="true"><g transform="skewX(-12) translate(52 0)" fill="none" stroke="#D4F27A" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"><rect x="140" y="90" width="120" height="220" rx="60"/><path d="M155.1 110.2 L40 240 L140 240"/><path d="M244.9 110.2 L360 240 L260 240"/></g></svg><span>404 Growth</span></a><span class="ct">404 Growth · De tienda física a tienda online · Toda España · <a href="mailto:hola@404growth.com">hola@404growth.com</a> · <a href="tel:+34610594450">+34 610 594 450</a></span></div>
+<div class="ft-r2"><nav class="fl" aria-label="Pie"><a href="/diseno-tienda-online">Diseño de tienda online</a><a href="/crear-tienda-online">Crear tienda online</a><a href="/tienda-online">Tienda online por sector</a><a href="/guia">Guías</a><a href="/blog">Blog</a><a href="/legal">Aviso legal y privacidad</a></nav><span class="cp">© <span id="yr">2026</span> 404 Growth</span></div>
+</div>
+<svg class="wm" viewBox="0 0 1000 200" aria-hidden="true"><defs><linearGradient id="wmg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D4F27A" stop-opacity=".5"/><stop offset=".7" stop-color="#D4F27A" stop-opacity=".07"/><stop offset="1" stop-color="#D4F27A" stop-opacity="0"/></linearGradient></defs><text x="0" y="178" textLength="1000" lengthAdjust="spacingAndGlyphs" font-size="232" font-weight="800" letter-spacing="-10" fill="url(#wmg)">404/GROWTH</text></svg>
+</footer>
+<a class="waf" href="https://wa.me/34610594450?text=Hola%20Christian%2C%20tengo%20una%20tienda%20f%C3%ADsica%20y%20quiero%20venderla%20online.%20Mi%20tienda%20es%3A%20" target="_blank" rel="noopener" data-cta="wa-flotante" aria-label="Escríbeme por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.96-3.48-.23-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.36-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg><span>WhatsApp</span></a>
+<div class="fade" aria-hidden="true"></div>
+<script src="/lenis.min.js" defer></script>
+<script>
+(function(){
+var H=document.documentElement,D=document,rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+try{D.getElementById('yr').textContent=new Date().getFullYear()}catch(e){}
+
+/* cargador 404: se dibuja y vuela al logo de la cabecera */
+(function(){var l=D.getElementById('l404');if(!l){H.classList.remove('l404');return}
+function end(ms){setTimeout(function(){H.classList.remove('l404','l404-land');l.remove()},ms)}
+setTimeout(function(){var w=l.querySelector('.lw'),t=D.querySelector('.nv .nv-logo .mk'),b=t&&t.getBoundingClientRect();
+ if(!b||rm||!b.width){w.style.transition='opacity .4s';w.style.opacity='0';l.classList.add('fly');H.classList.add('l404-land');end(700);return}
+ var a=w.getBoundingClientRect();
+ w.style.transition='transform .85s cubic-bezier(.65,0,.2,1),opacity .35s ease .6s';
+ w.style.transform='translate('+(b.left-a.left)+'px,'+(b.top-a.top)+'px) scale('+(b.width/a.width)+','+(b.height/a.height)+')';
+ l.classList.add('fly');
+ setTimeout(function(){H.classList.add('l404-land');w.style.opacity='0'},700);
+ end(1150)},rm?400:1700)})();
+
+/* cabecera: más opaca al bajar */
+var nv=D.getElementById('nv');function sc(){nv.classList.toggle('sc',scrollY>40)}sc();addEventListener('scroll',sc,{passive:true});
+
+/* menú del móvil */
+var mb=D.querySelector('.nv-mb'),mm=D.getElementById('mm');
+function menu(o){mm.hidden=!o;mb.setAttribute('aria-expanded',o?'true':'false');mb.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú')}
+if(mb&&mm){mb.addEventListener('click',function(){menu(mm.hidden)});mm.addEventListener('click',function(e){if(e.target.closest('a'))menu(false)});D.addEventListener('keydown',function(e){if(e.key==='Escape')menu(false)})}
+
+/* aparición al hacer scroll (solo transform y opacity) */
+var io='IntersectionObserver' in window;
+if(io&&!rm){var ob=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ob.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.12});D.querySelectorAll('.rv,.bars').forEach(function(el){ob.observe(el)})}
+else D.querySelectorAll('.rv,.bars').forEach(function(el){el.classList.add('in')});
+
+/* mapa: las rutas solo se mueven mientras se ve */
+var map=D.getElementById('map');if(map&&io){new IntersectionObserver(function(es){map.classList.toggle('in',es[0].isIntersecting)},{threshold:.15}).observe(map)}
+
+/* tiendas de ejemplo: cambiar la vista previa (sin enlaces a las tiendas) */
+(function(){var L;try{L=JSON.parse(D.getElementById('tnd-data').textContent)}catch(e){return}
+var bs=D.querySelectorAll('.ts'),im=D.getElementById('pvi'),pn=D.getElementById('pvn'),pd=D.getElementById('pvd'),ps=D.getElementById('pvs'),pre=0;
+function preload(){if(pre)return;pre=1;L.forEach(function(s){var i=new Image();i.src='/demos/cards/'+s[0]+'.webp'})}
+function pick(k){var s=L[k];bs.forEach(function(b,j){var on=j===k;b.classList.toggle('on',on);b.setAttribute('aria-selected',on?'true':'false')});
+ im.classList.add('ld');var n=new Image();n.onload=function(){im.src=n.src;im.alt='Tienda de demostración '+s[1];requestAnimationFrame(function(){im.classList.remove('ld')})};n.src='/demos/cards/'+s[0]+'.webp';
+ pn.textContent=s[1];pd.textContent=s[3];ps.textContent=s[2]}
+bs.forEach(function(b){b.addEventListener('click',function(){pick(+b.dataset.i)});b.addEventListener('pointerenter',preload,{once:true});b.addEventListener('focus',preload,{once:true})});
+D.querySelector('.tnd-list').addEventListener('keydown',function(e){var k=[].indexOf.call(bs,D.activeElement);if(k<0)return;var n=e.key==='ArrowDown'||e.key==='ArrowRight'?k+1:e.key==='ArrowUp'||e.key==='ArrowLeft'?k-1:-9;if(n===-9)return;e.preventDefault();n=(n+bs.length)%bs.length;bs[n].focus();pick(n)})})();
+
+/* desplegables: uno abierto cada vez (por si el navegador no entiende name en <details>) */
+D.querySelectorAll('details[name]').forEach(function(d){d.addEventListener('toggle',function(){if(!d.open)return;D.querySelectorAll('details[name="'+d.getAttribute('name')+'"]').forEach(function(o){if(o!==d&&o.open)o.open=false})})});
+
+/* WhatsApp flotante: se esconde mientras se ven los botones de la portada; el degradado inferior, al llegar al pie */
+var waf=D.querySelector('.waf'),hb=D.getElementById('hero-btns'),fd=D.querySelector('.fade'),ft=D.querySelector('.ft');
+if(io&&waf&&hb)new IntersectionObserver(function(e){waf.classList.toggle('off',e[0].isIntersecting)}).observe(hb);
+if(io&&fd&&ft)new IntersectionObserver(function(e){fd.classList.toggle('off',e[0].isIntersecting)}).observe(ft);
+
+/* scroll lento con Lenis, solo con ratón o trackpad (en pantallas táctiles, el scroll del sistema) */
+function lenis(){if(rm||!window.Lenis||!matchMedia('(hover: hover) and (pointer: fine)').matches)return;
+ try{window.__lenis=new Lenis({duration:1.45,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t))},wheelMultiplier:.85,anchors:true,autoRaf:true})}catch(e){}}
+if(D.readyState==='loading')D.addEventListener('DOMContentLoaded',lenis);else lenis();
+})();
+
+</script>
 </body></html>

@@ -215,6 +215,49 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Se genera con `tools/portada/v64/build.py <index-v61.html> <salida>` (estilos en `v64.css`; la v61 está al lado).
 - Copia de la v61 en `~/Downloads/404growth-subir/anterior/index-portada-v61.html`.
 
+## Portada v67 (9/11/2026): diseñada sección a sección en Claude Design
+
+- Sustituye a la v64. Chris la diseñó en el lienzo «Nueva home · 404growth.com» (artifact de Design): eligió una de tres opciones por sección, viendo a la vez la versión de ordenador y la del móvil. Las elegidas llevan «ELEGIDA» en el título del tablero.
+  - Las referencias que pidió fueron Creovibe y Renev: letra y scroll profesionales, scroll lento, degradado inferior transparente y cristal líquido bien usado.
+- Las 10 secciones, en orden (con su `id`):
+  1. Portada (`#inicio`): un panel de cristal sobre un muro inclinado de tiendas de ejemplo. Dice «Pasamos tu tienda física a tienda online en 15 días.» y lleva 3 píldoras (15 días, Shopify, 30 min).
+  2. Cómo funciona (`#como`): línea de tiempo Día 0 → Días 1–14 → Día 15. En el móvil va en vertical.
+  3. Tiendas de ejemplo (`#tiendas`): una lista de 5 tiendas y una vista previa en un navegador de cristal. Tocar una tienda cambia la imagen. **Las tiendas no enlazan a sus páginas** (Chris no quiere que se pueda entrar).
+  4. Lo que cambia (`#cambia`): el mapa de España con las rutas, 3 tickets de pedidos de muestra y las 6 ventajas.
+  5. Captación (`#captacion`): «pajarita» de 5 tarjetas que se estrechan hasta «Te compran» (en lima) y vuelven a abrirse. En el móvil, y por debajo de 1100 px, va en vertical.
+  6. En cifras (`#cifras`): bento. Lleva:
+     - una tarjeta lima de 15 días con la línea Día 0 a Día 15;
+     - una de 114.800 M€;
+     - una de +20,6 % con barras de 2024 y 2025 (la de 2024 se calcula desde el +20,6 %);
+     - una de 70 % con 10 cestas.
+     Las fuentes enlazan a CNMC (ondavasca) y Baymard.
+  7. Qué incluye (`#plan`): el precio (sin cifra) y los botones a la izquierda, y 5 desplegables a la derecha. Solo hay uno abierto a la vez (`<details name>`).
+  8. Quién te atiende (`#christian`): tarjeta centrada con «CHRISTIAN» gigante en contorno detrás.
+  9. Preguntas (`#preguntas`): las 9 en desplegables; salen del schema FAQPage del `<head>`. La tarjeta «¿No está tu duda?» se queda fija al bajar.
+  10. Cierre y pie (`#cierre`):
+      - los 6 sectores en píldoras y las 6 guías;
+      - «¿Abrimos tu tienda a toda España?» en letras enormes;
+      - el pie, con «404/GROWTH» gigante en lima que se desvanece hacia abajo (`<svg>` con `textLength`, para que quepa con cualquier letra).
+- Detalles:
+  - Letra SF Pro (la del sistema); ya no se precarga `inter-tight.woff2`.
+  - Scroll lento con Lenis 1.3.26 (`/lenis.min.js`), solo con ratón o trackpad. En pantallas táctiles se usa el scroll del sistema.
+  - Degradado inferior fijo (`.fade`), que se quita al llegar al pie.
+  - El cristal (`backdrop-filter`) solo se aplica en el ordenador. En el móvil, fondos opacos y nada de filtros.
+  - Las animaciones solo usan transform y opacity: aparición al bajar, rutas del mapa solo mientras se ve, y el muro que se mueve despacio solo en el ordenador.
+  - Se conserva el cargador 404 de la v64, que ahora vuela al logo de la cabecera.
+  - El WhatsApp flotante se esconde mientras se ven los botones de la portada.
+  - Menú de hamburguesa en el móvil.
+- Enlaces y `data-cta`:
+  - /book con `utm_source=web&utm_medium=portada` y `utm_campaign` = `portada`, `menu`, `plan`, `christian` o `cierre`;
+  - WhatsApp con `data-cta="wa-<sitio>"`; «Hablamos», en la cabecera, abre WhatsApp.
+- El muro de la portada usa miniaturas propias (`/home--w--<tienda>.webp`, 380×520, unos 20 KB cada una; `*.webp` está en `.gitignore`: están en el Mac). La vista previa usa `/demos/cards/<tienda>.webp`.
+- Se genera con `python3 tools/portada/v67/build.py <index-v64.html> <salida>`:
+  - estilos en `v67.css` y scripts en `v67.js`;
+  - la v64 está al lado (`index-v64.html`): de ella solo se toman el `<head>` (SEO, Open Graph y schema) y el cargador.
+- Revisada con Playwright a 360, 375, 390, 1024 y 1440 px (sin scroll lateral) y en el Mac con la SF Pro real.
+- Copia de la v64 en `~/Downloads/404growth-subir/anterior/index-portada-v64.html`.
+- Para publicarla, la nueva está en `~/Downloads/web117-404growth/` junto con `lenis.min.js` y las 5 miniaturas, y se sube con `subir-web.command`.
+
 ## Carruseles de Instagram (7/11/2026)
 
 - Van a `~/Contenidos/Carruseles/<serie o semana>/<C# · título (día)>/` con las diapositivas en orden (`01.png`, `02.png`…, 1080×1350) y `texto del post.txt`. La primera semana es `Semana 9-15 nov` (C1–C7, tipográficos). El calendario, los guiones de reels y los textos están en el doc «Contenido de la semana 9–15 nov».
