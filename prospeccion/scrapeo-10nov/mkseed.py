@@ -20,7 +20,7 @@ for x in leads:
     assert lid not in seen, lid
     seen.add(lid)
     wa = '+34' + x['wa']
-    notes = [f"IG @{x['ig']}: {fmt(x['f'])} seguidores (9/11/2026)",
+    notes = [f"IG @{x['ig']}: {fmt(x['f'])} seguidores ({x.get('date','9/11/2026')})",
              'Tienda online: ' + x['shop'],
              'Contacto: ' + x['contact']]
     if x.get('owner'): notes.append('Dueño: ' + x['owner'])
@@ -31,7 +31,7 @@ for x in leads:
          "website": x.get('web', ''), "zone": x['zone'], "address": x.get('address', ''), "store": x.get('store', 'none'),
          "notes": "\n".join(notes), "instagram": f"https://www.instagram.com/{x['ig']}/", "igFollowers": x['f'],
          "centers": x.get('centers', 1), "stage": "new", "flags": [],
-         "source": "Scrapeo Instagram +5k seguidores con WhatsApp (10 nov)", "priority": x.get('priority', 80), "region": x['region']}
+         "source": x.get("source", "Scrapeo Instagram +5k seguidores con WhatsApp (10 nov)"), "priority": x.get('priority', 80), "region": x['region']}
     out.append([lid, d])
 
 w = open(W, encoding='utf-8').read()
@@ -40,7 +40,7 @@ assert m
 cnt = {}
 for _, d in out: cnt[d['niche']] = cnt.get(d['niche'], 0) + 1
 desc = ", ".join(f"{v} de {NAMES[k]}" for k, v in cnt.items())
-new = f'const SEED_KEY = "seed_20261110";   // 10/11: {len(out)} tiendas con +5k seguidores, WhatsApp y sin tienda online ({desc}), a Scrapeados\nconst SEED = ' + json.dumps(out, ensure_ascii=False) + ';\n'
+new = f'const SEED_KEY = "seed_20261110b";   // 10/11: {len(out)} tiendas con WhatsApp y sin tienda online (+5k seguidores y, en la segunda búsqueda, +1k) ({desc}), a Scrapeados\nconst SEED = ' + json.dumps(out, ensure_ascii=False) + ';\n'
 w = w[:m.start()] + new + w[m.end():]
 open(W, 'w', encoding='utf-8').write(w)
 print(len(out), cnt)
