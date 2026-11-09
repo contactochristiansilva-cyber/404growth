@@ -120,7 +120,9 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Conectadas el 7/11/2026:
   - @1christiansilva (17841477418546809) → 404 Growth;
   - @christiaansilva (17841402074027493, personal, 6.717 seguidores) → Christian;
-  - @404growth (17841441920710616) → 404 Growth. Aún falta pegar su token.
+  - @404growth (17841441920710616) → 404 Growth.
+
+  El 9/11/2026 las tres se sincronizaron solas por la mañana, una por minuto.
 
   Las tres son «Evaluador de Instagram» en la app «404 Growth Admin», que no está publicada. Las invitaciones se aceptan en la web de Instagram: instagram.com/accounts/manage_access/ › «Invitaciones para evaluadores», con esa cuenta abierta. En la app del móvil no salen.
 - Prueba: `t_v66.mjs` en el scratchpad de la sesión del 7/11/2026 (23 comprobaciones con node:sqlite y la Graph API simulada).
