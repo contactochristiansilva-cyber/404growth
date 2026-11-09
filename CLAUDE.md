@@ -355,7 +355,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - `fin`: cada factura (`kind` `in`/`out`, `date`, `who`, `concept`, `cat`, `num`, `total`, `rate`, `cur`, `rec`, `note` y los datos del archivo);
   - `finfile`: el archivo de cada una;
   - `finrec`: los gastos mensuales (`start`, `upto`, `active`, `ended`). `finRecRun` apunta los meses que falten cada vez que se abre (id `x_<rec>_<k>`).
-- Categorías de gasto (`FIN_CATS`): publicidad, software, IA, equipo y colaboradores, gestoría, cuota de autónomo, equipos, viajes, formación, banco, oficina y otros.
+- Categorías de gasto (`FIN_CATS`, rótulos en `CBCAT`): publicidad, software y suscripciones, herramientas de IA, colaboradores y freelance, gestoría, cuota de autónomos, equipo y material, viajes, formación, banco y comisiones, oficina y suministros, y otros.
 - API (`finApi`): `GET|POST fin`, `POST|DELETE fin/<id>`, `PUT|GET|DELETE fin/<id>/file`, `POST finrec` y `POST|DELETE finrec/<id>`.
 - Interfaz: `vConta` y las funciones `cb…` en `PAGES.admin`.
 - Se genera con `patch_v67.py` (con `cb_server.js` y `cb_client.js`) en el scratchpad de la sesión del 9/11/2026 (`fin68/`). Prueba: `t_v67.mjs` (37 comprobaciones con node:sqlite) y `ui67.cjs` (Playwright: apuntar, subir PDF, gasto mensual, editar, filtro y móvil). `t_v66.mjs` sigue pasando.
