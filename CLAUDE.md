@@ -258,15 +258,17 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Copia de la v64 en `~/Downloads/404growth-subir/anterior/index-portada-v64.html`.
 - Para publicarla, la nueva está en `~/Downloads/web117-404growth/` junto con `lenis.min.js` y las 5 miniaturas, y se sube con `subir-web.command`.
 
-## Cargador 404 de la portada (v68, 10/11/2026)
+## Cargador 404 de la portada (v68b, 10/11/2026)
 
 - En la v67 el cargador no se animaba: `build.py` sacaba las reglas de «reducir movimiento» de la v64 fuera de su `@media`, así que los trazos salían ya dibujados y el 404 solo aparecía y se iba.
-- Nuevo cargador «supersónico» (`tools/portada/v68/`: `loader.html`, `loader.css`, `loader.js`):
-  - los tres trazos se dibujan rápido (0,08–0,75 s) y el 404 se comprime y tiembla;
-  - a los 0,88 s: onda de choque (3 anillos lima y un destello), líneas de velocidad giradas hacia la cabecera, y el 404 sale disparado (0,5 s) con 3 estelas, pasando de blanco a lima (#D4F27A, el color del logo);
-  - aterriza encima del logo de la cabecera (mismo centro y tamaño, comprobado con Playwright), el logo da un golpe (escala 1,32 → 1 con un anillo) y «404 Growth» sale desde detrás del símbolo;
-  - todo con transform y opacity; con «reducir movimiento», solo un fundido.
-- Se aplica a la portada con `python3 tools/portada/v68/patch_loader.py <index.html> <salida>`. Copia de la v67 en `~/Downloads/404growth-subir/anterior/index-portada-v67.html`.
+- **Ojo en el móvil:** `v67.css` tiene `.d{display:none!important}` (bloques solo de ordenador). Los trazos del cargador se llamaban `.d` y en el móvil no se veían. Ahora son `.l4s`: no uses clases genéricas de una letra en el cargador.
+- La v68 (onda de choque, temblor y líneas de velocidad) le pareció a Chris demasiado brusca. La v68b (`tools/portada/v68/`: `loader.html`, `loader.css`, `loader.js`) es suave:
+  - el reloj empieza cuando la página ya se ha pintado (doble `requestAnimationFrame`), para que en el móvil se vea desde el principio;
+  - los tres trazos se dibujan con calma (0,78 s cada uno, escalonados) sobre un halo lima suave;
+  - el 404 «respira» (escala 1 → 1,05) y a los 1,32 s vuela en arco (x e y con curvas distintas, 0,85 s) hasta el logo de la cabecera, con 4 estelas que se apagan, un anillo fino y el fondo fundiéndose;
+  - aterriza al acabar la transición (`transitionend`): mismo centro y tamaño que el logo (comprobado con Playwright a 1440 y 390 px), con un pulso suave, y «404 Growth» sale desde detrás del símbolo;
+  - todo con transform y opacity; con «reducir movimiento», solo un fundido. Si algo falla, a los 6 s se quita solo.
+- Se aplica a la portada con `python3 tools/portada/v68/patch_loader.py <index.html> <salida>` (parte de la v67). Copia de la v67 en `~/Downloads/404growth-subir/anterior/index-portada-v67.html`.
 
 ## Carruseles de Instagram (7/11/2026)
 
