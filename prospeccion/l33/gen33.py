@@ -207,8 +207,9 @@ html.emb::-webkit-scrollbar{display:none}html.emb{scrollbar-width:none}
  .ht{aspect-ratio:4/5;border-radius:16px}.ht.t0{grid-row:auto}.ht.t4{display:none}
  .tl{left:8px;bottom:8px;right:52px;padding:7px 9px;border-radius:11px}.tl b{font-size:12.5px}.tl small{font-size:11px}.ta{right:8px;bottom:8px;width:36px;height:36px}
 }
+.hero.hz{align-items:center}.hero.hz .hc{max-width:min(46%,600px)}.hero.hz h1{font-size:clamp(44px,5.4vw,88px)}.hero.hz:after{background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.5) 34%,rgba(0,0,0,0) 62%)}
 .hero.hz picture{position:absolute;inset:0;z-index:-2}.hero.hz picture img{width:100%;height:100%;object-fit:cover;object-position:center}
-@media (max-width:900px){.hero.hz picture img{object-position:center top}.hero.hz:after{background:linear-gradient(0deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 34%,rgba(0,0,0,0) 56%)}}
+@media (max-width:900px){.hero.hz{align-items:flex-end;min-height:calc(100svh - 64px)}.hero.hz .hc{max-width:none}.hero.hz h1{font-size:clamp(38px,10.5vw,52px)}.hero.hz p{display:none}.hero.hz picture img{object-position:center top}.hero.hz:after{background:linear-gradient(0deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 34%,rgba(0,0,0,0) 56%)}}
 /* cinta */
 .mq{background:var(--ink);color:var(--bg);overflow:hidden;white-space:nowrap;padding:17px 0;font-weight:700;font-size:clamp(15px,1.4vw,19px);letter-spacing:.01em}
 .up .mq{text-transform:uppercase}.dark .mq{background:var(--acc);color:var(--on)}
