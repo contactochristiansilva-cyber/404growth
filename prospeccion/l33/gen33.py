@@ -723,7 +723,7 @@ def build(slug, imgs=True):
         images(c)
     a = store(c); b = proposal(c)
     open(os.path.join(OUT, f'p-{slug}--tienda.html'), 'w', encoding='utf-8').write(a)
-    open(os.path.join(OUT, f'p-{slug}.html'), 'w', encoding='utf-8').write(b)
+    open(os.path.join(OUT, f'p-{slug}--vieja.html'), 'w', encoding='utf-8').write(b)  # la propuesta buena es la de gen33v.py (formato v33)
     for h in (a, b):
         txt = re.sub(r'<(script|style)[^>]*>.*?</\1>', '', h, flags=re.S)
         assert not re.findall(r'\{[a-z_]+\}', txt), re.findall(r'\{[a-z_]+\}', txt)[:3]
