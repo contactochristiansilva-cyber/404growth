@@ -11,7 +11,7 @@ AI = os.environ.get('L33_AI', os.path.join(D, 'ai'))
 E = html.escape
 BOOK = 'https://404growth.com/book?utm_source=propuesta&utm_medium=web&utm_campaign='
 WA = 'https://wa.me/34610594450'
-IDS = ['h', 'b', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'l1', 'l2']
+IDS = ['h', 'b', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'l1', 'l2', 'hd', 'hm']
 FONT = "-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Inter,Arial,sans-serif"
 
 
@@ -207,6 +207,8 @@ html.emb::-webkit-scrollbar{display:none}html.emb{scrollbar-width:none}
  .ht{aspect-ratio:4/5;border-radius:16px}.ht.t0{grid-row:auto}.ht.t4{display:none}
  .tl{left:8px;bottom:8px;right:52px;padding:7px 9px;border-radius:11px}.tl b{font-size:12.5px}.tl small{font-size:11px}.ta{right:8px;bottom:8px;width:36px;height:36px}
 }
+.hero.hz picture{position:absolute;inset:0;z-index:-2}.hero.hz picture img{width:100%;height:100%;object-fit:cover;object-position:center}
+@media (max-width:900px){.hero.hz picture img{object-position:center top}.hero.hz:after{background:linear-gradient(0deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 34%,rgba(0,0,0,0) 56%)}}
 /* cinta */
 .mq{background:var(--ink);color:var(--bg);overflow:hidden;white-space:nowrap;padding:17px 0;font-weight:700;font-size:clamp(15px,1.4vw,19px);letter-spacing:.01em}
 .up .mq{text-transform:uppercase}.dark .mq{background:var(--acc);color:var(--on)}
@@ -364,7 +366,7 @@ def store(c):
     col = {k: th.get(k, N[k]) for k in ('bg', 'surf', 'ink', 'mute', 'acc', 'on', 'line')}
     dark = c['niche'] == 'sneakers'
     root = (':root{--f:%s;--bg:%s;--surf:%s;--ink:%s;--mute:%s;--acc:%s;--on:%s;--line:%s;--hp:%s;--hpm:%s;--bp:%s;--bpm:%s}'
-            % (FONT, col['bg'], col['surf'], col['ink'], col['mute'], col['acc'], col['on'], col['line'], c.get('hp', 'center'), c.get('hpm', c.get('hp', 'center')),
+            % (FONT, col['bg'], col['surf'], col['ink'], col['mute'], col['acc'], col['on'], col['line'], c.get('hp', 'center'), c.get('hpm', '74% 45%'),
                c.get('bp', 'center'), c.get('bpm', c.get('bp', 'center'))))
     cls = ' '.join(x for x in ['up' if N['up'] else '', 'dark' if dark else ''] if x)
     cats = c['cats']  # [(nombre, id de imagen)] x3
@@ -390,7 +392,11 @@ def store(c):
                 f'<div class="tl"><b>{E(p["name"])}</b><small>{"Lo más vendido" if k == 1 else price(c, p)}</small></div>'
                 f'<button class="ta" data-add data-n="{E(p["name"])}" data-i="{img(c, i)}" data-p="{price(c, p)}" data-o="{E(p.get("opt", N["opts"][min(2, len(N["opts"]) - 1)]))}" aria-label="Añadir">{ic("plus", 18, 2)}</button></div>')
     sp = N['hero'] == 'split'
-    if c['niche'] in ('cosmetica', 'joya', 'optica') and not c.get('mosaic'):
+    if c.get('hd'):  # heroes nuevos de IA (10/11): 16:9 en el ordenador y 9:16 en el móvil
+        o += (f'<section class="hero hz"><picture><source media="(max-width:900px)" srcset="{img(c, "hm")}"><img src="{img(c, "hd")}" alt="{nm}" fetchpriority="high"></picture>'
+              f'<div class="w"><div class="hc"><span class="eb">{E(c.get("short", c["name"]))} · {E(city)}</span><h1>{HX.get(c["slug"]) or c.get("h1") or N["h1"]}</h1><p>{E(T(c.get("sub", N["sub"]), c))}</p>'
+              f'<div class="hb"><a class="bt w1" href="#nuevo">{E(N["btn"])} {ic("arrow", 18, 2)}</a><a class="bt g1" href="#visita">Visítanos en {E(city)}</a></div></div></div></section>')
+    elif c['niche'] in ('cosmetica', 'joya', 'optica') and not c.get('mosaic'):
         o += (f'<section class="hero{" sp" if sp else ""}"><img src="{img(c, "h")}" alt="{nm}" fetchpriority="high"><div class="w"><div class="hc">'
               f'<span class="eb">{E(c.get("short", c["name"]))} · {E(city)}</span><h1>{HX.get(c["slug"]) or c.get("h1") or N["h1"]}</h1><p>{E(T(c.get("sub", N["sub"]), c))}</p>'
               f'<div class="hb"><a class="bt w1" href="#nuevo">{E(N["btn"])} {ic("arrow", 18, 2)}</a><a class="bt g1" href="#visita">Visítanos en {E(city)}</a></div></div></div>'
@@ -672,7 +678,7 @@ def proposal(c):
 
 
 # ---------------------------------------------------------------- imágenes y salida
-SIZE = {'h': 2400, 'b': 2000}
+SIZE = {'h': 2400, 'b': 2000, 'hd': 2400, 'hm': 1400}
 
 
 def images(c):
@@ -680,7 +686,9 @@ def images(c):
     for i in IDS:
         f = os.path.join(src, i + '.jpg')
         if not os.path.exists(f):
-            print('  falta', s, i); continue
+            if i not in ('hd', 'hm'):
+                print('  falta', s, i)
+            continue
         im = Image.open(f).convert('RGB'); mx = SIZE.get(i, 1100)
         if max(im.size) > mx:
             im.thumbnail((mx, mx), Image.LANCZOS)
@@ -704,6 +712,7 @@ def load(slug):
     c = json.load(open(os.path.join(D, 'data', slug + '.json'), encoding='utf-8'))
     c['slug'] = slug
     c.setdefault('fk', fk(c['f']))
+    c['hd'] = all(os.path.exists(os.path.join(AI, slug, i + '.jpg')) for i in ('hd', 'hm'))
     return c
 
 
