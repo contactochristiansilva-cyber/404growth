@@ -146,7 +146,7 @@ def data(x, sp):
         c['domain'] = dom
     if note:
         c['web_note'] = note
-    for k in ('h1', 'eyebrow', 'sub', 'hp', 'hpm', 'bp', 'bpm', 'ban_h', 'ban_e', 'short'):
+    for k in ('h1', 'eyebrow', 'sub', 'hp', 'hpm', 'bp', 'bpm', 'ban_h', 'ban_e', 'short', 'hx'):
         if sp.get(k):
             c[k] = sp[k]
     return c

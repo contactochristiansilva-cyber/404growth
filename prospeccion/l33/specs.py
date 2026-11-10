@@ -115,7 +115,7 @@ S['cunadas'] = dict(
     l2=('03', 'a long camel coat over a printed silk maxi skirt'),
     cats=[('Chaquetas', 'p1'), ('Conjuntos', 'p3'), ('Abrigos', 'l2')])
 
-S['cache-vila'] = dict(
+S['cache-vila'] = dict(hx='94%', 
     place='the white sail-shaped Auditorio de Tenerife by the sea in Santa Cruz de Tenerife, Spain', who='woman',
     hero=('09', 'a brown suede jacket over a yellow knit jumper with a silk scarf and corduroy trousers'),
     banner=('12', 'the inside of a bright minimalist boutique with white walls, rails of autumn clothes, woven straw hats hanging on the wall and a white counter, no people'),

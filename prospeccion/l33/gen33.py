@@ -79,6 +79,7 @@ NICHE = {
 }
 
 ICONS = {
+    'plus': '<path d="M12 5v14M5 12h14"/>',
     'truck': '<path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/>',
     'store': '<path d="M4 9l1.5-4h13L20 9M4 9h16v11H4zM4 9c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3"/><path d="M10 20v-5h4v5"/>',
     'swap': '<path d="M7 7h11l-3-3M17 17H6l3 3"/>',
@@ -177,8 +178,35 @@ html.emb::-webkit-scrollbar{display:none}html.emb{scrollbar-width:none}
 .hero.sp:after{display:none}.hero.sp>img{left:42%;width:58%;animation:none;transform:none}
 .hero.sp .w{display:flex;align-items:center;padding-top:40px;padding-bottom:40px}.hero.sp .hc{max-width:44%}
 .hero.sp .eb{background:transparent;border-color:var(--line);color:var(--acc)}.hero.sp .eb:before{background:var(--acc)}
-.hero.sp h1{font-weight:300;letter-spacing:-.04em}.hero.sp h1 em{font-style:normal;font-weight:700;color:var(--acc)}
+.hero.sp h1{font-weight:300;letter-spacing:-.04em;font-size:clamp(40px,4.4vw,70px)}.hero.sp h1 em{font-style:normal;font-weight:700;color:var(--acc)}
 .hero.sp p{opacity:1;color:var(--mute)}.hero.sp .bt.w1{background:var(--ink);color:var(--bg)}.hero.sp .bt.g1{border-color:var(--ink);color:var(--ink)}
+/* hero de producto (10/11) */
+.hx{background:var(--bg);color:var(--ink);padding:clamp(28px,4vw,56px) 0 clamp(36px,5vw,64px)}
+.hxg{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(28px,4vw,64px);align-items:center}
+.hx .eb{background:transparent;border:1px solid var(--line);color:var(--acc)}.hx .eb:before{background:var(--acc)}
+.hx h1{font-size:clamp(44px,5.4vw,84px);line-height:.96;letter-spacing:-.04em;font-weight:800;margin:22px 0 18px;text-wrap:balance}
+.up .hx h1{text-transform:uppercase;letter-spacing:-.03em}
+.hx p{font-size:clamp(16px,1.25vw,18.5px);color:var(--mute);max-width:470px;line-height:1.5}
+.bt.o1{border:1.5px solid var(--ink);color:var(--ink)}.bt.o1:hover{background:var(--line)}
+.tr{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:26px;font-size:13.5px;font-weight:550;color:var(--mute)}.tr span{display:inline-flex;align-items:center;gap:7px}.tr svg{color:var(--acc)}
+.hxm{display:grid;grid-template-columns:1.15fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:min(660px,74vh);min-height:480px}
+.ht{position:relative;border-radius:20px;overflow:hidden;background:var(--surf)}
+.ht img{width:100%;height:100%;object-fit:cover;object-position:center 32%;transition:transform .7s cubic-bezier(.2,.8,.2,1)}.ht:hover img{transform:scale(1.04)}
+.ht.t0{grid-row:1/3}.ht.t0 img{object-position:var(--hx,74%) center}
+.ht img{object-position:center 40%}
+.tg{position:absolute;left:14px;top:14px;font-size:12px;font-weight:650;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.35);padding:6px 11px;border-radius:99px}
+.tl{position:absolute;left:12px;bottom:12px;right:60px;background:rgba(255,255,255,.94);color:#111;border-radius:14px;padding:9px 12px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.tl b{display:block;font-size:14px;font-weight:650;line-height:1.2}.tl small{font-size:12px;color:#666}
+.ta{position:absolute;right:12px;bottom:12px;width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.dark .hx .eb{color:var(--acc)}.dark .tl{background:rgba(22,22,22,.92);color:#f5f5f2}.dark .tl small{color:#aaa}.dark .ta{background:var(--acc);color:var(--on)}.dark .hx h1{font-weight:900}
+@media (max-width:900px){
+ .hx{padding:18px 0 26px}.hxg{grid-template-columns:minmax(0,1fr);gap:16px}
+ .hx .eb{font-size:11px;padding:6px 11px}.hx h1{font-size:clamp(34px,9.6vw,46px);margin:12px 0 8px}.hx p{display:none}
+ .hb{margin-top:14px}.hb .bt{height:48px}.tr{display:none}
+ .hxm{order:2;height:auto;min-height:0;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:8px}
+ .ht{aspect-ratio:4/5;border-radius:16px}.ht.t0{grid-row:auto}.ht.t4{display:none}
+ .tl{left:8px;bottom:8px;right:52px;padding:7px 9px;border-radius:11px}.tl b{font-size:12.5px}.tl small{font-size:11px}.ta{right:8px;bottom:8px;width:36px;height:36px}
+}
 /* cinta */
 .mq{background:var(--ink);color:var(--bg);overflow:hidden;white-space:nowrap;padding:17px 0;font-weight:700;font-size:clamp(15px,1.4vw,19px);letter-spacing:.01em}
 .up .mq{text-transform:uppercase}.dark .mq{background:var(--acc);color:var(--on)}
@@ -317,6 +345,19 @@ if(/[?&]tour=1/.test(location.search)&&!matchMedia('(prefers-reduced-motion: red
 """
 
 
+# titular del hero: qué vende la tienda, dicho claro (10/11). Si no está aquí, sale de sus tres categorías.
+HX = {
+    'amusko': 'Perfumes y cosmética<br>de autor.', 'antonio-martin-centro-optico': 'Gafas de sol<br>y graduadas.',
+    'cache-vila': 'Punto, vestidos<br>y camisas.', 'calzados-carrillo': 'Botines, botas<br>y zapatillas.',
+    'centro-optico-emperatriz': 'Gafas de sol<br>y graduadas.', 'intenso-fragancias': 'Perfumes y extractos<br>de autor.',
+    'joyeria-benito-hidalgo': 'Relojes, anillos<br>y alianzas.', 'joyeria-coca': 'Medallas, pendientes<br>y collares.',
+    'la-marquesa-perfumeria': 'Perfumes árabes<br>y de autor.', 'perfumeria-hebe': 'Perfumes, tratamiento<br>y maquillaje.',
+    'perfumeria-paris': 'Perfumes, estuches<br>y bolsos.', 'perfumoon': 'Perfumes árabes<br>y de autor.',
+    'rosa-rosae': 'Perfumes, bisutería<br>y cuidado.', 'scarpa': 'Abrigos, conjuntos<br>y bolsos.',
+    'urban-fragance': 'Perfumes de autor<br>y regalos.',
+}
+
+
 def store(c):
     N = NICHE[c['niche']]; nm = E(c['name']); P_ = c['prods']; city = c['city']
     th = c.get('theme', {})
@@ -338,13 +379,29 @@ def store(c):
           f'<button class="mb" aria-label="Menú" data-demo>{ic("menu", 22)}</button><a class="lg" href="#" data-demo>{logo(c)}</a>'
           f'<div class="ia"><button class="hs" aria-label="Buscar" data-demo>{ic("search")}</button><button class="hs" aria-label="Cuenta" data-demo>{ic("user")}</button>'
           f'<button aria-label="Cesta" data-bag>{ic("bag", 22)}<span class="bq">0</span></button></div></div></header>')
-    # hero
+    # hero (10/11: primero el producto. Qué venden se lee en el titular y se ve en las fotos de producto, también en el móvil)
+    cn = [n for n, _ in cats]
+    h1 = HX.get(c['slug']) or (E(cn[0]) + ', ' + E(cn[1].lower()) + '<br>y ' + E(cn[2].lower()) + '.')
+    tiles = [('h', None)] + [(p['id'], p) for p in P_[:4]]
+    def tile(i, p, k):
+        if not p:
+            return f'<div class="ht t{k}"><img src="{img(c, i)}" alt="{nm}" fetchpriority="high"><span class="tg">{E(city)}</span></div>'
+        return (f'<div class="ht t{k}"><img src="{img(c, i)}" alt="{E(p["name"])}"{" fetchpriority=high" if k == 1 else ""}>'
+                f'<div class="tl"><b>{E(p["name"])}</b><small>{"Lo más vendido" if k == 1 else price(c, p)}</small></div>'
+                f'<button class="ta" data-add data-n="{E(p["name"])}" data-i="{img(c, i)}" data-p="{price(c, p)}" data-o="{E(p.get("opt", N["opts"][min(2, len(N["opts"]) - 1)]))}" aria-label="Añadir">{ic("plus", 18, 2)}</button></div>')
     sp = N['hero'] == 'split'
-    o += (f'<section class="hero{" sp" if sp else ""}"><img src="{img(c, "h")}" alt="{nm}" fetchpriority="high"><div class="w"><div class="hc">'
-          f'<span class="eb">{E(c.get("eyebrow", N["eyebrow"]))}</span><h1>{h1}</h1><p>{E(T(c.get("sub", N["sub"]), c))}</p>'
-          f'<div class="hb"><a class="bt w1" href="#nuevo">{E(N["btn"])} {ic("arrow", 18, 2)}</a><a class="bt g1" href="#visita">Visítanos en {E(city)}</a></div></div></div>'
-          + ('' if sp else f'<div class="hm"><img src="{img(c, P_[0]["id"])}" alt=""><span>{E(P_[0]["name"])}<small>{price(c, P_[0])}</small></span></div>')
-          + '</section>')
+    if c['niche'] in ('cosmetica', 'joya', 'optica') and not c.get('mosaic'):
+        o += (f'<section class="hero{" sp" if sp else ""}"><img src="{img(c, "h")}" alt="{nm}" fetchpriority="high"><div class="w"><div class="hc">'
+              f'<span class="eb">{E(c.get("short", c["name"]))} · {E(city)}</span><h1>{HX.get(c["slug"]) or c.get("h1") or N["h1"]}</h1><p>{E(T(c.get("sub", N["sub"]), c))}</p>'
+              f'<div class="hb"><a class="bt w1" href="#nuevo">{E(N["btn"])} {ic("arrow", 18, 2)}</a><a class="bt g1" href="#visita">Visítanos en {E(city)}</a></div></div></div>'
+              + ('' if sp else f'<div class="hm"><img src="{img(c, P_[0]["id"])}" alt=""><span>{E(P_[0]["name"])}<small>{price(c, P_[0])}</small></span></div>')
+              + '</section>')
+    else:
+        o += (f'<section class="hx"' + (f' style="--hx:{c["hx"]}"' if c.get('hx') else '') + f'><div class="w hxg"><div class="hxt"><span class="eb">{E(c.get("short", c["name"]))} · {E(city)}</span><h1>{h1}</h1>'
+              f'<p>{E(T(c.get("sub", N["sub"]), c))}</p>'
+              f'<div class="hb"><a class="bt k" href="#nuevo">{E(N["btn"])} {ic("arrow", 18, 2)}</a><a class="bt o1" href="#visita">Visítanos en {E(city)}</a></div>'
+              f'<div class="tr"><span>{ic("truck", 18)}Envío a toda España</span><span>{ic("store", 18)}Recogida en {E(city)}</span><span>{ic("card", 18)}Bizum y Apple Pay</span></div></div>'
+              '<div class="hxm">' + ''.join(tile(i, p, k) for k, (i, p) in enumerate(tiles)) + '</div></div></section>')
     mq = [T(x, c) for x in N['marquee']]
     o += '<div class="mq"><div>' + ''.join(f'<span>{E(x)}</span>' for x in mq * 4) + '</div></div>'
     # categorías
