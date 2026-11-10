@@ -384,7 +384,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 
 ## Lote de hoy sin mensaje: audio por WhatsApp (admin v68, 10/11/2026)
 
-- En el CRM › Lote de hoy (nichos con propuesta), el botón «WhatsApp» abre el chat **vacío** (`whatsapp://send?phone=…` sin `text`): Chris manda a cada uno un audio personalizado. Si no tienen WhatsApp (sin móvil), sale solo «Instagram», que abre su chat (`ig.me/m/<usuario>`) sin copiar texto. Si el contacto no dice que el móvil sea WhatsApp (`waOk: false`), «Instagram» va primero y «WhatsApp (sin confirmar)» al lado. Los dos marcan el lead como enviado (con «Deshacer»).
+- En el CRM › Lote de hoy (nichos con propuesta), el botón «WhatsApp» abre el chat con **solo el enlace de su propuesta** (`text` = `pageUrl`, v68b): Chris añade a cada uno un audio personalizado. Si no tienen WhatsApp (sin móvil), sale solo «Instagram», que copia el enlace y abre su chat (`ig.me/m/<usuario>`). Si el contacto no dice que el móvil sea WhatsApp (`waOk: false`), «Instagram» va primero y «WhatsApp (sin confirmar)» al lado. Los dos marcan el lead como enviado (con «Deshacer»).
 - `lotDay` (AAAA-MM-DD) mete un lead en el lote de ese día: va primero y el tope (`lotCap`) nunca lo deja fuera (`dayS()`, `lord` en `vHoy`).
 - Cambios a leads que ya están en el CRM: `LEAD_PATCH` + `LEAD_PATCH_KEY` en el worker (`patchOnce`, `json_patch`, una sola vez). El 10/11 puso `lotDay` 2026-11-10 y `slug`/`pageUrl` en las 50 del lote 33, y `waOk: false` en las 12 cuyo contacto no dice WhatsApp.
 
