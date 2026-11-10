@@ -49,7 +49,7 @@ FRAME_CSS = ('<style id="v33i">.scaler>iframe{position:absolute;left:0;top:0;wid
 FRAME_JS = ("<script>(function(){var F=[].slice.call(document.querySelectorAll('iframe[data-src]'));"
             "function L(f){if(!f.src)f.src=f.dataset.src}"
             "if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting)L(x.target);"
-            "try{x.target.contentWindow&&x.target.contentWindow.postMessage({t404:x.isIntersecting},'*')}catch(e){}})},{rootMargin:'900px 0px'});F.forEach(function(f){io.observe(f)})}else F.forEach(L);"
+            "try{x.target.contentWindow&&x.target.contentWindow.postMessage({t404:x.isIntersecting},'*')}catch(e){}})},{rootMargin:'400px 0px'});F.forEach(function(f){io.observe(f)})}else F.forEach(L);"
             "addEventListener('message',function(m){var d=m.data;if(!d||!d.h404)return;F.forEach(function(f){if(f.contentWindow===m.source&&f.dataset.full){f.style.height=d.h404+'px';if(window.fit)fit()}})});"
             "})();</script>")
 
@@ -136,6 +136,7 @@ def build(slug):
     c = ctx(slug); ids = images(c)
     h = G.head(c, ids).replace('</head>', FRAME_CSS + '</head>') + G.body(c) + G.scripts(c).replace('</body>', FRAME_JS + '</body>')
     h = h.replace('href="/p-' + slug + '--tienda?embed=1', 'href="/p-' + slug + '--tienda')
+    h = h.replace('animation:skaur 20s ease-in-out infinite alternate', 'animation:none')   # la aurora con blur(70px) movía todo a tirones
     left = re.findall(r'\{[a-z_]+\}', re.sub(r'<(script|style)[^>]*>.*?</\1>', '', h, flags=re.S))
     assert not left, left[:5]
     open(os.path.join(N33.OUT, f'p-{slug}.html'), 'w', encoding='utf-8').write(h)

@@ -315,7 +315,7 @@ html.emb::-webkit-scrollbar{display:none}html.emb{scrollbar-width:none}
 
 STORE_JS = r"""
 (function(){var d=document,q=function(s,e){return (e||d).querySelector(s)},qa=function(s,e){return [].slice.call((e||d).querySelectorAll(s))};
-var emb=/[?&](embed|tour)=1/.test(location.search);if(emb)d.documentElement.classList.add('emb');
+var emb=/[?&](embed|tour)=1/.test(location.search);if(emb){d.documentElement.classList.add('emb');d.documentElement.style.scrollBehavior='auto'}   /* sin el smooth: cada scrollTo del recorrido se cortaba */
 /* dentro de la propuesta v33: ?embed=1 dice su alto a la página de fuera; ?at=<id> se queda en esa sección */
 if(/[?&]embed=1/.test(location.search)&&parent!==window){var ph=function(){parent.postMessage({h404:d.documentElement.scrollHeight,q:location.search},'*')};addEventListener('load',ph);setTimeout(ph,800);setTimeout(ph,2500);if(window.ResizeObserver)new ResizeObserver(ph).observe(d.body)}
 var at=(location.search.match(/[?&]at=([a-z]+)/)||[])[1];if(at){d.documentElement.classList.add('at');var go=function(){var el=d.getElementById(at);if(el)scrollTo(0,el.getBoundingClientRect().top+scrollY-20)};addEventListener('load',go);setTimeout(go,300);setTimeout(go,1200)}

@@ -392,6 +392,11 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - 10 por nicho (moda, joyería, cosmética, sneakers/calzado, óptica); los 9 de suplementos y los otros 59 quedan para el miércoles.
 - Publicadas el 10/11 en el Mac (a falta de `subir-web.command`): 21 tiendas con sus 10 fotos (sin líneas en `_redirects`: ver arriba). Su `slug`/`pageUrl` va en el `SEED` (`seed_20261110b`, aún sin subir). Las otras 29 esperan ~100 fotos (`l33/faltan.txt`) porque Flow cortó por cupo diario; al subirlas, sus leads ya estarán en el CRM y se marcan con `POST /admin/api/crm/lead/<id>`.
 - **10/11 por la tarde:** hechas las ~100 fotos que faltaban y los heroes nuevos (16:9 `hd.jpg` + 9:16 `hm.jpg`) de las 29 restantes con la cuenta de Flow christiansilvaaguilar15. Las 50 tiendas están completas y en el Mac (`web117-404growth`), con su `slug`/`pageUrl` en el `SEED`. Si el `SEED` ya estaba subido, los 29 nuevos se marcan con `POST /admin/api/crm/lead/<id>`. Las fotos se bajan todas juntas en un solo `.json` (Chrome bloquea las descargas múltiples de flow.google.com si no se permiten) y el chat del agente solo enseña 4 de cada 5 imágenes: la quinta se busca en «Imágenes».
+- **Fluidez (10/11/2026, `perf34.py`):** las propuestas iban a tirones y el recorrido de la tienda casi no se movía. Con la CPU a 1/4 en Playwright, de 7 fps (ordenador) y 28 fotogramas lentos de 167 (móvil) a 60 fps sin ninguno lento:
+  - la tienda tiene `scroll-behavior:smooth`, así que cada `scrollTo` del recorrido empezaba una animación que se cortaba en el fotograma siguiente: con `?tour=1` / `?embed=1` ahora se pone `scrollBehavior='auto'` (en `gen33.py`);
+  - la aurora del inicio (`.sk-aur`, `blur(70px)`) se movía sin parar y obligaba a repintar el desenfoque en cada fotograma: ahora está quieta (en `gen33v.py`);
+  - los marcos de la tienda se cargan con 400 px de margen (antes 900).
+  `perf34.py <carpeta>` lo aplica a las ya generadas (se puede pasar dos veces). Ojo en las propuestas nuevas: nada de capas con `filter:blur` grande que se animen.
 - Flow: referencias con personas → cara tapada (`noface.py`); el modo manual solo a mano (con scripts en la página sale «actividad inusual»). Detalles en `l33/LEEME.md`.
 
 ## Lote de hoy sin mensaje: audio por WhatsApp (admin v68, 10/11/2026)
