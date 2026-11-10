@@ -258,6 +258,16 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Copia de la v64 en `~/Downloads/404growth-subir/anterior/index-portada-v64.html`.
 - Para publicarla, la nueva está en `~/Downloads/web117-404growth/` junto con `lenis.min.js` y las 5 miniaturas, y se sube con `subir-web.command`.
 
+## Cargador 404 de la portada (v68, 10/11/2026)
+
+- En la v67 el cargador no se animaba: `build.py` sacaba las reglas de «reducir movimiento» de la v64 fuera de su `@media`, así que los trazos salían ya dibujados y el 404 solo aparecía y se iba.
+- Nuevo cargador «supersónico» (`tools/portada/v68/`: `loader.html`, `loader.css`, `loader.js`):
+  - los tres trazos se dibujan rápido (0,08–0,75 s) y el 404 se comprime y tiembla;
+  - a los 0,88 s: onda de choque (3 anillos lima y un destello), líneas de velocidad giradas hacia la cabecera, y el 404 sale disparado (0,5 s) con 3 estelas, pasando de blanco a lima (#D4F27A, el color del logo);
+  - aterriza encima del logo de la cabecera (mismo centro y tamaño, comprobado con Playwright), el logo da un golpe (escala 1,32 → 1 con un anillo) y «404 Growth» sale desde detrás del símbolo;
+  - todo con transform y opacity; con «reducir movimiento», solo un fundido.
+- Se aplica a la portada con `python3 tools/portada/v68/patch_loader.py <index.html> <salida>`. Copia de la v67 en `~/Downloads/404growth-subir/anterior/index-portada-v67.html`.
+
 ## Carruseles de Instagram (7/11/2026)
 
 - Van a `~/Contenidos/Carruseles/<serie o semana>/<C# · título (día)>/` con las diapositivas en orden (`01.png`, `02.png`…, 1080×1350) y `texto del post.txt`. La primera semana es `Semana 9-15 nov` (C1–C7, tipográficos). El calendario, los guiones de reels y los textos están en el doc «Contenido de la semana 9–15 nov».

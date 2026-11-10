@@ -1,0 +1,46 @@
+/* cargador 404 v68: se dibuja, carga, rompe la barrera del sonido y aterriza en el logo de la cabecera */
+#l404{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;overflow:hidden}
+#l404 .bg{position:absolute;inset:0;background:radial-gradient(90% 80% at 70% 20%,#4E6A55 0%,#2C3F32 55%,#18241C 100%)}
+#l404 .bg:before{content:"";position:absolute;inset:0;opacity:.12;background:repeating-linear-gradient(80deg,rgba(255,255,255,.5) 0 1px,transparent 1px 6px)}
+#l404 .lw{position:relative;grid-area:1/1;transform-origin:0 0;will-change:transform,opacity}
+#l404 svg{display:block;width:min(56vw,260px);height:auto;overflow:visible}
+#l404 .d{stroke-dasharray:1;stroke-dashoffset:1;animation:l4draw .46s cubic-bezier(.16,1,.3,1) forwards}
+#l404 .d1{animation-delay:.08s}#l404 .d2{animation-delay:.2s}#l404 .d3{animation-delay:.3s}
+#l404 .lm{opacity:0;transition:opacity .28s ease}
+#l404.go .lm{opacity:1}
+#l404 .lw svg{transform-origin:50% 50%}
+#l404.chg .lw:not(.gh) svg{animation:l4chg .26s cubic-bezier(.3,0,.7,1) forwards}
+#l404.go .lw:not(.gh) svg{animation:l4rel .22s cubic-bezier(.2,1.4,.4,1) forwards}
+#l404 .gh{position:absolute;left:0;top:0;opacity:0;pointer-events:none}
+#l404 .gh .w{opacity:0}
+#l404 .fx,#l404 .fl,#l404 .sp{position:absolute;inset:0;pointer-events:none}
+#l404 .fx{display:grid;place-items:center}
+#l404 .sw{grid-area:1/1;width:min(64vw,300px);aspect-ratio:1;border-radius:50%;border:2px solid rgba(212,242,122,.9);box-shadow:0 0 0 1px rgba(255,255,255,.25) inset;opacity:0;transform:scale(.25)}
+#l404.boom .sw{animation:l4ring .7s cubic-bezier(.1,.7,.3,1) forwards}
+#l404.boom .s2{animation-delay:.07s;border-width:1px}
+#l404.boom .s3{animation-delay:.14s;border-color:rgba(255,255,255,.5);border-width:1px}
+#l404 .fl{background:radial-gradient(closest-side,rgba(240,255,200,.55),rgba(212,242,122,.16) 45%,transparent 70%);opacity:0;transform:scale(.4)}
+#l404.boom .fl{animation:l4flash .45s ease-out forwards}
+#l404 .sp{transform-origin:50% 50%}
+#l404 .sp b{position:absolute;left:50%;height:2px;width:38vmax;margin-left:-19vmax;border-radius:2px;background:linear-gradient(90deg,transparent,rgba(212,242,122,.95) 60%,#fff);opacity:0;transform:translateX(-60vmax) scaleX(.2)}
+#l404 .sp b:nth-child(1){top:46%}#l404 .sp b:nth-child(2){top:52%;height:1px}#l404 .sp b:nth-child(3){top:40%;height:1px}#l404 .sp b:nth-child(4){top:58%}#l404 .sp b:nth-child(5){top:49%;height:3px}#l404 .sp b:nth-child(6){top:34%;height:1px}#l404 .sp b:nth-child(7){top:64%;height:1px}#l404 .sp b:nth-child(8){top:55%}
+#l404.go .sp b{animation:l4streak .5s cubic-bezier(.4,0,.2,1) forwards}
+#l404.go .sp b:nth-child(2n){animation-delay:.05s}#l404.go .sp b:nth-child(3n){animation-delay:.1s}#l404.go .sp b:nth-child(5){animation-delay:.02s}
+#l404.go .bg{opacity:0;transition:opacity .5s cubic-bezier(.4,0,.2,1) .12s}
+#l404.go{pointer-events:none}
+@keyframes l4draw{to{stroke-dashoffset:0}}
+@keyframes l4chg{0%{transform:scale(1)}35%{transform:scale(.9) translate(-1.5%,.8%)}55%{transform:scale(.91) translate(1.5%,-.6%)}75%{transform:scale(.9) translate(-1%,.4%)}100%{transform:scale(.89)}}
+@keyframes l4rel{0%{transform:scale(.89)}100%{transform:scale(1)}}
+@keyframes l4ring{0%{opacity:1;transform:scale(.25)}100%{opacity:0;transform:scale(3.2)}}
+@keyframes l4flash{0%{opacity:0;transform:scale(.4)}25%{opacity:1}100%{opacity:0;transform:scale(2.4)}}
+@keyframes l4streak{0%{opacity:0;transform:translateX(-60vmax) scaleX(.2)}20%{opacity:1}100%{opacity:0;transform:translateX(60vmax) scaleX(1)}}
+/* aterrizaje en la cabecera: el 404 encaja, golpe y sale «404 Growth» */
+html.l404 .nv-logo .mk{opacity:0}
+html.l404 .nv-logo span{opacity:0;transform:translateX(-12px);clip-path:inset(0 100% 0 0)}
+html.l404.l404-land .nv-logo .mk{opacity:1;animation:l4hit .55s cubic-bezier(.2,1.7,.4,1)}
+html.l404.l404-land .nv-logo span{opacity:1;transform:none;clip-path:inset(0 0 0 0);transition:opacity .2s ease .06s,transform .5s cubic-bezier(.16,1,.3,1) .06s,clip-path .5s cubic-bezier(.16,1,.3,1) .06s}
+.nv-logo{position:relative}
+.nv-logo .hit{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;border:2px solid #D4F27A;pointer-events:none;animation:l4hring .55s cubic-bezier(.1,.7,.3,1) forwards}
+@keyframes l4hit{0%{transform:scale(1.32)}100%{transform:scale(1)}}
+@keyframes l4hring{0%{opacity:1;transform:scale(.3)}100%{opacity:0;transform:scale(1.9)}}
+@media (prefers-reduced-motion:reduce){#l404 .d{animation:none;stroke-dashoffset:0}#l404 .fx,#l404 .fl,#l404 .sp{display:none}#l404 .lw{transition:opacity .3s}html.l404.l404-land .nv-logo .mk{animation:none}}
