@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Dafne",
+ "ig": "dafne_pamplona",
+ "f": 5917,
+ "city": "Pamplona",
+ "cityfull": "Pamplona (Navarra)",
+ "address": "C/ Carlos III 39",
+ "logo": {
+  "text": "Dafne"
+ },
+ "cats": [
+  [
+   "Blusas",
+   "p3"
+  ],
+  [
+   "Vestidos",
+   "p4"
+  ],
+  [
+   "Complementos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto Natural Elegance"
+  },
+  {
+   "id": "p2",
+   "name": "Traje violeta"
+  },
+  {
+   "id": "p3",
+   "name": "Camisa de flores rosa"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido blanco"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta estampada"
+  },
+  {
+   "id": "p6",
+   "name": "Mocasines de leopardo"
+  }
+ ],
+ "theme": {}
+}

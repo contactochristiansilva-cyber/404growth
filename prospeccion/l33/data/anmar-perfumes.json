@@ -1,0 +1,53 @@
+{
+ "niche": "cosmetica",
+ "name": "Anmar Perfumes Árabes",
+ "ig": "perfumesarabes.am",
+ "f": 1145,
+ "city": "Tenerife",
+ "cityfull": "Tenerife (Santa Cruz de Tenerife)",
+ "address": "",
+ "logo": {
+  "text": "Anmar Perfumes Árabes"
+ },
+ "cats": [
+  [
+   "Mujer",
+   "p2"
+  ],
+  [
+   "Hombre",
+   "p3"
+  ],
+  [
+   "Novedades",
+   "l1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Dúo de serpientes"
+  },
+  {
+   "id": "p2",
+   "name": "Yara"
+  },
+  {
+   "id": "p3",
+   "name": "Asad Bourbon"
+  },
+  {
+   "id": "p4",
+   "name": "Intimation"
+  },
+  {
+   "id": "p5",
+   "name": "Royale Charm"
+  },
+  {
+   "id": "p6",
+   "name": "His Confession"
+  }
+ ],
+ "theme": {}
+}

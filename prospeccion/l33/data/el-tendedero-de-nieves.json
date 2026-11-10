@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "El Tendedero de Nieves",
+ "ig": "eltendedero.denieves",
+ "f": 9518,
+ "city": "El Puerto de Santa María",
+ "cityfull": "El Puerto de Santa María (Cádiz)",
+ "address": "C/ Manuel Álvarez 3, local 1 (Plaza de toros)",
+ "logo": {
+  "text": "El Tendedero de Nieves"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Blusas",
+   "p3"
+  ],
+  [
+   "Complementos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Cazadora bordada"
+  },
+  {
+   "id": "p2",
+   "name": "Poncho de cuadros"
+  },
+  {
+   "id": "p3",
+   "name": "Blusa de flores"
+  },
+  {
+   "id": "p4",
+   "name": "Chaqueta bordada"
+  },
+  {
+   "id": "p5",
+   "name": "Cinturón con pañuelo"
+  },
+  {
+   "id": "p6",
+   "name": "Botines de ante"
+  }
+ ],
+ "theme": {}
+}

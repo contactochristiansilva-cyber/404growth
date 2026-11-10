@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Legend",
+ "ig": "legend_girona",
+ "f": 5566,
+ "city": "Girona",
+ "cityfull": "Girona",
+ "address": "C/ Juli Garreta 25",
+ "logo": {
+  "text": "Legend"
+ },
+ "cats": [
+  [
+   "Calzado",
+   "p1"
+  ],
+  [
+   "Chaquetas",
+   "p4"
+  ],
+  [
+   "Complementos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botas de ante"
+  },
+  {
+   "id": "p2",
+   "name": "Zapato de cuadros"
+  },
+  {
+   "id": "p3",
+   "name": "Americana azul"
+  },
+  {
+   "id": "p4",
+   "name": "Chaqueta técnica"
+  },
+  {
+   "id": "p5",
+   "name": "Gafas de sol naranjas"
+  },
+  {
+   "id": "p6",
+   "name": "Zapatillas"
+  }
+ ],
+ "theme": {}
+}

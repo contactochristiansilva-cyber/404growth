@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Teresa Tello",
+ "ig": "teresatello",
+ "f": 6817,
+ "city": "Sant Feliu de Guíxols",
+ "cityfull": "Sant Feliu de Guíxols (Girona)",
+ "address": "Avda. Catalunya 21",
+ "logo": {
+  "text": "Teresa Tello"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p2"
+  ],
+  [
+   "Abrigos",
+   "p6"
+  ],
+  [
+   "Complementos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Traje de terciopelo"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido de punto crudo"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido de crochet"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido con puños de pelo"
+  },
+  {
+   "id": "p5",
+   "name": "Gorra de osito"
+  },
+  {
+   "id": "p6",
+   "name": "Parka con pelo"
+  }
+ ],
+ "theme": {}
+}

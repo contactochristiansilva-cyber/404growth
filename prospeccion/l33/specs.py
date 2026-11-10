@@ -711,3 +711,172 @@ S['centro-optico-emperatriz'] = dict(
     l1=('01', 'an elegant woman in a striped maxi dress putting on sunglasses at a shop door'),
     l2=('05', 'a smiling young woman wearing tortoiseshell eyeglasses in a modern optician shop'),
     cats=[('De sol', 'p1'), ('Graduadas', 'p2'), ('Lentillas', 'p4')])
+
+# ---- Lote 34 (11/11/2026): las 10 de moda que faltaban y 10 perfumerías (referencias = l34src/<slug>/NN.jpg) ----
+S['dafne'] = dict(
+    place='the Plaza del Castillo in Pamplona, Spain, with its arcades and bandstand on a sunny day', who='woman',
+    hero=('14', 'a long rust-orange wool coat over a brown knit top and brown trousers'),
+    banner=('25', 'the inside of a bright fashion boutique with rails of colourful printed blouses and shirts, white walls and a warm wooden floor, no people'),
+    prods=[('16', 'a brown suede bomber jacket over a brown knit and brown check straight trousers', 'Conjunto Natural Elegance'),
+           ('17', 'a violet double-breasted blazer with matching wide violet trousers and a grey scarf', 'Traje violeta'),
+           ('22', 'a pink floral print loose shirt with long sleeves', 'Camisa de flores rosa'),
+           ('21', 'a white midi dress with short puff sleeves, a V-neck and buttons', 'Vestido blanco'),
+           ('08', 'a black and grey printed short jacket with ribbed trims over black flared trousers', 'Chaqueta estampada'),
+           ('19', 'a pair of leopard-print calf-hair loafer shoes with a gold chain detail', 'Mocasines de leopardo')],
+    l1=('18', 'a blue, red and cream printed boho midi dress with long sleeves'),
+    l2=('03', 'a chunky gold snake-chain collar necklace with a black oval stone, lying on grey linen'),
+    cats=[('Blusas', 'p3'), ('Vestidos', 'p4'), ('Complementos', 'p6')])
+
+S['frecuencia'] = dict(
+    place='the Plaza del Pilar in Zaragoza, Spain, with the Basilica of El Pilar behind, on a sunny afternoon', who='woman',
+    hero=('17', 'a long brown and black tie-dye print satin wrap dress with wide sleeves and a deep V-neck, for an evening event'),
+    banner=('05', 'the inside of an elegant boutique with patterned wallpaper, gold-framed mirrors, rails of colourful party dresses and coats, shelves of shoes and a cream marble floor, no people'),
+    prods=[('19', 'a plum velvet waistcoat with gold buttons and matching wide palazzo trousers', 'Conjunto granate'),
+           ('18', 'a burgundy lace two-piece: a long-sleeved lace top and a tiered lace maxi skirt', 'Conjunto de encaje'),
+           ('23', 'a puff-sleeved midi dress with a pink, purple and gold floral print and a square neck', 'Vestido estampado'),
+           ('13', 'a long white crepe bridal dress with long sleeves, a high neck and a train', 'Vestido de novia'),
+           ('28', 'a pair of grey-blue velvet slingback shoes with a big buckle', 'Zapato de terciopelo'),
+           ('32', 'a pair of white satin pointed shoes with a crystal trim', 'Zapato de novia')],
+    l1=('27', 'a pair of burgundy velvet slingback shoes and a matching velvet headpiece on a black round table'),
+    l2=('12', 'colourful faux-fur stoles in white, pink, red, lilac and blue hanging on a rail'),
+    cats=[('Fiesta', 'p2'), ('Novia', 'p4'), ('Zapatos', 'p5')])
+
+S['teresa-tello'] = dict(
+    place='the seafront promenade of Sant Feliu de Guíxols on the Costa Brava, Spain, with the bay and the pine-covered hills', who='woman',
+    hero=('09', 'a long python-print knit maxi dress with a high neck and long sleeves, with black knee boots'),
+    banner=('06', 'the inside of a minimalist boutique with rails of dark knitwear and coats, grey textured plaster walls and a few pairs of shoes on a light floor, no people'),
+    prods=[('01', 'a chocolate-brown velvet blazer and matching straight velvet trousers', 'Traje de terciopelo'),
+           ('02', 'a cream rib-knit off-shoulder maxi dress with a side slit', 'Vestido de punto crudo'),
+           ('03', 'a cream knit mini dress with long flared lace-trimmed sleeves and a crochet hem', 'Vestido de crochet'),
+           ('08', 'a brown fitted knit maxi dress with a draped side and faux-fur cuffs', 'Vestido con puños de pelo'),
+           ('18', 'a grey baseball cap with an embroidered teddy-bear patch', 'Gorra de osito'),
+           ('11', 'a khaki parka with a big grey faux-fur collar over a white top', 'Parka con pelo')],
+    l1=('25', 'a leopard-print wide-sleeved crop top with matching wide leopard trousers'),
+    l2=('04', 'a long paisley-embroidered coat with frayed edges over light jeans'),
+    cats=[('Vestidos', 'p2'), ('Abrigos', 'p6'), ('Complementos', 'p5')])
+
+S['legend'] = dict(
+    place='the colourful houses along the Onyar river in Girona, Spain, on a crisp sunny day', who='man',
+    hero=('18', 'a dark green waxed cotton jacket with a corduroy collar over an orange jumper and blue jeans'),
+    banner=('21', 'the inside of a modern menswear shop with black metal shelves of folded knitwear, jackets on hangers and boots on display, white walls, no people'),
+    prods=[('10', 'a pair of brown suede moc-toe lace-up boots with a chunky tan sole', 'Botas de ante'),
+           ('12', 'a pair of brown tartan wool lace-up shoes with a chunky dark sole', 'Zapato de cuadros'),
+           ('06', 'a navy blue unstructured blazer over a white shirt', 'Americana azul'),
+           ('25', 'a grey-green softshell hooded jacket', 'Chaqueta técnica'),
+           ('15', 'round orange acetate sunglasses with their case, on denim', 'Gafas de sol naranjas'),
+           ('23', 'a pair of beige and silver running sneakers', 'Zapatillas')],
+    l1=('01', 'a man wearing a long olive wool coat over an orange and green knitted jumper and green trousers'),
+    l2=('31', 'a stack of folded knitwear and trousers with a pair of brown suede sneakers on top and tortoiseshell sunglasses'),
+    cats=[('Calzado', 'p1'), ('Chaquetas', 'p4'), ('Complementos', 'p5')])
+
+S['violeta-y-chloe'] = dict(
+    place='the Roman walls of Lugo, Spain, on a sunny autumn day', who='woman',
+    hero=('16', 'a long blue printed boho maxi dress with a tiered skirt under a long camel cardigan'),
+    banner=('30', 'the inside of a bright white fashion boutique with a crystal chandelier, rails full of colourful clothes and knitwear along white walls and a light wooden floor, no people'),
+    prods=[('19', 'a brown check blazer with a faux-fur collar over a white top, with matching check trousers', 'Traje de cuadros con pelo'),
+           ('11', 'a burgundy bomber jacket with cream stripes on the sleeves over a striped top and blue jeans', 'Bomber granate'),
+           ('22', 'a brown satin blouse with tie fronts and long sleeves', 'Blusa satinada'),
+           ('29', 'a black and cream polka-dot wrap midi dress with long sleeves', 'Vestido de lunares'),
+           ('17', 'a grey-brown faux-fur jacket', 'Abrigo de pelo'),
+           ('02', 'a rust and black leopard-print knit jumper with beige trousers', 'Jersey de leopardo')],
+    l1=('15', 'a red and black floral print midi dress with long sleeves'),
+    l2=('05', 'a beige puffer jacket with a high collar over black trousers'),
+    cats=[('Abrigos', 'p5'), ('Vestidos', 'p4'), ('Punto', 'p6')])
+
+S['estil-unic'] = dict(
+    place='a sunny sandstone street of Porreres, Mallorca, Spain, with green wooden shutters', who='woman',
+    hero=('05', 'a long teal-blue belted trench coat over a white top'),
+    banner=('23', 'the inside of a warm boutique with sandstone walls, wooden glass display cabinets with jewellery and bags, a wooden counter and rails of clothes, no people'),
+    prods=[('09', 'a purple satin blouse with voluminous sleeves and a black pleated midi skirt', 'Blusa morada'),
+           ('08', 'a white shirt with embroidered red roses and wide-leg blue jeans', 'Camisa de rosas'),
+           ('06', 'a long rust silk printed duster over a bronze satin blouse and matching trousers', 'Conjunto satinado'),
+           ('29', 'a white shirt with a long green pleated crinkle skirt', 'Falda plisada verde'),
+           ('24', 'a rust-brown belted midi shirt dress', 'Vestido camisero'),
+           ('22', 'a long grey waistcoat over a white T-shirt and wide grey trousers', 'Chaleco largo')],
+    l1=('13', 'a brown fringed knit poncho over a white shirt and a dark skirt'),
+    l2=('10', 'a cosy corner of the boutique with a wicker armchair, a sandstone wall, a leather bag and an olive tree'),
+    cats=[('Blusas', 'p1'), ('Vestidos', 'p5'), ('Faldas', 'p4')])
+
+S['urban-crew'] = dict(
+    place='the Plaza de España in Santa Cruz de Tenerife, Spain, with palm trees and the sea, on a sunny day', who='woman',
+    hero=('26', 'a grey and brown tartan oversized blazer with a black studded leather crossbody bag and wide dark jeans'),
+    banner=('08', 'the inside of a bright small boutique with white walls, a grey table with folded knitwear and jeans, rails of clothes and a light wooden floor, no people'),
+    prods=[('01', 'a dark brown leather biker jacket over an olive knit top', 'Cazadora de piel'),
+           ('06', 'a rust-brown draped cowl-neck long-sleeved top', 'Top drapeado'),
+           ('36', 'a brown, olive and cream argyle knit jumper over a white shirt', 'Jersey de rombos'),
+           ('19', 'a pink knit jumper with a white shirt collar and blue straight jeans', 'Jersey rosa'),
+           ('16', 'a pair of black ruched leather Mary Jane flat shoes', 'Bailarinas Mary Jane'),
+           ('05', 'a black T-shirt with a teddy bear print', 'Camiseta de osito')],
+    l1=('23', 'a white shirt with a burgundy knit jumper tied over the shoulders and burgundy trousers with a paisley scarf as a belt'),
+    l2=('32', 'a table of neatly folded trousers and knitwear in olive, rust, cream and striped colours'),
+    cats=[('Chaquetas', 'p1'), ('Punto', 'p3'), ('Zapatos', 'p5')])
+
+S['elena-blanco-moda'] = dict(
+    place='the seafront of Algeciras, Spain, with the bay and the Rock of Gibraltar in the distance, on a sunny day', who='woman',
+    hero=('01', 'a long red and navy paisley print maxi dress with long sleeves'),
+    banner=('12', 'the inside of a fashion boutique with blue toile wallpaper, white shelves, long rails packed with colourful clothes, a white counter and a light wooden floor, no people'),
+    prods=[('13', 'a matching black, white and brown geometric print shirt and wide trousers set', 'Conjunto estampado'),
+           ('07', 'a dark brown faux-fur jacket over a pink satin midi skirt', 'Chaqueta de pelo'),
+           ('11', 'a white embroidered lace-trimmed boho blouse with black wide trousers', 'Blusa ibicenca'),
+           ('18', 'a khaki camouflage-print shirt jacket and matching wide trousers', 'Conjunto militar'),
+           ('25', 'a long denim-blue tiered maxi dress with long sleeves', 'Vestido vaquero largo'),
+           ('20', 'a pair of tan suede knee-high boots', 'Botas altas de ante')],
+    l1=('27', 'an orange linen shirt and matching wide orange trousers'),
+    l2=('26', 'a long cream shirt dress with a red and green floral print'),
+    cats=[('Conjuntos', 'p1'), ('Vestidos', 'p5'), ('Calzado', 'p6')])
+
+S['el-tendedero-de-nieves'] = dict(
+    place='the riverside promenade of El Puerto de Santa María, Cádiz, Spain, with whitewashed buildings and palm trees', who='woman',
+    hero=('11', 'a long brown faux-leather trench coat over a brown top and brown trousers, with a long wooden bead necklace'),
+    banner=('31', 'the inside of a light boutique with white shelves of bags and scarves, rails of clothes, an orange pendant lamp and dried flowers, no people'),
+    prods=[('17', 'a brown bomber jacket embroidered with floral and paisley patterns over a white top and light wide jeans', 'Cazadora bordada'),
+           ('03', 'a brown and camel check knit poncho', 'Poncho de cuadros'),
+           ('10', 'a navy blouse with red flowers and a tie neck, with dark jeans', 'Blusa de flores'),
+           ('30', 'an olive cardigan with colourful embroidered flowers and wide blue jeans', 'Chaqueta bordada'),
+           ('14', 'a wide black leather belt with a knotted paisley silk scarf, worn over a white shirt', 'Cinturón con pañuelo'),
+           ('26', 'a pair of brown suede ankle boots with a strap and buckle', 'Botines de ante')],
+    l1=('12', 'a long plum satin trench coat over a plum top and plum trousers'),
+    l2=('21', 'chunky green and wooden bead statement necklaces displayed on linen busts'),
+    cats=[('Chaquetas', 'p1'), ('Blusas', 'p3'), ('Complementos', 'p5')])
+
+S['vainilla-moda'] = dict(
+    place='a sunny street of Bullas, Murcia, Spain, with whitewashed houses and vineyards on the hills behind', who='woman',
+    hero=('18', 'tan suede flat knee-high boots with a cream knit midi dress and a camel coat'),
+    banner=('05', 'the inside of a bright accessories shop with white shelves full of bags, scarves, jewellery and pink cosmetics, no people'),
+    prods=[('08', 'a leopard-print shoulder bag with a pink scarf knotted on the handle', 'Bolso de leopardo'),
+           ('19', 'a pair of tan suede cowboy boots with stitched details', 'Botas camperas'),
+           ('20', 'a pair of taupe suede slouchy knee boots with a kitten heel', 'Botas altas'),
+           ('22', 'a pair of dark brown croc-embossed leather ankle boots with a kitten heel and a buckle strap', 'Botines de piel'),
+           ('04', 'a long brown faux-fur stole scarf', 'Estola de pelo'),
+           ('16', 'a brown knit jumper with a dachshund and polka-dot print, with beige trousers', 'Jersey de perrito')],
+    l1=('15', 'oversized knit sweaters in cream and black hanging on a rail'),
+    l2=('30', 'fluffy leopard and pastel faux-fur slippers on a shelf'),
+    cats=[('Botas', 'p2'), ('Bolsos', 'p1'), ('Ropa', 'p6')])
+
+S['aromas-artesanales'] = dict(niche='cosmetica',
+    place='a sunny street of Pozoblanco, Córdoba, Spain', who='none',
+    hero=('19', 'a purple glass perfume bottle with a light wooden cap standing on a stack of smooth grey stones with small yellow wild flowers'),
+    banner=('03', 'the inside of a bright perfume shop with mint-green walls, glass shelves full of perfume bottles and cosmetics, a wooden counter and a light wooden floor, no people'),
+    prods=[('02', 'a white ceramic decanter bottle with a cork and a hang tag next to a turquoise glass perfume bottle with a light wooden cap', 'Ubide · eau de parfum'),
+           ('07', 'a white ceramic decanter bottle with a cork and a hang tag next to a blue glass perfume bottle with a light wooden cap', 'Candamo · perfume masculino'),
+           ('13', 'a magenta-pink glass perfume bottle with a light wooden cap and a small pink ribbon', 'Robres · eau de parfum'),
+           ('17', 'a blue glass perfume bottle with a light wooden cap', 'Perfume azul'),
+           ('23', 'two green pump bottles of body oil and a green jar of body cream', 'Cosmética corporal'),
+           ('20', 'a pink micellar water bottle, a white tube and a pink jar of face cream', 'Cuidado facial')],
+    l1=('21', 'two blue glass perfume bottles with light wooden caps splashing into clear water'),
+    l2=('24', 'a palo santo stick gently smoking on a small brass bowl on a dark wooden table'),
+    cats=[('Perfumes', 'p1'), ('Cosmética', 'p5'), ('Ambientación', 'l2')])
+
+S['anmar-perfumes'] = dict(niche='cosmetica',
+    place='the seafront of Santa Cruz de Tenerife, Spain', who='none',
+    hero=('06', 'a pale pink and gold perfume bottle with a sculpted gold cap, wrapped in torn peach paper with vanilla pods and caramel'),
+    banner=('04', 'the inside of a perfume boutique with white shelves full of colourful Arabian perfume bottles and warm light, no people'),
+    prods=[('02', 'two perfume bottles side by side, one gold and one black, each wrapped by a sculpted metal snake', 'Dúo de serpientes'),
+           ('07', 'a pink perfume bottle with a tall pink cap, with strawberries and cream around it', 'Yara'),
+           ('08', 'a brown and bronze perfume bottle with a dark cap, in torn paper with dark chocolate', 'Asad Bourbon'),
+           ('26', 'a clear glass perfume bottle with pale blue liquid and a black cap', 'Intimation'),
+           ('28', 'a red glass perfume bottle with a round black cap', 'Royale Charm'),
+           ('27', 'a black and gold perfume bottle topped with a black and gold sculpted bust', 'His Confession')],
+    l1=('03', 'an orange and cream perfume bottle with orange slices and star anise on a warm golden background'),
+    l2=('01', 'a black perfume box with a gold snake emblem held in black-gloved hands'),
+    cats=[('Mujer', 'p2'), ('Hombre', 'p3'), ('Novedades', 'l1')])

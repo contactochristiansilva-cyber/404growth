@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Estil Únic Boutique",
+ "ig": "estil_unicboutique",
+ "f": 16712,
+ "city": "Porreres",
+ "cityfull": "Porreres (Baleares)",
+ "address": "Porreres (Mallorca)",
+ "logo": {
+  "text": "Estil Únic Boutique"
+ },
+ "cats": [
+  [
+   "Blusas",
+   "p1"
+  ],
+  [
+   "Vestidos",
+   "p5"
+  ],
+  [
+   "Faldas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Blusa morada"
+  },
+  {
+   "id": "p2",
+   "name": "Camisa de rosas"
+  },
+  {
+   "id": "p3",
+   "name": "Conjunto satinado"
+  },
+  {
+   "id": "p4",
+   "name": "Falda plisada verde"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido camisero"
+  },
+  {
+   "id": "p6",
+   "name": "Chaleco largo"
+  }
+ ],
+ "theme": {}
+}

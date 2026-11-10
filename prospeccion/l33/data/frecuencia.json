@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Frecuencia",
+ "ig": "frecuenciamodazaragoza",
+ "f": 9850,
+ "city": "Zaragoza",
+ "cityfull": "Zaragoza",
+ "address": "Avda. de Madrid 100 y 112",
+ "logo": {
+  "text": "Frecuencia"
+ },
+ "cats": [
+  [
+   "Fiesta",
+   "p2"
+  ],
+  [
+   "Novia",
+   "p4"
+  ],
+  [
+   "Zapatos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto granate"
+  },
+  {
+   "id": "p2",
+   "name": "Conjunto de encaje"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido estampado"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido de novia"
+  },
+  {
+   "id": "p5",
+   "name": "Zapato de terciopelo"
+  },
+  {
+   "id": "p6",
+   "name": "Zapato de novia"
+  }
+ ],
+ "theme": {}
+}
