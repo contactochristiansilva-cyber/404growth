@@ -1,37 +1,27 @@
-/* cargador 404 v68b: se dibuja con calma, respira y vuela en arco hasta el logo de la cabecera, dejando una estela */
+/* cargador 404 v68c: solo el logo. Se dibuja desde cero y, mientras vuela al logo de la cabecera, se va deshaciendo;
+   el de la cabecera se dibuja a la vez y le sigue «404 Growth». Sin círculos, destellos ni estelas. */
 #l404{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;overflow:hidden}
 #l404 .bg{position:absolute;inset:0;background:radial-gradient(90% 80% at 70% 20%,#4E6A55 0%,#2C3F32 55%,#18241C 100%)}
 #l404 .bg:before{content:"";position:absolute;inset:0;opacity:.12;background:repeating-linear-gradient(80deg,rgba(255,255,255,.5) 0 1px,transparent 1px 6px)}
-#l404 .lw{position:relative;grid-area:1/1;will-change:transform,opacity}
+#l404 .lw{position:relative;grid-area:1/1;will-change:transform}
 #l404 .ly{transform-origin:0 0;will-change:transform}
-#l404 svg{display:block;width:min(56vw,260px);height:auto;overflow:visible;transform-origin:50% 50%}
+#l404 svg{display:block;width:min(56vw,260px);height:auto;overflow:visible}
+#l404 .w{transition:stroke .9s ease}
 #l404 .l4s{stroke-dasharray:1;stroke-dashoffset:1}
-#l404.run .l4s{animation:l4draw .78s cubic-bezier(.65,0,.35,1) forwards}
+#l404.run .l4s{animation:l4draw .8s cubic-bezier(.65,0,.35,1) forwards}
 #l404.run .l4s2{animation-delay:.14s}#l404.run .l4s3{animation-delay:.26s}
-#l404.br svg{animation:l4br .5s cubic-bezier(.45,0,.55,1) forwards}
-#l404 .lm{opacity:0;transition:opacity .5s ease}
-#l404.go .lm{opacity:1}
-#l404 .gh{position:absolute;left:0;top:0;opacity:0;pointer-events:none}
-#l404 .gh .w{opacity:0}
-#l404 .fx{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
-#l404 .gl{grid-area:1/1;width:min(110vw,520px);aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(212,242,122,.30),rgba(212,242,122,.08) 55%,transparent);opacity:0;transform:scale(.6);transition:opacity .9s ease,transform 1.2s cubic-bezier(.2,.8,.2,1)}
-#l404.run .gl{opacity:.55;transform:scale(.85)}
-#l404.br .gl{opacity:1;transform:scale(1)}
-#l404.go .gl{opacity:0;transform:scale(1.5);transition:opacity .7s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
-#l404 .sw{grid-area:1/1;width:min(60vw,280px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(212,242,122,.7);opacity:0;transform:scale(.5)}
-#l404.go .sw{animation:l4ring 1.1s cubic-bezier(.2,.7,.25,1) forwards}
-#l404.go .bg{opacity:0;transition:opacity .9s cubic-bezier(.4,0,.2,1) .1s}
+#l404.go .w{stroke:#D4F27A}
+#l404.go .l4s{stroke-dashoffset:0;animation:l4undo .95s cubic-bezier(.5,0,.75,1) forwards}
+#l404.go .l4s2{animation-delay:.04s}#l404.go .l4s3{animation-delay:.08s}
+#l404.go .bg{opacity:0;transition:opacity .9s cubic-bezier(.4,0,.2,1) .15s}
 #l404.go{pointer-events:none}
 @keyframes l4draw{to{stroke-dashoffset:0}}
-@keyframes l4br{0%{transform:scale(1)}100%{transform:scale(1.05)}}
-@keyframes l4ring{0%{opacity:.8;transform:scale(.5)}100%{opacity:0;transform:scale(2.6)}}
-/* aterrizaje en la cabecera: el 404 encaja con un pulso suave y sale «404 Growth» */
-html.l404 .nv-logo .mk{opacity:0}
+@keyframes l4undo{from{stroke-dashoffset:0}to{stroke-dashoffset:-1}}
+/* el logo de la cabecera se dibuja mientras llega el otro, y después sale «404 Growth» */
+html.l404 .nv-logo .mk *{stroke-dasharray:1;stroke-dashoffset:1}
+html.l404.l404-draw .nv-logo .mk *{animation:l4draw .75s cubic-bezier(.45,0,.25,1) forwards}
+html.l404.l404-draw .nv-logo .mk :nth-child(2){animation-delay:.08s}
+html.l404.l404-draw .nv-logo .mk :nth-child(3){animation-delay:.14s}
 html.l404 .nv-logo span{opacity:0;transform:translateX(-10px);clip-path:inset(0 100% 0 0)}
-html.l404.l404-land .nv-logo .mk{opacity:1;animation:l4hit .7s cubic-bezier(.3,1.35,.5,1)}
-html.l404.l404-land .nv-logo span{opacity:1;transform:none;clip-path:inset(0 0 0 0);transition:opacity .3s ease .1s,transform .7s cubic-bezier(.16,1,.3,1) .1s,clip-path .7s cubic-bezier(.16,1,.3,1) .1s}
-.nv-logo{position:relative}
-.nv-logo .hit{position:absolute;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:radial-gradient(closest-side,rgba(212,242,122,.55),rgba(212,242,122,0));pointer-events:none;animation:l4glow .8s ease-out forwards}
-@keyframes l4hit{0%{transform:scale(1.12)}100%{transform:scale(1)}}
-@keyframes l4glow{0%{opacity:0;transform:scale(.5)}30%{opacity:1}100%{opacity:0;transform:scale(1.8)}}
-@media (prefers-reduced-motion:reduce){#l404 .l4s{animation:none!important;stroke-dashoffset:0}#l404 .fx{display:none}#l404 .lw{transition:opacity .3s}html.l404.l404-land .nv-logo .mk{animation:none}}
+html.l404.l404-land .nv-logo span{opacity:1;transform:none;clip-path:inset(0 0 0 0);transition:opacity .3s ease,transform .8s cubic-bezier(.16,1,.3,1),clip-path .8s cubic-bezier(.16,1,.3,1)}
+@media (prefers-reduced-motion:reduce){#l404 .l4s{animation:none!important;stroke-dashoffset:0}#l404 .lw{transition:opacity .3s}html.l404 .nv-logo .mk *{stroke-dasharray:none;stroke-dashoffset:0;animation:none!important}}

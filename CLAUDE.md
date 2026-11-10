@@ -258,16 +258,16 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Copia de la v64 en `~/Downloads/404growth-subir/anterior/index-portada-v64.html`.
 - Para publicarla, la nueva está en `~/Downloads/web117-404growth/` junto con `lenis.min.js` y las 5 miniaturas, y se sube con `subir-web.command`.
 
-## Cargador 404 de la portada (v68b, 10/11/2026)
+## Cargador 404 de la portada (v68c, 10/11/2026)
 
 - En la v67 el cargador no se animaba: `build.py` sacaba las reglas de «reducir movimiento» de la v64 fuera de su `@media`, así que los trazos salían ya dibujados y el 404 solo aparecía y se iba.
 - **Ojo en el móvil:** `v67.css` tiene `.d{display:none!important}` (bloques solo de ordenador). Los trazos del cargador se llamaban `.d` y en el móvil no se veían. Ahora son `.l4s`: no uses clases genéricas de una letra en el cargador.
-- La v68 (onda de choque, temblor y líneas de velocidad) le pareció a Chris demasiado brusca. La v68b (`tools/portada/v68/`: `loader.html`, `loader.css`, `loader.js`) es suave:
+- La v68 (onda de choque, temblor, líneas de velocidad) y la v68b (halo, anillo, estelas, pulso) no le gustaron a Chris: **sin círculos, destellos ni efectos raros, solo el logo.** La v68c (`tools/portada/v68/`: `loader.html`, `loader.css`, `loader.js`):
   - el reloj empieza cuando la página ya se ha pintado (doble `requestAnimationFrame`), para que en el móvil se vea desde el principio;
-  - los tres trazos se dibujan con calma (0,78 s cada uno, escalonados) sobre un halo lima suave;
-  - el 404 «respira» (escala 1 → 1,05) y a los 1,32 s vuela en arco (x e y con curvas distintas, 0,85 s) hasta el logo de la cabecera, con 4 estelas que se apagan, un anillo fino y el fondo fundiéndose;
-  - aterriza al acabar la transición (`transitionend`): mismo centro y tamaño que el logo (comprobado con Playwright a 1440 y 390 px), con un pulso suave, y «404 Growth» sale desde detrás del símbolo;
-  - todo con transform y opacity; con «reducir movimiento», solo un fundido. Si algo falla, a los 6 s se quita solo.
+  - el 404 blanco se dibuja desde cero (tres trazos de 0,8 s, escalonados);
+  - a los 1,15 s vuela en arco (x e y con curvas distintas, 0,95 s) hacia el logo de la cabecera, pasando a lima (#D4F27A) y **deshaciéndose** por el camino (`stroke-dashoffset` de 0 a −1);
+  - a la vez, el logo de la cabecera se dibuja (sus trazos con `pathLength` 1, clase `l404-draw`) y después sale «404 Growth» desde detrás del símbolo (`l404-land`);
+  - con «reducir movimiento», solo un fundido. Si algo falla, a los 6 s se quita solo.
 - Se aplica a la portada con `python3 tools/portada/v68/patch_loader.py <index.html> <salida>` (parte de la v67). Copia de la v67 en `~/Downloads/404growth-subir/anterior/index-portada-v67.html`.
 
 ## Carruseles de Instagram (7/11/2026)
