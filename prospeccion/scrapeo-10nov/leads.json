@@ -10,7 +10,8 @@
   "address": "C/ Moneda 18",
   "shop": "sin web; pedidos por mensaje privado o WhatsApp y envíos a toda España en 24/48 h",
   "contact": "WhatsApp 605 097 776 (bio)",
-  "what": "Ropa y complementos únicos"
+  "what": "Ropa y complementos únicos",
+  "slug": "maria-antonia"
  },
  {
   "niche": "moda",
@@ -51,7 +52,8 @@
   "centers": 2,
   "shop": "sin web (la bio no enlaza nada)",
   "contact": "WhatsApp 651 842 071 (enlace de la bio)",
-  "what": "Moda casual y de fiesta para mujer, especialistas en novia y comunión; 47 años de experiencia"
+  "what": "Moda casual y de fiesta para mujer, especialistas en novia y comunión; 47 años de experiencia",
+  "slug": "lluna-de-drap"
  },
  {
   "niche": "moda",
@@ -92,7 +94,8 @@
   "centers": 2,
   "shop": "sin web (la bio no enlaza nada)",
   "contact": "teléfono y WhatsApp 684 666 004 (bio)",
-  "what": "Tienda de ropa desde 2008; comparte espacio con Gallery Man (@gallerymanbykingsroad), su tienda de hombre"
+  "what": "Tienda de ropa desde 2008; comparte espacio con Gallery Man (@gallerymanbykingsroad), su tienda de hombre",
+  "slug": "king-s-road"
  },
  {
   "niche": "moda",
@@ -119,7 +122,8 @@
   "shop": "sin web (la bio no enlaza nada)",
   "contact": "WhatsApp 639 031 050 (bio)",
   "owner": "Sonia Escobar (@_sonia_escobar, la bio dice «by»)",
-  "what": "Boutique multimarca de mujer para diario con sección amplia de ceremonia"
+  "what": "Boutique multimarca de mujer para diario con sección amplia de ceremonia",
+  "slug": "molupita"
  },
  {
   "niche": "moda",
@@ -181,7 +185,8 @@
   "address": "C/ del Sol 59",
   "shop": "sin web (la bio no enlaza nada); envíos en 24 h a la península",
   "contact": "WhatsApp 614 91 03 79; fijo 927 51 53 20 (bio)",
-  "what": "Moda de mujer, lo último en tendencias"
+  "what": "Moda de mujer, lo último en tendencias",
+  "slug": "trendy"
  },
  {
   "niche": "moda",
@@ -194,7 +199,8 @@
   "address": "Plaza Santa María 15",
   "shop": "sin web; la bio pide los pedidos por WhatsApp (el enlace de la bio es WhatsApp)",
   "contact": "pedidos por WhatsApp +34 633 670 450 (bio)",
-  "what": "Tienda de moda; envíos 24/48 h"
+  "what": "Tienda de moda; envíos 24/48 h",
+  "slug": "rosisima"
  },
  {
   "niche": "moda",
@@ -223,7 +229,8 @@
   "shop": "sin web; pedidos por WhatsApp y envíos a toda España",
   "contact": "pedidos por WhatsApp 600 745 601; otro teléfono 654 569 017 (bio)",
   "owner": "Rocío Ortega (la tienda lleva su nombre)",
-  "what": "Moda de mujer"
+  "what": "Moda de mujer",
+  "slug": "rocio-ortega"
  },
  {
   "niche": "moda",
@@ -250,7 +257,8 @@
   "address": "C/ Cantareros 29",
   "shop": "sin web aunque el perfil se llama «Moda online»: venden por WhatsApp con envíos a 4,99 € (gratis desde 99,95 €)",
   "contact": "pedidos por WhatsApp 655 869 759 (bio)",
-  "what": "Boutique de moda de mujer"
+  "what": "Boutique de moda de mujer",
+  "slug": "cunadas"
  },
  {
   "niche": "moda",
@@ -291,7 +299,8 @@
   "email": "maevesevilla@gmail.com",
   "shop": "sin web (la bio solo enlaza su ficha de Google)",
   "contact": "móvil 654 984 018 y fijo 955 286 398; maevesevilla@gmail.com (bio)",
-  "what": "Plata de ley, joyas y complementos; L-V de 10 a 21 y sábados de 11 a 20"
+  "what": "Plata de ley, joyas y complementos; L-V de 10 a 21 y sábados de 11 a 20",
+  "slug": "maeve-sevilla"
  },
  {
   "niche": "joya",
@@ -318,7 +327,8 @@
   "address": "Avda. Juan Carlos I 8, bajo",
   "shop": "sin web; citas por WhatsApp (el enlace de la bio)",
   "contact": "WhatsApp 628 902 196 (enlace de la bio)",
-  "what": "Tocados y complementos artesanales para novias, madrinas e invitadas; atelier con diseños a medida"
+  "what": "Tocados y complementos artesanales para novias, madrinas e invitadas; atelier con diseños a medida",
+  "slug": "makalo"
  },
  {
   "niche": "joya",
@@ -347,7 +357,8 @@
   "address": "C/ Melquíades Álvarez 26",
   "shop": "sin web; información y pedidos todo por WhatsApp",
   "contact": "WhatsApp 640 790 591 (bio)",
-  "what": "Bisutería personalizada; envíos a toda España"
+  "what": "Bisutería personalizada; envíos a toda España",
+  "slug": "little-things"
  },
  {
   "niche": "joya",
@@ -408,7 +419,8 @@
   "address": "C/ Marcelo Usera 141",
   "shop": "sin web; pedidos por WhatsApp (el enlace de la bio)",
   "contact": "WhatsApp 612 201 747 (enlace de la bio)",
-  "what": "Joyería de oro de 18 k para la comunidad venezolana en Madrid; venta al por mayor y al detalle, compraventa de oro"
+  "what": "Joyería de oro de 18 k para la comunidad venezolana en Madrid; venta al por mayor y al detalle, compraventa de oro",
+  "slug": "madrid-oro-la-guaira"
  },
  {
   "niche": "joya",
@@ -592,7 +604,8 @@
   "address": "Bulevar Príncipe Alfonso de Hohenlohe 7 (Forum)",
   "shop": "sin web (la bio solo enlaza WhatsApp)",
   "contact": "WhatsApp 682 222 777 (enlace de la bio)",
-  "what": "Óptica de gafas de marcas conocidas y de nicho; abierta de lunes a domingo de 11 a 20, con parking"
+  "what": "Óptica de gafas de marcas conocidas y de nicho; abierta de lunes a domingo de 11 a 20, con parking",
+  "slug": "lulu-eyewear-gallery"
  },
  {
   "niche": "optica",
@@ -608,7 +621,8 @@
   "shop": "centroopticoplaza.com es informativa, sin tienda ni carrito",
   "contact": "WhatsApp 629 82 50 47; fijo 91 457 55 42; elisacentroopticoplaza@gmail.com (bio)",
   "owner": "Elisa Plaza (nombre del perfil y correo)",
-  "what": "Óptica independiente"
+  "what": "Óptica independiente",
+  "slug": "centro-optico-plaza"
  },
  {
   "niche": "joya",
@@ -626,7 +640,8 @@
   "aviso": [],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "carlos-joyeria"
  },
  {
   "niche": "joya",
@@ -644,7 +659,8 @@
   "aviso": [],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "joieria-torres"
  },
  {
   "niche": "joya",
@@ -719,7 +735,8 @@
   "aviso": [],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "mr-gold-almeria"
  },
  {
   "niche": "joya",
@@ -737,7 +754,8 @@
   "aviso": [],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "joyeria-matiz"
  },
  {
   "niche": "joya",
@@ -870,7 +888,8 @@
   "aviso": [],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "madina-perfumes"
  },
  {
   "niche": "cosmetica",
@@ -967,7 +986,8 @@
   "aviso": [],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "perfums-alomar"
  },
  {
   "niche": "cosmetica",
@@ -1258,7 +1278,8 @@
   "aviso": [],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "dewe-almeria"
  },
  {
   "niche": "sneakers",
@@ -1299,7 +1320,8 @@
   ],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "soul-feet"
  },
  {
   "niche": "sneakers",
@@ -1319,7 +1341,8 @@
   ],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "mizor"
  },
  {
   "niche": "sneakers",
@@ -1621,7 +1644,8 @@
   "aviso": [],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "optica-ballester"
  },
  {
   "niche": "optica",
@@ -1677,7 +1701,8 @@
   "aviso": [],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "optica-constitucion"
  },
  {
   "niche": "optica",
@@ -1697,7 +1722,8 @@
   ],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "deseover"
  },
  {
   "niche": "optica",
@@ -1717,7 +1743,8 @@
   ],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "optica-dh-vision"
  },
  {
   "niche": "optica",
@@ -1753,7 +1780,8 @@
   "aviso": [],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "optica-miraflores"
  },
  {
   "niche": "optica",
@@ -1848,7 +1876,8 @@
   "aviso": [],
   "priority": 80,
   "source": "Scrapeo Instagram +1k seguidores con WhatsApp (10 nov)",
-  "date": "10/11/2026"
+  "date": "10/11/2026",
+  "slug": "guillermo-ramos-optico"
  },
  {
   "niche": "optica",
