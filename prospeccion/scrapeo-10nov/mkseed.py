@@ -32,6 +32,8 @@ for x in leads:
          "notes": "\n".join(notes), "instagram": f"https://www.instagram.com/{x['ig']}/", "igFollowers": x['f'],
          "centers": x.get('centers', 1), "stage": "new", "flags": [],
          "source": x.get("source", "Scrapeo Instagram +5k seguidores con WhatsApp (10 nov)"), "priority": x.get('priority', 80), "region": x['region']}
+    if x.get('slug'):
+        d['slug'] = x['slug']; d['pageUrl'] = f"https://404growth.com/p/{x['slug']}/"
     out.append([lid, d])
 
 w = open(W, encoding='utf-8').read()

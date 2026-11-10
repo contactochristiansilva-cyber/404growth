@@ -8,14 +8,18 @@ from specs import S
 COMMON = ('Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, '
           'no logos, no brand names, no frames, no collage, no words or labels anywhere in the image.')
 WEAR = ('Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. '
-        'Do not redesign, recolour or add garments. The model must be a completely different {who} from anyone in the reference: a new face and a different '
-        'hairstyle; never reproduce the face or likeness of a real person from the reference. If the reference is a mirror selfie, the new photo has no phone, '
+        'Do not redesign, recolour or add garments. Show the clothes on a professional {adj} fashion model (a {who}). If the reference is a mirror selfie, the new photo has no phone, '
         'no mirror and no selfie pose. ' + COMMON)
 OBJ = ('Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. '
        'Leave out any hands, price tags, stickers, shop text and the original background. ' + COMMON)
 OBJ_W = re.compile(r'\b(umbrella|fan|bag|handbag|tote|clutch|loafers?|boots?|sneakers?|shoes?|cap|scarf|stoles|belts|case|bottle|bottles|jar|box|boxes|diffuser|strap)\b', re.I)
 CITY_BG = {'moda': '#ECE7E0', 'joya': '#F4EFE6', 'cosmetica': '#F3E6E1', 'sneakers': '#E6E5E1', 'calzado': '#EEE9E2', 'optica': '#EEF2F5'}
 NAMES = dict(woman='woman', man='man')
+
+
+def wear(who):
+    w = NAMES.get(who, 'woman')
+    return WEAR.format(who=w, adj='male' if w == 'man' else 'female')
 
 
 def niche(x, sp):
@@ -39,7 +43,7 @@ def prompts(x, sp):
         J['h'] = ('16:9', r, OBJ, f'Luxury beauty campaign still life of {d} from the reference. The product stands in the right third of the frame and the scene continues to the left, '
                                  'softly out of focus and calm, with room for a headline. Warm cinematic light, rich textures. One single continuous photograph, never a split screen or collage.')
     else:
-        J['h'] = ('16:9', r, WEAR.format(who=NAMES.get(who, 'woman')),
+        J['h'] = ('16:9', r, wear(who),
                   f'{person} wearing {d} from the reference, walking at {sp["place"]}, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. '
                   'The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. '
                   'Wide editorial campaign image, cinematic natural light.')
@@ -47,13 +51,13 @@ def prompts(x, sp):
     for k, (r, d, _) in enumerate(sp['prods'], 1):
         if ni in ('moda',) or (ni in ('sneakers', 'calzado') and worn(d) and not re.search(r'sneaker|shoe|boot|cap|loafer', d, re.I)):
             if worn(d):
-                J[f'p{k}'] = ('3:4', r, WEAR.format(who=NAMES.get(who, 'woman')),
+                J[f'p{k}'] = ('3:4', r, wear(who),
                               f'E-commerce product photo for a fashion boutique: a model wearing {d} from the reference, standing naturally, framed from just above the lips '
                               f'(face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light ({bg}) studio background '
                               'with a soft natural floor shadow, soft diffused daylight from the left.')
                 continue
         if ni == 'joya':
-            J[f'p{k}'] = ('3:4', r, OBJ if 'worn' not in d else WEAR.format(who='woman'),
+            J[f'p{k}'] = ('3:4', r, OBJ if 'worn' not in d else wear('woman'),
                           f'Luxury jewellery e-commerce photo of {d} from the reference, centred on a seamless ivory ({bg}) background with a soft natural shadow, '
                           'the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight.')
         elif ni == 'cosmetica':
@@ -74,11 +78,11 @@ def prompts(x, sp):
     for k in ('l1', 'l2'):
         r, d = sp[k]
         if ni in ('moda', 'sneakers', 'calzado') and who != 'none' and worn(d) and not re.search(r'^(dark|burgundy|beige|three|a guy|a woman seen|grey cargo)', d):
-            J[k] = ('3:4', r, WEAR.format(who=NAMES.get(who, 'woman')),
+            J[k] = ('3:4', r, wear(who),
                     f'Lifestyle fashion photo: a model wearing {d} from the reference, candid and relaxed in a sunny street of {city}, Spain, natural light, '
                     'framed from the knees up, editorial, shallow depth of field.')
         else:
-            J[k] = ('3:4', r, (WEAR.format(who='woman') if re.search(r'\b(woman|man|guy|bride|hand|wrist|neck)\b', d) else OBJ),
+            J[k] = ('3:4', r, (wear('man' if re.search(r'\b(man|guy)\b', d) else who if who in ('woman', 'man') else 'woman') if re.search(r'\b(woman|man|guy|bride|hand|wrist|neck)\b', d) else OBJ),
                     f'Lifestyle photo: {d}, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field.')
     r, d = sp['banner']
     J['b'] = ('16:9', r, COMMON, f'Wide interior photo: {d}, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. '

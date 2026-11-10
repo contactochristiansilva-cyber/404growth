@@ -373,3 +373,10 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - unas 6-7 búsquedas por minuto, 4 perfiles a la vez, sin errores 429. `/api/v1/users/<id>/info/` y `web_profile_info` dan 429/404.
   - Para leer mucho texto de la pestaña: volcarlo en un `<article>` a pantalla completa y leerlo con `get_page_text` (el resultado de `javascript_tool` se corta a unos 1.000 caracteres).
   - Las webs se comprueban en otra pestaña (Shopify `/products.json`, Woo `x-wp-total`); WebFetch pide permiso por URL y desde el contenedor y el Mac no se llega a esas webs.
+
+## Lote 33 (10/11/2026): 50 propuestas con tienda de ejemplo por nicho
+
+- Generador en `prospeccion/l33/` (ver `LEEME.md`): `specs.py` + `sel.json` → `mkjobs.py` (textos para Flow) → `gen33.py <slug>` (`out/p-<slug>.html`, la propuesta común, y `out/p-<slug>--tienda.html`, la tienda de ejemplo del nicho, metida en la propuesta con iframes). Fotos en `ai/<slug>/{h,b,p1..p6,l1,l2}.jpg` (o `L33_AI`), todas de Google Flow (cuenta personal) a partir de sus productos reales de Instagram.
+- 10 por nicho (moda, joyería, cosmética, sneakers/calzado, óptica); los 9 de suplementos y los otros 59 quedan para el miércoles.
+- Publicadas el 10/11 en el Mac (a falta de `subir-web.command`): 21 tiendas con sus 10 fotos y sus líneas en `_redirects`. Su `slug`/`pageUrl` va en el `SEED` (`seed_20261110b`, aún sin subir). Las otras 29 esperan ~100 fotos (`l33/faltan.txt`) porque Flow cortó por cupo diario; al subirlas, sus leads ya estarán en el CRM y se marcan con `POST /admin/api/crm/lead/<id>`.
+- Flow: referencias con personas → cara tapada (`noface.py`); el modo manual solo a mano (con scripts en la página sale «actividad inusual»). Detalles en `l33/LEEME.md`.

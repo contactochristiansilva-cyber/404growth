@@ -1,7 +1,7 @@
 # JS para la pestaña de Flow con los mensajes de una tienda, comprimidos con el diccionario TOK (se guarda una vez en localStorage.__tok)
 import json, sys, re, glob
-from mkjobs import COMMON, WEAR, OBJ
-TOK = [WEAR.format(who='woman'), WEAR.format(who='man'), OBJ, COMMON,
+from mkjobs import COMMON, OBJ, wear
+TOK = [wear('woman'), wear('man'), OBJ, COMMON,
        'Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. ',
        'E-commerce product photo for a fashion boutique: a model wearing ',
        ' from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (',
@@ -37,5 +37,5 @@ if __name__ == '__main__':
         for m, o in zip(M, d['msgs']):
             assert '§' not in o['text']
         K = {k: comp(v) if False else v for k, v in d['K'].items()}
-        print('if(!window.__put)eval(localStorage.__fc);window.__X=t=>t.replace(/\\u00a7(\\d\\d)/g,(m,k)=>JSON.parse(localStorage.__tok)[+k]);window.__SLUG=%s;window.__K=%s;window.__M=%s.map(m=>({refs:m.refs,text:__X(m.text)}));"ok "+__M.map(m=>m.text.length)'
-              % (json.dumps(s), json.dumps(K, ensure_ascii=False), json.dumps(M, ensure_ascii=False)))
+        print('if(!window.__put)eval(localStorage.__fc);localStorage.__cur=%s;window.__X=t=>t.replace(/\\u00a7(\\d\\d)/g,(m,k)=>JSON.parse(localStorage.__tok)[+k]);window.__SLUG=%s;window.__K=%s;window.__M=%s.map(m=>({refs:m.refs,text:__X(m.text)}));"ok "+__M.map(m=>m.text.length)'
+              % (json.dumps(s), json.dumps(s), json.dumps(K, ensure_ascii=False), json.dumps(M, ensure_ascii=False)))
