@@ -405,3 +405,17 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - `lotDay` (AAAA-MM-DD) mete un lead en el lote de ese día: va primero y el tope (`lotCap`) nunca lo deja fuera (`dayS()`, `lord` en `vHoy`).
 - Cambios a leads que ya están en el CRM: `LEAD_PATCH` + `LEAD_PATCH_KEY` en el worker (`patchOnce`, `json_patch`, una sola vez). El 10/11 puso `lotDay` 2026-11-10 y `slug`/`pageUrl` en las 50 del lote 33, y `waOk: false` en las 12 cuyo contacto no dice WhatsApp.
 
+
+## Lote 34 (11/11/2026): 20 propuestas (10 de moda + 10 perfumerías árabes)
+
+- Mismo generador que el lote 33 (`prospeccion/l33/`): `sel34.json` (las 20), `nuevos34.json` (las 8 perfumerías que no estaban en el CRM), `jobs34.py` (textos cortos para Flow, de 1 a 3 imágenes por mensaje), `match34.py` (empareja cada imagen de Flow con su trabajo por el texto de la petición), `inline34.py` (una propuesta en un solo .html con su tienda dentro, para revisarla sin publicar) y `crm34.py <worker.js> <día> <sufijo>` (SEED + LEAD_PATCH con `lotDay`; solo entran las que ya tienen página en `out/`).
+- Publicadas en el Mac (`web117-404growth`, con sus carpetas `p/<slug>/`). En el worker: `seed_20261111b` y `lpatch_20261111b` (las 20 nuevas y las 50 del lote 33 con `lotDay` 2026-11-11; las ya enviadas no salen por su etapa).
+- Lo que se aprendió en Flow:
+  - Con 5 imágenes por mensaje y la regla larga, Flow lo rechaza todo; con mensajes cortos de 1 a 3 imágenes va bien (unos 40 s cada uno).
+  - **Una sesión de chat nueva por tienda** (botón «Nueva sesión», arriba a la derecha del chat, con clic real). Si se siguen varias tiendas en la misma sesión, el agente mezcla los productos de una con los de otra (salieron frascos de otra tienda en 3 de las 8 perfumerías y hubo que rehacerlos).
+  - En el selector de referencias, pulsar el nombre del archivo ya lo añade a la petición. El botón «Añadir a petición» añade el que está resaltado (el primero de la lista, normalmente la última imagen generada): no pulsarlo después. Comprobar que el número de miniaturas de la petición coincide con las referencias.
+  - El botón de enviar solo responde a un clic real (no a `click()` desde un script).
+  - Tras unas 150 imágenes seguidas sale «Estás preguntando demasiado rápido»; se pasa en una hora más o menos.
+  - Las imágenes se bajan de la rejilla con la dirección de la miniatura acabada en `=s0`, o abriendo cada una (`/edit/<id>`) y leyendo su petición (`.text-part`).
+- En el Mac, `tar` no puede sustituir archivos que ya existen en una carpeta conectada (no hay permiso de borrado): se extrae fuera (`$HOME/x`) y se copia con `cp`.
+- Antes de coger una tienda para un lote, comprobar que no tiene ya `slug` en `sel.json` o en el `LEAD_PATCH` (Madina Perfumes ya estaba en el lote 33).
