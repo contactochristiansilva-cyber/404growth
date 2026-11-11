@@ -437,9 +437,20 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - solo crea la clave `P404_KEY` de Partner si `secret list` contesta bien y no la trae. Antes, si `secret list` fallaba, creaba otra clave, y eso deja ilegibles las claves guardadas de Stripe, Anthropic y Meta.
 - Presupuestos desde el código: `Q_ADD` + `Q_ADD_KEY` en el worker del admin. Se añaden una sola vez al abrir Presupuestos, y nunca si ya hay uno con el mismo cliente. Así entró Intenso Fragancias (1.740 €).
 
-## Facturas en PDF (12/11/2026)
+## Plantilla de factura de 404 Growth (admin v69, 12/11/2026)
 
-- Las facturas a clientes se hacen con `tools/facturas/` (ver su `LEEME.md`), con el diseño de la 2026-151 de Kiss of Life: logo 404, SF Pro y gris verdoso. No con el PDF del admin, que es otro diseño (Helvetica y una barra azul).
-- El PDF se saca con el Playwright del Mac y se guarda en `~/Downloads/Factura <número> <cliente>.pdf`. Los datos fiscales de cada cliente se quedan en el Mac (`404growth-subir/facturas-src/facturas/datos/`), no en el repositorio.
-- Numeración: 2026-151 Kiss of Life y 2026-152 Intenso Fragancias (12/11/2026, 1.440 € IVA incluido; concepto de la transferencia «Tienda online Instinto», como lo pidió Chris; sin los 490 €/mes de anuncios).
+- Todas las facturas a clientes llevan el diseño de la 2026-151 de Kiss of Life: logo 404, SF Pro, gris verdoso y el recuadro de forma de pago. Espaciados, colores, los datos de Chris como emisor, la forma de pago y la nota del pie son siempre los mismos. Solo cambian el número, las fechas, el cliente, los conceptos y el concepto de la transferencia.
+- **En el admin:**
+  - en la lista de facturas, «Ver factura» abre `/admin/api/invoices/<id>/factura` (`invPage404`) y «Descargar PDF» abre la misma página con `?print=1`, que lanza el diálogo de imprimir («Guardar como PDF»; en el iPhone, «Compartir»). Salen en HTML para que lleven la SF Pro del dispositivo;
+  - el emisor y la forma de pago están en `INV_ME` (no en «Mis datos de facturación») y el logo en `INV_LOGO`;
+  - campos nuevos de la factura: el teléfono del cliente (`to.phone`) y el concepto de la transferencia (`ref`; si está vacío, sale «Factura <número>»). «Notas» se llama ahora «Nota al pie»;
+  - un concepto con « — » lleva la explicación debajo. El concepto admite ahora 600 caracteres (antes 300);
+  - el PDF antiguo del admin (`/pdf`, Helvetica y barra azul) sigue en el servidor, pero ya no sale en los botones.
+- **Fuera del admin:** `tools/facturas/factura.py` (ver su `LEEME.md`) da exactamente la misma página. Los datos (`datos/yo.json`, `plantilla.json` y una por factura) se quedan en el Mac, en `404growth-subir/facturas-src/facturas/`.
+- Se probó así:
+  - la página del admin, impresa, coincide píxel a píxel con la del generador;
+  - la de Kiss of Life rehecha coincide con la original;
+  - el editor se probó con Playwright y un `fetch` simulado (`v-ref`, `v-to-phone`, botones y lo que se envía al guardar).
+- **Numeración:** 2026-151 Kiss of Life y 2026-152 Intenso Fragancias (12/11/2026, 1.440 € IVA incluido, 300 productos al arrancar; concepto de la transferencia «Tienda online Instinto», como pidió Chris; sin los 490 €/mes de anuncios). Ninguna de las dos está en la tabla `invoices` del admin, así que la serie del admin («Mis datos de facturación» › Numeración) tiene que empezar en 153.
+- Copia del worker anterior en `~/Downloads/404growth-subir/anterior/worker-v68d-12nov.js`.
 

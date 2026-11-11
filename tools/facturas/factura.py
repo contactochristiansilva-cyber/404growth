@@ -1,5 +1,5 @@
 # 404 Growth · factura en PDF con el mismo diseño que la 2026-151 de Kiss of Life (9/11/2026): logo, SF Pro, colores y bloques.
-# python3 factura.py <datos.json> <salida.html>
+# python3 factura.py <datos.json> <salida.html>   (de cada factura solo cambian número, fechas, cliente, líneas y concepto de la transferencia: ver datos/plantilla.json)
 #   y después el PDF con el Playwright del Mac (para que lleve la SF Pro): page.pdf({format:'A4', printBackground:true, margin 0}).
 # Los importes van en céntimos. Si «total» viene con IVA incluido, la base y el IVA se calculan desde él (redondeo al céntimo).
 # Un dato entre [corchetes] sale marcado en amarillo: falta por rellenar.
@@ -8,6 +8,11 @@ import base64, html, json, os, re, sys
 H = os.path.dirname(os.path.abspath(__file__))
 D = json.load(open(sys.argv[1], encoding='utf-8'))
 OUT = sys.argv[2]
+# Mis datos (emisor, forma de pago y nota del pie) son siempre los mismos: salen de datos/yo.json salvo que la factura traiga otros.
+YO = os.path.join(H, 'datos', 'yo.json')
+if os.path.exists(YO):
+    for k, v in json.load(open(YO, encoding='utf-8')).items():
+        D.setdefault(k, v)
 
 def eur(c):
     s = '{:,.2f}'.format(c / 100).replace(',', 'X').replace('.', ',').replace('X', '.')
