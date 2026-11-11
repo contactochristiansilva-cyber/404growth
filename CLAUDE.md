@@ -437,3 +437,9 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - solo crea la clave `P404_KEY` de Partner si `secret list` contesta bien y no la trae. Antes, si `secret list` fallaba, creaba otra clave, y eso deja ilegibles las claves guardadas de Stripe, Anthropic y Meta.
 - Presupuestos desde el código: `Q_ADD` + `Q_ADD_KEY` en el worker del admin. Se añaden una sola vez al abrir Presupuestos, y nunca si ya hay uno con el mismo cliente. Así entró Intenso Fragancias (1.740 €).
 
+## Facturas en PDF (12/11/2026)
+
+- Las facturas a clientes se hacen con `tools/facturas/` (ver su `LEEME.md`), con el diseño de la 2026-151 de Kiss of Life: logo 404, SF Pro y gris verdoso. No con el PDF del admin, que es otro diseño (Helvetica y una barra azul).
+- El PDF se saca con el Playwright del Mac y se guarda en `~/Downloads/Factura <número> <cliente>.pdf`. Los datos fiscales de cada cliente se quedan en el Mac (`404growth-subir/facturas-src/facturas/datos/`), no en el repositorio.
+- Numeración: 2026-151 Kiss of Life y 2026-152 Intenso Fragancias (12/11/2026, 1.440 € IVA incluido; concepto de la transferencia «Tienda online Instinto», como lo pidió Chris; sin los 490 €/mes de anuncios).
+

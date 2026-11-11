@@ -17,3 +17,6 @@ web117-404growth/v/metodo/
 # clave de Apimart (nunca al repositorio)
 .ak
 __pycache__/
+
+# datos de clientes de las facturas (NIF, direcciones, IBAN): se quedan en el Mac, no en el repositorio
+tools/facturas/datos/
