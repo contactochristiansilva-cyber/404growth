@@ -837,7 +837,23 @@ function monthDue(start, k) {
 }
 // Writes the monthly charges that are due, or will be within a month, for every running plan. Each month is written once (upto remembers
 // the last one), so a charge that was deleted by hand does not come back.
+// PAY_ADD · cobros que entran una sola vez desde el código, cuando no hay sesión del admin en el Chrome de Claude. No duplica si ya hay uno del mismo cliente e importe.
+// 11/11/2026: Intenso Fragancias, tienda online 1.440 € IVA incluido, pago único (sin cobrar todavía). Los 490 €/mes de anuncios van aparte, cuando se sepa desde qué mes.
+const PAY_ADD_KEY = "pay_add_20261111";
+const PAY_ADD = [
+  ["p_intenso_tienda", { client: "Intenso Fragancias", concept: "Tienda online Shopify (pago único)", amount: 144000, cur: "EUR", due: "2026-11-11", paid: "" }],
+];
+async function payAddOnce(env) {
+  if (!PAY_ADD.length || (await env.DB.prepare("SELECT v FROM meta WHERE k = ?1").bind(PAY_ADD_KEY).first())) return;
+  const now = Date.now(), q = [];
+  for (const [id, x] of PAY_ADD) {
+    if (await env.DB.prepare("SELECT 1 AS x FROM pay WHERE lower(client) = lower(?1) AND amount = ?2").bind(x.client, x.amount).first()) continue;
+    q.push(env.DB.prepare("INSERT OR IGNORE INTO pay (id, client_id, client, concept, amount, cur, kind, grp, n, due, paid, note, created) VALUES (?1, '', ?2, ?3, ?4, ?5, 'one', '', 1, ?6, ?7, '', ?8)").bind(id, x.client, x.concept, x.amount, x.cur, x.due, x.paid, now));
+  }
+  q.push(env.DB.prepare("INSERT INTO meta (k, v) VALUES (?1, '1') ON CONFLICT(k) DO NOTHING").bind(PAY_ADD_KEY)); await env.DB.batch(q);
+}
 async function plansRun(env) {
+  await payAddOnce(env);
   const lim = new Date(Date.now() + 31 * DAY).toISOString().slice(0, 10), now = Date.now(), q = [];
   const pl = await env.DB.prepare("SELECT id, client_id, client, concept, amount, cur, start, upto FROM plans WHERE active = 1").all();
   for (const p of pl.results) {
