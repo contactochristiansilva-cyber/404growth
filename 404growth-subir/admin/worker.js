@@ -2254,6 +2254,12 @@ const Q_ADD_KEY = "quotes_add_20261111";
 const Q_ADD = [
   ["q_intensofragancias", { name: "Intenso Fragancias", what: "Tienda online con 150 productos (fotos con IA, branding, pagos, envíos, políticas, lista de espera y email marketing) + 12 meses de cambios pequeños", once: 1740, monthly: 0, note: "IVA incluido. Son 150 productos; con menos de 100 serían 1.440 €. Cambios: de 5 a 10 productos al mes durante 12 meses. Propuesta en PDF de una carilla.", link: "https://404growth.com/p/intenso-fragancias/", sent: "2026-11-11" }],
 ];
+// Q_SET · cambios a presupuestos que ya existen, una sola vez (por id o, si no está, por el nombre del cliente). Si después se tocan en el admin, no se pisan.
+// 11/11/2026: Intenso Fragancias cerrado en 1.440 € IVA incluido (pago único) + 490 €/mes por llevar los anuncios (eso no va en la factura de la tienda).
+const Q_SET_KEY = "quotes_set_20261111c";
+const Q_SET = [
+  ["q_intensofragancias", { name: "Intenso Fragancias", status: "accepted", once: 1440, monthly: 490, what: "Tienda online con 150 productos (pago único, IVA incluido) + anuncios 490 €/mes", note: "Cerrado el 11/11/2026 en 1.440 € IVA incluido, pago único (la propuesta era de 1.740 €). Además, 490 €/mes por llevarle los anuncios: no va en la factura de la tienda." }],
+];
 function qClean(b, part) {
   const d = {};
   if (!part || b.name !== undefined) d.name = str(b.name, 120);
@@ -2275,6 +2281,15 @@ async function quotesApi(req, env, p) {
       const have = new Set(((await DBq.prepare("SELECT data FROM docs WHERE coll = 'quotes'").all()).results || []).map((x) => { try { return String(JSON.parse(x.data).name || "").trim().toLowerCase(); } catch (e) { return ""; } }));
       await DBq.batch(Q_ADD.filter(([, d]) => !have.has(d.name.trim().toLowerCase())).map(([id, d]) => DBq.prepare("INSERT INTO docs (coll, id, data, updated) VALUES ('quotes', ?1, ?2, ?3) ON CONFLICT(coll, id) DO NOTHING").bind(id, JSON.stringify(Object.assign({ sent: "" }, d, { status: "pending", created: now })), now))
         .concat([DBq.prepare("INSERT INTO meta (k, v) VALUES (?1, '1') ON CONFLICT(k) DO NOTHING").bind(Q_ADD_KEY)]));
+    }
+    if (Q_SET.length && !(await DBq.prepare("SELECT v FROM meta WHERE k = ?1").bind(Q_SET_KEY).first())) {
+      const all = ((await DBq.prepare("SELECT id, data FROM docs WHERE coll = 'quotes'").all()).results || []).map((x) => ({ id: x.id, d: parse(x.data, {}) })), qs = [];
+      for (const [id, ch] of Q_SET) {
+        const hit = all.find((x) => x.id === id) || all.find((x) => ch.name && String(x.d.name || "").trim().toLowerCase() === ch.name.trim().toLowerCase()); if (!hit) continue;
+        const d = Object.assign({}, hit.d, ch); if (ch.status && ch.status !== hit.d.status) d.decided = ch.status === "pending" ? null : now;
+        qs.push(DBq.prepare("UPDATE docs SET data = ?1, updated = ?2 WHERE coll = 'quotes' AND id = ?3").bind(JSON.stringify(d), now, hit.id));
+      }
+      qs.push(DBq.prepare("INSERT INTO meta (k, v) VALUES (?1, '1') ON CONFLICT(k) DO NOTHING").bind(Q_SET_KEY)); await DBq.batch(qs);
     }
     const r = await DBq.prepare("SELECT id, data FROM docs WHERE coll = 'quotes'").all(), out = [];
     for (const x of r.results || []) { try { out.push(Object.assign(JSON.parse(x.data), { id: x.id })); } catch (e) {} }
