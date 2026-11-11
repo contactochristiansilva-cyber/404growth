@@ -1,0 +1,48 @@
+{
+ "slug": "perfumeria-habibi",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "perfumeria-habibi-19.jpg",
+    "perfumeria-habibi-18.jpg",
+    "perfumeria-habibi-41.jpg",
+    "perfumeria-habibi-42.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia perfumeria-habibi-19.jpg, aplica la REGLA A): Luxury beauty campaign still life of an amber perfume bottle with a gold cap among candles and rose petals in a warm dark scene from the reference. The product stands in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm cinematic light, rich textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia perfumeria-habibi-18.jpg, aplica la REGLA A): Beauty e-commerce product photo of a white square perfume bottle with a blue Arabic pattern and a silver cap from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «p2» (formato 3:4, referencia perfumeria-habibi-19.jpg, aplica la REGLA A): Beauty e-commerce product photo of an amber perfume bottle with a gold cap from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 4 «p3» (formato 3:4, referencia perfumeria-habibi-41.jpg, aplica la REGLA A): Beauty e-commerce product photo of a blue perfume bottle with a silver circle emblem from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 5 «p4» (formato 3:4, referencia perfumeria-habibi-42.jpg, aplica la REGLA A): Beauty e-commerce product photo of a gold perfume bottle with a dark cap inside a gold box with Arabic patterns from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "perfumeria-habibi-15.jpg",
+    "perfumeria-habibi-33.jpg",
+    "perfumeria-habibi-23.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia perfumeria-habibi-15.jpg, aplica la REGLA A): Beauty e-commerce product photo of the deep red and gold perfume bottle with a round gold label and gold cap (the first bottle on the left) from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 2 «p6» (formato 3:4, referencia perfumeria-habibi-15.jpg, aplica la REGLA A): Beauty e-commerce product photo of the pale aqua glass perfume bottle with a clear faceted cap (the last bottle on the right) from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «l1» (formato 3:4, referencia perfumeria-habibi-15.jpg, aplica la REGLA A): Lifestyle photo: the orange velvet perfume bottle with a gold cap (the second bottle from the left) with white flowers, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia perfumeria-habibi-33.jpg, aplica la REGLA A): Lifestyle photo: a gold trophy-shaped perfume bottle in a black box, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia perfumeria-habibi-23.jpg, aplica la REGLA B): Wide interior photo: the inside of a perfume boutique with gold shelves full of Arabian perfume bottles and warm light, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury beauty campaign still life of an amber perfume bottle",
+  "p1": "Beauty e-commerce product photo of a white square perfume bo",
+  "p2": "Beauty e-commerce product photo of an amber perfume bottle w",
+  "p3": "Beauty e-commerce product photo of a blue perfume bottle wit",
+  "p4": "Beauty e-commerce product photo of a gold perfume bottle wit",
+  "p5": "Beauty e-commerce product photo of the deep red and gold per",
+  "p6": "Beauty e-commerce product photo of the pale aqua glass perfu",
+  "l1": "Lifestyle photo: the orange velvet perfume bottle with a gol",
+  "l2": "Lifestyle photo: a gold trophy-shaped perfume bottle in a bl",
+  "b": "Wide interior photo: the inside of a perfume boutique with g"
+ }
+}

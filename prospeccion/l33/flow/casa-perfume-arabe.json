@@ -1,0 +1,51 @@
+{
+ "slug": "casa-perfume-arabe",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "casa-perfume-arabe-05.jpg",
+    "casa-perfume-arabe-18.jpg",
+    "casa-perfume-arabe-20.jpg",
+    "casa-perfume-arabe-27.jpg",
+    "casa-perfume-arabe-29.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia casa-perfume-arabe-05.jpg, aplica la REGLA A): Luxury beauty campaign still life of an ornate gold Arabian perfume bottle with a dome cap among white orchids from the reference. The product stands in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm cinematic light, rich textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia casa-perfume-arabe-18.jpg, aplica la REGLA A): Beauty e-commerce product photo of a dark blue gradient perfume bottle with a silver cap from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «p2» (formato 3:4, referencia casa-perfume-arabe-20.jpg, aplica la REGLA A): Beauty e-commerce product photo of a pale blue perfume box with a white pattern from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 4 «p3» (formato 3:4, referencia casa-perfume-arabe-27.jpg, aplica la REGLA A): Beauty e-commerce product photo of a dark brown perfume bottle with a large copper number 9 and a black cap from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 5 «p4» (formato 3:4, referencia casa-perfume-arabe-29.jpg, aplica la REGLA A): Beauty e-commerce product photo of a black square perfume bottle with a silver medallion from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "casa-perfume-arabe-39.jpg",
+    "casa-perfume-arabe-34.jpg",
+    "casa-perfume-arabe-15.jpg",
+    "casa-perfume-arabe-11.jpg",
+    "casa-perfume-arabe-22.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia casa-perfume-arabe-39.jpg, aplica la REGLA A): Beauty e-commerce product photo of a bright pink perfume box with a colourful candy-shaped bottle from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 2 «p6» (formato 3:4, referencia casa-perfume-arabe-34.jpg, aplica la REGLA A): Beauty e-commerce product photo of a dark square perfume box with a gold geometric pattern from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «l1» (formato 3:4, referencia casa-perfume-arabe-15.jpg, aplica la REGLA B): Lifestyle photo: a black perfume bottle with a woven cord around the neck, with lavender, cinnamon and nuts, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia casa-perfume-arabe-11.jpg, aplica la REGLA A): Lifestyle photo: a pink and purple perfume gift set with two bottles in an open box, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia casa-perfume-arabe-22.jpg, aplica la REGLA C): Wide interior photo: the inside of a perfume boutique with long white shelves full of Arabian perfume bottles, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury beauty campaign still life of an ornate gold Arabian ",
+  "p1": "Beauty e-commerce product photo of a dark blue gradient perf",
+  "p2": "Beauty e-commerce product photo of a pale blue perfume box w",
+  "p3": "Beauty e-commerce product photo of a dark brown perfume bott",
+  "p4": "Beauty e-commerce product photo of a black square perfume bo",
+  "p5": "Beauty e-commerce product photo of a bright pink perfume box",
+  "p6": "Beauty e-commerce product photo of a dark square perfume box",
+  "l1": "Lifestyle photo: a black perfume bottle with a woven cord ar",
+  "l2": "Lifestyle photo: a pink and purple perfume gift set with two",
+  "b": "Wide interior photo: the inside of a perfume boutique with l"
+ }
+}

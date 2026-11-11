@@ -1,0 +1,53 @@
+{
+ "niche": "cosmetica",
+ "name": "Perfumería Árabe Habibi",
+ "ig": "perfumeriahabibi",
+ "f": 1187,
+ "city": "Vigo",
+ "cityfull": "Vigo (Pontevedra)",
+ "address": "C/ Príncipe 18, local 5",
+ "logo": {
+  "text": "Perfumería Árabe Habibi"
+ },
+ "cats": [
+  [
+   "Mujer",
+   "p5"
+  ],
+  [
+   "Hombre",
+   "p3"
+  ],
+  [
+   "Novedades",
+   "l1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Rayhaan Azul"
+  },
+  {
+   "id": "p2",
+   "name": "Vous Elegante"
+  },
+  {
+   "id": "p3",
+   "name": "Club de Nuit Iconic"
+  },
+  {
+   "id": "p4",
+   "name": "Atheeri"
+  },
+  {
+   "id": "p5",
+   "name": "Hasaa"
+  },
+  {
+   "id": "p6",
+   "name": "Khamrah Waha"
+  }
+ ],
+ "theme": {}
+}

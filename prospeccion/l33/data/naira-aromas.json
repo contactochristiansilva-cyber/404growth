@@ -1,0 +1,53 @@
+{
+ "niche": "cosmetica",
+ "name": "Naira Aromas",
+ "ig": "nairaaromas",
+ "f": 5030,
+ "city": "Almería",
+ "cityfull": "Almería",
+ "address": "C/ Altamira 72",
+ "logo": {
+  "text": "Naira Aromas"
+ },
+ "cats": [
+  [
+   "Perfumes",
+   "p1"
+  ],
+  [
+   "Cosmética coreana",
+   "l2"
+  ],
+  [
+   "Novedades",
+   "l1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Bana Bliss"
+  },
+  {
+   "id": "p2",
+   "name": "Sugar Rush Sprinkle Joy"
+  },
+  {
+   "id": "p3",
+   "name": "Ajwad Pink To Pink"
+  },
+  {
+   "id": "p4",
+   "name": "Arabian Nights"
+  },
+  {
+   "id": "p5",
+   "name": "Hawas Atlantis"
+  },
+  {
+   "id": "p6",
+   "name": "Mango Punch"
+  }
+ ],
+ "theme": {}
+}

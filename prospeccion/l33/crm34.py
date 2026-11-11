@@ -1,9 +1,9 @@
 # Lote 34 en el CRM: escribe en el worker del admin un SEED_KEY nuevo (SEED de siempre + las perfumerías nuevas de nuevos34.json)
 # y un LEAD_PATCH_KEY nuevo: las 50 del lote 33 y las del lote 34 con lotDay = DAY, slug y pageUrl.
 # Solo entran las del lote 34 que ya tienen su propuesta en out/ (p-<slug>.html).
-# python3 crm34.py <worker.js> [DAY]
+# python3 crm34.py <worker.js> [DAY] [sufijo de las claves, p. ej. 20261111]
 import json, re, sys, os
-W = sys.argv[1]; DAY = sys.argv[2] if len(sys.argv) > 2 else '2026-11-11'
+W = sys.argv[1]; DAY = sys.argv[2] if len(sys.argv) > 2 else "2026-11-11"; K = sys.argv[3] if len(sys.argv) > 3 else "20261111"
 H = os.path.dirname(os.path.abspath(__file__))
 src = open(W, encoding='utf-8').read()
 def grab(name):
@@ -28,9 +28,9 @@ for s in sel + [n['sel'] for n in new]:
     patch[lid] = dict(patch.get(lid, {}), lotDay=DAY, slug=s['slug'], pageUrl='https://404growth.com/p/%s/' % s['slug'])
 LP = [[i, p] for i, p in patch.items()]
 src = src.replace(mS.group(0), 'const SEED = ' + json.dumps(S, ensure_ascii=False) + ';')
-src = re.sub(r'^const SEED_KEY = .*$', 'const SEED_KEY = "seed_20261111";   // 11/11: el SEED de seed_20261110b + %d perfumerías nuevas del lote 34' % len(new), src, flags=re.M)
+src = re.sub(r'^const SEED_KEY = .*$', 'const SEED_KEY = "seed_%s";   // 11/11: el SEED de seed_20261110b + %d perfumerías nuevas del lote 34' % (K, len(new)), src, flags=re.M)
 mP, _ = grab('LEAD_PATCH')
 src = src.replace(mP.group(0), 'const LEAD_PATCH = ' + json.dumps(LP, ensure_ascii=False) + ';')
-src = re.sub(r'^const LEAD_PATCH_KEY = .*$', 'const LEAD_PATCH_KEY = "lpatch_20261111";   // 11/11: lote 33 (sin enviar) y lote 34 al lote del %s, con su pageUrl' % DAY, src, flags=re.M)
+src = re.sub(r'^const LEAD_PATCH_KEY = .*$', 'const LEAD_PATCH_KEY = "lpatch_%s";   // 11/11: lote 33 (sin enviar) y lote 34 al lote del %s, con su pageUrl' % (K, DAY), src, flags=re.M)
 open(W, 'w', encoding='utf-8').write(src)
 print(len(S), 'en SEED;', len(LP), 'en LEAD_PATCH; faltan:', miss)

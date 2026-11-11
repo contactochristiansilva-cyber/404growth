@@ -1,0 +1,53 @@
+{
+ "niche": "cosmetica",
+ "name": "Tyana Perfumes Árabes",
+ "ig": "tyanaperfumesarabes",
+ "f": 2194,
+ "city": "Alicante",
+ "cityfull": "Alicante",
+ "address": "C/ Médico Vicente Reyes 17 (y C.C. Gran Vía)",
+ "logo": {
+  "text": "Tyana Perfumes Árabes"
+ },
+ "cats": [
+  [
+   "Mujer",
+   "p2"
+  ],
+  [
+   "Hombre",
+   "p5"
+  ],
+  [
+   "Regalos",
+   "l2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Equinox"
+  },
+  {
+   "id": "p2",
+   "name": "Vanilla Vibe"
+  },
+  {
+   "id": "p3",
+   "name": "Khamrah Mira"
+  },
+  {
+   "id": "p4",
+   "name": "Club de Nuit Timeless"
+  },
+  {
+   "id": "p5",
+   "name": "Odyssey Nexus"
+  },
+  {
+   "id": "p6",
+   "name": "Legacy"
+  }
+ ],
+ "theme": {}
+}

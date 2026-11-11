@@ -1,0 +1,51 @@
+{
+ "slug": "dulce-fragancia",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "dulce-fragancia-19.jpg",
+    "dulce-fragancia-25.jpg",
+    "dulce-fragancia-31.jpg",
+    "dulce-fragancia-32.jpg",
+    "dulce-fragancia-22.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia dulce-fragancia-19.jpg, aplica la REGLA A): Luxury beauty campaign still life of three round gourmand perfume bottles in amber and white glass with gold caps from the reference. The product stands in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm cinematic light, rich textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia dulce-fragancia-25.jpg, aplica la REGLA A): Beauty e-commerce product photo of a purple perfume bottle with a silver cap and its purple and gold box from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «p2» (formato 3:4, referencia dulce-fragancia-31.jpg, aplica la REGLA A): Beauty e-commerce product photo of a deep red perfume bottle with an ornate gold cap from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 4 «p3» (formato 3:4, referencia dulce-fragancia-32.jpg, aplica la REGLA A): Beauty e-commerce product photo of a pale blue perfume bottle with a silver cap from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 5 «p4» (formato 3:4, referencia dulce-fragancia-22.jpg, aplica la REGLA A): Beauty e-commerce product photo of a dusty pink glittery perfume box with a dark medallion from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "dulce-fragancia-15.jpg",
+    "dulce-fragancia-28.jpg",
+    "dulce-fragancia-26.jpg",
+    "dulce-fragancia-04.jpg",
+    "dulce-fragancia-24.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia dulce-fragancia-15.jpg, aplica la REGLA A): Beauty e-commerce product photo of a pink and gold perfume box with a deep red bottle from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 2 «p6» (formato 3:4, referencia dulce-fragancia-28.jpg, aplica la REGLA A): Beauty e-commerce product photo of a ribbed gold perfume box from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «l1» (formato 3:4, referencia dulce-fragancia-26.jpg, aplica la REGLA A): Lifestyle photo: a yellow gift set box with a black and yellow perfume bottle, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia dulce-fragancia-04.jpg, aplica la REGLA A): Lifestyle photo: two perfume bottles, one pale green and one amber, with gold caps, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia dulce-fragancia-24.jpg, aplica la REGLA B): Wide interior photo: the inside of a perfume boutique with white shelves full of Arabian perfume bottles and soft light, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury beauty campaign still life of three round gourmand pe",
+  "p1": "Beauty e-commerce product photo of a purple perfume bottle w",
+  "p2": "Beauty e-commerce product photo of a deep red perfume bottle",
+  "p3": "Beauty e-commerce product photo of a pale blue perfume bottl",
+  "p4": "Beauty e-commerce product photo of a dusty pink glittery per",
+  "p5": "Beauty e-commerce product photo of a pink and gold perfume b",
+  "p6": "Beauty e-commerce product photo of a ribbed gold perfume box",
+  "l1": "Lifestyle photo: a yellow gift set box with a black and yell",
+  "l2": "Lifestyle photo: two perfume bottles, one pale green and one",
+  "b": "Wide interior photo: the inside of a perfume boutique with w"
+ }
+}

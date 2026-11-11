@@ -1,0 +1,53 @@
+{
+ "niche": "cosmetica",
+ "name": "Casa Perfume Árabe",
+ "ig": "casaperfumearabe",
+ "f": 8981,
+ "city": "León",
+ "cityfull": "León",
+ "address": "Av. San Mamés 3",
+ "logo": {
+  "text": "Casa Perfume Árabe"
+ },
+ "cats": [
+  [
+   "Hombre",
+   "p1"
+  ],
+  [
+   "Mujer",
+   "p5"
+  ],
+  [
+   "Regalos",
+   "l2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Hawas for Him"
+  },
+  {
+   "id": "p2",
+   "name": "Khamrah Waha"
+  },
+  {
+   "id": "p3",
+   "name": "9 PM"
+  },
+  {
+   "id": "p4",
+   "name": "Club de Nuit Intense Man"
+  },
+  {
+   "id": "p5",
+   "name": "Odyssey Pink Pop"
+  },
+  {
+   "id": "p6",
+   "name": "Rayhaan Terra"
+  }
+ ],
+ "theme": {}
+}

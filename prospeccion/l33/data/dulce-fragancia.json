@@ -1,0 +1,53 @@
+{
+ "niche": "cosmetica",
+ "name": "Dulce Fragancia",
+ "ig": "dulcefragancia.perfumeria",
+ "f": 4246,
+ "city": "Benidorm",
+ "cityfull": "Benidorm (Alicante)",
+ "address": "C/ Marqués de Comillas 36",
+ "logo": {
+  "text": "Dulce Fragancia"
+ },
+ "cats": [
+  [
+   "Mujer",
+   "p2"
+  ],
+  [
+   "Unisex",
+   "p3"
+  ],
+  [
+   "Packs",
+   "l1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Amethyst"
+  },
+  {
+   "id": "p2",
+   "name": "Elysia Vanilla"
+  },
+  {
+   "id": "p3",
+   "name": "Kaaf"
+  },
+  {
+   "id": "p4",
+   "name": "Queen of Roses"
+  },
+  {
+   "id": "p5",
+   "name": "Bahiya Garnet"
+  },
+  {
+   "id": "p6",
+   "name": "Aristo"
+  }
+ ],
+ "theme": {}
+}

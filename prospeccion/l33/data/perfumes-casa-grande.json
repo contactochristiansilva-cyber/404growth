@@ -1,0 +1,53 @@
+{
+ "niche": "cosmetica",
+ "name": "Perfumes Casa Grande 2",
+ "ig": "perfumescasagrande2",
+ "f": 2176,
+ "city": "Mataró",
+ "cityfull": "Mataró (Barcelona)",
+ "address": "C/ Miquel Biada 117, local 1",
+ "logo": {
+  "text": "Perfumes Casa Grande 2"
+ },
+ "cats": [
+  [
+   "Mujer",
+   "l1"
+  ],
+  [
+   "Hombre",
+   "p1"
+  ],
+  [
+   "Novedades",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Supremacy Not Only Intense"
+  },
+  {
+   "id": "p2",
+   "name": "Odyssey Nexus"
+  },
+  {
+   "id": "p3",
+   "name": "SHK"
+  },
+  {
+   "id": "p4",
+   "name": "Nitro Red"
+  },
+  {
+   "id": "p5",
+   "name": "Spirito Mystic"
+  },
+  {
+   "id": "p6",
+   "name": "Fawah"
+  }
+ ],
+ "theme": {}
+}
