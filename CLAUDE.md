@@ -419,3 +419,10 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Las imágenes se bajan de la rejilla con la dirección de la miniatura acabada en `=s0`, o abriendo cada una (`/edit/<id>`) y leyendo su petición (`.text-part`).
 - En el Mac, `tar` no puede sustituir archivos que ya existen en una carpeta conectada (no hay permiso de borrado): se extrae fuera (`$HOME/x`) y se copia con `cp`.
 - Antes de coger una tienda para un lote, comprobar que no tiene ya `slug` en `sel.json` o en el `LEAD_PATCH` (Madina Perfumes ya estaba en el lote 33).
+
+## Propuesta en PDF de una carilla: Intenso Fragancias (11/11/2026)
+
+- Chris les ofreció la tienda por **1.740 € IVA incluido** porque tienen 150 productos: con menos de 100 productos la tienda es 1.440 €, y con más de 100, 1.740 €. Incluye las fotos con IA de los 150, el branding, los pagos, los envíos y la app de Shopify sincronizada con su sistema de envíos, las políticas, la lista de espera, el email marketing y **12 meses de cambios pequeños** (2–3 productos cada 2–3 semanas, de 5 a 10 al mes).
+- Generador: `prospeccion/propuestas-pdf/intenso-fragancias.py <carpeta de fotos> <salida.html> [ruta relativa de las fotos]`. Usa las fotos de su propuesta del lote 33 (`p-intenso-fragancias--b--p1..p6.jpg`) y un QR a `404growth.com/p/intenso-fragancias/` (`segno`).
+- El PDF se saca en el Mac con su Playwright (`page.pdf`, A4, sin márgenes) para que lleve la SF Pro: el HTML va en `~/Downloads/404growth-subir/propuestas-pdf/` con las fotos enlazadas a `../../web117-404growth/`. **No lo pongas en `web117-404growth`**, porque `subir-web.command` lo publicaría. Salida: `~/Downloads/Propuesta Intenso Fragancias · 404 Growth.pdf`.
+
