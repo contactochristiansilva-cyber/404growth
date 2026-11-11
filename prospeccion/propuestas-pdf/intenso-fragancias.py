@@ -142,7 +142,7 @@ HTML = '''<!doctype html><html lang="es"><head><meta charset="utf-8">
  <div class="price"><div class="k">Inversión</div><div class="v">1.740 €</div><div class="iva">IVA incluido · precio cerrado</div>
   <p>Con menos de 100 productos, la tienda es 1.440 €. Con vuestros 150, 1.740 €. <b>Los 12 meses de cambios van dentro.</b></p></div>
  <div class="cost">
-  <div><h4>Aparte, a vuestro nombre</h4><ul><li>Cuota mensual de Shopify</li><li>Comisión de la pasarela por venta</li><li>Envíos, según transportista</li><li>Anuncios, si hacéis campañas</li></ul></div>
+  <div><h4>Aparte, a vuestro nombre</h4><ul><li>Envíos, según transportista</li><li>Anuncios, si hacéis campañas</li></ul></div>
   <div><h4>Lo que aportáis</h4><ul><li>Vuestros productos, precios y stock</li><li>Acceso a vuestro dominio y redes</li><li>Una persona que prepare los pedidos</li></ul></div>
   <div class="note">Os detallamos cualquier coste aparte antes de empezar.</div>
  </div>
