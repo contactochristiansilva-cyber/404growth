@@ -21,8 +21,11 @@ store = IMG.sub(lambda m: uri(m.group(0)), store).replace('location.search', '__
 store = store.replace('<head>', '<head><script>var __QS="__QSV__";</script>', 1)
 page = open(os.path.join(D, f'p-{s}.html'), encoding='utf-8').read()
 page = IMG.sub(lambda m: uri(m.group(0)), page)
-js = ('<script>(function(){var S=%s;var B={};document.querySelectorAll("iframe[data-src]").forEach(function(f){var q=(f.getAttribute("data-src").split("?")[1]||"");'
-      'if(!B[q])B[q]=URL.createObjectURL(new Blob([S.replace("__QSV__","?"+q)],{type:"text/html"}));f.setAttribute("data-src",B[q])})})();</script>') % json.dumps(store, ensure_ascii=False).replace('</', '<\\/')
-i = page.rfind('</body>'); page = page[:i] + js + page[i:]
+L0 = "function L(f){if(!f.src)f.src=f.dataset.src}"
+assert L0 in page
+# srcdoc y no blob: dentro de un visor aislado (la app de Claude en el móvil) las direcciones blob: no cargan y la tienda salía en blanco
+page = page.replace(L0, "function L(f){if(!f.__l){f.__l=1;f.srcdoc=window.__S34.replace('__QSV__','?'+(f.dataset.src.split('?')[1]||''))}}")
+js = '<script>window.__S34=%s;</script>' % json.dumps(store, ensure_ascii=False).replace('</', '<\\/')
+i = page.find('</head>'); page = page[:i] + js + page[i:]
 open(OUT, 'w', encoding='utf-8').write(page)
 print(s, round(os.path.getsize(OUT) / 1e6, 1), 'MB')
