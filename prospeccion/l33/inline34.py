@@ -25,7 +25,9 @@ L0 = "function L(f){if(!f.src)f.src=f.dataset.src}"
 assert L0 in page
 # srcdoc y no blob: dentro de un visor aislado (la app de Claude en el móvil) las direcciones blob: no cargan y la tienda salía en blanco
 page = page.replace(L0, "function L(f){if(!f.__l){f.__l=1;f.srcdoc=window.__S34.replace('__QSV__','?'+(f.dataset.src.split('?')[1]||''))}}")
-js = '<script>window.__S34=%s;</script>' % json.dumps(store, ensure_ascii=False).replace('</', '<\\/')
+# en base64: el visor de la app mete su propio código donde ve etiquetas (<head>, <script>…) y rompía la cadena con la tienda
+js = ('<script>window.__S34=new TextDecoder().decode(Uint8Array.from(atob("%s"),function(c){return c.charCodeAt(0)}));</script>'
+      % base64.b64encode(store.encode('utf-8')).decode())
 i = page.find('</head>'); page = page[:i] + js + page[i:]
 open(OUT, 'w', encoding='utf-8').write(page)
 print(s, round(os.path.getsize(OUT) / 1e6, 1), 'MB')
