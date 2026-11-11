@@ -2249,7 +2249,7 @@ const Q_SEED = [
   ["q_antequeracf", { name: "Antequera CF", what: "Tienda online completa", once: 2800, monthly: 0, note: "", link: "https://404growth.com/antequeracf/propuesta/" }],
 ];
 // v68c · presupuestos que entran una sola vez desde el código (11/11/2026: Intenso Fragancias, sin el admin abierto en el Chrome de Claude).
-// Para añadir más: otra fila y una clave nueva. Si se borran después en el admin, no vuelven.
+// Para añadir más: otra fila y una clave nueva. Si se borran después en el admin, no vuelven; si ya hay uno con ese cliente, no se duplica.
 const Q_ADD_KEY = "quotes_add_20261111";
 const Q_ADD = [
   ["q_intensofragancias", { name: "Intenso Fragancias", what: "Tienda online con 150 productos (fotos con IA, branding, pagos, envíos, políticas, lista de espera y email marketing) + 12 meses de cambios pequeños", once: 1740, monthly: 0, note: "IVA incluido. Son 150 productos; con menos de 100 serían 1.440 €. Cambios: de 5 a 10 productos al mes durante 12 meses. Propuesta en PDF de una carilla.", link: "https://404growth.com/p/intenso-fragancias/", sent: "2026-11-11" }],
@@ -2272,7 +2272,8 @@ async function quotesApi(req, env, p) {
         .concat([DBq.prepare("INSERT INTO meta (k, v) VALUES ('quotes_seed', '1') ON CONFLICT(k) DO NOTHING")]));
     }
     if (Q_ADD.length && !(await DBq.prepare("SELECT v FROM meta WHERE k = ?1").bind(Q_ADD_KEY).first())) {
-      await DBq.batch(Q_ADD.map(([id, d]) => DBq.prepare("INSERT INTO docs (coll, id, data, updated) VALUES ('quotes', ?1, ?2, ?3) ON CONFLICT(coll, id) DO NOTHING").bind(id, JSON.stringify(Object.assign({ sent: "" }, d, { status: "pending", created: now })), now))
+      const have = new Set(((await DBq.prepare("SELECT data FROM docs WHERE coll = 'quotes'").all()).results || []).map((x) => { try { return String(JSON.parse(x.data).name || "").trim().toLowerCase(); } catch (e) { return ""; } }));
+      await DBq.batch(Q_ADD.filter(([, d]) => !have.has(d.name.trim().toLowerCase())).map(([id, d]) => DBq.prepare("INSERT INTO docs (coll, id, data, updated) VALUES ('quotes', ?1, ?2, ?3) ON CONFLICT(coll, id) DO NOTHING").bind(id, JSON.stringify(Object.assign({ sent: "" }, d, { status: "pending", created: now })), now))
         .concat([DBq.prepare("INSERT INTO meta (k, v) VALUES (?1, '1') ON CONFLICT(k) DO NOTHING").bind(Q_ADD_KEY)]));
     }
     const r = await DBq.prepare("SELECT id, data FROM docs WHERE coll = 'quotes'").all(), out = [];

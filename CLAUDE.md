@@ -426,3 +426,14 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Generador: `prospeccion/propuestas-pdf/intenso-fragancias.py <carpeta de fotos> <salida.html> [ruta relativa de las fotos]`. Usa las fotos de su propuesta del lote 33 (`p-intenso-fragancias--b--p1..p6.jpg`) y un QR a `404growth.com/p/intenso-fragancias/` (`segno`).
 - El PDF se saca en el Mac con su Playwright (`page.pdf`, A4, sin márgenes) para que lleve la SF Pro: el HTML va en `~/Downloads/404growth-subir/propuestas-pdf/` con las fotos enlazadas a `../../web117-404growth/`. **No lo pongas en `web117-404growth`**, porque `subir-web.command` lo publicaría. Salida: `~/Downloads/Propuesta Intenso Fragancias · 404 Growth.pdf`.
 
+## subir.command: solo sube lo que ha cambiado (11/11/2026)
+
+- El 11/11/2026 por la tarde Cloudflare falló al subir los tres Workers con base de datos D1 (contador de visitas, admin y Partner 404): «binding DB of type d1 failed to generate [code: 10021]». La web (sin D1) sí subió. Es un fallo interno de Cloudflare, no de nuestros archivos: el contador y Partner no cambiaban desde el 2/11.
+- Desde entonces `subir.command`:
+  - sube en este orden: la web, el admin, Partner 404 y, al final, el contador de visitas;
+  - no vuelve a subir un Worker si su `worker.js` y su `wrangler.jsonc` son iguales a los de su última subida buena (huella en `<carpeta>/.subido`, `shasum -a 256`, 16 caracteres). Para obligar a subirlo, borra su `.subido`;
+  - lo intenta 6 veces, esperando 20, 40, 60, 80 y 100 s;
+  - guarda los registros de wrangler en `404growth-subir/.logs/` (`WRANGLER_LOG_PATH`), para leerlos desde aquí sin pedir capturas;
+  - solo crea la clave `P404_KEY` de Partner si `secret list` contesta bien y no la trae. Antes, si `secret list` fallaba, creaba otra clave, y eso deja ilegibles las claves guardadas de Stripe, Anthropic y Meta.
+- Presupuestos desde el código: `Q_ADD` + `Q_ADD_KEY` en el worker del admin. Se añaden una sola vez al abrir Presupuestos, y nunca si ya hay uno con el mismo cliente. Así entró Intenso Fragancias (1.740 €).
+

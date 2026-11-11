@@ -1,6 +1,7 @@
 #!/bin/bash
 # 404 Growth · sube a Cloudflare con wrangler, la herramienta oficial de Cloudflare. Doble clic.
-#   1) el contador de visitas (carpeta visitas/), 2) el admin y el CRM (carpeta admin/), 3) Partner 404 (carpeta partner/), 4) la web (la carpeta que dice wrangler.jsonc).
+#   1) la web (la carpeta que dice wrangler.jsonc), 2) el admin y el CRM (admin/), 3) Partner 404 (partner/), 4) el contador de visitas (visitas/).
+#   Los Workers que no han cambiado desde su última subida buena no se vuelven a subir (archivo .subido de cada carpeta).
 # La primera vez instala Node.js en ~/.404node (solo si no lo tienes) y te pide entrar en Cloudflare en el navegador.
 cd "$(dirname "$0")" || exit 1
 fin() { echo; read -r -p "  Pulsa Intro para cerrar." _; exit "${1:-0}"; }
@@ -51,25 +52,42 @@ if $W whoami 2>&1 | grep -qi "not authenticated"; then
     $W login --device || { echo "  No se pudo entrar. Haz una captura de esta ventana para Claude."; fin 1; }
   fi
 fi
+export WRANGLER_LOG_PATH="$PWD/.logs"; mkdir -p "$WRANGLER_LOG_PATH"   # los registros de wrangler se quedan aquí, para que Claude los lea sin pedirte capturas
+huella() { cat "$@" 2>/dev/null | shasum -a 256 | cut -c1-16; }
+# paso <nombre> <wrangler.jsonc> [archivos del Worker]: si esos archivos no han cambiado desde la última subida buena (.subido), no se vuelve a subir.
+# Así un fallo de Cloudflare en un Worker que no ha cambiado (el contador de visitas, 11/11/2026: «binding DB of type d1 failed to generate») no molesta.
 paso() {
+  local nom="$1" cfg="$2"; shift 2
+  local marca="" h="" n
+  if [ $# -gt 0 ]; then
+    marca="$(dirname "$cfg")/.subido"; h=$(huella "$cfg" "$@")
+    if [ -f "$marca" ] && [ "$(cat "$marca")" = "$h" ]; then echo; echo "  = $nom: igual que lo que ya está en Cloudflare, no hace falta subirlo."; return 0; fi
+  fi
   echo
-  echo "  ── Subiendo $1… (si pregunta si quieres continuar, escribe y y pulsa Intro)"
+  echo "  ── Subiendo $nom… (si pregunta si quieres continuar, escribe y y pulsa Intro)"
   echo
-  if $W deploy -c "$2"; then echo; echo "  ✓ Subido: $1"
-  else echo; echo "  No se pudo subir $1. Haz una captura de esta ventana y mándasela a Claude."; fin 1; fi
+  for n in 1 2 3 4 5 6; do
+    if $W deploy -c "$cfg"; then echo; echo "  ✓ Subido: $nom"; [ -n "$marca" ] && echo "$h" > "$marca"; return 0; fi
+    if [ $n -lt 6 ]; then echo; echo "  Cloudflare no ha respondido bien. Lo intento otra vez en $((n*20)) segundos ($n de 6)…"; sleep $((n*20)); fi
+  done
+  echo; echo "  No se pudo subir $nom. Sigo con lo demás; al final haz una captura de esta ventana para Claude."
+  FALLOS="$FALLOS · $nom"; return 1
 }
-[ -f visitas/wrangler.jsonc ] && paso "el contador de visitas" visitas/wrangler.jsonc
-[ -f admin/wrangler.jsonc ] && paso "el admin y el CRM" admin/wrangler.jsonc
+paso "la web" wrangler.jsonc   # primero la web, para que se publique aunque falle lo demás
+[ -f admin/wrangler.jsonc ] && paso "el admin y el CRM" admin/wrangler.jsonc admin/worker.js
 if [ -f partner/wrangler.jsonc ]; then
-  paso "Partner 404 (app.404growth.com)" partner/wrangler.jsonc
+  paso "Partner 404 (app.404growth.com)" partner/wrangler.jsonc partner/worker.js
   # la clave que cifra las claves de Stripe, Anthropic y Meta: se crea una sola vez y se queda en Cloudflare
-  if ! $W secret list -c partner/wrangler.jsonc 2>/dev/null | grep -q P404_KEY; then
+  # solo si Cloudflare contesta bien y la lista no la trae: si «secret list» falla (como el 11/11/2026), nunca se crea otra clave
+  # (una clave nueva dejaría ilegibles las claves de Stripe, Anthropic y Meta guardadas)
+  if SL=$($W secret list -c partner/wrangler.jsonc 2>/dev/null) && printf '%s' "$SL" | grep -q '"name"' && ! printf '%s' "$SL" | grep -q P404_KEY; then
     echo; echo "  Creando la clave de cifrado de Partner 404 (solo la primera vez)…"
     if openssl rand -base64 32 | tr -d '\n' | $W secret put P404_KEY -c partner/wrangler.jsonc >/dev/null 2>&1; then echo "  ✓ Clave de cifrado creada"
     else echo "  No se pudo crear la clave de cifrado. Partner 404 funciona igual; haz una captura para Claude."; fi
   fi
 fi
-paso "la web" wrangler.jsonc
+[ -f visitas/wrangler.jsonc ] && paso "el contador de visitas" visitas/wrangler.jsonc visitas/worker.js   # el último: casi nunca cambia
+if [ -n "$FALLOS" ]; then echo; echo "  Faltó por subir$FALLOS. Haz una captura de esta ventana para Claude."; fin 1; fi
 echo
 echo "  Listo: todo subido. La web está en https://404growth.com y Partner 404 en https://app.404growth.com"
 fin 0
