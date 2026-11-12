@@ -289,6 +289,8 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - **Reels de la semana 9–15 nov:** en el doc «Contenido de la semana 9–15 nov» está cómo se graba cada reel: formato (A a cámara, B 50/50, C pantalla con la cara en un círculo, D plano de recurso), lo que hay que preparar, las tomas con segundos y frase, y el orden del domingo. Las piezas hechas por nosotros están en `~/Contenidos/Reels semana 9-15 nov/` (R6 web folleto de una joyería inventada, R7 bandeja de «¿precio?», R11 ticket; los HTML en `_src/`). Se graban como vídeo con el Playwright del Mac, fotograma a fotograma (JPEG q92), y se montan con ffmpeg a 1080×1920 y 25 fps.
 - **7/11/2026:** la cuenta de Google Workspace de hola@ está suspendida por un fallo en el pago, así que Flow no funciona con `/u/1`. Flow con la cuenta personal (`/u/0`) pide que Chris acepte las condiciones. Apimart tiene 0,05 $.
 
+- **Historias de IG (12/11/2026):** mismo estilo «etiqueta de envío» a 1080×1920, en `tools/historias/` (la primera: `se_busca_uxui.html`, «Busco diseñador/a UX/UI»). Nada importante en los 250 px de arriba ni en los 300 de abajo, que tapa Instagram. Se capturan con el Playwright del Mac (`page.setContent` + `screenshot`) y el PNG va a `~/Downloads`.
+
 ## Banner de YouTube (7/11/2026)
 
 - Hay cinco opciones con la frase de siempre, «Todos podemos, pero / no todos estamos dispuestos.»: A Amanecer, B Foco, C Cumbre, D Rayo de luz y E Escalera.
