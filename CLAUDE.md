@@ -422,7 +422,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 
 ## Lote 35 (12/11/2026): 25 propuestas de cosmética, suplementos y joyería
 
-- Las 25 del scrapeo del 10/11 que faltaban (10 de cosmética, 7 de suplementos y herbolarios, 8 de joyería), de más a menos seguidores. Fuera: Sbelta (ya vende en sugarfreetienda.com) e Isabel Domínguez (cabina).
+- Las 25 del scrapeo del 10/11 que faltaban (10 de joyería, 8 de suplementos y herbolarios, 7 de cosmética), de más a menos seguidores. Fuera: Sbelta (ya vende en sugarfreetienda.com) e Isabel Domínguez (cabina).
 - Mismo generador (`prospeccion/l33/`): `sel35.json`, `specs35.py` (lo carga `specs.py`), `jobs35.py`, `bat35.py` y `js35.py` (mensajes para Flow con las frases repetidas comprimidas en `§NN`, diccionario en `localStorage.__tok35`) y `crm35.py <worker.js> <día> <sufijo>` (solo `LEAD_PATCH`: las 25 ya estaban en el CRM).
 - Nicho nuevo `suplementos` en `gen33.py`, `gen33v.py`, `mkjobs.py` y `heros.py` (verde #1E6B3C, opciones de sabor). En los herbolarios (Esencia Natural, Azahar) los textos de Flow cambian «Sports nutrition… gym» por «Natural health… herbalist shop».
 - Referencias de Instagram sin abrir perfiles: `PolarisProfilePostsQuery` repetida desde la pestaña de Instagram. Chrome bloquea la segunda descarga de una pestaña: se descarga desde una pestaña nueva del mismo sitio (`robots.txt`) que recibe los datos por `BroadcastChannel`.
