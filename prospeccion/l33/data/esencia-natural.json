@@ -1,0 +1,64 @@
+{
+ "niche": "suplementos",
+ "name": "Herbolario Esencia Natural",
+ "ig": "esencia_natural_antequera",
+ "f": 1539,
+ "city": "Antequera",
+ "cityfull": "Antequera (Málaga)",
+ "address": "",
+ "logo": {
+  "text": "Herbolario Esencia Natural"
+ },
+ "cats": [
+  [
+   "Plantas medicinales",
+   "p2"
+  ],
+  [
+   "Aceites esenciales",
+   "p1"
+  ],
+  [
+   "Alimentación bio",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Aceite esencial de lavanda"
+  },
+  {
+   "id": "p2",
+   "name": "Plantas a granel"
+  },
+  {
+   "id": "p3",
+   "name": "Crema de frutos secos bio"
+  },
+  {
+   "id": "p4",
+   "name": "Café de especialidad"
+  },
+  {
+   "id": "p5",
+   "name": "Ashwagandha"
+  },
+  {
+   "id": "p6",
+   "name": "Endulzante natural"
+  }
+ ],
+ "theme": {
+  "acc": "#3F6B3A"
+ },
+ "h1": "Lo natural,<br>a un clic.",
+ "eyebrow": "Herbolario",
+ "sub": "Las plantas, los aceites y los productos naturales que te recomendamos en {city}, ahora con envío a casa.",
+ "opts": [
+  "Pequeño",
+  "Mediano",
+  "Grande"
+ ],
+ "opts_l": "Formato"
+}

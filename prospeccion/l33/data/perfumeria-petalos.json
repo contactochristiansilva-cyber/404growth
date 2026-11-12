@@ -1,0 +1,55 @@
+{
+ "niche": "cosmetica",
+ "name": "Perfumería Pétalos",
+ "ig": "petalos_perfumes",
+ "f": 1455,
+ "city": "Molina de Segura",
+ "cityfull": "Molina de Segura (Murcia)",
+ "address": "",
+ "logo": {
+  "text": "Perfumería Pétalos"
+ },
+ "cats": [
+  [
+   "Perfumes árabes",
+   "p1"
+  ],
+  [
+   "Para ella",
+   "p5"
+  ],
+  [
+   "Para él",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Perfume en estuche plata"
+  },
+  {
+   "id": "p2",
+   "name": "Perfume dorado"
+  },
+  {
+   "id": "p3",
+   "name": "Perfume Maison"
+  },
+  {
+   "id": "p4",
+   "name": "Perfume mariposas"
+  },
+  {
+   "id": "p5",
+   "name": "Perfume rosa"
+  },
+  {
+   "id": "p6",
+   "name": "Perfume rojo"
+  }
+ ],
+ "theme": {
+  "acc": "#A8834B"
+ }
+}

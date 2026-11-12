@@ -13,7 +13,7 @@ WEAR = ('Use the EXACT garment(s) and accessories from the reference image: iden
 OBJ = ('Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. '
        'Leave out any hands, price tags, stickers, shop text and the original background. ' + COMMON)
 OBJ_W = re.compile(r'\b(umbrella|fan|bag|handbag|tote|clutch|loafers?|boots?|sneakers?|shoes?|cap|scarf|stoles|belts|case|bottle|bottles|jar|box|boxes|diffuser|strap)\b', re.I)
-CITY_BG = {'moda': '#ECE7E0', 'joya': '#F4EFE6', 'cosmetica': '#F3E6E1', 'sneakers': '#E6E5E1', 'calzado': '#EEE9E2', 'optica': '#EEF2F5'}
+CITY_BG = {'moda': '#ECE7E0', 'joya': '#F4EFE6', 'cosmetica': '#F3E6E1', 'sneakers': '#E6E5E1', 'calzado': '#EEE9E2', 'optica': '#EEF2F5', 'suplementos': '#ECEDE8'}
 NAMES = dict(woman='woman', man='man')
 
 
@@ -39,6 +39,9 @@ def prompts(x, sp):
     if ni in ('joya', 'optica') and who == 'none':
         J['h'] = ('4:3', r, OBJ, f'Luxury campaign still life of {d} from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, '
                                'the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph.')
+    elif ni == 'suplementos':
+        J['h'] = ('16:9', r, OBJ, f'Sports nutrition campaign still life of {d} from the reference, on a clean concrete plinth in a bright modern gym. The product stands in the right third of the frame and the scene '
+                                 'continues to the left, softly out of focus and calm, with room for a headline. Crisp daylight, energetic and premium. One single continuous photograph, never a split screen or collage.')
     elif ni == 'cosmetica':
         J['h'] = ('16:9', r, OBJ, f'Luxury beauty campaign still life of {d} from the reference. The product stands in the right third of the frame and the scene continues to the left, '
                                  'softly out of focus and calm, with room for a headline. Warm cinematic light, rich textures. One single continuous photograph, never a split screen or collage.')
@@ -60,6 +63,9 @@ def prompts(x, sp):
             J[f'p{k}'] = ('3:4', r, OBJ if 'worn' not in d else wear('woman'),
                           f'Luxury jewellery e-commerce photo of {d} from the reference, centred on a seamless ivory ({bg}) background with a soft natural shadow, '
                           'the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight.')
+        elif ni == 'suplementos':
+            J[f'p{k}'] = ('3:4', r, OBJ, f'Sports nutrition e-commerce product photo of {d} from the reference, centred on a seamless light grey ({bg}) background with a soft shadow, '
+                                         'the whole product visible and large in the frame, crisp label-free packaging detail.')
         elif ni == 'cosmetica':
             J[f'p{k}'] = ('3:4', r, OBJ, f'Beauty e-commerce product photo of {d} from the reference, centred on a seamless soft blush ({bg}) background with a couple of natural props '
                                          '(a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail.')
@@ -133,7 +139,9 @@ def data(x, sp):
     ni = niche(x, sp)
     web = x.get('web') or ''
     dom = re.sub(r'^https?://(www\.)?', '', web).strip('/') if web else ''
-    if dom and 'contraseña' in x['shop']:
+    if dom and 'no carga' in x['shop']:
+        note = f'{dom} no carga: hoy quien os encuentra fuera de {x["zone"]} solo puede escribiros.'
+    elif dom and 'contraseña' in x['shop']:
         note = f'{dom} está cerrada con contraseña: hoy no vende. Quien os encuentra fuera de {x["zone"]} solo puede escribiros.'
     elif dom:
         note = f'{dom} enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de {x["zone"]} solo puede escribiros.'
@@ -146,7 +154,7 @@ def data(x, sp):
         c['domain'] = dom
     if note:
         c['web_note'] = note
-    for k in ('h1', 'eyebrow', 'sub', 'hp', 'hpm', 'bp', 'bpm', 'ban_h', 'ban_e', 'short', 'hx'):
+    for k in ('h1', 'eyebrow', 'sub', 'hp', 'hpm', 'bp', 'bpm', 'ban_h', 'ban_e', 'short', 'hx', 'opts', 'opts_l'):
         if sp.get(k):
             c[k] = sp[k]
     return c

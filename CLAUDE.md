@@ -420,6 +420,20 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - En el Mac, `tar` no puede sustituir archivos que ya existen en una carpeta conectada (no hay permiso de borrado): se extrae fuera (`$HOME/x`) y se copia con `cp`.
 - Antes de coger una tienda para un lote, comprobar que no tiene ya `slug` en `sel.json` o en el `LEAD_PATCH` (Madina Perfumes ya estaba en el lote 33).
 
+## Lote 35 (12/11/2026): 25 propuestas de cosmética, suplementos y joyería
+
+- Las 25 del scrapeo del 10/11 que faltaban (10 de cosmética, 7 de suplementos y herbolarios, 8 de joyería), de más a menos seguidores. Fuera: Sbelta (ya vende en sugarfreetienda.com) e Isabel Domínguez (cabina).
+- Mismo generador (`prospeccion/l33/`): `sel35.json`, `specs35.py` (lo carga `specs.py`), `jobs35.py`, `bat35.py` y `js35.py` (mensajes para Flow con las frases repetidas comprimidas en `§NN`, diccionario en `localStorage.__tok35`) y `crm35.py <worker.js> <día> <sufijo>` (solo `LEAD_PATCH`: las 25 ya estaban en el CRM).
+- Nicho nuevo `suplementos` en `gen33.py`, `gen33v.py`, `mkjobs.py` y `heros.py` (verde #1E6B3C, opciones de sabor). En los herbolarios (Esencia Natural, Azahar) los textos de Flow cambian «Sports nutrition… gym» por «Natural health… herbalist shop».
+- Referencias de Instagram sin abrir perfiles: `PolarisProfilePostsQuery` repetida desde la pestaña de Instagram. Chrome bloquea la segunda descarga de una pestaña: se descarga desde una pestaña nueva del mismo sitio (`robots.txt`) que recibe los datos por `BroadcastChannel`.
+- Flow, lo que funcionó:
+  - las referencias se suben de golpe soltando los archivos (un `input` propio + `drop` sintético sobre la rejilla);
+  - los mensajes se escriben con `execCommand('insertText')` y se envían con la tecla Return real; una sesión nueva por tienda;
+  - las fotos se recogen desde **otra pestaña** del mismo proyecto (visor `/edit/<id>`, flecha derecha y el texto de la petición en `.text-part`, emparejado con los textos enviados), mientras la primera sigue generando. Las subidas no tienen petición: se saltan en 1,2 s.
+- `L33_AI=<carpeta> python3 gen33.py …` usa las fotos de otra carpeta (en este lote, el scratchpad). Sin `hd`/`hm` la tienda usa el hero de siempre (`h`).
+- **Cupo de Flow (12/11/2026):** Nano Banana 2.1 y 2 Lite comparten el cupo diario y se acabó a media mañana, tras más de 200 imágenes en el día; Nano Banana Pro dio unas 15 más y también se acabó. Las 4 que faltaron de Seoul Beauty (p6, l1, l2, b) salieron de la IA de imágenes de Figma (`generate_image`, archivo «Lote 35 · Seoul Beauty fotos IA»). Su enlace `figma.com/api/mcp/asset/<id>.png` no se baja desde el contenedor ni desde la consola del Mac (403), pero abierto en una pestaña de Chrome se descarga solo en `~/Downloads`.
+- CRM: `lpatch_20261112` pone las 25 (y las de los lotes 33 y 34 sin enviar) en el lote del 12/11 con su `pageUrl`; `waOk: false` en las 9 cuyo contacto no dice WhatsApp. Copia del worker anterior en `anterior/worker-v69-12nov-antes-l35.js`.
+
 ## Propuesta en PDF de una carilla: Intenso Fragancias (11/11/2026)
 
 - Chris les ofreció la tienda por **1.740 € IVA incluido** porque tienen 150 productos: con menos de 100 productos la tienda es 1.440 €, y con más de 100, 1.740 €. Incluye las fotos con IA de los 150, el branding, los pagos, los envíos y la app de Shopify sincronizada con su sistema de envíos, las políticas, la lista de espera, el email marketing y **12 meses de cambios pequeños** (2–3 productos cada 2–3 semanas, de 5 a 10 al mes).

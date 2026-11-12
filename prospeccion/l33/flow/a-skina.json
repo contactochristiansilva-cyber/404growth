@@ -1,0 +1,49 @@
+{
+ "slug": "a-skina",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "a-skina-27c.jpg",
+    "a-skina-10.jpg",
+    "a-skina-14c.jpg",
+    "a-skina-22c.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia a-skina-27c.jpg, aplica la REGLA A): Luxury beauty campaign still life of Korean moisturising creams in pastel pink, white and mint boxes and jars from the reference. The product stands in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm cinematic light, rich textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia a-skina-10.jpg, aplica la REGLA A): Beauty e-commerce product photo of a holographic iridescent tube of CC cream with a pastel gradient from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «p2» (formato 3:4, referencia a-skina-14c.jpg, aplica la REGLA A): Beauty e-commerce product photo of Korean moisturising creams: a pale blue tube, white tubes and jars with green and pink accents from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 4 «p3» (formato 3:4, referencia a-skina-22c.jpg, aplica la REGLA A): Beauty e-commerce product photo of Korean cleansing oils in clear and amber pump bottles from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 5 «p4» (formato 3:4, referencia a-skina-27c.jpg, aplica la REGLA A): Beauty e-commerce product photo of Korean moisturising creams in pastel pink, white and mint boxes and jars from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "a-skina-32c.jpg",
+    "a-skina-16c.jpg",
+    "a-skina-03c.jpg",
+    "a-skina-20c.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia a-skina-32c.jpg, aplica la REGLA A): Beauty e-commerce product photo of a small gold spray serum bottle from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 2 «p6» (formato 3:4, referencia a-skina-16c.jpg, aplica la REGLA A): Beauty e-commerce product photo of a round pink jar of face cream from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «l1» (formato 3:4, referencia a-skina-03c.jpg, aplica la REGLA A): Lifestyle photo: a Korean skincare routine laid out in a row: cleanser, toner, serum, cream and sunscreen in white and pastel packaging, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia a-skina-20c.jpg, aplica la REGLA A): Lifestyle photo: shelves of protein powder tubs and supplements in a bright parapharmacy, no people, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: a bright modern parapharmacy with white shelves full of Korean skincare in pastel packaging and a few tubs of supplements, soft daylight, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury beauty campaign still life of Korean moisturising cre",
+  "p1": "Beauty e-commerce product photo of a holographic iridescent ",
+  "p2": "ty e-commerce product photo of Korean moisturising creams: a",
+  "p3": "Beauty e-commerce product photo of Korean cleansing oils in ",
+  "p4": "ty e-commerce product photo of Korean moisturising creams in",
+  "p5": "Beauty e-commerce product photo of a small gold spray serum ",
+  "p6": "Beauty e-commerce product photo of a round pink jar of face ",
+  "l1": "Lifestyle photo: a Korean skincare routine laid out in a row",
+  "l2": "Lifestyle photo: shelves of protein powder tubs and suppleme",
+  "b": "Wide interior photo: a bright modern parapharmacy with white"
+ }
+}

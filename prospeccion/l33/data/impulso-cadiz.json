@@ -1,0 +1,55 @@
+{
+ "niche": "suplementos",
+ "name": "Impulso Nutrición y Deporte",
+ "ig": "impulsocadiz",
+ "f": 3016,
+ "city": "Cádiz",
+ "cityfull": "Cádiz",
+ "address": "Avda. Andalucía 52",
+ "logo": {
+  "text": "Impulso Nutrición y Deporte"
+ },
+ "cats": [
+  [
+   "Proteínas",
+   "p1"
+  ],
+  [
+   "Creatina",
+   "p2"
+  ],
+  [
+   "Snacks",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Whey 100 %"
+  },
+  {
+   "id": "p2",
+   "name": "Gominolas de creatina"
+  },
+  {
+   "id": "p3",
+   "name": "Barritas de proteína"
+  },
+  {
+   "id": "p4",
+   "name": "Crema de cacahuete proteica"
+  },
+  {
+   "id": "p5",
+   "name": "Pre-entreno en cápsulas"
+  },
+  {
+   "id": "p6",
+   "name": "Shaker gorila"
+  }
+ ],
+ "theme": {
+  "acc": "#E2611B"
+ }
+}

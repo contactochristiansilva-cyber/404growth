@@ -1,0 +1,55 @@
+{
+ "niche": "suplementos",
+ "name": "Nutripro Cambrils",
+ "ig": "nutripro_cmb",
+ "f": 1680,
+ "city": "Cambrils",
+ "cityfull": "Cambrils (Tarragona)",
+ "address": "C/ del Oli 2",
+ "logo": {
+  "text": "Nutripro Cambrils"
+ },
+ "cats": [
+  [
+   "Pre-entrenos",
+   "p1"
+  ],
+  [
+   "Proteínas",
+   "p4"
+  ],
+  [
+   "Ropa",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Pre-entreno"
+  },
+  {
+   "id": "p2",
+   "name": "Potenciador natural"
+  },
+  {
+   "id": "p3",
+   "name": "Pack pre-entreno y shaker"
+  },
+  {
+   "id": "p4",
+   "name": "Proteína whey"
+  },
+  {
+   "id": "p5",
+   "name": "Ropa de gimnasio"
+  },
+  {
+   "id": "p6",
+   "name": "Creatina"
+  }
+ ],
+ "theme": {
+  "acc": "#C1121F"
+ }
+}

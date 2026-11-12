@@ -1,0 +1,50 @@
+{
+ "slug": "chic-and-txik",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "chic-and-txik-47.jpg",
+    "chic-and-txik-05.jpg",
+    "chic-and-txik-10.jpg",
+    "chic-and-txik-27.jpg",
+    "chic-and-txik-39.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia chic-and-txik-47.jpg, aplica la REGLA A): Luxury campaign still life of many colourful mirror acrylic half-moon earrings in pink, blue, purple, green and gold from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia chic-and-txik-05.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of geometric acrylic stud earrings made of two overlapping triangles in mirror orange and coral, on a kraft card from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia chic-and-txik-10.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of burgundy acrylic petal earrings with two overlapping leaves, on a kraft card from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia chic-and-txik-27.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of square acrylic earrings layered in burgundy and red, on a kraft card from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia chic-and-txik-39.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of blue heart-shaped acrylic earrings with a silver mirror inner heart from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "chic-and-txik-21.jpg",
+    "chic-and-txik-50.jpg",
+    "chic-and-txik-43.jpg",
+    "chic-and-txik-36.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia chic-and-txik-21.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of gold mirror acrylic leaf earrings with a white round stud from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia chic-and-txik-50.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of round open hoop earrings in purple and silver mirror acrylic from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia chic-and-txik-43.jpg, aplica la REGLA B): Lifestyle photo: a hand holding a kraft card with blue layered acrylic leaf earrings, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia chic-and-txik-36.jpg, aplica la REGLA A): Lifestyle photo: pink lightning bolt acrylic earrings on pink fabric with gold metal details, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA C): Wide interior photo: a small bright handmade accessories boutique with a wooden table displaying colourful acrylic earrings on kraft cards, warm light, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of many colourful mirror acrylic ",
+  "p1": "Luxury jewellery e-commerce photo of geometric acrylic stud ",
+  "p2": "Luxury jewellery e-commerce photo of burgundy acrylic petal ",
+  "p3": "Luxury jewellery e-commerce photo of square acrylic earrings",
+  "p4": "Luxury jewellery e-commerce photo of blue heart-shaped acryl",
+  "p5": "Luxury jewellery e-commerce photo of gold mirror acrylic lea",
+  "p6": "Luxury jewellery e-commerce photo of round open hoop earring",
+  "l1": "Lifestyle photo: a hand holding a kraft card with blue layer",
+  "l2": "Lifestyle photo: pink lightning bolt acrylic earrings on pin",
+  "b": "Wide interior photo: a small bright handmade accessories bou"
+ }
+}

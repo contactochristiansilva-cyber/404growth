@@ -1,0 +1,48 @@
+{
+ "slug": "modas-gador",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "modas-gador-01c.jpg",
+    "modas-gador-04c.jpg",
+    "modas-gador-21c.jpg",
+    "modas-gador-06c.jpg",
+    "modas-gador-18c.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia modas-gador-01c.jpg, aplica la REGLA A): Luxury beauty campaign still life of shelves of Arabic perfumes in ornate gold, pink and black bottles and boxes from the reference. The product stands in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm cinematic light, rich textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia modas-gador-04c.jpg, aplica la REGLA A): Beauty e-commerce product photo of Arabic perfume bottles in gold, pink and black on glass shelves from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «p2» (formato 3:4, referencia modas-gador-21c.jpg, aplica la REGLA A): Beauty e-commerce product photo of rows of boxed Arabic perfumes on shelves from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 4 «p3» (formato 3:4, referencia modas-gador-06c.jpg, aplica la REGLA A): Beauty e-commerce product photo of a wall of Arabic perfume boxes and bottles in pink, blue and gold from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 5 «p4» (formato 3:4, referencia modas-gador-18c.jpg, aplica la REGLA A): Beauty e-commerce product photo of light blue denim jeans held on hangers from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "modas-gador-12c.jpg",
+    "modas-gador-29c.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia modas-gador-12c.jpg, aplica la REGLA A): Beauty e-commerce product photo of colourful dresses and tops on a clothing rail from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 2 «p6» (formato 3:4, referencia modas-gador-29c.jpg, aplica la REGLA A): Beauty e-commerce product photo of pastel t-shirts and tops hanging on a wall from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «l1» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle photo: an ornate Arabic perfume bottle in gold and amber glass on a satin cloth with rose petals, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle photo: a bright boutique interior with rails of colourful clothes and a wall of perfumes, no people, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: a colourful fashion and perfume boutique with rails of clothes on one side and glass shelves of Arabic perfumes on the other, warm light, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury beauty campaign still life of shelves of Arabic perfu",
+  "p1": "Beauty e-commerce product photo of Arabic perfume bottles in",
+  "p2": "Beauty e-commerce product photo of rows of boxed Arabic perf",
+  "p3": "Beauty e-commerce product photo of a wall of Arabic perfume ",
+  "p4": "Beauty e-commerce product photo of light blue denim jeans he",
+  "p5": "Beauty e-commerce product photo of colourful dresses and top",
+  "p6": "Beauty e-commerce product photo of pastel t-shirts and tops ",
+  "l1": "Lifestyle photo: an ornate Arabic perfume bottle in gold and",
+  "l2": "Lifestyle photo: a bright boutique interior with rails of co",
+  "b": "Wide interior photo: a colourful fashion and perfume boutiqu"
+ }
+}

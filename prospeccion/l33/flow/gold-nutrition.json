@@ -1,0 +1,51 @@
+{
+ "slug": "gold-nutrition",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "gold-nutrition-19.jpg",
+    "gold-nutrition-10.jpg",
+    "gold-nutrition-04.jpg",
+    "gold-nutrition-25.jpg",
+    "gold-nutrition-31.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia gold-nutrition-19.jpg, aplica la REGLA A): Sports nutrition campaign still life of a large tub of whey protein with a chocolate biscuit design from the reference, on a clean concrete plinth in a bright modern gym. The product stands in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Crisp daylight, energetic and premium. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia gold-nutrition-10.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of large white tubs of whey protein with colourful illustrated labels from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 3 «p2» (formato 3:4, referencia gold-nutrition-04.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of black and red tubs of creatine gummies stacked on a shelf from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 4 «p3» (formato 3:4, referencia gold-nutrition-25.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of a clear jar of protein crunchy balls with dark chocolate from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 5 «p4» (formato 3:4, referencia gold-nutrition-31.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of a black tub of isolate protein with a peanut butter design from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "gold-nutrition-23.jpg",
+    "gold-nutrition-27.jpg",
+    "gold-nutrition-29.jpg",
+    "gold-nutrition-06.jpg",
+    "gold-nutrition-15.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia gold-nutrition-23.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of jars of protein spread in black cookies and strawberry flavours from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 2 «p6» (formato 3:4, referencia gold-nutrition-27.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of a large bag of zero-lactose isolate protein in teal and black from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 3 «l1» (formato 3:4, referencia gold-nutrition-29.jpg, aplica la REGLA A): Lifestyle photo: boxes of protein bars on a shop counter, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia gold-nutrition-06.jpg, aplica la REGLA A): Lifestyle photo: shelves stacked with tubs of whey protein in a bright shop, no people, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia gold-nutrition-15.jpg, aplica la REGLA B): Wide interior photo: a sports nutrition shop aisle with tall white shelves full of protein tubs and supplements, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Sports nutrition campaign still life of a large tub of whey ",
+  "p1": "Sports nutrition e-commerce product photo of large white tub",
+  "p2": "Sports nutrition e-commerce product photo of black and red t",
+  "p3": "Sports nutrition e-commerce product photo of a clear jar of ",
+  "p4": "Sports nutrition e-commerce product photo of a black tub of ",
+  "p5": "Sports nutrition e-commerce product photo of jars of protein",
+  "p6": "Sports nutrition e-commerce product photo of a large bag of ",
+  "l1": "Lifestyle photo: boxes of protein bars on a shop counter, li",
+  "l2": "Lifestyle photo: shelves stacked with tubs of whey protein i",
+  "b": "Wide interior photo: a sports nutrition shop aisle with tall"
+ }
+}

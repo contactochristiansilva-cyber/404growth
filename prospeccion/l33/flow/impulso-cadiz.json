@@ -1,0 +1,51 @@
+{
+ "slug": "impulso-cadiz",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "impulso-cadiz-42.jpg",
+    "impulso-cadiz-32.jpg",
+    "impulso-cadiz-07.jpg",
+    "impulso-cadiz-26.jpg",
+    "impulso-cadiz-48.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia impulso-cadiz-42.jpg, aplica la REGLA A): Sports nutrition campaign still life of black tubs of whey protein and isolate with a red shaker from the reference, on a clean concrete plinth in a bright modern gym. The product stands in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Crisp daylight, energetic and premium. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia impulso-cadiz-32.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of a yellow bag of 100% whey protein with a chocolate splash from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 3 «p2» (formato 3:4, referencia impulso-cadiz-07.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of two clear jars of creatine gummies, one with red gummies and one with yellow gummies from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 4 «p3» (formato 3:4, referencia impulso-cadiz-26.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of open boxes of protein bars in brown and pink wrappers from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 5 «p4» (formato 3:4, referencia impulso-cadiz-48.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of two jars of protein peanut cream from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "impulso-cadiz-45.jpg",
+    "impulso-cadiz-40.jpg",
+    "impulso-cadiz-23.jpg",
+    "impulso-cadiz-20.jpg",
+    "impulso-cadiz-02.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia impulso-cadiz-45.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of a white bottle of pre-workout capsules with a black and orange label from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 2 «p6» (formato 3:4, referencia impulso-cadiz-40.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of gorilla-head-shaped shaker cups in black, orange, red and white from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 3 «l1» (formato 3:4, referencia impulso-cadiz-23.jpg, aplica la REGLA A): Lifestyle photo: a red bag of protein puffs with chili and lime, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia impulso-cadiz-20.jpg, aplica la REGLA A): Lifestyle photo: a sports nutrition shop front with black and white signage and a shop window full of products on a sunny street, no people, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia impulso-cadiz-02.jpg, aplica la REGLA B): Wide interior photo: a sports nutrition shop with white floor-to-ceiling shelves full of supplement tubs and a white counter, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Sports nutrition campaign still life of black tubs of whey p",
+  "p1": "Sports nutrition e-commerce product photo of a yellow bag of",
+  "p2": "Sports nutrition e-commerce product photo of two clear jars ",
+  "p3": "Sports nutrition e-commerce product photo of open boxes of p",
+  "p4": "Sports nutrition e-commerce product photo of two jars of pro",
+  "p5": "Sports nutrition e-commerce product photo of a white bottle ",
+  "p6": "Sports nutrition e-commerce product photo of gorilla-head-sh",
+  "l1": "Lifestyle photo: a red bag of protein puffs with chili and l",
+  "l2": "Lifestyle photo: a sports nutrition shop front with black an",
+  "b": "Wide interior photo: a sports nutrition shop with white floo"
+ }
+}

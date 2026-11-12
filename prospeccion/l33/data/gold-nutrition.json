@@ -1,0 +1,57 @@
+{
+ "niche": "suplementos",
+ "name": "Gold Nutrition",
+ "ig": "gold_nutrition_shop",
+ "f": 2468,
+ "city": "Sevilla",
+ "cityfull": "Sevilla",
+ "address": "C.C. Alcampo, Av. Ronda del Tamarguillo 27, local 55",
+ "logo": {
+  "text": "Gold Nutrition"
+ },
+ "cats": [
+  [
+   "Proteínas",
+   "p1"
+  ],
+  [
+   "Creatina",
+   "p2"
+  ],
+  [
+   "Snacks",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Proteína whey"
+  },
+  {
+   "id": "p2",
+   "name": "Gominolas de creatina"
+  },
+  {
+   "id": "p3",
+   "name": "Protein crunchy"
+  },
+  {
+   "id": "p4",
+   "name": "Isolate cacahuete"
+  },
+  {
+   "id": "p5",
+   "name": "Crema proteica"
+  },
+  {
+   "id": "p6",
+   "name": "Isolate sin lactosa"
+  }
+ ],
+ "theme": {
+  "acc": "#B8860B"
+ },
+ "domain": "goldnutritionshop.es",
+ "web_note": "goldnutritionshop.es no carga: hoy quien os encuentra fuera de Sevilla solo puede escribiros."
+}

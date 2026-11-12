@@ -1,0 +1,61 @@
+{
+ "niche": "cosmetica",
+ "name": "Perfumes a la Carta",
+ "ig": "perfumes.a.la.carta.redondela",
+ "f": 1891,
+ "city": "Redondela",
+ "cityfull": "Redondela (Pontevedra)",
+ "address": "C/ José Regojo 29",
+ "logo": {
+  "text": "Perfumes a la Carta"
+ },
+ "cats": [
+  [
+   "Perfumes",
+   "p1"
+  ],
+  [
+   "Cuidado corporal",
+   "p4"
+  ],
+  [
+   "Cabello",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Perfume de equivalencia"
+  },
+  {
+   "id": "p2",
+   "name": "Champú reparador"
+  },
+  {
+   "id": "p3",
+   "name": "Gel después del deporte"
+  },
+  {
+   "id": "p4",
+   "name": "Mousse corporal"
+  },
+  {
+   "id": "p5",
+   "name": "Gel de ducha frambuesa"
+  },
+  {
+   "id": "p6",
+   "name": "Crema corporal"
+  }
+ ],
+ "theme": {
+  "acc": "#7B2D8E"
+ },
+ "opts": [
+  "30 ml",
+  "50 ml",
+  "100 ml"
+ ],
+ "opts_l": "Formato"
+}

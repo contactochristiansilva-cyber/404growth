@@ -1,0 +1,50 @@
+{
+ "slug": "cosa-de-dos",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "cosa-de-dos-01.jpg",
+    "cosa-de-dos-15.jpg",
+    "cosa-de-dos-10.jpg",
+    "cosa-de-dos-22.jpg",
+    "cosa-de-dos-23.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia cosa-de-dos-01.jpg, aplica la REGLA A): Luxury campaign still life of an oval pink sapphire engagement ring with a diamond halo and a pavé band in yellow and white gold from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia cosa-de-dos-15.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of an oval ruby engagement ring with a diamond halo and a pavé band in white gold from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia cosa-de-dos-10.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of an oval blue sapphire engagement ring with a diamond halo and a pavé band in white gold from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia cosa-de-dos-22.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of an oval emerald engagement ring with a flower-shaped diamond halo and a pavé band from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia cosa-de-dos-23.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a round diamond solitaire engagement ring with a pavé band in white gold from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "cosa-de-dos-28.jpg",
+    "cosa-de-dos-39.jpg",
+    "cosa-de-dos-12.jpg",
+    "cosa-de-dos-19.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia cosa-de-dos-28.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a toi-et-moi ring with two oval blue sapphires framed in diamonds from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia cosa-de-dos-39.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of an oval yellow sapphire engagement ring with a diamond halo in yellow gold from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia cosa-de-dos-12.jpg, aplica la REGLA B): Lifestyle photo: a woman's hand showing a diamond solitaire engagement ring under the green northern lights over a frozen lake at night, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia cosa-de-dos-19.jpg, aplica la REGLA B): Lifestyle photo: a hand holding an open dark ring box with a gold diamond solitaire engagement ring lit by a small light, dark background, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA C): Wide interior photo: an intimate engagement-ring boutique with warm golden light, a velvet armchair, a wooden table with open ring boxes and classic floral wallpaper, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of an oval pink sapphire engageme",
+  "p1": "Luxury jewellery e-commerce photo of an oval ruby engagement",
+  "p2": "Luxury jewellery e-commerce photo of an oval blue sapphire e",
+  "p3": "Luxury jewellery e-commerce photo of an oval emerald engagem",
+  "p4": "Luxury jewellery e-commerce photo of a round diamond solitai",
+  "p5": "Luxury jewellery e-commerce photo of a toi-et-moi ring with ",
+  "p6": "Luxury jewellery e-commerce photo of an oval yellow sapphire",
+  "l1": "Lifestyle photo: a woman's hand showing a diamond solitaire ",
+  "l2": "Lifestyle photo: a hand holding an open dark ring box with a",
+  "b": "Wide interior photo: an intimate engagement-ring boutique wi"
+ }
+}

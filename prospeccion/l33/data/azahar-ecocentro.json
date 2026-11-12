@@ -1,0 +1,64 @@
+{
+ "niche": "suplementos",
+ "name": "Azahar Ecocentro",
+ "ig": "azaharecocentro",
+ "f": 1403,
+ "city": "Santa Cruz de Tenerife",
+ "cityfull": "Santa Cruz de Tenerife",
+ "address": "C/ San Clemente y C.C. Nivaria Center",
+ "logo": {
+  "text": "Azahar Ecocentro"
+ },
+ "cats": [
+  [
+   "Suplementos",
+   "p1"
+  ],
+  [
+   "Alimentación ecológica",
+   "p2"
+  ],
+  [
+   "Cosmética natural",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Suplemento diario"
+  },
+  {
+   "id": "p2",
+   "name": "Ghee ecológico"
+  },
+  {
+   "id": "p3",
+   "name": "Avena overnight"
+  },
+  {
+   "id": "p4",
+   "name": "Gel de aloe vera"
+  },
+  {
+   "id": "p5",
+   "name": "Galletas de avena"
+  },
+  {
+   "id": "p6",
+   "name": "Colágeno belleza"
+  }
+ ],
+ "theme": {
+  "acc": "#2E8A86"
+ },
+ "h1": "Lo natural,<br>a un clic.",
+ "eyebrow": "Herbolario y ecotienda",
+ "sub": "Los productos naturales y ecológicos que te recomendamos en {city}, ahora con envío a casa.",
+ "opts": [
+  "Pequeño",
+  "Mediano",
+  "Grande"
+ ],
+ "opts_l": "Formato"
+}

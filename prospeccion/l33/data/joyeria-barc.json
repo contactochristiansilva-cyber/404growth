@@ -1,0 +1,53 @@
+{
+ "niche": "joya",
+ "name": "Joyería Barc",
+ "ig": "joyeria_barc_oro",
+ "f": 20110,
+ "city": "Barcelona",
+ "cityfull": "Barcelona",
+ "address": "Ronda de Sant Pau 79 (frente al Mercat de Sant Antoni)",
+ "logo": {
+  "text": "Joyería Barc"
+ },
+ "cats": [
+  [
+   "Cadenas",
+   "p1"
+  ],
+  [
+   "Colgantes",
+   "p3"
+  ],
+  [
+   "Pulseras",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Cadena barbada"
+  },
+  {
+   "id": "p2",
+   "name": "Pulsera riviere"
+  },
+  {
+   "id": "p3",
+   "name": "Cruz con brillantes"
+  },
+  {
+   "id": "p4",
+   "name": "Cruces esmaltadas"
+  },
+  {
+   "id": "p5",
+   "name": "Corazones de colores"
+  },
+  {
+   "id": "p6",
+   "name": "Sello con brillantes"
+  }
+ ],
+ "theme": {}
+}

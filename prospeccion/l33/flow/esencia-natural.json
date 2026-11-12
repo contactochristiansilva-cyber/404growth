@@ -1,0 +1,47 @@
+{
+ "slug": "esencia-natural",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "esencia-natural-11.jpg",
+    "esencia-natural-14c.jpg",
+    "esencia-natural-25c.jpg",
+    "esencia-natural-07c.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia esencia-natural-11.jpg, aplica la REGLA A): Sports nutrition campaign still life of a small amber essential oil bottle of organic lavender with a purple label from the reference, on a clean concrete plinth in a bright modern gym. The product stands in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Crisp daylight, energetic and premium. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia esencia-natural-11.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of a small amber essential oil bottle of organic lavender with a purple label from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 3 «p2» (formato 3:4, referencia esencia-natural-14c.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of a clear box full of dried green medicinal herbs from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 4 «p3» (formato 3:4, referencia esencia-natural-25c.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of glass jars of organic nut butter and spices with a wooden scoop from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 5 «p4» (formato 3:4, referencia esencia-natural-07c.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of a takeaway cup of specialty coffee next to pastries from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "esencia-natural-24c.jpg",
+    "esencia-natural-06c.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, sin referencia, aplica la REGLA A): Sports nutrition e-commerce product photo of an amber glass bottle of ashwagandha capsules with a plain label from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 2 «p6» (formato 3:4, referencia esencia-natural-24c.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of a jar of natural sweetener next to rolled crêpes from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 3 «l1» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle photo: a cup of herbal tea with dried chamomile and lavender on a wooden table, soft daylight, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia esencia-natural-06c.jpg, aplica la REGLA A): Lifestyle photo: the facade of a small herbalist shop with a wooden sign on a sunny street, no people, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: a bright herbalist shop with white shelves full of natural products, herbal teas, essential oils and organic food, hanging wicker lamps, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Sports nutrition campaign still life of a small amber essent",
+  "p1": "Sports nutrition e-commerce product photo of a small amber e",
+  "p2": "Sports nutrition e-commerce product photo of a clear box ful",
+  "p3": "Sports nutrition e-commerce product photo of glass jars of o",
+  "p4": "Sports nutrition e-commerce product photo of a takeaway cup ",
+  "p5": "Sports nutrition e-commerce product photo of an amber glass ",
+  "p6": "Sports nutrition e-commerce product photo of a jar of natura",
+  "l1": "Lifestyle photo: a cup of herbal tea with dried chamomile an",
+  "l2": "Lifestyle photo: the facade of a small herbalist shop with a",
+  "b": "Wide interior photo: a bright herbalist shop with white shel"
+ }
+}

@@ -12,6 +12,7 @@ SCENE = {
     'sneakers': 'a dark concrete studio floor with a single hard spotlight',
     'calzado': 'a warm wooden floor in a softly lit shoe boutique',
     'optica': 'pale travertine stone with crisp sunlight and soft shadows',
+    'suplementos': 'a clean concrete plinth in a bright modern gym with crisp daylight and a gentle blur behind',
 }
 RULE = ('Reproduce the EXACT products from the reference: identical shape, colours, materials and details; do not redesign them. '
         'Photorealistic high-end commercial photography, no people, no hands, no text, no letters, no logos, no watermark. One single continuous photograph.')

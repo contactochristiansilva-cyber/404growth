@@ -1,0 +1,53 @@
+{
+ "niche": "joya",
+ "name": "Art Joies",
+ "ig": "artjoiespalma",
+ "f": 1270,
+ "city": "Palma",
+ "cityfull": "Palma (Baleares)",
+ "address": "Avda. Gabriel Alomar 9",
+ "logo": {
+  "text": "Art Joies"
+ },
+ "cats": [
+  [
+   "Oro",
+   "p1"
+  ],
+  [
+   "Piedras preciosas",
+   "p2"
+  ],
+  [
+   "Plata",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Cadenas de oro"
+  },
+  {
+   "id": "p2",
+   "name": "Piedras preciosas"
+  },
+  {
+   "id": "p3",
+   "name": "Plata de ley"
+  },
+  {
+   "id": "p4",
+   "name": "Pulseras de oro"
+  },
+  {
+   "id": "p5",
+   "name": "Juego de té de plata"
+  },
+  {
+   "id": "p6",
+   "name": "Sello de oro"
+  }
+ ],
+ "theme": {}
+}

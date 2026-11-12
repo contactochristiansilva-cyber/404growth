@@ -38,6 +38,12 @@ NV['optica'] = dict(_base, shop_of='óptica', item_pl='monturas', item_art='la m
                     pdp_points=[('Fotos de cada montura', 'De frente, de lado y puestas.'), ('Graduada o de sol', 'Se elige en la ficha.'),
                                 ('Reserva de revisión', 'Día y hora sin llamar.'), ('Ajuste en tienda', 'Compra online, ajuste gratis en la óptica.')],
                     flow_new=[('Ve la montura', 'Instagram o Google'), ('Compra o reserva cita', 'En la ficha'), ('Paga', 'Tarjeta, Bizum, Apple Pay')])
+NV['suplementos'] = dict(_base, shop_of='tienda de nutrición', item_pl='productos', item_art='el producto',
+                         tienda_p='Diseñada a partir de las mejores tiendas de nutrición deportiva online: cada producto con su ficha, sabor y formato a la vista, ofertas, pago en un toque y vuestro consejo siempre a mano.',
+                         complete='Completa tu stack', ad3_btn='Ver ofertas', pdp_h3='Cada producto,<br>listo para comprar.',
+                         pdp_points=[('Fotos que venden', 'Cada bote y cada sabor, como en la tienda.'), ('Sabor y formato', 'Se eligen en la ficha, sin preguntar por DM.'),
+                                     ('Completa tu stack', 'Más productos por pedido, más ticket medio.'), ('Asesoramiento', 'La duda se resuelve por WhatsApp sin salir de la ficha.')],
+                         flow_new=[('Ve el producto', 'Instagram o anuncio'), ('Elige sabor y formato', 'En la ficha'), ('Paga', 'Tarjeta, Bizum, Apple Pay')])
 for k, v in N33.FLOW_TODAY.items():
     NV[k]['flow_today'] = v
 G.NICHE.update(NV)

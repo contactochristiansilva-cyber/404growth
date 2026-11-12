@@ -1,0 +1,55 @@
+{
+ "niche": "joya",
+ "name": "Cosa de Dos",
+ "ig": "cosadedos_joyeria",
+ "f": 36219,
+ "city": "Valencia",
+ "cityfull": "Valencia",
+ "address": "Valencia (solo con cita)",
+ "logo": {
+  "text": "Cosa de Dos"
+ },
+ "cats": [
+  [
+   "Anillos de compromiso",
+   "p4"
+  ],
+  [
+   "Piedras de color",
+   "p2"
+  ],
+  [
+   "Tú y yo",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Anillo de rubí"
+  },
+  {
+   "id": "p2",
+   "name": "Anillo de zafiro"
+  },
+  {
+   "id": "p3",
+   "name": "Anillo de esmeralda"
+  },
+  {
+   "id": "p4",
+   "name": "Solitario de diamante"
+  },
+  {
+   "id": "p5",
+   "name": "Anillo tú y yo"
+  },
+  {
+   "id": "p6",
+   "name": "Anillo de zafiro amarillo"
+  }
+ ],
+ "theme": {
+  "acc": "#8A6A3B"
+ }
+}

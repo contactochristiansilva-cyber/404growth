@@ -1,0 +1,55 @@
+{
+ "niche": "joya",
+ "name": "Zattera",
+ "ig": "zattera_oficial",
+ "f": 1109,
+ "city": "Mislata",
+ "cityfull": "Mislata (Valencia)",
+ "address": "Avda. del Sur 18, bajo",
+ "logo": {
+  "text": "Zattera"
+ },
+ "cats": [
+  [
+   "Anillos",
+   "p1"
+  ],
+  [
+   "Pendientes",
+   "p3"
+  ],
+  [
+   "Collares",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Anillo flor"
+  },
+  {
+   "id": "p2",
+   "name": "Anillo espiral"
+  },
+  {
+   "id": "p3",
+   "name": "Pendientes mariposa"
+  },
+  {
+   "id": "p4",
+   "name": "Collar círculo y corazón"
+  },
+  {
+   "id": "p5",
+   "name": "Brazalete hexagonal"
+  },
+  {
+   "id": "p6",
+   "name": "Pulsera árbol de la vida"
+  }
+ ],
+ "theme": {
+  "acc": "#1F5C4A"
+ }
+}

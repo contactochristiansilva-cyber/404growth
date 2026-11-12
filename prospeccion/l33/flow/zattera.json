@@ -1,0 +1,50 @@
+{
+ "slug": "zattera",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "zattera-02.jpg",
+    "zattera-17.jpg",
+    "zattera-18.jpg",
+    "zattera-28.jpg",
+    "zattera-24.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia zattera-02.jpg, aplica la REGLA A): Luxury campaign still life of gold stainless steel jewellery: a wide cuff bangle, a horseshoe pendant and pearl rings from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia zattera-17.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a gold flower-shaped ring with a central white stone from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia zattera-18.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a gold spiral ring from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia zattera-28.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of butterfly stud earrings with marquise white stones in silver and gold from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia zattera-24.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of gold necklaces with an open circle and an open heart pendant with small stones from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "zattera-10.jpg",
+    "zattera-15.jpg",
+    "zattera-32.jpg",
+    "zattera-22c.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia zattera-10.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a wide gold hexagonal cuff bangle from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia zattera-15.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of gold bracelets with a tree of life charm from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia zattera-32.jpg, aplica la REGLA A): Lifestyle photo: stainless steel bangles in gold and silver arranged in a cream jewellery tray, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia zattera-22c.jpg, aplica la REGLA A): Lifestyle photo: a red velvet gift box with a gold butterfly ring, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: a bright small jewellery shop with white displays and dark green accents, showcases of gold and silver jewellery, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of gold stainless steel jewellery",
+  "p1": "Luxury jewellery e-commerce photo of a gold flower-shaped ri",
+  "p2": "Luxury jewellery e-commerce photo of a gold spiral ring from",
+  "p3": "Luxury jewellery e-commerce photo of butterfly stud earrings",
+  "p4": "Luxury jewellery e-commerce photo of gold necklaces with an ",
+  "p5": "Luxury jewellery e-commerce photo of a wide gold hexagonal c",
+  "p6": "Luxury jewellery e-commerce photo of gold bracelets with a t",
+  "l1": "Lifestyle photo: stainless steel bangles in gold and silver ",
+  "l2": "Lifestyle photo: a red velvet gift box with a gold butterfly",
+  "b": "Wide interior photo: a bright small jewellery shop with whit"
+ }
+}

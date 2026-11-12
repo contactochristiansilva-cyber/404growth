@@ -1,0 +1,61 @@
+{
+ "niche": "cosmetica",
+ "name": "Modas Gádor",
+ "ig": "modasgador",
+ "f": 15322,
+ "city": "Almería",
+ "cityfull": "Almería",
+ "address": "",
+ "logo": {
+  "text": "Modas Gádor"
+ },
+ "cats": [
+  [
+   "Perfumes árabes",
+   "p1"
+  ],
+  [
+   "Moda",
+   "p5"
+  ],
+  [
+   "Vaqueros",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Perfumes árabes"
+  },
+  {
+   "id": "p2",
+   "name": "Perfume en estuche"
+  },
+  {
+   "id": "p3",
+   "name": "Colección de perfumes"
+  },
+  {
+   "id": "p4",
+   "name": "Vaqueros"
+  },
+  {
+   "id": "p5",
+   "name": "Vestidos"
+  },
+  {
+   "id": "p6",
+   "name": "Camisetas"
+  }
+ ],
+ "theme": {
+  "acc": "#D6336C"
+ },
+ "opts": [
+  "30 ml",
+  "50 ml",
+  "100 ml"
+ ],
+ "opts_l": "Formato"
+}

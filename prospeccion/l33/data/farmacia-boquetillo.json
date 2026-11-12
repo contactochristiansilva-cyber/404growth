@@ -1,0 +1,55 @@
+{
+ "niche": "cosmetica",
+ "name": "Farmacia Boquetillo",
+ "ig": "farmaciaboquetillo",
+ "f": 6733,
+ "city": "Fuengirola",
+ "cityfull": "Fuengirola (Málaga)",
+ "address": "Avda. de Mijas 27",
+ "logo": {
+  "text": "Farmacia Boquetillo"
+ },
+ "cats": [
+  [
+   "Cuidado facial",
+   "p1"
+  ],
+  [
+   "Limpieza",
+   "p3"
+  ],
+  [
+   "Nutricosmética",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Sérum antimanchas"
+  },
+  {
+   "id": "p2",
+   "name": "CC Crème"
+  },
+  {
+   "id": "p3",
+   "name": "Aceite limpiador"
+  },
+  {
+   "id": "p4",
+   "name": "Retinol y vitamina C"
+  },
+  {
+   "id": "p5",
+   "name": "Complemento digestivo"
+  },
+  {
+   "id": "p6",
+   "name": "Omega-3"
+  }
+ ],
+ "theme": {
+  "acc": "#7A2E4D"
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "joya",
+ "name": "Mestre",
+ "ig": "mestrejoieria",
+ "f": 1267,
+ "city": "La Pobla de Segur",
+ "cityfull": "La Pobla de Segur (Lleida)",
+ "address": "C/ Sant Miquel del Pui 19",
+ "logo": {
+  "text": "Mestre"
+ },
+ "cats": [
+  [
+   "Pendientes",
+   "p1"
+  ],
+  [
+   "Pulseras",
+   "p2"
+  ],
+  [
+   "Anillos",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Aros dorados"
+  },
+  {
+   "id": "p2",
+   "name": "Brazalete abierto"
+  },
+  {
+   "id": "p3",
+   "name": "Anillos con piedra"
+  },
+  {
+   "id": "p4",
+   "name": "Cadenas largas"
+  },
+  {
+   "id": "p5",
+   "name": "Pulseras de cordón"
+  },
+  {
+   "id": "p6",
+   "name": "Pulsera con rubí"
+  }
+ ],
+ "theme": {}
+}

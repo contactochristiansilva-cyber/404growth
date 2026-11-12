@@ -1,0 +1,49 @@
+{
+ "slug": "farmacia-boquetillo",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "farmacia-boquetillo-36.jpg",
+    "farmacia-boquetillo-04.jpg",
+    "farmacia-boquetillo-08.jpg",
+    "farmacia-boquetillo-07.jpg",
+    "farmacia-boquetillo-12.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia farmacia-boquetillo-36.jpg, aplica la REGLA A): Luxury beauty campaign still life of a collection of skincare bottles with orange and white packaging: dropper serums, pump bottles and cream jars from the reference. The product stands in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm cinematic light, rich textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia farmacia-boquetillo-04.jpg, aplica la REGLA A): Beauty e-commerce product photo of a pink and silver anti-pigment serum pump bottle next to its box from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «p2» (formato 3:4, referencia farmacia-boquetillo-08.jpg, aplica la REGLA A): Beauty e-commerce product photo of a white tube of CC cream with a red cap from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 4 «p3» (formato 3:4, referencia farmacia-boquetillo-07.jpg, aplica la REGLA A): Beauty e-commerce product photo of a yellow and a red cleansing oil pump bottle and two CC cream tubes from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 5 «p4» (formato 3:4, referencia farmacia-boquetillo-12.jpg, aplica la REGLA A): Beauty e-commerce product photo of a white retinol bottle and an amber vitamin C dropper serum from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "farmacia-boquetillo-25.jpg",
+    "farmacia-boquetillo-39.jpg",
+    "farmacia-boquetillo-24.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia farmacia-boquetillo-25.jpg, aplica la REGLA A): Beauty e-commerce product photo of a white supplement jar with an orange label from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 2 «p6» (formato 3:4, referencia farmacia-boquetillo-39.jpg, aplica la REGLA A): Beauty e-commerce product photo of a white omega-3 capsule bottle with a blue label next to a drinkable omega-3 box from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «l1» (formato 3:4, referencia farmacia-boquetillo-24.jpg, aplica la REGLA A): Lifestyle photo: white skincare jars, glass dropper bottles and pink boxes on a pale pink surface, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle photo: a bright modern pharmacy counter with shelves of skincare products in pink and white tones, no people, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: a bright modern pharmacy interior with white shelves of dermocosmetics and a soft pink accent wall, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury beauty campaign still life of a collection of skincar",
+  "p1": "Beauty e-commerce product photo of a pink and silver anti-pi",
+  "p2": "Beauty e-commerce product photo of a white tube of CC cream ",
+  "p3": "Beauty e-commerce product photo of a yellow and a red cleans",
+  "p4": "Beauty e-commerce product photo of a white retinol bottle an",
+  "p5": "Beauty e-commerce product photo of a white supplement jar wi",
+  "p6": "Beauty e-commerce product photo of a white omega-3 capsule b",
+  "l1": "Lifestyle photo: white skincare jars, glass dropper bottles ",
+  "l2": "Lifestyle photo: a bright modern pharmacy counter with shelv",
+  "b": "Wide interior photo: a bright modern pharmacy interior with "
+ }
+}

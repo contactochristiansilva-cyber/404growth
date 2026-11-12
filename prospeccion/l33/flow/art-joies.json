@@ -1,0 +1,48 @@
+{
+ "slug": "art-joies",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "art-joies-04.jpg",
+    "art-joies-02.jpg",
+    "art-joies-06.jpg",
+    "art-joies-05.jpg",
+    "art-joies-12.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia art-joies-04.jpg, aplica la REGLA A): Luxury campaign still life of a pile of yellow gold chains, bracelets and coins on a marble table with soft light from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia art-joies-02.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of heavy yellow gold chains and bracelets from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia art-joies-06.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of loose diamonds and coloured gemstones: ruby, sapphire and emerald from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia art-joies-05.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of antique silver candlesticks, a teapot and cutlery from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia art-joies-12.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of gold bracelets and chains with a small gold bar from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "art-joies-09.jpg",
+    "art-joies-08.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia art-joies-09.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of an antique silver tea set with a tray from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, sin referencia, aplica la REGLA A): Luxury jewellery e-commerce photo of a vintage yellow gold signet ring from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle photo: a jeweller examining a diamond with tweezers and a loupe, close up of the hands, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia art-joies-08.jpg, aplica la REGLA A): Lifestyle photo: a bright luxury jewellery shop with glass showcases, a white counter with chairs and pink accent walls, no people, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia art-joies-08.jpg, aplica la REGLA B): Wide interior photo: a bright luxury jewellery shop with glass showcases, a white counter with chairs and pink accent walls, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of a pile of yellow gold chains, ",
+  "p1": "Luxury jewellery e-commerce photo of heavy yellow gold chain",
+  "p2": "Luxury jewellery e-commerce photo of loose diamonds and colo",
+  "p3": "Luxury jewellery e-commerce photo of antique silver candlest",
+  "p4": "Luxury jewellery e-commerce photo of gold bracelets and chai",
+  "p5": "Luxury jewellery e-commerce photo of an antique silver tea s",
+  "p6": "Luxury jewellery e-commerce photo of a vintage yellow gold s",
+  "l1": "Lifestyle photo: a jeweller examining a diamond with tweezer",
+  "l2": "Lifestyle photo: a bright luxury jewellery shop with glass s",
+  "b": "Wide interior photo: a bright luxury jewellery shop with gla"
+ }
+}

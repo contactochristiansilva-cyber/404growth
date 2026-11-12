@@ -67,6 +67,15 @@ NICHE = {
         feat_e='El par de la semana', item='par', items='pares', badge='Nuevo',
         usp=[('truck', 'Envío a toda España', 'Pídelos hoy y te llegan a casa.'), ('swap', 'Cambio de talla', 'Si no te quedan, los cambiamos.'), ('store', 'Recogida en {city}', 'Gratis, en nuestra tienda.'), ('card', 'Tarjeta, Bizum y Apple Pay', 'Pago seguro en un toque.')],
         visit_h='Ven a probártelos.', club='La nueva temporada, antes que nadie', ad_h=['Tus zapatos,<br>en casa.', 'De {city}<br>a toda España.', 'Tu talla,<br>a un clic.']),
+    'suplementos': dict(  # lote 35 (12/11/2026): tiendas de nutrición deportiva y herbolarios
+        bg='#F2F3EF', surf='#FFFFFF', ink='#101410', mute='#5F675F', acc='#1E6B3C', on='#FFFFFF', line='rgba(16,20,16,.12)',
+        hero='full', up=True, eyebrow='Nutrición deportiva', h1='Tu progreso,<br>a un clic.', sub='Las proteínas y los suplementos que te recomendamos en {city}, ahora con envío a casa.',
+        btn='Comprar ahora', marquee=['Envío a toda España', 'Recogida en {city}', 'Asesoramiento por WhatsApp', 'Marcas originales', 'Pago con Bizum'],
+        grid_h='Lo más vendido', grid_s='Lo que más nos pedís en tienda, con su ficha y su cesta.',
+        opts_l='Sabor', opts=['Chocolate', 'Vainilla', 'Cookies', 'Fresa'], ban_e='Te asesoramos', ban_h='Dinos tu objetivo.<br>Te decimos qué tomar.', ban_b='Pedir consejo',
+        feat_e='El más vendido', item='producto', items='productos', badge='Top',
+        usp=[('truck', 'Envío a toda España', 'Pídelo hoy y te llega a casa.'), ('store', 'Recogida en {city}', 'Gratis, en nuestra tienda.'), ('chat', 'Te asesoramos', 'Por WhatsApp, como en la tienda.'), ('card', 'Tarjeta, Bizum y Apple Pay', 'Pago seguro en un toque.')],
+        visit_h='Ven a vernos.', club='Las ofertas y novedades, antes que nadie', ad_h=['Tu proteína,<br>en casa.', 'De {city}<br>a toda España.', 'Lo que te recomendamos,<br>ya online.']),
     'optica': dict(
         bg='#F2F5F7', surf='#FFFFFF', ink='#0E1A24', mute='#5E6C78', acc='#1F4E79', on='#FFFFFF', line='rgba(14,26,36,.12)',
         hero='split', up=False, eyebrow='Gafas de sol y graduadas', h1='Mira bien.<br>Mírate mejor.', sub='Las monturas de nuestra óptica de {city}, ahora online. Y tu revisión, reservada en un minuto.',
@@ -391,7 +400,7 @@ def store(c):
             return f'<div class="ht t{k}"><img src="{img(c, i)}" alt="{nm}" fetchpriority="high"><span class="tg">{E(city)}</span></div>'
         return (f'<div class="ht t{k}"><img src="{img(c, i)}" alt="{E(p["name"])}"{" fetchpriority=high" if k == 1 else ""}>'
                 f'<div class="tl"><b>{E(p["name"])}</b><small>{"Lo más vendido" if k == 1 else price(c, p)}</small></div>'
-                f'<button class="ta" data-add data-n="{E(p["name"])}" data-i="{img(c, i)}" data-p="{price(c, p)}" data-o="{E(p.get("opt", N["opts"][min(2, len(N["opts"]) - 1)]))}" aria-label="Añadir">{ic("plus", 18, 2)}</button></div>')
+                f'<button class="ta" data-add data-n="{E(p["name"])}" data-i="{img(c, i)}" data-p="{price(c, p)}" data-o="{E(p.get("opt", (c.get("opts") or N["opts"])[min(2, len(c.get("opts") or N["opts"]) - 1)]))}" aria-label="Añadir">{ic("plus", 18, 2)}</button></div>')
     sp = N['hero'] == 'split'
     if c.get('hd'):  # heroes nuevos de IA (10/11): 16:9 en el ordenador y 9:16 en el móvil
         o += (f'<section class="hero hz"><picture><source media="(max-width:900px)" srcset="{img(c, "hm")}"><img src="{img(c, "hd")}" alt="{nm}" fetchpriority="high"></picture>'
@@ -420,7 +429,7 @@ def store(c):
         return (f'<div class="pc rv"><div class="pi"><img src="{img(c, p["id"])}" alt="{E(p["name"])}" loading="lazy">'
                 + (f'<span class="bd">{E(N["badge"])}</span>' if k in (0, 3) else '')
                 + f'<button class="hr" aria-label="Favorito">{ic("heart", 18)}</button>'
-                f'<button class="qa" data-add data-n="{E(p["name"])}" data-i="{img(c, p["id"])}" data-p="{price(c, p)}" data-o="{E(p.get("opt", N["opts"][min(2, len(N["opts"]) - 1)]))}">{ic("bag", 17)} Añadir</button></div>'
+                f'<button class="qa" data-add data-n="{E(p["name"])}" data-i="{img(c, p["id"])}" data-p="{price(c, p)}" data-o="{E(p.get("opt", (c.get("opts") or N["opts"])[min(2, len(c.get("opts") or N["opts"]) - 1)]))}">{ic("bag", 17)} Añadir</button></div>'
                 f'<div class="pm"><b>{E(p["name"])}</b><span>{price(c, p)}</span></div></div>')
     o += (f'<section class="sx" id="nuevo" style="padding-top:0"><div class="w"><div class="sh rv"><h2>{E(N["grid_h"])}</h2><p>{E(N["grid_s"])}</p></div>'
           '<div class="pg">' + ''.join(card(p, k) for k, p in enumerate(P_[:6])) + '</div></div></section>')
@@ -432,8 +441,8 @@ def store(c):
     o += (f'<section class="sx" id="destacado"><div class="w ft"><div class="fg rv"><img src="{img(c, f0["id"])}" alt="{E(f0["name"])}" loading="lazy">'
           f'<img src="{img(c, c.get("feat2", "l1"))}" alt="" loading="lazy"><img src="{img(c, c.get("feat3", P_[1]["id"]))}" alt="" loading="lazy"></div>'
           f'<div class="fi rv"><small>{E(N["feat_e"])}</small><h3>{E(f0["name"])}</h3><div class="pr">{price(c, f0)} <small>IVA incluido</small></div>'
-          f'<p>{E(f0.get("desc") or "")}</p><div class="ol">{E(N["opts_l"])}</div><div class="os">'
-          + ''.join(f'<button{" class=on" if k == min(2, len(N["opts"]) - 1) else ""}>{E(x)}</button>' for k, x in enumerate(f0.get('opts') or N['opts'])) + '</div>'
+          f'<p>{E(f0.get("desc") or "")}</p><div class="ol">{E(c.get("opts_l", N["opts_l"]))}</div><div class="os">'
+          + ''.join(f'<button{" class=on" if k == min(2, len(N["opts"]) - 1) else ""}>{E(x)}</button>' for k, x in enumerate(f0.get('opts') or c.get('opts') or N['opts'])) + '</div>'
           f'<div class="fa"><button class="bt k" data-add data-n="{E(f0["name"])}" data-i="{img(c, f0["id"])}" data-p="{price(c, f0)}">Añadir a la cesta</button>'
           f'<button class="bt" style="border:1.5px solid var(--line);width:58px;padding:0;justify-content:center;flex:none" aria-label="Favorito" data-demo>{ic("heart", 20)}</button></div>'
           '<div class="py"><span>Tarjeta</span><span>Bizum</span><span>Apple Pay</span><span>Google Pay</span></div>'
@@ -590,6 +599,7 @@ FLOW_TODAY = {
     'cosmetica': [('Ve el producto', 'en Instagram'), ('Escribe por DM', 'o WhatsApp'), ('Pregunta precio y stock', 'y espera respuesta'), ('Bizum o transferencia', 'a mano'), ('Envío', 'coordinado a mano')],
     'sneakers': [('Ve el par', 'en Instagram'), ('Escribe por DM', 'o WhatsApp'), ('Pregunta talla y precio', 'y espera respuesta'), ('Bizum o transferencia', 'a mano'), ('Envío', 'coordinado a mano')],
     'calzado': [('Ve el par', 'en Instagram'), ('Escribe por DM', 'o WhatsApp'), ('Pregunta talla y precio', 'y espera respuesta'), ('Bizum o transferencia', 'a mano'), ('Envío', 'coordinado a mano')],
+    'suplementos': [('Ve el producto', 'en Instagram'), ('Escribe por DM', 'o WhatsApp'), ('Pregunta sabor, precio y stock', 'y espera respuesta'), ('Bizum o transferencia', 'a mano'), ('Envío', 'coordinado a mano')],
     'optica': [('Ve la montura', 'en Instagram'), ('Escribe o llama', 'para preguntar'), ('Pregunta precio y modelo', 'y espera respuesta'), ('Va a la óptica', 'en horario de tienda'), ('Pide cita', 'por teléfono')],
 }
 FLOW_NEW = {

@@ -1,0 +1,55 @@
+{
+ "niche": "cosmetica",
+ "name": "Farmatural",
+ "ig": "farmatural_laspalmas",
+ "f": 2204,
+ "city": "Las Palmas de Gran Canaria",
+ "cityfull": "Las Palmas de Gran Canaria (Las Palmas)",
+ "address": "C/ Luis Doreste Silva 25",
+ "logo": {
+  "text": "Farmatural"
+ },
+ "cats": [
+  [
+   "Cosmética coreana",
+   "p3"
+  ],
+  [
+   "Cabello",
+   "p4"
+  ],
+  [
+   "Facial",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Bálsamo limpiador"
+  },
+  {
+   "id": "p2",
+   "name": "Booster facial"
+  },
+  {
+   "id": "p3",
+   "name": "Solar coreano"
+  },
+  {
+   "id": "p4",
+   "name": "Cuidado del cabello"
+  },
+  {
+   "id": "p5",
+   "name": "Champú de argán"
+  },
+  {
+   "id": "p6",
+   "name": "Ampolla capilar"
+  }
+ ],
+ "theme": {
+  "acc": "#C2552B"
+ }
+}

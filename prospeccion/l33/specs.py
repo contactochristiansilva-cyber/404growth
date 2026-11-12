@@ -993,3 +993,7 @@ S['saba-essences'] = dict(niche='cosmetica',
     l1=('11', 'a round pink glass perfume bottle wrapped in gold vines, with soft pink flowers'),
     l2=('04', 'a round perfume bottle with a pale blue centre framed in sculpted gold, on a marble table'),
     cats=[('Mujer', 'p1'), ('Hombre', 'p5'), ('Novedades', 'l1')])
+
+# Lote 35 (12/11/2026)
+import os as _os
+exec(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'specs35.py'), encoding='utf-8').read())

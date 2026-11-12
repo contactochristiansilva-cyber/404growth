@@ -1,0 +1,55 @@
+{
+ "niche": "suplementos",
+ "name": "Suplementación Ayoze Báez",
+ "ig": "suplementacionayozebaez",
+ "f": 1887,
+ "city": "Icod de los Vinos",
+ "cityfull": "Icod de los Vinos (Santa Cruz de Tenerife)",
+ "address": "Avda. de Francisco Miranda",
+ "logo": {
+  "text": "Suplementación Ayoze Báez"
+ },
+ "cats": [
+  [
+   "Proteínas",
+   "p1"
+  ],
+  [
+   "Creatina",
+   "p2"
+  ],
+  [
+   "Alimentación",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Proteína whey"
+  },
+  {
+   "id": "p2",
+   "name": "Creatina"
+  },
+  {
+   "id": "p3",
+   "name": "Gominolas omega"
+  },
+  {
+   "id": "p4",
+   "name": "Crema proteica"
+  },
+  {
+   "id": "p5",
+   "name": "Harina de avena"
+  },
+  {
+   "id": "p6",
+   "name": "Champú anticaída"
+  }
+ ],
+ "theme": {
+  "acc": "#C1121F"
+ }
+}
