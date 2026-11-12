@@ -7,6 +7,16 @@
         "rule": "overused-font",
         "value": "inter",
         "createdAt": "2026-11-04T10:33:01.566Z"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "tools/carruseles/**",
+          "tools/historias/**"
+        ],
+        "createdAt": "2026-11-12T14:10:42.568Z",
+        "reason": "Chris eligió el 7/11/2026 el estilo «etiqueta de envío» con fondo crema #F6F1E7 para la serie de Instagram (CLAUDE.md, Carruseles de Instagram)"
       }
     ]
   }
