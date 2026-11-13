@@ -77,6 +77,9 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - El código del vídeo sigue en el script (`VSL`), pero solo se usa si vuelve el `<figure id="vsl">`.
   - Sin vídeo ya no salen los eventos `VSLPlay`, `ViewContent` ni `VSL25…95` del píxel. `Lead` y `Schedule` al reservar siguen igual.
   - Copia de la versión con vídeo en `~/Downloads/404growth-subir/anterior/book-con-vsl-13nov.html`.
+- **Menos huecos a la vista (13/11/2026, Chris: «demasiados huecos disponibles»):** el calendario enseña 5 días y en cada uno solo 3, 4 o 5 horas. Antes eran 6 días y unas 13 horas por día.
+  - Las horas de cada día son siempre las mismas: las de mejor «número» (`hsh`) de cada hueco. Si una se ocupa, sale la siguiente.
+  - El servidor (`gbSlots`) sigue teniendo todos los huecos y comprueba la hora al reservar. Para cambiar cuántas se ven: `3+hsh('d'+k)%3` y `G.order.slice(0,5)` en `book.html`.
 - **Comprobado el 13/11/2026:**
   - Google estaba conectado y sincronizado en `/admin/google`, y `/l/slots` daba 220 huecos.
   - Las 3 reservas reales (31/10 y 1/11) tienen su evento en Google con Meet.
