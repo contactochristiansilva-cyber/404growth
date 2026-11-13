@@ -501,6 +501,22 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
     - `l36-fotos-rehechas.tar`: las 8 fotos rehechas, hechas en el navegador con el mismo tamaño que `gen33.py` (821×1100, JPEG 0,84);
     - `instalar-lote36.sh`: copia todo a `web117-404growth` y el admin a `404growth-subir`, con copia de seguridad en `anterior/`. Solo cambia el admin si es el esperado.
 
+## Open Fit: cartel de la nave (13/11/2026)
+
+- Open Fit (gimnasio) va a poner carteles en una nave que era un «Moda Outlet». Medidas sacadas de la foto de Chris:
+  - rótulo de cubierta, 12 × 2,75 m;
+  - lona de fachada, 25 × 4,6 m (todo el ancho);
+  - franja bajo la lona, 25 × 1,15 m, hasta el azulejo.
+
+  Su idea era una imagen hecha con IA: rótulo blanco con el logo, lona «Expertos en tu transformación» con dos atletas y franja de iconos.
+- **Marca real** (logo de open-fit.es): azul #001FE3 y ámbar #FFA800, logo «∞PENFIT · entrena sin límites». El azul marino y el naranja rojizo de su imagen de IA no son los de su logo.
+  - Los logos están en `~/Downloads/Open Fit cartel/openfit-logos.json`: color, blanco y una versión inversa (blanco + ámbar), recortados y hecha esta última por nosotros.
+  - Frases suyas: «Construye tu mejor versión desde hoy» y «Primer día gratis».
+- Lienzo de Claude Design «Open Fit · Carteles de la nave»: 4 opciones a escala (1 m = 80 px), en alzado con la nave dibujada a ojo, más un tablero de medidas.
+  - Opciones: A (su idea pulida), B (azul de marca), C (círculos con atletas y «Entrena sin límites») y D (foto de la sala).
+- Las fotos de atletas y de la sala son de IA (Figma `generate_image`, archivo «Open Fit · Cartel nave · fotos IA»). Están en `~/Downloads/Open Fit cartel/fotos IA/`.
+- Siguiente paso que pidió Chris: un recorrido web con scroll (la nave de cerca, de lejos y en ángulo) con el cartel elegido, el logo, los colores y la entrada.
+
 ## Propuesta en PDF de una carilla: Intenso Fragancias (11/11/2026)
 
 - Chris les ofreció la tienda por **1.740 € IVA incluido** porque tienen 150 productos: con menos de 100 productos la tienda es 1.440 €, y con más de 100, 1.740 €. Incluye las fotos con IA de los 150, el branding, los pagos, los envíos y la app de Shopify sincronizada con su sistema de envíos, las políticas, la lista de espera, el email marketing y **12 meses de cambios pequeños** (2–3 productos cada 2–3 semanas, de 5 a 10 al mes).
