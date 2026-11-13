@@ -479,6 +479,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - lo intenta 6 veces, esperando 20, 40, 60, 80 y 100 s;
   - guarda los registros de wrangler en `404growth-subir/.logs/` (`WRANGLER_LOG_PATH`), para leerlos desde aquí sin pedir capturas;
   - solo crea la clave `P404_KEY` de Partner si `secret list` contesta bien y no la trae. Antes, si `secret list` fallaba, creaba otra clave, y eso deja ilegibles las claves guardadas de Stripe, Anthropic y Meta.
+- **wrangler fijo en 4.160.1 (13/11/2026):** `subir-web.command` y `subir.command` usaban `npx wrangler@4`, que cogió la 4.161.0. Con ella, la web subía los archivos («Uploaded 378 files»), pero Cloudflare daba error 500 (code 10013) al crear la versión de `404growth`: 3 intentos, 9 errores. La 4.160.1 había subido bien el 12/11. Ahora las dos usan `W="npx --yes wrangler@4.160.1"` (copias en `anterior/subir*-13nov-antes.command`). Si vuelve a fallar, mira qué versión sale en el registro (`"wranglerVersion"` en `.logs/`) y compárala con la última subida buena.
 - Presupuestos desde el código: `Q_ADD` + `Q_ADD_KEY` en el worker del admin. Se añaden una sola vez al abrir Presupuestos, y nunca si ya hay uno con el mismo cliente. Así entró Intenso Fragancias (1.740 €).
 - Cambios a presupuestos que ya existen: `Q_SET` + `Q_SET_KEY` (por id o por nombre, una sola vez al abrir Presupuestos). El 13/11/2026 (`quotes_set_20261113`) Open Fit pasó a «Web (pago único, IVA incluido)», 2.050 €.
 
