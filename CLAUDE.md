@@ -375,6 +375,29 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Se genera con `patch_v67.py` (con `cb_server.js` y `cb_client.js`) en el scratchpad de la sesión del 9/11/2026 (`fin68/`). Prueba: `t_v67.mjs` (37 comprobaciones con node:sqlite) y `ui67.cjs` (Playwright: apuntar, subir PDF, gasto mensual, editar, filtro y móvil). `t_v66.mjs` sigue pasando.
 - Copia del worker anterior en `~/Downloads/404growth-subir/anterior/worker-v66b.js`.
 
+## Contabilidad › Archivos (admin v70, 13/11/2026)
+
+- Chris pidió «una carpeta donde suba archivos de mi ordenador importantes a tener ahí siempre guardados». Es la cuarta pestaña de Contabilidad, «Archivos» (`/admin#archivos`).
+- **Qué se puede hacer:**
+  - subir cualquier tipo de archivo, de hasta 50 MB, arrastrándolo o eligiéndolo (varios a la vez, con barra de progreso);
+  - ordenarlos en carpetas: pastillas «Todas», «General», las demás y «+ Nueva carpeta». A una carpeta se le puede cambiar el nombre;
+  - buscar por nombre, nota o carpeta;
+  - cambiar a cada archivo el nombre, la carpeta y la nota, y borrarlo (pide confirmación con un segundo clic).
+  - Solo los PDF y las fotos (reconocidos por sus primeros bytes) tienen el botón «Ver». El resto solo se descarga, para que nada de lo subido se ejecute dentro del admin.
+- **Cómo se guarda (D1, sin R2):** D1 no guarda más de 2 MB por fila, así que cada archivo va en trozos de 1,5 MB.
+  - Tablas: `arch` (el archivo) y `archp` (sus trozos).
+  - El navegador sube los trozos uno a uno, con 3 intentos cada uno, y al final llama a `done`, que comprueba el número de trozos y el tamaño. Hasta entonces el archivo no sale en la lista; si se queda a medias, se borra solo a las 6 h.
+  - La descarga junta los trozos en un stream.
+  - Va en la base del admin, y en el plan gratis D1 permite 500 MB por base. Por eso no se sube nada que deje la base por encima de `ARCH_DB_MAX` (450 MB). El tamaño de la base se lee de `meta.size_after`, y la página lo enseña abajo («Espacio del admin»). Si un día hace falta más, hay que pasar a R2.
+- API (`archApi`): `GET|POST arch`, `PUT arch/<id>/p/<k>`, `POST arch/<id>/done`, `GET|POST|DELETE arch/<id>` (`?ver=1` abre en el navegador) y `POST archf {from, to}` (cambiar el nombre de una carpeta).
+- Interfaz: `vArch` y las funciones `ar…` en `PAGES.admin`; las pestañas están en `CBTABS`.
+- Fuentes en `404growth-subir/fuentes-v70/`:
+  - `patch_v70.py <worker.js> [salida]`, con `arch_server.js` y `arch_client.js`;
+  - prueba de la API: `t_v70.mjs`, con `d1shim.mjs` (D1 sobre node:sqlite), 31 comprobaciones;
+  - prueba de la página: `ui70.cjs` con `srv70.mjs` (Playwright: subir, carpetas, buscar, editar, borrar, ver, descargar, archivo de más de 50 MB y móvil a 390 px).
+- Copia del worker anterior en `~/Downloads/404growth-subir/anterior/worker-v69b-13nov-antes-archivos.js`.
+- **Ojo con `device_commit_files`:** el 13/11/2026, al mandar `/mnt/user-data/outputs/worker.js`, escribió en el Mac un `worker.js` antiguo (2.539.917 bytes) en vez del nuevo. Se mandó con un nombre nuevo a un archivo temporal, se comprobó la huella y después se copió encima. Haz siempre eso: nombre nuevo y `sha256sum` antes de sustituir nada.
+
 ## Scrapeo de +5k seguidores con WhatsApp (10/11/2026, `seed_20261110b`)
 
 - Criterios de Chris: +5.000 seguidores en Instagram, WhatsApp o móvil publicado, sin tienda online o con web que no vende, tienda física en España, sin cadenas y que no estén ya en el CRM. 20 por nicho, en este orden: moda multimarca y boutique, joyería y complementos, cosmética y perfumería, suplementación deportiva, sneakers y ópticas.
