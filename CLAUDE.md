@@ -71,6 +71,17 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 
 ## Formulario de /book (landing VSL)
 
+- **Desde el 13/11/2026, /book va sin vídeo** (Chris: «sea ADS, sin VSL; mantenemos copy y todo pero quitamos vídeo»).
+  - En el héroe quedan el aviso de facturación, el titular, el botón «Quiero mi tienda online» (a `#reservar`), los tres checks y las cintas. Justo debajo, el calendario.
+  - Se quitaron el hueco del vídeo (`.stage`, `figure#vsl`) y el aviso «El vídeo llega en unos días». La meta descripción y la de Open Graph ya no dicen «Mira el vídeo». El WhatsApp dice «he visto tu web».
+  - El código del vídeo sigue en el script (`VSL`), pero solo se usa si vuelve el `<figure id="vsl">`.
+  - Sin vídeo ya no salen los eventos `VSLPlay`, `ViewContent` ni `VSL25…95` del píxel. `Lead` y `Schedule` al reservar siguen igual.
+  - Copia de la versión con vídeo en `~/Downloads/404growth-subir/anterior/book-con-vsl-13nov.html`.
+- **Comprobado el 13/11/2026:**
+  - Google estaba conectado y sincronizado en `/admin/google`, y `/l/slots` daba 220 huecos.
+  - Las 3 reservas reales (31/10 y 1/11) tienen su evento en Google con Meet.
+  - **No hay clave de email** (`nl_key`, admin › Newsletter): no salen ni la confirmación de hola@ ni los recordatorios de 24 h y 1 h. Al cliente solo le llega la invitación de Google.
+
 - Si marcan «Menos de 1.500 €» (`bud = b0`) no avanza: sale el mensaje de que con esas cantidades no trabajamos y que, si fue un error, pueden elegir otra opción. El Worker también rechaza `b0` (`vslBook` → 422 `budget`).
 
 ## Funnel de anuncios, llamadas y clientes (v48)
