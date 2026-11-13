@@ -363,6 +363,20 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - La primera vez se cargan solos los cuatro del 6/11/2026: Carmen Valencia (1.380 €), Kiss of Life (1.140 € + 490 €/mes), Open Fit (3.350 €) y Antequera CF (2.800 €). La marca `meta.quotes_seed` evita que vuelvan si se borran.
 
 
+## Presupuesto aceptado → Facturación (admin v71, 13/11/2026)
+
+- Chris: «cuando le doy a presupuesto aceptado se pase a facturación pendiente de darle a cobrado hoy, siempre». Al pulsar «Aceptado» en Presupuestos:
+  - el pago único entra en Facturación como cobro sin cobrar, con vencimiento el día que se acepta (hora de Madrid) y el concepto de «qué incluye»; ahí sale el botón «Cobrado hoy»;
+  - la cuota al mes entra como cobro mensual (`plans`) que empieza ese mismo día;
+  - el cliente se une por nombre a su ficha de Clientes si existe (`client_id`);
+  - si ya había un cobro de ese cliente con el mismo importe (metido a mano), se une a ese y no se duplica.
+- Volver a pendiente o pasar a «No aceptados» quita de Facturación lo que se creó y no se había cobrado. Lo cobrado no se borra nunca. Un cobro que Chris borre a mano en Facturación no vuelve.
+- Mientras está aceptado y sin cobrar, cambiar el importe del presupuesto cambia el del cobro.
+- En la tarjeta del presupuesto aceptado sale «En Facturación, pendiente de cobrar» o «Cobrado el …».
+- Datos: `d.bill` dentro del presupuesto (`pay`, `payMade`, `plan`, `planMade`, `day`, `legacy`). Funciones `qBillSync`, `qBillUndo` y `quotesBillSweep` (corre al abrir Presupuestos y Facturación: mete los aceptados que falten, también los que se acepten desde el código con `Q_SET`). Ids fijos (`p_q_<presupuesto>`, `pl_<presupuesto>`) para no duplicar si se abren dos pantallas a la vez.
+- Los que ya estaban aceptados antes de la v71 (`quotes_bill_v71`) solo reciben el pago único, sin cuota (no se sabe desde qué mes): Open Fit entra pendiente (2.050 €); Intenso (1.440 €) y Kiss of Life (1.140 €) se unen a sus cobros ya cobrados. Sus 490 €/mes no se crean solos.
+- Fuentes en `404growth-subir/fuentes-v71/` (`patch_v71.py`, `qbill_server.js`) y prueba `t_v71.mjs` (22 comprobaciones con node:sqlite). Copia del worker anterior en `~/Downloads/404growth-subir/anterior/worker-v70-13nov-antes-presupuestos.js`.
+
 ## Contabilidad (admin v67, 9/11/2026)
 
 - En el admin, Dinero › «Contabilidad» (`/admin#contabilidad`), justo debajo de Facturación. Guarda todas las facturas de ingresos y de gastos y calcula lo que entra, lo que sale y lo que queda. Tres pestañas:
