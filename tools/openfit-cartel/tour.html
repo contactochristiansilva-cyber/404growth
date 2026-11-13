@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#050507">
+<title>Open Fit · El cartel de la nave</title>
+<meta name="description" content="Propuesta de cartel para la nave de Open Fit, montada sobre la foto real de la fachada. Diseño de 404 Growth.">
+<style>
+:root{--bg:#050507;--ink:#F4F5F7;--mute:#A3A7B0;--amber:#FFA800;--blue:#001FE3;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",system-ui,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit}
+.top{position:fixed;inset:0 0 auto 0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top)) 24px 14px;pointer-events:none;background:linear-gradient(180deg,rgba(5,5,7,.7),rgba(5,5,7,0))}
+.top img{height:26px;width:auto;display:block}
+.top .by{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.top .by b{color:var(--ink);font-weight:600}
+.tour{position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.shade{position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 45%,rgba(5,5,7,0) 55%,rgba(5,5,7,.55) 100%)}
+.sh{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0}
+.sh.l{background:linear-gradient(90deg,rgba(5,5,7,.95) 0%,rgba(5,5,7,.88) 28%,rgba(5,5,7,0) 47%)}
+.sh.r{background:linear-gradient(270deg,rgba(5,5,7,.95) 0%,rgba(5,5,7,.88) 28%,rgba(5,5,7,0) 47%)}
+.sh.b{background:linear-gradient(0deg,rgba(5,5,7,.94) 0%,rgba(5,5,7,.72) 24%,rgba(5,5,7,0) 46%)}
+.sh.c{background:radial-gradient(70% 60% at 50% 50%,rgba(5,5,7,.78) 0%,rgba(5,5,7,.62) 100%)}
+.cap{position:absolute;z-index:3;max-width:440px;opacity:0;transform:translateY(14px);transition:none;pointer-events:none}
+.cap .k{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin:0 0 14px}
+.cap h2{font-size:clamp(34px,4.2vw,60px);line-height:1;letter-spacing:-.035em;font-weight:700;margin:0}
+.cap p{font-size:17px;line-height:1.5;color:#D5D8DE;margin:16px 0 0}
+.cap.l{left:5vw;top:50%;margin-top:-120px}
+.cap.r{right:5vw;top:50%;margin-top:-120px}
+.cap.b{left:5vw;bottom:9vh}
+.cap.c{left:50%;top:50%;width:min(760px,88vw);max-width:none;text-align:center;margin-left:min(-380px,-44vw);margin-top:-110px}
+.cap.c h2{font-size:clamp(46px,7vw,104px)}
+.cap .chip{display:inline-block;margin-top:18px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--mute)}
+.hint{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);display:flex;flex-direction:column;align-items:center;gap:10px;transition:opacity .4s}
+.hint i{display:block;width:1px;height:38px;background:linear-gradient(var(--amber),rgba(255,168,0,0));animation:dr 1.8s ease-in-out infinite}
+@keyframes dr{0%{transform:scaleY(.2);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(.2);transform-origin:bottom}}
+.bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:rgba(255,255,255,.06)}
+.bar i{display:block;height:100%;width:100%;background:var(--amber);transform-origin:0 50%;transform:scaleX(0)}
+.load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:14px;letter-spacing:.1em;text-transform:uppercase;transition:opacity .5s}
+@media (max-width:760px),(orientation:portrait){
+  .top{padding:calc(12px + env(safe-area-inset-top)) 16px 12px}.top img{height:20px}.top .by{font-size:11px}
+  .cap,.cap.l,.cap.r,.cap.b{left:16px;right:16px;top:auto;bottom:calc(26px + env(safe-area-inset-bottom));margin:0;max-width:none}
+  .cap .k{font-size:11px;margin-bottom:10px}
+  .cap h2{font-size:clamp(30px,8.6vw,40px)}
+  .cap p{font-size:15px;margin-top:10px}
+  .cap.c{left:16px;right:16px;width:auto;margin:0;top:auto;bottom:calc(26px + env(safe-area-inset-bottom));text-align:left}
+  .cap.c h2{font-size:clamp(38px,11vw,52px)}
+  .shade{background:linear-gradient(180deg,rgba(5,5,7,0) 52%,rgba(5,5,7,.92) 70%,var(--bg) 100%)}
+  .sh.l,.sh.r,.sh.b,.sh.c{background:linear-gradient(0deg,rgba(5,5,7,.96) 0%,rgba(5,5,7,.9) 28%,rgba(5,5,7,0) 44%)}
+  .hint{display:none}
+}
+.planos{padding:120px 5vw 80px;max-width:1500px;margin:0 auto}
+.planos .k{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin:0 0 14px}
+.planos h2{font-size:clamp(34px,5vw,64px);letter-spacing:-.035em;line-height:1;margin:0 0 18px;font-weight:700}
+.planos .lead{font-size:18px;line-height:1.55;color:#C9CCD3;max-width:720px;margin:0 0 56px}
+.pl{margin:0 0 48px}
+.pl figcaption{display:flex;justify-content:space-between;gap:16px;font-size:14px;color:var(--mute);margin:0 0 12px;flex-wrap:wrap}
+.pl figcaption b{color:var(--ink);font-weight:600}
+.pl img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.pl.roof img{max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:24px 0 0}
+.grid div{background:var(--bg);padding:22px 20px}
+.grid b{display:block;font-size:30px;letter-spacing:-.02em;font-weight:700;margin:0 0 6px}
+.grid span{font-size:14px;line-height:1.45;color:var(--mute)}
+.note{font-size:14px;line-height:1.55;color:var(--mute);max-width:820px;margin:36px 0 0}
+footer{border-top:1px solid var(--line);padding:28px 5vw 40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--mute)}
+@media (max-width:760px){.planos{padding:80px 16px 56px}.grid{grid-template-columns:1fr 1fr}.grid b{font-size:24px}footer{padding:24px 16px 36px}}
+@media (prefers-reduced-motion:reduce){.hint i{animation:none}}
+</style>
+</head>
+<body>
+<header class="top"><img src="__LOGO__" alt="Open Fit"><span class="by">Propuesta de <b>404 Growth</b></span></header>
+
+<section class="tour" id="tour">
+  <div class="stage" id="stage">
+    <canvas id="cv" aria-label="La nave de Open Fit con el cartel nuevo; al bajar, la cámara se acerca a cada parte del cartel"></canvas>
+    <div class="shade"></div>
+    <div class="load" id="load">Cargando la nave…</div>
+    <div id="caps"></div>
+    <div class="hint" id="hint"><span>Baja para acercarte</span><i></i></div>
+    <div class="bar"><i id="bar"></i></div>
+  </div>
+</section>
+
+<section class="planos">
+  <p class="k">El cartel, en plano</p>
+  <h2>Los archivos para imprimir.</h2>
+  <p class="lead">Así queda cada pieza sin la perspectiva de la foto. Las medidas salen de la foto de la fachada: antes de imprimir, se confirman en la nave.</p>
+  <figure class="pl roof"><figcaption><b>Rótulo de cubierta</b><span>12 × 2,75 m</span></figcaption><img src="__ROOF__" alt="Rótulo de cubierta: logo de Open Fit en blanco y ámbar sobre negro" loading="lazy"></figure>
+  <figure class="pl"><figcaption><b>Lona de fachada y franja</b><span>25 × 4,6 m + 25 × 1,15 m · la franja va a los lados de la marquesina</span></figcaption><img src="__LONA__" alt="Lona: atleta con balón medicinal, ENTRENA SIN LÍMITES y atleta de peso muerto; franja con Primer día gratis y open-fit.es" loading="lazy"></figure>
+  <div class="grid">
+    <div><b>12 × 2,75 m</b><span>Rótulo de cubierta, retroiluminado.</span></div>
+    <div><b>25 × 4,6 m</b><span>Lona de fachada, a todo lo ancho.</span></div>
+    <div><b>1,15 m</b><span>Franja bajo la lona, a los dos lados de la entrada.</span></div>
+    <div><b>Grafito</b><span>Marquesina y pilares (propuesta; ahora son marrones).</span></div>
+  </div>
+  <p class="note">Las fotos de los atletas y del gimnasio están hechas con IA y son de ejemplo. Para imprimir a 25 metros se usan fotos a más resolución o, mejor, una sesión en el propio gimnasio con esta misma luz azul y ámbar.</p>
+</section>
+<footer><span>Open Fit · entrena sin límites</span><span>Diseño y montaje: 404 Growth · noviembre de 2026</span></footer>
+
+<script>
+(()=>{
+const W=4032,H=3024;
+const IMG=__IMG__;
+const PATCH=__PATCH__;
+// cada parada: caja de la foto que tiene que verse, si es de noche y el texto
+const K=[
+ {b:[0,250,4032,2750],n:0,s:'c',k:'Open Fit · Propuesta de cartel',t:'El cartel de la nave.',p:'Montado sobre la foto real de la fachada. Baja y la cámara se va acercando.'},
+ {b:[0,470,4032,2480],n:0,s:'b',k:'Desde la calle',t:'Se ve desde la carretera.',p:'Rótulo en la cubierta, lona de 25 metros a todo lo ancho y franja abajo, a los lados de la entrada.'},
+ {b:[1700,560,3600,1040],n:0,s:'b',k:'01 · Rótulo de cubierta',t:'El logo, arriba del todo.',p:'Negro, con el logo de Open Fit en blanco y ámbar. De noche va retroiluminado.',c:'12 × 2,75 m'},
+ {b:[0,980,3800,1880],n:0,s:'b',k:'02 · Lona de fachada',t:'Una lona a todo lo ancho.',p:'Un gimnasio industrial de fondo, dos atletas a los lados y el lema en el centro.',c:'25 × 4,6 m'},
+ {b:[1060,1110,2560,1570],n:0,s:'r',k:'03 · El lema',t:'Letras de 1,6 metros.',p:'«Entrena sin límites.», la frase de su logo, en blanco y ámbar. Se lee de lejos.'},
+ {b:[340,1070,860,1690],n:0,s:'r',k:'04 · Fotos de campaña',t:'Luz azul y ámbar.',p:'Fotos hechas para la marca, con los dos colores del logo. En la versión final, fotos de su propio gimnasio con esta luz.'},
+ {b:[2440,990,3720,1640],n:0,s:'l',k:'05 · A escala',t:'Atletas de 4 metros.',p:'A ese tamaño se ven desde lejos y desde el coche.'},
+ {b:[40,1590,1010,1880],n:0,s:'r',k:'06 · Franja',t:'Primer día gratis.',p:'La oferta, en ámbar y a la altura de los ojos. La marquesina tapa el centro de la franja: la oferta va a la izquierda y la web a la derecha.',c:'1,15 m de alto'},
+ {b:[860,1500,2740,2420],n:0,s:'b',k:'07 · Entrada',t:'Marquesina en grafito.',p:'Proponemos pintar la marquesina y los pilares en gris oscuro (ahora son marrones), a juego con el cartel.'},
+ {b:[0,470,4032,2480],n:1,s:'b',k:'08 · De noche',t:'Retroiluminado.',p:'El rótulo y la lona se encienden: el cartel sigue trabajando cuando la calle se apaga.'},
+ {b:[0,120,4032,2900],n:1,s:'c',k:'Open Fit',t:'Entrena sin límites.',p:'Abajo tienes las piezas en plano, con sus medidas.'}
+];
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d'),tour=document.getElementById('tour'),stage=document.getElementById('stage'),bar=document.getElementById('bar'),hint=document.getElementById('hint'),load=document.getElementById('load'),caps=document.getElementById('caps');
+const N=K.length;
+tour.style.height=((N-1)*120+100)+'vh';
+// textos
+const shEls=K.map(k=>{const d=document.createElement('div');d.className='sh '+k.s;caps.appendChild(d);return d});
+const capEls=K.map(k=>{const d=document.createElement('div');d.className='cap '+k.s;d.innerHTML='<p class="k">'+k.k+'</p><h2>'+k.t+'</h2><p>'+k.p+'</p>'+(k.c?'<span class="chip">'+k.c+'</span>':'');caps.appendChild(d);return d});
+// imágenes
+let vw=0,vh=0,dpr=1,mob=false;
+const big=()=>Math.min(innerWidth,innerHeight*1.4)*Math.min(devicePixelRatio||1,2)>1700;
+function img(src){const i=new Image();i.decoding='async';i.src=src;i.onload=()=>{dirty=true};return i}
+const pick=big()?'l':'s';
+const day=img(IMG.dia[pick]),night=img(IMG.noche[pick]);
+let patches=[];
+day.addEventListener('load',()=>{load.style.opacity=0;patches=PATCH.map(p=>({p,i:img(p.src)}))});
+night.decode&&0;
+function size(){dpr=Math.min(devicePixelRatio||1,2);vw=stage.clientWidth;vh=stage.clientHeight;mob=vw<=760||vh>vw;cv.width=Math.round(vw*dpr);cv.height=Math.round(vh*dpr);dirty=true}
+function area(k){
+  if(mob)return{x:0,y:vh*0.07,w:vw,h:vh*0.56};
+  if(k.s==='l')return{x:vw*0.40,y:0,w:vw*0.58,h:vh};
+  if(k.s==='r')return{x:vw*0.02,y:0,w:vw*0.58,h:vh};
+  if(k.s==='b')return{x:0,y:0,w:vw,h:vh*0.80};
+  return{x:0,y:0,w:vw,h:vh};
+}
+function cam(k){ // escala y punto de la foto que queda en el centro de la pantalla
+  const a=area(k),[x0,y0,x1,y1]=k.b,bw=x1-x0,bh=y1-y0;
+  let s=Math.min(a.w/bw,a.h/bh)*0.94;
+  if(!mob)s=Math.max(s,vw/W,vh/H);
+  const cx=(x0+x1)/2,cy=(y0+y1)/2;
+  const tx=a.x+a.w/2-cx*s,ty=a.y+a.h/2-cy*s;
+  return{s,px:(vw/2-tx)/s,py:(vh/2-ty)/s};
+}
+const ease=t=>t*t*t*(t*(t*6-15)+10);
+let target=0,cur=0,dirty=true;
+function prog(){const r=tour.getBoundingClientRect(),tot=tour.offsetHeight-vh;return Math.max(0,Math.min(1,-r.top/Math.max(1,tot)))*(N-1)}
+function draw(){
+  const i=Math.min(N-2,Math.floor(cur)),t=cur-i,HOLD=0.32;
+  const u=ease(Math.max(0,Math.min(1,(t-HOLD)/(1-HOLD))));
+  const a=cam(K[i]),b=cam(K[i+1]);
+  const s=Math.exp(Math.log(a.s)+(Math.log(b.s)-Math.log(a.s))*u);
+  const px=a.px+(b.px-a.px)*u,py=a.py+(b.py-a.py)*u;
+  const n=K[i].n+(K[i+1].n-K[i].n)*u;
+  let tx=vw/2-px*s,ty=vh/2-py*s;
+  // que la foto no deje huecos negros cuando es más grande que la pantalla
+  if(W*s>=vw)tx=Math.min(0,Math.max(vw-W*s,tx));
+  if(H*s>=vh)ty=Math.min(0,Math.max(vh-H*s,ty));
+  ctx.setTransform(1,0,0,1,0,0);ctx.fillStyle='#050507';ctx.fillRect(0,0,cv.width,cv.height);
+  ctx.setTransform(s*dpr,0,0,s*dpr,tx*dpr,ty*dpr);
+  ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+  if(day.complete&&day.naturalWidth){
+    if(n<1){ctx.globalAlpha=1;ctx.drawImage(day,0,0,W,H);
+      if(s*dpr>0.55)for(const q of patches)if(q.i.complete&&q.i.naturalWidth){const p=q.p;ctx.drawImage(q.i,p.x,p.y,p.w,p.h)}}
+    if(n>0&&night.complete&&night.naturalWidth){ctx.globalAlpha=n;ctx.drawImage(night,0,0,W,H);ctx.globalAlpha=1}
+  }
+  // textos
+  for(let j=0;j<N;j++){
+    const d=cur-j;let o=0;
+    if(d>=-0.18&&d<=0.62)o=Math.min(1,(d+0.18)/0.18,(0.62-d)/0.22);
+    o=Math.max(0,o);const el=capEls[j];
+    el.style.opacity=o.toFixed(3);shEls[j].style.opacity=o.toFixed(3);el.style.transform='translateY('+((1-o)*14).toFixed(1)+'px)';
+  }
+  hint.style.opacity=cur<0.25?1:0;
+  bar.style.transform='scaleX('+(cur/(N-1)).toFixed(4)+')';
+}
+function loop(){
+  target=prog();
+  const d=target-cur;
+  if(Math.abs(d)>0.0004){cur+=d*0.09;dirty=true}else if(cur!==target){cur=target;dirty=true}
+  if(dirty){dirty=false;draw()}
+  requestAnimationFrame(loop);
+}
+addEventListener('resize',size);
+size();cur=target=prog();requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
