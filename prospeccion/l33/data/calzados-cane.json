@@ -1,0 +1,55 @@
+{
+ "niche": "calzado",
+ "name": "Calzados Cane",
+ "ig": "calzados_cane",
+ "f": 1980,
+ "city": "Benicarló",
+ "cityfull": "Benicarló (Castellón)",
+ "address": "C/ Ferreres Bretó, Benicentro 29",
+ "logo": {
+  "text": "Calzados Cane"
+ },
+ "cats": [
+  [
+   "Botines",
+   "p2"
+  ],
+  [
+   "Comodidad",
+   "p1"
+  ],
+  [
+   "Hombre",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Deportiva metalizada"
+  },
+  {
+   "id": "p2",
+   "name": "Botín waterproof"
+  },
+  {
+   "id": "p3",
+   "name": "Botín con hebilla"
+  },
+  {
+   "id": "p4",
+   "name": "Merceditas de charol"
+  },
+  {
+   "id": "p5",
+   "name": "Zapato de hombre"
+  },
+  {
+   "id": "p6",
+   "name": "Deportiva elástica"
+  }
+ ],
+ "theme": {},
+ "h1": "Cómodos.<br>Y a un clic.",
+ "eyebrow": "Calzado cómodo en Benicarló"
+}

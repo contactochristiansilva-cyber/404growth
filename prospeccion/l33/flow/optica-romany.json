@@ -1,0 +1,41 @@
+{
+ "slug": "optica-romany",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "optica-romany-21c.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, sin referencia, aplica la REGLA A): Luxury campaign still life of gold metal aviator eyeglasses and black acetate sunglasses from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia optica-romany-21c.jpg, aplica la REGLA A): Eyewear e-commerce photo of a black sport shield sunglass with a single dark mirrored lens, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 3 «p2» (formato 3:4, sin referencia, aplica la REGLA A): Eyewear e-commerce photo of gold metal double-bridge aviator eyeglasses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 4 «p3» (formato 3:4, sin referencia, aplica la REGLA A): Eyewear e-commerce photo of black round acetate eyeglasses with clear lenses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 5 «p4» (formato 3:4, sin referencia, aplica la REGLA A): Eyewear e-commerce photo of red heart-shaped acetate sunglasses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional male fashion model (a man). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, sin referencia, aplica la REGLA A): Eyewear e-commerce photo of orange-tinted black acetate eyeglasses for screens, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 2 «p6» (formato 3:4, sin referencia, aplica la REGLA A): Eyewear e-commerce photo of dark green round acetate sunglasses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 3 «l1» (formato 3:4, sin referencia, aplica la REGLA B): Lifestyle photo: a smiling man with dark hair wearing gold aviator eyeglasses in a bright optician shop, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle photo: a padel player wearing sport sunglasses on a blue padel court, sunny, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA C): Wide interior photo: the inside of a warm optician shop with lit beige wall niches full of eyeglasses and a light wooden floor, no people, no logos, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of gold metal aviator eyeglasses ",
+  "p1": "Eyewear e-commerce photo of a black sport shield sunglass wi",
+  "p2": "Eyewear e-commerce photo of gold metal double-bridge aviator",
+  "p3": "Eyewear e-commerce photo of black round acetate eyeglasses w",
+  "p4": "Eyewear e-commerce photo of red heart-shaped acetate sunglas",
+  "p5": "Eyewear e-commerce photo of orange-tinted black acetate eyeg",
+  "p6": "Eyewear e-commerce photo of dark green round acetate sunglas",
+  "l1": "Lifestyle photo: a smiling man with dark hair wearing gold a",
+  "l2": "Lifestyle photo: a padel player wearing sport sunglasses on ",
+  "b": "Wide interior photo: the inside of a warm optician shop with"
+ }
+}

@@ -997,3 +997,4 @@ S['saba-essences'] = dict(niche='cosmetica',
 # Lote 35 (12/11/2026)
 import os as _os
 exec(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'specs35.py'), encoding='utf-8').read())
+exec(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'specs36.py'), encoding='utf-8').read())

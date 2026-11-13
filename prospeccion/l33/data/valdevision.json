@@ -1,0 +1,55 @@
+{
+ "niche": "optica",
+ "name": "Valdevisión",
+ "ig": "valdevision_opticayaudiologia",
+ "f": 1232,
+ "city": "La Almunia de Doña Godina",
+ "cityfull": "La Almunia de Doña Godina (Zaragoza)",
+ "address": "",
+ "logo": {
+  "text": "Valdevisión"
+ },
+ "cats": [
+  [
+   "Graduadas",
+   "p1"
+  ],
+  [
+   "De sol",
+   "p4"
+  ],
+  [
+   "Audición",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa redonda carey"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa transparente"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa jaspeada"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa de sol blanca"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa de sol negra"
+  },
+  {
+   "id": "p6",
+   "name": "Audífono"
+  }
+ ],
+ "theme": {
+  "acc": "#1F3C88"
+ }
+}

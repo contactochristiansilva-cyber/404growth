@@ -1,0 +1,55 @@
+{
+ "niche": "calzado",
+ "name": "Acouga",
+ "ig": "acougazapateria_",
+ "f": 1551,
+ "city": "Salvaterra de Miño",
+ "cityfull": "Salvaterra de Miño (Pontevedra)",
+ "address": "Rúa Raíña Dona Urraca 20",
+ "logo": {
+  "text": "Acouga"
+ },
+ "cats": [
+  [
+   "Botines",
+   "p1"
+  ],
+  [
+   "Bailarinas",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botín barefoot burdeos"
+  },
+  {
+   "id": "p2",
+   "name": "Chelsea barefoot"
+  },
+  {
+   "id": "p3",
+   "name": "Bailarina con tachas"
+  },
+  {
+   "id": "p4",
+   "name": "Bota cowboy"
+  },
+  {
+   "id": "p5",
+   "name": "Bolso de piel negro"
+  },
+  {
+   "id": "p6",
+   "name": "Capucha de punto"
+  }
+ ],
+ "theme": {},
+ "h1": "Pisa bonito.<br>Pide fácil.",
+ "eyebrow": "Zapatería en Salvaterra"
+}

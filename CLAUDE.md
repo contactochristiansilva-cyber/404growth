@@ -436,6 +436,23 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - **Cupo de Flow (12/11/2026):** Nano Banana 2.1 y 2 Lite comparten el cupo diario y se acabó a media mañana, tras más de 200 imágenes en el día; Nano Banana Pro dio unas 15 más y también se acabó. Las 4 que faltaron de Seoul Beauty (p6, l1, l2, b) salieron de la IA de imágenes de Figma (`generate_image`, archivo «Lote 35 · Seoul Beauty fotos IA»). Su enlace `figma.com/api/mcp/asset/<id>.png` no se baja desde el contenedor ni desde la consola del Mac (403), pero abierto en una pestaña de Chrome se descarga solo en `~/Downloads`.
 - CRM: `lpatch_20261112` pone las 25 (y las de los lotes 33 y 34 sin enviar) en el lote del 12/11 con su `pageUrl`; `waOk: false` en las 9 cuyo contacto no dice WhatsApp. Copia del worker anterior en `anterior/worker-v69-12nov-antes-l35.js`.
 
+## Lote 36 (13/11/2026): 19 propuestas de ópticas y de calzado y deporte
+
+- Las 19 del scrapeo del 10/11 que faltaban: 10 ópticas y 9 tiendas de calzado o deporte. Fuera: Isabel Domínguez (cabina), Sbelta (vende online) y Pam's (cerró).
+  - De 4 no se sabía la ciudad. Se sacó de Google Maps y de su web: Ibai Mendi (Hernani), Vivavisión (Burgos), Óptica Santa Ana (Torredelcampo) y Óptica Romany (Dénia).
+- Mismo generador (`prospeccion/l33/`):
+  - `sel36.json` y `specs36.py` (lo carga `specs.py`);
+  - `jobs36.py`, `bat36.py` y `js36.py`, sin heroes `hd`/`hm` para ahorrar cupo (190 fotos);
+  - `crm36.py <worker.js> <día> <sufijo>`.
+- Las ópticas casi no publican fotos de producto (son vídeos a cámara): muchas fotos van sin referencia (`None`) y se describen con texto.
+  - Nunca referencias con menores. Se quitaron fotos de niños de Vivavisión, Valdevisión, Óptica Tenerife, Lupitas y Santa Ana.
+- Referencias recortadas (`crops`) en la tienda, revisadas en hojas de contacto antes de subirlas.
+- Flow, lo nuevo:
+  - `file_upload` de Chrome solo acepta archivos de `/mnt/user-data/uploads/…` (subidos con `device_stage_files`). No acepta rutas del Mac ni de `outputs`.
+  - Flow tiene Trusted Types: nada de `eval`. Los mensajes se cargan como JSON (`q36.json`) por el mismo `input` y `JSON.parse`.
+  - `javascript_tool` corta a los 45 s. Las esperas van en tramos de 38 s; una espera más larga deja colgado el lote de acciones.
+  - El cupo dio de sobra: 190 fotos de Nano Banana 2.1 en unas 2 horas, sin un solo rechazo.
+
 ## Propuesta en PDF de una carilla: Intenso Fragancias (11/11/2026)
 
 - Chris les ofreció la tienda por **1.740 € IVA incluido** porque tienen 150 productos: con menos de 100 productos la tienda es 1.440 €, y con más de 100, 1.740 €. Incluye las fotos con IA de los 150, el branding, los pagos, los envíos y la app de Shopify sincronizada con su sistema de envíos, las políticas, la lista de espera, el email marketing y **12 meses de cambios pequeños** (2–3 productos cada 2–3 semanas, de 5 a 10 al mes).

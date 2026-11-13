@@ -1,0 +1,57 @@
+{
+ "niche": "optica",
+ "name": "Optikà La Garriga",
+ "ig": "optika_lagarriga",
+ "f": 1329,
+ "city": "La Garriga",
+ "cityfull": "La Garriga (Barcelona)",
+ "address": "C/ Banys 35",
+ "logo": {
+  "text": "Optikà La Garriga"
+ },
+ "cats": [
+  [
+   "De sol",
+   "p1"
+  ],
+  [
+   "Graduadas",
+   "p5"
+  ],
+  [
+   "Audición",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa de sol burdeos"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa de sol rosa"
+  },
+  {
+   "id": "p3",
+   "name": "Funda de terciopelo"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa de sol dorada"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa graduada negra"
+  },
+  {
+   "id": "p6",
+   "name": "Audífono"
+  }
+ ],
+ "theme": {
+  "acc": "#7A4E2D"
+ },
+ "domain": "optikalagarriga.com",
+ "web_note": "optikalagarriga.com no carga: hoy quien os encuentra fuera de La Garriga solo puede escribiros."
+}

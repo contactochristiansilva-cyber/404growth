@@ -1,0 +1,55 @@
+{
+ "niche": "optica",
+ "name": "Óptica Color",
+ "ig": "optica_colormula",
+ "f": 1230,
+ "city": "Mula",
+ "cityfull": "Mula (Murcia)",
+ "address": "C/ Emeterio Cuadrado 13",
+ "logo": {
+  "text": "Óptica Color"
+ },
+ "cats": [
+  [
+   "De sol",
+   "p1"
+  ],
+  [
+   "Graduadas",
+   "p6"
+  ],
+  [
+   "Novedades",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa de sol ovalada"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa de sol piloto"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa de sol carey"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa de sol aviador"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa de sol negra y oro"
+  },
+  {
+   "id": "p6",
+   "name": "Gafa graduada verde"
+  }
+ ],
+ "theme": {
+  "acc": "#3E6B48"
+ }
+}

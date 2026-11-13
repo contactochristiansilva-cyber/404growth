@@ -1,0 +1,55 @@
+{
+ "niche": "optica",
+ "name": "Óptica Santa Ana",
+ "ig": "optica.santa.ana",
+ "f": 2079,
+ "city": "Torredelcampo",
+ "cityfull": "Torredelcampo (Jaén)",
+ "address": "Avda. Constitución 45",
+ "logo": {
+  "text": "Óptica Santa Ana"
+ },
+ "cats": [
+  [
+   "Graduadas",
+   "p2"
+  ],
+  [
+   "Deportivas",
+   "p1"
+  ],
+  [
+   "Audición",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafas deportivas"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa negra"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa redonda carey"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa rosa"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa de sol polarizada"
+  },
+  {
+   "id": "p6",
+   "name": "Audífono recargable"
+  }
+ ],
+ "theme": {
+  "acc": "#1D5D9B"
+ }
+}

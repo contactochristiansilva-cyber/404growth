@@ -1,0 +1,55 @@
+{
+ "niche": "optica",
+ "name": "Vivavisión",
+ "ig": "vivavisioncentrosopticos",
+ "f": 2335,
+ "city": "Burgos",
+ "cityfull": "Burgos",
+ "address": "Av. de los Derechos Humanos 36",
+ "logo": {
+  "text": "Vivavisión"
+ },
+ "cats": [
+  [
+   "Graduadas",
+   "p2"
+  ],
+  [
+   "De sol",
+   "p1"
+  ],
+  [
+   "Deportivas",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa de sol verde"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa roja"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa de sol lima"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa doble puente"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa deportiva graduada"
+  },
+  {
+   "id": "p6",
+   "name": "Gafa de sol carey"
+  }
+ ],
+ "theme": {
+  "acc": "#2C6E8F"
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "niche": "optica",
+ "name": "Óptica Crealens",
+ "ig": "crealensopticas",
+ "f": 1167,
+ "city": "Sevilla",
+ "cityfull": "Sevilla",
+ "address": "",
+ "logo": {
+  "text": "Óptica Crealens"
+ },
+ "cats": [
+  [
+   "Graduadas",
+   "p1"
+  ],
+  [
+   "De sol",
+   "p5"
+  ],
+  [
+   "Terapia visual",
+   "l2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa redonda miel"
+  },
+  {
+   "id": "p2",
+   "name": "Gafa ojo de gato roja"
+  },
+  {
+   "id": "p3",
+   "name": "Gafa morada"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa turquesa"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa de sol marrón"
+  },
+  {
+   "id": "p6",
+   "name": "Gafa metálica negra"
+  }
+ ],
+ "theme": {
+  "acc": "#C9A227"
+ },
+ "domain": "crealens.com",
+ "web_note": "crealens.com enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Sevilla solo puede escribiros."
+}

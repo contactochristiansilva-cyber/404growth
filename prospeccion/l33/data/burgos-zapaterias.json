@@ -1,0 +1,55 @@
+{
+ "niche": "calzado",
+ "name": "Burgos Zapaterías",
+ "ig": "burgoszapaterias",
+ "f": 3184,
+ "city": "Azuaga",
+ "cityfull": "Azuaga (Badajoz)",
+ "address": "",
+ "logo": {
+  "text": "Burgos Zapaterías"
+ },
+ "cats": [
+  [
+   "Botas",
+   "p1"
+  ],
+  [
+   "Botines",
+   "p2"
+  ],
+  [
+   "Fiesta",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Bota alta de ante"
+  },
+  {
+   "id": "p2",
+   "name": "Botín estampado"
+  },
+  {
+   "id": "p3",
+   "name": "Bota negra con hebilla"
+  },
+  {
+   "id": "p4",
+   "name": "Mocasín con hebilla dorada"
+  },
+  {
+   "id": "p5",
+   "name": "Salón destalonado"
+  },
+  {
+   "id": "p6",
+   "name": "Botín con flecos"
+  }
+ ],
+ "theme": {},
+ "h1": "Tus zapatos,<br>a un clic.",
+ "eyebrow": "Zapatería en Azuaga"
+}

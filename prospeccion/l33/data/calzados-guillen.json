@@ -1,0 +1,55 @@
+{
+ "niche": "calzado",
+ "name": "Calzados Guillén",
+ "ig": "calzadosguillen_elchesierra",
+ "f": 1066,
+ "city": "Elche de la Sierra",
+ "cityfull": "Elche de la Sierra (Albacete)",
+ "address": "C/ Mayor 17",
+ "logo": {
+  "text": "Calzados Guillén"
+ },
+ "cats": [
+  [
+   "Botines",
+   "p1"
+  ],
+  [
+   "Zapatillas",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botín camperos"
+  },
+  {
+   "id": "p2",
+   "name": "Botín de tacón"
+  },
+  {
+   "id": "p3",
+   "name": "Zapatilla retro"
+  },
+  {
+   "id": "p4",
+   "name": "Zapatilla con brillo"
+  },
+  {
+   "id": "p5",
+   "name": "Bolso trenzado"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso de nudo"
+  }
+ ],
+ "theme": {},
+ "h1": "Tendencia<br>a tus pies.",
+ "eyebrow": "Zapatería de tendencias"
+}

@@ -1,0 +1,55 @@
+{
+ "niche": "optica",
+ "name": "Óptica Lupitas",
+ "ig": "opticalupitas",
+ "f": 1072,
+ "city": "Don Benito",
+ "cityfull": "Don Benito (Badajoz)",
+ "address": "Avda. Constitución 6",
+ "logo": {
+  "text": "Óptica Lupitas"
+ },
+ "cats": [
+  [
+   "De sol",
+   "p1"
+  ],
+  [
+   "Graduadas",
+   "p2"
+  ],
+  [
+   "Lentillas",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gafa de sol carey"
+  },
+  {
+   "id": "p2",
+   "name": "Gafas graduadas"
+  },
+  {
+   "id": "p3",
+   "name": "Gafas de sol"
+  },
+  {
+   "id": "p4",
+   "name": "Gafa negra"
+  },
+  {
+   "id": "p5",
+   "name": "Gafa roja"
+  },
+  {
+   "id": "p6",
+   "name": "Lentillas"
+  }
+ ],
+ "theme": {
+  "acc": "#E2A400"
+ }
+}

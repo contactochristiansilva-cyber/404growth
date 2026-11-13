@@ -1,0 +1,41 @@
+{
+ "slug": "optica-santa-ana",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "optica-santa-ana-13c.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, sin referencia, aplica la REGLA A): Luxury campaign still life of thin gold metal round eyeglasses and tortoiseshell acetate eyeglasses from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia optica-santa-ana-13c.jpg, aplica la REGLA A): Eyewear e-commerce photo of sport wraparound sunglasses with mirrored pink, blue and red lenses on a display stand, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 3 «p2» (formato 3:4, sin referencia, aplica la REGLA A): Eyewear e-commerce photo of black rectangular acetate eyeglasses with a small gold detail on the temples, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 4 «p3» (formato 3:4, sin referencia, aplica la REGLA A): Eyewear e-commerce photo of tortoiseshell round acetate eyeglasses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 5 «p4» (formato 3:4, sin referencia, aplica la REGLA A): Eyewear e-commerce photo of rose-tinted cat-eye eyeglasses in transparent pink acetate, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional male fashion model (a man). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA D: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, sin referencia, aplica la REGLA A): Eyewear e-commerce photo of classic black sunglasses with polarised green lenses, no logos from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 2 «p6» (formato 3:4, sin referencia, aplica la REGLA A): Eyewear e-commerce photo of a small modern behind-the-ear hearing aid in beige next to its charging case from the reference, front three-quarter view, centred and large in the frame on a seamless cool light (#EEF2F5) background with a soft shadow, crisp acetate, metal and lens detail. IMAGEN 3 «l1» (formato 3:4, sin referencia, aplica la REGLA B): Lifestyle photo: a smiling woman with curly hair wearing red eyeglasses, soft light, bright optician shop, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, sin referencia, aplica la REGLA C): Lifestyle photo: an audiologist fitting a small hearing aid behind the ear of a smiling senior man, bright clinic, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA D): Wide interior photo: the inside of a bright optician and hearing centre with pale blue walls, white counters and walls of eyeglasses, no people, no logos, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of thin gold metal round eyeglass",
+  "p1": "Eyewear e-commerce photo of sport wraparound sunglasses with",
+  "p2": "Eyewear e-commerce photo of black rectangular acetate eyegla",
+  "p3": "Eyewear e-commerce photo of tortoiseshell round acetate eyeg",
+  "p4": "Eyewear e-commerce photo of rose-tinted cat-eye eyeglasses i",
+  "p5": "Eyewear e-commerce photo of classic black sunglasses with po",
+  "p6": "Eyewear e-commerce photo of a small modern behind-the-ear he",
+  "l1": "Lifestyle photo: a smiling woman with curly hair wearing red",
+  "l2": "Lifestyle photo: an audiologist fitting a small hearing aid ",
+  "b": "Wide interior photo: the inside of a bright optician and hea"
+ }
+}
