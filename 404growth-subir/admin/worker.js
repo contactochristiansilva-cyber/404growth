@@ -2310,9 +2310,10 @@ const Q_ADD = [
 // Q_SET · cambios a presupuestos que ya existen, una sola vez (por id o, si no está, por el nombre del cliente). Si después se tocan en el admin, no se pisan.
 // 11/11/2026: Intenso Fragancias cerrado en 1.440 € IVA incluido (pago único) + 490 €/mes por llevar los anuncios (eso no va en la factura de la tienda).
 // 12/11/2026: son 300 productos al arrancar la tienda, no 150 (solo cambia «qué incluye»).
-const Q_SET_KEY = "quotes_set_20261112";
+const Q_SET_KEY = "quotes_set_20261113";   // 13/11: Open Fit pasa a solo la web, 2.050 € IVA incluido (se mantiene el cambio del 12/11 de Intenso)
 const Q_SET = [
   ["q_intensofragancias", { name: "Intenso Fragancias", what: "Tienda online con 300 productos al arrancar (pago único, IVA incluido) + anuncios 490 €/mes" }],
+  ["q_openfit", { name: "Open Fit", what: "Web (pago único, IVA incluido)", once: 2050, monthly: 0 }],
 ];
 function qClean(b, part) {
   const d = {};

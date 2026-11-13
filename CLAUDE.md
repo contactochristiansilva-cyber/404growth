@@ -452,6 +452,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - guarda los registros de wrangler en `404growth-subir/.logs/` (`WRANGLER_LOG_PATH`), para leerlos desde aquí sin pedir capturas;
   - solo crea la clave `P404_KEY` de Partner si `secret list` contesta bien y no la trae. Antes, si `secret list` fallaba, creaba otra clave, y eso deja ilegibles las claves guardadas de Stripe, Anthropic y Meta.
 - Presupuestos desde el código: `Q_ADD` + `Q_ADD_KEY` en el worker del admin. Se añaden una sola vez al abrir Presupuestos, y nunca si ya hay uno con el mismo cliente. Así entró Intenso Fragancias (1.740 €).
+- Cambios a presupuestos que ya existen: `Q_SET` + `Q_SET_KEY` (por id o por nombre, una sola vez al abrir Presupuestos). El 13/11/2026 (`quotes_set_20261113`) Open Fit pasó a «Web (pago único, IVA incluido)», 2.050 €.
 
 ## Plantilla de factura de 404 Growth (admin v69, 12/11/2026)
 
@@ -467,6 +468,6 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - la página del admin, impresa, coincide píxel a píxel con la del generador;
   - la de Kiss of Life rehecha coincide con la original;
   - el editor se probó con Playwright y un `fetch` simulado (`v-ref`, `v-to-phone`, botones y lo que se envía al guardar).
-- **Numeración:** 2026-151 Kiss of Life y 2026-152 Intenso Fragancias (12/11/2026, 1.440 € IVA incluido, 300 productos al arrancar; concepto de la transferencia «Tienda online Instinto», como pidió Chris; sin los 490 €/mes de anuncios). Ninguna de las dos está en la tabla `invoices` del admin, así que la serie del admin («Mis datos de facturación» › Numeración) tiene que empezar en 153.
+- **Numeración:** 2026-151 Kiss of Life y 2026-152 Intenso Fragancias (12/11/2026, 1.440 € IVA incluido, 300 productos al arrancar; concepto de la transferencia «Tienda online Instinto», como pidió Chris; sin los 490 €/mes de anuncios). Ninguna de las dos está en la tabla `invoices` del admin, así que la serie del admin («Mis datos de facturación» › Numeración) tiene que empezar en 153. La 2026-153 (13/11/2026) es la web de Open Fit, 2.050 € IVA incluido: borrador hecho con `factura.py` (datos en el Mac, `datos/2026-153-openfit.json`), pendiente de que Chris confirme los datos fiscales.
 - Copia del worker anterior en `~/Downloads/404growth-subir/anterior/worker-v68d-12nov.js`.
 
