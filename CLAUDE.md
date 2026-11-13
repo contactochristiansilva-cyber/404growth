@@ -452,6 +452,17 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Flow tiene Trusted Types: nada de `eval`. Los mensajes se cargan como JSON (`q36.json`) por el mismo `input` y `JSON.parse`.
   - `javascript_tool` corta a los 45 s. Las esperas van en tramos de 38 s; una espera más larga deja colgado el lote de acciones.
   - El cupo dio de sobra: 190 fotos de Nano Banana 2.1 en unas 2 horas, sin un solo rechazo.
+- En calzado, `mkjobs.py` decide si un producto va en foto de producto o puesto en una modelo según la descripción.
+  - Si no dice «shoes», «boots», «sneakers» o «loafers», sale puesto en la modelo y el zapato apenas se ve. Pasó con los salones, bailarinas, cuñas y chanclas: 8 fotos (Burgos p5, Mapi p2–p6 y l2, Yaiza p5).
+  - Se rehicieron escribiendo «pump shoes», «ballet flat shoes», «sandal shoes»…
+- **Si se cae el puente con el Mac** (el 13/11/2026 estuvo caído más de una hora, con errores 502), los archivos pasan al Mac por Chrome:
+  - `file_upload` de un archivo de `/mnt/user-data/uploads/…` a un `input` propio de la página;
+  - después, descarga con `a.download` en una pestaña nueva (Chrome solo deja una descarga por pestaña);
+  - como mucho unos 10 MB por llamada, contando todo el lote de acciones.
+  - Así quedaron en Descargas:
+    - `l36-paq.tar.part-00…03`: las 19 propuestas y el admin;
+    - `l36-fotos-rehechas.tar`: las 8 fotos rehechas, hechas en el navegador con el mismo tamaño que `gen33.py` (821×1100, JPEG 0,84);
+    - `instalar-lote36.sh`: copia todo a `web117-404growth` y el admin a `404growth-subir`, con copia de seguridad en `anterior/`. Solo cambia el admin si es el esperado.
 
 ## Propuesta en PDF de una carilla: Intenso Fragancias (11/11/2026)
 
