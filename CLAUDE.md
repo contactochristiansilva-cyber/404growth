@@ -377,6 +377,28 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Los que ya estaban aceptados antes de la v71 (`quotes_bill_v71`) solo reciben el pago único, sin cuota (no se sabe desde qué mes): Open Fit entra pendiente (2.050 €); Intenso (1.440 €) y Kiss of Life (1.140 €) se unen a sus cobros ya cobrados. Sus 490 €/mes no se crean solos.
 - Fuentes en `404growth-subir/fuentes-v71/` (`patch_v71.py`, `qbill_server.js`) y prueba `t_v71.mjs` (22 comprobaciones con node:sqlite). Copia del worker anterior en `~/Downloads/404growth-subir/anterior/worker-v70-13nov-antes-presupuestos.js`.
 
+## Entregables: fecha de entrega de cada tienda con cuenta atrás (admin v72, 14/11/2026)
+
+- Chris: «en entregables solamente fechas de entrega de tienda, por cliente, donde yo defino la fecha manualmente y se active una cuenta atrás; solo para mí, no para el cliente».
+- **Entregables** (`/admin#entregables`, vista `vEnt`) es ahora solo eso. Lo que había antes (contratos, enlaces, contraseñas y lo común a todos) pasa a **Accesos** (`/admin#accesos`, la misma `vKit`). En la ficha de cada cliente, su pestaña y el botón de la lista de Clientes se llaman también «Accesos».
+- Cada cliente lleva:
+  - el día de entrega y una hora opcional, siempre en hora de España (sin hora, cuenta hasta las 23:59);
+  - una nota corta;
+  - la cuenta atrás en días, horas, minutos y segundos. Se pone en ámbar cuando faltan menos de 2 días y en rojo cuando ya ha vencido («Vencida hace…»).
+- Si el cliente tiene día de arranque, sale el botón «Día 15 del arranque».
+- Botones de cada cliente:
+  - «Entregada» lo pasa al grupo plegado «Entregadas»; «Volver a la cuenta atrás» lo deshace;
+  - «Cambiar fecha»;
+  - «Quitar fecha», que pide confirmación con un segundo clic.
+- Orden de la lista: primero la cuenta atrás (la más cercana, y las vencidas delante), luego los clientes sin fecha y, al final, las entregadas. Los archivados sin fecha no salen.
+- Arriba van cuatro cifras: con fecha, en los próximos 7 días, vencidas y entregadas.
+- Datos en `docs` (`coll = 'deliv'`, `id` = el del cliente; `at` «AAAA-MM-DDTHH:MM», `note` y `done`). API `delivApi`: `GET deliv` y `POST deliv/<cliente>` con `{at, note, done}`; si se quedan vacíos `at` y la nota, el registro se borra. Nada del portal lee esa colección.
+- En la barra lateral y en el menú de secciones: «Entregables» (icono de reloj) y «Accesos».
+- Fuentes en `404growth-subir/fuentes-v72/`: `patch_v72.py`, `dv_server.js` y `dv_client.js`.
+  - Prueba de la API: `t_v72.mjs`, 16 comprobaciones.
+  - Prueba de la vista: `ui72.cjs` con `srv72.mjs`, que sirve la vista sola con la API de verdad. 13 comprobaciones a 1366 y 390 px.
+- Copia del worker anterior en `~/Downloads/404growth-subir/anterior/worker-v71-14nov-antes-entregables.js`.
+
 ## Contabilidad (admin v67, 9/11/2026)
 
 - En el admin, Dinero › «Contabilidad» (`/admin#contabilidad`), justo debajo de Facturación. Guarda todas las facturas de ingresos y de gastos y calcula lo que entra, lo que sale y lo que queda. Tres pestañas:
