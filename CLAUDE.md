@@ -390,14 +390,20 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - «Entregada» lo pasa al grupo plegado «Entregadas»; «Volver a la cuenta atrás» lo deshace;
   - «Cambiar fecha»;
   - «Quitar fecha», que pide confirmación con un segundo clic.
-- Orden de la lista: primero la cuenta atrás (la más cercana, y las vencidas delante), luego los clientes sin fecha y, al final, las entregadas. Los archivados sin fecha no salen.
+- Orden de la lista: primero la cuenta atrás (la más cercana, y las vencidas delante), luego los clientes sin fecha y, al final, las entregadas.
 - Arriba van cuatro cifras: con fecha, en los próximos 7 días, vencidas y entregadas.
-- Datos en `docs` (`coll = 'deliv'`, `id` = el del cliente; `at` «AAAA-MM-DDTHH:MM», `note` y `done`). API `delivApi`: `GET deliv` y `POST deliv/<cliente>` con `{at, note, done}`; si se quedan vacíos `at` y la nota, el registro se borra. Nada del portal lee esa colección.
+- **Solo salen los clientes que han pagado (v73, 14/11/2026).** Chris: «ahí debe entrar cada cliente que yo notifique en admin que ha pagado». Un cliente entra solo cuando en Facturación se marca como cobrado un pago único o la primera mitad (`kind` `one` o `split`) con fecha de cobro desde `DELIV_FROM` (1/11/2026). Las cuotas mensuales no cuentan, y el cobro de Miguel Ángel (26/10) se queda fuera.
+  - Al abrir la lista, `delivSweep` lo cruza con `pay`. El cobro se une a su ficha por `client_id` o por el nombre; si no tiene ficha (Intenso Fragancias), la fila va con id `n_<nombre>` y, cuando tenga ficha, su fecha y su nota pasan a ella.
+  - Si se deshace el cobro, la fila deja de salir y, si no tenía fecha ni nota, se borra. Una fecha puesta antes de cobrar se guarda sin verse hasta el cobro.
+  - Cada fila dice «Pagado el …». Sin día de arranque, el botón es «15 días desde el pago». «Quitar de Entregables» (pide un segundo clic) la manda al grupo plegado «Quitados de la lista», con «Volver a la lista»; lo quitado a mano no vuelve solo.
+  - El 14/11/2026 quedaron Kiss of Life (con la fecha que Chris ya había puesto, 20/11 a las 20:00) e Intenso Fragancias. Open Fit entra solo cuando se marque cobrado su pago.
+- Datos en `docs` (`coll = 'deliv'`, `id` = el del cliente o `n_<nombre>`; `name`, `cid`, `pay`, `paidOn`, `at` «AAAA-MM-DDTHH:MM», `note`, `done` y `hidden`). API `delivApi`: `GET deliv` (devuelve `items`) y `POST deliv/<id>` con `{at, note, done, hide}`, solo para filas cobradas. Nada del portal lee esa colección.
 - En la barra lateral y en el menú de secciones: «Entregables» (icono de reloj) y «Accesos».
 - Fuentes en `404growth-subir/fuentes-v72/`: `patch_v72.py`, `dv_server.js` y `dv_client.js`.
   - Prueba de la API: `t_v72.mjs`, 16 comprobaciones.
   - Prueba de la vista: `ui72.cjs` con `srv72.mjs`, que sirve la vista sola con la API de verdad. 13 comprobaciones a 1366 y 390 px.
 - Copia del worker anterior en `~/Downloads/404growth-subir/anterior/worker-v71-14nov-antes-entregables.js`.
+- v73: fuentes en `404growth-subir/fuentes-v73/` (`patch_v73.py <worker v72> [salida]`, `dv_server.js`, `dv_client.js`). Pruebas: `t_v73.mjs`, con 30 comprobaciones, y `ui73.cjs` con `srv73.mjs`, con 20 a 1366 y 390 px. Copia de la v72 en `anterior/worker-v72-14nov-antes-pagados.js`.
 
 ## Contabilidad (admin v67, 9/11/2026)
 
