@@ -3258,7 +3258,12 @@ async function watchVisits(env) {
 /* ---------- v29: notices from Partner 404 (app.404growth.com). The platform writes them in p_events, in this same database; the ones for
    Chris (kind c_*) become a push to his phone. Errors are grouped: at most one an hour. ---------- */
 const P404_TITLE = { c_pago: "404 Content · nuevo cliente", c_checkout: "404 Content · pago abierto", c_web: "404 Content · web por revisar", c_reset: "404 Content · contraseña", c_error: "404 Content · error", c_conn: "404 Content · conexión", c_alta: "404 Content · ha entrado", c_sub: "404 Content · suscripción", c_act: "404 Content · actividad" };   // v30
+// v74 (14/11/2026): Chris: «elimina las notificaciones de 404 content de mi app de admin de 404 growth». Ya no llega ninguna al móvil
+// desde este admin: los avisos se marcan como vistos sin enviarlos (así no se acumulan, y si un día se vuelve a poner true no sale una
+// avalancha de avisos viejos). El admin de 404 Content tiene sus propios avisos (Plataforma) con su propio contador: esto no los toca.
+const P404_PUSH = false;
 async function partnerNotices(env) {
+  if (!P404_PUSH) { try { await env.DB.prepare("UPDATE p_events SET sent = 1 WHERE sent = 0 AND substr(kind, 1, 2) = 'c_'").run(); } catch (e) { /* no table yet */ } return 0; }
   let rows;
   try { rows = (await env.DB.prepare("SELECT id, kind, text, tenant_id FROM p_events WHERE sent = 0 AND substr(kind, 1, 2) = 'c_' ORDER BY id LIMIT 20").all()).results || []; }
   catch (e) { return 0; }   // the platform has not run yet: no table

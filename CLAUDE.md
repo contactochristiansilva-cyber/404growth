@@ -405,6 +405,14 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Copia del worker anterior en `~/Downloads/404growth-subir/anterior/worker-v71-14nov-antes-entregables.js`.
 - v73: fuentes en `404growth-subir/fuentes-v73/` (`patch_v73.py <worker v72> [salida]`, `dv_server.js`, `dv_client.js`). Pruebas: `t_v73.mjs`, con 30 comprobaciones, y `ui73.cjs` con `srv73.mjs`, con 20 a 1366 y 390 px. Copia de la v72 en `anterior/worker-v72-14nov-antes-pagados.js`.
 
+## Sin avisos de 404 Content en el admin de 404 Growth (admin v74, 14/11/2026)
+
+- Chris: «elimina las notificaciones de 404 content de mi app de admin de 404 growth de mi móvil».
+- Antes, el cron del admin (`partnerNotices`, desde la v29) mandaba al móvil cada evento `c_*` de `p_events` con el título «404 Content · …»: nuevo cliente, pago abierto, error, actividad…
+- Ahora `P404_PUSH = false`: el admin los marca como enviados (`sent = 1`) y no manda nada. Así no se acumulan y, si se vuelve a poner `true`, no llega una avalancha de avisos viejos.
+- Los avisos propios del admin de 404 Content (404-content.com/admin › Plataforma, `adminPush` en el worker de Partner, con su contador `admin_push_last`) no cambian.
+- Prueba: `t_v74.mjs` en el scratchpad de la sesión (4 comprobaciones). Copia de la v73 en `anterior/worker-v73-14nov-antes-sin-avisos-404content.js`.
+
 ## Contabilidad (admin v67, 9/11/2026)
 
 - En el admin, Dinero › «Contabilidad» (`/admin#contabilidad`), justo debajo de Facturación. Guarda todas las facturas de ingresos y de gastos y calcula lo que entra, lo que sale y lo que queda. Tres pestañas:
