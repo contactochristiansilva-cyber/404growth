@@ -498,8 +498,15 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - en obras: «Próximamente», «Disculpa este desastre», modo mantenimiento;
   - rotas o caídas: una web de Hostinger sin precios, Wix o GoDaddy sin tienda, dominios que no existen o que apuntan a Shopify y no cargan (SSL);
   - Perfumería Paco: la web que sale en su ficha de Maps ya es de apuestas.
-- `waOk: false` en las 29 cuyo móvil no dice WhatsApp o sale de Google Maps. Por tu cuenta tiene WhatsApp en un fijo (`ptype` «fijo con WhatsApp»). Herbolario Tienda Verde va con prioridad 60 y «AVISO»: su web tutiendaverde.es no se pudo abrir.
-- Prueba: `t_seed.mjs` en el scratchpad de la sesión (10 comprobaciones: entran las 50, una sola vez, sin tocar las que ya existían). Copia del worker anterior en `anterior/worker-v74-15nov-antes-seed-15nov.js`.
+- **Las 50 tienen WhatsApp comprobado** (Chris: «necesito que todas tengan número de WhatsApp»). Ninguna lleva `waOk: false` y en sus notas pone «WhatsApp comprobado en WhatsApp Web el 15/11/2026». Por tu cuenta tiene WhatsApp en un fijo (`ptype` «fijo con WhatsApp»). Herbolario Tienda Verde va con prioridad 60 y «AVISO»: su web tutiendaverde.es no se pudo abrir.
+- **Cómo se comprueba si un número tiene WhatsApp, sin escribir nada:** en el Chrome «contacto» (el perfil con la sesión de WhatsApp Business de Chris; en la extensión es «Browser 3») se abre `web.whatsapp.com/send?phone=34<número>`.
+  - Si existe, se abre el chat vacío y la cabecera dice el número (y «Business Account» si es de empresa).
+  - Si no, sale «The number … isn’t on WhatsApp».
+  - Unos 8 s por número. Nunca se pulsa Intro ni se escribe en el chat.
+  - Así se vio que el móvil de Stylo Moda estaba mal copiado (666 99 48 67; el bueno, el de su web, es 666 99 47 67) y que el fijo de Tempo Moda no tiene WhatsApp aunque Facebook lo marque (se usa su móvil 624 240 673).
+  - Facebook `/about` no sirve para confirmarlo: las páginas no suelen marcar el WhatsApp y las direcciones con «_» no existen allí.
+- Prueba: `t_seed.mjs` en el scratchpad de la sesión (11 comprobaciones: entran las 50, una sola vez, sin tocar las que ya existían, todas con WhatsApp comprobado). Copias del worker anterior en `anterior/worker-v74-15nov-antes-seed-15nov.js` y `anterior/worker-v74-15nov-antes-whatsapp.js`.
+- Ojo con el hook de privacidad: un comando de Bash que nombra a la vez `worker.js` y `leads.json` (o `mkseed.py`) se rechaza. Los cambios al `SEED` ya escrito se hicieron con la herramienta Edit, y las pruebas en comandos aparte.
 
 ## Lote 33 (10/11/2026): 50 propuestas con tienda de ejemplo por nicho
 

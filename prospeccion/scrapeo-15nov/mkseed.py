@@ -23,7 +23,7 @@ for x in leads:
     wa = ('+34' + x['wa']) if x.get('wa') else ''
     notes = [f"IG @{x['ig']}: {fmt(x['f'])} seguidores; última publicación el {x['last']} (15/11/2026)",
              'Tienda online: ' + x['shop'],
-             'Contacto: ' + x['contact']]
+             'Contacto: ' + x['contact'] + ' · WhatsApp comprobado en WhatsApp Web el 15/11/2026']
     notes.append('Dueño: ' + (x.get('owner') or 'no lo publican'))
     notes.append(x['what'])
     for a in x.get('aviso', []): notes.append('AVISO: ' + a)
@@ -32,7 +32,6 @@ for x in leads:
          "store": x.get('store', 'none'), "notes": "\n".join(notes), "instagram": f"https://www.instagram.com/{x['ig']}/", "igFollowers": x['f'],
          "centers": x.get('centers', 1), "stage": "new", "flags": [],
          "source": "Scrapeo Instagram +3k seguidores con actividad reciente (15 nov)", "priority": x.get('priority', 80), "region": x['region']}
-    if x.get('waOk') is False: d['waOk'] = False
     out.append([lid, d])
 
 w = open(W, encoding='utf-8').read()

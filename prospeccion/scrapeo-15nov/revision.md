@@ -115,3 +115,13 @@ carmens__boutique, rhinoforcesevilla, madrid_orolaguaira, vainilla_moda, larimar
 Fuera: modasmiriam, alliwant, arenaymarmoda, marialaurashop (venden online), Muscle Cult (franquicia), novecento, malagafactory (centro comercial).
 
 Fuera: influencers, Valencia de Venezuela, mayoristas (celianjoyas, cleets, blingbling, princesadearabia), clínicas y gimnasios, tiendas que ya venden online (flamenca.com, nrperfumesarabes, bazarmundoarabe, twtwins, modasluisa, joyeriachico, acus), moda infantil (marli).
+
+## WhatsApp comprobado (15/11, por la tarde)
+
+Chris pidió que las 50 tengan WhatsApp. Se abrió cada número en WhatsApp Web (Chrome «contacto», `web.whatsapp.com/send?phone=34…`, sin escribir nada):
+
+- Las 50 tienen WhatsApp. Las 29 que llevaban `waOk: false` ya no lo llevan.
+- Stylo Moda: el número estaba mal copiado (666 99 48 67, que no tiene WhatsApp). El de su web, 666 99 47 67, sí lo tiene: corregido.
+- Tempo Moda: Facebook marca el fijo 950 24 62 23 como WhatsApp, pero no lo tiene. Se queda su móvil 624 240 673, que sí.
+- Reservas con WhatsApp en la bio por si hiciera falta sustituir alguna (no hizo falta): maytecuellar.tienda (Badajoz, 662 15 01 84, sin web en Google Maps), londonshoeselche (Elche, 691 33 09 58), carmenbascon.moda (Puente Genil, 645 32 01 78; su web carmenbascon.es no carga), amadopeletero, vestidos_lucena_jose_postigo, joyeriasarang.
+- Ya estaban en el CRM (no valen como reserva): grqjerez, maria_antonia_burgos, dafne_pamplona, boutiquen7, marujalimon.shop, coccumoda, glosslogrono, maribeltorero10.
