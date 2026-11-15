@@ -475,6 +475,32 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Para leer mucho texto de la pestaña: volcarlo en un `<article>` a pantalla completa y leerlo con `get_page_text` (el resultado de `javascript_tool` se corta a unos 1.000 caracteres).
   - Las webs se comprueban en otra pestaña (Shopify `/products.json`, Woo `x-wp-total`); WebFetch pide permiso por URL y desde el contenedor y el Mac no se llega a esas webs.
 
+## Scrapeo de +3k seguidores con publicaciones recientes (15/11/2026, `seed_20261115`)
+
+- Lo que pidió Chris: 50 tiendas con +3.000 seguidores en Instagram, sin tienda online o con una muy floja, en España, con publicaciones recientes y por nichos (moda, perfumes, suplementos y joyería).
+- Salieron 31 de moda, 10 de joyería, 6 de suplementos (2 son herbolarios) y 3 de perfumería (`cosmetica`). Todas publicaron desde el 16/10/2026 y ninguna estaba en el CRM: se cruzaron Instagram, móviles y nombres con `crm/state`.
+- Archivos en `prospeccion/scrapeo-15nov/`:
+  - `leads.json`: las 50;
+  - `mkseed.py <worker.js> leads.json`: escribe el `SEED`, solo con estas (el lote anterior ya estaba subido);
+  - `revision.md`: lo revisado, lo descartado y por qué.
+- **Suplementos y perfumes casi siempre venden ya online.** De 430 búsquedas y unos 7.000 perfiles salieron muy pocas.
+  - Funcionan «boutique», «bisuteria», «joyeria» y «moda» + ciudad.
+  - Dan muy poco «perfumes equivalencia», «tienda suplementos», «proteinas», «fragancias», «suplementacion» y los pueblos pequeños (salen tiendas de Brasil, México y Argentina).
+  - Las búsquedas de 3 palabras ya funcionan: «perfumes arabes sevilla» da 23.
+- Cómo se hizo, todo desde la pestaña de Instagram y sin abrir perfiles:
+  - las consultas `PolarisKeywordSearchExplorePageRelayQuery`, `PolarisProfilePageContentQuery` y `PolarisProfilePostsQuery`, capturadas con `history.pushState` + `popstate`;
+  - dos bucles a la vez, con 6 perfiles en paralelo: unas 13 búsquedas por minuto, sin un solo error 429;
+  - la fecha de la última publicación y los móviles que hay en los textos salen de `PolarisProfilePostsQuery`;
+  - los números escritos con letras «de adorno» (𝟼𝟽𝟹…) se leen pasando el texto por `normalize('NFKD')`.
+- **Google Maps sin abrir fichas:** desde una pestaña de google.com/maps, `fetch('/search?tbm=map&hl=es&gl=es&q=<nombre y calle>')` devuelve el teléfono y la web de la ficha. Así se sacaron los móviles de las tiendas que no los ponen en la bio y se vio si tienen web aunque no la enlacen. Mohs (Almería) y La Tintorería (Almería) quedaron fuera porque sí venden online.
+- Webs «pésimas» que sí entran, cada una con su prueba en las notas:
+  - pocas fichas: Shopify con 16 productos o con 0, Woo con 9;
+  - en obras: «Próximamente», «Disculpa este desastre», modo mantenimiento;
+  - rotas o caídas: una web de Hostinger sin precios, Wix o GoDaddy sin tienda, dominios que no existen o que apuntan a Shopify y no cargan (SSL);
+  - Perfumería Paco: la web que sale en su ficha de Maps ya es de apuestas.
+- `waOk: false` en las 27 cuyo móvil no dice WhatsApp o sale de Google Maps. Por tu cuenta tiene WhatsApp en un fijo (`ptype` «fijo con WhatsApp»). Herbolario Tienda Verde va con prioridad 60 y «AVISO»: su web tutiendaverde.es no se pudo abrir.
+- Prueba: `t_seed.mjs` en el scratchpad de la sesión (10 comprobaciones: entran las 50, una sola vez, sin tocar las que ya existían). Copia del worker anterior en `anterior/worker-v74-15nov-antes-seed-15nov.js`.
+
 ## Lote 33 (10/11/2026): 50 propuestas con tienda de ejemplo por nicho
 
 - Generador en `prospeccion/l33/` (ver `LEEME.md`): `specs.py` + `sel.json` → `mkjobs.py` (textos para Flow) → `gen33.py <slug>` (`out/p-<slug>.html`, la propuesta común, y `out/p-<slug>--tienda.html`, la tienda de ejemplo del nicho, metida en la propuesta con iframes). Fotos en `ai/<slug>/{h,b,p1..p6,l1,l2}.jpg` (o `L33_AI`), todas de Google Flow (cuenta personal) a partir de sus productos reales de Instagram.
