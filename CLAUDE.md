@@ -498,7 +498,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - en obras: «Próximamente», «Disculpa este desastre», modo mantenimiento;
   - rotas o caídas: una web de Hostinger sin precios, Wix o GoDaddy sin tienda, dominios que no existen o que apuntan a Shopify y no cargan (SSL);
   - Perfumería Paco: la web que sale en su ficha de Maps ya es de apuestas.
-- `waOk: false` en las 27 cuyo móvil no dice WhatsApp o sale de Google Maps. Por tu cuenta tiene WhatsApp en un fijo (`ptype` «fijo con WhatsApp»). Herbolario Tienda Verde va con prioridad 60 y «AVISO»: su web tutiendaverde.es no se pudo abrir.
+- `waOk: false` en las 29 cuyo móvil no dice WhatsApp o sale de Google Maps. Por tu cuenta tiene WhatsApp en un fijo (`ptype` «fijo con WhatsApp»). Herbolario Tienda Verde va con prioridad 60 y «AVISO»: su web tutiendaverde.es no se pudo abrir.
 - Prueba: `t_seed.mjs` en el scratchpad de la sesión (10 comprobaciones: entran las 50, una sola vez, sin tocar las que ya existían). Copia del worker anterior en `anterior/worker-v74-15nov-antes-seed-15nov.js`.
 
 ## Lote 33 (10/11/2026): 50 propuestas con tienda de ejemplo por nicho
