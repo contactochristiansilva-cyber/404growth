@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Javier León · Eventos y Ceremonia",
+ "ig": "jleon_eyc",
+ "f": 5674,
+ "city": "Huelva",
+ "cityfull": "Huelva",
+ "address": "C/ Niebla 2",
+ "logo": {
+  "text": "Javier León · Eventos y Ceremonia"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p2"
+  ],
+  [
+   "Flamenca",
+   "p3"
+  ],
+  [
+   "Complementos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Falda bordada con flecos"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido de bambula"
+  },
+  {
+   "id": "p3",
+   "name": "Mantón bordado"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto de flamenca"
+  },
+  {
+   "id": "p5",
+   "name": "Pines de solapa"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido negro bordado"
+  }
+ ],
+ "theme": {}
+}

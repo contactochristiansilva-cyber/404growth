@@ -1,0 +1,58 @@
+{
+ "niche": "joya",
+ "name": "Angels Joyería",
+ "ig": "angels_joyeria1",
+ "f": 10399,
+ "city": "Madrid",
+ "cityfull": "Madrid",
+ "address": "C/ Alcalá 414, planta 1, local 39",
+ "logo": {
+  "text": "Angels Joyería"
+ },
+ "cats": [
+  [
+   "Cadenas",
+   "p1"
+  ],
+  [
+   "Colgantes",
+   "p2"
+  ],
+  [
+   "Anillos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Cadena cordón de oro 18K"
+  },
+  {
+   "id": "p2",
+   "name": "Colgante de Cristo"
+  },
+  {
+   "id": "p3",
+   "name": "Cadena con cruz"
+  },
+  {
+   "id": "p4",
+   "name": "Pulsera cubana de plata"
+  },
+  {
+   "id": "p5",
+   "name": "Anillos de oro"
+  },
+  {
+   "id": "p6",
+   "name": "Medallas de oro"
+  }
+ ],
+ "theme": {
+  "acc": "#B8892B"
+ },
+ "domain": "angelsjoyeria.es",
+ "web_note": "angelsjoyeria.es enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Madrid solo puede escribiros.",
+ "eyebrow": "Oro 18K y 14K en Madrid"
+}

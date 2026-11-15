@@ -1,0 +1,56 @@
+{
+ "niche": "cosmetica",
+ "name": "Perfumería Paco",
+ "ig": "perfumeria.paco",
+ "f": 4189,
+ "city": "Trebujena",
+ "cityfull": "Trebujena (Cádiz)",
+ "address": "C/ Velarde 1",
+ "logo": {
+  "text": "Perfumería Paco"
+ },
+ "cats": [
+  [
+   "Perfumes",
+   "p1"
+  ],
+  [
+   "Maquillaje",
+   "p2"
+  ],
+  [
+   "Hogar",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Perfume Yara Elixir"
+  },
+  {
+   "id": "p2",
+   "name": "Maletín de maquillaje"
+  },
+  {
+   "id": "p3",
+   "name": "Velas aromáticas"
+  },
+  {
+   "id": "p4",
+   "name": "Sombra en crema"
+  },
+  {
+   "id": "p5",
+   "name": "Cuidado capilar"
+  },
+  {
+   "id": "p6",
+   "name": "Diademas"
+  }
+ ],
+ "theme": {
+  "acc": "#C2185B"
+ },
+ "eyebrow": "Perfumería en Trebujena"
+}

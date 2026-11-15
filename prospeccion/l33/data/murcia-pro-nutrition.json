@@ -1,0 +1,58 @@
+{
+ "niche": "suplementos",
+ "name": "Murcia Pro Nutrition",
+ "ig": "murciapronutrition",
+ "f": 5134,
+ "city": "Ceutí",
+ "cityfull": "Ceutí (Murcia)",
+ "address": "C/ Maestro Rodrigo 1",
+ "logo": {
+  "text": "Murcia Pro Nutrition"
+ },
+ "cats": [
+  [
+   "Proteínas",
+   "p1"
+  ],
+  [
+   "Creatina",
+   "p2"
+  ],
+  [
+   "Snacks",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Proteína whey gourmet"
+  },
+  {
+   "id": "p2",
+   "name": "Creatina monohidrato"
+  },
+  {
+   "id": "p3",
+   "name": "Quemador nocturno"
+  },
+  {
+   "id": "p4",
+   "name": "Brownie proteico"
+  },
+  {
+   "id": "p5",
+   "name": "Helado proteico"
+  },
+  {
+   "id": "p6",
+   "name": "Isolate sabor capuchino"
+  }
+ ],
+ "theme": {
+  "acc": "#C0392B"
+ },
+ "domain": "murciapronutrition.es",
+ "web_note": "murciapronutrition.es enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Ceutí solo puede escribiros.",
+ "eyebrow": "Dietética y nutrición deportiva"
+}

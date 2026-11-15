@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Bambula",
+ "ig": "bambulatiendas",
+ "f": 7265,
+ "city": "Jaén",
+ "cityfull": "Jaén",
+ "address": "C/ La Rioja 2 (Bulevar)",
+ "logo": {
+  "text": "Bambula"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Faldas",
+   "p2"
+  ],
+  [
+   "Blusas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gabardina corta"
+  },
+  {
+   "id": "p2",
+   "name": "Chaleco y falda de cuadros"
+  },
+  {
+   "id": "p3",
+   "name": "Camisa vaquera"
+  },
+  {
+   "id": "p4",
+   "name": "Blusa fruncida"
+  },
+  {
+   "id": "p5",
+   "name": "Pantalón de rayas"
+  },
+  {
+   "id": "p6",
+   "name": "Chaqueta con capucha"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,56 @@
+{
+ "niche": "suplementos",
+ "name": "Alloza Sport Nutrition",
+ "ig": "alloza_sport_nutrition_huelva",
+ "f": 4108,
+ "city": "Huelva",
+ "cityfull": "Huelva",
+ "address": "C/ Puebla de Sanabria 3",
+ "logo": {
+  "text": "Alloza Sport Nutrition"
+ },
+ "cats": [
+  [
+   "Creatina",
+   "p1"
+  ],
+  [
+   "Proteínas",
+   "p2"
+  ],
+  [
+   "Bienestar",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Creatina monohidrato"
+  },
+  {
+   "id": "p2",
+   "name": "Proteína whey"
+  },
+  {
+   "id": "p3",
+   "name": "BCAA y glutamina"
+  },
+  {
+   "id": "p4",
+   "name": "Harina de arroz"
+  },
+  {
+   "id": "p5",
+   "name": "Descanso"
+  },
+  {
+   "id": "p6",
+   "name": "Bloqueador de carbohidratos"
+  }
+ ],
+ "theme": {
+  "acc": "#C8102E"
+ },
+ "eyebrow": "Nutrición deportiva en Huelva"
+}

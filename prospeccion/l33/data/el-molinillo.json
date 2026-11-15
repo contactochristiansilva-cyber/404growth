@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "El Molinillo",
+ "ig": "el_molinillo_modas",
+ "f": 5689,
+ "city": "Brenes",
+ "cityfull": "Brenes (Sevilla)",
+ "address": "Travesía San Sebastián, local 3",
+ "logo": {
+  "text": "El Molinillo"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Conjuntos",
+   "p2"
+  ],
+  [
+   "Jerséis",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta de antelina"
+  },
+  {
+   "id": "p2",
+   "name": "Conjunto de punto"
+  },
+  {
+   "id": "p3",
+   "name": "Bomber"
+  },
+  {
+   "id": "p4",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p5",
+   "name": "Conjunto de punto beige"
+  },
+  {
+   "id": "p6",
+   "name": "Chaqueta de polipiel"
+  }
+ ],
+ "theme": {},
+ "domain": "elmolinilloshop.es",
+ "web_note": "elmolinilloshop.es enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Brenes solo puede escribiros."
+}

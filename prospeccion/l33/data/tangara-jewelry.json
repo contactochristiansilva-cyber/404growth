@@ -1,0 +1,58 @@
+{
+ "niche": "joya",
+ "name": "Tángara",
+ "ig": "tangarajewelry",
+ "f": 14644,
+ "city": "Alicante",
+ "cityfull": "Alicante",
+ "address": "CC Gran Vía (C/ José García Sellés 2), planta 0 y planta central",
+ "logo": {
+  "text": "Tángara"
+ },
+ "cats": [
+  [
+   "Collares",
+   "p1"
+  ],
+  [
+   "Pendientes",
+   "p3"
+  ],
+  [
+   "Pulseras",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Collar cruz"
+  },
+  {
+   "id": "p2",
+   "name": "Cruz de colores"
+  },
+  {
+   "id": "p3",
+   "name": "Pendientes de estrellas"
+  },
+  {
+   "id": "p4",
+   "name": "Collar de charms"
+  },
+  {
+   "id": "p5",
+   "name": "Pulseras de acero"
+  },
+  {
+   "id": "p6",
+   "name": "Anillos de acero"
+  }
+ ],
+ "theme": {
+  "acc": "#C27A8A"
+ },
+ "domain": "tangarajewelry.com",
+ "web_note": "tangarajewelry.com no carga: hoy quien os encuentra fuera de Alicante solo puede escribiros.",
+ "eyebrow": "Joyas de acero en Alicante"
+}

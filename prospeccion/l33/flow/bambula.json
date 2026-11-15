@@ -1,0 +1,50 @@
+{
+ "slug": "bambula",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "bambula-17.jpg",
+    "bambula-09.jpg",
+    "bambula-13.jpg",
+    "bambula-21.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia bambula-17.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a camel short double-breasted trench jacket with dark jeans from the reference, walking at the Plaza de Santa María in Jaén, Spain, with the cathedral behind, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia bambula-17.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a camel short double-breasted trench jacket with dark jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia bambula-09.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a cream tailored waistcoat with a black and white tartan maxi skirt from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia bambula-13.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a denim blue shirt with a peplum and brown faux-leather trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia bambula-21.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown smocked floral blouse with long sleeves from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "bambula-06.jpg",
+    "bambula-03.jpg",
+    "bambula-12.jpg",
+    "bambula-36.jpg",
+    "bambula-16.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia bambula-06.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing brown and mustard striped balloon trousers with a brown fitted T-shirt from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia bambula-03.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown hooded jacket with grey barrel-leg trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia bambula-12.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a burgundy floral midi skirt and blouse set from the reference, candid and relaxed in a sunny street of Jaén, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia bambula-36.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing an olive green smocked maxi dress with a statement necklace from the reference, candid and relaxed in a sunny street of Jaén, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia bambula-16.jpg, aplica la REGLA B): Wide interior photo: the inside of a fashion boutique with white walls, a wooden shelf with handbags and rails of jumpers and trousers in burgundy, blue and cream, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a camel shor",
+  "p1": "roduct photo for a fashion boutique: a model wearing a camel",
+  "p2": "roduct photo for a fashion boutique: a model wearing a cream",
+  "p3": "ce product photo for a fashion boutique: a model wearing a d",
+  "p4": "ct photo for a fashion boutique: a model wearing a brown smo",
+  "p5": "ce product photo for a fashion boutique: a model wearing bro",
+  "p6": "ct photo for a fashion boutique: a model wearing a brown hoo",
+  "l1": "Lifestyle fashion photo: a model wearing a burgundy floral m",
+  "l2": "Lifestyle fashion photo: a model wearing an olive green smoc",
+  "b": "Wide interior photo: the inside of a fashion boutique with w"
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Alba Lorenzo Boutique",
+ "ig": "alegriadevestir23",
+ "f": 9735,
+ "city": "Cádiz",
+ "cityfull": "Cádiz",
+ "address": "C/ Sagasta 8",
+ "logo": {
+  "text": "Alba Lorenzo Boutique"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Blusas",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Parka acolchada"
+  },
+  {
+   "id": "p2",
+   "name": "Conjunto de pana"
+  },
+  {
+   "id": "p3",
+   "name": "Camisa blanca con volantes"
+  },
+  {
+   "id": "p4",
+   "name": "Blusa de leopardo"
+  },
+  {
+   "id": "p5",
+   "name": "Bolso calado"
+  },
+  {
+   "id": "p6",
+   "name": "Blusa de cuadros con lazada"
+  }
+ ],
+ "theme": {}
+}

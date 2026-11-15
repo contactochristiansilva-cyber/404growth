@@ -1,0 +1,51 @@
+{
+ "slug": "tangara-jewelry",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "tangara-jewelry-30.jpg",
+    "tangara-jewelry-06.jpg",
+    "tangara-jewelry-07.jpg",
+    "tangara-jewelry-22.jpg",
+    "tangara-jewelry-19.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia tangara-jewelry-30.jpg, aplica la REGLA A): Luxury campaign still life of a gold necklace with a crescent moon and small coloured clover charms, with matching earrings, in an open blush pink jewellery box, no logos from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia tangara-jewelry-06.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a gold-plated cross pendant on a fine chain, set with small crystals from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia tangara-jewelry-07.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a gold cross pendant with coloured baguette stones on a fine chain from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia tangara-jewelry-22.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a pair of long gold drop earrings with a cascade of small stars from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia tangara-jewelry-19.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of gold chain necklaces with colourful enamel charms of hearts, flowers and shells from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "tangara-jewelry-10.jpg",
+    "tangara-jewelry-14.jpg",
+    "tangara-jewelry-36.jpg",
+    "tangara-jewelry-39.jpg",
+    "tangara-jewelry-24.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia tangara-jewelry-10.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of gold-plated stainless steel chain bracelets displayed on a pink velvet roll from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia tangara-jewelry-14.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of chunky gold-plated stainless steel rings displayed in a blush pink tray from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia tangara-jewelry-36.jpg, aplica la REGLA B): Lifestyle photo: a woman's neck wearing a gold round medallion necklace with a soft yellow top, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia tangara-jewelry-39.jpg, aplica la REGLA A): Lifestyle photo: blush pink gift boxes and shopping bags with dried flowers, no logos, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia tangara-jewelry-24.jpg, aplica la REGLA C): Wide interior photo: a pastel pink jewellery kiosk in a shopping centre with glass counters full of gold jewellery, pink walls and soft lights, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of a gold necklace with a crescen",
+  "p1": "Luxury jewellery e-commerce photo of a gold-plated cross pen",
+  "p2": "Luxury jewellery e-commerce photo of a gold cross pendant wi",
+  "p3": "Luxury jewellery e-commerce photo of a pair of long gold dro",
+  "p4": "Luxury jewellery e-commerce photo of gold chain necklaces wi",
+  "p5": "Luxury jewellery e-commerce photo of gold-plated stainless s",
+  "p6": "Luxury jewellery e-commerce photo of chunky gold-plated stai",
+  "l1": "Lifestyle photo: a woman's neck wearing a gold round medalli",
+  "l2": "Lifestyle photo: blush pink gift boxes and shopping bags wit",
+  "b": "Wide interior photo: a pastel pink jewellery kiosk in a shop"
+ }
+}

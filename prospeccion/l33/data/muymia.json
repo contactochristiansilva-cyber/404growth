@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Muymia",
+ "ig": "muymia_modas",
+ "f": 11010,
+ "city": "Málaga",
+ "cityfull": "Málaga",
+ "address": "Av. Europa 58 (San Andrés)",
+ "logo": {
+  "text": "Muymia"
+ },
+ "cats": [
+  [
+   "Pantalones",
+   "p1"
+  ],
+  [
+   "Vestidos",
+   "p2"
+  ],
+  [
+   "Calzado",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Pantalón rojo de polipiel"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido de punto"
+  },
+  {
+   "id": "p3",
+   "name": "Conjunto de lana"
+  },
+  {
+   "id": "p4",
+   "name": "Bota alta"
+  },
+  {
+   "id": "p5",
+   "name": "Falda de polipiel"
+  },
+  {
+   "id": "p6",
+   "name": "Chaqueta borrego de leopardo"
+  }
+ ],
+ "theme": {}
+}

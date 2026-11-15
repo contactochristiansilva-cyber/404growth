@@ -1,0 +1,55 @@
+{
+ "niche": "joya",
+ "name": "Isabel Mediavilla",
+ "ig": "isabelmediavilla",
+ "f": 32460,
+ "city": "Sevilla",
+ "cityfull": "Sevilla",
+ "address": "C/ Francos 34 · C/ Cerrajería 6",
+ "logo": {
+  "text": "Isabel Mediavilla"
+ },
+ "cats": [
+  [
+   "Pendientes",
+   "p1"
+  ],
+  [
+   "Broches",
+   "p3"
+  ],
+  [
+   "Mantones",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Pendientes de coral"
+  },
+  {
+   "id": "p2",
+   "name": "Pendientes de perla y piedra"
+  },
+  {
+   "id": "p3",
+   "name": "Broche de hojas"
+  },
+  {
+   "id": "p4",
+   "name": "Broche de piedras"
+  },
+  {
+   "id": "p5",
+   "name": "Mantoncillo de seda bordado"
+  },
+  {
+   "id": "p6",
+   "name": "Pendientes de bolas"
+  }
+ ],
+ "theme": {
+  "acc": "#B5452B"
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "niche": "moda",
+ "name": "Mayte Cuéllar",
+ "ig": "maytecuellar.tienda",
+ "f": 17946,
+ "city": "Badajoz",
+ "cityfull": "Badajoz",
+ "address": "Calle Felipe Checa 36, Badajoz",
+ "logo": {
+  "text": "Mayte Cuéllar"
+ },
+ "cats": [
+  [
+   "Tocados",
+   "p1"
+  ],
+  [
+   "Abrigos",
+   "p2"
+  ],
+  [
+   "Complementos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Tocado artesanal"
+  },
+  {
+   "id": "p2",
+   "name": "Abrigo reversible"
+  },
+  {
+   "id": "p3",
+   "name": "Collar de plumas"
+  },
+  {
+   "id": "p4",
+   "name": "Bolso de terciopelo"
+  },
+  {
+   "id": "p5",
+   "name": "Pamela lila"
+  },
+  {
+   "id": "p6",
+   "name": "Fajín estampado"
+  }
+ ],
+ "theme": {},
+ "eyebrow": "Tocados y moda en Badajoz"
+}

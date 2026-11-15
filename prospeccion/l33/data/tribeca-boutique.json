@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Tribeca Boutique",
+ "ig": "tribeca.boutique",
+ "f": 5200,
+ "city": "Marbella",
+ "cityfull": "Marbella (Málaga)",
+ "address": "C/ Carmen 2",
+ "logo": {
+  "text": "Tribeca Boutique"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Vestidos",
+   "p5"
+  ],
+  [
+   "Complementos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta de terciopelo bordada"
+  },
+  {
+   "id": "p2",
+   "name": "Chaleco étnico con abalorios"
+  },
+  {
+   "id": "p3",
+   "name": "Chaqueta de pelo con cinturón"
+  },
+  {
+   "id": "p4",
+   "name": "Pendientes artesanales"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido con abalorios"
+  },
+  {
+   "id": "p6",
+   "name": "Chal de flecos"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "NINA",
+ "ig": "ninashop.onlinejaen",
+ "f": 4556,
+ "city": "Jaén",
+ "cityfull": "Jaén",
+ "address": "C/ San Clemente 7 · Pº de la Estación 39 · C/ Cid Campeador 1 · Av. de Andalucía 15",
+ "logo": {
+  "text": "NINA"
+ },
+ "cats": [
+  [
+   "Blusas",
+   "p1"
+  ],
+  [
+   "Calzado",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Blusa de encaje"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de polipiel"
+  },
+  {
+   "id": "p3",
+   "name": "Mocasín camel"
+  },
+  {
+   "id": "p4",
+   "name": "Bolso tipo saco"
+  },
+  {
+   "id": "p5",
+   "name": "Pantalón globo con tachas"
+  },
+  {
+   "id": "p6",
+   "name": "Botas cowboy"
+  }
+ ],
+ "theme": {}
+}

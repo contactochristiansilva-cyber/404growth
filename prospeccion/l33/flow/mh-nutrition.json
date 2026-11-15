@@ -1,0 +1,50 @@
+{
+ "slug": "mh-nutrition",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "mh-nutrition-07.jpg",
+    "mh-nutrition-11.jpg",
+    "mh-nutrition-24.jpg",
+    "mh-nutrition-29.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia mh-nutrition-07.jpg, aplica la REGLA A): Sports nutrition campaign still life of a big white tub of whey protein powder with a plain label from the reference, on a clean concrete plinth in a bright modern gym. The product stands in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Crisp daylight, energetic and premium. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia mh-nutrition-07.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of a white 2 kg tub of whey protein powder with a plain label from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 3 «p2» (formato 3:4, referencia mh-nutrition-11.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of a black tub of creatine monohydrate with a plain label next to lime slices from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 4 «p3» (formato 3:4, referencia mh-nutrition-24.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of four squeeze bottles of zero-sugar sauces in different colours with plain labels from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 5 «p4» (formato 3:4, referencia mh-nutrition-29.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of protein bars in plain wrappers, one opened to show the chocolate layers from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "mh-nutrition-26.jpg",
+    "mh-nutrition-09.jpg",
+    "mh-nutrition-21.jpg",
+    "mh-nutrition-30.jpg",
+    "mh-nutrition-03.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia mh-nutrition-26.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of three jars of beauty collagen powder in pastel colours with plain labels from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 2 «p6» (formato 3:4, referencia mh-nutrition-09.jpg, aplica la REGLA A): Sports nutrition e-commerce product photo of a white bottle of NAD+ capsules with a plain label from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 3 «l1» (formato 3:4, referencia mh-nutrition-21.jpg, aplica la REGLA A): Lifestyle photo: a bowl of crunchy chocolate protein cereal balls with milk, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia mh-nutrition-30.jpg, aplica la REGLA A): Lifestyle photo: an open display box of oat flapjack protein bars in plain wrappers, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia mh-nutrition-03.jpg, aplica la REGLA B): Wide interior photo: the inside of a sports nutrition shop with black and gold walls, shelves full of protein tubs and supplements and a bright counter, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Sports nutrition campaign still life of a big white tub of w",
+  "p1": "Sports nutrition e-commerce product photo of a white 2 kg tu",
+  "p2": "Sports nutrition e-commerce product photo of a black tub of ",
+  "p3": "Sports nutrition e-commerce product photo of four squeeze bo",
+  "p4": "Sports nutrition e-commerce product photo of protein bars in",
+  "p5": "Sports nutrition e-commerce product photo of three jars of b",
+  "p6": "Sports nutrition e-commerce product photo of a white bottle ",
+  "l1": "Lifestyle photo: a bowl of crunchy chocolate protein cereal ",
+  "l2": "Lifestyle photo: an open display box of oat flapjack protein",
+  "b": "Wide interior photo: the inside of a sports nutrition shop w"
+ }
+}

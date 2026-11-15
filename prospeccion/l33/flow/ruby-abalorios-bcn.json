@@ -1,0 +1,50 @@
+{
+ "slug": "ruby-abalorios-bcn",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "ruby-abalorios-bcn-17.jpg",
+    "ruby-abalorios-bcn-27.jpg",
+    "ruby-abalorios-bcn-23.jpg",
+    "ruby-abalorios-bcn-19.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia ruby-abalorios-bcn-17.jpg, aplica la REGLA A): Luxury campaign still life of a handmade gold chain necklace with colourful enamel charms: an eye, a heart, a star and a shell from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia ruby-abalorios-bcn-17.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a handmade gold chain necklace with colourful enamel charms from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia ruby-abalorios-bcn-27.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of spools of gold-plated chains sold by the metre hanging in a row, no logos from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia ruby-abalorios-bcn-23.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a jade green stone pendant on a fine gold snake chain from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia ruby-abalorios-bcn-19.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of spools of elastic jewellery thread in black and white in a tray from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "ruby-abalorios-bcn-29.jpg",
+    "ruby-abalorios-bcn-01.jpg",
+    "ruby-abalorios-bcn-21.jpg",
+    "ruby-abalorios-bcn-26.jpg",
+    "ruby-abalorios-bcn-16.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia ruby-abalorios-bcn-29.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a small tray of colourful glass and resin beads in candy colours from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia ruby-abalorios-bcn-01.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of gold metal bag handles and purse frames in round and bamboo shapes, no logos from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia ruby-abalorios-bcn-21.jpg, aplica la REGLA A): Lifestyle photo: a display of beaded bracelets with coloured rectangular stones, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia ruby-abalorios-bcn-26.jpg, aplica la REGLA B): Lifestyle photo: a hand holding small pastel blue and pink ceramic bird charms, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia ruby-abalorios-bcn-16.jpg, aplica la REGLA C): Wide interior photo: the inside of a huge bead and craft supplies shop with walls full of hanging bags of beads and charms, long aisles and bright light, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of a handmade gold chain necklace",
+  "p1": "Luxury jewellery e-commerce photo of a handmade gold chain n",
+  "p2": "Luxury jewellery e-commerce photo of spools of gold-plated c",
+  "p3": "Luxury jewellery e-commerce photo of a jade green stone pend",
+  "p4": "Luxury jewellery e-commerce photo of spools of elastic jewel",
+  "p5": "Luxury jewellery e-commerce photo of a small tray of colourf",
+  "p6": "Luxury jewellery e-commerce photo of gold metal bag handles ",
+  "l1": "Lifestyle photo: a display of beaded bracelets with coloured",
+  "l2": "Lifestyle photo: a hand holding small pastel blue and pink c",
+  "b": "Wide interior photo: the inside of a huge bead and craft sup"
+ }
+}

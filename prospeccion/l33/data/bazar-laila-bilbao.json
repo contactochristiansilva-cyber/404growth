@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Bazar Laila Bilbao",
+ "ig": "bazar_laila_bilbao",
+ "f": 144885,
+ "city": "Bilbao",
+ "cityfull": "Bilbao (Bizkaia)",
+ "address": "C/ Bailén 15",
+ "logo": {
+  "text": "Bazar Laila Bilbao"
+ },
+ "cats": [
+  [
+   "Kaftanes",
+   "p1"
+  ],
+  [
+   "Abrigos",
+   "p5"
+  ],
+  [
+   "Conjuntos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Kaftán de terciopelo"
+  },
+  {
+   "id": "p2",
+   "name": "Conjunto de abrigo y pantalón"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto de falda larga"
+  },
+  {
+   "id": "p5",
+   "name": "Abrigo largo camel"
+  },
+  {
+   "id": "p6",
+   "name": "Sobrecamisa beige"
+  }
+ ],
+ "theme": {},
+ "domain": "bazarlailabilbao.com",
+ "web_note": "bazarlailabilbao.com enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Bilbao solo puede escribiros."
+}

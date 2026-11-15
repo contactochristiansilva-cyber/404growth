@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Boutique Farah",
+ "ig": "boutique_farah90",
+ "f": 7948,
+ "city": "Tarragona",
+ "cityfull": "Tarragona",
+ "address": "Av. Reina María Cristina 31",
+ "logo": {
+  "text": "Boutique Farah"
+ },
+ "cats": [
+  [
+   "Abayas",
+   "p5"
+  ],
+  [
+   "Abrigos",
+   "p3"
+  ],
+  [
+   "Vestidos",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gabardina vaquera larga"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido camisero azul"
+  },
+  {
+   "id": "p3",
+   "name": "Gabardina beige"
+  },
+  {
+   "id": "p4",
+   "name": "Chaqueta larga"
+  },
+  {
+   "id": "p5",
+   "name": "Abaya con mangas estampadas"
+  },
+  {
+   "id": "p6",
+   "name": "Conjunto crudo"
+  }
+ ],
+ "theme": {}
+}

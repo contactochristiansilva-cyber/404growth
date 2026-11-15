@@ -1,0 +1,56 @@
+{
+ "niche": "joya",
+ "name": "Ruby Abalorios BCN",
+ "ig": "rubyabaloriosbcn",
+ "f": 20944,
+ "city": "Barcelona",
+ "cityfull": "Barcelona",
+ "address": "Rda. de Sant Pere 36",
+ "logo": {
+  "text": "Ruby Abalorios BCN"
+ },
+ "cats": [
+  [
+   "Charms",
+   "p1"
+  ],
+  [
+   "Cadenas",
+   "p2"
+  ],
+  [
+   "Abalorios",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Collar de charms"
+  },
+  {
+   "id": "p2",
+   "name": "Cadena por metros"
+  },
+  {
+   "id": "p3",
+   "name": "Colgante de piedra"
+  },
+  {
+   "id": "p4",
+   "name": "Hilo elástico"
+  },
+  {
+   "id": "p5",
+   "name": "Abalorios de colores"
+  },
+  {
+   "id": "p6",
+   "name": "Asas para bolsos"
+  }
+ ],
+ "theme": {
+  "acc": "#B23A48"
+ },
+ "eyebrow": "Abalorios en Barcelona"
+}

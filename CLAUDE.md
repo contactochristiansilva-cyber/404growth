@@ -584,6 +584,18 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
     - `l36-fotos-rehechas.tar`: las 8 fotos rehechas, hechas en el navegador con el mismo tamaño que `gen33.py` (821×1100, JPEG 0,84);
     - `instalar-lote36.sh`: copia todo a `web117-404growth` y el admin a `404growth-subir`, con copia de seguridad en `anterior/`. Solo cambia el admin si es el esperado.
 
+## Lote 37 (15/11/2026): 30 propuestas del scrapeo del 15/11
+
+- Se hicieron las fotos de las 50 (600 trabajos, `jobs37.py` → `flow/q37.json`), pero Chris pidió al final solo **30, las de más potencial**: `l33/sel37b.json`. Criterio: seguidores, que ya vendan a distancia (WhatsApp, Bizum, envíos), varias tiendas, web vacía o rota. Fuera: Canarias (envíos), las que ya montan su tienda (Por tu cuenta, Kucaes) y las de unos 3.000 seguidores que solo venden en tienda.
+- Mismo generador del lote 33: `mkjobs.py sel37b.json` → `data/`, `L33_AI=<fotos> gen33.py <slugs>` (tienda) y `gen33v.py <slugs>` (propuesta). El hero del móvil (`hm`) sale ahora a 2000 px (`SIZE` en `gen33.py`; antes 1400).
+- **Flow en modo manual, sin agente**, una petición por foto (referencia con la cara tapada, `n<slug>-NN.jpg`), con Nano Banana Pro hasta su cupo (unas 20) y después 2.1. Lo que se aprendió:
+  - Cupo diario por cuenta y modelo: con 2.1 unas 400 fotos; la mejora a **2K comparte el cupo** («PUBLIC_ERROR_PER_MODEL_DAILY_QUOTA_REACHED» en la respuesta de `SPrCad`). Con la segunda cuenta (iaecom15, `/u/2`) salieron 220 fotos y 213 mejoras a 2K sin tope.
+  - Las imágenes **subidas** no tienen la opción 2K: el botón de descarga las baja directamente.
+  - El buscador de recursos: busca solo dentro del panel (`.cdk-overlay-container`); las etiquetas ocultas de la rejilla tienen nombres `.jpg` y confunden.
+  - Las fotos generadas se encuentran con `img[data-media-id]` bajando la rejilla (`.cdk-virtual-scrollable`) y se emparejan con su petición por `as29s` (texto exacto).
+  - La descarga a 2K: abrir `/edit/<id>`, menú de descarga y clic real en «2K» (1225,135); el blob se coge con `URL.createObjectURL` y se manda por `BroadcastChannel` a otra pestaña de flow.google.com que lo descarga.
+- CRM: el SEED `seed_20261115` (aún sin subir) lleva a **Luka** en lugar de Tempo (cerró el 3/10/2026; aviso en notas) y a **Mayte Cuéllar** en lugar de Oki (WhatsApp comprobado). `LEAD_PATCH_KEY = lpatch_20261116`: las 30 con `slug`, `pageUrl` y `lotDay` 2026-11-16 (corre después del SEED). El parche del 13/11 queda como `LEAD_PATCH_13NOV`, sin usar. Prueba: `t_seed2.mjs` en el scratchpad de la sesión (13 comprobaciones). Copia en `anterior/worker-v74-15nov-antes-l37.js`.
+
 ## Open Fit: cartel de la nave (13/11/2026)
 
 - Open Fit (gimnasio) va a poner carteles en una nave que era un «Moda Outlet». Medidas sacadas de la foto de Chris:

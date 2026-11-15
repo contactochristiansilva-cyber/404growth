@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Stylos Merce",
+ "ig": "merce_styles",
+ "f": 45194,
+ "city": "Jerez de la Frontera",
+ "cityfull": "Jerez de la Frontera (Cádiz)",
+ "address": "junto al bar Hermanos Nico",
+ "logo": {
+  "text": "Stylos Merce"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Pantalones",
+   "p4"
+  ],
+  [
+   "Zapatillas",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Abrigo de pelo"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de polipiel"
+  },
+  {
+   "id": "p3",
+   "name": "Falda de polipiel"
+  },
+  {
+   "id": "p4",
+   "name": "Pantalón rojo"
+  },
+  {
+   "id": "p5",
+   "name": "Zapatilla de ante"
+  },
+  {
+   "id": "p6",
+   "name": "Pantalón de leopardo"
+  }
+ ],
+ "theme": {},
+ "domain": "mercestyles.com",
+ "web_note": "mercestyles.com enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Jerez de la Frontera solo puede escribiros."
+}

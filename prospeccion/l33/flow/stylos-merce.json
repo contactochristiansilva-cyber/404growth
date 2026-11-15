@@ -1,0 +1,50 @@
+{
+ "slug": "stylos-merce",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "stylos-merce-03.jpg",
+    "stylos-merce-01.jpg",
+    "stylos-merce-10.jpg",
+    "stylos-merce-05.jpg",
+    "stylos-merce-21.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia stylos-merce-03.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a black shaggy faux-fur coat with straight jeans from the reference, walking at the Plaza del Arenal in Jerez de la Frontera, Spain, with palm trees and old palaces, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia stylos-merce-01.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a black shaggy faux-fur coat from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia stylos-merce-10.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a burgundy faux-leather jacket over a black top and jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia stylos-merce-05.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown faux-leather midi skirt with a red satin top from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia stylos-merce-21.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing red wide-leg trousers with a white fitted top from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "stylos-merce-28.jpg",
+    "stylos-merce-17.jpg",
+    "stylos-merce-12.jpg",
+    "stylos-merce-32.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia stylos-merce-28.jpg, aplica la REGLA A): Footwear e-commerce photo of olive green suede retro sneakers with a cream sole, no logos from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#ECE7E0) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 2 «p6» (formato 3:4, referencia stylos-merce-17.jpg, aplica la REGLA B): E-commerce product photo for a fashion boutique: a model wearing leopard-print wide trousers with a black blouse from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia stylos-merce-12.jpg, aplica la REGLA A): Lifestyle photo: beige cargo trousers with a black top and a cream jacket, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia stylos-merce-32.jpg, aplica la REGLA A): Lifestyle photo: burgundy suede sneakers with a white sole, no logos, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA C): Wide interior photo: the inside of a glamorous fashion boutique with a pink velvet sofa, a wall of pink roses, gold clothes rails and a marble floor, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a black shag",
+  "p1": "roduct photo for a fashion boutique: a model wearing a black",
+  "p2": "roduct photo for a fashion boutique: a model wearing a burgu",
+  "p3": "roduct photo for a fashion boutique: a model wearing a brown",
+  "p4": "ce product photo for a fashion boutique: a model wearing red",
+  "p5": "Footwear e-commerce photo of olive green suede retro sneaker",
+  "p6": "ce product photo for a fashion boutique: a model wearing leo",
+  "l1": "Lifestyle photo: beige cargo trousers with a black top and a",
+  "l2": "Lifestyle photo: burgundy suede sneakers with a white sole, ",
+  "b": "Wide interior photo: the inside of a glamorous fashion bouti"
+ }
+}

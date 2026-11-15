@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Nude Tarragona",
+ "ig": "nude_tarragona",
+ "f": 7567,
+ "city": "Tarragona",
+ "cityfull": "Tarragona",
+ "address": "C/ Unió 16",
+ "logo": {
+  "text": "Nude Tarragona"
+ },
+ "cats": [
+  [
+   "Punto",
+   "p3"
+  ],
+  [
+   "Vestidos",
+   "p4"
+  ],
+  [
+   "Bolsos",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaleco sastre"
+  },
+  {
+   "id": "p2",
+   "name": "Bolso trenzado"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de punto"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido largo de punto"
+  },
+  {
+   "id": "p5",
+   "name": "Jersey de leopardo"
+  },
+  {
+   "id": "p6",
+   "name": "Monedero de piel"
+  }
+ ],
+ "theme": {}
+}

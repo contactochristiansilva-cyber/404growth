@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Modas La Tentación",
+ "ig": "modas_la_tentasion",
+ "f": 12500,
+ "city": "Córdoba",
+ "cityfull": "Córdoba",
+ "address": "C/ Arcos de la Frontera (barrio de Fátima)",
+ "logo": {
+  "text": "Modas La Tentación"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Vestidos",
+   "p3"
+  ],
+  [
+   "Pantalones",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta de pelo"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de antelina"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido burdeos"
+  },
+  {
+   "id": "p4",
+   "name": "Pantalón de vichy"
+  },
+  {
+   "id": "p5",
+   "name": "Jersey de punto"
+  },
+  {
+   "id": "p6",
+   "name": "Mono de rayas"
+  }
+ ],
+ "theme": {}
+}
