@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "MÍA",
+ "ig": "mia_valladolid",
+ "f": 4657,
+ "city": "Valladolid",
+ "cityfull": "Valladolid",
+ "address": "C/ Claudio Moyano 1",
+ "logo": {
+  "text": "MÍA"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Blusas",
+   "p2"
+  ],
+  [
+   "Punto",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido de punto"
+  },
+  {
+   "id": "p2",
+   "name": "Blusa con lazada"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de punto"
+  },
+  {
+   "id": "p4",
+   "name": "Falda escocesa"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido largo burdeos"
+  },
+  {
+   "id": "p6",
+   "name": "Chaqueta militar"
+  }
+ ],
+ "theme": {}
+}

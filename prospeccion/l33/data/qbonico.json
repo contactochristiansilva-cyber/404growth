@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "QBonico",
+ "ig": "qbonico",
+ "f": 4394,
+ "city": "Mancha Real",
+ "cityfull": "Mancha Real (Jaén)",
+ "address": "C/ Maestra 90, bajo",
+ "logo": {
+  "text": "QBonico"
+ },
+ "cats": [
+  [
+   "Bolsos",
+   "p1"
+  ],
+  [
+   "Bisutería",
+   "p2"
+  ],
+  [
+   "Carteras",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Bolso de mano"
+  },
+  {
+   "id": "p2",
+   "name": "Anillos dorados"
+  },
+  {
+   "id": "p3",
+   "name": "Cartera acolchada"
+  },
+  {
+   "id": "p4",
+   "name": "Pendientes de flamenca"
+  },
+  {
+   "id": "p5",
+   "name": "Collar de cuentas"
+  },
+  {
+   "id": "p6",
+   "name": "Camiseta estampada"
+  }
+ ],
+ "theme": {}
+}

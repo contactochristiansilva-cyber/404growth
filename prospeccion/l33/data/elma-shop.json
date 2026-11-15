@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Elma Shop",
+ "ig": "elmashopzgz",
+ "f": 3783,
+ "city": "Zaragoza",
+ "cityfull": "Zaragoza",
+ "address": "C/ Cortes de Aragón 54",
+ "logo": {
+  "text": "Elma Shop"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Calzado",
+   "p2"
+  ],
+  [
+   "Bolsos",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gabardina"
+  },
+  {
+   "id": "p2",
+   "name": "Bota alta negra"
+  },
+  {
+   "id": "p3",
+   "name": "Bolso verde"
+  },
+  {
+   "id": "p4",
+   "name": "Rebeca de rayas"
+  },
+  {
+   "id": "p5",
+   "name": "Mono vaquero"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso de rayas"
+  }
+ ],
+ "theme": {}
+}

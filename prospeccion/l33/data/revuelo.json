@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Revuelo",
+ "ig": "revuelodonbenito",
+ "f": 4105,
+ "city": "Don Benito",
+ "cityfull": "Don Benito (Badajoz)",
+ "address": "Av. de la Constitución 46",
+ "logo": {
+  "text": "Revuelo"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p2"
+  ],
+  [
+   "Invitada",
+   "p4"
+  ],
+  [
+   "Calzado",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaleco de pelo"
+  },
+  {
+   "id": "p2",
+   "name": "Abrigo con cuello de pelo"
+  },
+  {
+   "id": "p3",
+   "name": "Plumífero con pelo"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido de encaje"
+  },
+  {
+   "id": "p5",
+   "name": "Botas de ante"
+  },
+  {
+   "id": "p6",
+   "name": "Traje burdeos"
+  }
+ ],
+ "theme": {}
+}

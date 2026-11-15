@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Guapa",
+ "ig": "guapaburgos",
+ "f": 3265,
+ "city": "Burgos",
+ "cityfull": "Burgos",
+ "address": "C/ de la Igualdad 3",
+ "logo": {
+  "text": "Guapa"
+ },
+ "cats": [
+  [
+   "Pantalones",
+   "p1"
+  ],
+  [
+   "Abrigos",
+   "p2"
+  ],
+  [
+   "Zapatillas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Pantalón de estrella"
+  },
+  {
+   "id": "p2",
+   "name": "Parka con capucha"
+  },
+  {
+   "id": "p3",
+   "name": "Falda de punto"
+  },
+  {
+   "id": "p4",
+   "name": "Zapatilla rosa"
+  },
+  {
+   "id": "p5",
+   "name": "Mono caqui"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido de leopardo"
+  }
+ ],
+ "theme": {}
+}

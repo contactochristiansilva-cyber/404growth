@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Alebú",
+ "ig": "alebu_shop_",
+ "f": 3526,
+ "city": "Gijón",
+ "cityfull": "Gijón (Asturias)",
+ "address": "C/ Santa Lucía 5",
+ "logo": {
+  "text": "Alebú"
+ },
+ "cats": [
+  [
+   "Americanas",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Americana de tweed"
+  },
+  {
+   "id": "p2",
+   "name": "Bolso de pelo leopardo"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de punto nórdico"
+  },
+  {
+   "id": "p4",
+   "name": "Bolso burdeos"
+  },
+  {
+   "id": "p5",
+   "name": "Camisa de cuadros"
+  },
+  {
+   "id": "p6",
+   "name": "Jersey nórdico gris"
+  }
+ ],
+ "theme": {}
+}

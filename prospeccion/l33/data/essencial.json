@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Essencial",
+ "ig": "essencial_cmc",
+ "f": 4227,
+ "city": "Los Santos de Maimona",
+ "cityfull": "Los Santos de Maimona (Badajoz)",
+ "address": "Av. de la Constitución 73",
+ "logo": {
+  "text": "Essencial"
+ },
+ "cats": [
+  [
+   "Punto",
+   "p1"
+  ],
+  [
+   "Bolsos",
+   "p2"
+  ],
+  [
+   "Calzado",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Jersey de rombos"
+  },
+  {
+   "id": "p2",
+   "name": "Bolso de flecos"
+  },
+  {
+   "id": "p3",
+   "name": "Destalonado con lazo"
+  },
+  {
+   "id": "p4",
+   "name": "Blusa con cuello bordado"
+  },
+  {
+   "id": "p5",
+   "name": "Abrigo con cuello de pelo"
+  },
+  {
+   "id": "p6",
+   "name": "Bailarina de ante"
+  }
+ ],
+ "theme": {}
+}
