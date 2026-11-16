@@ -584,6 +584,12 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
     - `l36-fotos-rehechas.tar`: las 8 fotos rehechas, hechas en el navegador con el mismo tamaño que `gen33.py` (821×1100, JPEG 0,84);
     - `instalar-lote36.sh`: copia todo a `web117-404growth` y el admin a `404growth-subir`, con copia de seguridad en `anterior/`. Solo cambia el admin si es el esperado.
 
+## Prospectos más grandes con anuncios (16/11/2026, piloto de 30)
+
+- Chris quiere negocios más grandes (varias tiendas, más presupuesto). Piloto en `prospeccion/scrapeo-16nov/`: `leads.json` (30, con `tier` A/B y `score` de 0 a 10) y `revision.md` (criterios, puntuación, lo aprendido y cómo repetirlo). Aún no están en el CRM.
+- **Biblioteca de anuncios de Meta sin abrir páginas:** desde facebook.com/ads/library se captura `AdLibrarySearchPaginationQuery` y se repite con `searchType: 'page'` + `viewAllPageID` (anuncios de una página) o `keyword_unordered` (por frase o por el nombre exacto del negocio). La página de Facebook de una cuenta de Instagram sale en `linked_fb_info` del perfil.
+- Lo aprendido: casi todas las tiendas grandes con anuncios ya venden online; las que no, salen sobre todo en flamenca, muebles y sofás, outlets y joyerías de varias tiendas. La interacción (mediana de «me gusta» entre seguidores) filtra mejor que los seguidores: hay cuentas de 100.000 con 3 a 50 «me gusta».
+
 ## Lote 37 (15/11/2026): 30 propuestas del scrapeo del 15/11
 
 - Se hicieron las fotos de las 50 (600 trabajos, `jobs37.py` → `flow/q37.json`), pero Chris pidió al final solo **30, las de más potencial**: `l33/sel37b.json`. Criterio: seguidores, que ya vendan a distancia (WhatsApp, Bizum, envíos), varias tiendas, web vacía o rota. Fuera: Canarias (envíos), las que ya montan su tienda (Por tu cuenta, Kucaes) y las de unos 3.000 seguidores que solo venden en tienda.
