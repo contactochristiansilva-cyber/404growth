@@ -40,4 +40,13 @@ La lista está en `leads.json` (30, con `tier`, `score` y notas). No están en e
 3. **Webs**, desde una pestaña de r.jina.ai (`fetch('/https://dominio/...')`), una petición cada 3,3 s (si no, error 429): `/products.json` (Shopify), `/wp-json/wc/store/v1/products` y `/wp-json/wp/v2/product?per_page=100&_fields=id` (WooCommerce, este último da el número real), y la portada en markdown.
 4. **Interacción y teléfonos**: `PolarisProfilePostsQuery` (12 publicaciones). **Google Maps**: `fetch('/search?tbm=map&hl=es&gl=es&q=…')` desde una pestaña de google.com/maps.
 
-Falta, si se meten en el CRM: comprobar en WhatsApp Web los móviles que no dicen WhatsApp, y la ciudad de Pepa Guirola.
+## Las 30 que entran en el CRM (16/11/2026, por la noche)
+
+Chris: «quiero que solamente entren en el CRM las que tengan WhatsApp; me sirven si no tienen ads activos pero han tenido; necesito 30 en total».
+
+- Criterio: tienda física en España + anuncios en Meta en los últimos 12 meses (activos o no) + sin tienda online de verdad (sin web, caída, sin carrito o con muy pocos productos) + **WhatsApp comprobado en WhatsApp Web** (Chrome con la sesión de WhatsApp Business de Chris, `web.whatsapp.com/send?phone=34…`, sin escribir nada).
+- De la lista del piloto pasan 9 (Mirage, Tete Plata, Mantones África, GM Joyerías, Déjà Vu, Zona Coolto, Azalea, La Libélula y Las Orquídeas). Las otras 9 del grupo A solo publican fijos y ninguno tiene WhatsApp (Agurcho, Trazos, NUD, Moda Flamenca Barcelona, Muebles Poniente, Cuore, El Rincón del Hogar, Otero y el móvil de XMARCAS). Las del grupo B no han tenido anuncios.
+- Las 21 nuevas salen de: perfiles de Instagram con página de Facebook enlazada → anuncios por página en la Biblioteca; perfiles sin página → anuncios por nombre exacto; y 200 búsquedas nuevas de Instagram («moda flamenca», «zapateria», «muebles», «joyeria», «boutique» × 40 ciudades).
+- Datos en `crm30.json` (las 30, ordenadas por puntuación). `mkseed2.py crm30.json seed2.js` escribe `SEED2_KEY = "seed_20261116w"` y `SEED2`, que se pegaron en el worker del admin justo después de `LEAD_PATCH_13NOV`. Entran como Scrapeados («Por contactar»), sin lote ni propuesta.
+- Nichos: 14 de moda, 10 de muebles y decoración (`deco`, prefijo `dec-`), 3 de joyería y 3 de calzado (`sneakers`).
+- Descartadas al final por tener tienda online: Oops, Elmagüestu, Köseri, Miss Mariquita, Lolas, Clementina, ByNiki, Origen Hogar, Nuestro Hogar, Joyerías Queralt Ruiz (unajoyaparati), Calzados Gayoso, Sukha, Mimada Consentida, Amelia et Toi, The Good Girl, Áncora. Sin WhatsApp: Tacho, CYC, Leonor Méndez, Muebles El Caserío, Centro Hogar Sánchez, Revuelo Ubaldo, Casa Munoa, Muebles Olimpo, El Caracol Verde, Frigohogar, Dpiedra, Onuba Outlet y Briole.

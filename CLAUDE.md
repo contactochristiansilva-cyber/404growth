@@ -589,6 +589,11 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Chris quiere negocios más grandes (varias tiendas, más presupuesto). Piloto en `prospeccion/scrapeo-16nov/`: `leads.json` (30, con `tier` A/B y `score` de 0 a 10) y `revision.md` (criterios, puntuación, lo aprendido y cómo repetirlo). Aún no están en el CRM.
 - **Biblioteca de anuncios de Meta sin abrir páginas:** desde facebook.com/ads/library se captura `AdLibrarySearchPaginationQuery` y se repite con `searchType: 'page'` + `viewAllPageID` (anuncios de una página) o `keyword_unordered` (por frase o por el nombre exacto del negocio). La página de Facebook de una cuenta de Instagram sale en `linked_fb_info` del perfil.
 - Lo aprendido: casi todas las tiendas grandes con anuncios ya venden online; las que no, salen sobre todo en flamenca, muebles y sofás, outlets y joyerías de varias tiendas. La interacción (mediana de «me gusta» entre seguidores) filtra mejor que los seguidores: hay cuentas de 100.000 con 3 a 50 «me gusta».
+- **Al CRM solo las que tienen WhatsApp (Chris, 16/11/2026):** anuncios en los últimos 12 meses (activos o no) y WhatsApp comprobado en WhatsApp Web. Son 30, en `crm30.json`, y entran con `SEED2_KEY = "seed_20261116w"` / `SEED2` (justo después de `LEAD_PATCH_13NOV`). Muebles y decoración van al nicho `deco` (prefijo `dec-`).
+  - `seedOnce` recorre ahora dos listas, cada una con su clave: `[[SEED_KEY, SEED], [SEED2_KEY, SEED2]]`. Así el `SEED` viejo no se vuelve a ejecutar (no resucita leads borrados a mano) y nunca mete ids de `LEAD_DEL`. Para un lote nuevo, otra lista con su clave, no cambiar la de `SEED`.
+  - Prueba: `t_seed3.mjs` en el scratchpad de la sesión (17 comprobaciones, CRM con el `SEED` ya hecho y CRM vacío). `t_p10.mjs` sigue pasando. Copia de la v74c en `anterior/worker-v74c-16nov-antes-seed-whatsapp.js`.
+  - Los fijos casi nunca tienen WhatsApp: de 20 comprobados, ninguno. Los muebles y las tiendas grandes suelen publicar solo fijo.
+  - El Chrome con WhatsApp Web de Chris es ahora «Browser 1» en la extensión (el nombre cambia al reconectar: se mira en `list_connected_browsers` y se prueba).
 
 ## Lote 37 (15/11/2026): 30 propuestas del scrapeo del 15/11
 
