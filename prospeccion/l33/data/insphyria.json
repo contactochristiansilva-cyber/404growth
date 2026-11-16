@@ -1,0 +1,56 @@
+{
+ "niche": "joya",
+ "name": "Insphyria",
+ "ig": "insphyria",
+ "f": 3222,
+ "city": "Bilbao",
+ "cityfull": "Bilbao (Bizkaia)",
+ "address": "Av. Sabino Arana 19",
+ "logo": {
+  "text": "Insphyria"
+ },
+ "cats": [
+  [
+   "Pendientes",
+   "p1"
+  ],
+  [
+   "Metacrilato",
+   "p2"
+  ],
+  [
+   "Ponchos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Pendientes margarita"
+  },
+  {
+   "id": "p2",
+   "name": "Pendientes geométricos"
+  },
+  {
+   "id": "p3",
+   "name": "Aros de metacrilato"
+  },
+  {
+   "id": "p4",
+   "name": "Pendientes de cristal verde"
+  },
+  {
+   "id": "p5",
+   "name": "Pendientes musicales"
+  },
+  {
+   "id": "p6",
+   "name": "Poncho geométrico"
+  }
+ ],
+ "theme": {
+  "acc": "#7A3FB0"
+ },
+ "eyebrow": "Pendientes de metacrilato en Bilbao"
+}

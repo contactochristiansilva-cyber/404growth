@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "El Armario de Reme",
+ "ig": "elarmariodereme",
+ "f": 3271,
+ "city": "Zaragoza",
+ "cityfull": "Zaragoza",
+ "address": "C/ Federico Ozanam 9",
+ "logo": {
+  "text": "El Armario de Reme"
+ },
+ "cats": [
+  [
+   "Conjuntos",
+   "p1"
+  ],
+  [
+   "Blusas",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto caqui"
+  },
+  {
+   "id": "p2",
+   "name": "Sudadera con camisa"
+  },
+  {
+   "id": "p3",
+   "name": "Blusa de cuadros con volantes"
+  },
+  {
+   "id": "p4",
+   "name": "Chaleco con tachas"
+  },
+  {
+   "id": "p5",
+   "name": "Sudadera con volantes"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso acolchado"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,57 @@
+{
+ "niche": "suplementos",
+ "name": "Herbolario Tienda Verde",
+ "ig": "la_tienda_verde",
+ "f": 3245,
+ "city": "Alhama de Murcia",
+ "cityfull": "Alhama de Murcia (Murcia)",
+ "address": "C/ Los Pasos 4",
+ "logo": {
+  "text": "Herbolario Tienda Verde"
+ },
+ "cats": [
+  [
+   "Aceites esenciales",
+   "p1"
+  ],
+  [
+   "Infusiones",
+   "p5"
+  ],
+  [
+   "Suplementos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Aceite esencial de lavanda"
+  },
+  {
+   "id": "p2",
+   "name": "Té matcha"
+  },
+  {
+   "id": "p3",
+   "name": "Golden milk"
+  },
+  {
+   "id": "p4",
+   "name": "Ashwagandha"
+  },
+  {
+   "id": "p5",
+   "name": "Infusión ecológica"
+  },
+  {
+   "id": "p6",
+   "name": "Jabón natural"
+  }
+ ],
+ "theme": {
+  "acc": "#3F8F3A"
+ },
+ "h1": "Lo natural,<br>a un clic.",
+ "eyebrow": "Herbolario en Alhama de Murcia"
+}
