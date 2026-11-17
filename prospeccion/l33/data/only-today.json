@@ -1,0 +1,64 @@
+{
+ "niche": "cosmetica",
+ "name": "Only Today Perfumería",
+ "ig": "onlytodayperfumeria",
+ "f": 16115,
+ "city": "Córdoba",
+ "cityfull": "Córdoba",
+ "address": "C/ Rodríguez Marín 21",
+ "logo": {
+  "text": "Only Today Perfumería"
+ },
+ "cats": [
+  [
+   "Perfumes",
+   "p1"
+  ],
+  [
+   "Experiencias",
+   "p3"
+  ],
+  [
+   "Aceites",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Perfume personalizado 50 ml"
+  },
+  {
+   "id": "p2",
+   "name": "Perfume personalizado 100 ml"
+  },
+  {
+   "id": "p3",
+   "name": "Experiencia: crea tu perfume"
+  },
+  {
+   "id": "p4",
+   "name": "Aceites esenciales"
+  },
+  {
+   "id": "p5",
+   "name": "Perfume de viaje 30 ml"
+  },
+  {
+   "id": "p6",
+   "name": "Almizcle en aceite"
+  }
+ ],
+ "theme": {},
+ "domain": "onlytodayperfumeria.es",
+ "web_note": "onlytodayperfumeria.es enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Córdoba solo puede escribiros.",
+ "h1": "Tu perfume,<br>hecho a tu medida.",
+ "eyebrow": "Perfumes personalizados",
+ "sub": "Perfumes que creamos contigo en nuestra perfumería de {city}. Ahora, también online.",
+ "opts": [
+  "30 ml",
+  "50 ml",
+  "100 ml"
+ ],
+ "opts_l": "Formato"
+}

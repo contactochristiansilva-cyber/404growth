@@ -1,0 +1,45 @@
+[
+{
+"i": 330,
+"s": "nexus-tabletop",
+"id": "p4",
+"f": "3:4",
+"r": [],
+"t": "E-commerce product photo of an open cardboard display box full of trading card booster packs: many small foil booster packs with abstract colourful fantasy artwork, standing in a neat row, centred and large in the frame on a seamless light (#EFECE6) background with a soft shadow, crisp detail. Photorealistic, no text, no lettering, no logos, no people."
+},
+{
+"i": 331,
+"s": "juguetes-duba",
+"id": "p1",
+"f": "3:4",
+"r": [],
+"t": "E-commerce product photo of a lime green 1:10 RC rock crawler: a boxy generic off-road pickup body with a flat horizontal mesh grille and square LED headlights, not resembling any real car brand, black roof rack with orange recovery boards, big knobby tyres on grey beadlock wheels, centred and large in the frame on a seamless light (#EFECE6) background with a soft shadow, crisp detail. Photorealistic, no text, no logos, no people."
+},
+{
+"i": 332,
+"s": "scrapa2",
+"id": "p2",
+"f": "3:4",
+"r": [],
+"t": "E-commerce product photo of a pad of floral patterned scrapbooking paper: a stack of square sheets with delicate botanical watercolour prints of wild flowers and leaves in soft pink, sage green and cream, slightly fanned out so several designs show, plain sheets with no title, centred and large in the frame on a seamless light (#EEEEEA) background with a soft shadow, crisp detail. Photorealistic, no text, no lettering, no logos, no people."
+},
+{
+"i": 333,
+"s": "only-today",
+"id": "b",
+"f": "16:9",
+"r": [],
+"t": "Wide interior photo: the inside of a small contemporary artisan perfumery in Spain with light oak shelves full of glass bottles of essences, straight rectangular doorways and windows (no arches), warm lamps and a long wooden counter, no people, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage. Photorealistic, no text, no logos, no people."
+},
+{
+"i": 334,
+"s": "juguetes-duba",
+"id": "hm",
+"f": "9:16",
+"r": [
+"njuguetes-duba-33",
+"njuguetes-duba-30"
+],
+"t": "Vertical hero image for a mobile online shop: a lime green 1:10 RC rock crawler with a boxy generic off-road pickup body, flat horizontal mesh grille and square LED headlights, not resembling any real car brand, a pink 1:8 GT nitro RC car, no logos, an unpainted white and blue RC car body shell, displayed together as a hero product arrangement on a light wooden play table in a bright room with soft daylight. The products are large and sharp in the upper half of the frame; the lower 40% is calm, darker and empty, with space for a headline. Reproduce the pink car and the white and blue body shell exactly from the references. Photorealistic high-end commercial photography, no people, no hands, no text, no letters, no logos, no watermark. One single continuous photograph."
+}
+]

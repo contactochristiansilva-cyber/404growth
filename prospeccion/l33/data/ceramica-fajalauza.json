@@ -1,0 +1,63 @@
+{
+ "niche": "artesania",
+ "name": "Cerámica Fajalauza",
+ "ig": "fajalauza_",
+ "f": 25300,
+ "city": "Granada",
+ "cityfull": "Granada",
+ "address": "Ctra. de Murcia 166",
+ "logo": {
+  "text": "Cerámica Fajalauza"
+ },
+ "cats": [
+  [
+   "Mesa",
+   "p1"
+  ],
+  [
+   "Jarras",
+   "p4"
+  ],
+  [
+   "Azulejos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Tetera"
+  },
+  {
+   "id": "p2",
+   "name": "Tazas con plato"
+  },
+  {
+   "id": "p3",
+   "name": "Bandejas"
+  },
+  {
+   "id": "p4",
+   "name": "Jarras"
+  },
+  {
+   "id": "p5",
+   "name": "Lebrillo"
+  },
+  {
+   "id": "p6",
+   "name": "Azulejo"
+  }
+ ],
+ "theme": {},
+ "domain": "fajalauza.es",
+ "web_note": "fajalauza.es solo tiene 15 piezas a la venta: el resto de lo que hacéis en el taller no se puede comprar online.",
+ "h1": "Cerámica de Granada,<br>a un clic.",
+ "eyebrow": "Cerámica de Fajalauza desde 1517",
+ "opts": [
+  "Pequeño",
+  "Mediano",
+  "Grande"
+ ],
+ "opts_l": "Tamaño"
+}

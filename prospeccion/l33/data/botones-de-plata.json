@@ -1,0 +1,62 @@
+{
+ "niche": "joya",
+ "name": "Botones de Plata",
+ "ig": "josemariaminguet",
+ "f": 25624,
+ "city": "Mairena del Alcor",
+ "cityfull": "Mairena del Alcor (Sevilla)",
+ "address": "C/ Trianilla 7",
+ "logo": {
+  "text": "Botones de Plata"
+ },
+ "cats": [
+  [
+   "Pulseras",
+   "p1"
+  ],
+  [
+   "Gemelos",
+   "p2"
+  ],
+  [
+   "Hebillas",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Brazalete con iniciales"
+  },
+  {
+   "id": "p2",
+   "name": "Gemelos grabados"
+  },
+  {
+   "id": "p3",
+   "name": "Hebilla de plata"
+  },
+  {
+   "id": "p4",
+   "name": "Medalla de plata"
+  },
+  {
+   "id": "p5",
+   "name": "Pulseras de bolas"
+  },
+  {
+   "id": "p6",
+   "name": "Reloj de bolsillo"
+  }
+ ],
+ "theme": {},
+ "domain": "botonesdeplata.com",
+ "web_note": "botonesdeplata.com enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Mairena del Alcor solo puede escribiros.",
+ "h1": "Plata a tu medida,<br>a un clic.",
+ "eyebrow": "Joyería en plata y oro",
+ "opts": [
+  "Plata",
+  "Oro"
+ ],
+ "opts_l": "Acabado"
+}

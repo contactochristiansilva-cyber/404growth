@@ -1,0 +1,55 @@
+{
+ "niche": "merceria",
+ "name": "Cocorola",
+ "ig": "cocorolabcn",
+ "f": 10240,
+ "city": "Barcelona",
+ "cityfull": "Barcelona",
+ "address": "Mercat dels Encants de Sant Antoni, paradas 77-78",
+ "logo": {
+  "text": "Cocorola"
+ },
+ "cats": [
+  [
+   "Collares",
+   "p1"
+  ],
+  [
+   "Mercería",
+   "p4"
+  ],
+  [
+   "Bolsos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Collar de botones"
+  },
+  {
+   "id": "p2",
+   "name": "Collar de rafia"
+  },
+  {
+   "id": "p3",
+   "name": "Collar de ganchillo"
+  },
+  {
+   "id": "p4",
+   "name": "Costurero de viaje"
+  },
+  {
+   "id": "p5",
+   "name": "Hilos metalizados"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso de ganchillo"
+  }
+ ],
+ "theme": {},
+ "h1": "Hecho a mano,<br>con botones.",
+ "eyebrow": "Mercería y complementos"
+}

@@ -1,0 +1,61 @@
+{
+ "niche": "merceria",
+ "name": "Dmario Tejidos",
+ "ig": "dmario_tejidos",
+ "f": 11549,
+ "city": "Sevilla",
+ "cityfull": "Sevilla",
+ "address": "Pol. La Negrilla, C/ Imprenta 32",
+ "logo": {
+  "text": "Dmario Tejidos"
+ },
+ "cats": [
+  [
+   "Brocados",
+   "p1"
+  ],
+  [
+   "Terciopelos",
+   "p4"
+  ],
+  [
+   "Pasamanería",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Brocado negro y oro"
+  },
+  {
+   "id": "p2",
+   "name": "Damasco azul y crudo"
+  },
+  {
+   "id": "p3",
+   "name": "Brocado morado"
+  },
+  {
+   "id": "p4",
+   "name": "Terciopelo"
+  },
+  {
+   "id": "p5",
+   "name": "Flecos dorados"
+  },
+  {
+   "id": "p6",
+   "name": "Tul bordado"
+  }
+ ],
+ "theme": {},
+ "h1": "Telas de cofradía,<br>a un clic.",
+ "eyebrow": "Tejidos para cofradías y fallas",
+ "opts": [
+  "1 m",
+  "2 m",
+  "5 m"
+ ],
+ "opts_l": "Medida"
+}

@@ -1,0 +1,63 @@
+{
+ "niche": "merceria",
+ "name": "Cast Tejidos",
+ "ig": "casttejidos",
+ "f": 10736,
+ "city": "Sevilla",
+ "cityfull": "Sevilla",
+ "address": "C/ Pino Estrobo 14 (La Negrilla)",
+ "logo": {
+  "text": "Cast Tejidos"
+ },
+ "cats": [
+  [
+   "Lunares",
+   "p1"
+  ],
+  [
+   "Encajes",
+   "p3"
+  ],
+  [
+   "Novedades",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Lunares rojos"
+  },
+  {
+   "id": "p2",
+   "name": "Lunares"
+  },
+  {
+   "id": "p3",
+   "name": "Encaje bordado"
+  },
+  {
+   "id": "p4",
+   "name": "Bordado floral"
+  },
+  {
+   "id": "p5",
+   "name": "Jacquard"
+  },
+  {
+   "id": "p6",
+   "name": "Tela de mantón"
+  }
+ ],
+ "theme": {},
+ "domain": "casttejidos.com",
+ "web_note": "casttejidos.com enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Sevilla solo puede escribiros.",
+ "h1": "Telas de flamenca,<br>a un clic.",
+ "eyebrow": "Tejidos de flamenca y fiesta",
+ "opts": [
+  "1 m",
+  "2 m",
+  "5 m"
+ ],
+ "opts_l": "Medida"
+}

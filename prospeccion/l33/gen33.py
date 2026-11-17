@@ -616,6 +616,8 @@ FLOW_TODAY = {
 FLOW_NEW = {
     'optica': [('Ve la montura', 'en Instagram o Google'), ('Ficha con precio', 'y fotos'), ('Compra o reserva cita', 'en un minuto')],
 }
+import niches39 as _n39   # lote 39 (17/11/2026): mercería, bellas artes, artesanía, electrodomésticos, juegos y equitación
+NICHE.update(_n39.NICHE); FLOW_TODAY.update(_n39.FLOW_TODAY)
 
 
 def proposal(c):

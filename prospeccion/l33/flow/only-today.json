@@ -1,0 +1,41 @@
+{
+ "slug": "only-today",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "only-today-19.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia only-today-19.jpg, aplica la REGLA A): Boutique campaign still life of a clear glass perfume bottle with an amber liquid and a cork stopper, surrounded by small glass vials of essences, dried flowers and orange peel on a dark wooden counter from the reference. The product sits in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm natural light, soft textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, sin referencia, aplica la REGLA A): Beauty e-commerce product photo of a 50 ml clear glass perfume bottle with an amber liquid and a black cap, no label from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «p2» (formato 3:4, sin referencia, aplica la REGLA A): Beauty e-commerce product photo of a 100 ml clear glass perfume bottle with a pale golden liquid and a gold cap, no label from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 4 «p3» (formato 3:4, sin referencia, aplica la REGLA A): Beauty e-commerce product photo of a gift box with a perfume creation kit: six small glass vials of essences, a glass beaker and paper testing strips from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 5 «p4» (formato 3:4, sin referencia, aplica la REGLA A): Beauty e-commerce product photo of three small amber glass dropper bottles of essential oils, no labels from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, sin referencia, aplica la REGLA A): Beauty e-commerce product photo of a 30 ml clear glass travel perfume atomizer with a silver cap from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 2 «p6» (formato 3:4, sin referencia, aplica la REGLA A): Beauty e-commerce product photo of a small glass bottle of musk perfume oil with a glass rod applicator from the reference, centred on a seamless soft blush (#F3E6E1) background with a couple of natural props (a petal, a pale stone) and a soft shadow, the whole product visible and large in the frame, crisp glass and material detail. IMAGEN 3 «l1» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle photo: a perfumer pouring essence from a small glass beaker into a perfume bottle, seen from the chest down, on a wooden counter full of glass bottles, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle photo: paper perfume testing strips fanned out next to glass bottles of essences and dried flowers, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a small artisan perfumery in Córdoba with shelves full of glass bottles of essences, warm lamps and dark wooden counters, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Boutique campaign still life of a clear glass perfume bottle",
+  "p1": "Beauty e-commerce product photo of a 50 ml clear glass perfu",
+  "p2": "Beauty e-commerce product photo of a 100 ml clear glass perf",
+  "p3": "Beauty e-commerce product photo of a gift box with a perfume",
+  "p4": "Beauty e-commerce product photo of three small amber glass d",
+  "p5": "Beauty e-commerce product photo of a 30 ml clear glass trave",
+  "p6": "Beauty e-commerce product photo of a small glass bottle of m",
+  "l1": "Lifestyle photo: a perfumer pouring essence from a small gla",
+  "l2": "Lifestyle photo: paper perfume testing strips fanned out nex",
+  "b": "Wide interior photo: the inside of a small artisan perfumery"
+ }
+}

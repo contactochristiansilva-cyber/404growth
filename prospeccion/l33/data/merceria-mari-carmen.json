@@ -1,0 +1,54 @@
+{
+ "niche": "merceria",
+ "name": "Mercería Mari Carmen",
+ "ig": "chari_18",
+ "f": 34980,
+ "city": "Chiclana de la Frontera",
+ "cityfull": "Chiclana de la Frontera (Cádiz)",
+ "address": "C/ García Gutiérrez 6",
+ "logo": {
+  "text": "Mercería Mari Carmen"
+ },
+ "cats": [
+  [
+   "Lanas",
+   "p1"
+  ],
+  [
+   "Kits",
+   "p5"
+  ],
+  [
+   "Accesorios",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Lana merino"
+  },
+  {
+   "id": "p2",
+   "name": "Ovillos degradados"
+  },
+  {
+   "id": "p3",
+   "name": "Chal de ganchillo"
+  },
+  {
+   "id": "p4",
+   "name": "Juego de ganchillos"
+  },
+  {
+   "id": "p5",
+   "name": "Kit bolso de rafia"
+  },
+  {
+   "id": "p6",
+   "name": "Patrón vestido de ganchillo"
+  }
+ ],
+ "theme": {},
+ "h1": "Lanas y labores,<br>a un clic."
+}

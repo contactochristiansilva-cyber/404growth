@@ -1,0 +1,62 @@
+{
+ "niche": "joya",
+ "name": "Art-Antic",
+ "ig": "artanticjoieria",
+ "f": 17838,
+ "city": "Valencia",
+ "cityfull": "Valencia",
+ "address": "Av. del Oeste 43 (esquina Grabador Selma)",
+ "logo": {
+  "text": "Art-Antic"
+ },
+ "cats": [
+  [
+   "Pendientes",
+   "p1"
+  ],
+  [
+   "Collares",
+   "p2"
+  ],
+  [
+   "Peinetas",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Pendientes de aderezo"
+  },
+  {
+   "id": "p2",
+   "name": "Collar de perlas"
+  },
+  {
+   "id": "p3",
+   "name": "Joya de pecho"
+  },
+  {
+   "id": "p4",
+   "name": "Agujas de moño"
+  },
+  {
+   "id": "p5",
+   "name": "Peineta"
+  },
+  {
+   "id": "p6",
+   "name": "Pendientes de novia"
+  }
+ ],
+ "theme": {},
+ "domain": "art-antic.net",
+ "web_note": "art-antic.net enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Valencia solo puede escribiros.",
+ "h1": "Aderezos de valenciana,<br>a un clic.",
+ "eyebrow": "Fabricantes de aderezos",
+ "opts": [
+  "Oro",
+  "Plata"
+ ],
+ "opts_l": "Acabado"
+}

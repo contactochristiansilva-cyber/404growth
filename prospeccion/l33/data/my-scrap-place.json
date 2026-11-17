@@ -1,0 +1,62 @@
+{
+ "niche": "arte",
+ "name": "My Scrap Place",
+ "ig": "myscrapplace",
+ "f": 19129,
+ "city": "Madrid",
+ "cityfull": "Madrid",
+ "address": "C/ Galileo 61",
+ "logo": {
+  "text": "My Scrap Place"
+ },
+ "cats": [
+  [
+   "Álbumes",
+   "p1"
+  ],
+  [
+   "Herramientas",
+   "p3"
+  ],
+  [
+   "Tarjetas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Mini álbum floral"
+  },
+  {
+   "id": "p2",
+   "name": "Pastas y plantillas"
+  },
+  {
+   "id": "p3",
+   "name": "Kit de herramientas"
+  },
+  {
+   "id": "p4",
+   "name": "Pack de tarjetas"
+  },
+  {
+   "id": "p5",
+   "name": "Etiquetas decoradas"
+  },
+  {
+   "id": "p6",
+   "name": "Álbum acordeón"
+  }
+ ],
+ "theme": {},
+ "domain": "myscrapplace.com",
+ "web_note": "myscrapplace.com enseña productos, pero sin precios ni carrito: quien os encuentra fuera de Madrid solo puede escribiros.",
+ "h1": "Todo para tu scrap,<br>a un clic.",
+ "eyebrow": "Tienda-taller de scrapbooking",
+ "opts": [
+  "Unidad",
+  "Pack"
+ ],
+ "opts_l": "Formato"
+}

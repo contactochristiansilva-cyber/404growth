@@ -1,0 +1,57 @@
+{
+ "niche": "toys",
+ "name": "Nexus Tabletop",
+ "ig": "nexustabletopstore",
+ "f": 12571,
+ "city": "Alicante",
+ "cityfull": "Alicante",
+ "address": "C/ Isabel la Católica 5",
+ "logo": {
+  "text": "Nexus Tabletop"
+ },
+ "cats": [
+  [
+   "Miniaturas",
+   "p1"
+  ],
+  [
+   "Pinturas",
+   "p2"
+  ],
+  [
+   "Cartas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Caja de miniaturas"
+  },
+  {
+   "id": "p2",
+   "name": "Set de pinturas"
+  },
+  {
+   "id": "p3",
+   "name": "Dados de rol"
+  },
+  {
+   "id": "p4",
+   "name": "Caja de sobres"
+  },
+  {
+   "id": "p5",
+   "name": "Escenografía"
+  },
+  {
+   "id": "p6",
+   "name": "Pinceles de detalle"
+  }
+ ],
+ "theme": {},
+ "domain": "nexustabletop.es",
+ "web_note": "nexustabletop.es está en obras («Estamos renovando la web»): hoy no vende y quien os encuentra fuera de Alicante solo puede escribiros.",
+ "h1": "Tu próxima partida,<br>a un clic.",
+ "eyebrow": "Juegos de mesa y miniaturas"
+}

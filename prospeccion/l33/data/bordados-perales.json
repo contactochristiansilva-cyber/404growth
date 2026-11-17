@@ -1,0 +1,63 @@
+{
+ "niche": "artesania",
+ "name": "Bordados Perales",
+ "ig": "bordadosperales",
+ "f": 28348,
+ "city": "Sevilla",
+ "cityfull": "Sevilla",
+ "address": "C/ Pureza 48 (Triana); taller en Torralba de Calatrava",
+ "logo": {
+  "text": "Bordados Perales"
+ },
+ "cats": [
+  [
+   "Aplicaciones",
+   "p1"
+  ],
+  [
+   "Bordados",
+   "p2"
+  ],
+  [
+   "Encargos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Aplicaciones bordadas"
+  },
+  {
+   "id": "p2",
+   "name": "Paño bordado en oro"
+  },
+  {
+   "id": "p3",
+   "name": "Bordado en terciopelo"
+  },
+  {
+   "id": "p4",
+   "name": "Estandarte bordado"
+  },
+  {
+   "id": "p5",
+   "name": "Cojín bordado"
+  },
+  {
+   "id": "p6",
+   "name": "Estola bordada"
+  }
+ ],
+ "theme": {},
+ "domain": "bordadosperalesoro.com",
+ "web_note": "bordadosperalesoro.com enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Sevilla solo puede escribiros.",
+ "h1": "Bordado en oro,<br>a un clic.",
+ "eyebrow": "Taller de bordado y arte sacro",
+ "opts": [
+  "Pequeño",
+  "Mediano",
+  "Grande"
+ ],
+ "opts_l": "Tamaño"
+}

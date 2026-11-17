@@ -14,6 +14,8 @@ OBJ = ('Reproduce the EXACT product from the reference image: identical shape, p
        'Leave out any hands, price tags, stickers, shop text and the original background. ' + COMMON)
 OBJ_W = re.compile(r'\b(umbrella|fan|bag|handbag|tote|clutch|loafers?|boots?|sneakers?|shoes?|cap|scarf|stoles|belts|case|bottle|bottles|jar|box|boxes|diffuser|strap)\b', re.I)
 CITY_BG = {'moda': '#ECE7E0', 'joya': '#F4EFE6', 'cosmetica': '#F3E6E1', 'sneakers': '#E6E5E1', 'calzado': '#EEE9E2', 'optica': '#EEF2F5', 'suplementos': '#ECEDE8'}
+import niches39 as _n39   # lote 39
+CITY_BG.update(_n39.CITY_BG)
 NAMES = dict(woman='woman', man='man', curvy='curvy plus-size Spanish woman in her forties', mature='elegant Spanish woman in her fifties')
 PERSON = {'woman': 'A stylish Spanish woman in her thirties', 'man': 'A stylish Spanish man in his thirties', 'curvy': 'A stylish curvy plus-size Spanish woman in her forties', 'mature': 'An elegant Spanish woman in her fifties'}
 

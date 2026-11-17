@@ -1,0 +1,61 @@
+{
+ "niche": "merceria",
+ "name": "Teixits Donna",
+ "ig": "donnateixits",
+ "f": 14988,
+ "city": "Barcelona",
+ "cityfull": "Barcelona",
+ "address": "C/ Roger de Llúria 6",
+ "logo": {
+  "text": "Teixits Donna"
+ },
+ "cats": [
+  [
+   "Sedas",
+   "p1"
+  ],
+  [
+   "Algodones",
+   "p2"
+  ],
+  [
+   "Fiesta",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Seda estampada"
+  },
+  {
+   "id": "p2",
+   "name": "Muselina"
+  },
+  {
+   "id": "p3",
+   "name": "Encaje con lentejuelas"
+  },
+  {
+   "id": "p4",
+   "name": "Tela resinada"
+  },
+  {
+   "id": "p5",
+   "name": "Rasos estampados"
+  },
+  {
+   "id": "p6",
+   "name": "Batiks"
+  }
+ ],
+ "theme": {},
+ "h1": "Telas para crear,<br>a un clic.",
+ "eyebrow": "Tienda de telas en Barcelona",
+ "opts": [
+  "0,5 m",
+  "1 m",
+  "2 m"
+ ],
+ "opts_l": "Medida"
+}

@@ -1,0 +1,63 @@
+{
+ "niche": "merceria",
+ "name": "Fernández-Cruz Miguel",
+ "ig": "fernandezcruzmiguel3",
+ "f": 11020,
+ "city": "Málaga",
+ "cityfull": "Málaga",
+ "address": "C/ Molina Lario 3",
+ "logo": {
+  "text": "Fernández-Cruz Miguel"
+ },
+ "cats": [
+  [
+   "Cofradías",
+   "p1"
+  ],
+  [
+   "Rosarios",
+   "p2"
+  ],
+  [
+   "Bordados",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Peinecillo dorado"
+  },
+  {
+   "id": "p2",
+   "name": "Rosario"
+  },
+  {
+   "id": "p3",
+   "name": "Abanico"
+  },
+  {
+   "id": "p4",
+   "name": "Escudo bordado"
+  },
+  {
+   "id": "p5",
+   "name": "Balconera de terciopelo"
+  },
+  {
+   "id": "p6",
+   "name": "Incensario"
+  }
+ ],
+ "theme": {},
+ "domain": "fernandezcruzmiguel.es",
+ "web_note": "fernandezcruzmiguel.es enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Málaga solo puede escribiros.",
+ "h1": "Tradición cofrade,<br>a un clic.",
+ "eyebrow": "Mercería y cofradías",
+ "sub": "Mercería, bordados y artículos de cofradía de nuestra tienda de {city}, con más de 80 años. Ahora, online.",
+ "opts": [
+  "Dorado",
+  "Plateado"
+ ],
+ "opts_l": "Acabado"
+}

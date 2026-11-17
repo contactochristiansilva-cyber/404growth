@@ -1,0 +1,55 @@
+{
+ "niche": "deporte",
+ "name": "FGA Equitación",
+ "ig": "fgaequitacion",
+ "f": 16007,
+ "city": "Cortegana",
+ "cityfull": "Cortegana (Huelva)",
+ "address": "Av. Alcalde Pedro Maestre 2",
+ "logo": {
+  "text": "FGA Equitación"
+ },
+ "cats": [
+  [
+   "Jinete",
+   "p1"
+  ],
+  [
+   "Caballo",
+   "p4"
+  ],
+  [
+   "Botas",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Casco de equitación"
+  },
+  {
+   "id": "p2",
+   "name": "Sombrero de ala ancha"
+  },
+  {
+   "id": "p3",
+   "name": "Botas de montar"
+  },
+  {
+   "id": "p4",
+   "name": "Vendas de descanso"
+  },
+  {
+   "id": "p5",
+   "name": "Gorra de tweed"
+  },
+  {
+   "id": "p6",
+   "name": "Zahones"
+  }
+ ],
+ "theme": {},
+ "h1": "Todo para montar,<br>a un clic.",
+ "eyebrow": "Doma vaquera y clásica"
+}

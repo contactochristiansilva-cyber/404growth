@@ -1,0 +1,61 @@
+{
+ "niche": "artesania",
+ "name": "Esparto Antonio López",
+ "ig": "esparto_antonio_lopez",
+ "f": 21158,
+ "city": "Chiclana de la Frontera",
+ "cityfull": "Chiclana de la Frontera (Cádiz)",
+ "address": "Camino de la Avellana 25",
+ "logo": {
+  "text": "Esparto Antonio López"
+ },
+ "cats": [
+  [
+   "Cestería",
+   "p1"
+  ],
+  [
+   "Hogar",
+   "p2"
+  ],
+  [
+   "Piezas únicas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Canasto de esparto"
+  },
+  {
+   "id": "p2",
+   "name": "Alfombra de esparto"
+  },
+  {
+   "id": "p3",
+   "name": "Persiana de esparto"
+  },
+  {
+   "id": "p4",
+   "name": "Caballo de esparto"
+  },
+  {
+   "id": "p5",
+   "name": "Lámpara de esparto"
+  },
+  {
+   "id": "p6",
+   "name": "Silla de anea"
+  }
+ ],
+ "theme": {},
+ "h1": "Esparto de siempre,<br>a un clic.",
+ "eyebrow": "Esparto artesano de Chiclana",
+ "opts": [
+  "Pequeño",
+  "Mediano",
+  "Grande"
+ ],
+ "opts_l": "Tamaño"
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "merceria",
+ "name": "Mercería San García",
+ "ig": "merceria_san_garcia",
+ "f": 20378,
+ "city": "Algeciras",
+ "cityfull": "Algeciras (Cádiz)",
+ "address": "",
+ "logo": {
+  "text": "Mercería San García"
+ },
+ "cats": [
+  [
+   "Lanas",
+   "p1"
+  ],
+  [
+   "Accesorios",
+   "p5"
+  ],
+  [
+   "Patrones",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Madeja otoño"
+  },
+  {
+   "id": "p2",
+   "name": "Madeja azul noche"
+  },
+  {
+   "id": "p3",
+   "name": "Ovillos pastel"
+  },
+  {
+   "id": "p4",
+   "name": "Algodón degradado"
+  },
+  {
+   "id": "p5",
+   "name": "Ganchillo y agujas"
+  },
+  {
+   "id": "p6",
+   "name": "Patrón chal calado"
+  }
+ ],
+ "theme": {}
+}

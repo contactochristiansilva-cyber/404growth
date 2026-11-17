@@ -12,6 +12,8 @@ PFX = {'joya': 'joy', 'cosmetica': 'cos', 'suplementos': 'sup', 'toys': 'jug', '
 NAMES = {'joya': 'joyería', 'cosmetica': 'perfumería', 'suplementos': 'herbolario', 'toys': 'juguetes y juegos', 'deporte': 'hípica',
          'merceria': 'mercería, lanas y telas', 'arte': 'bellas artes y scrap', 'artesania': 'artesanía', 'electro': 'electrodomésticos'}
 leads = json.load(open(src, encoding='utf-8'))
+# 17/11 (por la noche): las 30 ya tienen propuesta (lote 39, prospeccion/l33/sel39.json): slug por la cuenta de Instagram
+SLUG = {x['ig']: x['slug'] for x in json.load(open(__file__.rsplit('/', 1)[0] + '/../l33/sel39.json', encoding='utf-8'))}
 
 def slug(s):
     s = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode().lower()
@@ -55,7 +57,8 @@ for x in leads:
         c.append(x['email'])
     notes.append('Contacto: ' + ' · '.join(c) + ' (publicados por el negocio en Instagram, su web o Google Maps)')
     notes.append(x['what'])
-    notes.append('Sin propuesta todavía (scrapeo del 17/11 para el 18/11)')
+    sl = SLUG[x['ig']]
+    notes.append(f'Propuesta (lote 39, fotos de Google Flow): https://404growth.com/p/{sl}/ (scrapeo del 17/11 para el 18/11)')
     for a in x.get('aviso', []):
         notes.append('AVISO: ' + a)
     pr = 50 if not wa else (80 if pub else 75)
@@ -66,7 +69,7 @@ for x in leads:
          "store": "none", "notes": "\n".join(notes), "instagram": f"https://www.instagram.com/{x['ig']}/", "igFollowers": x['f'],
          "centers": 1, "stage": "new", "flags": [],
          "source": "Scrapeo Instagram: +10k seguidores, activas y sin tienda online, sin moda ni comida (17 nov)",
-         "priority": pr, "region": x['region']}
+         "priority": pr, "region": x['region'], "slug": sl, "pageUrl": f"https://404growth.com/p/{sl}/", "lotDay": DAY}
     if wa and not pub:
         d['waOk'] = False   # the shop does not say this number has WhatsApp: «Instagram» goes first
     rows.append([lid, d])
@@ -75,10 +78,10 @@ cnt = {}
 for _, d in rows:
     cnt[d['niche']] = cnt.get(d['niche'], 0) + 1
 desc = ", ".join(f"{v} de {NAMES[k]}" for k, v in sorted(cnt.items(), key=lambda kv: -kv[1]))
-patch = [[i, {"lotDay": DAY}] for i in UNSENT38]
-js = (f'const SEED3_KEY = "seed_20261118";   // 17/11 (para el 18/11): {len(rows)} tiendas con +10k seguidores en Instagram, activas, sin tienda online o con una floja, sin moda ni comida ({desc}), a Scrapeados; aún sin propuesta\n'
+patch = [[i, {"lotDay": DAY}] for i in UNSENT38] + [[i, {"lotDay": DAY, "slug": d['slug'], "pageUrl": d['pageUrl']}] for i, d in rows]
+js = (f'const SEED3_KEY = "seed_20261118";   // 17/11 (para el 18/11): {len(rows)} tiendas con +10k seguidores en Instagram, activas, sin tienda online o con una floja, sin moda ni comida ({desc}), a Scrapeados, con su propuesta (lote 39) en el lote del {DAY}\n'
       'const SEED3 = ' + json.dumps(rows, ensure_ascii=False) + ';\n'
-      f'const LEAD_PATCH_KEY = "lpatch_20261118";   // 17/11: las 5 del lote 38 que se quedaron sin enviar, al lote del {DAY} (Chris: se mandan mañana)\n'
+      f'const LEAD_PATCH_KEY = "lpatch_20261118";   // 17/11: las 5 del lote 38 que se quedaron sin enviar, al lote del {DAY} (Chris: se mandan mañana) y las 30 del SEED3 con su propuesta (lote 39)\n'
       'const LEAD_PATCH = ' + json.dumps(patch, ensure_ascii=False) + ';\n')
 open(out, 'w', encoding='utf-8').write(js)
 print(len(rows), cnt, 'waOk false:', sum(1 for _, d in rows if d.get('waOk') is False), 'sin WhatsApp:', sum(1 for _, d in rows if not d['whatsapp']))

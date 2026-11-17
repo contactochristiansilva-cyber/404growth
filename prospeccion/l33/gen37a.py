@@ -83,6 +83,8 @@ REV['deco'] = [('Lucía', 'Sevilla', 0, 'Lo elegí desde el móvil un domingo po
                ('Carmen', '*', 3, 'Fui a probarlo a la tienda y terminé de pedirlo online desde casa.'),
                ('Ana', 'Málaga', 4, 'Pagué con Bizum en un minuto. Repetiremos para el dormitorio.'),
                ('Pablo', 'Bilbao', 5, 'Se nota la calidad. Ya tenemos fichada la pieza a juego.')]
+import niches39 as _n39   # lote 39
+NA.update(_n39.NA); REV.update(_n39.REV)
 
 FDET = [('truck', 'Envío a toda España'), ('store', 'Recogida gratis en la tienda de {city}'), ('card', 'Tarjeta, Bizum, Apple Pay o Google Pay')]
 STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z"/></svg>'

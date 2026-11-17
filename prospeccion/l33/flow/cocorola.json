@@ -1,0 +1,49 @@
+{
+ "slug": "cocorola",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "cocorola-02.jpg",
+    "cocorola-21.jpg",
+    "cocorola-20.jpg",
+    "cocorola-06.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia cocorola-02.jpg, aplica la REGLA A): Boutique campaign still life of a crochet collar necklace decorated with colourful vintage buttons from the reference. The product sits in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm natural light, soft textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia cocorola-02.jpg, aplica la REGLA A): E-commerce product photo of a cream crochet collar necklace with colourful buttons from the reference, centred and large in the frame on a seamless light (#F1ECE5) background with a soft shadow, crisp detail. IMAGEN 3 «p2» (formato 3:4, referencia cocorola-21.jpg, aplica la REGLA A): E-commerce product photo of a necklace with a fringe of pink and red raffia strips from the reference, centred and large in the frame on a seamless light (#F1ECE5) background with a soft shadow, crisp detail. IMAGEN 4 «p3» (formato 3:4, referencia cocorola-20.jpg, aplica la REGLA A): E-commerce product photo of a cream crochet loop collar necklace from the reference, centred and large in the frame on a seamless light (#F1ECE5) background with a soft shadow, crisp detail. IMAGEN 5 «p4» (formato 3:4, referencia cocorola-06.jpg, aplica la REGLA A): E-commerce product photo of a blue floral sewing kit case with threads, scissors and a tape measure from the reference, centred and large in the frame on a seamless light (#F1ECE5) background with a soft shadow, crisp detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "cocorola-31.jpg",
+    "cocorola-41.jpg",
+    "cocorola-17.jpg",
+    "cocorola-23.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia cocorola-31.jpg, aplica la REGLA A): E-commerce product photo of spools of metallic thread in silver, gold and copper from the reference, centred and large in the frame on a seamless light (#F1ECE5) background with a soft shadow, crisp detail. IMAGEN 2 «p6» (formato 3:4, referencia cocorola-41.jpg, aplica la REGLA A): E-commerce product photo of a rust red crochet shoulder bag from the reference, centred and large in the frame on a seamless light (#F1ECE5) background with a soft shadow, crisp detail. IMAGEN 3 «l1» (formato 3:4, referencia cocorola-17.jpg, aplica la REGLA A): Lifestyle photo: a rust red knitted triangle shawl with ruffles on a mannequin, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia cocorola-23.jpg, aplica la REGLA A): Lifestyle photo: a large striped red and yellow wooden button, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: a colourful haberdashery stall in a Barcelona flea market with jars of buttons, spools of thread and handmade necklaces, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Boutique campaign still life of a crochet collar necklace de",
+  "p1": "E-commerce product photo of a cream crochet collar necklace ",
+  "p2": "E-commerce product photo of a necklace with a fringe of pink",
+  "p3": "E-commerce product photo of a cream crochet loop collar neck",
+  "p4": "E-commerce product photo of a blue floral sewing kit case wi",
+  "p5": "E-commerce product photo of spools of metallic thread in sil",
+  "p6": "E-commerce product photo of a rust red crochet shoulder bag ",
+  "l1": "Lifestyle photo: a rust red knitted triangle shawl with ruff",
+  "l2": "Lifestyle photo: a large striped red and yellow wooden butto",
+  "b": "Wide interior photo: a colourful haberdashery stall in a Bar"
+ }
+}

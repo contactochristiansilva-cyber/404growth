@@ -1,0 +1,55 @@
+{
+ "niche": "merceria",
+ "name": "Madejas Tejerlo",
+ "ig": "madejastejerlo",
+ "f": 15676,
+ "city": "Ribadavia",
+ "cityfull": "Ribadavia (Ourense)",
+ "address": "Rúa San Martiño 37",
+ "logo": {
+  "text": "Madejas Tejerlo"
+ },
+ "cats": [
+  [
+   "Madejas",
+   "p1"
+  ],
+  [
+   "Ovillos",
+   "p3"
+  ],
+  [
+   "Kits",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Madeja jaspeada"
+  },
+  {
+   "id": "p2",
+   "name": "Madeja Albolafia"
+  },
+  {
+   "id": "p3",
+   "name": "Ovillo degradado"
+  },
+  {
+   "id": "p4",
+   "name": "Ovillos de colores"
+  },
+  {
+   "id": "p5",
+   "name": "Kit mini madejas"
+  },
+  {
+   "id": "p6",
+   "name": "Cesta de trapillo"
+  }
+ ],
+ "theme": {},
+ "domain": "madejastejerlo.com",
+ "web_note": "madejastejerlo.com está en mantenimiento: hoy quien os encuentra fuera de Ribadavia solo puede escribiros."
+}

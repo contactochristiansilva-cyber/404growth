@@ -1,0 +1,50 @@
+{
+ "slug": "ceramica-fajalauza",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "ceramica-fajalauza-04.jpg",
+    "ceramica-fajalauza-13.jpg",
+    "ceramica-fajalauza-07.jpg",
+    "ceramica-fajalauza-19.jpg",
+    "ceramica-fajalauza-32.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia ceramica-fajalauza-04.jpg, aplica la REGLA A): Boutique campaign still life of a traditional Granada blue and green glazed ceramic teapot and cups from the reference. The product sits in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm natural light, soft textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia ceramica-fajalauza-13.jpg, aplica la REGLA A): E-commerce product photo of a blue and green glazed ceramic teapot with floral decoration from the reference, centred and large in the frame on a seamless light (#EFE8DE) background with a soft shadow, crisp detail. IMAGEN 3 «p2» (formato 3:4, referencia ceramica-fajalauza-07.jpg, aplica la REGLA A): E-commerce product photo of two glazed ceramic cups with green and blue decoration from the reference, centred and large in the frame on a seamless light (#EFE8DE) background with a soft shadow, crisp detail. IMAGEN 4 «p3» (formato 3:4, referencia ceramica-fajalauza-19.jpg, aplica la REGLA A): E-commerce product photo of three rectangular ceramic trays with red, green and blue floral decoration from the reference, centred and large in the frame on a seamless light (#EFE8DE) background with a soft shadow, crisp detail. IMAGEN 5 «p4» (formato 3:4, referencia ceramica-fajalauza-32.jpg, aplica la REGLA A): E-commerce product photo of glazed ceramic jugs in blue, green and red from the reference, centred and large in the frame on a seamless light (#EFE8DE) background with a soft shadow, crisp detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "ceramica-fajalauza-31.jpg",
+    "ceramica-fajalauza-37.jpg",
+    "ceramica-fajalauza-21.jpg",
+    "ceramica-fajalauza-33.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia ceramica-fajalauza-31.jpg, aplica la REGLA A): E-commerce product photo of a large glazed bowl with a blue bird decoration from the reference, centred and large in the frame on a seamless light (#EFE8DE) background with a soft shadow, crisp detail. IMAGEN 2 «p6» (formato 3:4, referencia ceramica-fajalauza-37.jpg, aplica la REGLA A): E-commerce product photo of a hand-painted ceramic tile with a colourful pattern from the reference, centred and large in the frame on a seamless light (#EFE8DE) background with a soft shadow, crisp detail. IMAGEN 3 «l1» (formato 3:4, referencia ceramica-fajalauza-21.jpg, aplica la REGLA A): Lifestyle photo: a ceramic plate with a colourful salad on a sunny table, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia ceramica-fajalauza-33.jpg, aplica la REGLA A): Lifestyle photo: glazed ceramic bowls and pots on a patterned tiled floor, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a traditional pottery workshop in Granada with shelves of blue and green glazed ceramics and a potter wheel, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Boutique campaign still life of a traditional Granada blue a",
+  "p1": "E-commerce product photo of a blue and green glazed ceramic ",
+  "p2": "E-commerce product photo of two glazed ceramic cups with gre",
+  "p3": "E-commerce product photo of three rectangular ceramic trays ",
+  "p4": "E-commerce product photo of glazed ceramic jugs in blue, gre",
+  "p5": "E-commerce product photo of a large glazed bowl with a blue ",
+  "p6": "E-commerce product photo of a hand-painted ceramic tile with",
+  "l1": "Lifestyle photo: a ceramic plate with a colourful salad on a",
+  "l2": "Lifestyle photo: glazed ceramic bowls and pots on a patterne",
+  "b": "Wide interior photo: the inside of a traditional pottery wor"
+ }
+}

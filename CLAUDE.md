@@ -650,12 +650,24 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Nichos nuevos en el CRM: `merceria`, `arte`, `artesania` y `electro` (`patch_l39.py`, mismos textos por defecto que Deporte). Prefijos de id: `mer-`, `art-`, `atn-`, `ele-`.
 - **CRM:**
   - `SEED3_KEY`/`SEED3` es la tercera lista de `seedOnce`.
-  - Las 30 van **sin propuesta**: no salen en el Lote de hoy hasta tener `slug`/`pageUrl`, porque la cola pide `pageUrl`.
+  - Las 30 llevan ya su propuesta (lote 39, abajo): `slug`, `pageUrl` y `lotDay` 2026-11-18 en el `SEED3` y también en el `LEAD_PATCH` (por si el `SEED3` hubiera entrado antes sin ellos). La cola del Lote de hoy pide `pageUrl`.
   - `waOk: false` en las 16 cuyo móvil no se publica como WhatsApp.
   - Las 6 de solo fijo van con prioridad 50 y «AVISO».
-- `LEAD_PATCH_KEY = "lpatch_20261118"` pasa al lote del 18/11 las 5 del lote 38 que no se enviaron; la lista del 17/11 queda como `LEAD_PATCH_17NOV`.
-- Prueba: `t_l39.mjs`, 32 comprobaciones; necesita `d1shim.mjs` y el worker como módulo, como en el lote 38. Copia de la v74d en `anterior/worker-v74d-17nov-antes-l39.js`.
-- gen33/gen37a todavía no tienen textos ni fotos para los nichos nuevos: para hacer sus propuestas hay que añadirlos (como `suplementos` en el lote 35).
+- `LEAD_PATCH_KEY = "lpatch_20261118"` (35 entradas): pasa al lote del 18/11 las 5 del lote 38 que no se enviaron y las 30 del `SEED3` con su propuesta. La lista del 17/11 queda como `LEAD_PATCH_17NOV`.
+- Prueba: `t_l39.mjs`, 36 comprobaciones; necesita `d1shim.mjs` y el worker como módulo (copia del worker + una línea `export {…}`), como en el lote 38. Copias en `anterior/worker-v74d-17nov-antes-l39.js` y `anterior/worker-v75b-17nov-antes-propuestas-l39.js`.
+
+## Lote 39 (17/11/2026): 30 propuestas sin moda ni comida, fotos de Google Flow
+
+- Las 30 del scrapeo del 17/11 (arriba), con la tienda «Editorial» del lote 37 (`gen37a.py`) y la propuesta de siempre (`gen33v.py`). Publicadas en el Mac (`web117-404growth`, con sus `p/<slug>/index.html`), a falta de `subir-web.command` y `subir.command`.
+- Nichos nuevos en el generador: `prospeccion/l33/niches39.py` (mercería, bellas artes y scrap, artesanía, electrodomésticos, juguetes y juegos, hípica). `gen33.py`, `gen37a.py`, `gen33v.py`, `mkjobs.py` y `jobs37.py` lo cargan con un `update`. Los textos de cada tienda están en `specs39.py` (lo carga `specs.py`) y la lista en `sel39.json`.
+- Todas las fotos son bodegones (`who='none'`, `still=True`): sin modelos. `jobs39.py` cambia la regla de modelo por la de producto fuera de la moda y no pide `hd` (se copia `h.jpg` como `hd.jpg`). 330 peticiones en `flow/q39s.json`, ordenadas por formato (3:4, 16:9, 9:16) porque en Flow el formato se cambia a mano en el chip del modelo.
+- **Flow en modo manual, con la consola (`flow/flow39.js`):**
+  - referencias subidas de golpe al proyecto (180, desde `/mnt/user-data/uploads/…` con `file_upload`);
+  - cada petición: `__pr(i,k)` busca la referencia en el selector («Añadir ingredientes…», buscador «Buscar recursos» con el setter nativo), tecla real Down + Return la añade, `__pt2(i)` escribe el texto y devuelve cuántas referencias lleva, y Return real envía. `mkbat39.py` escribe los lotes de `browser_batch` (unos 30 trabajos por lote, esperas dentro del JS);
+  - con Nano Banana 2.1 salieron las 330 seguidas sin un rechazo; 2 se perdieron sin aviso y se repitieron;
+  - **recogida:** en otra pestaña del proyecto, en `/edit/<id>` de la foto más nueva, `__run()` avanza con ArrowRight sintético, empareja el `.text-part` con el texto exacto y guarda la imagen más grande (1K: 768×1376, 1376×768…). Unas 3 fotos por segundo; se baja en 4 `.json` de ~27 MB por `BroadcastChannel` a pestañas `flow.google.com/robots.txt` y se pasa a carpetas con `l38/unflow.py`.
+- Revisadas en hojas de contacto (`sheet39.py`). Se rehicieron 5 (`flow/q39r.json`): el todoterreno de Juguetes Duba se parecía a un Jeep (ahora carrocería genérica), el papel de Scrapa2 llevaba título y marca, la tienda de Only Today tenía arcos (nada que recuerde a lo árabe) y la caja de sobres de Nexus salía vacía.
+- Revisadas con Playwright a 360, 390 y 1280 px (las 60 páginas): sin scroll lateral, sin fotos rotas ni errores. En local el iframe de la propuesta da 404 porque pide la dirección sin `.html` (Cloudflare sí la sirve).
 
 ## Open Fit: cartel de la nave (13/11/2026)
 

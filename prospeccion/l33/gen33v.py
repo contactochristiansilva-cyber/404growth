@@ -44,6 +44,9 @@ NV['suplementos'] = dict(_base, shop_of='tienda de nutrición', item_pl='product
                          pdp_points=[('Fotos que venden', 'Cada bote y cada sabor, como en la tienda.'), ('Sabor y formato', 'Se eligen en la ficha, sin preguntar por DM.'),
                                      ('Completa tu stack', 'Más productos por pedido, más ticket medio.'), ('Asesoramiento', 'La duda se resuelve por WhatsApp sin salir de la ficha.')],
                          flow_new=[('Ve el producto', 'Instagram o anuncio'), ('Elige sabor y formato', 'En la ficha'), ('Paga', 'Tarjeta, Bizum, Apple Pay')])
+import niches39 as _n39   # lote 39
+for _k, _v in _n39.NV.items():
+    NV[_k] = dict(_base, **_v)
 for k, v in N33.FLOW_TODAY.items():
     if k in NV:
         NV[k]['flow_today'] = v

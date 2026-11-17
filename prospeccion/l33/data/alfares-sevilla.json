@@ -1,0 +1,60 @@
+{
+ "niche": "artesania",
+ "name": "Alfares",
+ "ig": "alfares.sevilla",
+ "f": 13895,
+ "city": "Sevilla",
+ "cityfull": "Sevilla",
+ "address": "Av. de Menéndez Pelayo 47",
+ "logo": {
+  "text": "Alfares"
+ },
+ "cats": [
+  [
+   "Cestas",
+   "p1"
+  ],
+  [
+   "Bodegón",
+   "p3"
+  ],
+  [
+   "Cerámica",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Cesta de calabazas"
+  },
+  {
+   "id": "p2",
+   "name": "Cesta de salmón"
+  },
+  {
+   "id": "p3",
+   "name": "Quesos"
+  },
+  {
+   "id": "p4",
+   "name": "Jamones colgados"
+  },
+  {
+   "id": "p5",
+   "name": "Tinajas de aceitunas"
+  },
+  {
+   "id": "p6",
+   "name": "Damajuanas"
+  }
+ ],
+ "theme": {},
+ "h1": "Tu belén,<br>a un clic.",
+ "eyebrow": "Taller de piezas de belén",
+ "opts": [
+  "12 cm",
+  "18 cm"
+ ],
+ "opts_l": "Escala"
+}

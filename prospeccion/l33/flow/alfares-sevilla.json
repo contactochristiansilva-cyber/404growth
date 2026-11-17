@@ -1,0 +1,49 @@
+{
+ "slug": "alfares-sevilla",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "alfares-sevilla-23.jpg",
+    "alfares-sevilla-22.jpg",
+    "alfares-sevilla-24.jpg",
+    "alfares-sevilla-29.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia alfares-sevilla-23.jpg, aplica la REGLA A): Boutique campaign still life of a miniature nativity scene basket of pumpkins from the reference. The product sits in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm natural light, soft textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia alfares-sevilla-23.jpg, aplica la REGLA A): E-commerce product photo of a miniature basket of pumpkins for a nativity scene from the reference, centred and large in the frame on a seamless light (#EFE8DE) background with a soft shadow, crisp detail. IMAGEN 3 «p2» (formato 3:4, referencia alfares-sevilla-22.jpg, aplica la REGLA A): E-commerce product photo of a miniature basket of salmon steaks for a nativity scene from the reference, centred and large in the frame on a seamless light (#EFE8DE) background with a soft shadow, crisp detail. IMAGEN 4 «p3» (formato 3:4, referencia alfares-sevilla-24.jpg, aplica la REGLA A): E-commerce product photo of miniature cheeses for a nativity scene from the reference, centred and large in the frame on a seamless light (#EFE8DE) background with a soft shadow, crisp detail. IMAGEN 5 «p4» (formato 3:4, referencia alfares-sevilla-29.jpg, aplica la REGLA A): E-commerce product photo of miniature hanging hams for a nativity scene from the reference, centred and large in the frame on a seamless light (#EFE8DE) background with a soft shadow, crisp detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "alfares-sevilla-40.jpg",
+    "alfares-sevilla-42.jpg",
+    "alfares-sevilla-14.jpg",
+    "alfares-sevilla-37.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia alfares-sevilla-40.jpg, aplica la REGLA A): E-commerce product photo of miniature clay pots of olives from the reference, centred and large in the frame on a seamless light (#EFE8DE) background with a soft shadow, crisp detail. IMAGEN 2 «p6» (formato 3:4, referencia alfares-sevilla-42.jpg, aplica la REGLA A): E-commerce product photo of miniature demijohns in wicker baskets from the reference, centred and large in the frame on a seamless light (#EFE8DE) background with a soft shadow, crisp detail. IMAGEN 3 «l1» (formato 3:4, referencia alfares-sevilla-14.jpg, aplica la REGLA A): Lifestyle photo: a miniature market stall full of fruit and vegetables in a nativity scene, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia alfares-sevilla-37.jpg, aplica la REGLA A): Lifestyle photo: a miniature aged clay amphora, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a nativity scene workshop shop in Seville with shelves full of handmade clay figures and miniature market stalls, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Boutique campaign still life of a miniature nativity scene b",
+  "p1": "E-commerce product photo of a miniature basket of pumpkins f",
+  "p2": "E-commerce product photo of a miniature basket of salmon ste",
+  "p3": "E-commerce product photo of miniature cheeses for a nativity",
+  "p4": "E-commerce product photo of miniature hanging hams for a nat",
+  "p5": "E-commerce product photo of miniature clay pots of olives fr",
+  "p6": "E-commerce product photo of miniature demijohns in wicker ba",
+  "l1": "Lifestyle photo: a miniature market stall full of fruit and ",
+  "l2": "Lifestyle photo: a miniature aged clay amphora, like in the ",
+  "b": "Wide interior photo: the inside of a nativity scene workshop"
+ }
+}

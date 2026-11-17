@@ -1,0 +1,62 @@
+{
+ "niche": "suplementos",
+ "name": "Herbolario Cai Salud",
+ "ig": "herbolariocaisalud",
+ "f": 10764,
+ "city": "Alicante",
+ "cityfull": "Alicante",
+ "address": "Av. de Jijona 16",
+ "logo": {
+  "text": "Herbolario Cai Salud"
+ },
+ "cats": [
+  [
+   "Cosmética natural",
+   "p1"
+  ],
+  [
+   "Aceites esenciales",
+   "p2"
+  ],
+  [
+   "Infusiones",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Jabón de Alepo"
+  },
+  {
+   "id": "p2",
+   "name": "Aceite esencial de lavanda"
+  },
+  {
+   "id": "p3",
+   "name": "Infusión relajante"
+  },
+  {
+   "id": "p4",
+   "name": "Magnesio"
+  },
+  {
+   "id": "p5",
+   "name": "Miel cruda"
+  },
+  {
+   "id": "p6",
+   "name": "Crema de árnica"
+  }
+ ],
+ "theme": {},
+ "web_note": "caisalud.com es la web de vuestros centros auditivos: el herbolario no tiene tienda online y quien os encuentra fuera de Alicante solo puede escribiros.",
+ "h1": "Lo natural,<br>a un clic.",
+ "eyebrow": "Herbolario",
+ "sub": "Lo que te recomendamos en nuestro herbolario de {city} desde 2001. Ahora, con envío a casa.",
+ "opts": [
+  "Unidad",
+  "Pack ahorro"
+ ],
+ "opts_l": "Formato"
+}

@@ -21,6 +21,8 @@ SCENE = {
     'suplementos': 'a clean concrete plinth in a bright modern gym with crisp daylight and a gentle blur behind',
     'herbolario': 'a wooden counter in a bright herbalist shop with dried herbs, green plants and soft daylight',
 }
+import niches39 as _n39   # lote 39
+SCENE.update(_n39.SCENE)
 HERB = {'herbolari-de-lina', 'herbolario-tienda-verde'}
 
 

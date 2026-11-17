@@ -1,0 +1,39 @@
+{
+ "slug": "herbolario-cai-salud",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, sin referencia, aplica la REGLA A): Boutique campaign still life of amber glass bottles of herbal remedies, a glass jar of loose herbal tea and a bar of olive oil soap with fresh herbs, no labels from the reference. The product sits in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm natural light, soft textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, sin referencia, aplica la REGLA A): Sports nutrition e-commerce product photo of a bar of traditional olive and laurel oil soap, no text from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 3 «p2» (formato 3:4, sin referencia, aplica la REGLA A): Sports nutrition e-commerce product photo of a small amber glass bottle of lavender essential oil with a dropper, no label from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 4 «p3» (formato 3:4, sin referencia, aplica la REGLA A): Sports nutrition e-commerce product photo of a glass jar of loose chamomile and herbal tea blend from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 5 «p4» (formato 3:4, sin referencia, aplica la REGLA A): Sports nutrition e-commerce product photo of a white supplement bottle of capsules with a plain label, no text from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, sin referencia, aplica la REGLA A): Sports nutrition e-commerce product photo of a glass jar of raw honey with a wooden dipper, no label from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 2 «p6» (formato 3:4, sin referencia, aplica la REGLA A): Sports nutrition e-commerce product photo of a white tube of natural arnica cream with a plain label, no text from the reference, centred on a seamless light grey (#ECEDE8) background with a soft shadow, the whole product visible and large in the frame, crisp label-free packaging detail. IMAGEN 3 «l1» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle photo: a cup of herbal tea next to fresh herbs and a glass teapot on a wooden table by a window, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle photo: natural soaps and amber glass bottles arranged on a wooden shelf with eucalyptus leaves, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a bright herbalist shop with wooden shelves full of herbal remedies, teas in glass jars and natural cosmetics, green plants, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Boutique campaign still life of amber glass bottles of herba",
+  "p1": "Sports nutrition e-commerce product photo of a bar of tradit",
+  "p2": "Sports nutrition e-commerce product photo of a small amber g",
+  "p3": "ts nutrition e-commerce product photo of a glass jar of loos",
+  "p4": "Sports nutrition e-commerce product photo of a white supplem",
+  "p5": "ts nutrition e-commerce product photo of a glass jar of raw ",
+  "p6": "Sports nutrition e-commerce product photo of a white tube of",
+  "l1": "Lifestyle photo: a cup of herbal tea next to fresh herbs and",
+  "l2": "Lifestyle photo: natural soaps and amber glass bottles arran",
+  "b": "Wide interior photo: the inside of a bright herbalist shop w"
+ }
+}
