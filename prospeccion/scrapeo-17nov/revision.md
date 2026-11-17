@@ -1,30 +1,76 @@
-# Scrapeo del 17/11/2026 para el 18/11: nichos de stock estable (sin moda)
+# Scrapeo del 17/11/2026 para el 18/11: 30 tiendas sin moda ni comida
 
-Lo que pidió Chris: 30 tiendas con anuncios en Meta (activos o en el último año), más de 3.000 seguidores en Instagram, tienda física en España, sin tienda online de verdad, que no estén en el CRM, sin cadenas, nada árabe y **todas con WhatsApp comprobado**. Sin moda: nichos donde el catálogo casi no cambia y solo se repone (como Intenso Fragancias, con unas 350–400 referencias fijas).
+## Lo que pidió Chris
 
-## Nichos que se miraron
+Empezó como «30 tiendas con anuncios en Meta y WhatsApp comprobado». Durante la noche cambió así:
 
-Herbolarios y dietética, suplementos y nutrición deportiva, ópticas, perfumerías, mascotas y piensos, jamonerías, charcuterías e ibéricos, vinotecas, delicatessen y ultramarinos, droguerías, electrodomésticos, pesca y bicicletas.
+- **WhatsApp:** «mientras tenga teléfono publicado en algún lado no importa, no hace falta verificarlo».
+- **Meta:** nada de la Biblioteca de anuncios («no quiero que me bloqueen nada»). Solo Instagram.
+- **Instagram:** tiendas con **más de 10.000 seguidores** y actividad constante.
+- **Nichos:** «carnicería tampoco… empresas que vendan productos propios, creados por ellos, reventa de sneakers, suplementos… pero no de comida o productos perecederos», porque los envíos son delicados.
+
+Se mantiene lo de siempre: tienda física en España (sin Canarias), sin tienda online de verdad, que no estén en el CRM, sin cadenas, nada árabe y sin moda.
+
+## Filtros que se usaron
+
+- Más de 10.000 seguidores.
+- Última publicación hace 14 días o menos, y 4 o más publicaciones en 30 días.
+- Teléfono publicado en la bio, en sus publicaciones, en su web o en Google Maps.
+- Web ninguna, rota, en obras, de catálogo sin carrito o con muy pocos productos (25 o menos).
+- Cruzadas con el CRM (Instagram, teléfonos y nombre) y con todas las listas de `prospeccion/`.
 
 ## Cómo se buscó
 
-1. **Biblioteca de anuncios, primero los anuncios** (unas 80 frases: «herbolario», «perfumería», «jamones whatsapp», «tienda de pesca»…). Salieron unas 900 páginas, casi todas marcas grandes o tiendas que ya venden online. De las que no enlazan a una web propia, muy pocas eran tiendas pequeñas.
-2. **Instagram por palabra clave**: nicho × ciudad, unas 1.000 búsquedas y unos 5.000 perfiles. Filtro: más de 3.000 seguidores, España, palabras de tienda en la bio, sin palabras de restaurante, protectora, creador…
-3. **Webs** de las que tienen dominio, por r.jina.ai: Shopify `/products.json`, WooCommerce `/wp-json/wc/store/v1/products` y `/wp-json/wp/v2/product`, PrestaShop, y si la portada tiene precios o carrito.
-4. **Anuncios de cada candidata** por su página de Facebook o por su nombre.
-5. **Teléfonos**: bio, textos de sus publicaciones y Google Maps (`/search?tbm=map` con calle, ciudad y «España» en la búsqueda; sin «España» Maps busca donde está el mapa).
+1. **Instagram por palabra clave** (`PolarisKeywordSearchExplorePageRelayQuery`): nicho × ciudad, unas 1.200 búsquedas y unos 25.700 perfiles. Perfil completo con `PolarisProfilePageContentQuery`; actividad y teléfonos de los textos con `PolarisProfilePostsQuery`.
+2. **Cuentas parecidas** (`PolarisProfileSuggestedUsersWithPreloadableQuery`, `module: 'profile'`): desde cada tienda buena salen unas 30 parecidas. Es lo que más rindió en mercerías, telas, bordados, aderezos y belén.
+3. **Webs** por r.jina.ai: Shopify `/products.json`, WooCommerce (`wc/store` y `wp/v2/product`), PrestaShop, precios y carrito. Si WooCommerce dice 0 productos, se mira la tienda en Chrome: a veces la API está apagada y la tienda sí vende (Magic Barcelona tenía 387).
+4. **Dominios ocultos**: se buscan dominios en los textos de sus publicaciones (así salieron allyours.com y perfumeriaslaguna.com, que ya venden) y se prueba el DNS con `dns.google/resolve`.
+5. **Google Maps** (`/search?tbm=map` con la calle, la ciudad y «España»): teléfono, web y dirección de la ficha.
 
 ## Lo que se aprendió
 
-- **En estos nichos, casi todas las tiendas con anuncios ya venden online.** Herbolarios, suplementos, mascotas, perfumerías, ópticas, pesca, bicis y vinotecas con más de 3.000 seguidores tienen casi siempre WooCommerce, Shopify o PrestaShop con más de 100 productos. De unos 60 perfiles revisados a fondo, unos 20 no tienen tienda online y, de esos, unos 12 han hecho anuncios.
-- Lo que más sale **sin tienda online y con anuncios**: carnicerías, charcuterías y jamonerías de barrio, tiendas gourmet pequeñas, droguerías antiguas y ópticas de barrio con web de escaparate.
-- En Instagram, «córdoba», «valencia», «granada» y «mérida» traen muchas cuentas de Argentina, Venezuela, Nicaragua o México: hay que filtrar por país.
+- Más de 10.000 seguidores, actividad y sin tienda online es raro en herbolarios, suplementos, perfumerías, ópticas y mascotas: casi todas venden ya online.
+- **Donde sí sale:**
+  - mercerías, lanas y telas (12 de las 30);
+  - aderezos de fallera y joyería de taller;
+  - bellas artes y scrap;
+  - cerámica, bordado en oro, belén y esparto.
+- «Córdoba», «Valencia», «Granada» o «Mérida» traen muchas cuentas de Latinoamérica: hay que filtrar por país.
+- Los fijos son muchos. 6 de las 30 solo publican fijo.
 
-## Bloqueos de esta noche
+## Resultado: `candidatos.json` (30)
 
-- **La Biblioteca de anuncios dejó de responder** a la cuenta de Facebook de Chris tras unas 800 consultas seguidas (devuelve listas vacías, también en la web normal y en los otros dos Chrome). Lo prudente es esperar a que se levante solo y, después, ir despacio (una consulta cada 5 s).
-- **WhatsApp Web tiene la sesión cerrada en los tres Chrome conectados** (sale el QR). Sin escanearlo, ningún número se puede comprobar.
+| Nicho en el CRM | Tiendas |
+|---|---|
+| `merceria` (nuevo) | 12: Mercería Mari Carmen, Lanas Paloma, Fernández-Cruz Miguel, Lanas Cachemir, Mercería San García, Mina Mina, Cocorola, Madejas Tejerlo, Dmario Tejidos, Teixits Donna, Cast Tejidos, Sederías Natalia |
+| `joya` | 5: Botones de Plata, Magdala, Bisuterapia, Art-Antic, Roda |
+| `artesania` (nuevo) | 4: Cerámica Fajalauza, Bordados Perales, Alfares, Esparto Antonio López |
+| `arte` (nuevo) | 3: Jaspe Art, My Scrap Place, Scrapa2 |
+| `toys` | 2: Nexus Tabletop, Juguetes Duba |
+| `cosmetica` | Only Today Perfumería (perfumes propios) |
+| `suplementos` | Herbolario Cai Salud |
+| `deporte` | FGA Equitación |
+| `electro` (nuevo) | Factory Electrodomésticos (outlet) |
 
-## Estado
+### Contacto de las 30
 
-`candidatos.json` tiene las 12 que cumplen anuncios + sin tienda online. Les falta la comprobación de WhatsApp y, en 4, encontrar un móvil. M&H Nutrition (Dos Hermanas) también cumplía, pero ya estaba en el lote 37: fuera.
+- **8 publican el número como WhatsApp:** Botones de Plata, Mercería San García, Mina Mina, Cocorola, Cast Tejidos, Alfares, Esparto Antonio López y Sederías Natalia (un fijo con WhatsApp).
+- **16 tienen móvil sin comprobar.** En el CRM llevan `waOk: false`, así que sale primero «Instagram».
+- **6 tienen solo fijo** y van con prioridad 50 y «AVISO»: Herbolario Cai Salud, Jaspe Art, Lanas Cachemir, My Scrap Place, Dmario Tejidos y Juguetes Duba.
+
+### Avisos
+
+- Las de poca interacción: FGA Equitación (mediana de 4 «me gusta»), Esparto Antonio López (9) y Scrapa2 (12).
+- Factory Electrodomésticos es un outlet: su stock no es fijo.
+- La cuenta de Mercería Mari Carmen es la de la dueña.
+- Cocorola es un puesto de los Encants.
+
+**Reserva:** Daniel Bada (Valencia, aderezos de valenciana, 13.400 seguidores, mediana de 274 «me gusta»). Su web danielbada.com es WooCommerce con 18 productos.
+
+## CRM (worker del admin)
+
+Se hace con `patch_l39.py` + `mkrows.py`. La prueba es `t_l39.mjs`, con 32 comprobaciones.
+
+- **Nichos nuevos:** `merceria`, `arte`, `artesania` y `electro`, con los textos de Deporte, como `scrapeo-10nov/patch_niches.py`.
+- **`SEED3_KEY = "seed_20261118"`:** las 30 entran en Scrapeados como tercera lista de `seedOnce`. Van **sin propuesta**, así que todavía no salen en el Lote de hoy, que solo coge leads con `pageUrl`.
+- **`LEAD_PATCH_KEY = "lpatch_20261118"`:** las 5 del lote 38 que se quedaron sin enviar pasan al lote del 18/11. Son Ailec Modas, Calzados Bergillos, Calzados Toñi, Kisco y Livorno. La lista anterior queda como `LEAD_PATCH_17NOV`.

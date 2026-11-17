@@ -636,6 +636,27 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - **`outOnce`** (`LEAD_OUT_KEY = "lout_20261117"`, corre después de `delOnce`): una sola vez, las del lote del 16/11 que siguen sin enviar (`stage` new y sin `contactedAt`) salen del CRM a la colección `leads_out` de `docs`, tal cual. Sus ids quedan en `meta` (`lout_20261117`). Para devolver una: copiar su fila de `leads_out` a `leads` y subir `crm_rev`.
   - Copia del worker anterior en `anterior/worker-v74c-17nov-antes-l38.js`.
 
+## Scrapeo del 17/11 para el 18/11: 30 tiendas sin moda ni comida (admin, `seed_20261118`)
+
+- Lo que pidió Chris al final:
+  - solo Instagram, **nada de la Biblioteca de anuncios** («no quiero que me bloqueen nada»);
+  - más de 10.000 seguidores y actividad constante;
+  - **cualquier teléfono publicado** (no hace falta comprobar el WhatsApp);
+  - sin moda y **sin comida ni nada perecedero** («los envíos son muy delicados»): mejor producto propio, sneakers, suplementos…
+- Todo en `prospeccion/scrapeo-17nov/`. `candidatos.json` tiene las 30; en `revision.md` están los filtros, cómo se buscó, lo aprendido y la reserva (Daniel Bada).
+- Lo que más rindió fueron las **cuentas parecidas** de Instagram (`PolarisProfileSuggestedUsersWithPreloadableQuery` con `module: 'profile'` y `target_id` = pk), a partir de las tiendas buenas.
+  - Salen sobre todo mercerías, lanas y telas, aderezos de fallera, bellas artes y scrap, y cerámica, bordado en oro, belén y esparto.
+  - Herbolarios, perfumerías, ópticas y mascotas con más de 10.000 seguidores casi siempre venden ya online.
+- Nichos nuevos en el CRM: `merceria`, `arte`, `artesania` y `electro` (`patch_l39.py`, mismos textos por defecto que Deporte). Prefijos de id: `mer-`, `art-`, `atn-`, `ele-`.
+- **CRM:**
+  - `SEED3_KEY`/`SEED3` es la tercera lista de `seedOnce`.
+  - Las 30 van **sin propuesta**: no salen en el Lote de hoy hasta tener `slug`/`pageUrl`, porque la cola pide `pageUrl`.
+  - `waOk: false` en las 16 cuyo móvil no se publica como WhatsApp.
+  - Las 6 de solo fijo van con prioridad 50 y «AVISO».
+- `LEAD_PATCH_KEY = "lpatch_20261118"` pasa al lote del 18/11 las 5 del lote 38 que no se enviaron; la lista del 17/11 queda como `LEAD_PATCH_17NOV`.
+- Prueba: `t_l39.mjs`, 32 comprobaciones; necesita `d1shim.mjs` y el worker como módulo, como en el lote 38. Copia de la v74d en `anterior/worker-v74d-17nov-antes-l39.js`.
+- gen33/gen37a todavía no tienen textos ni fotos para los nichos nuevos: para hacer sus propuestas hay que añadirlos (como `suplementos` en el lote 35).
+
 ## Open Fit: cartel de la nave (13/11/2026)
 
 - Open Fit (gimnasio) va a poner carteles en una nave que era un «Moda Outlet». Medidas sacadas de la foto de Chris:
