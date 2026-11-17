@@ -2310,10 +2310,13 @@ const Q_ADD = [
 // Q_SET · cambios a presupuestos que ya existen, una sola vez (por id o, si no está, por el nombre del cliente). Si después se tocan en el admin, no se pisan.
 // 11/11/2026: Intenso Fragancias cerrado en 1.440 € IVA incluido (pago único) + 490 €/mes por llevar los anuncios (eso no va en la factura de la tienda).
 // 12/11/2026: son 300 productos al arrancar la tienda, no 150 (solo cambia «qué incluye»).
-const Q_SET_KEY = "quotes_set_20261113";   // 13/11: Open Fit pasa a solo la web, 2.050 € IVA incluido (se mantiene el cambio del 12/11 de Intenso)
+// 13/11/2026 (quotes_set_20261113, ya aplicado): Open Fit pasó a solo la web, 2.050 € IVA incluido.
+// 17/11/2026: Open Fit paga 50/50. En Facturación su cobro de 2.050 € se cambió por dos de 1.025 € (pago 1 de 2 y 2 de 2, grupo g_eA-Z_G3PiWdN).
+//   El presupuesto se une al pago 1 (sin payMade: volver a pendiente no borra los dos pagos ni cambiar el importe los toca).
+const Q_SET_KEY = "quotes_set_20261117";
 const Q_SET = [
-  ["q_intensofragancias", { name: "Intenso Fragancias", what: "Tienda online con 300 productos al arrancar (pago único, IVA incluido) + anuncios 490 €/mes" }],
-  ["q_openfit", { name: "Open Fit", what: "Web (pago único, IVA incluido)", once: 2050, monthly: 0 }],
+  ["q_openfit", { name: "Open Fit", what: "Web (dos pagos de 1.025 €, IVA incluido)", once: 2050, monthly: 0,
+    bill: { day: "2026-11-13", legacy: 1, cid: "c_laX5PV3mqsmk", client: "Open Fit", pay: "p_fonWIRqEPm4M" } }],
 ];
 function qClean(b, part) {
   const d = {};
