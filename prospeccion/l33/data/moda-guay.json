@@ -1,0 +1,61 @@
+{
+ "niche": "moda",
+ "name": "Moda Guay",
+ "ig": "guaymoda",
+ "f": 2334,
+ "city": "Menorca",
+ "cityfull": "Menorca (Baleares)",
+ "address": "",
+ "logo": {
+  "text": "Moda Guay"
+ },
+ "cats": [
+  [
+   "Chalecos",
+   "p1"
+  ],
+  [
+   "Jerséis",
+   "p2"
+  ],
+  [
+   "Complementos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaleco de pelo"
+  },
+  {
+   "id": "p2",
+   "name": "Jersey de ondas"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey a rayas"
+  },
+  {
+   "id": "p4",
+   "name": "Cárdigan de pelo"
+  },
+  {
+   "id": "p5",
+   "name": "Bolso con tachas"
+  },
+  {
+   "id": "p6",
+   "name": "Collar estrella de mar"
+  }
+ ],
+ "theme": {},
+ "h1": "Moda curvy,<br>de la M a la 3XL.",
+ "opts": [
+  "M",
+  "L",
+  "XL",
+  "2XL",
+  "3XL"
+ ]
+}

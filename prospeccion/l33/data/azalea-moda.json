@@ -1,0 +1,102 @@
+{
+ "niche": "moda",
+ "name": "Azalea moda hombre",
+ "ig": "azaleamoda",
+ "f": 12820,
+ "city": "Torrelavega",
+ "cityfull": "Torrelavega (Cantabria)",
+ "address": "C/ Fernández Vallejo 20",
+ "logo": {
+  "text": "Azalea moda hombre"
+ },
+ "cats": [
+  [
+   "Americanas",
+   "p1"
+  ],
+  [
+   "Abrigos",
+   "p2"
+  ],
+  [
+   "Pantalones",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Americana mostaza"
+  },
+  {
+   "id": "p2",
+   "name": "Plumífero caqui"
+  },
+  {
+   "id": "p3",
+   "name": "Americana de pata de gallo"
+  },
+  {
+   "id": "p4",
+   "name": "Pantalón cargo"
+  },
+  {
+   "id": "p5",
+   "name": "Zapatilla de ante"
+  },
+  {
+   "id": "p6",
+   "name": "Vaquero gris"
+  }
+ ],
+ "theme": {},
+ "opts": [
+  "S",
+  "M",
+  "L",
+  "XL",
+  "XXL"
+ ],
+ "na": {
+  "rev_p": "Así se verán las opiniones de vuestros clientes. Estas son de ejemplo.",
+  "look_s": "Tres prendas de la tienda que van solas. Llévatelas juntas o elige la que te falta."
+ },
+ "rev": [
+  [
+   "Javier",
+   "Sevilla",
+   0,
+   "Lo pedí un domingo por la noche y llegó tal cual se ve en las fotos."
+  ],
+  [
+   "Álvaro",
+   "Madrid",
+   1,
+   "Por fin puedo comprar sin escribir por privado. La talla, perfecta."
+  ],
+  [
+   "Marcos",
+   "Valencia",
+   2,
+   "Me ayudaron con la talla por WhatsApp en un momento."
+  ],
+  [
+   "Pablo",
+   "*",
+   3,
+   "Lo recogí en la tienda y aproveché para probarme dos cosas más."
+  ],
+  [
+   "Daniel",
+   "Málaga",
+   4,
+   "Pagué con Bizum en un minuto. Repetiré seguro."
+  ],
+  [
+   "Sergio",
+   "Bilbao",
+   5,
+   "La calidad se nota. Ya tengo fichado lo siguiente."
+  ]
+ ]
+}

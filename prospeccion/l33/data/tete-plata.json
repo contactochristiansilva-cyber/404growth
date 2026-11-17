@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Tete Plata",
+ "ig": "teteplata_",
+ "f": 6354,
+ "city": "Badajoz",
+ "cityfull": "Badajoz",
+ "address": "C/ Menacho 29",
+ "logo": {
+  "text": "Tete Plata"
+ },
+ "cats": [
+  [
+   "Jerséis",
+   "p2"
+  ],
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Chalecos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta de paisley"
+  },
+  {
+   "id": "p2",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey con botones"
+  },
+  {
+   "id": "p4",
+   "name": "Chaleco cruzado"
+  },
+  {
+   "id": "p5",
+   "name": "Cazadora de leopardo"
+  },
+  {
+   "id": "p6",
+   "name": "Jersey de rombos"
+  }
+ ],
+ "theme": {},
+ "domain": "teteplata.com",
+ "web_note": "teteplata.com no carga: hoy quien os encuentra fuera de Badajoz solo puede escribiros."
+}

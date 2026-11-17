@@ -1,0 +1,51 @@
+{
+ "slug": "azalea-moda",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "azalea-moda-01.jpg",
+    "azalea-moda-02.jpg",
+    "azalea-moda-03c.jpg",
+    "azalea-moda-14.jpg",
+    "azalea-moda-10.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional male fashion model (a man). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia azalea-moda-01.jpg, aplica la REGLA A): A stylish Spanish man in his thirties wearing a camel wool overcoat over a grey hooded jumper and beige chinos from the reference, walking at a tree-lined boulevard in Torrelavega, Cantabria, Spain, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia azalea-moda-02.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a mustard yellow wool blazer with a navy jumper from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia azalea-moda-03c.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a khaki green hooded puffer jacket over a grey jumper and beige chinos from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia azalea-moda-14.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a grey houndstooth blazer over a beige waistcoat, a white shirt and beige trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia azalea-moda-10.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing light grey slim cargo trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "azalea-moda-17.jpg",
+    "azalea-moda-22.jpg",
+    "azalea-moda-24.jpg",
+    "azalea-moda-11c.jpg",
+    "azalea-moda-07.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional male fashion model (a man). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia azalea-moda-17.jpg, aplica la REGLA A): Footwear e-commerce photo of a suede sneaker in beige, green and mustard with perforated details from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#ECE7E0) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 2 «p6» (formato 3:4, referencia azalea-moda-22.jpg, aplica la REGLA B): E-commerce product photo for a fashion boutique: a model wearing grey washed slim jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia azalea-moda-24.jpg, aplica la REGLA B): Lifestyle fashion photo: a model wearing a navy zip-up wool jacket over a white T-shirt and grey jeans from the reference, candid and relaxed in a sunny street of Torrelavega, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia azalea-moda-11c.jpg, aplica la REGLA A): Lifestyle photo: a pair of grey suede and mesh running sneakers on a wooden floor, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia azalea-moda-07.jpg, aplica la REGLA C): Wide interior photo: the inside of a men's clothing store with wooden floors, rails of blazers and shirts and tables of folded jumpers and jeans, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish man in his thirties wearing a camel wool o",
+  "p1": "ce product photo for a fashion boutique: a model wearing a m",
+  "p2": "ce product photo for a fashion boutique: a model wearing a k",
+  "p3": "ce product photo for a fashion boutique: a model wearing a g",
+  "p4": "ce product photo for a fashion boutique: a model wearing lig",
+  "p5": "Footwear e-commerce photo of a suede sneaker in beige, green",
+  "p6": "ce product photo for a fashion boutique: a model wearing gre",
+  "l1": "Lifestyle fashion photo: a model wearing a navy zip-up wool ",
+  "l2": "Lifestyle photo: a pair of grey suede and mesh running sneak",
+  "b": "Wide interior photo: the inside of a men's clothing store wi"
+ }
+}

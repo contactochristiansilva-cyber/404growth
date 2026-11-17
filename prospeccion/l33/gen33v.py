@@ -45,7 +45,8 @@ NV['suplementos'] = dict(_base, shop_of='tienda de nutrición', item_pl='product
                                      ('Completa tu stack', 'Más productos por pedido, más ticket medio.'), ('Asesoramiento', 'La duda se resuelve por WhatsApp sin salir de la ficha.')],
                          flow_new=[('Ve el producto', 'Instagram o anuncio'), ('Elige sabor y formato', 'En la ficha'), ('Paga', 'Tarjeta, Bizum, Apple Pay')])
 for k, v in N33.FLOW_TODAY.items():
-    NV[k]['flow_today'] = v
+    if k in NV:
+        NV[k]['flow_today'] = v
 G.NICHE.update(NV)
 
 # los marcos de la página con la tienda nueva dentro

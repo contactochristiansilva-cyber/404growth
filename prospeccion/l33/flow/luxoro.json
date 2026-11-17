@@ -1,0 +1,49 @@
+{
+ "slug": "luxoro",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "luxoro-19.jpg",
+    "luxoro-22.jpg",
+    "luxoro-20.jpg",
+    "luxoro-21.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia luxoro-19.jpg, aplica la REGLA A): Luxury campaign still life of gold chain bracelets and gold rings from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia luxoro-22.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a small gold investment bar with a plain stamped surface, no logos and no text from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia luxoro-19.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of the gold curb chain bracelet with an ID plate (the one on the left) from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia luxoro-20.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a pair of polished gold wedding rings from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia luxoro-21.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a pair of gold teardrop drop earrings with an open hoop design from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "luxoro-28.jpg",
+    "luxoro-35.jpg",
+    "luxoro-04.jpg",
+    "luxoro-17.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia luxoro-28.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a stack of small gold bars of different sizes with plain surfaces, no logos and no text from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia luxoro-35.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a stack of gold rings of different styles from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia luxoro-04.jpg, aplica la REGLA A): Lifestyle photo: gold rings and a gold chain on a café table next to a cappuccino, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia luxoro-17.jpg, aplica la REGLA A): Lifestyle photo: a glass display case with gold bars and gold jewellery in a jewellery shop, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia luxoro-17.jpg, aplica la REGLA B): Wide interior photo: a modern jewellery and gold stand in a bright shopping centre with glass display cases full of gold bars and gold jewellery, warm light, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of gold chain bracelets and gold ",
+  "p1": "Luxury jewellery e-commerce photo of a small gold investment",
+  "p2": "Luxury jewellery e-commerce photo of the gold curb chain bra",
+  "p3": "Luxury jewellery e-commerce photo of a pair of polished gold",
+  "p4": "Luxury jewellery e-commerce photo of a pair of gold teardrop",
+  "p5": "Luxury jewellery e-commerce photo of a stack of small gold b",
+  "p6": "Luxury jewellery e-commerce photo of a stack of gold rings o",
+  "l1": "Lifestyle photo: gold rings and a gold chain on a café table",
+  "l2": "Lifestyle photo: a glass display case with gold bars and gol",
+  "b": "Wide interior photo: a modern jewellery and gold stand in a "
+ }
+}

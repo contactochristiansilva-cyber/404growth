@@ -1,0 +1,56 @@
+{
+ "niche": "joya",
+ "name": "GM Joyerías",
+ "ig": "joyeriasgm",
+ "f": 8194,
+ "city": "Armilla",
+ "cityfull": "Armilla (Granada)",
+ "address": "Armilla, Maracena, Atarfe y Guadix",
+ "logo": {
+  "text": "GM Joyerías"
+ },
+ "cats": [
+  [
+   "Pulseras",
+   "p1"
+  ],
+  [
+   "Pendientes",
+   "p2"
+  ],
+  [
+   "Colgantes",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Brazalete de oro"
+  },
+  {
+   "id": "p2",
+   "name": "Aros torzados"
+  },
+  {
+   "id": "p3",
+   "name": "Cadena de oro"
+  },
+  {
+   "id": "p4",
+   "name": "Sortija con piedra azul"
+  },
+  {
+   "id": "p5",
+   "name": "Colgante con inicial"
+  },
+  {
+   "id": "p6",
+   "name": "Pulsera de perlas"
+  }
+ ],
+ "theme": {},
+ "domain": "gmjoyerias.es",
+ "web_note": "gmjoyerias.es es de compraventa de oro y su «Tienda» no tiene productos: quien os encuentra fuera de vuestras cuatro tiendas solo puede escribiros.",
+ "h1": "Joyas de oro<br>a precio de oro."
+}

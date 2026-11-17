@@ -38,6 +38,14 @@ NA['sneakers'] = NA['calzado']
 NA['optica'] = dict(NA['joya'], chip='Monturas nuevas · ya en la óptica', sub='Las monturas de nuestra óptica de {city}, ahora con envío a toda España.',
                     trust=[('truck', 'Envío a toda España'), ('card', 'Bizum'), ('store', 'Ajuste en tienda')], new_e='Recién llegado a la óptica',
                     new_h='Las monturas nuevas', look_e='Para el sol', look_h='Tres monturas para elegir', look_b='Añadir las 3')
+# lote 38 (16/11/2026): muebles, sofás, colchones y decoración. Cada tienda puede cambiar estos textos con «na» en su ficha (specs).
+NA['deco'] = dict(rev_p='Así se verán las opiniones de vuestros clientes. Estas son de ejemplo.', visit_p='Ven a ver y a probar cada pieza en persona.', chip='Nuevos modelos · ya en la exposición', sub='Elegidos en nuestra tienda de {city}. Ahora, online y con entrega a domicilio.',
+                  trust=[('truck', 'Entrega a domicilio'), ('card', 'Bizum'), ('store', 'Exposición en tienda')],
+                  new_e='Recién llegado a la exposición', new_h='Lo nuevo en la tienda', cat_h='¿Qué buscas para tu casa?',
+                  look_e='Ambiente completo', look_h='Ideas para tu casa', look_s='Tres piezas de la tienda que van juntas. Llévatelas a la vez o elige la que te falta.',
+                  look_b='Añadir las 3', best_e='Lo más vendido', best_h='Lo que más nos pedís en la tienda',
+                  fdet=[('truck', 'Entrega a domicilio'), ('store', 'Ven a verlo a la tienda de {city}'), ('card', 'Tarjeta, Bizum, Apple Pay o Google Pay')],
+                  drp='Entrega a domicilio · Exposición en {city}')
 
 # reseñas de ejemplo (se dice en la página que son de ejemplo): (nombre, ciudad, producto, texto). '*' = la ciudad de la tienda
 REV = {
@@ -69,7 +77,14 @@ REV = {
 for k in ('calzado', 'sneakers'):
     REV[k] = REV['moda']
 REV['optica'] = REV['joya']
+REV['deco'] = [('Lucía', 'Sevilla', 0, 'Lo elegí desde el móvil un domingo por la noche y a la semana ya lo tenía en casa.'),
+               ('Javier', 'Madrid', 1, 'Me pasaron las medidas exactas por WhatsApp antes de comprar. Encaja perfecto.'),
+               ('Marta', 'Valencia', 2, 'Igual que en las fotos. La entrega, puntual y con mucho cuidado.'),
+               ('Carmen', '*', 3, 'Fui a probarlo a la tienda y terminé de pedirlo online desde casa.'),
+               ('Ana', 'Málaga', 4, 'Pagué con Bizum en un minuto. Repetiremos para el dormitorio.'),
+               ('Pablo', 'Bilbao', 5, 'Se nota la calidad. Ya tenemos fichada la pieza a juego.')]
 
+FDET = [('truck', 'Envío a toda España'), ('store', 'Recogida gratis en la tienda de {city}'), ('card', 'Tarjeta, Bizum, Apple Pay o Google Pay')]
 STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z"/></svg>'
 
 CSS = r"""
@@ -349,7 +364,7 @@ def detail(c):
 
 
 def store(c):
-    N = G.NICHE[c['niche']]; A = NA[c['niche']]; nm = E(c['name']); P = c['prods']; city = c['city']; s = c['slug']
+    N = G.NICHE[c['niche']]; A = dict(NA[c['niche']], **(c.get('na') or {})); nm = E(c['name']); P = c['prods']; city = c['city']; s = c['slug']
     acc = (c.get('theme') or {}).get('acc') or N['acc']
     root = (':root{--f:%s;--ac:%s;--hp:%s;--hpm:%s}' % (G.FONT, acc, c.get('hp', 'center'), c.get('hpm', 'center')))
     cats = c['cats']; cn = [n for n, _ in cats]
@@ -414,8 +429,7 @@ def store(c):
           '<div class="os">' + ''.join(f'<button{" class=on" if x == od else ""}>{E(x)}</button>' for x in opts) + '</div>'
           f'<div class="ft1">' + add(p0, 'bt ga fadd', 'Añadir a la cesta') + '</div>'
           f'<a class="fwa" href="#" data-demo>{ic("chat", 18)}¿Dudas? Pregúntanos por WhatsApp</a>'
-          f'<div class="fdet"><div>{ic("truck", 22)}Envío a toda España</div><div>{ic("store", 22)}Recogida gratis en la tienda de {E(city)}</div>'
-          f'<div>{ic("card", 22)}Tarjeta, Bizum, Apple Pay o Google Pay</div></div></div></div></section>')
+          '<div class="fdet">' + ''.join(f'<div>{ic(i, 22)}{E(T(t, c))}</div>' for i, t in A.get('fdet', FDET)) + '</div></div></div></section>')
     # 5 · así se lleva
     lk = P[1:4]
     o += (f'<section class="sx bl" id="look"><div class="w lk"><div class="tile rv"><img src="{img(c, "l1")}" alt="" loading="lazy">'
@@ -430,19 +444,19 @@ def store(c):
           '<div class="bg4">' + ''.join(card(p, f'Nº {k + 1}').replace('class="pc"', 'class="pc rv"') for k, p in enumerate(bs)) + '</div></div></section>')
     # 7 · reseñas de ejemplo
     rv = ''
-    for n, cy, pi, t in REV[c['niche']]:
+    for n, cy, pi, t in (c.get('rev') or REV[c['niche']]):
         p = P[pi]; cy = city if cy == '*' else cy
         rv += (f'<figure class="rc"><div class="rct"><span class="st">{STAR * 5}</span><span class="ej">Ejemplo</span></div><q>{E(t)}</q>'
                f'<figcaption><img src="{img(c, p["id"])}" alt="" loading="lazy"><span><b>{n} · {E(cy)}</b><small>Compró: {E(p["name"])}</small></span></figcaption></figure>')
     o += (f'<section class="sx bl" id="opiniones"><div class="w"><div class="rvh rv"><div><span class="ey">Reseñas de ejemplo</span><h2 class="h2">Lo que dicen de la tienda</h2></div>'
-          f'<div class="rsc"><b>4,9</b><div><span class="st">{STAR * 5}</span><p>Así se verán las opiniones de vuestras clientas. Estas son de ejemplo.</p></div></div></div>'
+          f'<div class="rsc"><b>4,9</b><div><span class="st">{STAR * 5}</span><p>{E(A.get("rev_p", "Así se verán las opiniones de vuestras clientas. Estas son de ejemplo."))}</p></div></div></div>'
           f'<div class="rg">{rv}</div></div></section>')
     # 8 · la tienda
     addr = c.get('address') or ''
     maps = 'https://www.google.com/maps/search/' + urllib.parse.quote(f'{c["name"]} {addr} {city}')
     where = (E(addr[0].upper() + addr[1:]) + ', en ' if addr else 'En ') + E(c.get('cityfull', city))
     o += (f'<section class="sx vs" id="visita" style="padding-top:24px"><div class="w"><div class="tile rv"><img src="{img(c, "b")}" alt="Nuestra tienda" loading="lazy">'
-          f'<div class="vc gk"><span class="ey">Nuestra tienda</span><h3>{E(N["visit_h"])}</h3><p>{where}. Recoge tu pedido gratis en la tienda.</p>'
+          f'<div class="vc gk"><span class="ey">Nuestra tienda</span><h3>{E(N["visit_h"])}</h3><p>{where}. {E(A.get("visit_p", "Recoge tu pedido gratis en la tienda."))}</p>'
           f'<div class="hb"><a class="bt glw" href="{maps}" target="_blank" rel="noopener">{ic("pin", 18)}Cómo llegar</a>'
           f'<a class="bt gl" href="#" data-demo>{ic("chat", 18)}Escríbenos</a></div></div></div></div></section>')
     # 9 · instagram
@@ -459,7 +473,7 @@ def store(c):
           '<div><h4>Pago seguro</h4><div class="pay"><span class="gl">Tarjeta</span><span class="gl">Bizum</span><span class="gl">Apple Pay</span><span class="gl">Google Pay</span></div></div></div>'
           f'<div class="fox"></div><p class="cp">© {nm} · Tienda de ejemplo hecha por 404 Growth. No es la web oficial.</p></div></footer>')
     o += (f'<div class="ov"></div><aside class="dr" aria-label="Cesta"><div class="dh"><b>Tu cesta</b><button data-close aria-label="Cerrar">{ic("x", 22)}</button></div>'
-          f'<div class="dl"></div><div class="df"><button class="bt gd" data-pay>Finalizar compra</button><p>Envío a toda España · Recogida gratis en {E(city)}</p></div></aside><div class="tz"></div>')
+          f'<div class="dl"></div><div class="df"><button class="bt gd" data-pay>Finalizar compra</button><p>{E(T(A.get("drp", "Envío a toda España · Recogida gratis en {city}"), c))}</p></div></aside><div class="tz"></div>')
     o += f'<script>{G.STORE_JS}</script><script>{JS}</script></body></html>'
     return o
 

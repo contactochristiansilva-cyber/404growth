@@ -1,0 +1,61 @@
+{
+ "niche": "moda",
+ "name": "Mar Govantes Modas",
+ "ig": "margovantesmodas",
+ "f": 353,
+ "city": "Dos Hermanas",
+ "cityfull": "Dos Hermanas (Sevilla)",
+ "address": "Calle Antonia Díaz, 1",
+ "logo": {
+  "text": "Mar Govantes Modas"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p5"
+  ],
+  [
+   "Chalecos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido estampado"
+  },
+  {
+   "id": "p2",
+   "name": "Rebeca larga"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido largo"
+  },
+  {
+   "id": "p4",
+   "name": "Chaleco acolchado"
+  },
+  {
+   "id": "p5",
+   "name": "Jersey con encaje"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido de zigzag"
+  }
+ ],
+ "theme": {},
+ "opts": [
+  "42",
+  "44",
+  "46",
+  "48",
+  "50",
+  "52"
+ ]
+}

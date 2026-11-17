@@ -1,0 +1,50 @@
+{
+ "slug": "gm-joyerias",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "gm-joyerias-18.jpg",
+    "gm-joyerias-01.jpg",
+    "gm-joyerias-17.jpg",
+    "gm-joyerias-16.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia gm-joyerias-18.jpg, aplica la REGLA A): Luxury campaign still life of chunky gold chains, gold link bracelets and gold rings from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia gm-joyerias-01.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of the open gold bangle bracelet with a twisted texture (the large one at the bottom) from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia gm-joyerias-17.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a pair of large twisted gold hoop earrings from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia gm-joyerias-18.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a single chunky gold curb link chain necklace from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia gm-joyerias-16.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a cocktail ring with a large oval blue stone surrounded by small diamonds, in an open white jewellery box from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "gm-joyerias-28.jpg",
+    "gm-joyerias-42.jpg",
+    "gm-joyerias-44.jpg",
+    "gm-joyerias-19.jpg",
+    "gm-joyerias-29.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia gm-joyerias-28.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a fine gold chain necklace with a small gold letter initial pendant from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia gm-joyerias-42.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a bracelet of white pearls with small gold beads from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia gm-joyerias-44.jpg, aplica la REGLA A): Lifestyle photo: gold bangles and bracelets displayed on a cream velvet bracelet stand in a jewellery shop, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia gm-joyerias-19.jpg, aplica la REGLA A): Lifestyle photo: several gold chains of different link styles laid diagonally on beige linen, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia gm-joyerias-29.jpg, aplica la REGLA B): Wide interior photo: the inside of a bright jewellery shop with illuminated amber display cabinets full of gold jewellery, no people, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of chunky gold chains, gold link ",
+  "p1": "Luxury jewellery e-commerce photo of the open gold bangle br",
+  "p2": "Luxury jewellery e-commerce photo of a pair of large twisted",
+  "p3": "Luxury jewellery e-commerce photo of a single chunky gold cu",
+  "p4": "Luxury jewellery e-commerce photo of a cocktail ring with a ",
+  "p5": "Luxury jewellery e-commerce photo of a fine gold chain neckl",
+  "p6": "Luxury jewellery e-commerce photo of a bracelet of white pea",
+  "l1": "Lifestyle photo: gold bangles and bracelets displayed on a c",
+  "l2": "Lifestyle photo: several gold chains of different link style",
+  "b": "Wide interior photo: the inside of a bright jewellery shop w"
+ }
+}

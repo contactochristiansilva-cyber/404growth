@@ -1,0 +1,53 @@
+{
+ "niche": "calzado",
+ "name": "Calzados Toñi (Cocoshoes 1984)",
+ "ig": "cocoshoes1984",
+ "f": 3484,
+ "city": "Chauchina",
+ "cityfull": "Chauchina (Granada)",
+ "address": "Carrera de la Virgen 20",
+ "logo": {
+  "text": "Calzados Toñi (Cocoshoes 1984)"
+ },
+ "cats": [
+  [
+   "Botas",
+   "p1"
+  ],
+  [
+   "Botines",
+   "p2"
+  ],
+  [
+   "Deportivas",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Bota alta con hebilla"
+  },
+  {
+   "id": "p2",
+   "name": "Botín de cuña"
+  },
+  {
+   "id": "p3",
+   "name": "Botín acolchado"
+  },
+  {
+   "id": "p4",
+   "name": "Botín con strass"
+  },
+  {
+   "id": "p5",
+   "name": "Deportiva de ante"
+  },
+  {
+   "id": "p6",
+   "name": "Mocasín con hebilla"
+  }
+ ],
+ "theme": {}
+}

@@ -611,6 +611,27 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - **Las 10 que quedaban (16/11/2026):** de las 50 con fotos, las 15 sin propuesta eran 5 árabes (fuera, nunca) y 10 más: Apolo Suplementación (Las Palmas, Canarias), Dolphins Bisutería, El Armario de Reme, Helena Urzainqui, Herbolario Tienda Verde, Insphyria, Kucaes y Por tu cuenta (las dos ya preparaban su tienda), Luka y Nöetta. Hechas con `mkjobs.py sel37.json` + `gen37a.py` + `gen33v.py`, en el Mac y en el lote del 16/11 con `LEAD_PATCH_KEY = lpatch_20261116c` (las 49 entradas; prueba `t_p10.mjs`, 10 comprobaciones). El lote 37 queda en **45 propuestas**. `inline37.py` saca cada una en un solo HTML para verla en el chat (las fotos de la tienda van una sola vez: unos 3,5 MB). Copia del worker en `anterior/worker-v74c-16nov-antes-l37c.js`.
 - Ojo con el hook de privacidad: también rechaza `python3` que lee `worker.js`. Lo que sí pasa: `cp` del worker a otro nombre, `node --check`, y las pruebas escritas con Write y ejecutadas aparte.
 
+## Lote 38 (16–17/11/2026): 30 propuestas de tiendas con anuncios en Meta
+
+- Chris: «prepara todas las propuestas, como estas últimas 50, y saca del CRM las del lote de hoy que se quedaron sin enviar»; después, «no veo bien muebles: haz las 20 que no son muebles y sigue con el scrapeo hasta 10 más de los nichos de siempre».
+  - Del piloto del 16/11 (`scrapeo-16nov/crm30.json`) quedan **19**: fuera los 10 de muebles y decoración, y Matia (cerró el 30/07/2026).
+  - **11 nuevas** en `scrapeo-16nov/nuevos11.json`, con las mismas reglas: anuncios en Meta en los últimos 12 meses, WhatsApp comprobado en WhatsApp Web, tienda física en España, sin tienda online de verdad, nada árabe y no estaban en el CRM. Son Verde Agua (Reinosa), Venus Lencería (Jerez), Donna Islantilla, Intimo Nicoletta (Sevilla), Ailec Modas (Algeciras), Calzados Bergillos (Cártama), Caprichos D'Eva (Torrellano), Giancarlo Novias (Parla), Mar Govantes (Dos Hermanas), Moda Guay (Menorca) y Carmen Roba i Complements (Teulada).
+  - Interacción de las 11: `PolarisProfilePostsQuery` (12 publicaciones) desde la pestaña de Instagram; anuncios: los barridos de la Biblioteca (`ads38-sweep*.json`).
+- Generador del lote 33 con la tienda «Editorial» (`gen37a.py`): `l33/sel38.json` (19) y `l33/sel38b.json` (11), `specs38.py`, `jobs38b.py` y `flow/q38C.json`.
+  - `mkjobs.py` admite ahora `who` = `curvy`, `mature` o `man`, `still=True` (hero de bodegón, sin modelo), «(flat lay)» en un producto para que no salga puesto y «worn by a woman / man» para cambiar quién lo lleva.
+- **Flow:** la cuenta `/u/2` se bloqueó por «actividad inusual» y se siguió con `/u/0`.
+  - Envío: modo manual con el portapapeles y teclas reales: referencia → (453,688), cmd+v, Down, Return; texto → (700,641), cmd+v, Return.
+  - Recogida, mucho más rápida que antes: se abre la foto más nueva (`/edit/<id>`) en otra pestaña del proyecto y se avanza con un `keydown` ArrowRight sintético (sí funciona). Se lee `.text-part`, se empareja con el texto exacto de `q38C` y se coge la imagen más grande en pantalla (no la de más resolución, que puede ser la referencia). Así salen 130 fotos en menos de 40 s.
+  - Las fotos se bajan en un `.json` desde una pestaña nueva de `flow.google.com/robots.txt` por `BroadcastChannel` (una descarga por pestaña) y se pasan a `ai38/` con `unflow.py`.
+- **Rechazos de Flow:**
+  - La referencia 02 de Bergillos (deportiva retro que recuerda a una marca) daba «podría infringir nuestras políticas» en todas sus fotos. El p1, el hd y el hm se hicieron solo con texto, con una deportiva sin franja lateral ni logo (una versión con franja curva se parecía a la de Puma y se rehízo).
+  - La bata de Venus (p5) salió con un personaje conocido en la capucha: se rehízo lisa, sin referencia.
+- **CRM** (worker del admin, `patch_l38.py` + `mkseed3.py`; prueba `scrapeo-16nov/t_l38.mjs`, 18 comprobaciones):
+  - `SEED2` (misma clave `seed_20261116w`, que no se llegó a subir) son ahora las 30 del lote 38: 24 de moda, 4 de calzado y 2 de joyería. Notas con propuesta, anuncios, web y contacto.
+  - `LEAD_PATCH_KEY = "lpatch_20261117"`: las 30 con `slug`, `pageUrl` y `lotDay` 2026-11-17. La lista del 16/11 (`lpatch_20261116c`, ya aplicada) queda como `LEAD_PATCH_16NOV`.
+  - **`outOnce`** (`LEAD_OUT_KEY = "lout_20261117"`, corre después de `delOnce`): una sola vez, las del lote del 16/11 que siguen sin enviar (`stage` new y sin `contactedAt`) salen del CRM a la colección `leads_out` de `docs`, tal cual. Sus ids quedan en `meta` (`lout_20261117`). Para devolver una: copiar su fila de `leads_out` a `leads` y subir `crm_rev`.
+  - Copia del worker anterior en `anterior/worker-v74c-17nov-antes-l38.js`.
+
 ## Open Fit: cartel de la nave (13/11/2026)
 
 - Open Fit (gimnasio) va a poner carteles en una nave que era un «Moda Outlet». Medidas sacadas de la foto de Chris:

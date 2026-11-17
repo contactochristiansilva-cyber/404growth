@@ -1,0 +1,64 @@
+{
+ "niche": "moda",
+ "name": "Giancarlo Novias",
+ "ig": "giancarlonovias",
+ "f": 1643,
+ "city": "Parla",
+ "cityfull": "Parla (Madrid)",
+ "address": "C/ Severo Ochoa, 14 (posterior)",
+ "logo": {
+  "text": "Giancarlo Novias"
+ },
+ "cats": [
+  [
+   "Caballero",
+   "p1"
+  ],
+  [
+   "Novio",
+   "p3"
+  ],
+  [
+   "Fiesta",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Traje de tres piezas"
+  },
+  {
+   "id": "p2",
+   "name": "Traje diplomático"
+  },
+  {
+   "id": "p3",
+   "name": "Traje de novio"
+  },
+  {
+   "id": "p4",
+   "name": "Traje azul"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido de madrina"
+  },
+  {
+   "id": "p6",
+   "name": "Traje de padrino"
+  }
+ ],
+ "theme": {},
+ "domain": "giancarlonovias.es",
+ "web_note": "giancarlonovias.es enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Parla solo puede escribiros.",
+ "h1": "Trajes de fiesta<br>y de caballero.",
+ "opts": [
+  "46",
+  "48",
+  "50",
+  "52",
+  "54",
+  "56"
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "slug": "calzados-toni",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "calzados-toni-06.jpg",
+    "calzados-toni-02.jpg",
+    "calzados-toni-29.jpg",
+    "calzados-toni-17.jpg",
+    "calzados-toni-20.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia calzados-toni-06.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing black leather knee-high boots with a block heel, with a dark midi skirt from the reference, walking at the main street of Chauchina, Granada, Spain, with the Sierra Nevada in the background, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia calzados-toni-02.jpg, aplica la REGLA B): Footwear e-commerce photo of the black leather knee-high boot with a block heel and a buckle strap (not the handbag) from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 3 «p2» (formato 3:4, referencia calzados-toni-29.jpg, aplica la REGLA B): Footwear e-commerce photo of brown suede wedge ankle boots with a side zip and a small stud from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 4 «p3» (formato 3:4, referencia calzados-toni-17.jpg, aplica la REGLA B): Footwear e-commerce photo of brown quilted padded ankle boots with a chunky sole from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 5 «p4» (formato 3:4, referencia calzados-toni-20.jpg, aplica la REGLA B): Footwear e-commerce photo of black suede sock ankle boots with a block heel and a crystal chain detail from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "calzados-toni-23.jpg",
+    "calzados-toni-26.jpg",
+    "calzados-toni-05.jpg",
+    "calzados-toni-12.jpg",
+    "calzados-toni-03.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia calzados-toni-23.jpg, aplica la REGLA A): Footwear e-commerce photo of taupe and beige suede lace-up sneakers with a curved side panel from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 2 «p6» (formato 3:4, referencia calzados-toni-26.jpg, aplica la REGLA A): Footwear e-commerce photo of brown leather slip-on loafers with a gold buckle and a light platform sole from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 3 «l1» (formato 3:4, referencia calzados-toni-05.jpg, aplica la REGLA A): Lifestyle photo: brown suede ankle boots lined with faux fur on a wooden floor, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia calzados-toni-12.jpg, aplica la REGLA A): Lifestyle photo: pink fluffy house slipper shoes with embroidered hearts, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia calzados-toni-03.jpg, aplica la REGLA B): Wide interior photo: the inside of a shoe shop with white shelves full of boots and ankle boots, handbags on display and a light wooden floor, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing black leathe",
+  "p1": "Footwear e-commerce photo of the black leather knee-high boo",
+  "p2": "Footwear e-commerce photo of brown suede wedge ankle boots w",
+  "p3": "Footwear e-commerce photo of brown quilted padded ankle boot",
+  "p4": "Footwear e-commerce photo of black suede sock ankle boots wi",
+  "p5": "Footwear e-commerce photo of taupe and beige suede lace-up s",
+  "p6": "Footwear e-commerce photo of brown leather slip-on loafers w",
+  "l1": "Lifestyle photo: brown suede ankle boots lined with faux fur",
+  "l2": "Lifestyle photo: pink fluffy house slipper shoes with embroi",
+  "b": "Wide interior photo: the inside of a shoe shop with white sh"
+ }
+}

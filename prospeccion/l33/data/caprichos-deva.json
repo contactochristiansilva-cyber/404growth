@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Caprichos D'Eva",
+ "ig": "torrellano_caprichos_deva",
+ "f": 1860,
+ "city": "Torrellano (Elche)",
+ "cityfull": "Torrellano (Elche) (Alicante)",
+ "address": "Avda. Illice, 37",
+ "logo": {
+  "text": "Caprichos D'Eva"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p3"
+  ],
+  [
+   "Blusas",
+   "p2"
+  ],
+  [
+   "Pantalones",
+   "p1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Pantalón marinero"
+  },
+  {
+   "id": "p2",
+   "name": "Blusa estampada"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido de cebra"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido de punto"
+  },
+  {
+   "id": "p5",
+   "name": "Blusa de rayas"
+  },
+  {
+   "id": "p6",
+   "name": "Conjunto granate"
+  }
+ ],
+ "theme": {},
+ "domain": "caprichosdeva.es",
+ "web_note": "caprichosdeva.es, la web que sale en vuestro Facebook, ya no existe: quien os encuentra fuera de Torrellano solo puede escribiros."
+}

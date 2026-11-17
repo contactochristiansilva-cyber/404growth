@@ -1,0 +1,63 @@
+{
+ "niche": "joya",
+ "name": "Luxoro",
+ "ig": "luxoro_oro",
+ "f": 11531,
+ "city": "Málaga",
+ "cityfull": "Málaga",
+ "address": "C.C. Larios Centro (y centros en Madrid y Burgos)",
+ "logo": {
+  "text": "Luxoro"
+ },
+ "cats": [
+  [
+   "Lingotes",
+   "p1"
+  ],
+  [
+   "Joyas de oro",
+   "p2"
+  ],
+  [
+   "Alianzas",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Lingote de oro"
+  },
+  {
+   "id": "p2",
+   "name": "Pulsera de oro"
+  },
+  {
+   "id": "p3",
+   "name": "Alianzas de oro"
+  },
+  {
+   "id": "p4",
+   "name": "Pendientes de oro"
+  },
+  {
+   "id": "p5",
+   "name": "Lingotes pequeños"
+  },
+  {
+   "id": "p6",
+   "name": "Anillos de oro"
+  }
+ ],
+ "theme": {},
+ "domain": "luxoro.es",
+ "web_note": "luxoro.es es de compraventa de oro: vuestras joyas no se pueden comprar online. Quien os ve en Instagram fuera de vuestros centros solo puede escribiros.",
+ "h1": "Oro y joyas,<br>a un clic.",
+ "opts": [
+  "1 g",
+  "5 g",
+  "10 g",
+  "1 onza"
+ ],
+ "opts_l": "Peso"
+}

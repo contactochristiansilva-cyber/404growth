@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Zona Coolto",
+ "ig": "zonacoolto",
+ "f": 107691,
+ "city": "Santander",
+ "cityfull": "Santander (Cantabria)",
+ "address": "C/ Arrabal 5",
+ "logo": {
+  "text": "Zona Coolto"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p4"
+  ],
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Pantalones",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta encerada"
+  },
+  {
+   "id": "p2",
+   "name": "Chaleco acolchado"
+  },
+  {
+   "id": "p3",
+   "name": "Vaquero pintado"
+  },
+  {
+   "id": "p4",
+   "name": "Abrigo de paño crudo"
+  },
+  {
+   "id": "p5",
+   "name": "Falda larga de cuadros"
+  },
+  {
+   "id": "p6",
+   "name": "Conjunto de rayas"
+  }
+ ],
+ "theme": {},
+ "domain": "zonacoolto.com",
+ "web_note": "zonacoolto.com no carga: hoy quien os encuentra fuera de Santander solo puede escribiros."
+}

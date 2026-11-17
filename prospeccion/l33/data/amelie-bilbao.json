@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Amelie",
+ "ig": "amelie_bilbao",
+ "f": 16894,
+ "city": "Bilbao",
+ "cityfull": "Bilbao (Bizkaia)",
+ "address": "C/ General Concha 6",
+ "logo": {
+  "text": "Amelie"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p3"
+  ],
+  [
+   "Calzado",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Abrigo de pelo rojo"
+  },
+  {
+   "id": "p2",
+   "name": "Abrigo acolchado"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p4",
+   "name": "Zapatillas de camuflaje"
+  },
+  {
+   "id": "p5",
+   "name": "Conjunto caqui"
+  },
+  {
+   "id": "p6",
+   "name": "Capa acolchada"
+  }
+ ],
+ "theme": {},
+ "domain": "ameliebilbao.com",
+ "web_note": "ameliebilbao.com enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Bilbao solo puede escribiros."
+}

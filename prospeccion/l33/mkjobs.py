@@ -14,7 +14,8 @@ OBJ = ('Reproduce the EXACT product from the reference image: identical shape, p
        'Leave out any hands, price tags, stickers, shop text and the original background. ' + COMMON)
 OBJ_W = re.compile(r'\b(umbrella|fan|bag|handbag|tote|clutch|loafers?|boots?|sneakers?|shoes?|cap|scarf|stoles|belts|case|bottle|bottles|jar|box|boxes|diffuser|strap)\b', re.I)
 CITY_BG = {'moda': '#ECE7E0', 'joya': '#F4EFE6', 'cosmetica': '#F3E6E1', 'sneakers': '#E6E5E1', 'calzado': '#EEE9E2', 'optica': '#EEF2F5', 'suplementos': '#ECEDE8'}
-NAMES = dict(woman='woman', man='man')
+NAMES = dict(woman='woman', man='man', curvy='curvy plus-size Spanish woman in her forties', mature='elegant Spanish woman in her fifties')
+PERSON = {'woman': 'A stylish Spanish woman in her thirties', 'man': 'A stylish Spanish man in his thirties', 'curvy': 'A stylish curvy plus-size Spanish woman in her forties', 'mature': 'An elegant Spanish woman in her fifties'}
 
 
 def wear(who):
@@ -27,16 +28,21 @@ def niche(x, sp):
 
 
 def worn(desc):
+    if '(flat lay)' in desc:
+        return False
     return not OBJ_W.search(desc) or re.search(r'\b(wearing|worn|over|with .*(trousers|jeans|skirt))\b', desc)
 
 
 def prompts(x, sp):
     ni = niche(x, sp); who = sp.get('who', 'none'); bg = CITY_BG[ni]; city = x['zone']
     J = {}
-    person = {'woman': 'A stylish Spanish woman in her thirties', 'man': 'A stylish Spanish man in his thirties'}.get(who, 'A stylish Spanish woman in her thirties')
+    person = PERSON.get(who, PERSON['woman'])
     # hero
     r, d = sp['hero']
-    if ni in ('joya', 'optica') and who == 'none':
+    if sp.get('still'):
+        J['h'] = ('16:9', r, OBJ, f'Boutique campaign still life of {d} from the reference. The product sits in the right third of the frame and the scene continues to the left, '
+                                 'softly out of focus and calm, with room for a headline. Warm natural light, soft textures. One single continuous photograph, never a split screen or collage.')
+    elif ni in ('joya', 'optica') and who == 'none':
         J['h'] = ('4:3', r, OBJ, f'Luxury campaign still life of {d} from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, '
                                'the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph.')
     elif ni == 'suplementos':
@@ -52,9 +58,10 @@ def prompts(x, sp):
                   'Wide editorial campaign image, cinematic natural light.')
     # productos
     for k, (r, d, _) in enumerate(sp['prods'], 1):
+        pw = 'man' if 'worn by a man' in d else 'woman' if 'worn by a woman' in d else who
         if ni in ('moda',) or (ni in ('sneakers', 'calzado') and worn(d) and not re.search(r'sneaker|shoe|boot|cap|loafer', d, re.I)):
             if worn(d):
-                J[f'p{k}'] = ('3:4', r, wear(who),
+                J[f'p{k}'] = ('3:4', r, wear(pw),
                               f'E-commerce product photo for a fashion boutique: a model wearing {d} from the reference, standing naturally, framed from just above the lips '
                               f'(face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light ({bg}) studio background '
                               'with a soft natural floor shadow, soft diffused daylight from the left.')
@@ -84,11 +91,11 @@ def prompts(x, sp):
     for k in ('l1', 'l2'):
         r, d = sp[k]
         if ni in ('moda', 'sneakers', 'calzado') and who != 'none' and worn(d) and not re.search(r'^(dark|burgundy|beige|three|a guy|a woman seen|grey cargo)', d):
-            J[k] = ('3:4', r, wear(who),
+            J[k] = ('3:4', r, wear('man' if 'worn by a man' in d else 'woman' if 'worn by a woman' in d else who),
                     f'Lifestyle fashion photo: a model wearing {d} from the reference, candid and relaxed in a sunny street of {city}, Spain, natural light, '
                     'framed from the knees up, editorial, shallow depth of field.')
         else:
-            J[k] = ('3:4', r, (wear('man' if re.search(r'\b(man|guy)\b', d) else who if who in ('woman', 'man') else 'woman') if re.search(r'\b(woman|man|guy|bride|hand|wrist|neck)\b', d) else OBJ),
+            J[k] = ('3:4', r, (wear('man' if re.search(r'\b(man|guy)\b', d) else who if who in NAMES else 'woman') if re.search(r'\b(woman|man|guy|bride|hand|wrist|neck)\b', d) else OBJ),
                     f'Lifestyle photo: {d}, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field.')
     r, d = sp['banner']
     J['b'] = ('16:9', r, COMMON, f'Wide interior photo: {d}, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. '
@@ -139,7 +146,9 @@ def data(x, sp):
     ni = niche(x, sp)
     web = x.get('web') or ''
     dom = re.sub(r'^https?://(www\.)?', '', web).strip('/') if web else ''
-    if dom and 'no carga' in x['shop']:
+    if x.get('web_note'):
+        note = x['web_note']
+    elif dom and 'no carga' in x['shop']:
         note = f'{dom} no carga: hoy quien os encuentra fuera de {x["zone"]} solo puede escribiros.'
     elif dom and 'contraseña' in x['shop']:
         note = f'{dom} está cerrada con contraseña: hoy no vende. Quien os encuentra fuera de {x["zone"]} solo puede escribiros.'
@@ -154,7 +163,7 @@ def data(x, sp):
         c['domain'] = dom
     if note:
         c['web_note'] = note
-    for k in ('h1', 'eyebrow', 'sub', 'hp', 'hpm', 'bp', 'bpm', 'ban_h', 'ban_e', 'short', 'hx', 'opts', 'opts_l'):
+    for k in ('h1', 'eyebrow', 'sub', 'hp', 'hpm', 'bp', 'bpm', 'ban_h', 'ban_e', 'short', 'hx', 'opts', 'opts_l', 'na', 'rev'):
         if sp.get(k):
             c[k] = sp[k]
     return c

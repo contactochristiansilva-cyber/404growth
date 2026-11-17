@@ -1,0 +1,53 @@
+{
+ "niche": "calzado",
+ "name": "Kisco",
+ "ig": "kisco_calzados",
+ "f": 6941,
+ "city": "Jerez de la Frontera",
+ "cityfull": "Jerez de la Frontera (Cádiz)",
+ "address": "C/ Enríquez Domínguez Rodiño",
+ "logo": {
+  "text": "Kisco"
+ },
+ "cats": [
+  [
+   "Botines",
+   "p1"
+  ],
+  [
+   "Planos",
+   "p2"
+  ],
+  [
+   "Tacones",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botín efecto piel"
+  },
+  {
+   "id": "p2",
+   "name": "Merceditas"
+  },
+  {
+   "id": "p3",
+   "name": "Mocasín de serraje"
+  },
+  {
+   "id": "p4",
+   "name": "Destalonado de terciopelo"
+  },
+  {
+   "id": "p5",
+   "name": "Sandalia de tacón"
+  },
+  {
+   "id": "p6",
+   "name": "Salón clásico"
+  }
+ ],
+ "theme": {}
+}

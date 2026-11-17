@@ -1,0 +1,54 @@
+{
+ "niche": "calzado",
+ "name": "Calzados Bergillos",
+ "ig": "calzadosbergillos",
+ "f": 23779,
+ "city": "Estación de Cártama",
+ "cityfull": "Estación de Cártama (Málaga)",
+ "address": "Av. Manuel de Falla, portal 6, local 3",
+ "logo": {
+  "text": "Calzados Bergillos"
+ },
+ "cats": [
+  [
+   "Deportivas",
+   "p1"
+  ],
+  [
+   "Botines",
+   "p4"
+  ],
+  [
+   "Mocasines",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Deportiva retro"
+  },
+  {
+   "id": "p2",
+   "name": "Deportiva chunky"
+  },
+  {
+   "id": "p3",
+   "name": "Deportiva negra y oro"
+  },
+  {
+   "id": "p4",
+   "name": "Botín de ante"
+  },
+  {
+   "id": "p5",
+   "name": "Mocasín de ante"
+  },
+  {
+   "id": "p6",
+   "name": "Mocasín de suela gruesa"
+  }
+ ],
+ "theme": {},
+ "h1": "Desde 1973,<br>ahora a un clic."
+}

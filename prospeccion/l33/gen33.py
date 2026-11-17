@@ -85,6 +85,16 @@ NICHE = {
         feat_e='La montura estrella', item='montura', items='monturas', badge='Nuevo',
         usp=[('eye', 'Reserva tu revisión', 'Elige día y hora, sin llamar.'), ('truck', 'Envío a toda España', 'Bien protegidas, hasta tu puerta.'), ('store', 'Ajuste en {city}', 'Gratis, en nuestra óptica.'), ('card', 'Tarjeta, Bizum y Apple Pay', 'Pago seguro en un toque.')],
         visit_h='Ven a probártelas.', club='Las monturas nuevas, antes que nadie', ad_h=['Tu revisión,<br>en un minuto.', 'Monturas de {city}<br>para toda España.', 'La montura que viste,<br>ya online.']),
+    'deco': dict(  # lote 38 (16/11/2026): muebles, sofás, colchones y decoración
+        bg='#F1ECE4', surf='#FFFFFF', ink='#1C1915', mute='#6E665C', acc='#5B4632', on='#FFFFFF', line='rgba(28,25,21,.12)',
+        hero='full', up=False, eyebrow='Muebles y decoración', h1='Tu casa,<br>a un clic.', sub='Los muebles de nuestra tienda de {city}, ahora online, con entrega a domicilio.',
+        btn='Ver el catálogo', marquee=['Entrega a domicilio', 'Exposición en {city}', 'Te asesoramos por WhatsApp', 'Medidas en cada ficha', 'Pago con Bizum'],
+        grid_h='Lo más vendido', grid_s='Lo que más nos pedís en la tienda, con medidas, fotos y cesta.',
+        opts_l='Medida', opts=['160 cm', '180 cm', '200 cm', '220 cm'], ban_e='Ideas para tu casa', ban_h='Tu casa,<br>como la imaginas.', ban_b='Ver ideas',
+        feat_e='El más vendido', item='mueble', items='muebles', badge='Nuevo',
+        usp=[('truck', 'Entrega a domicilio', 'Te lo llevamos a casa.'), ('store', 'Exposición en {city}', 'Ven a verlo y a probarlo.'), ('chat', 'Te asesoramos', 'Medidas y dudas por WhatsApp.'), ('card', 'Tarjeta, Bizum y Apple Pay', 'Pago seguro en un toque.')],
+        visit_h='Ven a probarlo.', club='Las ofertas y novedades, antes que nadie', a3='Completa<br>el ambiente.',
+        ad_h=['Tu casa nueva,<br>a un clic.', 'De {city}<br>a tu salón.', 'Lo que viste,<br>ya online.']),
 }
 
 ICONS = {
@@ -601,6 +611,7 @@ FLOW_TODAY = {
     'calzado': [('Ve el par', 'en Instagram'), ('Escribe por DM', 'o WhatsApp'), ('Pregunta talla y precio', 'y espera respuesta'), ('Bizum o transferencia', 'a mano'), ('Envío', 'coordinado a mano')],
     'suplementos': [('Ve el producto', 'en Instagram'), ('Escribe por DM', 'o WhatsApp'), ('Pregunta sabor, precio y stock', 'y espera respuesta'), ('Bizum o transferencia', 'a mano'), ('Envío', 'coordinado a mano')],
     'optica': [('Ve la montura', 'en Instagram'), ('Escribe o llama', 'para preguntar'), ('Pregunta precio y modelo', 'y espera respuesta'), ('Va a la óptica', 'en horario de tienda'), ('Pide cita', 'por teléfono')],
+    'deco': [('Ve el mueble', 'en Instagram'), ('Escribe por DM', 'o WhatsApp'), ('Pregunta medidas y precio', 'y espera respuesta'), ('Va a la tienda', 'a verlo en persona'), ('Entrega', 'coordinada a mano')],
 }
 FLOW_NEW = {
     'optica': [('Ve la montura', 'en Instagram o Google'), ('Ficha con precio', 'y fotos'), ('Compra o reserva cita', 'en un minuto')],
