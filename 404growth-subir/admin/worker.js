@@ -4717,23 +4717,24 @@ async function vslBook(req, env, b, k) {
   const name = str(b.name, 80), email = str(b.email, 160).toLowerCase(), phone = str(b.phone, 24).replace(/[^\d+]/g, ""), biz = str(b.biz, 140);
   const bud = Object.prototype.hasOwnProperty.call(VSL_BUD, b.bud) ? b.bud : "", sec = Object.prototype.hasOwnProperty.call(VSL_SEC, b.sec) ? b.sec : "otro", tz = CalCore.okTz(b.tz) ? b.tz : CAL_TZ, start = typeof b.start === "string" ? b.start : "";
   if (bud === "b0") return json({ error: "budget" }, 422);   // v47: under 1.500 € is not a project we take (the form already says so)
-  if (name.length < 2 || !okEmail(email) || !/^\+?\d{9,15}$/.test(phone) || biz.length < 2 || !bud || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/.test(start)) return bad("fields");
+  const via = typeof b.p === "string" && /^[a-z0-9][a-z0-9-]{1,79}$/.test(b.p) ? b.p : "";   // v76: booked from the agenda inside a proposal (/p/<slug>/): there the investment is not asked (Chris, 18/11/2026)
+  if (name.length < 2 || !okEmail(email) || !/^\+?\d{9,15}$/.test(phone) || biz.length < 2 || (!bud && !via) || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/.test(start)) return bad("fields");
+  const budTxt = bud ? VSL_BUD[bud] : "no se pregunta en las propuestas";
   const ih = (await sha("l404ip|" + (req.headers.get("cf-connecting-ip") || "local"))).slice(0, 22);
   const many = await DBq.prepare("SELECT COUNT(*) AS n FROM ll WHERE ih = ?1 AND ts > ?2").bind(ih, now - 3600000).first();
   if (many && many.n >= 5) return bad("slow", 429);
   let slots; try { slots = await gbSlots(env, true); } catch (e) { return json({ error: "nocal" }, 503); }
   const startMs = Date.parse(start); if (!slots.some((x) => Date.parse(x) === startMs)) return json({ error: "taken", slots: slots }, 409);
   const utm = llUtm(b.utm), tel = phone.charAt(0) === "+" ? phone : "+34" + phone.replace(/^0034/, "");
-  const via = typeof b.p === "string" && /^[a-z0-9][a-z0-9-]{1,79}$/.test(b.p) ? b.p : "";   // v76: booked from the agenda inside a proposal (/p/<slug>/)
-  const notes = "Tienda: " + biz + "\nVende: " + VSL_SEC[sec] + "\nInversión: " + VSL_BUD[bud] + "\nWhatsApp: " + tel + "\nEmail: " + email + "\nReservada en " + (via ? "su propuesta: 404growth.com/p/" + via + "/" : "404growth.com/book");
+  const notes = "Tienda: " + biz + "\nVende: " + VSL_SEC[sec] + "\nInversión: " + budTxt + "\nWhatsApp: " + tel + "\nEmail: " + email + "\nReservada en " + (via ? "su propuesta: 404growth.com/p/" + via + "/" : "404growth.com/book");
   const id = rid("L").slice(0, 13), metUrl = SITE + "/metodo?c=" + id;                       // v42: the id first, so the invitation carries the link to /metodo
   let g; try { g = await gbCreate(env, { s: startMs, e: startMs + GB_DUR * 60000, name, email, biz, notes: "Antes de la llamada, 8 vídeos cortos con las dudas de siempre: " + metUrl + "\n\n" + notes }); } catch (e) { return json({ error: e.code === "nogoogle" ? "nocal" : "book", detail: String(e.message || "").slice(0, 160) }, 502); }
   const evUri = g.html, invUri = g.id, resched = await rsLink(env, id), join = g.join, end = startMs + GB_DUR * 60000;   // v48: the link to change the time
   let vis = null; if (k) vis = await DBq.prepare("SELECT n, src FROM lv WHERE k = ?1").bind(k).first();
   const n = llNiche(b.n) || (vis && vis.n) || "tienda", src = vis ? vis.src : llSrc(utm, "");
-  const fit = bud === "b0" ? 0 : 1, grade = bud === "b3" || bud === "b2" ? "A" : bud === "b1" || bud === "b4" ? "B" : "C";
+  const fit = bud === "b0" ? 0 : 1, grade = bud === "b3" || bud === "b2" ? "A" : bud === "b1" || bud === "b4" || (!bud && via) ? "B" : "C";   // from a proposal, without investment: B
   await DBq.prepare("INSERT INTO ll (id, ts, k, ih, n, name, email, phone, biz, sedes, ans, score, grade, fit, bk, bk_at, ev, inv, src, utm, upd, start, join_url) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, 1, ?2, ?15, ?16, ?17, ?18, ?2, ?19, ?20)")
-    .bind(id, now, k || null, ih, n, name, email, tel, biz, VSL_BUD[bud], JSON.stringify({ bud: bud, sec: sec }), fit * 2 + (grade === "A" ? 3 : grade === "B" ? 1 : 0), grade, fit, evUri, invUri, src, JSON.stringify(utm), startMs, join).run();
+    .bind(id, now, k || null, ih, n, name, email, tel, biz, bud ? VSL_BUD[bud] : "Sin preguntar (propuesta)", JSON.stringify(via ? { bud: bud, sec: sec, p: via } : { bud: bud, sec: sec }), fit * 2 + (grade === "A" ? 3 : grade === "B" ? 1 : 0), grade, fit, evUri, invUri, src, JSON.stringify(utm), startMs, join).run();
   if (k) await DBq.prepare("UPDATE lv SET fs = 1, fd = 1, bk = 1, ct = 1, cd = 1, cv = 1, lead = ?2, last = ?3 WHERE k = ?1").bind(k, id, now).run();
   try { await v48Booked(req, env, id, b); } catch (e) {}                                   // v48: consent, Meta cookies, Lead and Schedule
   let crmName = null; if (via) { try { crmName = await crmFromProposal(env, via, id, startMs, now); } catch (e) {} }   // v76: its CRM lead goes to «Pendiente de reunión»
@@ -4751,7 +4752,7 @@ async function vslBook(req, env, b, k) {
     } catch (e) {}
     if (mailed) await DBq.prepare("UPDATE ll SET mailed = 1 WHERE id = ?1").bind(id).run();
   }
-  try { await pushAll(env, { title: "Llamada reservada · " + name, body: (via ? "Desde su propuesta" + (crmName ? " (ya en «Pendiente de reunión» en el CRM)" : "") + ". " : "") + biz + " (" + VSL_SEC[sec] + ") · invierte " + VSL_BUD[bud] + " · " + whenTxt + ". " + (g.id ? "Google le ha enviado la invitación con el Meet" + (mailed ? " y el email de hola@." : ".") : mailed ? "Confirmación enviada desde hola@." : "No se pudo enviar ni la invitación ni el email."), tag: "lb" + id, url: "/admin/llamadas#l=" + id }); } catch (e) {}
+  try { await pushAll(env, { title: "Llamada reservada · " + name, body: (via ? "Desde su propuesta" + (crmName ? " (ya en «Pendiente de reunión» en el CRM)" : "") + ". " : "") + biz + " (" + VSL_SEC[sec] + ")" + (bud ? " · invierte " + VSL_BUD[bud] : "") + " · " + whenTxt + ". " + (g.id ? "Google le ha enviado la invitación con el Meet" + (mailed ? " y el email de hola@." : ".") : mailed ? "Confirmación enviada desde hola@." : "No se pudo enviar ni la invitación ni el email."), tag: "lb" + id, url: "/admin/llamadas#l=" + id }); } catch (e) {}
   return json({ ok: true, id: id, start: start, end: new Date(end).toISOString(), join: join, gcal: gcal, mailed: !!mailed, resched: resched, met: metUrl });
 }
 /* v76 (18/11/2026): someone booked from the agenda inside their proposal. The CRM lead with that slug goes to «Pendiente de reunión»

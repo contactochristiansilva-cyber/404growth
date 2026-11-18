@@ -1,6 +1,6 @@
 /* 404 Growth · la agenda dentro de cada propuesta (18/11/2026)
    El mismo calendario de /book (huecos reales de Google, las mismas 3–5 horas por día y 5 días), metido en la propia propuesta:
-   el cliente elige día y hora, contesta lo justo y la llamada queda reservada sin salir de la página. Al reservar va a /metodo?c=<lead>,
+   el cliente elige día y hora, deja su nombre, su email y su WhatsApp, y la llamada queda reservada sin salir de la página. Al reservar va a /metodo?c=<lead>,
    que es la página de gracias (v52). La tienda y lo que vende ya se saben por la propuesta: no se preguntan.
    Se monta en <section id="agenda" data-slug data-biz data-sec> (lo pone tools/agenda/patch.py). Un solo archivo para todas:
    cambiar aquí las preguntas o los textos cambia todas las propuestas. */
@@ -8,7 +8,6 @@
   var root = document.getElementById('agenda'); if (!root || root.__ag) return; root.__ag = 1;
   var d = document, PROD = /(^|\.)404growth\.com$/.test(location.hostname), API = '/l/', TZ = 'Europe/Madrid', WA = '34610594450';
   var SLUG = root.getAttribute('data-slug') || '', BIZ = root.getAttribute('data-biz') || '', SEC = root.getAttribute('data-sec') || 'otro';
-  var BUD = [['b0', 'Menos de 1.500 €'], ['b1', '1.500 – 3.000 €'], ['b2', '3.000 – 6.000 €'], ['b3', 'Más de 6.000 €']];   // las mismas de /book
   function $(id) { return d.getElementById(id); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
 
@@ -49,7 +48,6 @@
     '.ag-q{border:0;margin:0;padding:0;min-width:0}.ag-q legend{font-size:clamp(21px,2.3vw,26px);font-weight:600;letter-spacing:-.03em;line-height:1.2;margin:0 0 18px;padding:0}' +
     '.ag-ch{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ag-ch button{border-radius:16px;padding:17px 18px;text-align:left;font-size:16px;font-weight:500}' +
     '.ag-ch button[aria-pressed=true]{border-color:var(--a);background:color-mix(in srgb,var(--a) 9%,#fff);box-shadow:inset 0 0 0 1px var(--a)}' +
-    '.ag-no{margin-top:16px;padding:16px 18px;border-radius:16px;background:#FBF4F1;color:#5F5855;font-size:14.5px}.ag-no p{margin:0 0 6px}.ag-no p:last-child{margin:0}' +
     '.ag-f{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}.ag-f label{font-size:13.5px;color:#6E6764}' +
     '.ag-f input{font:inherit;font-size:17px;color:#141110;padding:15px 16px;border-radius:14px;border:1px solid #E1D9D3;background:#fff;outline:none;width:100%;transition:border-color .18s,box-shadow .18s}' +
     '.ag-f input:focus{border-color:var(--a);box-shadow:0 0 0 4px color-mix(in srgb,var(--a) 16%,transparent)}.ag-f input.bad{border-color:#C8482F;box-shadow:0 0 0 4px rgba(200,72,47,.12)}' +
@@ -83,13 +81,10 @@
     '<div class="ag-main"><div id="ag-1"><div class="ag-h"><b>Elige un día</b><span>Hora de España</span></div>' +
     '<div class="ag-days" id="ag-days" role="listbox" aria-label="Días disponibles"><span class="ag-load">Cargando huecos libres…</span></div>' +
     '<div class="ag-hrs" id="ag-hrs" hidden><div class="ag-h"><b id="ag-dl">Elige una hora</b></div><div class="ag-times" id="ag-times" role="listbox" aria-label="Horas disponibles"></div></div></div>' +
-    '<form id="ag-2" hidden novalidate><div class="ag-top"><button type="button" class="ag-back" id="ag-back">‹ Atrás</button><span class="ag-pn" id="ag-pn">1 de 3</span></div><div class="ag-bar"><i id="ag-pb"></i></div>' +
-    '<fieldset class="ag-q" data-q="1"><legend>¿Cuánto tienes pensado invertir para añadir a tu tienda física un canal de ventas online?</legend><div class="ag-ch" id="ag-bud">' +
-    BUD.map(function (b) { return '<button type="button" data-v="' + b[0] + '" aria-pressed="false">' + b[1] + '</button>'; }).join('') + '</div>' +
-    '<div class="ag-no" id="ag-no" role="status" hidden><p><b>Nuestros proyectos son muy seleccionados y buscan grandes retornos de inversión, y con menos de 1.500 € no trabajamos.</b></p><p>Si lo has marcado por error, elige otra opción. Si no, gracias de verdad por tu tiempo.</p></div></fieldset>' +
-    '<fieldset class="ag-q" data-q="2" hidden><legend>¿Cómo te llamas?</legend><div class="ag-f"><label for="ag-name">Tu nombre</label><input id="ag-name" name="name" autocomplete="given-name" maxlength="80" placeholder="Tu nombre" enterkeyhint="next"></div>' +
+    '<form id="ag-2" hidden novalidate><div class="ag-top"><button type="button" class="ag-back" id="ag-back">‹ Atrás</button><span class="ag-pn" id="ag-pn">1 de 2</span></div><div class="ag-bar"><i id="ag-pb"></i></div>' +
+    '<fieldset class="ag-q" data-q="1"><legend>¿Cómo te llamas?</legend><div class="ag-f"><label for="ag-name">Tu nombre</label><input id="ag-name" name="name" autocomplete="given-name" maxlength="80" placeholder="Tu nombre" enterkeyhint="next"></div>' +
     '<button class="ag-go" type="button" id="ag-nx">Continuar <span aria-hidden="true">→</span></button></fieldset>' +
-    '<fieldset class="ag-q" data-q="3" hidden><legend id="ag-q3">¿Dónde te mando el enlace de la llamada?</legend>' +
+    '<fieldset class="ag-q" data-q="2" hidden><legend id="ag-q2">¿Dónde te mando el enlace de la llamada?</legend>' +
     '<div class="ag-f"><label for="ag-email">Email · aquí te llega la invitación con el enlace de Meet</label><input id="ag-email" name="email" type="email" autocomplete="email" maxlength="160" placeholder="tu@email.com"></div>' +
     '<div class="ag-f"><label for="ag-phone">WhatsApp · por si te surge algo y hay que mover la hora</label><input id="ag-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="600 000 000"></div>' +
     '<ul class="ag-trust"><li>Solo te escribo yo, Christian. Nada de llamadas comerciales.</li><li>No compartimos tus datos con nadie.</li></ul>' +
@@ -128,28 +123,26 @@
   function top() { var nav = d.querySelector('.nav'), off = (nav && getComputedStyle(nav).position === 'fixed' ? nav.getBoundingClientRect().bottom : 0) + 14,
     el = innerWidth <= 860 ? root.querySelector('.ag-main') : $('ag-card'), r = el.getBoundingClientRect(); if (r.top < off || r.top > innerHeight * .45) scrollBy({ top: r.top - off, behavior: 'smooth' }); }
 
-  /* ---------- las preguntas: la tienda y lo que vende ya vienen de la propuesta ---------- */
-  var Q = 1, A = {};
+  /* ---------- las preguntas: solo el nombre y el contacto. La tienda y lo que vende vienen de la propuesta, y la inversión
+     no se pregunta aquí (Chris, 18/11/2026: «dos pasos, sin inversión»; en /book sí se pregunta) ---------- */
+  var Q = 1;
   function q(n) { Q = n; [].forEach.call(d.querySelectorAll('.ag-q'), function (x) { x.hidden = +x.getAttribute('data-q') !== n; });
-    $('ag-pn').textContent = n + ' de 3'; $('ag-pb').style.width = Math.round(n * 100 / 3) + '%';
-    if (n === 3) { var nm = ($('ag-name').value.trim().split(' ')[0] || ''); $('ag-q3').textContent = (nm ? 'Perfecto, ' + nm.charAt(0).toUpperCase() + nm.slice(1) + '. ' : 'Perfecto. ') + '¿Dónde te mando el enlace de la llamada?'; }
+    $('ag-pn').textContent = n + ' de 2'; $('ag-pb').style.width = (n * 50) + '%';
+    if (n === 2) { var nm = ($('ag-name').value.trim().split(' ')[0] || ''); $('ag-q2').textContent = (nm ? 'Perfecto, ' + nm.charAt(0).toUpperCase() + nm.slice(1) + '. ' : 'Perfecto. ') + '¿Dónde te mando el enlace de la llamada?'; }
     var f = d.querySelector('.ag-q[data-q="' + n + '"] input'); if (f && innerWidth > 860) try { f.focus({ preventScroll: true }); } catch (e) {}
     if (n > 1) top(); }
-  [].forEach.call($('ag-bud').children, function (b) { b.onclick = function () {
-    [].forEach.call($('ag-bud').children, function (x) { x.setAttribute('aria-pressed', x === b); }); A.bud = b.getAttribute('data-v');
-    $('ag-no').hidden = A.bud !== 'b0'; if (A.bud !== 'b0') setTimeout(function () { q(2); }, 220); }; });
-  function nx() { var n = $('ag-name'); if (n.value.trim().length < 2) { n.classList.add('bad'); return n.focus(); } q(3); }
+  function nx() { var n = $('ag-name'); if (n.value.trim().length < 2) { n.classList.add('bad'); return n.focus(); } q(2); }
   $('ag-nx').onclick = nx; $('ag-name').onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); nx(); } };
   $('ag-back').onclick = function () { if (Q > 1) q(Q - 1); else { $('ag-2').hidden = true; $('ag-1').hidden = false; $('ag-card').classList.remove('s2'); } };
   $('ag-2').addEventListener('input', function (e) { if (e.target.classList) e.target.classList.remove('bad'); if (!this.querySelector('.bad')) $('ag-err').hidden = true; });
-  $('ag-2').onsubmit = function (e) { e.preventDefault(); var f = this, err = $('ag-err'); if (Q < 3) { if (Q === 2) nx(); return; }
+  $('ag-2').onsubmit = function (e) { e.preventDefault(); var f = this, err = $('ag-err'); if (Q < 2) { nx(); return; }
     var v = { name: f.name.value.trim(), email: f.email.value.trim(), phone: f.phone.value.trim() }, tel = v.phone.replace(/[^\d+]/g, '');
     var ok = { name: v.name.length >= 2, email: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email), phone: /^\+?\d{9,15}$/.test(tel) }, all = true;
     Object.keys(ok).forEach(function (k) { f[k].classList.toggle('bad', !ok[k]); if (!ok[k]) all = false; });
-    if (!A.bud || A.bud === 'b0') return q(1); if (!ok.name) return q(2);
+    if (!ok.name) return q(1);
     if (!all) { err.textContent = !ok.email && v.email ? 'Revisa el email.' : !ok.phone && v.phone ? 'Revisa el número de WhatsApp.' : 'Rellena el email y el WhatsApp, por favor.'; err.hidden = false; return; }
     err.hidden = true; var go = $('ag-go'); go.disabled = true; go.firstChild.textContent = 'Reservando… ';
-    var body = { k: '', start: pick, name: v.name, email: v.email, phone: tel, biz: BIZ || 'Tienda de la propuesta ' + SLUG, bud: A.bud, sec: SEC, n: SEC !== 'otro' ? SEC : 'tienda', p: SLUG,
+    var body = { k: '', start: pick, name: v.name, email: v.email, phone: tel, biz: BIZ || 'Tienda de la propuesta ' + SLUG, bud: '', sec: SEC, n: SEC !== 'otro' ? SEC : 'tienda', p: SLUG,
       utm: { utm_source: 'propuesta', utm_medium: 'agenda', utm_campaign: SLUG, utm_content: 'agenda' }, tz: (Intl.DateTimeFormat().resolvedOptions().timeZone || TZ), mc: false, fbp: '', fbc: '' };
     var done = function (j) { go.disabled = false; go.firstChild.textContent = 'Confirmar llamada ';
       if (j && j.ok) {
@@ -157,7 +150,6 @@
         go.disabled = true; go.firstChild.textContent = '¡Reservada! ';
         if (!PROD) { $('ag-2').innerHTML = '<div class="ag-ok"><b>¡Reservada! (prueba)</b><span>En la web real ahora pasaría a la página de gracias: /metodo?c=…</span></div>'; return; }
         setTimeout(function () { location.href = '/metodo' + (j.id ? '?c=' + encodeURIComponent(j.id) : ''); }, 350); return; }
-      if (j && j.error === 'budget') { $('ag-no').hidden = false; return q(1); }
       if (j && j.error === 'taken') { SL = j.slots || SL; err.textContent = 'Esa hora se acaba de ocupar. Elige otra, por favor.'; err.hidden = false;
         setTimeout(function () { $('ag-2').hidden = true; $('ag-1').hidden = false; $('ag-card').classList.remove('s2'); drawDays(); }, 1400); return; }
       err.innerHTML = 'No se ha podido reservar. <a href="https://wa.me/' + WA + '?text=' + encodeURIComponent('Hola Christian, he visto la propuesta de ' + (BIZ || 'mi tienda') + ' y quiero reservar la llamada para el ' + fL.format(new Date(pick))) + '" target="_blank" rel="noopener">Escríbeme por WhatsApp</a> y te la dejo hecha.'; err.hidden = false; };
