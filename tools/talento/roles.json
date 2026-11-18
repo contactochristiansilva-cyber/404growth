@@ -127,7 +127,7 @@
       "req": true,
       "max": 160,
       "step": 4,
-      "help": "Como lo veas más claro: por encargo, por hora o al mes."
+      "help": "En euros, como lo veas más claro: por encargo, por hora o al mes."
     },
     {
       "id": "tz",
@@ -135,7 +135,8 @@
       "type": "yesno",
       "req": true,
       "ko": "no",
-      "step": 4
+      "step": 4,
+      "help": "Desde Latinoamérica son entre 4 y 8 horas menos: las 9:00 en España son de madrugada allí."
     },
     {
       "id": "lang",
@@ -232,7 +233,7 @@
         "Criterio visual: sabes cuándo una tienda parece premium y cuándo parece barata.",
         "Usas IA cada día para imágenes y textos, y sabes sacarle calidad.",
         "Sabes personalizar un tema: secciones, bloques y algo de Liquid y CSS.",
-        "Español nativo y disponibilidad en horario de España."
+        "Español nativo. Vives en España o en Latinoamérica y puedes trabajar en horario de España."
       ],
       "plus": [
         "Experiencia en moda, joyería o cosmética.",
@@ -254,7 +255,7 @@
         ]
       ],
       "ben": [
-        "100 % en remoto, con tu horario dentro del de España.",
+        "100 % en remoto, desde España o Latinoamérica, dentro del horario de España.",
         "Pago por tienda entregada, con un extra si abre a tiempo.",
         "Volumen creciente: cada tienda que vendemos pasa por ti.",
         "Pasas a fijo, a media o jornada completa, cuando haya tres o más tiendas al mes.",
@@ -423,7 +424,7 @@
         "Escribes muy bien en español y sabes hablarle a un comerciante de tú a tú.",
         "Constancia: 40 envíos y todos los seguimientos, cada día.",
         "Te manejas con un CRM y con WhatsApp Business.",
-        "Horario de España, de lunes a viernes."
+        "Desde España o Latinoamérica, en horario de España, de lunes a viernes."
       ],
       "plus": [
         "Haber vendido a comercios o pymes.",
@@ -445,7 +446,7 @@
         ]
       ],
       "ben": [
-        "100 % en remoto, de lunes a viernes.",
+        "100 % en remoto, desde España o Latinoamérica, de lunes a viernes.",
         "Fijo de media jornada más comisión por cada llamada cualificada que se hace y por cada cliente que cierra.",
         "Las propuestas ya están hechas: tú pones la conversación.",
         "Formación en ventas con Christian y posibilidad de pasar a cerrar llamadas.",
@@ -609,7 +610,7 @@
         "Email marketing con Klaviyo o Shopify Email.",
         "Buen copy en español y criterio para los creativos.",
         "Sabes leer los datos (ROAS, CPA, conversión) y decidir con ellos.",
-        "Horario de España."
+        "Desde España o Latinoamérica, en horario de España."
       ],
       "plus": [
         "Moda, joyería o cosmética.",
@@ -631,7 +632,7 @@
         ]
       ],
       "ben": [
-        "100 % en remoto.",
+        "100 % en remoto, desde España o Latinoamérica.",
         "Una cantidad fija al mes por cada cliente que llevas: crece con cada cliente nuevo.",
         "Clientes con tienda recién hecha y presupuesto para anuncios.",
         "Libertad para probar y herramientas pagadas.",
@@ -797,7 +798,7 @@
         "Trabajo real que puedas enseñar.",
         "Autonomía: no necesitas que nadie te persiga.",
         "Te sientes cómodo con la IA y la usas a diario.",
-        "Español nativo y horario de España."
+        "Español nativo, desde España o Latinoamérica y en horario de España."
       ],
       "plus": [
         "Experiencia con tiendas online, comercio o marcas de producto."
@@ -809,7 +810,7 @@
         ]
       ],
       "ben": [
-        "100 % en remoto.",
+        "100 % en remoto, desde España o Latinoamérica.",
         "Te escribimos los primeros cuando abramos tu puesto.",
         "Proyectos de tiendas reales de toda España.",
         "Trato directo con Christian."

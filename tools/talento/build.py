@@ -85,9 +85,14 @@ def process(promise=None):
             % (''.join('<li><b>%s</b><p>%s</p></li>' % (e(a), e(b)) for a, b in R['process']), CHK, e(promise or R['promise'])))
 
 
+# desde dónde se puede trabajar (para Google Empleos): España y los países de Latinoamérica de habla hispana
+COUNTRIES = ['España', 'Argentina', 'Bolivia', 'Chile', 'Colombia', 'Costa Rica', 'Cuba', 'Ecuador', 'El Salvador', 'Guatemala', 'Honduras',
+             'México', 'Nicaragua', 'Panamá', 'Paraguay', 'Perú', 'Puerto Rico', 'República Dominicana', 'Uruguay', 'Venezuela']
+
+
 def mode_facts(j):
     parts = [x.strip() for x in j['mode'].split('·') if x.strip()]
-    return parts + ['Español nativo', 'Horario de España']
+    return parts + ['España o Latinoamérica', 'Español nativo', 'Horario de España']
 
 
 # ---------- el formulario ----------
@@ -155,7 +160,7 @@ def jsonld(j, path):
     o = {'@context': 'https://schema.org', '@type': 'JobPosting', 'title': j['title'], 'description': desc, 'datePosted': TODAY.isoformat(),
          'validThrough': (TODAY + datetime.timedelta(days=120)).isoformat() + 'T23:59:00+01:00', 'employmentType': j['emp'],
          'hiringOrganization': {'@type': 'Organization', 'name': '404 Growth', 'sameAs': SITE, 'logo': SITE + '/apple-touch-icon.png'},
-         'jobLocationType': 'TELECOMMUTE', 'applicantLocationRequirements': {'@type': 'Country', 'name': 'España'}, 'directApply': True,
+         'jobLocationType': 'TELECOMMUTE', 'applicantLocationRequirements': [{'@type': 'Country', 'name': c} for c in COUNTRIES], 'directApply': True,
          'url': SITE + path, 'identifier': {'@type': 'PropertyValue', 'name': '404 Growth', 'value': j['slug']}}
     return '<script type="application/ld+json">%s</script>' % json.dumps(o, ensure_ascii=False).replace('</', '<\\/')
 
@@ -220,10 +225,10 @@ def card(j):
 def index_page():
     path = '/equipo/'
     title = 'Trabaja en 404 Growth · Puestos abiertos'
-    desc = 'Buscamos a los mejores para llevar las tiendas físicas de toda España a internet: tiendas Shopify, captación por WhatsApp y Meta Ads. En remoto.'
+    desc = 'Buscamos a los mejores para llevar las tiendas físicas de toda España a internet: tiendas Shopify, captación por WhatsApp y Meta Ads. En remoto, desde España o Latinoamérica.'
     h = head(title, desc, path, 'equipo') + nav('#puestos', 'Ver puestos', [('#puestos', 'Puestos'), ('#proceso', 'Proceso'), ('/', 'Qué hacemos')])
     h += ('<main id="main"><section class="hero" id="top"><div class="w"><span class="chip"><i></i>Trabaja en 404 Growth</span><h1>Llevamos las tiendas de España a internet. <span class="lm">Ven a hacerlo con nosotros.</span></h1>'
-          '<p class="hook">%s</p><ul class="facts"><li>100 %% en remoto</li><li>Horario de España</li><li>IA en el día a día</li><li>Directo con el fundador</li></ul>'
+          '<p class="hook">%s</p><ul class="facts"><li>100 %% en remoto</li><li>Desde España o Latinoamérica</li><li>IA en el día a día</li><li>Directo con el fundador</li></ul>'
           '<div class="cta"><a class="b-pri" href="#puestos">Ver los puestos %s</a><span class="mut">%s</span></div></div></section>') % (e(R['about'][0]), AR, e(R['promise']))
     h += ('<section class="sec" id="puestos"><div class="w"><div class="sh rv" style="position:static;margin-bottom:28px"><div class="sn">Puestos</div><h2>Puestos abiertos</h2></div>'
           '<div class="jobs rv">%s</div></div></section>') % ''.join(card(j) for j in R['jobs'])
@@ -232,7 +237,7 @@ def index_page():
         ''.join('<p>%s</p>' % e(p) for p in R['about']))
     vals = [('Con método', 'Cada tienda se hace igual de bien, cada vez: checklist de 15 días, plantillas y revisión antes de abrir.'),
             ('Con IA, cada día', 'Fotos, textos, propuestas y análisis: la IA hace lo repetitivo para que tú hagas lo que importa.'),
-            ('En remoto', 'Trabajas desde donde quieras, en horario de España y con tu agenda. Medimos resultados, no horas.'),
+            ('En remoto', 'Trabajas desde España o desde Latinoamérica, en horario de España y con tu agenda. Medimos resultados, no horas.'),
             ('Claro y directo', 'Hablas con Christian, sin capas. Las cosas se dicen pronto y claras, también cuando algo se tuerce.')]
     h += ('<section class="sec"><div class="w"><div class="sh rv" style="position:static;margin-bottom:28px"><div class="sn">Cultura</div><h2>Cómo trabajamos</h2></div>'
           '<ul class="vals rv">%s</ul></div></section>') % ''.join('<li><b>%s</b><p>%s</p></li>' % (e(a), e(b)) for a, b in vals)
