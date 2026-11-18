@@ -656,6 +656,30 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - `LEAD_PATCH_KEY = "lpatch_20261118"` (35 entradas): pasa al lote del 18/11 las 5 del lote 38 que no se enviaron y las 30 del `SEED3` con su propuesta. La lista del 17/11 queda como `LEAD_PATCH_17NOV`.
 - Prueba: `t_l39.mjs`, 36 comprobaciones; necesita `d1shim.mjs` y el worker como módulo (copia del worker + una línea `export {…}`), como en el lote 38. Copias en `anterior/worker-v74d-17nov-antes-l39.js` y `anterior/worker-v75b-17nov-antes-propuestas-l39.js`.
 
+## Scrapeo del 18/11 para el 19/11: filtros nuevos tras mirar los datos de noviembre (`seed_20261119`)
+
+- **Lo que dijeron los datos (CRM + contador de visitas, 252 propuestas enviadas del 2 al 18/11):**
+  - Se abre el 44 %; la mitad de quienes la abren se va en menos de 1 minuto y 7 de cada 10 no pasan del primer tercio.
+  - El 21 % la mira con interés de verdad (más de 2 minutos o vuelve otro día).
+  - Interés por nicho: perfumería y cosmética 47 %, suplementos 44 %, joyería 26 %, moda 18 %. Las de más de 50.000 seguidores son las que peor responden.
+  - En noviembre nadie está marcado como «respondió» ni «reunión» en el CRM (Kiss of Life sigue en «Caliente»). Sin eso no se puede saber qué perfil contesta.
+  - Lo que tienen en común Kiss of Life, Intenso y Carmen Valencia: ya vendían a distancia, a mano.
+- **Filtros desde ahora:**
+  1. Obligatorio: que ya vendan a distancia (envíos, pedidos por WhatsApp o por mensaje privado, Bizum, directos, «ventas por Instagram»), en la bio o en sus últimas publicaciones.
+  2. Interacción: mediana de «me gusta» de al menos el 0,6–1 % de los seguidores.
+  3. Unos 4.000–40.000 seguidores.
+  4. Publicación en los últimos 10 días.
+  5. Sin tienda online que venda. Mirar también la web de su ficha de Google Maps: muchas no la enlazan en la bio.
+  6. Un número de WhatsApp.
+- **Resultado:** 35 tiendas en `prospeccion/scrapeo-18nov/`.
+  - 32 de moda (mujer, mixtas, complementos y lencería), 1 zapatería y 2 joyerías.
+  - Perfumería, suplementos y joyería con estos filtros casi siempre venden ya online.
+  - Archivos: `leads.json`, `revision.md` (lo descartado y por qué), `engine19.js` (el motor de Instagram), `mkrows.py`, `patch_s19.py` y la prueba `t_s19.mjs` (23 comprobaciones).
+- **En el CRM** van como cuarta lista de `seedOnce` (`SEED4`), con `lotDay` 2026-11-19 y **sin propuesta** todavía: el Lote de hoy las enseña cuando tengan `pageUrl`.
+  - WhatsApp Web no tenía sesión en ninguno de los dos Chrome. Las 13 que no publican el número como WhatsApp llevan `waOk: false`.
+  - Copia de la v78 en `anterior/worker-v78-18nov-antes-seed19.js`.
+- **Webs con r.jina.ai:** da error 429 con más de unas 20 peticiones por minuto, así que hay que esperar 3–4 s entre una y otra. Con `Accept: application/json` el JSON viene escapado dentro de `data.text`: hay que buscar `\"products\"`.
+
 ## Lote 39 (17/11/2026): 30 propuestas sin moda ni comida, fotos de Google Flow
 
 - Las 30 del scrapeo del 17/11 (arriba), con la tienda «Editorial» del lote 37 (`gen37a.py`) y la propuesta de siempre (`gen33v.py`). Publicadas en el Mac (`web117-404growth`, con sus `p/<slug>/index.html`), a falta de `subir-web.command` y `subir.command`.
