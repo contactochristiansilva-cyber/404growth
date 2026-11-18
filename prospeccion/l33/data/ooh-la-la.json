@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Ooh la la",
+ "ig": "oohlalaantequera",
+ "f": 7256,
+ "city": "Antequera",
+ "cityfull": "Antequera (Málaga)",
+ "address": "C/ Duranes 1 (esquina C/ Lucena)",
+ "logo": {
+  "text": "Ooh la la"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p2"
+  ],
+  [
+   "Abrigos",
+   "p4"
+  ],
+  [
+   "Chalecos",
+   "p1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaleco de pelo bordado"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de brocado"
+  },
+  {
+   "id": "p3",
+   "name": "Blazer de cuadros"
+  },
+  {
+   "id": "p4",
+   "name": "Abrigo cruzado crema"
+  },
+  {
+   "id": "p5",
+   "name": "Chaleco bordado azul"
+  },
+  {
+   "id": "p6",
+   "name": "Cazadora estrella"
+  }
+ ],
+ "theme": {}
+}

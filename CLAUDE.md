@@ -693,6 +693,32 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Revisadas en hojas de contacto (`sheet39.py`). Se rehicieron 5 (`flow/q39r.json`): el todoterreno de Juguetes Duba se parecía a un Jeep (ahora carrocería genérica), el papel de Scrapa2 llevaba título y marca, la tienda de Only Today tenía arcos (nada que recuerde a lo árabe) y la caja de sobres de Nexus salía vacía.
 - Revisadas con Playwright a 360, 390 y 1280 px (las 60 páginas): sin scroll lateral, sin fotos rotas ni errores. En local el iframe de la propuesta da 404 porque pide la dirección sin `.html` (Cloudflare sí la sirve).
 
+## Lote 40 (18–19/11/2026): propuesta nueva con el aspecto del admin (pendiente del visto bueno de Chris)
+
+- Lo que pidió Chris (18/11/2026):
+  - «mismo lettering, colores y estructuras que nuestro admin»;
+  - **sin precio**, y la garantía: «retorno de la inversión en 90 días o trabajamos gratis hasta conseguirlo»;
+  - **sin testimonios de clientes**: sus webs aún no están listas y no se menciona nada de eso;
+  - se mantiene la agenda dentro;
+  - todas las fotos con Google Flow;
+  - **solo para las propuestas nuevas**: las ya enviadas no se tocan (siguen con `gen33v.py`).
+- Primero una de referencia (Ooh la la, Antequera) y, cuando Chris la apruebe, las otras 34 del `SEED4`.
+- Generador `prospeccion/l33/gen40.py <slug> [--local]` → `out/p-<slug>.html`:
+  - la tienda es la «Editorial» de `gen37a.py`, metida en un navegador y un móvil (`?tour=1`);
+  - los textos de cada tienda van en `prop40.json`: sus palabras (cita de una publicación suya), cómo venden hoy paso a paso, sus envíos y sus señales;
+  - tema v34 del admin: fondo #F6F7F3 con salvia, tarjetas de cristal blanco de 28 px, negro para lo que manda, SF Pro con cifras a 300 y anillos (`ring`, como `.k4-ring`). Con la SF Pro, los títulos grandes van a `-.034em` (con `-.048em` las letras se tocan).
+- Estructura, como el Inicio del admin:
+  1. saludo según la hora de España («Buenas tardes, Ooh la la.» y «Vuestra tienda online ya está hecha.») con la fecha;
+  2. cuatro anillos: 15 días, 24/7 (en negro), 90 días y «3 cosas»;
+  3. su tienda (en el móvil va lo primero, antes de los anillos) y la garantía en negro;
+  4. «Lo decís vosotras» y «Del «me lo guardas» al pedido» (pasos de hoy frente a los de la tienda);
+  5. los 15 días en barras y «Por qué ahora»: el lunes siguiente y el día 15 se calculan al abrirla, con la siguiente fecha fuerte (Navidad, Reyes, rebajas…);
+  6. «Vuestro trabajo: 3 cosas»;
+  7. dudas (una abierta a la vez) y respuestas rápidas por WhatsApp con el mensaje escrito;
+  8. la agenda (`AG.block`, la misma `/agenda.js`), la nota de Christian y el pie, que dice que las fotos son de IA.
+- Fotos de Ooh la la: 13 trabajos en Flow (`flow/q40.json`, referencias `nooh-la-la-NN.jpg` con la cara tapada), Nano Banana 2.1. Pro estaba sin cupo en la cuenta personal.
+- Revisión: `revision-l40/` en `404growth-subir` (no en `web117`, para que no se publique), con la propuesta en un solo archivo (`inline37.py`, con `agenda.js` metido dentro) y las capturas del Playwright del Mac.
+
 ## Agenda dentro de cada propuesta (admin v76, 18/11/2026)
 
 - Chris: «el calendario nativo ya dentro de cada propuesta para que sea súper sencillo agendar sin tener que preguntarme nada, y de ahí a la página de gracias».

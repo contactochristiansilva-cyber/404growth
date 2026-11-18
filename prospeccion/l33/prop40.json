@@ -1,0 +1,19 @@
+{
+  "ooh-la-la": {
+    "name": "Ooh la la",
+    "city": "Antequera",
+    "fk": "7.256",
+    "who": "vosotras",
+    "client": "clienta",
+    "quote": "Muchas nos preguntáis cómo podéis comprar nuestras prendas online si no tenemos página web.",
+    "quote_src": "Vuestra publicación fijada · 19 de mayo",
+    "quote_why": "Lo explicáis vosotras mismas: queréis que al otro lado de la pantalla se sienta la misma confianza que en la tienda, y por eso vendéis por WhatsApp, en directos y en redes.",
+    "answer": "La tienda no cambia eso: lo ordena. El WhatsApp, el directo de los miércoles y el trato de siempre siguen igual. Lo que cambia es lo de detrás: la talla, el pago y la dirección ya no van por mensaje.",
+    "signals": ["Directo cada miércoles a las 20:30", "Reservas por MD", "Envíos 24/48 h a península y Portugal", "Dos tiendas en Antequera"],
+    "today": [["c", "Ve la prenda en un reel o en el directo"], ["c", "Hace captura y os escribe por MD"], ["v", "Le contestáis talla, color y precio"], ["v", "Bizum y dirección, por mensaje"], ["v", "Lo apuntáis, lo reserváis y lo enviáis"]],
+    "store": [["c", "Ve la prenda y toca el enlace"], ["c", "Elige su talla y paga: tarjeta, Bizum o Apple Pay"], ["v", "Os llega el pedido pagado, con su dirección"]],
+    "store_note": "Y cuando algo vuela en el directo, la tienda apunta sola a quien quiere que le aviséis cuando vuelva: la lista de espera que hoy lleváis a mano.",
+    "ship": "Los mismos que ya hacéis: península y Portugal en 24/48 h, gratis desde el importe que digáis. La tienda cobra el envío al pagar y os avisa de cada pedido con todos sus datos.",
+    "sec": "moda"
+  }
+}
