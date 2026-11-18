@@ -773,6 +773,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
     - En `data.vid` de la candidatura se guardan `k`, `size`, `type`, `dur` y `src` (`rec` si se grabó en la página, `file` si se subió).
     - La IA solo sabe que hay vídeo; no lo ve.
   - **Admin:** la tarjeta lleva la etiqueta «Vídeo» y la ficha tiene el reproductor (`tal/<id>/video`, con rangos para Safari) y «Descargar».
+    - **18/11/2026:** el reproductor no cargaba («Media load rejected by URL safety check»). El `CSP` del admin solo permitía `media-src https://media.404growth.com`, así que el `<video>` no podía leer `/admin/api/…`. Ahora es `media-src 'self' https://media.404growth.com`. Las pruebas no lo vieron porque `srv77.mjs` no pone esa cabecera. Copia de antes en `anterior/worker-seed19-18nov-antes-csp-video.js`.
   - **Limpieza:** lo que nadie envía se borra al día siguiente, y al borrar una candidatura se borra su vídeo (`talVidSweep`).
   - **Sin R2** (`env.TV`), `/l/jobs` devuelve `vid: false` y la página pide el enlace, como antes.
   - **Subida a Cloudflare:** `subir.command` crea el bucket la primera vez. Si R2 no está activado en la cuenta, sube el admin con `admin/wrangler-sin-r2.jsonc` (sin el binding) y avisa. Activar R2 es cosa de Chris, en dash.cloudflare.com › R2: es gratis hasta 10 GB, pero pide un medio de pago.

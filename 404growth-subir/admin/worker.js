@@ -236,7 +236,7 @@ const SEC = {
   "x-content-type-options": "nosniff", "x-frame-options": "DENY", "referrer-policy": "same-origin", "cache-control": "no-store",
   "x-robots-tag": "noindex, nofollow", "strict-transport-security": "max-age=31536000",
 };
-const CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src https://media.404growth.com; frame-src https://www.youtube-nocookie.com https://www.loom.com https://player.vimeo.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'";
+const CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https://media.404growth.com; frame-src https://www.youtube-nocookie.com https://www.loom.com https://player.vimeo.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'";
 const json = (data, status, extra) => new Response(JSON.stringify(data), { status: status || 200, headers: Object.assign({ "content-type": "application/json; charset=utf-8" }, SEC, extra || {}) });
 
 /* ---------- v32 (28 oct 2026): la marca nueva en todo el admin y los portales ----------
