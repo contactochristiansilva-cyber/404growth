@@ -353,7 +353,7 @@ def build(slug):
            f'<div class="row">{browser(t + "?embed=1&at=destacado", dom, hh=760, title="Ficha de producto")}{phone(t + "?embed=1&at=destacado", hh=780, title="Ficha en el móvil")}</div>'
            f'<div class="pills"><span class="pill">{I(IC["shirt"])}Su talla</span><span class="pill">{I(IC["card"])}Tarjeta y Bizum</span><span class="pill">{I(IC["truck"])}24/48 h</span></div></section>')
 
-    qs = [('Me interesa', 'Me interesa la tienda. ¿Cuándo podemos hablar?'), ('¿Cuánto cuesta?', '¿Cuánto costaría la tienda para nosotras?'), ('Tengo una duda', 'Tengo una duda: ')]
+    qs = [('Me interesa', 'Me interesa la tienda. ¿Cuándo podemos hablar?'), ('¿Cuánto cuesta?', f'¿Cuánto costaría la tienda para {P.get("us", "nosotras")}?'), ('Tengo una duda', 'Tengo una duda: ')]
     qr = '<div class="qr">' + ''.join(f'<a href="{wa(hi + m)}" target="_blank" rel="noopener">{WAI}{E(l)}</a>' for l, m in qs) + '</div>'
     ag = AG.block(slug, name, P.get('sec', 'moda'), False)
     i0 = ag.index('<p class="ag-sub">'); i1 = ag.index('</p>', i0) + 4
@@ -388,7 +388,7 @@ def build(slug):
           f'<div class="ev k"><b>{I(IC["bag"])}</b><strong id="n-b">día 15</strong><small>Abierta</small></div>'
           f'<div class="ev g"><b>{I(IC["gift"])}</b><strong id="n-c">—</strong><small id="n-e">Navidad</small></div></div>'
           f'<div class="steps rv"><span>{I(IC["phone"])}Llamada <em>día 0</em></span><span>{I(IC["cam"])}Fotos y fichas</span><span>{I(IC["card"])}Pagos y envíos</span><span>{I(IC["check"])}Abierta <em>día 15</em></span></div>'
-          f'<div class="you gl rv">{I(IC["check"])}<span><b>Vosotras:</b> una llamada y fotos.<br><b>El resto, nosotros.</b></span></div></section>')
+          f'<div class="you gl rv">{I(IC["check"])}<span><b>{P.get("you", "Vosotras")}:</b> una llamada y fotos.<br><b>El resto, nosotros.</b></span></div></section>')
 
     def ad(media, cta):
         return (f'<div class="ad"><div class="h"><i></i><div><b>{E(ig)}</b><small>Publicidad</small></div></div>{media}'

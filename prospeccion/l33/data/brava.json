@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Brava",
+ "ig": "brava_shoop",
+ "f": 4482,
+ "city": "Valverde de Leganés",
+ "cityfull": "Valverde de Leganés (Badajoz)",
+ "address": "C/ Bonal 2B",
+ "logo": {
+  "text": "Brava"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p4"
+  ],
+  [
+   "Blusas",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Jersey polo crema"
+  },
+  {
+   "id": "p2",
+   "name": "Bomber verde oliva"
+  },
+  {
+   "id": "p3",
+   "name": "Blusa de cuadros"
+  },
+  {
+   "id": "p4",
+   "name": "Chaqueta burdeos"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta con cinturón"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso con tachas"
+  }
+ ],
+ "theme": {}
+}

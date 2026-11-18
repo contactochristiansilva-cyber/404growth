@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Kontiki",
+ "ig": "kontiki_lloretdemar",
+ "f": 28763,
+ "city": "Lloret de Mar",
+ "cityfull": "Lloret de Mar (Girona)",
+ "address": "C/ Miquel Ferrer 19",
+ "logo": {
+  "text": "Kontiki"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p2"
+  ],
+  [
+   "Abrigos",
+   "p4"
+  ],
+  [
+   "Chalecos",
+   "p1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaleco de pelo"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de pelo caramelo"
+  },
+  {
+   "id": "p3",
+   "name": "Blazer de tweed"
+  },
+  {
+   "id": "p4",
+   "name": "Plumífero con capucha"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta de punto verde"
+  },
+  {
+   "id": "p6",
+   "name": "Kimono de terciopelo"
+  }
+ ],
+ "theme": {}
+}

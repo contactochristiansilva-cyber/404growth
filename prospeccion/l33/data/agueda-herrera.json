@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Águeda Herrera",
+ "ig": "lenceriaaguedaherrera",
+ "f": 5915,
+ "city": "El Prat de Llobregat",
+ "cityfull": "El Prat de Llobregat (Barcelona)",
+ "address": "C/ Frederic Soler 66",
+ "logo": {
+  "text": "Águeda Herrera"
+ },
+ "cats": [
+  [
+   "Sujetadores",
+   "p1"
+  ],
+  [
+   "Pijamas y batas",
+   "p3"
+  ],
+  [
+   "Calcetines",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Sujetador de encaje"
+  },
+  {
+   "id": "p2",
+   "name": "Bralette lila"
+  },
+  {
+   "id": "p3",
+   "name": "Bata de borreguito"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto loungewear"
+  },
+  {
+   "id": "p5",
+   "name": "Calcetines navideños"
+  },
+  {
+   "id": "p6",
+   "name": "Sujetador de capacidad"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Azul Klein",
+ "ig": "azulkleinshop",
+ "f": 11050,
+ "city": "Paradas",
+ "cityfull": "Paradas (Sevilla)",
+ "address": "C/ Larga 67",
+ "logo": {
+  "text": "Azul Klein"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Trajes",
+   "p2"
+  ],
+  [
+   "Conjuntos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido de volantes"
+  },
+  {
+   "id": "p2",
+   "name": "Traje verde oliva"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido naranja"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido lavanda"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido de flecos"
+  },
+  {
+   "id": "p6",
+   "name": "Conjunto coral"
+  }
+ ],
+ "theme": {}
+}

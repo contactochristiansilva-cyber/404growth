@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Marta Junco",
+ "ig": "mjuncocomplementos",
+ "f": 4640,
+ "city": "Oviedo",
+ "cityfull": "Oviedo (Asturias)",
+ "address": "C/ Milicias Nacionales 3",
+ "logo": {
+  "text": "Marta Junco"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Kimonos",
+   "p2"
+  ],
+  [
+   "Complementos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta tropical"
+  },
+  {
+   "id": "p2",
+   "name": "Kimono de cachemir"
+  },
+  {
+   "id": "p3",
+   "name": "Abrigo de punto ilustrado"
+  },
+  {
+   "id": "p4",
+   "name": "Bailarinas de terciopelo"
+  },
+  {
+   "id": "p5",
+   "name": "Broches bordados"
+  },
+  {
+   "id": "p6",
+   "name": "Chaqueta bordada"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Inarkadia",
+ "ig": "inarkadia",
+ "f": 7843,
+ "city": "Bilbao",
+ "cityfull": "Bilbao (Bizkaia)",
+ "address": "Pza. Elíptica 6 (entrada por C/ Elcano)",
+ "logo": {
+  "text": "Inarkadia"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Abrigos",
+   "p4"
+  ],
+  [
+   "Punto",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Cazadora de borreguito"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta con pelo"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey gatito"
+  },
+  {
+   "id": "p4",
+   "name": "Chaquetón rojo"
+  },
+  {
+   "id": "p5",
+   "name": "Abrigo de pelo rizado"
+  },
+  {
+   "id": "p6",
+   "name": "Calcetines pavo real"
+  }
+ ],
+ "theme": {}
+}

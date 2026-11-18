@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Estrena",
+ "ig": "estrena_alcoy",
+ "f": 5466,
+ "city": "Alcoy",
+ "cityfull": "Alcoy (Alicante)",
+ "address": "C/ Sabadell 26",
+ "logo": {
+  "text": "Estrena"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p6"
+  ],
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Vestidos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta borrego burdeos"
+  },
+  {
+   "id": "p2",
+   "name": "Blazer marino"
+  },
+  {
+   "id": "p3",
+   "name": "Cazadora roja"
+  },
+  {
+   "id": "p4",
+   "name": "Camisa leopardo"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido de punto"
+  },
+  {
+   "id": "p6",
+   "name": "Plumífero burdeos"
+  }
+ ],
+ "theme": {}
+}

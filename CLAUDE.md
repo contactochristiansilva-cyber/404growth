@@ -693,7 +693,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Revisadas en hojas de contacto (`sheet39.py`). Se rehicieron 5 (`flow/q39r.json`): el todoterreno de Juguetes Duba se parecía a un Jeep (ahora carrocería genérica), el papel de Scrapa2 llevaba título y marca, la tienda de Only Today tenía arcos (nada que recuerde a lo árabe) y la caja de sobres de Nexus salía vacía.
 - Revisadas con Playwright a 360, 390 y 1280 px (las 60 páginas): sin scroll lateral, sin fotos rotas ni errores. En local el iframe de la propuesta da 404 porque pide la dirección sin `.html` (Cloudflare sí la sirve).
 
-## Lote 40 (18–19/11/2026): propuesta nueva (pendiente del visto bueno de Chris)
+## Lote 40 (18–19/11/2026): propuesta nueva para las tiendas del scrapeo del 18/11
 
 - Lo que pidió Chris (18/11/2026):
   - sin precio y con la garantía: «retorno de la inversión en 90 días o trabajamos gratis hasta conseguirlo»;
@@ -730,6 +730,30 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Ojo: los marcos `.fr` llevan `aspect-ratio` solo hasta que llega el alto. Si no se quita (`aspectRatio='auto'`), el ancho crece con el alto y la página se sale por la derecha en el móvil.
 - Fotos de Ooh la la: 13 trabajos en Flow (`flow/q40.json`, referencias `nooh-la-la-NN.jpg` con la cara tapada), con Nano Banana 2.1 porque Pro estaba sin cupo en la cuenta personal.
 - Revisión en `404growth-subir/revision-l40/` (no en `web117`, para que no se publique): la propuesta en un solo archivo (`inline37.py` con `agenda.js` metido dentro) y capturas por pantallas del Playwright del Mac. La captura de página entera falla con iframes, así que se hace pantalla a pantalla, con la cabecera y la barra escondidas, y se une después.
+- **Todas (18–19/11/2026, Chris: «me encanta, ahora sí vamos con todas»).** De las 35 del scrapeo del 18/11:
+  - **29 hechas** y en el Mac (`web117-404growth`, con su miniatura de WhatsApp `--wa.jpg`), a falta de `subir-web.command`.
+  - **Vichy Motril fuera:** vichymotril.com ya es una tienda con categorías y carrito.
+  - **5 a medias** (Cent-Vuit, Casual Coria, Doble Ele, Marga Piñeiro y Novojoya): el cupo diario de Nano Banana 2.1 de la cuenta personal se acabó antes de sus últimas 16 fotos (Cent-Vuit 8, Casual Coria 4, Doble Ele 2, Marga 1, Novojoya 1; trabajos 52–65, 128 y 204 de `flow/q40b.json`). Pasan al 20/11 sin `pageUrl` hasta que se terminen. Apimart (unos 3 $) necesita el permiso de Chris.
+- Archivos (todos en `prospeccion/l33/`):
+  - `specs40.py` (fotos de cada tienda; las referencias van con su número de Instagram);
+  - `prop40.json` (nombre, ciudad, la frase de Instagram con su fecha, `sec`, y `you`/`us`: «Vosotras»/«nosotras» o «Vosotros»/«nosotros» según quién lleva la tienda);
+  - `sel40.json` (las 34);
+  - `flow/q40b.json` (396 trabajos ordenados por formato: 3:4, 16:9, 9:16 y 4:3) y `mkbat40c.py` (lotes de `browser_batch`).
+- Las frases de Instagram salen de sus pies de foto (`caps.json` de cada cuenta, con las palabras de envío, WhatsApp, privado, directo…) o, si no hay, de su bio (`quote_when` «vuestra bio»). Siempre literales.
+- **Flow, lo que se aprendió (18/11/2026):**
+  - Las referencias se suben de golpe (`file_upload` a un `input` propio + `drop` sintético sobre `.cdk-virtual-scrollable`, en tandas de menos de 10 MB). Cada subida aparece dos veces en el buscador; vale la primera.
+  - **No mandar trabajos hasta que terminen de subirse las referencias:** los primeros 66 se perdieron sin aviso y hubo que repetirlos.
+  - **Enviar con un clic real en la flecha (1001, 743), no con Return:** con Return fallaba 1 de cada 4 (la petición se quedaba escrita y el siguiente trabajo se mezclaba con ella). Con el clic, 0 fallos en más de 200.
+  - Por trabajo: `__go(i)` (espera 2,2 s, comprueba que la petición anterior se fue —si no, apunta `i` en `localStorage.__f40` y no toca nada—, escribe el texto y busca la referencia), tecla real «Down Return» por referencia (`__gk(i,k)` para la 2.ª y la 3.ª) y el clic. Unos 18 trabajos por `browser_batch`; con 20 o más la herramienta da «did not respond in time» aunque el lote acabe.
+  - Si la pestaña se queda congelada (las fichas al 99 % y `Runtime.evaluate` sin respuesta), se recarga y se vuelven a meter los ayudantes; el formato elegido se mantiene.
+  - **Recogida:** en el visor (`/edit/<id>`) la imagen grande de las verticales es la de 512 px. Hay que bajar la dirección con `=s0` al final (`img.src.replace(/=[a-z0-9-]+$/i, '=s0')`): así salen a 864×1152 (3:4), 1344×756 (16:9) y 756×1344 (9:16). Las subidas de referencias que acaban tarde se cuelan entre las generaciones: parar a las 40 seguidas sin petición, no a las 25 en total.
+  - El cupo de Nano Banana 2.1 de la cuenta personal dio unas 450 fotos en el día; después, «Has alcanzado tu límite de uso». 2 Lite comparte el cupo y Pro ya estaba agotado. En este Chrome solo está la cuenta personal (`/u/2` lleva a `/u/0`).
+- Revisadas en hojas por tienda (`sheetm.py` del scratchpad) y con Playwright a 390 y 1440 px (las 29: sin scroll lateral, sin fotos rotas ni errores).
+- **CRM** (`prospeccion/scrapeo-18nov/patch_l40.py <worker> <salida>`, prueba `t_l40.mjs`, 19 comprobaciones con `d1shim.mjs` y la copia del worker con `export {…}`):
+  - el `SEED4` (aún sin subir) lleva ya `slug`, `pageUrl` y su día; `LEAD_PATCH_KEY = "lpatch_20261119"` pone lo mismo por si el `SEED4` hubiera entrado antes. La lista del 18/11 queda como `LEAD_PATCH_18NOV`;
+  - mismo pueblo, días distintos: Sígueme 19, Casual Coria 20 y Modas Rocío 21 (Coria del Río); Ooh la la 19 y Mercedes Beltrán 20 (Antequera);
+  - las 5 a medias, al 20/11 sin propuesta; Vichy, sin lote, prioridad 30 y «AVISO».
+  - Instalado en el Mac (copia de antes en `anterior/worker-v78b-19nov-antes-l40.js`).
 
 ## Agenda dentro de cada propuesta (admin v76, 18/11/2026)
 

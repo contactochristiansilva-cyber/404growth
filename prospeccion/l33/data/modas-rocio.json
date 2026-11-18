@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Modas Rocío",
+ "ig": "modasrocio_",
+ "f": 6468,
+ "city": "Coria del Río",
+ "cityfull": "Coria del Río (Sevilla)",
+ "address": "Av. Primero de Mayo 33",
+ "logo": {
+  "text": "Modas Rocío"
+ },
+ "cats": [
+  [
+   "Chándal",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p4"
+  ],
+  [
+   "Conjuntos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chándal con corazón"
+  },
+  {
+   "id": "p2",
+   "name": "Chándal chocolate"
+  },
+  {
+   "id": "p3",
+   "name": "Chándal morado"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto caqui"
+  },
+  {
+   "id": "p5",
+   "name": "Conjunto de punto marrón"
+  },
+  {
+   "id": "p6",
+   "name": "Jersey con cuello camisero"
+  }
+ ],
+ "theme": {}
+}

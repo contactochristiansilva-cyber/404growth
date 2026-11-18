@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Doble Ele",
+ "ig": "doble_ele_moda",
+ "f": 5607,
+ "city": "Sevilla",
+ "cityfull": "Sevilla",
+ "address": "C/ Eva Cervantes, Nuevo 13 ACC (41006)",
+ "logo": {
+  "text": "Doble Ele"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p6"
+  ],
+  [
+   "Conjuntos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta burdeos"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de punto negra"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto de punto beige"
+  },
+  {
+   "id": "p5",
+   "name": "Pantalón de pinzas negro"
+  },
+  {
+   "id": "p6",
+   "name": "Jersey marinero"
+  }
+ ],
+ "theme": {}
+}

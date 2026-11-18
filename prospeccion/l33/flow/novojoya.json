@@ -1,0 +1,50 @@
+{
+ "slug": "novojoya",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "novojoya-22.jpg",
+    "novojoya-33.jpg",
+    "novojoya-32.jpg",
+    "novojoya-28.jpg",
+    "novojoya-25.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia novojoya-22.jpg, aplica la REGLA A): Luxury campaign still life of delicate gold and silver necklaces and hoop earrings displayed on white jewellery stands from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia novojoya-33.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a sterling silver necklace with two cat-shaped pendants and a small paw charm from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia novojoya-32.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of sterling silver stud earrings shaped like sitting cats from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia novojoya-28.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a sterling silver pendant shaped like a mermaid tail on a fine chain from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia novojoya-25.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of chunky silver hoop earrings in a twisted design from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "novojoya-23.jpg",
+    "novojoya-01.jpg",
+    "novojoya-26.jpg",
+    "novojoya-24.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia novojoya-23.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of gold-tone drop earrings with a mother-of-pearl shell disc from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia novojoya-01.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a fine gold chain bracelet with a small round charm from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia novojoya-26.jpg, aplica la REGLA B): Lifestyle photo: a woman's hands holding a white card with small gold stud earrings, cropped, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia novojoya-24.jpg, aplica la REGLA A): Lifestyle photo: silver hoop earrings displayed on white stands in a bright jewellery shop, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA C): Wide interior photo: a bright modern jewellery shop with white marble floors, white glass showcases and soft pink accents, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of delicate gold and silver neckl",
+  "p1": "Luxury jewellery e-commerce photo of a sterling silver neckl",
+  "p2": "Luxury jewellery e-commerce photo of sterling silver stud ea",
+  "p3": "Luxury jewellery e-commerce photo of a sterling silver penda",
+  "p4": "Luxury jewellery e-commerce photo of chunky silver hoop earr",
+  "p5": "Luxury jewellery e-commerce photo of gold-tone drop earrings",
+  "p6": "Luxury jewellery e-commerce photo of a fine gold chain brace",
+  "l1": "Lifestyle photo: a woman's hands holding a white card with s",
+  "l2": "Lifestyle photo: silver hoop earrings displayed on white sta",
+  "b": "Wide interior photo: a bright modern jewellery shop with whi"
+ }
+}

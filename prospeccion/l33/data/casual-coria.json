@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Casual Coria",
+ "ig": "casualcoria",
+ "f": 3503,
+ "city": "Coria del Río",
+ "cityfull": "Coria del Río (Sevilla)",
+ "address": "C/ Carretero 23",
+ "logo": {
+  "text": "Casual Coria"
+ },
+ "cats": [
+  [
+   "Punto",
+   "p1"
+  ],
+  [
+   "Chaquetas",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p2",
+   "name": "Chaleco beige"
+  },
+  {
+   "id": "p3",
+   "name": "Chaqueta de pelo"
+  },
+  {
+   "id": "p4",
+   "name": "Chaqueta salvia"
+  },
+  {
+   "id": "p5",
+   "name": "Bolso jacquard"
+  },
+  {
+   "id": "p6",
+   "name": "Conjunto marrón"
+  }
+ ],
+ "theme": {}
+}

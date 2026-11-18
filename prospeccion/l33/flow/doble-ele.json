@@ -1,0 +1,50 @@
+{
+ "slug": "doble-ele",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "doble-ele-14.jpg",
+    "doble-ele-20.jpg",
+    "doble-ele-13.jpg",
+    "doble-ele-27.jpg",
+    "doble-ele-16.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia doble-ele-14.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a grey washed denim bomber jacket with wide black trousers from the reference, walking at a sunny street in Seville, Spain, with orange trees and colourful facades, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia doble-ele-20.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a burgundy short knit jacket with gold buttons, worn over a white top with straight jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia doble-ele-13.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a black knit cardigan jacket with small silver buttons, worn with straight jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia doble-ele-27.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a black and white striped knit sweater with straight jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia doble-ele-16.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a beige soft knit half-zip sweatshirt with matching wide trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "doble-ele-15.jpg",
+    "doble-ele-11.jpg",
+    "doble-ele-17.jpg",
+    "doble-ele-21.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia doble-ele-15.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a white long-sleeve fitted top with black wide pleated trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia doble-ele-11.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a navy, white and burgundy striped knit sweater from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia doble-ele-17.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a navy blazer over a white top with jeans from the reference, candid and relaxed in a sunny street of Sevilla, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia doble-ele-21.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a dark brown faux-suede jacket with white contrast stitching, with jeans from the reference, candid and relaxed in a sunny street of Sevilla, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a small bright boutique with white walls, wooden shelves with handbags, rails of jackets and jeans and a light wooden floor, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a grey washe",
+  "p1": "roduct photo for a fashion boutique: a model wearing a burgu",
+  "p2": "ct photo for a fashion boutique: a model wearing a black kni",
+  "p3": "ct photo for a fashion boutique: a model wearing a black and",
+  "p4": "roduct photo for a fashion boutique: a model wearing a beige",
+  "p5": "ce product photo for a fashion boutique: a model wearing a w",
+  "p6": "ce product photo for a fashion boutique: a model wearing a n",
+  "l1": "Lifestyle fashion photo: a model wearing a navy blazer over ",
+  "l2": "Lifestyle fashion photo: a model wearing a dark brown faux-s",
+  "b": "Wide interior photo: the inside of a small bright boutique w"
+ }
+}

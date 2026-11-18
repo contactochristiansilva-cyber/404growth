@@ -1,0 +1,53 @@
+{
+ "niche": "joya",
+ "name": "Sarang",
+ "ig": "joyeriasarang",
+ "f": 3598,
+ "city": "San José de La Rinconada",
+ "cityfull": "San José de La Rinconada (Sevilla)",
+ "address": "C/ Cultura 42 (y Guillena)",
+ "logo": {
+  "text": "Sarang"
+ },
+ "cats": [
+  [
+   "Anillos",
+   "p1"
+  ],
+  [
+   "Collares",
+   "p2"
+  ],
+  [
+   "Pulseras",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Anillo nudo"
+  },
+  {
+   "id": "p2",
+   "name": "Collar corazón"
+  },
+  {
+   "id": "p3",
+   "name": "Pulsera barbada"
+  },
+  {
+   "id": "p4",
+   "name": "Collar riviere"
+  },
+  {
+   "id": "p5",
+   "name": "Collar de coral"
+  },
+  {
+   "id": "p6",
+   "name": "Alianza tallada"
+  }
+ ],
+ "theme": {}
+}

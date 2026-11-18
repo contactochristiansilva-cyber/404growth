@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Cachibache",
+ "ig": "cachibachegetafe",
+ "f": 12020,
+ "city": "Getafe",
+ "cityfull": "Getafe (Madrid)",
+ "address": "",
+ "logo": {
+  "text": "Cachibache"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Abrigos",
+   "p5"
+  ],
+  [
+   "Fiesta",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido de punto morado"
+  },
+  {
+   "id": "p2",
+   "name": "Blazer de estrellas"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido de lentejuelas"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto con perlas"
+  },
+  {
+   "id": "p5",
+   "name": "Abrigo azul petróleo"
+  },
+  {
+   "id": "p6",
+   "name": "Abrigo rosa"
+  }
+ ],
+ "theme": {}
+}

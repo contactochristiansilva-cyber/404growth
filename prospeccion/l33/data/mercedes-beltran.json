@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Mercedes Beltrán",
+ "ig": "mercedesbeltrantienda",
+ "f": 10107,
+ "city": "Antequera",
+ "cityfull": "Antequera (Málaga)",
+ "address": "",
+ "logo": {
+  "text": "Mercedes Beltrán"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Blusas",
+   "p5"
+  ],
+  [
+   "Pantalones",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta con alamares"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta estampada"
+  },
+  {
+   "id": "p3",
+   "name": "Pantalón cebra"
+  },
+  {
+   "id": "p4",
+   "name": "Chaqueta acolchada"
+  },
+  {
+   "id": "p5",
+   "name": "Blusa de lazada"
+  },
+  {
+   "id": "p6",
+   "name": "Chaqueta militar"
+  }
+ ],
+ "theme": {}
+}

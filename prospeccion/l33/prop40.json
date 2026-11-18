@@ -55,5 +55,302 @@
     "ship": "Los mismos que ya hacéis: península y Portugal en 24/48 h, gratis desde el importe que digáis. La tienda cobra el envío al pagar y os avisa de cada pedido con todos sus datos.",
     "sec": "moda",
     "quote_when": "post fijado"
+  },
+  "pau-valencia": {
+    "name": "PAU",
+    "city": "Valencia",
+    "quote": "Este año no hay Black Friday. Hay Semana Rosa.",
+    "quote_when": "15 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "marga-pineiro": {
+    "name": "Marga Piñeiro",
+    "city": "Massanassa",
+    "quote": "Para reservar o envío, hablarnos por mensaje directo.",
+    "quote_when": "10 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "turquesa-elche": {
+    "name": "Turquesa",
+    "city": "Elche",
+    "quote": "Escríbenos por privado y reservamos tu prenda favorita durante 24 h.",
+    "quote_when": "18 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "kontiki": {
+    "name": "Kontiki",
+    "city": "Lloret de Mar",
+    "quote": "Se hacen envíos. Pedidos por WhatsApp.",
+    "quote_when": "vuestra bio",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "principessas": {
+    "name": "Principessas",
+    "city": "Zújar",
+    "quote": "Novedades de otoño. Pedidos por teléfono, envíos 24/48 horas.",
+    "quote_when": "29 de octubre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "kokoro": {
+    "name": "Kokoro",
+    "city": "Córdoba",
+    "quote": "De momento no disponemos de página web, por lo que toda la colección la enseñamos a través de nuestras redes.",
+    "quote_when": "post fijado",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "marta-junco": {
+    "name": "Marta Junco",
+    "city": "Oviedo",
+    "quote": "Escríbenos por privado para consultar tallas, precio y disponibilidad.",
+    "quote_when": "9 de octubre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "doble-ele": {
+    "name": "Doble Ele",
+    "city": "Sevilla",
+    "quote": "Pedido por mensaje privado, pedido al WhatsApp, pedido 24-48 horas.",
+    "quote_when": "18 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "cachibache": {
+    "name": "Cachibache",
+    "city": "Getafe",
+    "quote": "Hacemos envíos a toda España, pedidos por WhatsApp.",
+    "quote_when": "18 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "mercedes-beltran": {
+    "name": "Mercedes Beltrán",
+    "city": "Antequera",
+    "quote": "Envíos a toda España. Escríbeme tu talla.",
+    "quote_when": "vuestra bio",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "lura": {
+    "name": "Lura",
+    "city": "Mataró",
+    "quote": "Per comandes, fes captura de pantalla del look que t'agradi, envia'ns un DM o WhatsApp i t'ho enviem.",
+    "quote_when": "30 de junio",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "nairobi-shop": {
+    "name": "Nairobi Shop",
+    "city": "La Llagosta",
+    "quote": "Para pedidos, DM o al WhatsApp.",
+    "quote_when": "vuestras publicaciones",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "estrena-alcoy": {
+    "name": "Estrena",
+    "city": "Alcoy",
+    "quote": "Si alguna prenda te ha enamorado, consúltanos por WhatsApp o Instagram.",
+    "quote_when": "16 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "modas-rocio": {
+    "name": "Modas Rocío",
+    "city": "Coria del Río",
+    "quote": "Escríbenos por WhatsApp con la foto de tu prenda favorita y tu talla.",
+    "quote_when": "17 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "brava": {
+    "name": "Brava",
+    "city": "Valverde de Leganés",
+    "quote": "Puedes pedirnos por Instagram o WhatsApp. Envíos a toda España por 3,99 €.",
+    "quote_when": "24 de septiembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "silvia-romeo": {
+    "name": "Silvia Romeo",
+    "city": "Barcelona",
+    "quote": "Ventas por Instagram. Hacemos envíos.",
+    "quote_when": "vuestra bio",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "cent-vuit": {
+    "name": "Cent-Vuit",
+    "city": "Barcelona",
+    "quote": "Pedidos por DM y WhatsApp.",
+    "quote_when": "vuestra bio",
+    "sec": "moda",
+    "you": "Vosotros",
+    "us": "nosotros"
+  },
+  "bendita-locura": {
+    "name": "Bendita Locura",
+    "city": "Vilagarcía de Arousa",
+    "quote": "Hoy toca directo. A las 9 con Luz, por Facebook, Instagram y TikTok.",
+    "quote_when": "15 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "nop-moda": {
+    "name": "Nop Moda",
+    "city": "Huesca",
+    "quote": "Envíos disponibles. Información y pedidos por privado.",
+    "quote_when": "14 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "bea-bea": {
+    "name": "Bea-Bea",
+    "city": "Barcelona",
+    "quote": "¡Ya tenéis la reposición de esta parka que tanto os ha gustado!",
+    "quote_when": "16 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "inarkadia": {
+    "name": "Inarkadia",
+    "city": "Bilbao",
+    "quote": "Envíos y encargos.",
+    "quote_when": "17 de noviembre",
+    "sec": "moda",
+    "you": "Vosotros",
+    "us": "nosotros"
+  },
+  "azulklein": {
+    "name": "Azul Klein",
+    "city": "Paradas",
+    "quote": "Info y pedidos. Envíos en 24 h.",
+    "quote_when": "vuestra bio",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "ndenua": {
+    "name": "NdeNua",
+    "city": "Cerdanyola del Vallès",
+    "quote": "Hoy os enseño en directo las prendas recién llegadas esta semana a NdeNua.",
+    "quote_when": "20 de octubre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "rasgos": {
+    "name": "Rasgos",
+    "city": "Barcelona",
+    "quote": "Aunque todavía no tenemos tienda online, comprar con nosotras es súper fácil, rápido y 100 % personalizado.",
+    "quote_when": "13 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "sigueme": {
+    "name": "Sígueme",
+    "city": "Coria del Río",
+    "quote": "Aquí os explicamos cómo funciona nuestro catálogo de WhatsApp.",
+    "quote_when": "post fijado",
+    "sec": "moda",
+    "you": "Vosotros",
+    "us": "nosotros"
+  },
+  "la-vera": {
+    "name": "La Vera",
+    "city": "El Rocío (Almonte)",
+    "quote": "Muchos nos preguntáis cómo elegir la talla perfecta al comprar nuestras botas online.",
+    "quote_when": "post fijado",
+    "sec": "moda",
+    "you": "Vosotros",
+    "us": "nosotros"
+  },
+  "casual-coria": {
+    "name": "Casual Coria",
+    "city": "Coria del Río",
+    "quote": "Pedidos por WhatsApp, se pagan por Bizum.",
+    "quote_when": "15 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "modas-mati": {
+    "name": "Modas Mati",
+    "city": "San Pedro del Pinatar",
+    "quote": "Haz tu reserva y pruébatelo sin compromiso.",
+    "quote_when": "3 de noviembre",
+    "sec": "moda",
+    "you": "Vosotros",
+    "us": "nosotros"
+  },
+  "miranda-shop": {
+    "name": "Miranda Shop",
+    "city": "Carballo",
+    "quote": "Accesorios totalmente necesarios, nunca tendremos suficientes.",
+    "quote_when": "10 de noviembre",
+    "sec": "moda",
+    "you": "Vosotros",
+    "us": "nosotros"
+  },
+  "zapateria-capricho": {
+    "name": "Zapatería Capricho",
+    "city": "Andújar",
+    "quote": "Zapatos de calidad a un precio difícil de igualar. Envíos a toda España desde 3,9 €.",
+    "quote_when": "post fijado",
+    "sec": "calzado",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "agueda-herrera": {
+    "name": "Águeda Herrera",
+    "city": "El Prat de Llobregat",
+    "quote": "Info sobre precios, asesoramiento y envíos por WhatsApp.",
+    "quote_when": "7 de noviembre",
+    "sec": "moda",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "joyeria-sarang": {
+    "name": "Sarang",
+    "city": "San José de La Rinconada",
+    "quote": "Comenta PRECIO y te envío por privado el precio de cada uno.",
+    "quote_when": "18 de agosto",
+    "sec": "joya",
+    "you": "Vosotras",
+    "us": "nosotras"
+  },
+  "novojoya": {
+    "name": "Novojoya",
+    "city": "Chiclana de la Frontera",
+    "quote": "Cada joya personalizada cuenta una historia.",
+    "quote_when": "12 de noviembre",
+    "sec": "joya",
+    "you": "Vosotros",
+    "us": "nosotros"
   }
 }

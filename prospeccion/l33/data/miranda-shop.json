@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Miranda Shop",
+ "ig": "miranda.shopcarballo",
+ "f": 5154,
+ "city": "Carballo",
+ "cityfull": "Carballo (A Coruña)",
+ "address": "C/ Valle Inclán 5",
+ "logo": {
+  "text": "Miranda Shop"
+ },
+ "cats": [
+  [
+   "Bolsos",
+   "p1"
+  ],
+  [
+   "Calzado",
+   "p3"
+  ],
+  [
+   "Pañuelos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Bolso trenzado"
+  },
+  {
+   "id": "p2",
+   "name": "Bolso bombonera"
+  },
+  {
+   "id": "p3",
+   "name": "Botines puntera metálica"
+  },
+  {
+   "id": "p4",
+   "name": "Botas negras"
+  },
+  {
+   "id": "p5",
+   "name": "Pañuelo de rosas"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso de mano rojo"
+  }
+ ],
+ "theme": {}
+}

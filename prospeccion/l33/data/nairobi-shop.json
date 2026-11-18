@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Nairobi Shop",
+ "ig": "nairobi.shop",
+ "f": 5846,
+ "city": "La Llagosta",
+ "cityfull": "La Llagosta (Barcelona)",
+ "address": "Av. 1 de Mayo 7B",
+ "logo": {
+  "text": "Nairobi Shop"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Monos",
+   "p3"
+  ],
+  [
+   "Vestidos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta con cuello de pelo"
+  },
+  {
+   "id": "p2",
+   "name": "Cazadora negra"
+  },
+  {
+   "id": "p3",
+   "name": "Mono halter caqui"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto de lunares"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido con flor"
+  },
+  {
+   "id": "p6",
+   "name": "Mono teja"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Sígueme",
+ "ig": "_siguemeee",
+ "f": 9801,
+ "city": "Coria del Río",
+ "cityfull": "Coria del Río (Sevilla)",
+ "address": "Av. 1 de Mayo 11 y 29",
+ "logo": {
+  "text": "Sígueme"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Calzado",
+   "p2"
+  ],
+  [
+   "Punto",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Cazadora marrón"
+  },
+  {
+   "id": "p2",
+   "name": "Botines de serpiente"
+  },
+  {
+   "id": "p3",
+   "name": "Conjunto de punto"
+  },
+  {
+   "id": "p4",
+   "name": "Botas de pelo"
+  },
+  {
+   "id": "p5",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p6",
+   "name": "Botas altas negras"
+  }
+ ],
+ "theme": {}
+}
