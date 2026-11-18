@@ -426,7 +426,9 @@ IMG_MAX = {'h': 2400, 'l5': 2000, 'x1': 1200}
 def head(c, ids):
     s = c['slug']; nm = E(c['name']); N = NICHE[c['niche']]
     title = f'{nm} × 404 Growth · Vuestra {N["shop_of"]} online'
-    desc = f'Así se vería la tienda online de {nm}: con vuestras {N["item_pl"]} y vuestro estilo, lista para vender en toda España.'
+    desc = f'Así se vería la tienda online de {nm}: con vuestro catálogo y vuestro estilo, lista para vender en toda España.'
+    # lo que enseña WhatsApp al pegar el enlace (18/11/2026); la imagen pasa a p-<slug>--wa.jpg con tools/og/wa_og.py
+    og_t, og_d = f'{nm} × 404 Growth', 'Así se vería vuestra tienda online, con vuestros productos. Os la he preparado: echadle un vistazo.'
     st0 = P['styles'][0]
     col = c['colors']
     st0 = st0.replace('</style>', palette(c) + '</style>')
@@ -440,7 +442,7 @@ def head(c, ids):
     v3i = '<style id="v3i">' + ''.join(f'[data-i="{i}"]{{background-image:url(/p-{s}--b--{i}.jpg)!important}}' for i in ids if i != 'h') + '</style>'
     return ('<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">'
             f'<title>{title}</title><meta name="description" content="{desc}"><meta property="og:type" content="website"><meta property="og:site_name" content="404 Growth">'
-            f'<meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><meta property="og:image" content="https://404growth.com/p-{s}--b--og.jpg">'
+            f'<meta property="og:title" content="{og_t}"><meta property="og:description" content="{og_d}"><meta property="og:image" content="https://404growth.com/p-{s}--b--og.jpg">'
             '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">'
             '<link rel="icon" href="/favicon.svg" type="image/svg+xml">' + P['scripts_head'][0] + st0 + v2 + P['styles'][2] + P['styles'][3] + v3i + V32 + V33 + '</head>')
 

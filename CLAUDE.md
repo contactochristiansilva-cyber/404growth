@@ -692,6 +692,30 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Ojo: en las propuestas `html` lleva la clase `sk` y la regla `.sk p{margin:0;font-size:15.5px}`. Los párrafos de la agenda llevan por eso `.ag .ag-…` (más fuerza), o pierden su tamaño y su margen.
 - **Admin (v76 y v76b):** `vslBook` acepta `p` (slug) y, solo cuando viene `p`, reservas sin inversión: en el lead queda «Sin preguntar (propuesta)», nota B, y el aviso no dice cuánto invierte. Sin `p`, la inversión sigue siendo obligatoria y «Menos de 1.500 €» se rechaza siempre. La nota dice «Reservada en su propuesta: 404growth.com/p/<slug>/», el aviso al móvil empieza por «Desde su propuesta», y `crmFromProposal` pasa el contacto del CRM con ese `slug` a «Pendiente de reunión» (con las fechas de las etapas anteriores, como al moverlo a mano) y le añade una línea en las notas con el día y la hora. Un cliente cerrado o perdido no cambia de etapa. Prueba: `tools/agenda/t_v76.mjs` (13 comprobaciones). Copias en `anterior/worker-v75b-18nov-antes-agenda.js`, `anterior/worker-v76-18nov-con-inversion.js` y `anterior/agenda-18nov-con-inversion.js`.
 
+## Miniatura del enlace de las propuestas en WhatsApp (18/11/2026)
+
+- Chris eligió la **opción C** de 3 («A · su tienda en el móvil», «B · etiqueta de envío», «C · foto y titular»). Es la foto de la portada de su tienda a todo el ancho, oscurecida a la izquierda, y encima:
+  - la píldora «Propuesta para vosotros»;
+  - «<Tienda>,» en SF Pro 800 y «abierta 24 horas.» en 300, en blanco;
+  - «Christian · 404 Growth» abajo.
+
+  Mide 1200×630, en JPEG de unos 110 KB.
+- **Texto de la vista previa** (igual en todas):
+  - `og:title`: «<Tienda> × 404 Growth»;
+  - `og:description`: «Así se vería vuestra tienda online, con vuestros productos. Os la he preparado: echadle un vistazo.»
+
+  Antes el título salía cortado y la descripción decía a veces «con vuestras productos». `gen.py` ya escribe estos textos en las propuestas nuevas. La `description` normal dice ahora «con vuestro catálogo».
+- **La imagen se llama `p-<slug>--wa.jpg`**, un nombre nuevo para que ni WhatsApp ni Cloudflare enseñen la vieja. WhatsApp hace la vista previa al pegar el enlace: lo ya enviado se queda con la imagen anterior.
+- **Qué foto usa** (`hero()` de `tools/og/wa_og.py`):
+  - primero `b--hd`, luego `b--h`, luego el `vN--hero` más nuevo;
+  - en las propuestas del lote 30, la foto propia más grande (`a--*`), nunca la captura `a--tienda` ni la miniatura vieja `a--og`;
+  - si la foto es vertical o cuadrada (53 propuestas), va entera a la derecha, con la misma foto desenfocada y oscura detrás.
+- **Cómo se hace.** La SF Pro solo está en el Mac, así que la foto se saca con su Playwright, unas 9 por segundo:
+  1. `python3 tools/og/wa_og.py src <web117-404growth> <404growth-subir/og-wa>` escribe un HTML por propuesta y `lista.json`;
+  2. `tools/og/render_mac.js` en `browser_run_code_unsafe` saca `p-<slug>--wa.jpg` en `web117-404growth`;
+  3. `python3 tools/og/wa_og.py meta <web117-404growth>` cambia `og:title`, `og:description` y `og:image`, solo en las que ya tienen su `--wa.jpg`. Con `--forzar` no lo mira, para la copia del repo, cuyas fotos están en el Mac.
+- **Hecho el 18/11/2026** en las 443 propuestas con agenda del Mac (copia de antes en `anterior/propuestas-antes-miniatura-18nov/`) y en las 224 de `prospeccion/l33/out`. Las propuestas nuevas necesitan los pasos 1–3 antes de enviarse; si no, salen con la miniatura vieja.
+
 ## Open Fit: cartel de la nave (13/11/2026)
 
 - Open Fit (gimnasio) va a poner carteles en una nave que era un «Moda Outlet». Medidas sacadas de la foto de Chris:
