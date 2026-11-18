@@ -69,7 +69,7 @@ a = await A('GET', 'tal/' + id1); t(a.j.cand.email === 'lucia@example.com' && a.
 t(db.prepare('SELECT seen FROM tcand WHERE id = ?').get(id1).seen === 1, 'abrirla la marca como vista');
 // 11. etapas y mensajes (sin clave de email: para WhatsApp)
 a = await A('POST', 'tal/' + id1, { stage: 'test' }); row = db.prepare('SELECT * FROM tcand WHERE id = ?').get(id1); const tt = JSON.parse(row.test);
-t(a.s === 200 && row.stage === 'test' && tt.sent && tt.due - tt.sent === 4 * 864e5, 'prueba enviada con 4 días de plazo');
+t(a.s === 200 && row.stage === 'test' && tt.sent && tt.due - tt.sent === 2 * 864e5, 'prueba técnica con 48 h de plazo');
 t(a.j.msg && a.j.msg.sent === '' && a.j.msg.wa.startsWith('https://wa.me/34612345678?text=') && a.j.msg.text.includes('/equipo/prueba/?t=' + id1 + '.') && a.j.msg.text.startsWith('Hola Lucía,'), 'sin clave de email: el mensaje queda listo para WhatsApp');
 a = await A('POST', 'tal/' + id1 + '/msg', { kind: 'test', via: 'wa' }); t(JSON.parse(db.prepare('SELECT msgs FROM tcand WHERE id = ?').get(id1).msgs).some((m) => m.k === 'test' && m.via === 'wa'), 'apuntado como enviado por WhatsApp');
 a = await A('POST', 'tal/' + id2, { stage: 'test' }); t(a.s === 200, 'setter a prueba');

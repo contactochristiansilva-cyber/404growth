@@ -4,7 +4,7 @@
      /l/jobs  GET   qué puestos están abiertos
      /l/job   POST  la candidatura (la IA la puntúa sola con la rúbrica del puesto y avisa a Chris)
      /l/jobcv POST  su CV en PDF (cuerpo crudo, hasta 1,8 MB), con el código que da /l/job
-     /l/jobt  POST  la prueba práctica: qué hay que hacer (enlace /equipo/prueba/?t=<id>.<código>)
+     /l/jobt  POST  la prueba técnica: qué hay que hacer (enlace /equipo/prueba/?t=<id>.<código>)
      /l/jobts POST  la entrega de la prueba (la IA la precorrige)
      /l/jobm  POST  la entrevista: huecos libres (los mismos de Google que las llamadas de venta)
      /l/jobmb POST  reserva la entrevista: evento en Google con Meet
@@ -132,7 +132,7 @@ async function talTestScore(env, id) {
   const c = await env.DB.prepare("SELECT * FROM tcand WHERE id = ?1").bind(id).first(); if (!c) return null;
   const j = talJob(c.job), t = parse(c.test, {}) || {}; if (!j || !j.test || !t.sub) return null;
   const rb = j.test.rubric.map((r) => Object.assign({ d: "" }, r));
-  const user = "Puesto: " + j.title + "\nPrueba práctica: " + j.test.title + "\n" + j.test.brief.join("\n") + "\nQué tenía que entregar: " + j.test.deliver.join("; ") +
+  const user = "Puesto: " + j.title + "\nPrueba técnica: " + j.test.title + "\n" + j.test.brief.join("\n") + "\nQué tenía que entregar: " + j.test.deliver.join("; ") +
     "\n\nRúbrica (de 0 a 5 cada criterio):\n" + talRubric(rb) + "\n\nLo que ha entregado:\nEnlaces: " + ((t.sub.links || []).join(" · ") || "ninguno") + "\nTexto:\n" + (t.sub.text || "(sin texto)") +
     "\n\nSi lo importante está en enlaces que no puedes abrir, dilo en el resumen y puntúa solo lo que ves escrito. Devuelve la nota de cada criterio con su porqué, un resumen de 2 frases, la recomendación y hasta 3 preguntas para la entrevista.";
   let ai;
@@ -150,10 +150,10 @@ function talMsg(c, kind) {
   const j = talJob(c.job) || { title: "", short: "" }, n = talFirst(c.name), t = parse(c.test, {}) || {}, d = parse(c.data, {}) || {};
   const due = t.due ? new Date(t.due).toLocaleDateString("es-ES", { timeZone: CAL_TZ, weekday: "long", day: "numeric", month: "long" }) : "";
   const M = {
-    got: ["Hemos recibido tu candidatura · " + j.title, ["Hola " + n + ", gracias por escribirnos para el puesto de " + j.title + ".", "Leemos todas las candidaturas y contestamos siempre, en pocos días. Si pasas a la siguiente fase, te mandaremos una prueba práctica corta."], null],
-    test: ["Tu prueba práctica para " + j.title, ["Hola " + n + ", nos ha gustado tu candidatura para " + j.title + " y queremos ver cómo trabajas.", "Aquí tienes la prueba práctica: " + (j.test ? j.test.hours + (j.test.hours === 1 ? " hora" : " horas") + " como máximo" : "corta") + (due ? ", con plazo hasta el " + due : "") + ". Si tienes cualquier duda, contesta a este mensaje."], [talLink(c, "prueba"), "Ver la prueba"]],
-    meet: ["Hablamos 30 minutos · " + j.title, ["Hola " + n + ", gracias por tu prueba: nos ha gustado.", "El siguiente paso es una videollamada de 30 minutos conmigo. Elige el día y la hora que mejor te vengan:"], [talLink(c, "entrevista"), "Elegir día y hora"]],
-    trial: ["Te proponemos una semana de prueba", ["Hola " + n + ", me ha gustado mucho hablar contigo.", "Te propongo una semana de prueba, pagada y con trabajo real. Te escribo ahora con los detalles: qué haremos, cuánto se paga y cómo mediremos la semana."], null],
+    got: ["Hemos recibido tu candidatura · " + j.title, ["Hola " + n + ", gracias por escribirnos para el puesto de " + j.title + ".", "Te contestamos en menos de 24 horas. Si encajas, el siguiente paso es una videollamada de 30 minutos conmigo."], null],
+    test: ["Tu prueba técnica para " + j.title, ["Hola " + n + ", gracias por la entrevista: me ha gustado hablar contigo y ahora quiero ver cómo trabajas.", "Aquí tienes la prueba técnica: " + (j.test ? j.test.hours + (j.test.hours === 1 ? " hora" : " horas") + " como máximo" : "corta") + (due ? ", con plazo hasta el " + due : "") + ". Si tienes cualquier duda, contesta a este mensaje."], [talLink(c, "prueba"), "Ver la prueba"]],
+    meet: ["Hablamos 30 minutos · " + j.title, ["Hola " + n + ", gracias por tu candidatura para " + j.title + ": nos ha gustado.", "El siguiente paso es una videollamada de 30 minutos conmigo. Elige el día y la hora que mejor te vengan:"], [talLink(c, "entrevista"), "Elegir día y hora"]],
+    trial: ["Te proponemos una semana de prueba", ["Hola " + n + ", tu prueba técnica me ha gustado mucho.", "Te propongo una semana de prueba, pagada y con trabajo real. Te escribo ahora con los detalles: qué haremos, cuánto se paga y cómo mediremos la semana."], null],
     hired: ["Te damos la bienvenida a 404 Growth", ["Hola " + n + ", ¡ya formas parte del equipo de 404 Growth!", "En las próximas horas te llegan los accesos, el manual de procesos y tu plan de 30, 60 y 90 días. Cualquier cosa, me escribes."], null],
     bank: ["Tu candidatura para " + j.title, ["Hola " + n + ", gracias por tu candidatura para " + j.title + ".", c.keep ? "Ahora seguimos con otras personas, pero tu perfil nos ha gustado y lo guardamos en nuestro banco de talento: te escribiremos en cuanto abramos algo que encaje contigo." : "Ahora seguimos con otras personas, pero tu perfil nos ha gustado. ¿Quieres que guardemos tu candidatura para futuros puestos? Contesta «sí» y te escribiremos en cuanto abramos algo que encaje contigo."], null],
     no: ["Tu candidatura para " + j.title, ["Hola " + n + ", gracias por tu tiempo y por tu candidatura para " + j.title + ".", "Esta vez no vamos a seguir adelante contigo. Te deseamos lo mejor y, si las cosas cambian, vuelve a escribirnos cuando quieras."], null],
@@ -226,7 +226,7 @@ async function talPublic(req, env, ctx, p) {
     return json({ ok: true });
   }
   if (p === "jobm" || p === "jobmb") {
-    if (!["meet", "trial"].includes(c.stage) && !parse(c.meet, null)) return bad("closed", 409);
+    if (!["meet", "test", "testd", "trial"].includes(c.stage) && !parse(c.meet, null)) return bad("closed", 409);
     const mt = parse(c.meet, {}) || {};
     if (p === "jobm") { let slots = []; try { slots = await gbSlots(env, false); } catch (e) { return json({ error: "nocal" }, 503); } return json({ ok: true, name: talFirst(c.name), job: j.title, dur: GB_DUR, tz: CAL_TZ, slots, booked: mt.start ? { start: mt.start, join: mt.join || "" } : null, dev: !!c.dev }); }
     if (mt.start && mt.start > now) return bad("booked", 409);

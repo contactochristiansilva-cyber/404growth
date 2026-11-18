@@ -1,9 +1,9 @@
   /* ---------- v77 · Talento: puestos, candidaturas, la nota de la IA y las etapas (como el Pipeline del CRM) ---------- */
   var TL={job:'all',open:null,q:'',send:true,msg:null,d:null,kind:''};
-  var TLC=['new','short','test','testd','meet','trial','hired'];
+  var TLC=['new','short','meet','test','testd','trial','hired'];
   var TLKO={tz:'horario de España',lang:'español',ko1:'experiencia'};
-  var TLMK={got:'Recibida',test:'Prueba práctica',meet:'Invitación a entrevista',trial:'Semana de prueba',hired:'Bienvenida',bank:'Banco de talento',no:'Descartada'};
-  var TLGO={short:'Preseleccionar',test:'Enviar la prueba',meet:'Invitar a entrevista',trial:'Semana de prueba',hired:'Contratar',bank:'Al banco de talento',no:'Descartar',new:'Volver a Nuevas',testd:'Prueba entregada'};
+  var TLMK={got:'Recibida',test:'Prueba técnica',meet:'Invitación a entrevista',trial:'Semana de prueba',hired:'Bienvenida',bank:'Banco de talento',no:'Descartada'};
+  var TLGO={short:'Preseleccionar',test:'Enviar la prueba técnica',meet:'Invitar a entrevista',trial:'Semana de prueba',hired:'Contratar',bank:'Al banco de talento',no:'Descartar',new:'Volver a Nuevas',testd:'Prueba entregada'};
   var TLHASMSG={test:1,meet:1,trial:1,hired:1,bank:1,no:1};
   function tlAgo(ms){var m=Math.round((Date.now()-ms)/6e4);if(m<60)return 'hace '+Math.max(1,m)+' min';var h=Math.round(m/60);if(h<24)return 'hace '+h+' h';var d=Math.round(h/24);return d<=1?'ayer':'hace '+d+' días'}
   function tlDate(ms){return new Date(ms).toLocaleDateString('es-ES',{timeZone:'Europe/Madrid',day:'numeric',month:'short'})}
@@ -18,6 +18,9 @@
     if(c.test&&c.test.score!=null)chips.push('<span class="tl-ch">Prueba: '+c.test.score+'</span>');
     else if(c.test&&c.test.sent&&!c.test.done)chips.push('<span class="tl-ch'+(c.test.due&&c.test.due<Date.now()?' bad':'')+'">Prueba hasta el '+esc(tlDate(c.test.due))+'</span>');
     if(c.meet)chips.push('<span class="tl-ch ok">Entrevista: '+esc(tlDate(c.meet.start))+'</span>');
+    /* lo prometido en las páginas: contestar en menos de 24 h y decidir en 7 a 12 días */
+    if(!c.dev&&c.stage==='new'){var hl=Math.ceil((c.ts+864e5-Date.now())/36e5);chips.unshift(hl>0?'<span class="tl-ch'+(hl<=6?' md':'')+'">Contestar en '+hl+' h</span>':'<span class="tl-ch bad">Más de 24 h sin contestar</span>')}
+    if(!c.dev&&['short','meet','test','testd','trial'].indexOf(c.stage)>=0){var dn=Math.floor((Date.now()-c.ts)/864e5);chips.unshift('<span class="tl-ch'+(dn>12?' bad':dn>=9?' md':'')+'">Día '+dn+' de 12</span>')}
     if(c.cv)chips.push('<span class="tl-ch">CV</span>');
     if(c.dev)chips.unshift('<span class="tl-ch md">Prueba interna</span>');
     return '<button type="button" class="tl-c'+(c.seen?'':' nw')+'" data-tl="open" data-tlid="'+esc(c.id)+'"><span class="tl-ct"><b>'+esc(c.name)+'</b>'+tlSc(c.score)+'</span>'+
@@ -90,8 +93,8 @@
     var skip={name:1,email:1,phone:1,city:1,linkedin:1,portfolio:1,video:1,cv:1};
     var qa='<dl>'+r.qs.filter(function(q){return !skip[q.id]}).map(function(q){var v=a[q.id],ko=c.ko.indexOf(q.id)>=0;return '<dt>'+esc(q.label)+'</dt><dd'+(ko?' class="bad"':'')+'>'+(v?esc(v==='si'?'Sí':v==='no'?'No':v):'<span class="hint">Sin responder</span>')+(ko?' · no cumple':'')+'</dd>'}).join('')+'</dl>';
     var t=c.testFull,test='';
-    if(j.test){test='<div class="panel"><h3>Prueba práctica · '+esc(j.test.title)+'</h3>';
-      if(!t||!t.sent)test+='<p class="hint">Todavía no la tiene. Al pulsar «Enviar la prueba» le llega el enlace, con '+j.test.days+' días de plazo y '+j.test.hours+' '+(j.test.hours===1?'hora':'horas')+' de trabajo como máximo.</p>';
+    if(j.test){test='<div class="panel"><h3>Prueba técnica · '+esc(j.test.title)+'</h3>';
+      if(!t||!t.sent)test+='<p class="hint">Todavía no la tiene. Va después de la entrevista: al pulsar «Enviar la prueba técnica» le llega el enlace, con '+(j.test.days*24)+' horas de plazo y '+j.test.hours+' '+(j.test.hours===1?'hora':'horas')+' de trabajo como máximo.</p>';
       else{test+='<p class="tl-cur">Enviada el '+esc(tlDate(t.sent))+' · plazo hasta el '+esc(tlWhen(t.due))+'</p><div class="tl-acts"><a class="btn sm" href="'+esc(c.links.test)+'" target="_blank" rel="noopener">Ver su página ↗</a><button class="btn sm" type="button" data-tl="copy" data-tlv="'+esc(c.links.test)+'">Copiar su enlace</button></div>';
         if(t.sub)test+='<p class="tl-sec" style="margin:14px 0 4px">Su entrega · '+esc(tlWhen(t.sub.ts))+(t.sub.late?' · fuera de plazo':'')+'</p>'+(t.sub.links||[]).map(function(u){return '<div class="tl-kv"><a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(u.replace(/^https?:\/\//,'').slice(0,70))+' ↗</a></div>'}).join('')+(t.sub.text?'<p class="tl-pre">'+esc(t.sub.text)+'</p>':'');
         else test+='<p class="hint" style="margin-top:10px">Aún no la ha entregado.</p>'}
@@ -99,8 +102,8 @@
     var mt=c.meetFull,meet='';
     if(mt&&mt.start)meet='<div class="panel"><h3>Entrevista</h3><p><b>'+esc(tlWhen(mt.start))+'</b></p>'+(mt.join?'<div class="tl-acts" style="margin-top:8px"><a class="btn pri sm" href="'+esc(mt.join)+'" target="_blank" rel="noopener">Entrar al Meet ↗</a></div>':'')+'<p class="hint" style="margin-top:8px">Está en tu Google Calendar y en el calendario del admin.</p></div>';
     else if(c.stage==='meet')meet='<div class="panel"><h3>Entrevista</h3><p class="hint">Invitada: todavía no ha elegido hora.</p><div class="tl-acts" style="margin-top:8px"><button class="btn sm" type="button" data-tl="copy" data-tlv="'+esc(c.links.meet)+'">Copiar su enlace para elegir hora</button></div></div>';
-    var nexts=['short'].concat(j.test?['test']:[]).concat(['meet','trial','hired','bank','no']).filter(function(k){return k!==c.stage});if(c.stage!=='new')nexts.push('new');
-    var main={new:'short',short:j.test?'test':'meet',test:'meet',testd:'meet',meet:'trial',trial:'hired'}[c.stage];
+    var nexts=['short','meet'].concat(j.test?['test']:[]).concat(['trial','hired','bank','no']).filter(function(k){return k!==c.stage});if(c.stage!=='new')nexts.push('new');
+    var main={new:'short',short:'meet',meet:j.test?'test':'trial',test:'trial',testd:'trial',trial:'hired'}[c.stage];
     var acts='<div class="panel"><p class="tl-cur">Etapa: <b>'+esc(st[1])+'</b> · desde el '+esc(tlDate(c.upd))+'</p><div class="tl-acts">'+nexts.map(function(k){return '<button class="btn sm'+(k===main?' pri':k==='no'?' danger':'')+'" type="button" data-tl="stage" data-tlid="'+esc(c.id)+'" data-tlv="'+k+'">'+esc(TLGO[k])+'</button>'}).join('')+'</div>'+
       '<label class="tl-ck"><input type="checkbox" data-tlsend'+(TL.send?' checked':'')+'> Mandarle el mensaje de la etapa nueva (prueba, entrevista, semana de prueba, bienvenida, banco o descarte)'+(TL.d.mail?' por email':'; sin clave de email te lo dejo listo para WhatsApp')+'.</label></div>';
     var prep='<div class="panel"><h3>Mensajes</h3>'+((c.msgs||[]).length?'<ul class="tl-lg">'+c.msgs.slice().reverse().map(function(m){return '<li>'+esc(TLMK[m.k]||m.k)+' · '+(m.via==='wa'?'WhatsApp':'email')+' · '+esc(tlDate(m.at))+'</li>'}).join('')+'</ul>':'<p class="hint">Todavía no se le ha mandado nada.</p>')+

@@ -5,7 +5,7 @@ Uso: python3 build.py <carpeta web> [--og <carpeta para las miniaturas>]
   - <web>/equipo/index.html                  todos los puestos, quiénes somos, cómo trabajamos y el proceso
   - <web>/equipo/<puesto>/index.html         cada puesto con sus 5 puntos (rol y quiénes somos, responsabilidades, requisitos,
                                              resultados y beneficios), el proceso y la candidatura en 4 pasos
-  - <web>/equipo/prueba/  y  entrevista/     la prueba práctica y elegir la hora de la entrevista (enlace personal ?t=…)
+  - <web>/equipo/prueba/  y  entrevista/     la prueba técnica y elegir la hora de la entrevista (enlace personal ?t=…)
   - <web>/equipo/e.css y e.js
   - añade las páginas a <web>/sitemap.xml si faltan
   - con --og: un HTML por miniatura (1200x630) para sacarlas con el Playwright del Mac (render_og.js) a <web>/equipo/og-<x>.jpg
@@ -79,10 +79,10 @@ def foot(priv=True, sticky=''):
             '<script src="/equipo/e.js?v=%s" defer></script></body></html>') % (LOGO, MAIL, MAIL, PRIV if priv else '', sticky, V)
 
 
-def process():
+def process(promise=None):
     return ('<section class="sec" id="proceso"><div class="w"><div class="sh rv" style="position:static;margin-bottom:28px"><div class="sn">Proceso</div><h2>Cómo es el proceso</h2><p>Cinco pasos, sin rondas eternas.</p></div>'
             '<div class="rv"><ol class="steps">%s</ol><p class="promise">%s%s</p></div></div></section>'
-            % (''.join('<li><b>%s</b><p>%s</p></li>' % (e(a), e(b)) for a, b in R['process']), CHK, e(R['promise'])))
+            % (''.join('<li><b>%s</b><p>%s</p></li>' % (e(a), e(b)) for a, b in R['process']), CHK, e(promise or R['promise'])))
 
 
 def mode_facts(j):
@@ -168,13 +168,14 @@ def job_page(j, others):
     toc = [('rol', 'El rol y quiénes somos'), ('responsabilidades', 'Responsabilidades'), ('requisitos', 'Requisitos'), ('resultados', 'Resultados'), ('beneficios', 'Beneficios')]
     h += '<main id="main"><section class="hero" id="top"><div class="w"><div class="hg"><div><a class="crumb" href="/equipo/">← Todos los puestos</a><br><span class="chip"><i></i>%s</span><h1>%s</h1><p class="hook">%s</p>' % (
         e(j['kicker']), e(j['title']), e(j['hook']))
-    h += '<ul class="facts">%s</ul><div class="cta"><a class="b-pri" href="#aplicar" data-apply>Enviar mi candidatura %s</a><span class="mut">10 minutos · Contestamos a todas</span></div></div>' % (
+    h += '<ul class="facts">%s</ul><div class="cta"><a class="b-pri" href="#aplicar" data-apply>Enviar mi candidatura %s</a><span class="mut">10 minutos · Te contestamos en menos de 24 h</span></div></div>' % (
         ''.join('<li>%s</li>' % e(x) for x in mode_facts(j)), AR)
     first = j['results'][0]
     h += ('<aside class="sum" aria-label="El puesto en breve"><h3>En breve</h3><dl><div><dt>Modalidad</dt><dd>%s</dd></div><div><dt>%s</dt><dd>%s</dd></div>'
-          '<div><dt>Prueba práctica</dt><dd>%s</dd></div><div><dt>Proceso</dt><dd>5 pasos. En 2 o 3 semanas sabes si entras.</dd></div></dl></aside></div>') % (
+          '<div><dt>Prueba técnica</dt><dd>%s</dd></div><div><dt>Proceso</dt><dd>%s</dd></div></dl></aside></div>') % (
         e(j['mode']), 'Tu primer mes' if first[0] == '30 días' else e(first[0]), e(first[1]),
-        e('%s, %d %s como máximo' % (j['test']['title'], j['test']['hours'], 'hora' if j['test']['hours'] == 1 else 'horas')) if j.get('test') else 'No hace falta: te escribimos cuando abramos tu puesto.')
+        e('%s: %d %s de trabajo como máximo y 48 horas de plazo' % (j['test']['title'], j['test']['hours'], 'hora' if j['test']['hours'] == 1 else 'horas')) if j.get('test') else 'No hace falta: te escribimos cuando abramos tu puesto.',
+        'Respuesta en menos de 24 h. Entrevista, prueba técnica y, en 7 a 12 días, sabes si entras.' if j.get('test') else 'Respuesta en menos de 24 h. Te escribimos cuando abramos tu puesto.')
     h += '<nav class="toc" aria-label="En esta página">%s</nav></div></section>' % ''.join('<a href="#%s"><b>%02d</b>%s</a>' % (a, k + 1, e(b)) for k, (a, b) in enumerate(toc))
     # 01
     h += ('<section class="sec" id="rol"><div class="w sg"><div class="sh rv"><div class="sn">01</div><h2>El rol y quiénes somos</h2></div><div class="two rv">'
@@ -195,11 +196,11 @@ def job_page(j, others):
     pay = '<p class="pay"><b>Retribución:</b> %s</p>' % e(j['pay']) if j.get('pay') else ''
     h += ('<section class="sec" id="beneficios"><div class="w sg"><div class="sh rv"><div class="sn">05</div><h2>Beneficios</h2><p>Lo que te llevas.</p></div>'
           '<div class="rv"><ul class="ben">%s</ul>%s</div></div></section>') % (''.join('<li>%s<span>%s</span></li>' % (SPARK, e(x)) for x in j['ben']), pay)
-    h += process()
+    h += process(None if j.get('test') else R.get('promise_open'))
     # la candidatura
     tst = j.get('test')
-    bul = ['10 minutos, en 4 pasos', 'Se guarda mientras escribes: puedes seguir luego', 'Contestamos a todas las candidaturas'] + (
-        ['Si pasas la primera criba: una prueba práctica de %d %s como máximo' % (tst['hours'], 'hora' if tst['hours'] == 1 else 'horas')] if tst else [])
+    bul = ['10 minutos, en 4 pasos', 'Se guarda mientras escribes: puedes seguir luego', 'Te contestamos en menos de 24 horas'] + (
+        ['Si encajas: entrevista de 30 minutos y una prueba técnica de %d %s como máximo' % (tst['hours'], 'hora' if tst['hours'] == 1 else 'horas'), 'En 7 a 12 días sabes si entras al equipo'] if tst else [])
     h += ('<section class="apl" id="aplicar"><div class="w apl-g"><div class="apl-i rv"><span class="chip"><i></i>Candidatura</span><h2 style="margin-top:18px">Cuéntanos <span class="lm">qué haces mejor.</span></h2>'
           '<p>Nos importa más tu trabajo que tu CV: enséñanos lo que has hecho y cómo lo piensas.</p><ul>%s</ul></div><div class="rv">%s</div></div></section>') % (
         ''.join('<li>%s%s</li>' % (CHK, e(x)) for x in bul), form(j))
@@ -241,8 +242,8 @@ def index_page():
 
 def tool_page(kind):
     if kind == 'prueba':
-        h = head('Tu prueba práctica · 404 Growth', 'La prueba práctica de tu candidatura en 404 Growth.', '/equipo/prueba/', 'equipo', 'noindex,nofollow')
-        h += nav('/equipo/', 'Puestos', []) + ('<main id="main" class="tool"><div class="w"><span class="chip"><i></i>Prueba práctica</span><h1 id="pz-h">Tu prueba práctica.</h1><p class="lead" id="pz-l"></p>'
+        h = head('Tu prueba técnica · 404 Growth', 'La prueba técnica de tu candidatura en 404 Growth.', '/equipo/prueba/', 'equipo', 'noindex,nofollow')
+        h += nav('/equipo/', 'Puestos', []) + ('<main id="main" class="tool"><div class="w"><span class="chip"><i></i>Prueba técnica</span><h1 id="pz-h">Tu prueba técnica.</h1><p class="lead" id="pz-l"></p>'
                                              '<div id="pz" style="margin-top:8px"><p class="load">Cargando tu prueba…</p></div></div></main>')
     else:
         h = head('Elige la hora de tu entrevista · 404 Growth', 'Elige el día y la hora de tu entrevista con 404 Growth.', '/equipo/entrevista/', 'equipo', 'noindex,nofollow')

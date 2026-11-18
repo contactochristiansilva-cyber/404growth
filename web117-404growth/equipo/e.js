@@ -1,5 +1,5 @@
 /* Páginas de empleo de 404 Growth (/equipo) · v77, 18/11/2026.
-   La candidatura (pasos, borrador en el navegador, CV), la prueba práctica (/equipo/prueba/?t=…) y la entrevista (/equipo/entrevista/?t=…).
+   La candidatura (pasos, borrador en el navegador, CV), la prueba técnica (/equipo/prueba/?t=…) y la entrevista (/equipo/entrevista/?t=…).
    Todo va al admin de 404 Growth (/l/job*), que la guarda, la puntúa con IA y avisa a Christian. */
 (function(){
 'use strict';
@@ -82,22 +82,22 @@ if(fm&&CFG){
     busy=true;var btn=$('[data-send]',fm);btn.disabled=true;btn.textContent='Enviando…';
     var body={job:CFG.slug,dev:DEV?1:0,a:answers(),consent:true,keep:!!($('[name=keep]',fm)||{}).checked,web:($('[name=web]',fm)||{}).value||'',utm:ss.get('eq:utm')||{},ref:ss.get('eq:ref')||''};
     post('job',body).then(function(r){var name=(body.a.name||'').split(/\s+/)[0];
-      var fin=function(cvOk){ls.del(KEY);fm.innerHTML='<div class="done" role="status"><div class="tick">'+TICK+'</div><h3>Recibida, '+esc(name)+'.</h3><p>Gracias por tu tiempo. La leemos con calma y te contestamos siempre, en pocos días'+(CFG.test?'. Si pasas a la siguiente fase, te llega una prueba práctica corta.':'.')+'</p>'+(cvOk===false?'<p>Tu CV no se pudo subir. No pasa nada: si te interesa que lo veamos, mándalo respondiendo al correo que te escribamos.</p>':'')+'<p class="mut">Mientras, puedes ver <a href="/equipo/">los demás puestos</a> o cómo trabajamos en <a href="/">404growth.com</a>.</p></div>';fm.scrollIntoView({behavior:'smooth',block:'center'})};
+      var fin=function(cvOk){ls.del(KEY);fm.innerHTML='<div class="done" role="status"><div class="tick">'+TICK+'</div><h3>Recibida, '+esc(name)+'.</h3><p>Gracias por tu tiempo. Te contestamos en menos de 24 horas'+(CFG.test?'. Si encajas, el siguiente paso es una videollamada de 30 minutos con Christian, el día y la hora que tú elijas.':'.')+'</p>'+(cvOk===false?'<p>Tu CV no se pudo subir. No pasa nada: si te interesa que lo veamos, mándalo respondiendo al correo que te escribamos.</p>':'')+'<p class="mut">Mientras, puedes ver <a href="/equipo/">los demás puestos</a> o cómo trabajamos en <a href="/">404growth.com</a>.</p></div>';fm.scrollIntoView({behavior:'smooth',block:'center'})};
       if(file&&r.cvt)post('jobcv?c='+encodeURIComponent(r.cvt),null,file).then(function(){fin(true)},function(){fin(false)});else fin()},
     function(err){busy=false;btn.disabled=false;btn.textContent='Enviar candidatura';
       if(err.code==='fields'&&err.data&&err.data.fields){var f=err.data.fields,st=N;f.forEach(function(id){mark(id,true);if(Q[id]&&Q[id].step<st)st=Q[id].step});go(st,true);msg.textContent='Revisa lo que está marcado en rojo.';return}
       if(err.code==='closed'){closed();return}
-      msg.textContent=({dup:'Ya tenemos una candidatura tuya para este puesto: te contestamos en pocos días.',slow:'Se han enviado varias candidaturas hoy desde esta conexión. Prueba mañana o escríbenos.',consent:'Marca la casilla de la privacidad para poder enviarla.'})[err.code]||'No se ha podido enviar. Revisa la conexión e inténtalo otra vez: no se ha perdido nada.'})});
+      msg.textContent=({dup:'Ya tenemos una candidatura tuya para este puesto: te contestamos en menos de 24 horas.',slow:'Se han enviado varias candidaturas hoy desde esta conexión. Prueba mañana o escríbenos.',consent:'Marca la casilla de la privacidad para poder enviarla.'})[err.code]||'No se ha podido enviar. Revisa la conexión e inténtalo otra vez: no se ha perdido nada.'})});
   go(dr&&dr.s?Math.min(dr.s,N):1,false);
 }
 
-/* ---------- la prueba práctica ---------- */
+/* ---------- la prueba técnica ---------- */
 var pz=$('#pz');
 if(pz){var t=new URLSearchParams(location.search).get('t')||'';
   var bad=function(m){pz.innerHTML='<p class="closed">'+m+'</p>'};
   if(!t)bad('Falta el código de tu prueba. Abre el enlace del mensaje que te mandamos.');
   else post('jobt',{t:t}).then(function(r){var T=r.test,late=r.due&&r.due<Date.now();
-    $('#pz-h').innerHTML='Hola, '+esc(r.name)+'. <span class="lm">Tu prueba práctica.</span>';$('#pz-l').textContent=r.job+' · '+T.title;
+    $('#pz-h').innerHTML='Hola, '+esc(r.name)+'. <span class="lm">Tu prueba técnica.</span>';$('#pz-l').textContent=r.job+' · '+T.title;
     pz.innerHTML='<div class="due'+(late?' late':'')+'">'+(r.due?(late?'El plazo terminó el ':'Tienes hasta el ')+esc(when(r.due)):'Sin fecha límite')+' · '+T.hours+' '+(T.hours===1?'hora':'horas')+' como máximo</div>'+
       '<div class="tg"><div class="box brief"><h3>Qué hay que hacer</h3>'+T.brief.map(function(p){return '<p>'+esc(p)+'</p>'}).join('')+'<p class="sub">Qué nos entregas</p><ul class="ck">'+T.deliver.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul></div>'+
       '<form class="fm" id="pzf" novalidate>'+(r.done?'<p class="closed" style="margin-bottom:18px"><b>Ya la entregaste el '+esc(when(r.done))+'.</b> Si quieres, puedes mandar una versión nueva: sustituye a la anterior.</p>':'')+
@@ -111,7 +111,7 @@ if(pz){var t=new URLSearchParams(location.search).get('t')||'';
     f.addEventListener('submit',function(e){e.preventDefault();var links=$$('[name=l]',f).map(function(x){return x.value.trim()}).filter(Boolean),text=$('[name=text]',f).value.trim(),m=$('.fmsg',f);
       if(!links.length&&text.length<30){m.textContent='Añade al menos un enlace o explica tu entrega.';return}
       var b=$('button[type=submit]',f);b.disabled=true;b.textContent='Enviando…';
-      post('jobts',{t:t,links:links,text:text}).then(function(){ls.del(k);f.innerHTML='<div class="done" role="status"><div class="tick">'+TICK+'</div><h3>Entregada.</h3><p>Gracias, '+esc(r.name)+'. Christian la revisa y te escribimos en pocos días con el siguiente paso.</p></div>'},
+      post('jobts',{t:t,links:links,text:text}).then(function(){ls.del(k);f.innerHTML='<div class="done" role="status"><div class="tick">'+TICK+'</div><h3>Entregada.</h3><p>Gracias, '+esc(r.name)+'. Christian la revisa y te escribimos en menos de 24 horas con el siguiente paso.</p></div>'},
         function(err){b.disabled=false;b.textContent='Entregar la prueba';m.textContent=err.code==='closed'?'Esta prueba ya no está abierta.':err.code==='fields'?'Añade al menos un enlace o explica tu entrega.':'No se ha podido enviar. Inténtalo otra vez: no se ha perdido nada.'})})},
   function(err){bad(err.code==='closed'?'Esta prueba ya no está abierta. Si crees que es un error, contesta al mensaje que te mandamos.':'Este enlace no es válido o ya no está activo. Si crees que es un error, contesta al mensaje que te mandamos.')})}
 

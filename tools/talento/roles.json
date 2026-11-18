@@ -7,15 +7,15 @@
   "process": [
     [
       "Solicitud",
-      "10 minutos. Tus datos, tu trabajo y 3 preguntas del puesto."
-    ],
-    [
-      "Prueba práctica",
-      "2 horas como máximo, con un caso real. Si pasas la primera criba."
+      "10 minutos. Tus datos, tu trabajo y 3 preguntas del puesto. Te contestamos en menos de 24 horas."
     ],
     [
       "Entrevista",
-      "30 minutos por videollamada con Christian. Eliges tú la hora."
+      "30 minutos por videollamada con Christian. Eliges tú el día y la hora."
+    ],
+    [
+      "Prueba técnica",
+      "Un caso real: 2 horas de trabajo como máximo y 48 horas de plazo."
     ],
     [
       "Semana de prueba",
@@ -26,7 +26,7 @@
       "Accesos, manual de procesos y tu plan de 30, 60 y 90 días."
     ]
   ],
-  "promise": "Contestamos a todas las candidaturas. En 2 o 3 semanas sabes si entras.",
+  "promise": "Te contestamos en menos de 24 horas. En 7 a 12 días sabes si entras al equipo.",
   "base_q": [
     {
       "id": "name",
@@ -163,7 +163,7 @@
     [
       "new",
       "Nuevas",
-      "Acaban de llegar: la IA las puntúa sola"
+      "Contéstales en menos de 24 h"
     ],
     [
       "short",
@@ -171,19 +171,19 @@
       "Las que quieres ver más de cerca"
     ],
     [
+      "meet",
+      "Entrevista",
+      "Invitadas a elegir hora contigo"
+    ],
+    [
       "test",
-      "Prueba enviada",
-      "Tienen la prueba práctica"
+      "Prueba técnica enviada",
+      "Tienen 48 h para entregarla"
     ],
     [
       "testd",
       "Prueba entregada",
       "La IA ya la ha precorregido"
-    ],
-    [
-      "meet",
-      "Entrevista",
-      "Invitadas a elegir hora contigo"
     ],
     [
       "trial",
@@ -355,7 +355,7 @@
       "test": {
         "title": "Portada y ficha de producto de «Olvido»",
         "hours": 2,
-        "days": 4,
+        "days": 2,
         "brief": [
           "«Olvido» es una boutique de moda de mujer en Valencia (inventada para esta prueba). Tiene unos 120 productos y vende en su tienda física y por Instagram, con fotos hechas con el móvil.",
           "Crea gratis una tienda de desarrollo en Shopify (desde partners.shopify.com) y monta la portada (portada principal, novedades y categorías) y una ficha de producto completa.",
@@ -536,7 +536,7 @@
       "test": {
         "title": "6 conversaciones reales y tus seguimientos",
         "hours": 1,
-        "days": 3,
+        "days": 2,
         "brief": [
           "Estos son 6 mensajes que nos han escrito tiendas al recibir su propuesta (anonimizados). Contesta a cada uno como si fueras del equipo de Christian. El objetivo es siempre el mismo: una llamada de 30 minutos con él.",
           "1. «¿Cuánto cuesta esto?»",
@@ -731,7 +731,7 @@
       "test": {
         "title": "Plan de dos semanas para «Olvido»",
         "hours": 2,
-        "days": 4,
+        "days": 2,
         "brief": [
           "«Olvido» es una boutique de moda de mujer en Valencia (inventada para esta prueba). Acaba de abrir su tienda online con 120 productos, tiene 9.000 seguidores en Instagram y 300 € al mes para anuncios.",
           "Prepara sus dos primeras semanas: qué lanzamientos haría, con qué productos y qué días; cómo repartes los 300 €; la estructura de campañas en Meta (campañas, conjuntos y públicos); y los emails que montarías.",
@@ -895,5 +895,6 @@
       "pay": "",
       "emp": []
     }
-  ]
+  ],
+  "promise_open": "Te contestamos en menos de 24 horas y te escribimos los primeros cuando abramos tu puesto."
 }
