@@ -186,6 +186,8 @@ write('tienda-online.html', hubpage('tienda-online', SECTORS))
 write('guia.html', hubpage('guia', GUIDES))
 
 urls = [('/', '1.0'), ('/tienda-online', '0.9'), ('/guia', '0.8')] + [('/' + p['slug'], '0.8') for p in GUIDES + SECTORS] + [('/blog', '0.6')]
+# v77: las páginas de empleo (las hace tools/talento/build.py; aquí solo para que no se pierdan del mapa del sitio)
+urls += [('/equipo/', '0.5')] + [('/equipo/%s/' % j['slug'], '0.5') for j in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'tools', 'talento', 'roles.json'), encoding='utf-8'))['jobs']]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
     '  <url><loc>%s%s</loc><lastmod>%s</lastmod><priority>%s</priority></url>\n' % (SITE, u if u != '/' else '/', TODAY, pr) for u, pr in urls) + '</urlset>\n'
 open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8').write(sm)
