@@ -45,6 +45,8 @@ NV['suplementos'] = dict(_base, shop_of='tienda de nutrición', item_pl='product
                                      ('Completa tu stack', 'Más productos por pedido, más ticket medio.'), ('Asesoramiento', 'La duda se resuelve por WhatsApp sin salir de la ficha.')],
                          flow_new=[('Ve el producto', 'Instagram o anuncio'), ('Elige sabor y formato', 'En la ficha'), ('Paga', 'Tarjeta, Bizum, Apple Pay')])
 import niches39 as _n39   # lote 39
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'tools', 'agenda'))
+import patch as AG  # noqa: E402   la agenda dentro de cada propuesta (18/11/2026)
 for _k, _v in _n39.NV.items():
     NV[_k] = dict(_base, **_v)
 for k, v in N33.FLOW_TODAY.items():
@@ -149,7 +151,9 @@ def build(slug):
     h = h.replace('animation:skaur 20s ease-in-out infinite alternate', 'animation:none')   # la aurora con blur(70px) movía todo a tirones
     left = re.findall(r'\{[a-z_]+\}', re.sub(r'<(script|style)[^>]*>.*?</\1>', '', h, flags=re.S))
     assert not left, left[:5]
-    open(os.path.join(N33.OUT, f'p-{slug}.html'), 'w', encoding='utf-8').write(h)
+    out = os.path.join(N33.OUT, f'p-{slug}.html')
+    open(out, 'w', encoding='utf-8').write(h)
+    AG.patch(out, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data'))   # 18/11/2026: la agenda dentro de la propuesta (/agenda.js)
     print('ok', slug, len(h))
 
 

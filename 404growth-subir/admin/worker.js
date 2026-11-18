@@ -4724,7 +4724,8 @@ async function vslBook(req, env, b, k) {
   let slots; try { slots = await gbSlots(env, true); } catch (e) { return json({ error: "nocal" }, 503); }
   const startMs = Date.parse(start); if (!slots.some((x) => Date.parse(x) === startMs)) return json({ error: "taken", slots: slots }, 409);
   const utm = llUtm(b.utm), tel = phone.charAt(0) === "+" ? phone : "+34" + phone.replace(/^0034/, "");
-  const notes = "Tienda: " + biz + "\nVende: " + VSL_SEC[sec] + "\nInversión: " + VSL_BUD[bud] + "\nWhatsApp: " + tel + "\nEmail: " + email + "\nReservada en 404growth.com/book";
+  const via = typeof b.p === "string" && /^[a-z0-9][a-z0-9-]{1,79}$/.test(b.p) ? b.p : "";   // v76: booked from the agenda inside a proposal (/p/<slug>/)
+  const notes = "Tienda: " + biz + "\nVende: " + VSL_SEC[sec] + "\nInversión: " + VSL_BUD[bud] + "\nWhatsApp: " + tel + "\nEmail: " + email + "\nReservada en " + (via ? "su propuesta: 404growth.com/p/" + via + "/" : "404growth.com/book");
   const id = rid("L").slice(0, 13), metUrl = SITE + "/metodo?c=" + id;                       // v42: the id first, so the invitation carries the link to /metodo
   let g; try { g = await gbCreate(env, { s: startMs, e: startMs + GB_DUR * 60000, name, email, biz, notes: "Antes de la llamada, 8 vídeos cortos con las dudas de siempre: " + metUrl + "\n\n" + notes }); } catch (e) { return json({ error: e.code === "nogoogle" ? "nocal" : "book", detail: String(e.message || "").slice(0, 160) }, 502); }
   const evUri = g.html, invUri = g.id, resched = await rsLink(env, id), join = g.join, end = startMs + GB_DUR * 60000;   // v48: the link to change the time
@@ -4735,6 +4736,7 @@ async function vslBook(req, env, b, k) {
     .bind(id, now, k || null, ih, n, name, email, tel, biz, VSL_BUD[bud], JSON.stringify({ bud: bud, sec: sec }), fit * 2 + (grade === "A" ? 3 : grade === "B" ? 1 : 0), grade, fit, evUri, invUri, src, JSON.stringify(utm), startMs, join).run();
   if (k) await DBq.prepare("UPDATE lv SET fs = 1, fd = 1, bk = 1, ct = 1, cd = 1, cv = 1, lead = ?2, last = ?3 WHERE k = ?1").bind(k, id, now).run();
   try { await v48Booked(req, env, id, b); } catch (e) {}                                   // v48: consent, Meta cookies, Lead and Schedule
+  let crmName = null; if (via) { try { crmName = await crmFromProposal(env, via, id, startMs, now); } catch (e) {} }   // v76: its CRM lead goes to «Pendiente de reunión»
   await setMeta(env, "vsl_slots", "");                                                     // the time just taken is no longer offered
   const whenTxt = vslWhen(start, CAL_TZ);
   const gcal = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent("Llamada con Christian · 404 Growth") + "&dates=" + icsDate(startMs) + "/" + icsDate(end) + "&details=" + encodeURIComponent("Tu tienda online en 15 días." + (join ? "\nVideollamada: " + join : "")) + "&location=" + encodeURIComponent(join || "Google Meet");
@@ -4749,8 +4751,21 @@ async function vslBook(req, env, b, k) {
     } catch (e) {}
     if (mailed) await DBq.prepare("UPDATE ll SET mailed = 1 WHERE id = ?1").bind(id).run();
   }
-  try { await pushAll(env, { title: "Llamada reservada · " + name, body: biz + " (" + VSL_SEC[sec] + ") · invierte " + VSL_BUD[bud] + " · " + whenTxt + ". " + (g.id ? "Google le ha enviado la invitación con el Meet" + (mailed ? " y el email de hola@." : ".") : mailed ? "Confirmación enviada desde hola@." : "No se pudo enviar ni la invitación ni el email."), tag: "lb" + id, url: "/admin/llamadas#l=" + id }); } catch (e) {}
+  try { await pushAll(env, { title: "Llamada reservada · " + name, body: (via ? "Desde su propuesta" + (crmName ? " (ya en «Pendiente de reunión» en el CRM)" : "") + ". " : "") + biz + " (" + VSL_SEC[sec] + ") · invierte " + VSL_BUD[bud] + " · " + whenTxt + ". " + (g.id ? "Google le ha enviado la invitación con el Meet" + (mailed ? " y el email de hola@." : ".") : mailed ? "Confirmación enviada desde hola@." : "No se pudo enviar ni la invitación ni el email."), tag: "lb" + id, url: "/admin/llamadas#l=" + id }); } catch (e) {}
   return json({ ok: true, id: id, start: start, end: new Date(end).toISOString(), join: join, gcal: gcal, mailed: !!mailed, resched: resched, met: metUrl });
+}
+/* v76 (18/11/2026): someone booked from the agenda inside their proposal. The CRM lead with that slug goes to «Pendiente de reunión»
+   (with the dates of the stages before it, as the CRM does by hand) and gets a line in its notes. A won or lost lead keeps its stage. */
+async function crmFromProposal(env, slug, lid, startMs, now) {
+  const r = await env.DB.prepare("SELECT id, data FROM docs WHERE coll = 'leads' AND json_extract(data, '$.slug') = ?1 LIMIT 1").bind(slug).first();
+  if (!r) return null;
+  const l = parse(r.data, {}) || {}, p = {};
+  if (l.stage !== "won" && l.stage !== "lost") { p.stage = "meet"; for (const f of ["contactedAt", "repliedAt", "hotAt", "meetAt"]) if (!l[f]) p[f] = now; }
+  const line = "Reservó la llamada desde su propuesta para el " + vslWhen(new Date(startMs).toISOString(), CAL_TZ) + " (lead " + lid + ").";
+  p.notes = (l.notes ? String(l.notes).replace(/\s+$/, "") + "\n" : "") + line;
+  await env.DB.batch([env.DB.prepare("UPDATE docs SET data = json_patch(data, ?2), updated = ?3 WHERE coll = 'leads' AND id = ?1").bind(r.id, JSON.stringify(p), now),
+    env.DB.prepare("INSERT INTO meta (k, v) VALUES ('crm_rev', '1') ON CONFLICT(k) DO UPDATE SET v = CAST(CAST(v AS INTEGER) + 1 AS TEXT)")]);
+  return l.name || slug;
 }
 
 /* the landing: /l/h (a visit starts), /l/p (time, depth, VSL), /l/c (a click on the action), /l/fs (form started), /l/f (form sent), /l/b (booked) */

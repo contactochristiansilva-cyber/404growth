@@ -669,6 +669,20 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Revisadas en hojas de contacto (`sheet39.py`). Se rehicieron 5 (`flow/q39r.json`): el todoterreno de Juguetes Duba se parecía a un Jeep (ahora carrocería genérica), el papel de Scrapa2 llevaba título y marca, la tienda de Only Today tenía arcos (nada que recuerde a lo árabe) y la caja de sobres de Nexus salía vacía.
 - Revisadas con Playwright a 360, 390 y 1280 px (las 60 páginas): sin scroll lateral, sin fotos rotas ni errores. En local el iframe de la propuesta da 404 porque pide la dirección sin `.html` (Cloudflare sí la sirve).
 
+## Agenda dentro de cada propuesta (admin v76, 18/11/2026)
+
+- Chris: «el calendario nativo ya dentro de cada propuesta para que sea súper sencillo agendar sin tener que preguntarme nada, y de ahí a la página de gracias».
+- Antes, los botones de las propuestas abrían /book en otra pestaña (en las más antiguas, Calendly). Ahora bajan a `<section id="agenda">`, después del cierre (`#hablar`) y antes del pie, con el mismo calendario de /book:
+  - los mismos huecos de Google (`/l/slots`): 5 días y 3, 4 o 5 horas por día, las mismas que enseña /book (`hsh`);
+  - 3 preguntas en vez de 4: inversión (con el aviso de «Menos de 1.500 €»), nombre, y email + WhatsApp. La tienda y lo que vende salen de la propuesta (`data-biz`, `data-sec`);
+  - reserva con `/l/book` (`utm_source=propuesta`, `utm_medium=agenda`, `utm_campaign=<slug>`, `p=<slug>`) y lleva a `/metodo?c=<lead>`, que es la página de gracias (v52), con `sessionStorage.c404bk` como /book;
+  - el botón flotante de WhatsApp (`.wa-fab`) se esconde mientras se ve la agenda (en el móvil tapaba las respuestas);
+  - fuera de 404growth.com (pruebas en local) usa huecos de ejemplo y no reserva nada.
+- Todo está en un solo archivo, `/agenda.js` (fuente en `tools/agenda/agenda.js`, copia en `web117-404growth/agenda.js`): cambiar ahí preguntas o textos cambia todas las propuestas a la vez.
+- `tools/agenda/patch.py <carpeta> --datos tools/agenda/nichos.json` lo mete en las propuestas ya hechas (se puede repetir: rehace el bloque entre `<!--ag-->` y `<!--/ag-->`). Solo toca las de tienda online con `#hablar` y botones de reserva; no toca la oferta antigua (web + asistente + CRM), los concesionarios ni `aiguamarina-joies-reservas` y `carmen-valencia`. El sector sale de `nichos.json` (lotes 33–39) o del título («Vuestra joyería online»…); si no, «otro».
+- El 18/11/2026 se aplicó en el Mac a 443 propuestas (copia de las anteriores en `anterior/propuestas-antes-agenda-18nov/`) y a las 224 de `prospeccion/l33/out`. `gen33v.py` ya la pone sola en las nuevas.
+- **Admin (v76):** `vslBook` acepta `p` (slug). La nota dice «Reservada en su propuesta: 404growth.com/p/<slug>/», el aviso al móvil empieza por «Desde su propuesta», y `crmFromProposal` pasa el contacto del CRM con ese `slug` a «Pendiente de reunión» (con las fechas de las etapas anteriores, como al moverlo a mano) y le añade una línea en las notas con el día y la hora. Un cliente cerrado o perdido no cambia de etapa. Prueba: `tools/agenda/t_v76.mjs` (9 comprobaciones). Copia de la v75b en `anterior/worker-v75b-18nov-antes-agenda.js`.
+
 ## Open Fit: cartel de la nave (13/11/2026)
 
 - Open Fit (gimnasio) va a poner carteles en una nave que era un «Moda Outlet». Medidas sacadas de la foto de Chris:
