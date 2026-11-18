@@ -765,6 +765,29 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Pruebas en `tools/talento/test/`: `t_v77.mjs` (55 comprobaciones de la API con `d1shim.mjs` y la IA simulada), `ui77.cjs` con `srv77.mjs` (63: las 5 páginas a 360, 390 y 1440 sin scroll lateral y con los 5 puntos, la candidatura entera en el móvil con CV, la entrevista, la prueba técnica, el orden de las columnas, una prueba interna y el admin a 1366 y 390) y `chk.mjs` (que los scripts del admin compilan).
 - Instalado en el Mac el 18/11/2026: `admin/worker.js` (copia de antes en `anterior/worker-v76c-18nov-antes-talento.js`), fuentes en `404growth-subir/fuentes-v77/`, páginas y miniaturas en `web117-404growth/equipo/` (copia del mapa del sitio en `anterior/sitemap-18nov-antes-equipo.xml`). El cambio a España y Latinoamérica y el paso del vídeo se instalaron encima ese mismo día (copias en `anterior/worker-v77c-18nov-antes-latam.js`, `anterior/worker-v77d-18nov-antes-video.js` y sus carpetas `anterior/equipo-18nov-antes-…/`; la de grabar el vídeo, en `anterior/worker-v77e-18nov-antes-grabar-video.js`, `anterior/admin-wrangler-18nov-antes-r2.jsonc` y `anterior/subir-18nov-antes-r2.command`). Subido con `subir.command` el 18/11/2026 a las 16:24 (hora de Turquía): R2 ya estaba activado en la cuenta (está el bucket `404growth-media`), el bucket `404growth-talento` se creó solo y `/l/jobs` da `vid: true`.
 
+## Anuncios estáticos para Meta (18/11/2026)
+
+- Lienzo de Claude Design «404 Growth · Anuncios estáticos»: arriba, un tablero con 16 estáticos de referencia activos el 18/11/2026; debajo, 4 anuncios de 404 Growth a 1080×1350, todos con la cinta lima «ABIERTA 24 H ✦ 404 ✦» de los carruseles y SF Pro:
+  1. «La pregunta»: «¿Tu tienda sigue cerrando a las 20:00?», con un móvil de la tienda de ejemplo y tres pedidos de noche.
+  2. «La etiqueta»: «Cierras la persiana. Tu tienda online sigue abierta.», con una etiqueta de envío de un pedido de las 23:47.
+  3. «Antes y después»: «De “¿precio?” por mensaje a pedido pagado.».
+  4. «El chat»: «No necesitas saber de webs.», con una conversación con Christian (su foto).
+- Nada de precio. Las fotos son de la tienda de ejemplo Solenne, y los pedidos dicen «de ejemplo».
+- **Lo que funciona en el sector** (señales: días activo y número de versiones; Meta no da el gasto de los anuncios comerciales):
+  - pregunta-espejo: Tiendanube, 165 días; PixelMex, «¿Todavía vendes solo por WhatsApp?»;
+  - interfaz dentro de una foto real: Shopify (5 versiones), Hostinger (77 días y más de 10 anuncios), Jumpseller;
+  - texto escrito en objetos o en un chat: Geniusko, la misma idea en 4 países, 72 días;
+  - la dueña entre cajas de pedidos: 279 días;
+  - antes y después.
+  - Las agencias españolas del nicho (NAUG, Fran Alba, Ecommercecraft…) casi solo ponen vídeo.
+- **Cómo se buscó, desde la pestaña de facebook.com/ads/library:**
+  - Se captura `AdLibrarySearchPaginationQuery` (enganchando `XMLHttpRequest.send` y bajando la página) y se repite con `fetch('/api/graphql/')`.
+  - Para el anunciante: `searchType: 'page'`, `viewAllPageID`, `countries: ['ALL']` (o el país) y `mediaType: 'all'`. Con `image` o con un solo país, la búsqueda por página salía vacía; los estáticos se filtran después por `snapshot.display_format`.
+  - El id de una página sale de la consulta del buscador `useAdLibraryTypeaheadSuggestionDataSourceQuery` (se captura escribiendo en el buscador).
+  - La extensión no deja ver resultados con ids o tokens («BLOCKED: Cookie/query string data»). Se vuelcan en un `<article>` a pantalla completa y se leen con `get_page_text`.
+  - Las imágenes se ponen en grande en la propia pestaña y se guardan con `zoom` + `save_to_disk`.
+  - Unas 40 consultas con pausas de 2–4 s, sin bloqueos.
+
 ## Open Fit: cartel de la nave (13/11/2026)
 
 - Open Fit (gimnasio) va a poner carteles en una nave que era un «Moda Outlet». Medidas sacadas de la foto de Chris:
