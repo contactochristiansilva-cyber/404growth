@@ -813,7 +813,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - archivos de hasta 95 MB a R2 (binding `TV`, carpeta `brief/<id>/`) y enlace a una carpeta para lo más pesado;
   - se guarda sola, campo a campo; un mismo enlace sirve para todo su equipo (`json_patch`, nadie pisa a nadie) y al volver a la pestaña se trae lo que escribieron otros;
   - el botón «Enviar a 404 Growth» avisa a Chris. También avisa al móvil la primera vez que escriben algo.
-- **Las preguntas están en `tools/brief/efap-miami.json`.** `python3 tools/brief/build.py tools/brief/efap-miami.json <web117> --escudo tools/brief/efap-escudo.png` hace la página. Si cambian, hay que volver a pasar también `patch_v78.py`: el admin lleva las preguntas dentro (`BRIEF_Q`). Para otro cliente: otro JSON en `tools/brief/` y su fila en `BRIEF_SEED` de `brief_server.js`.
+- **Las preguntas están en `tools/brief/efap-miami.json`.** `python3 tools/brief/build.py tools/brief/efap-miami.json <web117> --escudo efap-escudo.png` hace la página. El escudo no está en el repositorio (`*.png` está en `.gitignore`): está en el Mac, en `404growth-subir/fuentes-v78/efap-escudo.png`; se sacó del de efapmiami.com con el Playwright del Mac, porque el contenedor no llega a media.base44.com. Si cambian, hay que volver a pasar también `patch_v78.py`: el admin lleva las preguntas dentro (`BRIEF_Q`). Para otro cliente: otro JSON en `tools/brief/` y su fila en `BRIEF_SEED` de `brief_server.js`.
 - **Servidor** (`brief_server.js`, entra con `tools/brief/patch_v78.py <worker v77g> [salida]`):
   - rutas `/l/brief` (GET, POST con `set`, `a:'send'` y `a:'rmfile'`) y `/l/briefup` (PUT del archivo);
   - tabla `brief` (`data` y `files` en JSON, `started`, `sent`, `seen`);
