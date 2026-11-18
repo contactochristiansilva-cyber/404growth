@@ -131,8 +131,16 @@ a{color:inherit}img,svg{display:block;max-width:100%}h1,h2,h3,p{margin:0}h1,h2,h
 .duo .side{position:sticky;top:96px}
 .duo .side .ph{width:300px}
 .lab{display:inline-flex;align-items:center;gap:7px;margin-bottom:12px;font-size:13px;font-weight:600;color:var(--mut)}.lab .i{width:17px;height:17px}
-.m-only{display:none}
-.ph.full{width:min(330px,84vw)}
+.mobv{display:none}
+.ph.vp{width:clamp(220px,min(74vw,calc((100svh - 262px) * .462)),300px)}
+.mobv .sw{margin:16px auto 0}
+.mobv .bw{width:100%}
+.mobv .vw{position:relative}
+.pg{width:min(200px,50vw);height:4px;border-radius:4px;background:rgba(17,19,17,.08);margin:14px auto 0;overflow:hidden}.pg i{display:block;height:100%;width:0;border-radius:4px;background:#111311;transition:width .3s}
+.cx{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 -20px 12px;padding:4px 20px 6px;scroll-snap-type:x proximity}
+.cx::-webkit-scrollbar{display:none}
+.cx button{flex:none;scroll-snap-align:center;height:38px;padding:0 15px;border-radius:99px;border:0;font:inherit;font-size:14px;font-weight:600;color:var(--ink2);background:rgba(255,255,255,.7);box-shadow:var(--gsh-sm);cursor:pointer;transition:background .25s,color .25s}
+.cx button[aria-pressed=true]{background:#111311;color:#F3F6EF;box-shadow:0 8px 18px -10px rgba(10,16,8,.7)}
 
 /* ficha de producto */
 .pdp .row{display:flex;justify-content:center;align-items:center;gap:36px}
@@ -223,7 +231,7 @@ footer{padding:24px 20px 130px;font-size:12px;color:var(--mut)}
 .bar{position:fixed;left:12px;right:12px;bottom:12px;z-index:70;display:none;gap:8px;padding:7px;border-radius:99px;background:rgba(255,255,255,.66);box-shadow:var(--gsh-sm),0 16px 40px -16px rgba(20,30,16,.5);-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);transform:translateY(140%);transition:transform .45s var(--ease),opacity .3s}
 .bar.on{transform:none}
 .bar .b{min-height:48px;font-size:15.5px;flex:1}.bar .b.g{flex:0 0 48px;padding:0}
-.bar.wa-fab.ag-off{opacity:0;pointer-events:none;transform:translateY(140%)}
+.bar.mo-off,.bar.wa-fab.ag-off{opacity:0;pointer-events:none;transform:translateY(140%)}
 
 .rv{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.rv.in{opacity:1;transform:none}
 
@@ -231,8 +239,8 @@ footer{padding:24px 20px 130px;font-size:12px;color:var(--mut)}
  .sec{padding-top:72px}.hero{padding-top:84px}
  .nv-p{padding:8px 16px 8px 14px}.nv-p .b{display:none}.nv-p span{font-size:13.5px}
  .hero .acts{flex-wrap:nowrap}.hero .acts .b{min-height:52px;padding:0 18px;font-size:15.5px;flex:1 1 auto}
- .duo{display:block}.duo .side{display:none}.m-only{display:inline-flex}
- .pdp .bw{display:none}.pdp .ph{width:min(290px,78vw)}
+ .duo{display:none}.mobv{display:block}.shop{padding-top:36px}
+ .pdp{display:none}
  .st .card{padding:18px 12px 16px}.st .dt{width:56px}.st .dt b{width:44px;height:44px}.st .dt b .i{width:20px;height:20px}.st .dt small{font-size:11px}.st .ln{width:6px;margin-top:21px}
  .nw .ev strong{font-size:24px}
  .ads .rail{justify-content:flex-start}
@@ -256,7 +264,26 @@ var F=A('iframe[data-src]');
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)L(x.target);try{x.target.contentWindow&&x.target.contentWindow.postMessage({t404:x.isIntersecting},'*')}catch(e){}})},{rootMargin:'600px 0px'});F.forEach(function(f){io.observe(f)})}else F.forEach(L);
 /* móvil u ordenador (en el móvil) */
 A('.sw button').forEach(function(b){b.addEventListener('click',function(){var v=b.dataset.v;A('.sw button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
- A('[data-view]').forEach(function(e){e.classList.toggle('off',e.dataset.view!==v)});fit();var f=d.querySelector('[data-view="'+v+'"] iframe');if(f)L(f)})});
+ A('[data-view]').forEach(function(e){e.classList.toggle('off',e.dataset.view!==v)});fit();var f=d.querySelector('[data-view="'+v+'"] iframe');if(f){L(f);hook(f)}go(cur,1);pause()})});
+/* el móvil de la tienda (solo en el móvil): va solo de sección en sección; pastillas, deslizar ← → y barra de avance */
+var MV=d.querySelector('.mobv'),CX=A('.cx button'),cur=0,until=0,vis=false,tm=null;
+function fv(){var e=d.querySelector('.mobv [data-view]:not(.off) iframe');return e}
+function doc(f){try{return f&&f.contentDocument&&f.contentDocument.body?f.contentDocument:null}catch(e){return null}}
+function setc(i){CX.forEach(function(b,k){b.setAttribute('aria-pressed',k===i)});var b=CX[i];if(b&&b.parentNode){var p=b.parentNode;p.scrollTo({left:b.offsetLeft-p.clientWidth/2+b.offsetWidth/2,behavior:'smooth'})}}
+function go(i,inst){var f=fv(),D=doc(f);cur=(i+CX.length)%CX.length;setc(cur);if(!D)return;var el=D.querySelector(CX[cur].dataset.s);if(!el)return;
+ var hd=D.querySelector('.hd'),off=cur===0?0:(hd?hd.offsetHeight:0),w=f.contentWindow,y=el.getBoundingClientRect().top+w.scrollY-off;w.scrollTo({top:Math.max(0,y),behavior:inst?'auto':'smooth'})}
+function hook(f){if(!f||f.__h)return;f.__h=1;var on=function(){var D=doc(f);if(!D)return;var w=f.contentWindow,bar=d.querySelector('.pg i');
+ w.addEventListener('scroll',function(){var m=D.documentElement.scrollHeight-w.innerHeight;if(bar)bar.style.width=(m>0?Math.min(100,w.scrollY/m*100):0)+'%'},{passive:true});go(cur,1)};
+ f.addEventListener('load',on);if(doc(f)&&doc(f).readyState==='complete')on()}
+function pause(){until=Date.now()+14000}
+function tick(){clearTimeout(tm);var hold=(cur===0||CX[cur].dataset.s==='#destacado')?5200:3600;tm=setTimeout(function(){if(vis&&Date.now()>until&&!d.hidden)go(cur+1);tick()},hold)}
+if(MV){CX.forEach(function(b,k){b.addEventListener('click',function(){go(k);pause()})});
+ A('.mobv iframe').forEach(hook);
+ if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting},{threshold:.35}).observe(MV.querySelector('.vw'));else vis=true;
+ /* deslizar sobre el móvil: ← → cambia de sección; arriba y abajo mueve la página */
+ A('.mobv .vw').forEach(function(v){var x0=0,y0=0,t0=0;v.addEventListener('touchstart',function(e){var t=e.touches[0];x0=t.clientX;y0=t.clientY;t0=Date.now()},{passive:true});
+  v.addEventListener('touchend',function(e){var t=e.changedTouches[0],dx=t.clientX-x0,dy=t.clientY-y0;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)*1.3){go(cur+(dx<0?1:-1));pause()}else if(Math.abs(dx)<8&&Math.abs(dy)<8&&Date.now()-t0<400){go(cur+1);pause()}},{passive:true})});
+ tick()}
 /* aparición y gráfico de la garantía */
 var R=A('.rv,.gr');
 if('IntersectionObserver' in window){var io2=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io2.unobserve(x.target)}})},{rootMargin:'0px 0px -12% 0px'});R.forEach(function(e){io2.observe(e)})}else R.forEach(function(e){e.classList.add('in')});
@@ -268,10 +295,14 @@ try{var now=new Date(),t0=new Date(now.getFullYear(),now.getMonth(),now.getDate(
  q('n-a',f(st));q('n-b',f(op));if(EV[0]){q('n-c',f(EV[0][0]));q('n-e',EV[0][1]);q('n-t',EV[0][1])}
 }catch(e){}
 /* barra del móvil: aparece al bajar */
-var bar=d.querySelector('.bar');if(bar){var hb=function(){bar.classList.toggle('on',scrollY>420)};addEventListener('scroll',hb,{passive:true});hb()}
+var bar=d.querySelector('.bar');if(bar){var hb=function(){bar.classList.toggle('on',scrollY>420)};addEventListener('scroll',hb,{passive:true});hb();
+ /* mientras se ve el móvil de la tienda, la barra se esconde para dejarle sitio */
+ if(MV&&'IntersectionObserver' in window)new IntersectionObserver(function(es){bar.classList.toggle('mo-off',es[0].isIntersecting)},{rootMargin:'-30% 0px -30% 0px'}).observe(MV)}
 })();</script>"""
 
-EXTRA_CSS = '[data-view].off{display:none!important}@media (min-width:900px){[data-view="d"].off{display:block!important}}'
+EXTRA_CSS = '[data-view].off{display:none!important}'
+# las secciones de la tienda (gen37a.py) a las que salta el móvil
+SECS = [('Portada', '.hero'), ('Novedades', '#nuevo'), ('Categorías', '#cat'), ('Producto', '#destacado'), ('Looks', '#look'), ('Lo más pedido', '#mas'), ('Vuestra tienda', '#visita')]
 
 
 def frame(src, w, hh=None, full=False, title=''):
@@ -316,13 +347,20 @@ def build(slug):
             f'<div class="pills"><span class="pill">{I(IC["clock"])}En 15 días</span><span class="pill">{I(IC["shield"])}Garantía 90 días</span><span class="pill">{I(IC["truck"])}Toda España</span></div>'
             f'<div class="acts"><a class="b k" href="#agenda">Reservar 30 min</a><a class="b g" href="{wa(hi)}" target="_blank" rel="noopener">{WAI}WhatsApp</a></div></section>')
 
-    # la tienda entera: en el ordenador, el navegador entero y el móvil fijo al lado; en el móvil, elegir móvil u ordenador
+    # la tienda: en el ordenador, el navegador entero y el móvil fijo al lado (Chris: «me gusta muchísimo»).
+    # En el móvil (18/11/2026, 22:20: «se me hace muy pesado estar scrolleando»), un móvil del alto de la pantalla que va solo de
+    # sección en sección (portada, novedades, categorías, producto…), con pastillas para saltar, deslizar ← → y una barra de avance.
+    chips = ''.join(f'<button type="button" data-s="{sel}"{" aria-pressed=\"true\"" if k == 0 else ""}>{E(lab)}</button>' for k, (lab, sel) in enumerate(SECS))
     shop = (f'<section class="shop w" id="tienda">'
-            f'<div class="sw gl m-only" role="group" aria-label="Ver la tienda en"><button type="button" data-v="m" aria-pressed="true">{I(IC["mob"])}Móvil</button>'
-            f'<button type="button" data-v="d" aria-pressed="false">{I(IC["desk"])}Ordenador</button></div>'
+            '<div class="mobv">'
+            f'<div class="cx" role="group" aria-label="Ir a">{chips}</div>'
+            f'<div class="vw" data-view="m">{phone(t + "?embed=1", hh=812, cls="vp", title="Tienda en el móvil")}</div>'
+            f'<div class="vw off" data-view="d">{browser(t + "?embed=1", dom, hh=860, title="Tienda en el ordenador")}</div>'
+            '<div class="pg"><i></i></div>'
+            f'<div class="sw gl" role="group" aria-label="Ver la tienda en"><button type="button" data-v="m" aria-pressed="true">{I(IC["mob"])}Móvil</button>'
+            f'<button type="button" data-v="d" aria-pressed="false">{I(IC["desk"])}Ordenador</button></div></div>'
             '<div class="duo"><div class="main">'
-            f'<div class="d-hide" data-view="m">{phone(t + "?embed=1", full=True, cls="full", title="Tienda en el móvil")}</div>'
-            f'<div class="off" data-view="d">{browser(t + "?embed=1", dom, full=True, title="Tienda en el ordenador")}</div></div>'
+            f'{browser(t + "?embed=1", dom, full=True, title="Tienda en el ordenador")}</div>'
             f'<div class="side"><div class="lab">{I(IC["mob"])}En el móvil</div>{phone(t + "?tour=1", hh=780, title="Tienda en el móvil, recorrido")}</div></div></section>')
 
     pdp = (f'<section class="pdp sec w" id="producto"><h2 class="t2 rv">Cada prenda,<span class="lm">lista para comprar.</span></h2>'

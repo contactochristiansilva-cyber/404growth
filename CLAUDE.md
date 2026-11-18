@@ -720,6 +720,12 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   9. «Abierta antes de Navidad»: hoy → día 15 → la siguiente fecha fuerte, todo calculado al abrirla;
   10. 4 anuncios;
   11. el cierre.
+- **El móvil, versión 3 (18/11/2026, 22:20).** Chris aprobó la versión de ordenador («me gusta muchísimo»). En el móvil, la tienda entera de arriba abajo le resultaba demasiado larga («se me hace muy pesado estar scrolleando»). Ahora:
+  - un solo móvil del alto de la pantalla (`.ph.vp`, `?embed=1`) que **va solo de sección en sección**: Portada, Novedades, Categorías, Producto, Looks, Lo más pedido y Vuestra tienda (`SECS`, los `id` de `gen37a.py`). Se queda unos 3,6 s en cada una y 5,2 s en la portada y en el producto;
+  - encima, pastillas para saltar a cada sección; debajo, la barra de avance y Móvil / Ordenador. Deslizar ← → sobre el móvil cambia de sección y tocarlo pasa a la siguiente. Después de tocar algo se para 14 s;
+  - la página mueve el iframe desde fuera (`contentDocument` y `scrollTo`), porque es del mismo origen (también en `srcdoc`), así que no hace falta tocar la tienda;
+  - mientras se ve el móvil, la barra fija de abajo se esconde (`mo-off`) para dejarle sitio;
+  - en el móvil ya no sale la sección aparte de la ficha: está en la pastilla «Producto». De 10.900 px a unos 4.500.
 - En el móvil va una barra fija abajo con «Reservar 30 min» y WhatsApp. Tiene la clase `wa-fab` para que `agenda.js` la esconda en la agenda.
 - Ojo: los marcos `.fr` llevan `aspect-ratio` solo hasta que llega el alto. Si no se quita (`aspectRatio='auto'`), el ancho crece con el alto y la página se sale por la derecha en el móvil.
 - Fotos de Ooh la la: 13 trabajos en Flow (`flow/q40.json`, referencias `nooh-la-la-NN.jpg` con la cara tapada), con Nano Banana 2.1 porque Pro estaba sin cupo en la cuenta personal.
