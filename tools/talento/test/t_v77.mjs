@@ -22,7 +22,7 @@ const P = async (p, b, o) => { o = o || {}; const h = { 'content-type': 'applica
   const r = await talPublic(new Request('https://404growth.com/l/' + p + (o.qs || ''), { method: o.m || 'POST', headers: o.raw ? Object.assign(h, { 'content-type': 'application/pdf' }) : h, body: o.raw ? o.raw : (o.m === 'GET' ? undefined : JSON.stringify(b)) }), env, {}, p);
   return { s: r.status, j: await r.json() }; };
 const A = async (m, p, b) => { const r = await talApi(new Request('https://404growth.com/admin/api/' + p, { method: m, headers: { 'content-type': 'application/json' }, body: b ? JSON.stringify(b) : undefined }), env, p, {}); const ct = r.headers.get('content-type') || ''; return { s: r.status, j: ct.includes('json') ? await r.json() : null, r }; };
-const ans = (x) => Object.assign({ name: 'Lucía Prueba Gómez', email: 'lucia@example.com', phone: '612 345 678', city: 'Málaga, España', linkedin: 'linkedin.com/in/lucia-prueba-gomez', portfolio: 'https://lucia.example.com', hours: 'De 20 a 30 h', start: 'Ya', rate: '600 € por tienda', tz: 'si', lang: 'si', src: 'LinkedIn', ko1: 'si', q1: 'Monté tres tiendas Shopify de moda y joyería, con el tema Dawn personalizado.', q2: 'Primero ordeno el catálogo y rehago las fotos con IA, luego portada y fichas.', q3: 'Nano Banana y GPT Image para fotos; Claude para textos y fichas.' }, x || {});
+const ans = (x) => Object.assign({ name: 'Lucía Prueba Gómez', email: 'lucia@example.com', phone: '612 345 678', city: 'Málaga, España', linkedin: 'linkedin.com/in/lucia-prueba-gomez', portfolio: 'https://lucia.example.com', video: 'https://youtu.be/lucia60s', hours: 'De 20 a 30 h', start: 'Ya', rate: '600 € por tienda', tz: 'si', lang: 'si', src: 'LinkedIn', ko1: 'si', q1: 'Monté tres tiendas Shopify de moda y joyería, con el tema Dawn personalizado.', q2: 'Primero ordeno el catálogo y rehago las fotos con IA, luego portada y fichas.', q3: 'Nano Banana y GPT Image para fotos; Claude para textos y fichas.' }, x || {});
 meta('soc_cfg', JSON.stringify({ aiKey: 'k' }));
 
 // 1. puestos abiertos
@@ -30,7 +30,7 @@ let r = await P('jobs', null, { m: 'GET' }); t(r.s === 200 && r.j.open.tiendas =
 // 2. origen
 r = await P('job', { job: 'tiendas', consent: true, a: ans() }, { noorigin: true }); t(r.s === 403, 'sin origen no entra');
 // 3. campos
-r = await P('job', { job: 'tiendas', consent: true, a: ans({ email: 'mal', q2: 'corta', portfolio: '' }) }); t(r.s === 400 && r.j.fields.includes('email') && r.j.fields.includes('q2') && r.j.fields.includes('portfolio'), 'campos mal: ' + JSON.stringify(r.j));
+r = await P('job', { job: 'tiendas', consent: true, a: ans({ email: 'mal', q2: 'corta', portfolio: '', video: '' }) }); t(r.s === 400 && r.j.fields.includes('email') && r.j.fields.includes('q2') && r.j.fields.includes('portfolio') && r.j.fields.includes('video'), 'campos mal (también sin vídeo): ' + JSON.stringify(r.j));
 r = await P('job', { job: 'tiendas', consent: false, a: ans() }); t(r.s === 400 && r.j.error === 'consent', 'sin consentimiento no entra');
 r = await P('job', { job: 'nada', consent: true, a: ans() }); t(r.s === 404, 'puesto que no existe');
 // 4. robots

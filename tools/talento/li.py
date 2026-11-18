@@ -21,7 +21,7 @@ def text(j):
     url = '%s/equipo/%s/?utm_source=linkedin&utm_medium=empleo&utm_campaign=%s' % (SITE, j['slug'], j['slug'])
     b = lambda xs: '\n'.join('• ' + x for x in xs)
     t = [R['about'][0] + '\n' + WHERE,
-         '→ Candidatura en 10 minutos: ' + url + '\n' + R['promise'].replace('Te contestamos en menos de 24 horas. En 7 a 12 días sabes si entras al equipo.',
+         '→ Candidatura en 15 minutos, con un vídeo selfie de 30 a 60 segundos: ' + url + '\n' + R['promise'].replace('Te contestamos en menos de 24 horas. En 7 a 12 días sabes si entras al equipo.',
                                                                            'Te contestamos en menos de 24 horas y en 7 a 12 días sabes si entras.'),
          '1. EL ROL Y QUIÉNES SOMOS\n' + '\n'.join(j['role'] + R['about'][1:]),
          '2. RESPONSABILIDADES\n' + b(j['resp']),

@@ -96,7 +96,7 @@ def mode_facts(j):
 
 
 # ---------- el formulario ----------
-STEPS = ['Sobre ti', 'Tu trabajo', 'El puesto', 'Lo práctico']
+STEPS = ['Sobre ti', 'Tu trabajo', 'Tu vídeo', 'El puesto', 'Lo práctico']
 AUTO = {'name': 'name', 'email': 'email', 'phone': 'tel', 'city': 'address-level2', 'linkedin': 'url', 'portfolio': 'url', 'video': 'url'}
 PH = {'name': 'Nombre y apellidos', 'email': 'tu@email.com', 'phone': '612 345 678', 'city': 'Ciudad, país', 'linkedin': 'linkedin.com/in/…', 'portfolio': 'https://', 'video': 'https://'}
 ERR = {'text': 'Rellena este campo.', 'email': 'Revisa el email.', 'tel': 'Revisa el número (con el prefijo si no es de España).', 'url': 'Pega un enlace válido, por ejemplo https://…',
@@ -105,7 +105,7 @@ ERR = {'text': 'Rellena este campo.', 'email': 'Revisa el email.', 'tel': 'Revis
 
 def field(q, j):
     i, t = q['id'], q['type']
-    need = q.get('req') or (i == 'portfolio' and j.get('portfolio') == 'req')
+    need = q.get('req') or (i == 'portfolio' and j.get('portfolio') == 'req') or (i == 'video' and j.get('video') == 'req')
     opt = '' if need else ' <em>(opcional)</em>'
     hp = '<span class="hp" id="h-%s">%s</span>' % (i, e(q['help'])) if q.get('help') else ''
     desc = ' aria-describedby="h-%s"' % i if q.get('help') else ''
@@ -128,25 +128,37 @@ def field(q, j):
             % (i, i, e(q['label']), opt, hp, i, i, typ, q.get('max', 300), AUTO.get(i, 'off'), e(PH.get(i, '')), im, ' required' if need else '', desc, em))
 
 
+def vid_box(j):
+    """El paso del vídeo: qué contar y cómo grabarlo y compartirlo."""
+    tips = ['Con el móvil en vertical y la cámara delantera, con buena luz y sin ruido.',
+            'De 30 a 60 segundos. Sin guion ni edición: queremos conocerte.',
+            'Súbelo a YouTube (como «Oculto»), a Google Drive (con «Cualquier persona con el enlace») o a Loom, y pega aquí el enlace.']
+    return ('<div class="vid"><p class="vq"><b>Grábate en formato selfie y cuéntanos</b> %s</p><ol>%s</ol></div>'
+            % (e(j['video_ask']), ''.join('<li>%s</li>' % e(t) for t in tips)))
+
+
 def form(j):
     qs = R['base_q'] + j['q']
-    by = {n: [q for q in qs if q['step'] == n] for n in (1, 2, 3, 4)}
-    cfg = {'slug': j['slug'], 'portfolio': j.get('portfolio', 'opt'), 'test': bool(j.get('test')), 'steps': STEPS,
+    ns = range(1, len(STEPS) + 1)
+    by = {n: [q for q in qs if q['step'] == n] for n in ns}
+    cfg = {'slug': j['slug'], 'portfolio': j.get('portfolio', 'opt'), 'video': j.get('video', 'opt'), 'test': bool(j.get('test')), 'steps': STEPS,
            'qs': [{'id': q['id'], 'type': q['type'], 'req': bool(q.get('req')), 'step': q['step']} for q in qs]}
     steps = ''
-    for n in (1, 2, 3, 4):
-        extra = ''
-        if n == 4:
+    for n in ns:
+        extra, pre = '', ''
+        if STEPS[n - 1] == 'Tu vídeo':
+            pre = vid_box(j)
+        if n == len(STEPS):
             extra = ('<div class="cks"><label class="c1"><input type="checkbox" name="consent" required><span>He leído <a href="#privacidad">cómo tratáis mis datos</a> y quiero que valoréis mi candidatura. '
                      'Sé que una IA ayuda a ordenarlas y que cada decisión la toma una persona.</span></label>'
                      '<label><input type="checkbox" name="keep"><span>Guardad mi candidatura 12 meses para otros puestos <em class="mut" style="font-style:normal">(opcional)</em>.</span></label></div>'
                      '<div class="hpot" aria-hidden="true"><label>Web <input type="text" name="web" tabindex="-1" autocomplete="off"></label></div>')
-        steps += '<div class="fs%s" data-s="%d"><h3>%s</h3>%s%s</div>' % (' on' if n == 1 else '', n, e(STEPS[n - 1]), ''.join(field(q, j) for q in by[n]), extra)
+        steps += '<div class="fs%s" data-s="%d"><h3>%s</h3>%s%s</div>' % (' on' if n == 1 else '', n, e(STEPS[n - 1]), pre + ''.join(field(q, j) for q in by[n]), extra)
     return ('<script type="application/json" id="eqcfg">%s</script>'
-            '<form class="fm" id="fm" novalidate aria-label="Candidatura: %s"><div class="fm-top"><b>%s</b><span>Paso 1 de 4</span></div><div class="fm-pr" aria-hidden="true"><i style="width:25%%"></i></div>%s'
+            '<form class="fm" id="fm" novalidate aria-label="Candidatura: %s"><div class="fm-top"><b>%s</b><span>Paso 1 de %d</span></div><div class="fm-pr" aria-hidden="true"><i style="width:%d%%"></i></div>%s'
             '<div class="fnav"><button class="b-gl" type="button" data-prev hidden>Atrás</button><button class="b-pri" type="button" data-next>Siguiente %s</button>'
             '<button class="b-pri" type="submit" data-send hidden>Enviar candidatura</button></div><p class="fmsg" role="alert" aria-live="polite"></p></form>'
-            % (json.dumps(cfg, ensure_ascii=False).replace('</', '<\\/'), e(j['title']), STEPS[0], steps, AR))
+            % (json.dumps(cfg, ensure_ascii=False).replace('</', '<\\/'), e(j['title']), STEPS[0], len(STEPS), 100 // len(STEPS), steps, AR))
 
 
 # ---------- un puesto ----------
@@ -173,7 +185,7 @@ def job_page(j, others):
     toc = [('rol', 'El rol y quiénes somos'), ('responsabilidades', 'Responsabilidades'), ('requisitos', 'Requisitos'), ('resultados', 'Resultados'), ('beneficios', 'Beneficios')]
     h += '<main id="main"><section class="hero" id="top"><div class="w"><div class="hg"><div><a class="crumb" href="/equipo/">← Todos los puestos</a><br><span class="chip"><i></i>%s</span><h1>%s</h1><p class="hook">%s</p>' % (
         e(j['kicker']), e(j['title']), e(j['hook']))
-    h += '<ul class="facts">%s</ul><div class="cta"><a class="b-pri" href="#aplicar" data-apply>Enviar mi candidatura %s</a><span class="mut">10 minutos · Te contestamos en menos de 24 h</span></div></div>' % (
+    h += '<ul class="facts">%s</ul><div class="cta"><a class="b-pri" href="#aplicar" data-apply>Enviar mi candidatura %s</a><span class="mut">15 minutos · Te contestamos en menos de 24 h</span></div></div>' % (
         ''.join('<li>%s</li>' % e(x) for x in mode_facts(j)), AR)
     first = j['results'][0]
     h += ('<aside class="sum" aria-label="El puesto en breve"><h3>En breve</h3><dl><div><dt>Modalidad</dt><dd>%s</dd></div><div><dt>%s</dt><dd>%s</dd></div>'
@@ -204,7 +216,8 @@ def job_page(j, others):
     h += process(None if j.get('test') else R.get('promise_open'))
     # la candidatura
     tst = j.get('test')
-    bul = ['10 minutos, en 4 pasos', 'Se guarda mientras escribes: puedes seguir luego', 'Te contestamos en menos de 24 horas'] + (
+    bul = ['15 minutos, en %d pasos' % len(STEPS), 'Con un vídeo selfie de 30 a 60 segundos' + ('' if j.get('video') == 'req' else ' (opcional)'),
+           'Se guarda mientras escribes: puedes seguir luego', 'Te contestamos en menos de 24 horas'] + (
         ['Si encajas: entrevista de 30 minutos y una prueba técnica de %d %s como máximo' % (tst['hours'], 'hora' if tst['hours'] == 1 else 'horas'), 'En 7 a 12 días sabes si entras al equipo'] if tst else [])
     h += ('<section class="apl" id="aplicar"><div class="w apl-g"><div class="apl-i rv"><span class="chip"><i></i>Candidatura</span><h2 style="margin-top:18px">Cuéntanos <span class="lm">qué haces mejor.</span></h2>'
           '<p>Nos importa más tu trabajo que tu CV: enséñanos lo que has hecho y cómo lo piensas.</p><ul>%s</ul></div><div class="rv">%s</div></div></section>') % (

@@ -225,3 +225,9 @@ a{color:inherit}img,svg{display:block;max-width:100%}h1,h2,h3,p{margin:0}h1,h2,h
   .job{min-height:0;padding:22px}.tool{padding:36px 0 72px}.tool:before{width:420px;height:420px;right:-170px}.tg{gap:16px}
 }
 @media (max-width:560px){.vals{grid-template-columns:minmax(0,1fr)}.cta .b-pri{width:100%}.toc a{font-size:13.5px;padding:8px 13px}}
+/* el paso del vídeo */
+.vid{margin:0 0 22px;padding:18px 18px 16px;border-radius:18px;background:rgba(232,240,224,.55);box-shadow:inset 0 0 0 1px rgba(47,69,39,.07)}
+.vq{margin:0 0 10px;font-size:15.5px;line-height:1.5;color:var(--ink2)}
+.vq b{color:var(--ink);font-weight:600}
+.vid ol{margin:0;padding-left:20px;list-style:decimal;display:grid;gap:6px;font-size:14.5px;line-height:1.5;color:var(--ink2)}
+.vid li::marker{color:var(--mut);font-weight:600}

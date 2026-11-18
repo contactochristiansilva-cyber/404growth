@@ -49,7 +49,7 @@ if(fm&&CFG){
   var answers=function(){var a={};CFG.qs.forEach(function(q){if(q.type!=='file'){var v=val(q.id);if(v)a[q.id]=v}});return a};
   var okUrl=function(v){return /^(https?:\/\/)?[^\s\/]+\.[^\s]{2,}/i.test(v)};
   var okTel=function(v){var t=v.replace(/[^\d+]/g,'');if(t.indexOf('00')===0)t='+'+t.slice(2);if(/^[6789]\d{8}$/.test(t))return true;return /^\+\d{9,15}$/.test(t)};
-  var check=function(q){var v=val(q.id),need=q.req||(q.id==='portfolio'&&CFG.portfolio==='req');
+  var check=function(q){var v=val(q.id),need=q.req||(q.id==='portfolio'&&CFG.portfolio==='req')||(q.id==='video'&&CFG.video==='req');
     if(q.type==='file')return !file||(file.size<=1800000&&/pdf$/i.test(file.type||file.name));
     if(!v)return !need;
     if(q.type==='email')return /^[^\s@,;<>"']+@[^\s@,;<>"']+\.[^\s@,;<>"']{2,}$/.test(v);

@@ -27,12 +27,16 @@ let ok = 0, ko = 0; const t = (c, m) => { if (c) ok++; else { ko++; console.log(
   await p.click('#fm [data-next]'); t(await p.$eval('[data-f=name]', (x) => x.classList.contains('err')), 'paso 1 vacío: marca el nombre');
   await p.fill('#f-name', 'Marta Prueba Ruiz'); await p.fill('#f-email', 'marta@example.com'); await p.fill('#f-phone', '611 222 333'); await p.fill('#f-city', 'Sevilla, España');
   await p.reload({ waitUntil: 'networkidle' }); t(await p.inputValue('#f-name') === 'Marta Prueba Ruiz', 'el borrador se guarda al recargar');
-  await p.click('#fm [data-next]'); t(await p.$eval('.fm-top span', (x) => x.textContent) === 'Paso 2 de 4', 'paso 2');
+  await p.click('#fm [data-next]'); t(await p.$eval('.fm-top span', (x) => x.textContent) === 'Paso 2 de 5', 'paso 2');
   await p.click('#fm [data-next]'); t(await p.$eval('[data-f=portfolio]', (x) => x.classList.contains('err')), 'en tiendas el portfolio es obligatorio');
   await p.fill('#f-portfolio', 'martaprueba.example.com');
   fs.writeFileSync('cv.pdf', '%PDF-1.4\n% CV de prueba\n');
   await p.setInputFiles('#f-cv', 'cv.pdf'); t((await p.textContent('[data-f=cv] .fn')).includes('cv.pdf'), 'CV elegido');
-  await p.click('#fm [data-next]');
+  await p.click('#fm [data-next]'); t(await p.$eval('.fm-top b', (x) => x.textContent) === 'Tu vídeo', 'paso 3: el vídeo');
+  t((await p.textContent('.vid .vq')).includes('la tienda de la que estás más orgulloso'), 'el paso del vídeo dice qué contar en tiendas');
+  await p.screenshot({ path: shots + '/form-video-390.png' });
+  await p.click('#fm [data-next]'); t(await p.$eval('[data-f=video]', (x) => x.classList.contains('err')), 'el vídeo es obligatorio');
+  await p.fill('#f-video', 'https://youtu.be/prueba123'); await p.click('#fm [data-next]');
   await p.click('[data-f=ko1] label:first-child'); await p.fill('#f-q1', 'Monté tres tiendas Shopify de moda: Lumen, Brisa y Odette. Hice tema, fichas y fotos con IA.');
   await p.fill('#f-q2', 'Ordeno el catálogo, rehago fotos con IA, portada fuerte y fichas completas; reviso en el móvil cada día.');
   await p.fill('#f-q3', 'Nano Banana para fotos de producto, GPT Image para portadas y Claude para fichas y textos.');
@@ -92,6 +96,8 @@ let ok = 0, ko = 0; const t = (c, m) => { if (c) ok++; else { ko++; console.log(
   await x.goto(B + '/equipo/abierta/', { waitUntil: 'networkidle' }); t(await x.$('.devb'), 'el aviso sigue en las demás páginas');
   await x.fill('#f-name', 'Christian Prueba'); await x.fill('#f-email', 'chris-prueba@example.com'); await x.fill('#f-phone', '600 000 000'); await x.fill('#f-city', 'Kalkan, Turquía');
   await x.click('#fm [data-next]'); await x.click('#fm [data-next]');
+  t(!(await x.$eval('[data-f=video]', (e) => e.classList.contains('err'))) && (await x.textContent('[data-f=video] label')).includes('opcional'), 'en la candidatura abierta el vídeo es opcional');
+  await x.click('#fm [data-next]');
   await x.click('[data-f=area] label:first-child'); await x.fill('#f-q1', 'Diseño de tiendas online para comercios de barrio, de principio a fin.'); await x.fill('#f-q2', 'Ordenar el método de fotos y plantillas para que todo salga igual de bien.');
   await x.click('#fm [data-next]'); for (const [f, k] of [['hours', 4], ['start', 1], ['tz', 1], ['lang', 1]]) await x.click('[data-f=' + f + '] label:nth-child(' + k + ')');
   await x.fill('#f-rate', 'prueba'); await x.check('[name=consent]'); await x.click('[data-send]'); await x.waitForSelector('.done'); t(true, 'candidatura de prueba enviada');

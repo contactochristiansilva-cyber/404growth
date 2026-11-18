@@ -7,7 +7,7 @@
   "process": [
     [
       "Solicitud",
-      "10 minutos. Tus datos, tu trabajo y 3 preguntas del puesto. Te contestamos en menos de 24 horas."
+      "15 minutos. Tus datos, tu trabajo, un vídeo selfie de 30 a 60 segundos y 3 preguntas del puesto. Te contestamos en menos de 24 horas."
     ],
     [
       "Entrevista",
@@ -79,12 +79,12 @@
     },
     {
       "id": "video",
-      "label": "Vídeo de 60 a 90 segundos: quién eres y por qué tú",
+      "label": "El enlace de tu vídeo",
       "type": "url",
       "req": false,
       "max": 300,
-      "step": 2,
-      "help": "Enlace de Loom, YouTube (oculto) o Google Drive. No es obligatorio, pero ayuda mucho."
+      "step": 3,
+      "help": "Comprueba que se abre sin pedir permiso."
     },
     {
       "id": "cv",
@@ -99,7 +99,7 @@
       "label": "¿Cuántas horas a la semana puedes dedicar?",
       "type": "choice",
       "req": true,
-      "step": 4,
+      "step": 5,
       "opts": [
         "Menos de 10 h",
         "De 10 a 20 h",
@@ -112,7 +112,7 @@
       "label": "¿Cuándo podrías empezar?",
       "type": "choice",
       "req": true,
-      "step": 4,
+      "step": 5,
       "opts": [
         "Ya",
         "En 2 semanas",
@@ -126,7 +126,7 @@
       "type": "text",
       "req": true,
       "max": 160,
-      "step": 4,
+      "step": 5,
       "help": "En euros, como lo veas más claro: por encargo, por hora o al mes."
     },
     {
@@ -135,7 +135,7 @@
       "type": "yesno",
       "req": true,
       "ko": "no",
-      "step": 4,
+      "step": 5,
       "help": "Desde Latinoamérica son entre 4 y 8 horas menos: las 9:00 en España son de madrugada allí."
     },
     {
@@ -144,14 +144,14 @@
       "type": "yesno",
       "req": true,
       "ko": "no",
-      "step": 4
+      "step": 5
     },
     {
       "id": "src",
       "label": "¿Cómo nos has conocido?",
       "type": "choice",
       "req": false,
-      "step": 4,
+      "step": 5,
       "opts": [
         "LinkedIn",
         "Instagram",
@@ -270,7 +270,7 @@
           "type": "yesno",
           "req": true,
           "ko": "no",
-          "step": 3
+          "step": 4
         },
         {
           "id": "q1",
@@ -278,7 +278,7 @@
           "type": "long",
           "req": true,
           "max": 2000,
-          "step": 3
+          "step": 4
         },
         {
           "id": "q2",
@@ -286,7 +286,7 @@
           "type": "long",
           "req": true,
           "max": 2000,
-          "step": 3
+          "step": 4
         },
         {
           "id": "q3",
@@ -294,7 +294,7 @@
           "type": "long",
           "req": true,
           "max": 1500,
-          "step": 3
+          "step": 4
         }
       ],
       "rubric": [
@@ -398,7 +398,9 @@
       "pay": "",
       "emp": [
         "CONTRACTOR"
-      ]
+      ],
+      "video_ask": "quién eres, la tienda de la que estás más orgulloso u orgullosa y por qué quieres montar las nuestras.",
+      "video": "req"
     },
     {
       "slug": "setter",
@@ -460,7 +462,7 @@
           "type": "yesno",
           "req": true,
           "ko": "no",
-          "step": 3
+          "step": 4
         },
         {
           "id": "q1",
@@ -468,7 +470,7 @@
           "type": "long",
           "req": true,
           "max": 2000,
-          "step": 3
+          "step": 4
         },
         {
           "id": "q2",
@@ -476,7 +478,7 @@
           "type": "long",
           "req": true,
           "max": 1200,
-          "step": 3
+          "step": 4
         },
         {
           "id": "q3",
@@ -484,7 +486,7 @@
           "type": "long",
           "req": true,
           "max": 1200,
-          "step": 3
+          "step": 4
         }
       ],
       "rubric": [
@@ -583,7 +585,9 @@
       "pay": "",
       "emp": [
         "PART_TIME"
-      ]
+      ],
+      "video_ask": "quién eres y, como si hablaras con el dueño de una tienda, por qué debería contestarte a ti.",
+      "video": "req"
     },
     {
       "slug": "growth",
@@ -646,7 +650,7 @@
           "type": "yesno",
           "req": true,
           "ko": "no",
-          "step": 3
+          "step": 4
         },
         {
           "id": "q1",
@@ -654,7 +658,7 @@
           "type": "long",
           "req": true,
           "max": 2000,
-          "step": 3
+          "step": 4
         },
         {
           "id": "q2",
@@ -662,7 +666,7 @@
           "type": "long",
           "req": true,
           "max": 2000,
-          "step": 3
+          "step": 4
         },
         {
           "id": "q3",
@@ -670,7 +674,7 @@
           "type": "long",
           "req": true,
           "max": 1500,
-          "step": 3
+          "step": 4
         }
       ],
       "rubric": [
@@ -774,7 +778,9 @@
       "pay": "",
       "emp": [
         "CONTRACTOR"
-      ]
+      ],
+      "video_ask": "quién eres, el mejor resultado que has conseguido con anuncios y por qué este puesto.",
+      "video": "req"
     },
     {
       "slug": "abierta",
@@ -822,7 +828,7 @@
           "label": "¿En qué área eres fuerte?",
           "type": "choice",
           "req": true,
-          "step": 3,
+          "step": 4,
           "opts": [
             "Diseño",
             "Vídeo y edición",
@@ -839,7 +845,7 @@
           "type": "long",
           "req": true,
           "max": 2000,
-          "step": 3
+          "step": 4
         },
         {
           "id": "q2",
@@ -847,7 +853,7 @@
           "type": "long",
           "req": true,
           "max": 1500,
-          "step": 3
+          "step": 4
         }
       ],
       "rubric": [
@@ -894,7 +900,9 @@
         "Candidatura abierta"
       ],
       "pay": "",
-      "emp": []
+      "emp": [],
+      "video_ask": "quién eres, qué haces mejor y en qué te gustaría trabajar con nosotros.",
+      "video": "opt"
     }
   ],
   "promise_open": "Te contestamos en menos de 24 horas y te escribimos los primeros cuando abramos tu puesto."

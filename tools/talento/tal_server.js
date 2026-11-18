@@ -58,7 +58,7 @@ function talCheck(j, a) {
     else if (q.type === "choice") { x = (q.opts || []).includes(v) ? v : ""; }
     else if (q.type === "yesno") { x = v === "si" || v === "no" ? v : ""; }
     else { x = str(v, q.max || 300); }
-    const need = q.req || (q.id === "portfolio" && j.portfolio === "req");
+    const need = q.req || (q.id === "portfolio" && j.portfolio === "req") || (q.id === "video" && j.video === "req");
     if (need && (!x || (q.type === "long" && x.length < 15) || (q.type === "text" && x.length < 2))) { err.push(q.id); continue; }
     if (x) out[q.id] = x;
     if (q.ko && x === q.ko) ko.push(q.id);
