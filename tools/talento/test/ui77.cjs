@@ -81,6 +81,22 @@ let ok = 0, ko = 0; const t = (c, m) => { if (c) ok++; else { ko++; console.log(
   await M.screenshot({ path: shots + '/admin-tablero-390.png', fullPage: true });
   await M.click('.tl-c'); await M.waitForSelector('.tl-h h2'); t(await M.evaluate(() => document.documentElement.scrollWidth) <= 390, 'ficha en el móvil sin scroll lateral');
   await M.screenshot({ path: shots + '/admin-ficha-390.png', fullPage: true });
+  // 7. prueba interna desde el navegador de Chris y las páginas en el admin
+  const X = await br.newContext({ viewport: { width: 1366, height: 900 } }); const x = await X.newPage();
+  await x.goto(B + '/equipo/?interno=1', { waitUntil: 'networkidle' }); t(await x.$('.devb'), 'aviso de prueba interna');
+  await x.goto(B + '/equipo/abierta/', { waitUntil: 'networkidle' }); t(await x.$('.devb'), 'el aviso sigue en las demás páginas');
+  await x.fill('#f-name', 'Christian Prueba'); await x.fill('#f-email', 'chris-prueba@example.com'); await x.fill('#f-phone', '600 000 000'); await x.fill('#f-city', 'Kalkan, Turquía');
+  await x.click('#fm [data-next]'); await x.click('#fm [data-next]');
+  await x.click('[data-f=area] label:first-child'); await x.fill('#f-q1', 'Diseño de tiendas online para comercios de barrio, de principio a fin.'); await x.fill('#f-q2', 'Ordenar el método de fotos y plantillas para que todo salga igual de bien.');
+  await x.click('#fm [data-next]'); for (const [f, k] of [['hours', 4], ['start', 1], ['tz', 1], ['lang', 1]]) await x.click('[data-f=' + f + '] label:nth-child(' + k + ')');
+  await x.fill('#f-rate', 'prueba'); await x.check('[name=consent]'); await x.click('[data-send]'); await x.waitForSelector('.done'); t(true, 'candidatura de prueba enviada');
+  await x.screenshot({ path: shots + '/prueba-interna-1366.png' });
+  await A.goto(B + '/admin/', { waitUntil: 'networkidle' }); await A.waitForSelector('.tl-pg');
+  t((await A.$$('.tl-pg')).length === 4, 'las 4 páginas de captación en el admin');
+  const kp = await A.$$eval('.kpi b', (b) => b.map((y) => +y.textContent)); t(kp[1] === 1, 'la prueba no cuenta en «Últimos 7 días»: ' + kp.join(','));
+  t((await A.textContent('#tl')).includes('Prueba interna'), 'la tarjeta dice «Prueba interna»');
+  await A.screenshot({ path: shots + '/admin-paginas-1366.png' });
+  await A.click('[data-tl=devdel]'); await A.click('[data-tl=devdel]'); await A.waitForTimeout(600); t(!(await A.textContent('#tl')).includes('Christian Prueba'), 'borrar las pruebas internas');
   console.log(ok + ' bien, ' + ko + ' mal');
   await br.close(); process.exit(ko ? 1 : 0);
 })();

@@ -14,6 +14,11 @@ var TICK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-widt
 function day(ms,o){return new Intl.DateTimeFormat('es-ES',Object.assign({timeZone:TZ},o)).format(new Date(ms))}
 function when(ms){return day(ms,{weekday:'long',day:'numeric',month:'long'})+' a las '+day(ms,{hour:'2-digit',minute:'2-digit'})}
 
+/* prueba interna: los navegadores marcados con ?interno=1 (el mismo de la agenda y de /book; ?interno=0 lo quita). Las candidaturas salen
+   en el admin como «Prueba interna», no cuentan en las cifras, se pueden repetir y la entrevista no crea evento en Google. */
+var DEV=false;try{var iq=/[?&]interno=([01])/.exec(location.search);if(iq){if(iq[1]==='1')localStorage.setItem('c404int','1');else localStorage.removeItem('c404int')}DEV=!!localStorage.getItem('c404int')}catch(e){}
+if(DEV){var bn=D.createElement('div');bn.className='devb';bn.innerHTML='<b>Prueba interna</b> · lo que envíes sale en el admin marcado como prueba y no cuenta en las cifras. <a href="?interno=0">Quitar</a>';var nv0=$('.nv');if(nv0&&nv0.parentNode)nv0.parentNode.insertBefore(bn,nv0.nextSibling);else D.body.insertBefore(bn,D.body.firstChild)}
+
 /* la UTM de la primera visita (LinkedIn, Instagram…) viaja con la candidatura */
 (function(){var q=new URLSearchParams(location.search),u={};['utm_source','utm_medium','utm_campaign','utm_content'].forEach(function(k){var v=q.get(k);if(v)u[k]=v.slice(0,80)});if(Object.keys(u).length)ss.set('eq:utm',u);if(!ss.get('eq:ref')&&D.referrer&&D.referrer.indexOf(location.host)<0)ss.set('eq:ref',D.referrer.slice(0,200))})();
 
@@ -75,7 +80,7 @@ if(fm&&CFG){
     for(var n=1;n<=N;n++){var bad=stepOk(n);if(bad){go(n,true);msg.textContent='Revisa lo que está marcado en rojo.';return}}
     var c1=$('[name=consent]',fm);if(!c1.checked){$('.cks .c1',fm).classList.add('err');msg.textContent='Marca la casilla de la privacidad para poder enviarla.';return}
     busy=true;var btn=$('[data-send]',fm);btn.disabled=true;btn.textContent='Enviando…';
-    var body={job:CFG.slug,a:answers(),consent:true,keep:!!($('[name=keep]',fm)||{}).checked,web:($('[name=web]',fm)||{}).value||'',utm:ss.get('eq:utm')||{},ref:ss.get('eq:ref')||''};
+    var body={job:CFG.slug,dev:DEV?1:0,a:answers(),consent:true,keep:!!($('[name=keep]',fm)||{}).checked,web:($('[name=web]',fm)||{}).value||'',utm:ss.get('eq:utm')||{},ref:ss.get('eq:ref')||''};
     post('job',body).then(function(r){var name=(body.a.name||'').split(/\s+/)[0];
       var fin=function(cvOk){ls.del(KEY);fm.innerHTML='<div class="done" role="status"><div class="tick">'+TICK+'</div><h3>Recibida, '+esc(name)+'.</h3><p>Gracias por tu tiempo. La leemos con calma y te contestamos siempre, en pocos días'+(CFG.test?'. Si pasas a la siguiente fase, te llega una prueba práctica corta.':'.')+'</p>'+(cvOk===false?'<p>Tu CV no se pudo subir. No pasa nada: si te interesa que lo veamos, mándalo respondiendo al correo que te escribamos.</p>':'')+'<p class="mut">Mientras, puedes ver <a href="/equipo/">los demás puestos</a> o cómo trabajamos en <a href="/">404growth.com</a>.</p></div>';fm.scrollIntoView({behavior:'smooth',block:'center'})};
       if(file&&r.cvt)post('jobcv?c='+encodeURIComponent(r.cvt),null,file).then(function(){fin(true)},function(){fin(false)});else fin()},
@@ -131,6 +136,6 @@ if(iv){var tk=new URLSearchParams(location.search).get('t')||'',S={d:null,h:null
   iv.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
     if(b.hasAttribute('data-d')){S.d=b.getAttribute('data-d');S.h=null;draw();return}
     if(b.hasAttribute('data-h')){S.h=+b.getAttribute('data-h');draw();var ok=$('[data-ok]',iv);if(ok&&W.innerWidth<900)ok.scrollIntoView({behavior:'smooth',block:'center'});return}
-    if(b.hasAttribute('data-ok')&&S.h){b.disabled=true;b.textContent='Reservando…';post('jobmb',{t:tk,start:new Date(S.h).toISOString()}).then(function(r){iv.innerHTML='<div class="fm done" role="status"><div class="tick">'+TICK+'</div><h3>Hecho. Hablamos el '+esc(when(Date.parse(r.start)))+'.</h3><p>Te llega ahora la invitación de Google Calendar con el enlace de Meet: acéptala para que quede en tu calendario.</p></div>'},
+    if(b.hasAttribute('data-ok')&&S.h){b.disabled=true;b.textContent='Reservando…';post('jobmb',{t:tk,start:new Date(S.h).toISOString()}).then(function(r){iv.innerHTML='<div class="fm done" role="status"><div class="tick">'+TICK+'</div><h3>Hecho. Hablamos el '+esc(when(Date.parse(r.start)))+'.</h3>'+(r.dev?'<p><b>Prueba interna:</b> no se ha creado el evento en Google ni se ha mandado invitación.</p>':'<p>Te llega ahora la invitación de Google Calendar con el enlace de Meet: acéptala para que quede en tu calendario.</p>')+'</div>'},
       function(err){if(err.code==='taken'){S.h=null;load('Esa hora se acaba de ocupar. Elige otra.');return}if(err.code==='booked'){load();return}b.disabled=false;b.textContent='Confirmar: '+when(S.h);var m=$('.fmsg',iv);if(m)m.textContent='No se ha podido reservar. Inténtalo otra vez o contesta al mensaje que te mandamos.'})}})}
 })();

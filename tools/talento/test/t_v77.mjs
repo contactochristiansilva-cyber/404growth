@@ -112,5 +112,21 @@ t(!left.includes(id2) && !left.includes(id1) && left.includes(ab) && left.includ
 t(db.prepare('SELECT COUNT(*) n FROM tcvf').get().n === 0, 'el CV se borra con su candidatura');
 a = await A('DELETE', 'tal/' + ab); t(a.s === 200 && !db.prepare('SELECT id FROM tcand WHERE id = ?').get(ab), 'borrar a mano');
 a = await A('GET', 'tal/' + ab); t(a.s === 404, 'ya no está');
+// 19. prueba interna (?interno=1): se puede repetir, sale marcada, no cuenta y la entrevista no crea evento
+ip = '4.4.4.4';
+let d1 = await P('job', { job: 'tiendas', consent: true, dev: 1, a: ans({ email: 'chris@example.com' }) });
+let d2 = await P('job', { job: 'tiendas', consent: true, dev: 1, a: ans({ email: 'chris@example.com' }) });
+t(d1.s === 200 && d2.s === 200 && d1.j.dev === true, 'prueba interna: se puede repetir');
+a = await A('GET', 'tal'); t(a.j.cands.filter((x) => x.dev).length === 2 && a.j.cands.filter((x) => !x.dev).length >= 1, 'salen marcadas como prueba');
+await A('POST', 'tal/' + d1.j.id, { stage: 'meet', send: false });
+const dtok = d1.j.cvt.split('.')[1];
+r = await P('jobm', { t: d1.j.id + '.' + dtok });
+if (r.s === 200 && r.j.slots.length) {
+  t(r.j.dev === true, 'la página de la entrevista sabe que es prueba');
+  r = await P('jobmb', { t: d1.j.id + '.' + dtok, start: r.j.slots[0] });
+  const mt = JSON.parse(db.prepare('SELECT meet FROM tcand WHERE id = ?').get(d1.j.id).meet);
+  t(r.s === 200 && r.j.dev === true && mt.dry === 1 && mt.start > 0, 'entrevista de prueba sin evento en Google');
+} else t(r.s === 503, 'sin calendario: ' + r.s);
+a = await A('DELETE', 'taldev'); a = await A('GET', 'tal'); t(!a.j.cands.some((x) => x.dev) && a.j.cands.length >= 1, 'borrar las pruebas internas deja las de verdad');
 console.log(ok + ' bien, ' + ko + ' mal');
 process.exit(ko ? 1 : 0);

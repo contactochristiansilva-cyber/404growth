@@ -10,7 +10,9 @@
      /l/jobmb POST  reserva la entrevista: evento en Google con Meet
    En el admin, la sección Talento (/admin#talento): talApi. La IA ordena y explica; mover, descartar o contratar lo decide Chris.
    Mensajes de cada etapa: por email desde hola@ si hay clave de Resend (Ajustes › Newsletter) y, si no, listos para WhatsApp.
-   RGPD: se borran solas a los 6 meses sin moverse (12 si dejaron guardarlas para futuros puestos), salvo las del equipo. */
+   RGPD: se borran solas a los 6 meses sin moverse (12 si dejaron guardarlas para futuros puestos), salvo las del equipo.
+   Prueba interna (`dev`): desde un navegador marcado con ?interno=1, como en la agenda. Sale en el admin marcada, no cuenta en las cifras,
+   no se mira si está repetida y la entrevista no crea evento en Google. */
 const TAL = /*TAL_JSON*/ {};
 const TAL_CV = 1800000, TAL_DAYMAX = 5;
 const TAL_ID = /^T[A-Za-z0-9_-]{8,16}$/, TAL_TOK = /^(T[A-Za-z0-9_-]{8,16})\.([A-Za-z0-9_-]{16})$/;
@@ -19,7 +21,7 @@ let talOk = false;
 async function talReady(env) {
   if (talOk) return;
   await env.DB.batch([
-    env.DB.prepare("CREATE TABLE IF NOT EXISTS tcand (id TEXT PRIMARY KEY, job TEXT NOT NULL, ts INTEGER NOT NULL, upd INTEGER NOT NULL, stage TEXT NOT NULL, name TEXT NOT NULL, email TEXT NOT NULL, phone TEXT, city TEXT, data TEXT NOT NULL, ko TEXT, score INTEGER, ai TEXT, test TEXT, meet TEXT, msgs TEXT, notes TEXT, tok TEXT NOT NULL, ih TEXT, keep INTEGER NOT NULL DEFAULT 0, cv INTEGER NOT NULL DEFAULT 0, seen INTEGER NOT NULL DEFAULT 0)"),
+    env.DB.prepare("CREATE TABLE IF NOT EXISTS tcand (id TEXT PRIMARY KEY, job TEXT NOT NULL, ts INTEGER NOT NULL, upd INTEGER NOT NULL, stage TEXT NOT NULL, name TEXT NOT NULL, email TEXT NOT NULL, phone TEXT, city TEXT, data TEXT NOT NULL, ko TEXT, score INTEGER, ai TEXT, test TEXT, meet TEXT, msgs TEXT, notes TEXT, tok TEXT NOT NULL, ih TEXT, keep INTEGER NOT NULL DEFAULT 0, cv INTEGER NOT NULL DEFAULT 0, seen INTEGER NOT NULL DEFAULT 0, dev INTEGER NOT NULL DEFAULT 0)"),
     env.DB.prepare("CREATE INDEX IF NOT EXISTS tcand_job ON tcand (job, stage)"),
     env.DB.prepare("CREATE TABLE IF NOT EXISTS tcvf (id TEXT PRIMARY KEY, data BLOB NOT NULL, size INTEGER NOT NULL)"),
   ]);
@@ -64,7 +66,7 @@ function talCheck(j, a) {
   return { a: out, ko, err };
 }
 const talRow = (c) => ({ id: c.id, job: c.job, ts: c.ts, upd: c.upd, stage: c.stage, name: c.name, city: c.city || "", score: c.score == null ? null : c.score,
-  rec: (parse(c.ai, {}) || {}).rec || "", aierr: (parse(c.ai, {}) || {}).err || "", ko: parse(c.ko, []) || [], keep: !!c.keep, cv: !!c.cv, seen: !!c.seen,
+  dev: !!c.dev, rec: (parse(c.ai, {}) || {}).rec || "", aierr: (parse(c.ai, {}) || {}).err || "", ko: parse(c.ko, []) || [], keep: !!c.keep, cv: !!c.cv, seen: !!c.seen,
   test: (function () { const t = parse(c.test, null); return t ? { sent: t.sent || null, due: t.due || null, done: t.sub ? t.sub.ts : null, score: t.ai && t.ai.total != null ? t.ai.total : null } : null; })(),
   meet: (function () { const m = parse(c.meet, null); return m && m.start ? { start: m.start } : null; })() });
 async function talByTok(env, v) {
@@ -122,7 +124,7 @@ async function talScore(env, id, quiet) {
   } catch (e) { ai = { at: Date.now(), err: e.code === "noai" ? "noai" : "ai", detail: str(String(e.message || ""), 160) }; }
   await env.DB.prepare("UPDATE tcand SET ai = ?2, score = ?3 WHERE id = ?1").bind(id, JSON.stringify(ai), ai.total == null ? null : ai.total).run();
   if (!quiet) {
-    try { await pushAll(env, { title: "Nueva candidatura · " + j.short + " · " + c.name, body: (ai.total != null ? ai.total + "/100 · " + ai.rec : "Sin nota de la IA") + (ko.length ? " · no cumple: " + ko.map((k) => ({ tz: "horario", lang: "idioma", ko1: "experiencia" })[k] || k).join(", ") : "") + (ai.summary ? ". " + ai.summary.slice(0, 160) : ""), tag: "tal" + id, url: "/admin#talento" }); } catch (e) {}
+    try { await pushAll(env, { title: (c.dev ? "Prueba interna · " : "") + "Nueva candidatura · " + j.short + " · " + c.name, body: (ai.total != null ? ai.total + "/100 · " + ai.rec : "Sin nota de la IA") + (ko.length ? " · no cumple: " + ko.map((k) => ({ tz: "horario", lang: "idioma", ko1: "experiencia" })[k] || k).join(", ") : "") + (ai.summary ? ". " + ai.summary.slice(0, 160) : ""), tag: "tal" + id, url: "/admin#talento" }); } catch (e) {}
   }
   return ai;
 }
@@ -139,7 +141,7 @@ async function talTestScore(env, id) {
   } catch (e) { ai = { at: Date.now(), err: e.code === "noai" ? "noai" : "ai" }; }
   t.ai = ai;
   await env.DB.prepare("UPDATE tcand SET test = ?2 WHERE id = ?1").bind(id, JSON.stringify(t)).run();
-  try { await pushAll(env, { title: "Prueba entregada · " + j.short + " · " + c.name, body: (ai.total != null ? "La IA le da " + ai.total + "/100 (" + ai.rec + "). " + (ai.summary || "").slice(0, 140) : "Mírala tú: la IA no pudo puntuarla."), tag: "talt" + id, url: "/admin#talento" }); } catch (e) {}
+  try { await pushAll(env, { title: (c.dev ? "Prueba interna · " : "") + "Prueba entregada · " + j.short + " · " + c.name, body: (ai.total != null ? "La IA le da " + ai.total + "/100 (" + ai.rec + "). " + (ai.summary || "").slice(0, 140) : "Mírala tú: la IA no pudo puntuarla."), tag: "talt" + id, url: "/admin#talento" }); } catch (e) {}
   return ai;
 }
 
@@ -198,22 +200,23 @@ async function talPublic(req, env, ctx, p) {
     const ih = (await sha("tal|" + (req.headers.get("cf-connecting-ip") || "local"))).slice(0, 22);
     const many = await DBq.prepare("SELECT COUNT(*) AS n FROM tcand WHERE ih = ?1 AND ts > ?2").bind(ih, now - DAY).first();
     if (many && many.n >= TAL_DAYMAX) return bad("slow", 429);
-    const dup = await DBq.prepare("SELECT id FROM tcand WHERE job = ?1 AND email = ?2 AND ts > ?3").bind(j.slug, ck.a.email, now - 30 * DAY).first();
+    const dev = b.dev === 1 || b.dev === true ? 1 : 0;   // prueba interna: se puede repetir
+    const dup = dev ? null : await DBq.prepare("SELECT id FROM tcand WHERE job = ?1 AND email = ?2 AND ts > ?3 AND dev = 0").bind(j.slug, ck.a.email, now - 30 * DAY).first();
     if (dup) return bad("dup", 409);
     const utm = {}; if (b.utm && typeof b.utm === "object") for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_content"]) { const v = str(b.utm[k], 80); if (v) utm[k] = v; }
     const id = "T" + rid(""), tok = (rid("") + rid("")).slice(0, 16);
     const data = { a: ck.a, utm, ref: str(b.ref, 200), ua: str(req.headers.get("user-agent") || "", 160) };
-    await DBq.prepare("INSERT INTO tcand (id, job, ts, upd, stage, name, email, phone, city, data, ko, tok, ih, keep) VALUES (?1, ?2, ?3, ?3, 'new', ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)")
-      .bind(id, j.slug, now, ck.a.name, ck.a.email, ck.a.phone || "", ck.a.city || "", JSON.stringify(data), JSON.stringify(ck.ko), tok, ih, b.keep ? 1 : 0).run();
+    await DBq.prepare("INSERT INTO tcand (id, job, ts, upd, stage, name, email, phone, city, data, ko, tok, ih, keep, dev) VALUES (?1, ?2, ?3, ?3, 'new', ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13)")
+      .bind(id, j.slug, now, ck.a.name, ck.a.email, ck.a.phone || "", ck.a.city || "", JSON.stringify(data), JSON.stringify(ck.ko), tok, ih, b.keep ? 1 : 0, dev).run();
     const c = await DBq.prepare("SELECT * FROM tcand WHERE id = ?1").bind(id).first();
     await later((async () => { try { await talSend(env, c, "got", true); } catch (e) {} await talScore(env, id); })());
-    return json({ ok: true, id, cvt: id + "." + tok });
+    return json({ ok: true, id, cvt: id + "." + tok, dev: !!dev });
   }
   const c = await talByTok(env, b.t); if (!c) return bad("missing", 404);
   const j = talJob(c.job); if (!j) return bad("missing", 404);
   if (p === "jobt" || p === "jobts") {
     const t = parse(c.test, null); if (!j.test || !t || !t.sent) return bad("closed", 409);
-    if (p === "jobt") return json({ ok: true, name: talFirst(c.name), job: j.title, test: j.test, due: t.due || null, done: t.sub ? t.sub.ts : null });
+    if (p === "jobt") return json({ ok: true, name: talFirst(c.name), job: j.title, test: j.test, due: t.due || null, done: t.sub ? t.sub.ts : null, dev: !!c.dev });
     if (["no", "hired"].includes(c.stage)) return bad("closed", 409);
     const links = (Array.isArray(b.links) ? b.links : []).map(talUrl).filter(Boolean).slice(0, 6), text = str(b.text, 8000);
     if (!links.length && text.length < 30) return bad("fields");
@@ -225,11 +228,17 @@ async function talPublic(req, env, ctx, p) {
   if (p === "jobm" || p === "jobmb") {
     if (!["meet", "trial"].includes(c.stage) && !parse(c.meet, null)) return bad("closed", 409);
     const mt = parse(c.meet, {}) || {};
-    if (p === "jobm") { let slots = []; try { slots = await gbSlots(env, false); } catch (e) { return json({ error: "nocal" }, 503); } return json({ ok: true, name: talFirst(c.name), job: j.title, dur: GB_DUR, tz: CAL_TZ, slots, booked: mt.start ? { start: mt.start, join: mt.join || "" } : null }); }
+    if (p === "jobm") { let slots = []; try { slots = await gbSlots(env, false); } catch (e) { return json({ error: "nocal" }, 503); } return json({ ok: true, name: talFirst(c.name), job: j.title, dur: GB_DUR, tz: CAL_TZ, slots, booked: mt.start ? { start: mt.start, join: mt.join || "" } : null, dev: !!c.dev }); }
     if (mt.start && mt.start > now) return bad("booked", 409);
     const start = typeof b.start === "string" ? b.start : "", s = Date.parse(start);
     let slots; try { slots = await gbSlots(env, true); } catch (e) { return json({ error: "nocal" }, 503); }
     if (!slots.some((x) => Date.parse(x) === s)) return json({ error: "taken", slots }, 409);
+    if (c.dev) {   // prueba interna: todo el recorrido, sin evento en Google ni invitación
+      const m0 = { start: s, join: "", gid: "", at: now, dry: 1 };
+      await DBq.prepare("UPDATE tcand SET meet = ?2, upd = ?3 WHERE id = ?1").bind(c.id, JSON.stringify(m0), now).run();
+      try { await pushAll(env, { title: "Prueba interna · Entrevista reservada · " + c.name, body: j.title + " · " + vslWhen(new Date(s).toISOString(), CAL_TZ) + ". Es una prueba: no se ha creado el evento en Google.", tag: "talm" + c.id, url: "/admin#talento" }); } catch (e) {}
+      return json({ ok: true, start: new Date(s).toISOString(), join: "", dev: true });
+    }
     const notes = "Entrevista para " + j.title + ".\nCandidatura: " + SITE + "/admin#talento";
     let g; try { g = await gbCreate(env, { s, e: s + GB_DUR * 60000, name: c.name, email: c.email, biz: j.short, summary: "Entrevista 404 Growth · " + j.title + " · " + c.name, title: "Entrevista · " + c.name + " (" + j.short + ")", notes: "Videollamada de 30 minutos con Christian sobre el puesto de " + j.title + ".", inner: notes }); }
     catch (e) { return json({ error: e.code === "nogoogle" ? "nocal" : "book" }, 502); }
@@ -249,9 +258,13 @@ async function talApi(req, env, p, ctx) {
     // RGPD: what nobody has touched in 6 months goes (12 if they let us keep it), except the people in the team
     await DBq.batch([DBq.prepare("DELETE FROM tcvf WHERE id IN (SELECT id FROM tcand WHERE stage NOT IN ('hired', 'trial') AND ((keep = 0 AND upd < ?1) OR (keep = 1 AND upd < ?2)))").bind(now - 182 * DAY, now - 365 * DAY),
       DBq.prepare("DELETE FROM tcand WHERE stage NOT IN ('hired', 'trial') AND ((keep = 0 AND upd < ?1) OR (keep = 1 AND upd < ?2))").bind(now - 182 * DAY, now - 365 * DAY)]);
-    const rows = (await DBq.prepare("SELECT id, job, ts, upd, stage, name, city, score, ai, ko, keep, cv, seen, test, meet FROM tcand ORDER BY ts DESC LIMIT 2000").all()).results || [];
+    const rows = (await DBq.prepare("SELECT id, job, ts, upd, stage, name, city, score, ai, ko, keep, cv, seen, test, meet, dev FROM tcand ORDER BY ts DESC LIMIT 2000").all()).results || [];
     const s = await socCfg(env), open = await talOpen(env);
     return json({ jobs: (TAL.jobs || []).map((j) => ({ slug: j.slug, title: j.title, short: j.short, open: open[j.slug], test: !!j.test })), stages: TAL.stages, cands: rows.map(talRow), mail: !!(await getMeta(env, "nl_key")), ai: !!s.aiKey });
+  }
+  if (p === "taldev" && m === "DELETE") {   // borrar todas las pruebas internas
+    await DBq.batch([DBq.prepare("DELETE FROM tcvf WHERE id IN (SELECT id FROM tcand WHERE dev = 1)"), DBq.prepare("DELETE FROM tcand WHERE dev = 1")]);
+    return json({ ok: true });
   }
   const tj = /^taljob\/([a-z]{3,20})$/.exec(p);
   if (tj && m === "POST") {
