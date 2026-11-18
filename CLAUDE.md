@@ -795,6 +795,39 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Las imágenes se ponen en grande en la propia pestaña y se guardan con `zoom` + `save_to_disk`.
   - Unas 40 consultas con pausas de 2–4 s, sin bloqueos.
 
+## Briefs de clientes (admin v78, 18/11/2026): el primero, EFAP Miami · Open Day
+
+- **El cliente:** EFAP, la Escola de Futbol Àngel Pedraza de Barcelona (efapedraza.com, @efapedraza).
+  - Abre academia en Miami (efapmiami.com, hecha con Base44; los programas empiezan en enero de 2027).
+  - Quieren un Open Day en enero con 1.000 € de anuncios en los 30 días anteriores (unos 33 € al día) y al menos 100 jugadores.
+  - Nos piden la estructura de la campaña, subirla, llevar su Meta Business, los guiones de los contenidos, una página de inscripción directa y otra de seguimiento (nurturing).
+- **Datos que no cuadran y hay que confirmar con ellos:**
+  - efapmiami.com dice «600+ players» y efapedraza.com «más de 500 jugadores y más de 50 equipos»;
+  - la web pone Hollywood (Florida) y en otras partes Miami;
+  - la web habla de «Trial Day», no de Open Day;
+  - lo de La Masía es de Ángel Pedraza (según la web, el primer jugador de La Masía en llegar al primer equipo del Barça), no de un jugador formado en la escuela.
+- **La página:** `404growth.com/brief/efap-miami/?k=<clave>` (`noindex`), con la marca de EFAP Miami:
+  - fondo negro con degradado granate #5C0017, amarillo #FFD900, Bebas Neue en los títulos e Inter en el texto, y su escudo (`escudo.png`);
+  - 91 preguntas en 10 apartados, la mayoría con opciones para tocar;
+  - «Aún no lo sabemos» en cada pregunta, y en lo que dice su web, «Está bien así / Hay que cambiarlo»;
+  - archivos de hasta 95 MB a R2 (binding `TV`, carpeta `brief/<id>/`) y enlace a una carpeta para lo más pesado;
+  - se guarda sola, campo a campo; un mismo enlace sirve para todo su equipo (`json_patch`, nadie pisa a nadie) y al volver a la pestaña se trae lo que escribieron otros;
+  - el botón «Enviar a 404 Growth» avisa a Chris. También avisa al móvil la primera vez que escriben algo.
+- **Las preguntas están en `tools/brief/efap-miami.json`.** `python3 tools/brief/build.py tools/brief/efap-miami.json <web117> --escudo tools/brief/efap-escudo.png` hace la página. Si cambian, hay que volver a pasar también `patch_v78.py`: el admin lleva las preguntas dentro (`BRIEF_Q`). Para otro cliente: otro JSON en `tools/brief/` y su fila en `BRIEF_SEED` de `brief_server.js`.
+- **Servidor** (`brief_server.js`, entra con `tools/brief/patch_v78.py <worker v77g> [salida]`):
+  - rutas `/l/brief` (GET, POST con `set`, `a:'send'` y `a:'rmfile'`) y `/l/briefup` (PUT del archivo);
+  - tabla `brief` (`data` y `files` en JSON, `started`, `sent`, `seen`);
+  - **la clave no está en el código:** la crea el admin la primera vez (24 caracteres).
+- **Admin › Briefs** (grupo Ventas, `/admin#briefs`, vista `vBrief`):
+  - la tarjeta con su estado (sin empezar, rellenándolo o enviado), «N de 91», quién lo rellena y los botones «Copiar enlace para el cliente» y «Abrir el formulario»;
+  - el detalle por apartados, con lo pendiente marcado, los archivos (solo fotos, PDF y vídeos se abren en el navegador; lo demás se descarga), «Copiar todo en texto», «Ocultar lo que falta» y «Vaciar respuestas» (para después de probarlo uno mismo: la clave no cambia).
+- Pruebas en `tools/brief/test/`:
+  - `t_v78.mjs`: 25 comprobaciones de la API;
+  - `ui78.cjs` con `srv78.mjs`: 20 en el navegador, a 360, 390 y 1440 px y en el admin.
+
+  Las dos necesitan `w78mod.mjs`: una copia del worker con `export { briefPublic, briefApi, BRIEF_Q, DDL };` al final y `pushAll` enganchado a `globalThis.__push`. Haz la copia y el `sed` en un comando y ejecuta `node` en otro: el hook de privacidad rechaza el comando si van juntos.
+- Instalado en el Mac el 18/11/2026: `admin/worker.js` (8a004fd530959213; copia de la v77g en `anterior/worker-v77g-18nov-antes-briefs.js`), la página en `web117-404growth/brief/efap-miami/` y las fuentes en `404growth-subir/fuentes-v78/`. Falta que Chris ejecute `subir.command`.
+
 ## Open Fit: cartel de la nave (13/11/2026)
 
 - Open Fit (gimnasio) va a poner carteles en una nave que era un «Moda Outlet». Medidas sacadas de la foto de Chris:

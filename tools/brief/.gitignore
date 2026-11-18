@@ -1,0 +1,6 @@
+test/web/
+test/w78mod.mjs
+test/shots/
+test/*.png
+test/*.jpg
+test/srv.log

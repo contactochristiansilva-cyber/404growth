@@ -1,0 +1,842 @@
+{
+  "id": "efap-miami",
+  "name": "EFAP Miami · Open Day",
+  "client": "EFAP Miami",
+  "kicker": "Open Day · Miami · enero 2027",
+  "title1": "Brief del",
+  "title2": "Open Day",
+  "intro": "Para preparar la campaña que llene vuestro Open Day necesitamos saberlo todo: cómo será el día, a quién queremos traer, qué podemos contar en los anuncios y qué material tenéis. Con esto escribimos los guiones de los vídeos y de los anuncios estáticos, montamos la página de inscripción y la de seguimiento, y preparamos los mensajes que recibirán las familias hasta el día.",
+  "facts": [
+    "Entre 30 y 40 minutos",
+    "Se guarda solo",
+    "Podéis rellenarlo entre varios"
+  ],
+  "tips": "Si algo aún no lo sabéis, marcad «Aún no lo sabemos» y seguid: lo cerramos juntos en la llamada. No hace falta escribir mucho; frases cortas valen.",
+  "sections": [
+    {
+      "id": "s1",
+      "t": "Vosotros",
+      "why": "Para saber con quién hablamos y quién aprueba cada cosa.",
+      "q": [
+        {
+          "id": "quien",
+          "t": "Tu nombre y tu cargo",
+          "type": "text",
+          "ph": "Nombre · cargo en EFAP",
+          "nopend": true
+        },
+        {
+          "id": "decide",
+          "t": "¿Quién aprueba la campaña, los textos y los vídeos?",
+          "type": "long",
+          "ph": "Nombre, cargo, WhatsApp y email"
+        },
+        {
+          "id": "contacto",
+          "t": "¿Quién será nuestro contacto en el día a día?",
+          "type": "long",
+          "ph": "Nombre, WhatsApp, email y si está en Barcelona o en Miami"
+        },
+        {
+          "id": "equipo_miami",
+          "t": "¿Quién del equipo estará en Miami el día del Open Day?",
+          "type": "long",
+          "h": "Director técnico, entrenadores que vienen de Barcelona, entrenadores de allí, coordinadores…"
+        },
+        {
+          "id": "entidad",
+          "t": "¿Con qué sociedad vais a operar en Estados Unidos?",
+          "type": "text",
+          "h": "El nombre legal (LLC, Inc.…). Sale en la web, en la política de privacidad y en la cuenta de anuncios."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "t": "El día: fecha, sitio y plazas",
+      "why": "Es lo primero que mira una familia: cuándo, dónde y si su hijo puede ir.",
+      "q": [
+        {
+          "id": "nombre_evento",
+          "t": "¿Cómo llamamos al evento en los anuncios?",
+          "type": "one",
+          "o": [
+            "Open Day",
+            "Trial Day",
+            "Free Tryout"
+          ],
+          "other": true,
+          "h": "En la web se habla de «Trial Day». Si tiene un nombre propio, ponedlo en «Otro»."
+        },
+        {
+          "id": "fecha",
+          "t": "Fecha del Open Day",
+          "type": "date"
+        },
+        {
+          "id": "fechas_alt",
+          "t": "Si aún no está cerrada: fechas posibles",
+          "type": "text",
+          "ph": "Sábado 9 o sábado 16 de enero"
+        },
+        {
+          "id": "horario",
+          "t": "Horario: llegada, inicio y fin",
+          "type": "text",
+          "ph": "Llegada 8:30 · empieza 9:00 · termina 13:00"
+        },
+        {
+          "id": "turnos",
+          "t": "¿Vienen todos a la vez o por turnos?",
+          "type": "one",
+          "o": [
+            "Todos a la vez",
+            "Por turnos según la edad",
+            "Mañana y tarde"
+          ],
+          "other": true
+        },
+        {
+          "id": "lugar",
+          "t": "El campo: nombre, dirección exacta y ciudad",
+          "type": "long",
+          "h": "En vuestra web pone Hollywood (Florida) y en otras partes Miami. Para los anuncios necesitamos el sitio exacto."
+        },
+        {
+          "id": "lugar_ok",
+          "t": "¿El campo está reservado?",
+          "type": "one",
+          "o": [
+            "Sí, confirmado",
+            "Pendiente de confirmar",
+            "Aún no lo tenemos"
+          ]
+        },
+        {
+          "id": "instalacion",
+          "t": "¿Qué hay en la instalación?",
+          "type": "many",
+          "o": [
+            "Césped natural",
+            "Césped artificial",
+            "Varios campos",
+            "Vestuarios",
+            "Baños",
+            "Sombra o zona cubierta",
+            "Gradas o zona para padres",
+            "Aparcamiento gratis",
+            "Aparcamiento de pago",
+            "Agua",
+            "Zona de comida"
+          ],
+          "other": true
+        },
+        {
+          "id": "plan_b",
+          "t": "Plan B si llueve o hace demasiado calor",
+          "type": "long"
+        },
+        {
+          "id": "aforo",
+          "t": "¿Cuántos jugadores podéis recibir como máximo?",
+          "type": "number",
+          "ph": "150"
+        },
+        {
+          "id": "objetivo",
+          "t": "¿Cuántos jugadores queréis que vengan como mínimo?",
+          "type": "number",
+          "ph": "100",
+          "h": "Nos dijisteis al menos 100. Si el objetivo es otro, ponedlo aquí."
+        },
+        {
+          "id": "edades",
+          "t": "¿Qué edades pueden venir?",
+          "type": "many",
+          "o": [
+            "4 a 7 años",
+            "8 a 12 (Academy)",
+            "13 a 15 (Performance)",
+            "16 a 19 (Elite Pathway)"
+          ],
+          "h": "En la web los programas empiezan a los 8 años."
+        },
+        {
+          "id": "chicas",
+          "t": "¿Pueden venir chicas?",
+          "type": "one",
+          "o": [
+            "Sí, en los mismos grupos",
+            "Sí, en grupos aparte",
+            "En este Open Day, no"
+          ]
+        },
+        {
+          "id": "nivel",
+          "t": "¿Qué nivel buscáis?",
+          "type": "one",
+          "o": [
+            "Cualquiera, aunque no haya jugado nunca",
+            "Que ya juegue en un equipo",
+            "Nivel alto: es una prueba de selección"
+          ]
+        },
+        {
+          "id": "precio",
+          "t": "¿Cuánto cuesta venir?",
+          "type": "one",
+          "o": [
+            "Gratis",
+            "Gratis, con una reserva que se devuelve al venir",
+            "De pago"
+          ],
+          "other": true,
+          "h": "La web habla de un «free trial day». Una pequeña reserva que se devuelve suele bajar mucho las plazas vacías."
+        },
+        {
+          "id": "lleno",
+          "t": "Si se llenan las plazas…",
+          "type": "one",
+          "o": [
+            "Lista de espera",
+            "Abrimos otro turno u otra fecha",
+            "Cerramos las inscripciones"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "t": "Cómo será el día",
+      "why": "Con esto escribimos los guiones y la página que cuenta, paso a paso, lo que va a vivir cada familia.",
+      "q": [
+        {
+          "id": "agenda",
+          "t": "El programa del día, de principio a fin",
+          "type": "long",
+          "rows": 6,
+          "ph": "9:00 llegada y camiseta · 9:30 calentamiento · 10:00 ejercicios por grupos · 11:30 partidos · 12:30 charla para padres · 13:00 cierre"
+        },
+        {
+          "id": "entrenadores",
+          "t": "¿Quién entrena ese día? Nombre, cargo y titulación de cada uno",
+          "type": "long",
+          "h": "Sobre todo el director técnico UEFA Pro que sale en la web: nombre y trayectoria."
+        },
+        {
+          "id": "desde_bcn",
+          "t": "¿Vienen entrenadores desde Barcelona?",
+          "type": "one",
+          "o": [
+            "Sí",
+            "No, son entrenadores de Miami",
+            "Algunos de cada"
+          ]
+        },
+        {
+          "id": "ratio",
+          "t": "¿Cuántos jugadores habrá por entrenador?",
+          "type": "text",
+          "ph": "1 entrenador por cada 10 jugadores"
+        },
+        {
+          "id": "invitados",
+          "t": "¿Habrá algún invitado?",
+          "type": "long",
+          "h": "Exjugadores, jugadores de LaLiga formados en EFAP, familia de Ángel Pedraza, clubes, ojeadores… Solo lo que esté confirmado. Si alguien puede salir en los anuncios, decidnos quién."
+        },
+        {
+          "id": "se_lleva",
+          "t": "¿Qué se lleva cada jugador?",
+          "type": "many",
+          "o": [
+            "Camiseta o equipación",
+            "Informe de evaluación personal",
+            "Diploma o certificado",
+            "Fotos o vídeo suyo",
+            "Regalo de la escuela",
+            "Plaza en un sorteo",
+            "Beca o descuento para la academia"
+          ],
+          "other": true
+        },
+        {
+          "id": "evaluacion",
+          "t": "Si hay evaluación: ¿qué miráis y cómo se la dais a la familia?",
+          "type": "long",
+          "h": "En la web sale un «Player Development Score». ¿Lo daréis el mismo día o después?"
+        },
+        {
+          "id": "premio",
+          "t": "¿Hay algún premio, sorteo o beca? ¿Cuál y con qué condiciones?",
+          "type": "long",
+          "ph": "Por ejemplo, una plaza en el campus de Barcelona para el mejor de cada edad"
+        },
+        {
+          "id": "padres",
+          "t": "¿Qué hacen los padres mientras juegan sus hijos?",
+          "type": "long",
+          "h": "¿Habrá una presentación de la academia y del programa? ¿Quién la da y cuánto dura?"
+        },
+        {
+          "id": "extras",
+          "t": "¿Qué más habrá?",
+          "type": "many",
+          "o": [
+            "Fotógrafo",
+            "Vídeo o dron",
+            "Música",
+            "Comida o bebida",
+            "Actividades para hermanos",
+            "Venta de equipaciones",
+            "Patrocinadores"
+          ],
+          "other": true
+        },
+        {
+          "id": "traer",
+          "t": "¿Qué tienen que traer los jugadores?",
+          "type": "long",
+          "ph": "Botas, espinilleras, agua, gorra, crema solar…"
+        },
+        {
+          "id": "firmar",
+          "t": "¿Qué tienen que firmar los padres?",
+          "type": "many",
+          "o": [
+            "Exención de responsabilidad (waiver)",
+            "Permiso para fotos y vídeo",
+            "Información médica y alergias",
+            "Nada"
+          ],
+          "h": "En Estados Unidos es habitual el waiver. Si ya lo tenéis, subidlo en el apartado de material."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "t": "Después del Open Day: la academia",
+      "why": "El Open Day es la puerta. Lo que queremos de verdad son alumnos en la academia, y los mensajes tienen que llevar hasta ahí.",
+      "q": [
+        {
+          "id": "inicio",
+          "t": "¿Cuándo empiezan los entrenamientos de la academia?",
+          "type": "text",
+          "h": "La web dice enero de 2027. ¿Hay fecha exacta?"
+        },
+        {
+          "id": "dias",
+          "t": "Días, horas y lugar de los entrenamientos",
+          "type": "long"
+        },
+        {
+          "id": "precio_acad",
+          "t": "Precio de la academia",
+          "type": "long",
+          "h": "Matrícula y cuota (al mes o al año), por programa. Es para nosotros: decidimos juntos si sale en los anuncios."
+        },
+        {
+          "id": "oferta",
+          "t": "¿Habrá una oferta para quien venga al Open Day?",
+          "type": "long",
+          "ph": "Matrícula gratis si se apuntan esa semana, descuento en la primera cuota…"
+        },
+        {
+          "id": "plazas_acad",
+          "t": "¿Cuántas plazas tenéis en la academia?",
+          "type": "text",
+          "ph": "Por programa o por grupo"
+        },
+        {
+          "id": "seleccion",
+          "t": "¿Entra todo el que quiera o hay selección?",
+          "type": "one",
+          "o": [
+            "Entra todo el que quiera",
+            "Se selecciona en el Open Day",
+            "Depende del programa"
+          ]
+        },
+        {
+          "id": "becas",
+          "t": "¿Hay becas o ayudas? ¿Cómo se piden?",
+          "type": "long"
+        },
+        {
+          "id": "inscripcion",
+          "t": "¿Cómo se apuntan a la academia?",
+          "type": "text",
+          "ph": "Plataforma, formulario, en persona…"
+        },
+        {
+          "id": "altas",
+          "t": "¿Cuántos alumnos queréis apuntar después del Open Day?",
+          "type": "number"
+        },
+        {
+          "id": "valor",
+          "t": "¿Cuánto paga de media un alumno en su primer año?",
+          "type": "text",
+          "h": "Nos sirve para saber cuánto podemos invertir por cada familia que se inscribe."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "t": "A quién queremos llegar",
+      "why": "Con 1.000 € no se puede hablar a todo Miami: hay que acertar con la zona, el idioma y la familia.",
+      "q": [
+        {
+          "id": "zonas",
+          "t": "¿De qué zonas queréis traer familias?",
+          "type": "many",
+          "o": [
+            "Hollywood",
+            "Fort Lauderdale",
+            "Pembroke Pines y Miramar",
+            "Aventura y North Miami",
+            "Miami ciudad",
+            "Doral",
+            "Kendall",
+            "Coral Gables",
+            "Weston"
+          ],
+          "other": true
+        },
+        {
+          "id": "distancia",
+          "t": "¿Cuánto creéis que están dispuestas a conducir?",
+          "type": "one",
+          "o": [
+            "Hasta 20 minutos",
+            "Hasta 30 minutos",
+            "Hasta 45 minutos",
+            "Una hora o más"
+          ]
+        },
+        {
+          "id": "idioma",
+          "t": "¿En qué idioma hacemos los anuncios?",
+          "type": "one",
+          "o": [
+            "Inglés",
+            "Español",
+            "Los dos, cada uno a su público"
+          ]
+        },
+        {
+          "id": "familias",
+          "t": "¿Qué familias creéis que encajan mejor?",
+          "type": "many",
+          "o": [
+            "Latinoamericanas",
+            "Españolas",
+            "Otras europeas",
+            "Estadounidenses",
+            "Hispanohablantes en general"
+          ],
+          "other": true
+        },
+        {
+          "id": "familia_ideal",
+          "t": "Describid a la familia ideal: qué quiere para su hijo y qué le preocupa",
+          "type": "long",
+          "rows": 4
+        },
+        {
+          "id": "competencia",
+          "t": "¿Qué otras academias hay en la zona y en qué sois distintos?",
+          "type": "long",
+          "h": "Por ejemplo Barça Academy Pro Miami, la academia del Inter Miami o los clubes de allí."
+        },
+        {
+          "id": "interesados",
+          "t": "¿Cuántas familias interesadas tenéis ya?",
+          "type": "text",
+          "h": "La lista de espera de la web, contactos, familias que os han escrito…"
+        },
+        {
+          "id": "contactos",
+          "t": "¿Tenéis contactos en Miami que nos ayuden a llegar?",
+          "type": "many",
+          "o": [
+            "Colegios",
+            "Clubes de allí",
+            "Asociaciones de padres",
+            "Comunidad española o latina",
+            "Creadores de contenido de allí",
+            "Medios"
+          ],
+          "other": true
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "t": "Lo que podemos decir en los anuncios",
+      "why": "Meta revisa los anuncios y las familias también: solo contamos lo que sea verdad y se pueda demostrar.",
+      "q": [
+        {
+          "id": "c_2009",
+          "t": "Fundación",
+          "type": "confirm",
+          "web": "Nacida en Barcelona en 2009, en memoria de Ángel Pedraza."
+        },
+        {
+          "id": "c_jug",
+          "t": "Número de jugadores",
+          "type": "confirm",
+          "web": "Más de 600 jugadores formados.",
+          "h": "En efapedraza.com pone «más de 500 jugadores y más de 50 equipos». ¿Qué cifra usamos?"
+        },
+        {
+          "id": "c_pedraza",
+          "t": "Ángel Pedraza",
+          "type": "confirm",
+          "web": "Ángel Pedraza, el primer jugador de La Masía en llegar al primer equipo del FC Barcelona.",
+          "h": "¿Podemos contar su historia en los vídeos? ¿Hay alguien de su familia que quiera participar?"
+        },
+        {
+          "id": "c_liga",
+          "t": "Jugadores formados en EFAP que juegan en LaLiga u otros clubes",
+          "type": "long",
+          "h": "Nombre, club y si podemos nombrarlos o enseñar su foto."
+        },
+        {
+          "id": "c_uefa",
+          "t": "El director técnico UEFA Pro: nombre y trayectoria",
+          "type": "long"
+        },
+        {
+          "id": "c_clubes",
+          "t": "Clubes europeos con los que tenéis relación",
+          "type": "long",
+          "h": "La web nombra LaLiga, Primeira Liga y Bundesliga. Decidnos qué clubes y qué tipo de acuerdo (firmado, informal…). Si no se pueden nombrar, lo contaremos de forma general."
+        },
+        {
+          "id": "c_barca",
+          "t": "¿Tenéis algún acuerdo oficial con el FC Barcelona?",
+          "type": "one",
+          "o": [
+            "Sí, oficial",
+            "No"
+          ],
+          "h": "Si no lo hay, no usaremos su escudo ni nada que lo dé a entender. La historia de Ángel Pedraza y La Masía sí la podemos contar."
+        },
+        {
+          "id": "otros_paises",
+          "t": "¿Tenéis escuelas en otros países?",
+          "type": "long",
+          "h": "Hemos visto EFAP en Chile. ¿Cómo os ha ido? Sirve como prueba de que el método funciona fuera de España."
+        },
+        {
+          "id": "testimonios",
+          "t": "Familias o jugadores que puedan dar su testimonio",
+          "type": "long",
+          "h": "De Barcelona, de Chile o de Miami. Nombre y si podrían grabar un vídeo corto."
+        },
+        {
+          "id": "prensa",
+          "t": "Noticias, premios o menciones en prensa",
+          "type": "long"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "t": "Fotos, vídeos y quién sale",
+      "why": "Para saber qué podemos usar ya y qué hay que grabar antes de la campaña.",
+      "q": [
+        {
+          "id": "material",
+          "t": "¿Qué material tenéis ya?",
+          "type": "many",
+          "o": [
+            "Fotos de entrenamientos",
+            "Vídeos de entrenamientos",
+            "Partidos",
+            "Imágenes de dron",
+            "El director o los entrenadores hablando a cámara",
+            "Testimonios de familias",
+            "El vídeo de la web en buena calidad",
+            "Logo en vector (SVG, AI o PDF)",
+            "Manual de marca",
+            "Fotos del campo de Miami"
+          ]
+        },
+        {
+          "id": "permisos",
+          "t": "Las fotos y vídeos con niños: ¿tenéis permiso de los padres para usarlos en anuncios?",
+          "type": "one",
+          "o": [
+            "Sí, para todo",
+            "Solo para una parte",
+            "No",
+            "No lo sabemos"
+          ],
+          "nopend": true
+        },
+        {
+          "id": "camara",
+          "t": "¿Quién puede salir hablando a cámara? ¿En qué idioma?",
+          "type": "long"
+        },
+        {
+          "id": "grabar",
+          "t": "¿Dónde se puede grabar antes de la campaña?",
+          "type": "one",
+          "o": [
+            "En Barcelona",
+            "En Miami",
+            "En los dos",
+            "Solo tenemos lo ya grabado"
+          ]
+        },
+        {
+          "id": "graba",
+          "t": "¿Quién graba?",
+          "type": "one",
+          "o": [
+            "Vosotros con el móvil y nosotros os guiamos",
+            "Tenéis a alguien que graba",
+            "Necesitáis que busquemos a alguien en Miami"
+          ]
+        },
+        {
+          "id": "tono",
+          "t": "¿Cómo queréis sonar?",
+          "type": "long",
+          "h": "Palabras que os representan y palabras que no queréis ver en un anuncio."
+        },
+        {
+          "id": "archivos",
+          "t": "Subid aquí lo que tengáis",
+          "type": "files",
+          "h": "Logo, fotos, vídeos cortos, el waiver… Hasta 95 MB por archivo. Lo más pesado, mejor por enlace en la pregunta siguiente."
+        },
+        {
+          "id": "carpeta",
+          "t": "Enlace a una carpeta con más material",
+          "type": "url",
+          "ph": "Google Drive, Dropbox, WeTransfer…"
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "t": "Inscripción y mensajes hasta el día",
+      "why": "Entre la inscripción y el Open Day hay semanas: los mensajes son los que hacen que de verdad vengan.",
+      "q": [
+        {
+          "id": "datos",
+          "t": "¿Qué datos pedimos al inscribirse?",
+          "type": "many",
+          "o": [
+            "Nombre del padre, la madre o el tutor",
+            "Email",
+            "Teléfono o WhatsApp",
+            "Nombre del jugador",
+            "Fecha de nacimiento",
+            "Club o colegio actual",
+            "Posición",
+            "Nivel",
+            "Talla de camiseta",
+            "Alergias o información médica",
+            "Cómo nos ha conocido"
+          ],
+          "h": "Se inscriben los padres: en Estados Unidos no se pueden pedir datos por internet a menores de 13 años sin el permiso de sus padres."
+        },
+        {
+          "id": "canales",
+          "t": "¿Por dónde podemos escribir a las familias?",
+          "type": "many",
+          "o": [
+            "Email",
+            "WhatsApp",
+            "SMS",
+            "Llamada"
+          ]
+        },
+        {
+          "id": "whatsapp",
+          "t": "Número de WhatsApp de EFAP Miami (si lo hay)",
+          "type": "text",
+          "ph": "+1 …"
+        },
+        {
+          "id": "herramienta",
+          "t": "¿Qué herramienta de email o CRM usáis?",
+          "type": "text",
+          "ph": "Mailchimp, Brevo, HubSpot, Playoff… o ninguna"
+        },
+        {
+          "id": "responde",
+          "t": "¿Quién contesta las dudas de las familias, en qué horario y en qué idiomas?",
+          "type": "long"
+        },
+        {
+          "id": "confirmar",
+          "t": "¿Pedimos a las familias que confirmen unos días antes?",
+          "type": "one",
+          "o": [
+            "Sí",
+            "No"
+          ],
+          "h": "Así sabremos cuántos vienen de verdad y podremos dar sus plazas a la lista de espera."
+        },
+        {
+          "id": "llegada",
+          "t": "¿Cómo será la llegada?",
+          "type": "one",
+          "o": [
+            "Entrada con código QR",
+            "Lista en papel"
+          ],
+          "other": true
+        },
+        {
+          "id": "faq",
+          "t": "Las preguntas que más os hacen las familias, con vuestra respuesta",
+          "type": "long",
+          "rows": 6,
+          "h": "En la web hay 9 preguntas frecuentes (horarios, idioma, si pueden seguir en su equipo…). Con vuestras respuestas preparamos la página de seguimiento y los mensajes."
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "t": "Meta, la web y el presupuesto",
+      "why": "Para montar la campaña necesitamos acceso a vuestras cuentas y saber dónde irán las páginas nuevas.",
+      "q": [
+        {
+          "id": "facebook",
+          "t": "Página de Facebook de EFAP Miami",
+          "type": "url",
+          "ph": "facebook.com/…"
+        },
+        {
+          "id": "instagram",
+          "t": "Instagram de EFAP Miami",
+          "type": "text",
+          "ph": "@…"
+        },
+        {
+          "id": "business",
+          "t": "¿Tenéis Business Manager (Meta Business Suite)?",
+          "type": "one",
+          "o": [
+            "Sí, el de EFAP Miami",
+            "Usamos el de EFAP Barcelona",
+            "No",
+            "No lo sabemos"
+          ]
+        },
+        {
+          "id": "cuenta_ads",
+          "t": "¿Tenéis cuenta publicitaria con una tarjeta?",
+          "type": "one",
+          "o": [
+            "Sí",
+            "No",
+            "No lo sabemos"
+          ],
+          "h": "La publicidad la pagáis vosotros a Meta con vuestra tarjeta; nosotros la llevamos con acceso de socio."
+        },
+        {
+          "id": "ads_antes",
+          "t": "¿Habéis hecho anuncios antes?",
+          "type": "one",
+          "o": [
+            "Sí, en Barcelona",
+            "Sí, en Miami",
+            "Nunca"
+          ]
+        },
+        {
+          "id": "moneda",
+          "t": "¿En qué moneda pagáis la publicidad?",
+          "type": "one",
+          "o": [
+            "Dólares (USD)",
+            "Euros (EUR)"
+          ]
+        },
+        {
+          "id": "inversion",
+          "t": "Inversión en anuncios",
+          "type": "confirm",
+          "web": "1.000 € durante los 30 días anteriores al Open Day, unos 33 € al día.",
+          "lbl": "Lo que nos contasteis"
+        },
+        {
+          "id": "web_quien",
+          "t": "¿Quién gestiona efapmiami.com y quién puede hacer cambios?",
+          "type": "text",
+          "h": "Hay que poner el píxel de Meta y las dos páginas nuevas: la de inscripción y la de seguimiento."
+        },
+        {
+          "id": "donde_paginas",
+          "t": "¿Dónde ponemos las páginas nuevas?",
+          "type": "one",
+          "o": [
+            "Dentro de efapmiami.com (efapmiami.com/openday)",
+            "En un subdominio (openday.efapmiami.com)",
+            "Donde nos recomendéis"
+          ]
+        },
+        {
+          "id": "privacidad",
+          "t": "¿La política de privacidad de la web está revisada para Estados Unidos?",
+          "type": "one",
+          "o": [
+            "Sí",
+            "No",
+            "No lo sabemos"
+          ]
+        },
+        {
+          "id": "partida",
+          "t": "¿Tenéis pensada una partida para nuestro trabajo, aparte de los anuncios?",
+          "type": "one",
+          "o": [
+            "Menos de 1.000 €",
+            "Entre 1.000 y 2.000 €",
+            "Entre 2.000 y 4.000 €",
+            "Más de 4.000 €",
+            "Prefiero hablarlo en una llamada"
+          ],
+          "h": "Estrategia, guiones, anuncios, las dos páginas, los mensajes y la gestión de la campaña. Es opcional; nos ayuda a ajustar la propuesta."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "t": "Fechas y lo que falte",
+      "why": "Para que la campaña esté en marcha 30 días antes, el material y los textos tienen que estar aprobados unas dos semanas antes.",
+      "q": [
+        {
+          "id": "no_disponible",
+          "t": "¿Hay fechas en las que no estaréis disponibles?",
+          "type": "long",
+          "h": "La campaña cae en Navidad: decidnos vacaciones, viajes o días sin respuesta."
+        },
+        {
+          "id": "aprobar",
+          "t": "¿Cuánto tardáis normalmente en aprobar un texto o un vídeo?",
+          "type": "one",
+          "o": [
+            "El mismo día",
+            "1 o 2 días",
+            "Una semana o más"
+          ]
+        },
+        {
+          "id": "mas",
+          "t": "¿Algo más que debamos saber?",
+          "type": "long",
+          "rows": 4
+        }
+      ]
+    }
+  ]
+}
