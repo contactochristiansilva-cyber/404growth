@@ -767,12 +767,19 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 
 ## Anuncios estáticos para Meta (18/11/2026)
 
-- Lienzo de Claude Design «404 Growth · Anuncios estáticos»: arriba, un tablero con 16 estáticos de referencia activos el 18/11/2026; debajo, 4 anuncios de 404 Growth a 1080×1350, todos con la cinta lima «ABIERTA 24 H ✦ 404 ✦» de los carruseles y SF Pro:
-  1. «La pregunta»: «¿Tu tienda sigue cerrando a las 20:00?», con un móvil de la tienda de ejemplo y tres pedidos de noche.
-  2. «La etiqueta»: «Cierras la persiana. Tu tienda online sigue abierta.», con una etiqueta de envío de un pedido de las 23:47.
-  3. «Antes y después»: «De “¿precio?” por mensaje a pedido pagado.».
-  4. «El chat»: «No necesitas saber de webs.», con una conversación con Christian (su foto).
-- Nada de precio. Las fotos son de la tienda de ejemplo Solenne, y los pedidos dicen «de ejemplo».
+- Lienzo de Claude Design «404 Growth · Anuncios estáticos»: arriba, un tablero con 16 estáticos de referencia activos el 18/11/2026; debajo, 4 anuncios de 404 Growth a 1080×1350.
+- La primera versión (cinta lima, fondos crema, cajas de texto, móvil y chat dibujados en HTML) a Chris le pareció «horrenda»: quiere **mucha más creatividad y estilo en el lettering**.
+- **Versión 2 (la de ahora):** una foto hecha con Apimart (Nano Banana Pro a 2K, 4:5) con el lettering dentro de la escena y, debajo, una franja verde bosque (#0B2B26) de 170 px con una frase en SF Pro 300, «En 15 días.» en 800 lima (#C8F060), «404 Growth» y «Llamada de 30 min»:
+  1. «La persiana»: persiana pintada con «LA TIENDA CIERRA. La web, no.» → «Tu tienda online, abierta 24 h.».
+  2. «Las cajas»: cajas con ciudades a rotulador y «DE TU BARRIO A TODA ESPAÑA» → «Tu tienda, en toda España.».
+  3. «El neón»: neón «Abierta 24 HORAS» en un escaparate cerrado → «Tu escaparate ya no cierra.».
+  4. «La pizarra»: pizarra de tiza «NOVEDAD ¡Ya vendemos online! abierta 24 h, envíos a toda España» → «Que tu pizarra diga esto.».
+- Nada de precio.
+- **Apimart, el 18/11/2026:** quedaban unos 40 $ y cada imagen a 2K costó unos 0,17 $ (8 imágenes, 1,36 $), no los 0,02 $ de antes.
+  - La clave se saca de `~/Downloads/apimart-key.txt/api apimart.docx` a un `.ak` del scratchpad, sin imprimirla.
+  - `api.apimart.ai` responde desde el contenedor.
+  - Nano Banana Pro escribió bien todo el texto en español (tildes, Ñ, ¡).
+  - Las 4 alternativas que no se usaron (otra persiana, cajas vistas desde arriba, otro neón y otra pizarra) están en el scratchpad de la sesión.
 - **Lo que funciona en el sector** (señales: días activo y número de versiones; Meta no da el gasto de los anuncios comerciales):
   - pregunta-espejo: Tiendanube, 165 días; PixelMex, «¿Todavía vendes solo por WhatsApp?»;
   - interfaz dentro de una foto real: Shopify (5 versiones), Hostinger (77 días y más de 10 anuncios), Jumpseller;
