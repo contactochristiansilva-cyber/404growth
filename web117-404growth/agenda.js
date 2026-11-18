@@ -21,7 +21,7 @@
     '.ag-eb:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--a);box-shadow:0 0 0 4px color-mix(in srgb,var(--a) 18%,transparent)}' +
     '.ag h2{font-size:clamp(40px,5.4vw,68px);letter-spacing:-.05em;line-height:.98;margin:16px 0 16px;font-weight:600}' +
     '.ag h2 span{color:#9C9490}' +
-    '.ag-sub{font-size:19px;line-height:1.5;color:#5F5855;max-width:640px;margin:0 0 44px}' +
+    '.ag .ag-sub{font-size:19px;line-height:1.5;color:#5F5855;max-width:640px;margin:0 0 44px}' +
     '.ag-card{display:grid;grid-template-columns:290px 1fr;background:#fff;border-radius:28px;border:1px solid #ECE5DF;box-shadow:0 30px 70px -40px rgba(20,17,16,.35);overflow:hidden;transition:box-shadow .4s}' +
     '.ag-card.fl{box-shadow:0 0 0 4px color-mix(in srgb,var(--a) 30%,transparent),0 30px 70px -40px rgba(20,17,16,.35)}' +
     '.ag-me{padding:32px 28px;background:#FBF9F7;border-right:1px solid #F0EAE5;display:flex;flex-direction:column;gap:22px}' +
@@ -29,7 +29,7 @@
     '.ag-who small{display:block;font-size:12px;color:#9C9490}.ag-who b{display:block;font-size:17px;font-weight:600;letter-spacing:-.02em}.ag-who span{display:block;font-size:13.5px;color:#6E6764}' +
     '.ag-li{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:14.5px;color:#3B3532}' +
     '.ag-li li{display:flex;gap:10px;align-items:center}.ag-li svg{width:18px;height:18px;flex:none;color:var(--a)}' +
-    '.ag-sel{margin:0;padding:16px;border-radius:16px;background:#fff;border:1px solid #ECE5DF;font-size:13.5px;color:#6E6764;line-height:1.45}' +
+    '.ag .ag-sel{margin:0;padding:16px;border-radius:16px;background:#fff;border:1px solid #ECE5DF;font-size:13.5px;color:#6E6764;line-height:1.45}' +
     '.ag-sel b{display:block;font-size:15.5px;color:#141110;font-weight:600;margin-bottom:3px}' +
     '.ag-main{padding:32px 36px 36px;min-height:430px;position:relative}' +
     '.ag-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0 0 14px}.ag-h b{font-size:17px;font-weight:600}.ag-h span{font-size:13px;color:#9C9490}' +
@@ -57,22 +57,32 @@
     '.ag-go{appearance:none;border:0;cursor:pointer;font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:12px;width:100%;background:var(--a);color:#fff;font-weight:600;font-size:17px;padding:17px 28px;border-radius:99px;transition:background .2s;margin-top:6px}' +
     '.ag-go:hover{background:var(--ad)}.ag-go[disabled]{opacity:.7;cursor:default}' +
     '.ag-trust{list-style:none;margin:4px 0 16px;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:#6E6764}.ag-trust li:before{content:"✓";color:var(--a);font-weight:700;margin-right:8px}' +
-    '.ag-err{margin:0 0 12px;color:#B23E27;font-size:14.5px}.ag-err a{color:inherit}' +
-    '.ag-legal{margin:12px 0 0;font-size:12.5px;color:#9C9490;text-align:center}.ag-legal a{color:inherit}' +
-    '.ag-alt{margin:22px 0 0;font-size:15px;color:#6E6764}.ag-alt a{color:#141110;font-weight:600}' +
+    '.ag .ag-err{margin:0 0 12px;color:#B23E27;font-size:14.5px}.ag-err a{color:inherit}' +
+    '.ag .ag-legal{margin:12px 0 0;font-size:12.5px;color:#9C9490;text-align:center}.ag-legal a{color:inherit}' +
+    '.ag .ag-alt{margin:22px 0 0;font-size:15px;color:#6E6764}.ag-alt a{color:#141110;font-weight:600}' +
     '.ag-ok{text-align:center;padding:60px 10px}.ag-ok b{display:block;font-size:26px;letter-spacing:-.03em;margin-bottom:6px}.ag-ok span{color:#6E6764}' +
-    '.ag-test{display:inline-flex;align-items:center;gap:8px;margin:0 0 18px;padding:7px 12px;border-radius:99px;background:#FFF4D6;color:#7A5300;font-size:13px;font-weight:600}' +
+    '.ag .ag-test{display:inline-flex;align-items:center;gap:8px;margin:0 0 18px;padding:7px 12px;border-radius:99px;background:#FFF4D6;color:#7A5300;font-size:13px;font-weight:600}' +
     '.ag [hidden]{display:none!important}' +
     '.wa-fab.ag-off{opacity:0!important;pointer-events:none!important;transform:translateY(16px)!important;transition:opacity .25s,transform .25s!important}' +
-    '@media (max-width:860px){.ag{padding:76px 0 84px}.ag-w{padding:0 18px}.ag-sub{font-size:17px;margin-bottom:28px}' +
+    /* dentro de «01 La tienda», encima de la página de producto (patch.py le pone ag-in): sin fondo propio y al ancho de la tienda */
+    '.ag.ag-in{background:none;padding:120px 0 0}.ag-in .ag-w{max-width:none;padding:0}' +
+    /* la tienda de ejemplo ya no coge la rueda (para que la página no se pare): se abre entera en otra pestaña */
+    '.bar .ag-open{margin-left:auto;flex:none;align-self:center;display:inline-flex;align-items:center;gap:6px;font:600 12px/1 var(--f,-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif);letter-spacing:0;color:#141110;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:99px;padding:6px 11px;text-decoration:none;white-space:nowrap;transition:background .18s}' +
+    '.bar .ag-open:hover{background:#F4EFEB}' +
+    '@media (max-width:860px){.ag{padding:76px 0 84px}.ag-w{padding:0 18px}.ag.ag-in{padding:64px 0 0}.ag-in .ag-w{padding:0}.bar .ag-open{font-size:11px;padding:5px 10px}.bar.ag-hb span{display:none}.ag .ag-sub{font-size:17px;margin-bottom:28px}' +
     '.ag-card{grid-template-columns:1fr;border-radius:24px}.ag-me{border-right:0;border-bottom:1px solid #F0EAE5;padding:20px 20px 18px;gap:14px}' +
     '.ag-who{gap:12px}.ag-who img{width:46px;height:46px}.ag-who small{display:none}.ag-who b{font-size:16px}.ag-who span{font-size:13px}' +
     '.ag-li{flex-direction:row;flex-wrap:wrap;gap:6px 14px;font-size:13px}.ag-li svg{width:16px;height:16px}.ag-card.s2 .ag-li{display:none}' +
-    '.ag-sel{padding:11px 14px;border-radius:14px;font-size:12.5px}.ag-sel b{font-size:14.5px;margin-bottom:1px}' +
+    '.ag .ag-sel{padding:11px 14px;border-radius:14px;font-size:12.5px}.ag-sel b{font-size:14.5px;margin-bottom:1px}' +
     '.ag-main{padding:22px 18px 24px;min-height:0}.ag-days{gap:6px}.ag-day{border-radius:14px;padding:10px 2px 9px}.ag-day b{font-size:21px}.ag-day i{font-size:10px}' +
     '.ag-times{grid-template-columns:repeat(3,1fr);gap:8px}.ag-ch{grid-template-columns:1fr}.ag-ch button{padding:15px 16px}}' +
     '@media (prefers-reduced-motion:reduce){.ag *{transition:none!important}}';
   var st = d.createElement('style'); st.textContent = css; d.head.appendChild(st);
+
+  /* la tienda grande de la propuesta: como el iframe ya no coge la rueda ni el dedo, en su barra va «Abrir la tienda ↗» */
+  (function () { var f = d.querySelector('iframe[data-full][data-src*="--tienda"]'), w = f && f.closest('.bw'), bar = w && w.querySelector('.bar');
+    if (!bar || bar.querySelector('.ag-open')) return; var a = d.createElement('a'); a.className = 'ag-open'; a.href = f.getAttribute('data-src').split('?')[0];
+    a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Abrir la tienda ↗'; bar.appendChild(a); bar.classList.add('ag-hb'); })();   /* en el móvil no cabe con la dirección: se quita la dirección */
 
   var I = { cal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M3 9.5h18M8 3v3M16 3v3"/></svg>',
     vid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="3"/><path d="M15.5 10.5 21 7.5v9l-5.5-3"/></svg>',

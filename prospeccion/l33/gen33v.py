@@ -57,7 +57,8 @@ G.NICHE.update(NV)
 # los marcos de la página con la tienda nueva dentro
 FRAME_CSS = ('<style id="v33i">.scaler>iframe{position:absolute;left:0;top:0;width:1280px;border:0;display:block;transform-origin:0 0;background:#fff}'
              '.ph .pin{position:relative}.ph .pin iframe{width:375px;height:860px;border:0;display:block;background:#fff}'
-             '.shopsec .bw .scaler{min-height:300px}</style>')
+             '.shopsec .bw .scaler{min-height:300px}'
+             'iframe[data-src*="--tienda"]{pointer-events:none}</style>')   # la rueda y el dedo mueven la propuesta, nunca la tienda de dentro
 FRAME_JS = ("<script>(function(){var F=[].slice.call(document.querySelectorAll('iframe[data-src]'));"
             "function L(f){if(!f.src)f.src=f.dataset.src}"
             "if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting)L(x.target);"
