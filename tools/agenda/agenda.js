@@ -7,6 +7,9 @@
 (function () {
   var root = document.getElementById('agenda'); if (!root || root.__ag) return; root.__ag = 1;
   var d = document, PROD = /(^|\.)404growth\.com$/.test(location.hostname), API = '/l/', TZ = 'Europe/Madrid', WA = '34610594450';
+  /* prueba interna: los navegadores marcados con ?interno=1 (el mismo aviso que /book y el contador de visitas; ?interno=0 lo quita)
+     hacen todo el recorrido con los huecos reales, pero el servidor no crea nada (dry): ni evento en Google, ni lead, ni CRM, ni aviso */
+  var INT = false; try { var iq = /[?&]interno=([01])/.exec(location.search); if (iq) { if (iq[1] === '1') localStorage.setItem('c404int', '1'); else localStorage.removeItem('c404int'); } INT = !!localStorage.getItem('c404int'); } catch (e) {}
   var SLUG = root.getAttribute('data-slug') || '', BIZ = root.getAttribute('data-biz') || '', SEC = root.getAttribute('data-sec') || 'otro';
   function $(id) { return d.getElementById(id); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -58,6 +61,7 @@
     '.ag-legal{margin:12px 0 0;font-size:12.5px;color:#9C9490;text-align:center}.ag-legal a{color:inherit}' +
     '.ag-alt{margin:22px 0 0;font-size:15px;color:#6E6764}.ag-alt a{color:#141110;font-weight:600}' +
     '.ag-ok{text-align:center;padding:60px 10px}.ag-ok b{display:block;font-size:26px;letter-spacing:-.03em;margin-bottom:6px}.ag-ok span{color:#6E6764}' +
+    '.ag-test{display:inline-flex;align-items:center;gap:8px;margin:0 0 18px;padding:7px 12px;border-radius:99px;background:#FFF4D6;color:#7A5300;font-size:13px;font-weight:600}' +
     '.ag [hidden]{display:none!important}' +
     '.wa-fab.ag-off{opacity:0!important;pointer-events:none!important;transform:translateY(16px)!important;transition:opacity .25s,transform .25s!important}' +
     '@media (max-width:860px){.ag{padding:76px 0 84px}.ag-w{padding:0 18px}.ag-sub{font-size:17px;margin-bottom:28px}' +
@@ -78,7 +82,7 @@
     '<div class="ag-card" id="ag-card"><aside class="ag-me"><div class="ag-who"><img src="/christian-hola.jpg" alt="Christian Silva" width="60" height="60" loading="lazy"><div><small>Vas a hablar con</small><b>Christian Silva</b><span>Fundador de 404 Growth</span></div></div>' +
     '<ul class="ag-li"><li>' + I.cal + '30 minutos</li><li>' + I.vid + 'Google Meet</li><li>' + I.tag + 'Precio cerrado, sin compromiso</li></ul>' +
     '<p class="ag-sel" id="ag-sel" hidden></p></aside>' +
-    '<div class="ag-main"><div id="ag-1"><div class="ag-h"><b>Elige un día</b><span>Hora de España</span></div>' +
+    '<div class="ag-main">' + (INT ? '<p class="ag-test">Prueba interna · no se reserva nada ni llega invitación</p>' : '') + '<div id="ag-1"><div class="ag-h"><b>Elige un día</b><span>Hora de España</span></div>' +
     '<div class="ag-days" id="ag-days" role="listbox" aria-label="Días disponibles"><span class="ag-load">Cargando huecos libres…</span></div>' +
     '<div class="ag-hrs" id="ag-hrs" hidden><div class="ag-h"><b id="ag-dl">Elige una hora</b></div><div class="ag-times" id="ag-times" role="listbox" aria-label="Horas disponibles"></div></div></div>' +
     '<form id="ag-2" hidden novalidate><div class="ag-top"><button type="button" class="ag-back" id="ag-back">‹ Atrás</button><span class="ag-pn" id="ag-pn">1 de 2</span></div><div class="ag-bar"><i id="ag-pb"></i></div>' +
@@ -143,7 +147,7 @@
     if (!all) { err.textContent = !ok.email && v.email ? 'Revisa el email.' : !ok.phone && v.phone ? 'Revisa el número de WhatsApp.' : 'Rellena el email y el WhatsApp, por favor.'; err.hidden = false; return; }
     err.hidden = true; var go = $('ag-go'); go.disabled = true; go.firstChild.textContent = 'Reservando… ';
     var body = { k: '', start: pick, name: v.name, email: v.email, phone: tel, biz: BIZ || 'Tienda de la propuesta ' + SLUG, bud: '', sec: SEC, n: SEC !== 'otro' ? SEC : 'tienda', p: SLUG,
-      utm: { utm_source: 'propuesta', utm_medium: 'agenda', utm_campaign: SLUG, utm_content: 'agenda' }, tz: (Intl.DateTimeFormat().resolvedOptions().timeZone || TZ), mc: false, fbp: '', fbc: '' };
+      utm: { utm_source: 'propuesta', utm_medium: 'agenda', utm_campaign: SLUG, utm_content: 'agenda' }, tz: (Intl.DateTimeFormat().resolvedOptions().timeZone || TZ), mc: false, fbp: '', fbc: '', dry: INT ? 1 : 0 };
     var done = function (j) { go.disabled = false; go.firstChild.textContent = 'Confirmar llamada ';
       if (j && j.ok) {
         try { sessionStorage.setItem('c404bk', JSON.stringify({ c: j.id || '', name: v.name.split(' ')[0], email: v.email, start: j.start || pick, join: j.join || '', gcal: j.gcal || '', mailed: !!j.mailed, google: /meet\.google\.com/.test(j.join || ''), fresh: 1 })); } catch (x) {}

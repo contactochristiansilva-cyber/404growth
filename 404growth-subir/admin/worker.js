@@ -4725,6 +4725,9 @@ async function vslBook(req, env, b, k) {
   if (many && many.n >= 5) return bad("slow", 429);
   let slots; try { slots = await gbSlots(env, true); } catch (e) { return json({ error: "nocal" }, 503); }
   const startMs = Date.parse(start); if (!slots.some((x) => Date.parse(x) === startMs)) return json({ error: "taken", slots: slots }, 409);
+  // v76c: internal test from a proposal's agenda (browsers marked with ?interno=1): everything is checked (fields, real free time) but nothing is created:
+  // no Google event, no lead, no CRM change, no email, no notification. It only does less than a real booking, so it needs no key.
+  if (b.dry === 1 || b.dry === true) return json({ ok: true, dry: true, id: "Lprueba" + rid("").slice(0, 4).replace(/[^A-Za-z0-9]/g, "x"), start: start, end: new Date(startMs + GB_DUR * 60000).toISOString(), join: "", gcal: "", mailed: false });
   const utm = llUtm(b.utm), tel = phone.charAt(0) === "+" ? phone : "+34" + phone.replace(/^0034/, "");
   const notes = "Tienda: " + biz + "\nVende: " + VSL_SEC[sec] + "\nInversión: " + budTxt + "\nWhatsApp: " + tel + "\nEmail: " + email + "\nReservada en " + (via ? "su propuesta: 404growth.com/p/" + via + "/" : "404growth.com/book");
   const id = rid("L").slice(0, 13), metUrl = SITE + "/metodo?c=" + id;                       // v42: the id first, so the invitation carries the link to /metodo
