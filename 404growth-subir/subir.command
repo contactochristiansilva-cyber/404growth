@@ -66,15 +66,28 @@ paso() {
   echo
   echo "  ── Subiendo $nom… (si pregunta si quieres continuar, escribe y y pulsa Intro)"
   echo
-  for n in 1 2 3 4 5 6; do
+  for n in 1 2 3 4 5 6 7 8; do
     if $W deploy -c "$cfg"; then echo; echo "  ✓ Subido: $nom"; [ -n "$marca" ] && echo "$h" > "$marca"; return 0; fi
-    if [ $n -lt 6 ]; then echo; echo "  Cloudflare no ha respondido bien. Lo intento otra vez en $((n*20)) segundos ($n de 6)…"; sleep $((n*20)); fi
+    if [ $n -lt 8 ]; then echo; echo "  Cloudflare no ha respondido bien. Lo intento otra vez en $((n*20)) segundos ($n de 8)…"; sleep $((n*20)); fi
   done
   echo; echo "  No se pudo subir $nom. Sigo con lo demás; al final haz una captura de esta ventana para Claude."
   FALLOS="$FALLOS · $nom"; return 1
 }
 paso "la web" wrangler.jsonc   # primero la web, para que se publique aunque falle lo demás
-[ -f admin/wrangler.jsonc ] && paso "el admin y el CRM" admin/wrangler.jsonc admin/worker.js
+# v77f (18/11/2026): los vídeos selfie de las candidaturas (/equipo) van a R2, al almacén «404growth-talento» (binding TV de admin/wrangler.jsonc).
+# Se crea solo la primera vez. Si R2 no está activado en la cuenta de Cloudflare, el admin se sube sin él y las páginas piden el enlace del vídeo, como antes.
+ADMCFG=admin/wrangler.jsonc
+if [ -f admin/wrangler.jsonc ] && grep -q '"r2_buckets"' admin/wrangler.jsonc; then
+  if $W r2 bucket list 2>/dev/null | grep -q '404growth-talento' || $W r2 bucket create 404growth-talento >/dev/null 2>&1; then
+    echo; echo "  ✓ Almacén de los vídeos de las candidaturas (R2) listo"
+  else
+    grep -v '"r2_buckets"' admin/wrangler.jsonc > admin/wrangler-sin-r2.jsonc; ADMCFG=admin/wrangler-sin-r2.jsonc
+    echo; echo "  Aviso: R2 no está activado en tu cuenta de Cloudflare. El admin se sube igual, pero los candidatos tendrán que"
+    echo "  pegar el enlace de su vídeo. Para que lo graben o lo suban en la página: dash.cloudflare.com › R2 › activar"
+    echo "  (gratis hasta 10 GB) y vuelve a abrir subir.command."
+  fi
+fi
+[ -f admin/wrangler.jsonc ] && paso "el admin y el CRM" "$ADMCFG" admin/worker.js
 if [ -f partner/wrangler.jsonc ]; then
   paso "Partner 404 (app.404growth.com)" partner/wrangler.jsonc partner/worker.js
   # la clave que cifra las claves de Stripe, Anthropic y Meta: se crea una sola vez y se queda en Cloudflare

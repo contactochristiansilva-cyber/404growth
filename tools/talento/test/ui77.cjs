@@ -35,8 +35,8 @@ let ok = 0, ko = 0; const t = (c, m) => { if (c) ok++; else { ko++; console.log(
   await p.click('#fm [data-next]'); t(await p.$eval('.fm-top b', (x) => x.textContent) === 'Tu vídeo', 'paso 3: el vídeo');
   t((await p.textContent('.vid .vq')).includes('la tienda de la que estás más orgulloso'), 'el paso del vídeo dice qué contar en tiendas');
   await p.screenshot({ path: shots + '/form-video-390.png' });
-  await p.click('#fm [data-next]'); t(await p.$eval('[data-f=video]', (x) => x.classList.contains('err')), 'el vídeo es obligatorio');
-  await p.fill('#f-video', 'https://youtu.be/prueba123'); await p.click('#fm [data-next]');
+  await p.click('#fm [data-next]'); t(await p.$eval('.vbox', (x) => x.classList.contains('bad')), 'el vídeo es obligatorio');
+  await p.click('[data-vlink] summary'); await p.fill('#f-video', 'https://youtu.be/prueba123'); await p.click('#fm [data-next]');  // también vale el enlace
   await p.click('[data-f=ko1] label:first-child'); await p.fill('#f-q1', 'Monté tres tiendas Shopify de moda: Lumen, Brisa y Odette. Hice tema, fichas y fotos con IA.');
   await p.fill('#f-q2', 'Ordeno el catálogo, rehago fotos con IA, portada fuerte y fichas completas; reviso en el móvil cada día.');
   await p.fill('#f-q3', 'Nano Banana para fotos de producto, GPT Image para portadas y Claude para fichas y textos.');

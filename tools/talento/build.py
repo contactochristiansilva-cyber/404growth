@@ -128,26 +128,42 @@ def field(q, j):
             % (i, i, e(q['label']), opt, hp, i, i, typ, q.get('max', 300), AUTO.get(i, 'off'), e(PH.get(i, '')), im, ' required' if need else '', desc, em))
 
 
-def vid_box(j):
-    """El paso del vídeo: qué contar y cómo grabarlo y compartirlo."""
-    tips = ['Con el móvil en vertical y la cámara delantera, con buena luz y sin ruido.',
-            'De 30 a 60 segundos. Sin guion ni edición: queremos conocerte.',
-            'Súbelo a YouTube (como «Oculto»), a Google Drive (con «Cualquier persona con el enlace») o a Loom, y pega aquí el enlace.']
-    return ('<div class="vid"><p class="vq"><b>Grábate en formato selfie y cuéntanos</b> %s</p><ol>%s</ol></div>'
-            % (e(j['video_ask']), ''.join('<li>%s</li>' % e(t) for t in tips)))
+CAM = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13" height="12" rx="3"/><path d="m15.5 10.5 5-3v9l-5-3"/></svg>'
+UPL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="9" cy="9" r="1.6"/><path d="m21 15-4.5-4.5L7 20"/></svg>'
+VMAX_MB = 150
+
+
+def vid_box(j, link):
+    """El paso del vídeo: grabarlo aquí mismo o subirlo de la galería (a R2, por partes). Si no hay R2, queda el enlace de antes."""
+    tips = ['De 30 a 60 segundos', 'En vertical, con la cámara delantera', 'Sin guion ni edición: queremos conocerte']
+    return ('<div class="vid"><p class="vq"><b>Grábate en formato selfie y cuéntanos</b> %s</p><ul class="vtips">%s</ul></div>'
+            '<div class="vbox" data-vbox>'
+            '<div class="vpick" data-vpick><button type="button" class="vbtn" data-vrec>%s<b>Grabar ahora</b><span>Con la cámara, aquí mismo</span></button>'
+            '<label class="vbtn" for="f-vfile">%s<b>Subir de la galería</b><span>Hasta %d MB y 1 minuto</span></label></div>'
+            '<input id="f-vfile" class="vhid" type="file" accept="video/*" tabindex="-1"><input id="f-vcap" class="vhid" type="file" accept="video/*" capture="user" tabindex="-1">'
+            '<div class="vcam" data-vcam hidden><div class="vstage"><video class="vlive" playsinline muted autoplay></video><span class="vtime" aria-live="off">0:00 / 1:00</span><i class="vbar"></i></div>'
+            '<div class="vctl"><button type="button" class="b-gl" data-vcancel>Cancelar</button><button type="button" class="vgo" data-vgo><i></i><span>Empezar a grabar</span></button></div></div>'
+            '<div class="vdone" data-vdone hidden><video class="vprev" playsinline controls preload="metadata"></video>'
+            '<div class="vinfo"><b class="vst">Subiendo tu vídeo…</b><div class="vpr" aria-hidden="true"><i></i></div><span class="vsub">Puedes seguir con el formulario mientras se sube.</span>'
+            '<button type="button" class="b-gl" data-vredo>Grabar o elegir otro</button></div></div>'
+            '<p class="verr" role="alert"></p></div>'
+            '<details class="vlink" data-vlink><summary>¿Ya lo tienes en YouTube, Google Drive o Loom? Pega el enlace</summary>%s</details>'
+            % (e(j['video_ask']), ''.join('<li>%s</li>' % e(t) for t in tips), CAM, UPL, VMAX_MB, link))
 
 
 def form(j):
     qs = R['base_q'] + j['q']
     ns = range(1, len(STEPS) + 1)
     by = {n: [q for q in qs if q['step'] == n] for n in ns}
-    cfg = {'slug': j['slug'], 'portfolio': j.get('portfolio', 'opt'), 'video': j.get('video', 'opt'), 'test': bool(j.get('test')), 'steps': STEPS,
+    cfg = {'slug': j['slug'], 'portfolio': j.get('portfolio', 'opt'), 'video': j.get('video', 'opt'), 'vmax': VMAX_MB * 1048576, 'test': bool(j.get('test')), 'steps': STEPS,
            'qs': [{'id': q['id'], 'type': q['type'], 'req': bool(q.get('req')), 'step': q['step']} for q in qs]}
     steps = ''
     for n in ns:
         extra, pre = '', ''
         if STEPS[n - 1] == 'Tu vídeo':
-            pre = vid_box(j)
+            vq = [q for q in by[n] if q['id'] == 'video']
+            pre = vid_box(j, ''.join(field(q, j) for q in vq))
+            by[n] = [q for q in by[n] if q['id'] != 'video']
         if n == len(STEPS):
             extra = ('<div class="cks"><label class="c1"><input type="checkbox" name="consent" required><span>He leído <a href="#privacidad">cómo tratáis mis datos</a> y quiero que valoréis mi candidatura. '
                      'Sé que una IA ayuda a ordenarlas y que cada decisión la toma una persona.</span></label>'
@@ -216,7 +232,7 @@ def job_page(j, others):
     h += process(None if j.get('test') else R.get('promise_open'))
     # la candidatura
     tst = j.get('test')
-    bul = ['15 minutos, en %d pasos' % len(STEPS), 'Con un vídeo selfie de 30 a 60 segundos' + ('' if j.get('video') == 'req' else ' (opcional)'),
+    bul = ['15 minutos, en %d pasos' % len(STEPS), 'Con un vídeo selfie de 30 a 60 segundos: lo grabas aquí mismo' + ('' if j.get('video') == 'req' else ' (opcional)'),
            'Se guarda mientras escribes: puedes seguir luego', 'Te contestamos en menos de 24 horas'] + (
         ['Si encajas: entrevista de 30 minutos y una prueba técnica de %d %s como máximo' % (tst['hours'], 'hora' if tst['hours'] == 1 else 'horas'), 'En 7 a 12 días sabes si entras al equipo'] if tst else [])
     h += ('<section class="apl" id="aplicar"><div class="w apl-g"><div class="apl-i rv"><span class="chip"><i></i>Candidatura</span><h2 style="margin-top:18px">Cuéntanos <span class="lm">qué haces mejor.</span></h2>'

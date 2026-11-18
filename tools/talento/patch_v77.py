@@ -26,7 +26,7 @@ rep('  if (p === "arch" || p.startsWith("arch/") || p === "archf") return archAp
     '  if (p === "arch" || p.startsWith("arch/") || p === "archf") return archApi(req, env, p);   // v70 · archivos\n'
     '  if (p === "tal" || p.startsWith("tal/") || p.startsWith("taljob/") || p === "taldev") return talApi(req, env, p, ctx);   // v77 · talento')
 rep('  if (path.startsWith("/l/")) return llPublic(req, env, path.slice(3));',
-    '  if (/^\\/l\\/job(?:s|cv|t|ts|m|mb)?$/.test(path)) return talPublic(req, env, ctx, path.slice(3));   // v77: las páginas de empleo (/equipo)\n'
+    '  if (/^\\/l\\/job(?:s|cv|t|ts|m|mb|v|vp)?$/.test(path)) return talPublic(req, env, ctx, path.slice(3));   // v77: las páginas de empleo (/equipo)\n'
     '  if (path.startsWith("/l/")) return llPublic(req, env, path.slice(3));')
 
 # la barra lateral, el menú de secciones y las tarjetas de Inicio (SHELL_JS)

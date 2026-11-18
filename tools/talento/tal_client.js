@@ -21,6 +21,7 @@
     /* lo prometido en las páginas: contestar en menos de 24 h y decidir en 7 a 12 días */
     if(!c.dev&&c.stage==='new'){var hl=Math.ceil((c.ts+864e5-Date.now())/36e5);chips.unshift(hl>0?'<span class="tl-ch'+(hl<=6?' md':'')+'">Contestar en '+hl+' h</span>':'<span class="tl-ch bad">Más de 24 h sin contestar</span>')}
     if(!c.dev&&['short','meet','test','testd','trial'].indexOf(c.stage)>=0){var dn=Math.floor((Date.now()-c.ts)/864e5);chips.unshift('<span class="tl-ch'+(dn>12?' bad':dn>=9?' md':'')+'">Día '+dn+' de 12</span>')}
+    if(c.vid)chips.push('<span class="tl-ch ok">Vídeo</span>');
     if(c.cv)chips.push('<span class="tl-ch">CV</span>');
     if(c.dev)chips.unshift('<span class="tl-ch md">Prueba interna</span>');
     return '<button type="button" class="tl-c'+(c.seen?'':' nw')+'" data-tl="open" data-tlid="'+esc(c.id)+'"><span class="tl-ct"><b>'+esc(c.name)+'</b>'+tlSc(c.score)+'</span>'+
@@ -88,10 +89,15 @@
     var phone=(c.phone||'').replace(/[^\d]/g,'');
     var kv=['<div><span>Email:</span> <a href="mailto:'+esc(c.email)+'">'+esc(c.email)+'</a></div>',phone?'<div><span>WhatsApp:</span> <a href="https://wa.me/'+phone+'" target="_blank" rel="noopener">'+esc(c.phone)+'</a></div>':'',
       a.linkedin?'<div><span>LinkedIn:</span> '+link(a.linkedin,'Ver perfil ↗')+'</div>':'',a.portfolio?'<div><span>Portfolio:</span> '+link(a.portfolio,a.portfolio.replace(/^https?:\/\/(www\.)?/,'').slice(0,48))+'</div>':'',
-      a.video?'<div><span>Vídeo:</span> '+link(a.video,'Ver vídeo ↗')+'</div>':'',c.cv?'<div><span>CV:</span> <a href="/admin/api/tal/'+esc(c.id)+'/cv" target="_blank" rel="noopener">Abrir el PDF ↗</a></div>':'',
+      a.video?'<div><span>Vídeo (enlace):</span> '+link(a.video,'Ver vídeo ↗')+'</div>':'',c.cv?'<div><span>CV:</span> <a href="/admin/api/tal/'+esc(c.id)+'/cv" target="_blank" rel="noopener">Abrir el PDF ↗</a></div>':'',
       (c.data&&c.data.utm&&c.data.utm.utm_source)?'<div><span>Llegó desde:</span> '+esc(c.data.utm.utm_source+(c.data.utm.utm_medium?' · '+c.data.utm.utm_medium:''))+'</div>':''].filter(Boolean).join('');
     var skip={name:1,email:1,phone:1,city:1,linkedin:1,portfolio:1,video:1,cv:1};
     var qa='<dl>'+r.qs.filter(function(q){return !skip[q.id]}).map(function(q){var v=a[q.id],ko=c.ko.indexOf(q.id)>=0;return '<dt>'+esc(q.label)+'</dt><dd'+(ko?' class="bad"':'')+'>'+(v?esc(v==='si'?'Sí':v==='no'?'No':v):'<span class="hint">Sin responder</span>')+(ko?' · no cumple':'')+'</dd>'}).join('')+'</dl>';
+    var vd=c.data&&c.data.vid,vsrc='/admin/api/tal/'+encodeURIComponent(c.id)+'/video',
+      vid=vd?'<div class="panel"><h3>Su vídeo</h3><video controls playsinline preload="metadata" src="'+vsrc+'" style="display:block;width:100%;max-width:340px;max-height:560px;border-radius:14px;background:#000;margin:4px 0 10px"></video>'+
+        '<p class="hint">'+(vd.src==='rec'?'Grabado en la página':'Subido de su galería')+(vd.dur?' · '+Math.floor(vd.dur/60)+':'+('0'+Math.round(vd.dur%60)).slice(-2):'')+(vd.size?' · '+(vd.size/1048576).toFixed(1).replace('.',',')+' MB':'')+'</p>'+
+        '<div class="tl-acts" style="margin-top:8px"><a class="btn sm" href="'+vsrc+'?dl=1">Descargar</a></div></div>'
+        :(a.video?'<div class="panel"><h3>Su vídeo</h3><div class="tl-acts"><a class="btn pri sm" href="'+esc(a.video)+'" target="_blank" rel="noopener">Ver su vídeo ↗</a></div></div>':'');
     var t=c.testFull,test='';
     if(j.test){test='<div class="panel"><h3>Prueba técnica · '+esc(j.test.title)+'</h3>';
       if(!t||!t.sent)test+='<p class="hint">Todavía no la tiene. Va después de la entrevista: al pulsar «Enviar la prueba técnica» le llega el enlace, con '+(j.test.days*24)+' horas de plazo y '+j.test.hours+' '+(j.test.hours===1?'hora':'horas')+' de trabajo como máximo.</p>';
@@ -115,7 +121,7 @@
     return TL_CSS+'<div id="tl"><button class="tl-back" type="button" data-tl="back">← Talento</button><div class="tl-h"><div><h2>'+esc(c.name)+'</h2><p>'+esc(j.title)+' · '+esc(c.city||'')+' · llegó el '+esc(tlWhen(c.ts))+'</p></div>'+tlSc(c.score,1)+'</div>'+
       (c.dev?'<p class="tl-warn">Prueba interna: no cuenta en las cifras y la entrevista no crea evento en Google. Puedes borrarla al final.</p>':'')+
       (c.ko.length?'<p class="tl-warn" style="background:var(--bad-soft);color:var(--bad)">No cumple: '+esc(c.ko.map(function(k){return TLKO[k]||k}).join(', '))+'. Mira sus respuestas antes de decidir.</p>':'')+
-      '<div class="tl-dg"><div>'+tlAiBlock(c.ai,'La IA sobre su candidatura',c.id,true)+meet+test+'<div class="panel tl-qa"><h3>Sus respuestas</h3>'+qa+'</div></div>'+side+'</div></div>'})}
+      '<div class="tl-dg"><div>'+vid+tlAiBlock(c.ai,'La IA sobre su candidatura',c.id,true)+meet+test+'<div class="panel tl-qa"><h3>Sus respuestas</h3>'+qa+'</div></div>'+side+'</div></div>'})}
   function tlCopy(t){var done=function(){toast('Copiado')};try{navigator.clipboard.writeText(t).then(done,function(){tlCopy2(t);done()})}catch(e){tlCopy2(t);done()}}
   function tlCopy2(t){var x=document.createElement('textarea');x.value=t;x.style.position='fixed';x.style.opacity='0';document.body.appendChild(x);x.select();try{document.execCommand('copy')}catch(e){}x.remove()}
   function tlPost(id,b,msg){return api('POST','tal/'+id,b).then(function(r){if(r.msg)TL.msg=Object.assign({id:id},r.msg);toast(msg);show()},fail)}

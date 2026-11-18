@@ -24,6 +24,7 @@
     { "pattern": "www.404growth.com/blog*", "zone_name": "404growth.com" }
   ],
   "triggers": { "crons": ["*/1 * * * *"] },
+  "r2_buckets": [ { "binding": "TV", "bucket_name": "404growth-talento" } ],
   "d1_databases": [
     { "binding": "DB", "database_name": "404growth-admin", "database_id": "e5f69c5d-afe8-42f0-a0db-a4cb096df0c3" },
     { "binding": "VIS", "database_name": "404growth-visits", "database_id": "53b69260-1e39-4cf4-845a-354b2fc003a9" }

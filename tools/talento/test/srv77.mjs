@@ -5,6 +5,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { makeD1 } from './d1shim.mjs';
+import { makeR2 } from './r2mock.mjs';
 const real = globalThis.fetch;
 globalThis.fetch = async (url, o) => {
   const u = String(url);
@@ -18,6 +19,7 @@ globalThis.fetch = async (url, o) => {
 };
 const { talPublic, talApi, DDL } = await import('./w77mod.mjs');
 const env = { DB: makeD1(), DEV: 'http://localhost:8777' };
+if (process.env.NOVID !== '1') env.TV = makeR2();   // el R2 de mentira (v77f); NOVID=1 para probar sin R2
 for (const s of DDL) env.DB._db.exec(s);
 env.DB._db.prepare("INSERT INTO meta (k, v) VALUES ('soc_cfg', ?)").run(JSON.stringify({ aiKey: 'k' }));
 const view = fs.readFileSync(new URL('../tal_client.js', import.meta.url), 'utf8');
@@ -40,7 +42,7 @@ http.createServer(async (q, s) => {
   const u = new URL(q.url, 'http://localhost:8777'); const chunks = []; for await (const c of q) chunks.push(c); const buf = Buffer.concat(chunks);
   const mk = () => new Request('http://localhost:8777' + q.url, { method: q.method, headers: Object.assign({}, q.headers, { 'cf-connecting-ip': '9.9.9.' + (q.headers['x-ip'] || '1') }), body: ['GET', 'HEAD'].includes(q.method) ? undefined : buf });
   let r;
-  if (/^\/l\/job(?:s|cv|t|ts|m|mb)?$/.test(u.pathname)) r = await talPublic(mk(), env, {}, u.pathname.slice(3));
+  if (/^\/l\/job(?:s|cv|t|ts|m|mb|v|vp)?$/.test(u.pathname)) r = await talPublic(mk(), env, {}, u.pathname.slice(3));
   else if (u.pathname.startsWith('/admin/api/')) r = await talApi(mk(), env, u.pathname.slice(11), {});
   else if (u.pathname === '/admin/' || u.pathname === '/admin') { s.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }); s.end(admin); return; }
   else {

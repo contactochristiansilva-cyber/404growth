@@ -736,15 +736,28 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - **Desde España o Latinoamérica (Chris, 18/11/2026: «ubicación España y Latinoamérica»).** Se puede trabajar desde los dos sitios, siempre en horario de España.
   - Lo dicen los requisitos y los beneficios de cada puesto, las píldoras de arriba de cada página («España o Latinoamérica»), la portada de /equipo y la pregunta del horario (con la ayuda «Desde Latinoamérica son entre 4 y 8 horas menos…»). La tarifa se pide en euros.
   - El `JobPosting` lleva España y los países de Latinoamérica de habla hispana (`COUNTRIES` en `build.py`). El WhatsApp ya admitía cualquier prefijo.
-- **Vídeo selfie (Chris, 18/11/2026).** El formulario tiene 5 pasos: Sobre ti, Tu trabajo, **Tu vídeo**, El puesto y Lo práctico.
-  - En el paso del vídeo piden de 30 a 60 segundos en formato selfie, con lo que tienen que contar en ese puesto (`video_ask` de cada puesto en `roles.json`). Cómo grabarlo: móvil en vertical y cámara delantera. Después se sube a YouTube como «Oculto», a Google Drive con «Cualquier persona con el enlace» o a Loom, y se pega el enlace.
-  - Es obligatorio en Tiendas, Setter y Growth (`video: "req"`) y opcional en la candidatura abierta. Lo comprueban la página y el servidor (`talCheck`).
-  - La solicitud pasa a ser de 15 minutos. No se sube el archivo: un vídeo del móvil no cabe en D1. Para subirlo directamente haría falta R2.
+- **Vídeo selfie (Chris, 18/11/2026).** El formulario tiene 5 pasos: Sobre ti, Tu trabajo, **Tu vídeo**, El puesto y Lo práctico. En el paso del vídeo se piden de 30 a 60 segundos en formato selfie, y cada puesto dice qué hay que contar (`video_ask` en `roles.json`). Es obligatorio en Tiendas, Setter y Growth (`video: "req"`) y opcional en la candidatura abierta. La solicitud son 15 minutos.
+  - **Grabarlo o subirlo en la misma página (v77f; Chris: «demasiada fricción»):** hay dos botones.
+    - «Grabar ahora» usa la cámara del navegador (`getUserMedia` + `MediaRecorder`, mp4 si se puede y si no webm, unos 1,6 Mbps). Hay que grabar al menos 10 s y se para sola al minuto. Si no deja abrir la cámara, se abre la del móvil (`capture="user"`).
+    - «Subir de la galería» admite como mucho 150 MB y 75 s.
+    - Mientras siguen con el formulario, el vídeo se va subiendo a R2 en partes de 8 MiB. Al enviar, se espera a que termine. Como enlace queda la opción «¿Ya lo tienes en YouTube, Google Drive o Loom?».
+  - **Servidor:**
+    - Rutas: `/l/jobv` (`start`, `done`, `abort`) y `PUT /l/jobvp?k&t&n` (cada parte).
+    - Tabla `tvid`: un vídeo por fila; `cid` se rellena al enviar la candidatura.
+    - Bucket R2 «404growth-talento», con el binding `TV`.
+    - Límites: 12 subidas al día por conexión, y cada vídeo solo vale para su puesto y para una candidatura.
+    - En `data.vid` de la candidatura se guardan `k`, `size`, `type`, `dur` y `src` (`rec` si se grabó en la página, `file` si se subió).
+    - La IA solo sabe que hay vídeo; no lo ve.
+  - **Admin:** la tarjeta lleva la etiqueta «Vídeo» y la ficha tiene el reproductor (`tal/<id>/video`, con rangos para Safari) y «Descargar».
+  - **Limpieza:** lo que nadie envía se borra al día siguiente, y al borrar una candidatura se borra su vídeo (`talVidSweep`).
+  - **Sin R2** (`env.TV`), `/l/jobs` devuelve `vid: false` y la página pide el enlace, como antes.
+  - **Subida a Cloudflare:** `subir.command` crea el bucket la primera vez. Si R2 no está activado en la cuenta, sube el admin con `admin/wrangler-sin-r2.jsonc` (sin el binding) y avisa. Activar R2 es cosa de Chris, en dash.cloudflare.com › R2: es gratis hasta 10 GB, pero pide un medio de pago.
+  - **Pruebas:** `t_v77f.mjs` (37, con el R2 de mentira `r2mock.mjs`) y `ui77f.cjs` (25, Chromium con cámara falsa y vídeos de ffmpeg; `NOVID=1 node srv77.mjs` para probar sin R2).
 - **Ofertas en LinkedIn Empleos:** `python3 tools/talento/li.py <carpeta>` saca de `roles.json` el texto de cada oferta: los 5 puntos, el proceso y el enlace a su página con `utm_source=linkedin&utm_medium=empleo&utm_campaign=<puesto>`, al principio y al final.
   - LinkedIn solo admite una ubicación por oferta, así que el texto empieza con «En remoto, desde España o Latinoamérica.».
   - Con la cuenta gratis, solo una oferta activa a la vez.
 - Pruebas en `tools/talento/test/`: `t_v77.mjs` (55 comprobaciones de la API con `d1shim.mjs` y la IA simulada), `ui77.cjs` con `srv77.mjs` (63: las 5 páginas a 360, 390 y 1440 sin scroll lateral y con los 5 puntos, la candidatura entera en el móvil con CV, la entrevista, la prueba técnica, el orden de las columnas, una prueba interna y el admin a 1366 y 390) y `chk.mjs` (que los scripts del admin compilan).
-- Instalado en el Mac el 18/11/2026: `admin/worker.js` (copia de antes en `anterior/worker-v76c-18nov-antes-talento.js`), fuentes en `404growth-subir/fuentes-v77/`, páginas y miniaturas en `web117-404growth/equipo/` (copia del mapa del sitio en `anterior/sitemap-18nov-antes-equipo.xml`). El cambio a España y Latinoamérica y el paso del vídeo se instalaron encima ese mismo día (copias en `anterior/worker-v77c-18nov-antes-latam.js`, `anterior/worker-v77d-18nov-antes-video.js` y sus carpetas `anterior/equipo-18nov-antes-…/`). Falta `subir.command` (admin) y `subir-web.command` (páginas).
+- Instalado en el Mac el 18/11/2026: `admin/worker.js` (copia de antes en `anterior/worker-v76c-18nov-antes-talento.js`), fuentes en `404growth-subir/fuentes-v77/`, páginas y miniaturas en `web117-404growth/equipo/` (copia del mapa del sitio en `anterior/sitemap-18nov-antes-equipo.xml`). El cambio a España y Latinoamérica y el paso del vídeo se instalaron encima ese mismo día (copias en `anterior/worker-v77c-18nov-antes-latam.js`, `anterior/worker-v77d-18nov-antes-video.js` y sus carpetas `anterior/equipo-18nov-antes-…/`; la de grabar el vídeo, en `anterior/worker-v77e-18nov-antes-grabar-video.js`, `anterior/admin-wrangler-18nov-antes-r2.jsonc` y `anterior/subir-18nov-antes-r2.command`). Falta `subir.command` (admin) y `subir-web.command` (páginas).
 
 ## Open Fit: cartel de la nave (13/11/2026)
 

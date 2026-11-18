@@ -8,6 +8,8 @@
      /l/jobts POST  la entrega de la prueba (la IA la precorrige)
      /l/jobm  POST  la entrevista: huecos libres (los mismos de Google que las llamadas de venta)
      /l/jobmb POST  reserva la entrevista: evento en Google con Meet
+     /l/jobv  POST  su vídeo selfie: empezar ({a:'start'}), terminar ({a:'done'}) o tirarlo ({a:'abort'}). Va a R2 (binding TV), por partes
+     /l/jobvp PUT   una parte del vídeo (8 MiB), con el código que da /l/jobv. Sin R2, las páginas piden el enlace del vídeo como antes.
    En el admin, la sección Talento (/admin#talento): talApi. La IA ordena y explica; mover, descartar o contratar lo decide Chris.
    Mensajes de cada etapa: por email desde hola@ si hay clave de Resend (Ajustes › Newsletter) y, si no, listos para WhatsApp.
    RGPD: se borran solas a los 6 meses sin moverse (12 si dejaron guardarlas para futuros puestos), salvo las del equipo.
@@ -15,6 +17,9 @@
    no se mira si está repetida y la entrevista no crea evento en Google. */
 const TAL = /*TAL_JSON*/ {};
 const TAL_CV = 1800000, TAL_DAYMAX = 5;
+// el vídeo selfie (v77f): grabado en la página o subido de la galería, hasta 150 MB, en partes de 8 MiB a R2
+const TAL_VMAX = 150 * 1048576, TAL_VPART = 8 * 1048576, TAL_VDAY = 12;
+const TAL_VK = /^v\/\d{6}\/[A-Za-z0-9_-]{8,24}$/, TAL_VT = /^[A-Za-z0-9_-]{16}$/;
 const TAL_ID = /^T[A-Za-z0-9_-]{8,16}$/, TAL_TOK = /^(T[A-Za-z0-9_-]{8,16})\.([A-Za-z0-9_-]{16})$/;
 const TAL_ST = TAL.stages ? TAL.stages.map((x) => x[0]) : [];
 let talOk = false;
@@ -24,6 +29,7 @@ async function talReady(env) {
     env.DB.prepare("CREATE TABLE IF NOT EXISTS tcand (id TEXT PRIMARY KEY, job TEXT NOT NULL, ts INTEGER NOT NULL, upd INTEGER NOT NULL, stage TEXT NOT NULL, name TEXT NOT NULL, email TEXT NOT NULL, phone TEXT, city TEXT, data TEXT NOT NULL, ko TEXT, score INTEGER, ai TEXT, test TEXT, meet TEXT, msgs TEXT, notes TEXT, tok TEXT NOT NULL, ih TEXT, keep INTEGER NOT NULL DEFAULT 0, cv INTEGER NOT NULL DEFAULT 0, seen INTEGER NOT NULL DEFAULT 0, dev INTEGER NOT NULL DEFAULT 0)"),
     env.DB.prepare("CREATE INDEX IF NOT EXISTS tcand_job ON tcand (job, stage)"),
     env.DB.prepare("CREATE TABLE IF NOT EXISTS tcvf (id TEXT PRIMARY KEY, data BLOB NOT NULL, size INTEGER NOT NULL)"),
+    env.DB.prepare("CREATE TABLE IF NOT EXISTS tvid (k TEXT PRIMARY KEY, up TEXT NOT NULL, tok TEXT NOT NULL, ts INTEGER NOT NULL, size INTEGER NOT NULL, type TEXT NOT NULL, dur REAL, src TEXT, ih TEXT, job TEXT, cid TEXT, done INTEGER NOT NULL DEFAULT 0)"),
   ]);
   talOk = true;
 }
@@ -46,7 +52,7 @@ function talTel(v) {
   return /^\+\d{9,15}$/.test(t) ? t : "";
 }
 /* the answers, checked against the questions of the job (the same roles.json the page was built from) */
-function talCheck(j, a) {
+function talCheck(j, a, hasVid) {
   const out = {}, ko = [], err = [];
   a = a && typeof a === "object" ? a : {};
   for (const q of talQs(j)) {
@@ -58,17 +64,28 @@ function talCheck(j, a) {
     else if (q.type === "choice") { x = (q.opts || []).includes(v) ? v : ""; }
     else if (q.type === "yesno") { x = v === "si" || v === "no" ? v : ""; }
     else { x = str(v, q.max || 300); }
-    const need = q.req || (q.id === "portfolio" && j.portfolio === "req") || (q.id === "video" && j.video === "req");
+    const need = (q.req || (q.id === "portfolio" && j.portfolio === "req") || (q.id === "video" && j.video === "req")) && !(q.id === "video" && hasVid);
     if (need && (!x || (q.type === "long" && x.length < 15) || (q.type === "text" && x.length < 2))) { err.push(q.id); continue; }
     if (x) out[q.id] = x;
     if (q.ko && x === q.ko) ko.push(q.id);
   }
   return { a: out, ko, err };
 }
-const talRow = (c) => ({ id: c.id, job: c.job, ts: c.ts, upd: c.upd, stage: c.stage, name: c.name, city: c.city || "", score: c.score == null ? null : c.score,
+const talRow = (c) => ({ id: c.id, vid: c.vid ? 1 : 0, job: c.job, ts: c.ts, upd: c.upd, stage: c.stage, name: c.name, city: c.city || "", score: c.score == null ? null : c.score,
   dev: !!c.dev, rec: (parse(c.ai, {}) || {}).rec || "", aierr: (parse(c.ai, {}) || {}).err || "", ko: parse(c.ko, []) || [], keep: !!c.keep, cv: !!c.cv, seen: !!c.seen,
   test: (function () { const t = parse(c.test, null); return t ? { sent: t.sent || null, due: t.due || null, done: t.sub ? t.sub.ts : null, score: t.ai && t.ai.total != null ? t.ai.total : null } : null; })(),
   meet: (function () { const m = parse(c.meet, null); return m && m.start ? { start: m.start } : null; })() });
+const talSame = (a, b) => { a = String(a || ""); b = String(b || ""); if (!a || a.length !== b.length) return false; let d = 0; for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i); return !d; };
+/* the videos nobody will look at: uploads never sent with a candidature (after a day) and those of candidatures already deleted */
+async function talVidSweep(env, now) {
+  if (!env.TV) return;
+  const rows = (await env.DB.prepare("SELECT k, up, done FROM tvid WHERE (cid IS NULL AND ts < ?1) OR (cid IS NOT NULL AND cid NOT IN (SELECT id FROM tcand)) LIMIT 300").bind(now - DAY).all()).results || [];
+  if (!rows.length) return;
+  const keys = [];
+  for (const v of rows) { if (v.done) keys.push(v.k); else { try { await env.TV.resumeMultipartUpload(v.k, v.up).abort(); } catch (e) {} } }
+  try { if (keys.length) await env.TV.delete(keys); } catch (e) { return; }
+  await env.DB.batch(rows.map((v) => env.DB.prepare("DELETE FROM tvid WHERE k = ?1").bind(v.k)));
+}
 async function talByTok(env, v) {
   const m = TAL_TOK.exec(String(v || "")); if (!m) return null;
   const c = await env.DB.prepare("SELECT * FROM tcand WHERE id = ?1").bind(m[1]).first();
@@ -111,7 +128,7 @@ async function talScore(env, id, quiet) {
   const j = talJob(c.job); if (!j) return null;
   const d = parse(c.data, {}) || {}, a = d.a || {}, ko = parse(c.ko, []) || [];
   // the LinkedIn address usually carries the name: the AI only learns whether there is one
-  const qa = talQs(j).filter((q) => !["name", "email", "phone", "city", "cv", "src"].includes(q.id)).map((q) => "· " + q.label + "\n" + (!a[q.id] ? "(sin responder)" : q.id === "linkedin" ? "(sí, ha enlazado su LinkedIn)" : (q.type === "url" ? "(enlace) " : "") + a[q.id])).join("\n\n");
+  const qa = talQs(j).filter((q) => !["name", "email", "phone", "city", "cv", "src"].includes(q.id)).map((q) => "· " + q.label + "\n" + (q.id === "video" && d.vid ? "(sí, ha grabado o subido su vídeo de presentación, que no ves)" : !a[q.id] ? "(sin responder)" : q.id === "linkedin" ? "(sí, ha enlazado su LinkedIn)" : (q.type === "url" ? "(enlace) " : "") + a[q.id])).join("\n\n");
   const user = "Puesto: " + j.title + "\n" + (j.role || []).join(" ") + "\n\nQué tendrá que hacer:\n- " + (j.resp || []).join("\n- ") + "\n\nRequisitos:\n- " + (j.req || []).join("\n- ") + (j.plus && j.plus.length ? "\nSe valora:\n- " + j.plus.join("\n- ") : "") +
     "\n\nRúbrica (puntúa cada criterio de 0 a 5; 0, 3 y 5 están descritos):\n" + talRubric(j.rubric) +
     "\n\nLa candidatura:\n" + qa + (c.cv ? "\n\n(Ha adjuntado su CV en PDF, que no ves.)" : "") +
@@ -176,10 +193,23 @@ async function talSend(env, c, kind, send, via) {
 async function talPublic(req, env, ctx, p) {
   await talReady(env);
   const H = { "access-control-allow-origin": SITE };
-  if (p === "jobs" && req.method === "GET") return json({ open: await talOpen(env) }, 200, Object.assign({ "cache-control": "public, max-age=60" }, H));
-  if (req.method !== "POST") return bad("method", 405);
+  if (p === "jobs" && req.method === "GET") return json({ open: await talOpen(env), vid: !!env.TV, vmax: TAL_VMAX }, 200, Object.assign({ "cache-control": "public, max-age=60" }, H));
+  if (req.method !== "POST" && !(p === "jobvp" && req.method === "PUT")) return bad("method", 405);
   const o = req.headers.get("origin"); if (!o || !origins(env).includes(o)) return bad("origin", 403);
   const now = Date.now(), DBq = env.DB, later = (pr) => { if (ctx && ctx.waitUntil) ctx.waitUntil(pr.catch(() => {})); else return pr.catch(() => {}); };
+  if (p === "jobvp") {   // one part of the video, straight to R2
+    if (req.method !== "PUT") return bad("method", 405);
+    if (!env.TV) return bad("novid", 503);
+    const u = new URL(req.url), k = u.searchParams.get("k") || "", t = u.searchParams.get("t") || "", n = Number(u.searchParams.get("n"));
+    if (!TAL_VK.test(k) || !TAL_VT.test(t) || !Number.isInteger(n) || n < 1) return bad("missing", 404);
+    const v = await DBq.prepare("SELECT * FROM tvid WHERE k = ?1").bind(k).first();
+    if (!v || !talSame(v.tok, t) || v.done || v.cid || now - v.ts > DAY) return bad("missing", 404);
+    if (n > Math.ceil(v.size / TAL_VPART)) return bad("part", 400);
+    const len = Number(req.headers.get("content-length") || 0);
+    if (!len || len > TAL_VPART) return bad("big", 413);
+    try { const part = await env.TV.resumeMultipartUpload(k, v.up).uploadPart(n, req.body); return json({ ok: true, n, etag: part.etag }); }
+    catch (e) { return bad("part", 502); }
+  }
   if (p === "jobcv") {
     const c = await talByTok(env, new URL(req.url).searchParams.get("c")); if (!c) return bad("missing", 404);
     if (c.cv || now - c.ts > 3600000) return bad("late", 409);
@@ -191,12 +221,53 @@ async function talPublic(req, env, ctx, p) {
     return json({ ok: true });
   }
   const b = await body(req, 40000); if (!b) return bad("body");
+  if (p === "jobv") {
+    if (!env.TV) return bad("novid", 503);
+    if (b.a === "start") {
+      const j = talJob(typeof b.job === "string" ? b.job : ""); if (!j) return bad("job", 404);
+      if (!(await talOpen(env))[j.slug]) return bad("closed", 409);
+      const size = Math.floor(Number(b.size) || 0), type = (str(b.type, 80).toLowerCase().split(";")[0] || "video/mp4").trim();
+      if (size < 20000) return bad("small", 400);
+      if (size > TAL_VMAX) return bad("big", 413);
+      if (!/^video\/[a-z0-9.+-]{2,40}$/.test(type)) return bad("type", 415);
+      const ih = (await sha("tal|" + (req.headers.get("cf-connecting-ip") || "local"))).slice(0, 22);
+      const many = await DBq.prepare("SELECT COUNT(*) AS n FROM tvid WHERE ih = ?1 AND ts > ?2").bind(ih, now - DAY).first();
+      if (many && many.n >= TAL_VDAY) return bad("slow", 429);
+      const iso = new Date(now).toISOString(), k = "v/" + iso.slice(2, 4) + iso.slice(5, 7) + iso.slice(8, 10) + "/" + (rid("") + rid("")).slice(0, 18), tok = (rid("") + rid("")).slice(0, 16);
+      let mu; try { mu = await env.TV.createMultipartUpload(k, { httpMetadata: { contentType: type }, customMetadata: { job: j.slug } }); } catch (e) { return bad("novid", 503); }
+      await DBq.prepare("INSERT INTO tvid (k, up, tok, ts, size, type, dur, src, ih, job) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10)")
+        .bind(k, mu.uploadId, tok, now, size, type, Math.min(900, Math.max(0, Number(b.dur) || 0)), b.src === "rec" ? "rec" : "file", ih, j.slug).run();
+      return json({ ok: true, k, t: tok, ps: TAL_VPART, parts: Math.ceil(size / TAL_VPART) });
+    }
+    const k = typeof b.k === "string" ? b.k : "", t = typeof b.t === "string" ? b.t : "";
+    if (!TAL_VK.test(k) || !TAL_VT.test(t)) return bad("missing", 404);
+    const v = await DBq.prepare("SELECT * FROM tvid WHERE k = ?1").bind(k).first();
+    if (!v || !talSame(v.tok, t) || v.cid) return bad("missing", 404);
+    if (b.a === "abort") {
+      try { if (v.done) await env.TV.delete(k); else await env.TV.resumeMultipartUpload(k, v.up).abort(); } catch (e) {}
+      await DBq.prepare("DELETE FROM tvid WHERE k = ?1").bind(k).run();
+      return json({ ok: true });
+    }
+    if (b.a === "done") {
+      if (v.done) return json({ ok: true, vk: k + "|" + t, size: v.size });
+      const parts = (Array.isArray(b.parts) ? b.parts : []).map((x) => ({ partNumber: Math.floor(Number(x && x.n)), etag: str(x && x.etag, 200) })).filter((x) => x.partNumber >= 1 && x.etag).sort((x, y) => x.partNumber - y.partNumber);
+      if (parts.length !== Math.ceil(v.size / TAL_VPART) || parts.some((x, i) => x.partNumber !== i + 1)) return bad("parts", 400);
+      let obj; try { obj = await env.TV.resumeMultipartUpload(k, v.up).complete(parts); } catch (e) { return bad("parts", 400); }
+      const size = obj && obj.size ? obj.size : v.size;
+      if (size > TAL_VMAX) { try { await env.TV.delete(k); } catch (e) {} await DBq.prepare("DELETE FROM tvid WHERE k = ?1").bind(k).run(); return bad("big", 413); }
+      await DBq.prepare("UPDATE tvid SET done = 1, size = ?2 WHERE k = ?1").bind(k, size).run();
+      return json({ ok: true, vk: k + "|" + t, size });
+    }
+    return bad("missing", 404);
+  }
   if (p === "job") {
     const j = talJob(typeof b.job === "string" ? b.job : ""); if (!j) return bad("job", 404);
     if (!(await talOpen(env))[j.slug]) return bad("closed", 409);
     if (b.web) return json({ ok: true, id: "Tok" });                                          // the hidden field: only robots fill it
     if (b.consent !== true) return bad("consent");
-    const ck = talCheck(j, b.a); if (ck.err.length) return json({ error: "fields", fields: ck.err }, 400);
+    let vrow = null;   // the video uploaded from the page (k|token), if any
+    if (env.TV && typeof b.vk === "string") { const vm = /^(v\/\d{6}\/[A-Za-z0-9_-]{8,24})\|([A-Za-z0-9_-]{16})$/.exec(b.vk); if (vm) { const v = await DBq.prepare("SELECT * FROM tvid WHERE k = ?1").bind(vm[1]).first(); if (v && v.done && !v.cid && v.job === j.slug && talSame(v.tok, vm[2])) vrow = v; } }
+    const ck = talCheck(j, b.a, !!vrow); if (ck.err.length) return json({ error: "fields", fields: ck.err }, 400);
     const ih = (await sha("tal|" + (req.headers.get("cf-connecting-ip") || "local"))).slice(0, 22);
     const many = await DBq.prepare("SELECT COUNT(*) AS n FROM tcand WHERE ih = ?1 AND ts > ?2").bind(ih, now - DAY).first();
     if (many && many.n >= TAL_DAYMAX) return bad("slow", 429);
@@ -206,8 +277,10 @@ async function talPublic(req, env, ctx, p) {
     const utm = {}; if (b.utm && typeof b.utm === "object") for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_content"]) { const v = str(b.utm[k], 80); if (v) utm[k] = v; }
     const id = "T" + rid(""), tok = (rid("") + rid("")).slice(0, 16);
     const data = { a: ck.a, utm, ref: str(b.ref, 200), ua: str(req.headers.get("user-agent") || "", 160) };
+    if (vrow) data.vid = { k: vrow.k, size: vrow.size, type: vrow.type, dur: vrow.dur || 0, src: vrow.src || "file" };
     await DBq.prepare("INSERT INTO tcand (id, job, ts, upd, stage, name, email, phone, city, data, ko, tok, ih, keep, dev) VALUES (?1, ?2, ?3, ?3, 'new', ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13)")
       .bind(id, j.slug, now, ck.a.name, ck.a.email, ck.a.phone || "", ck.a.city || "", JSON.stringify(data), JSON.stringify(ck.ko), tok, ih, b.keep ? 1 : 0, dev).run();
+    if (vrow) await DBq.prepare("UPDATE tvid SET cid = ?2 WHERE k = ?1").bind(vrow.k, id).run();
     const c = await DBq.prepare("SELECT * FROM tcand WHERE id = ?1").bind(id).first();
     await later((async () => { try { await talSend(env, c, "got", true); } catch (e) {} await talScore(env, id); })());
     return json({ ok: true, id, cvt: id + "." + tok, dev: !!dev });
@@ -258,12 +331,14 @@ async function talApi(req, env, p, ctx) {
     // RGPD: what nobody has touched in 6 months goes (12 if they let us keep it), except the people in the team
     await DBq.batch([DBq.prepare("DELETE FROM tcvf WHERE id IN (SELECT id FROM tcand WHERE stage NOT IN ('hired', 'trial') AND ((keep = 0 AND upd < ?1) OR (keep = 1 AND upd < ?2)))").bind(now - 182 * DAY, now - 365 * DAY),
       DBq.prepare("DELETE FROM tcand WHERE stage NOT IN ('hired', 'trial') AND ((keep = 0 AND upd < ?1) OR (keep = 1 AND upd < ?2))").bind(now - 182 * DAY, now - 365 * DAY)]);
-    const rows = (await DBq.prepare("SELECT id, job, ts, upd, stage, name, city, score, ai, ko, keep, cv, seen, test, meet, dev FROM tcand ORDER BY ts DESC LIMIT 2000").all()).results || [];
+    try { await talVidSweep(env, now); } catch (e) {}
+    const rows = (await DBq.prepare("SELECT id, job, ts, upd, stage, name, city, score, ai, ko, keep, cv, seen, test, meet, dev, (json_extract(data, '$.vid.k') IS NOT NULL) AS vid FROM tcand ORDER BY ts DESC LIMIT 2000").all()).results || [];
     const s = await socCfg(env), open = await talOpen(env);
     return json({ jobs: (TAL.jobs || []).map((j) => ({ slug: j.slug, title: j.title, short: j.short, open: open[j.slug], test: !!j.test })), stages: TAL.stages, cands: rows.map(talRow), mail: !!(await getMeta(env, "nl_key")), ai: !!s.aiKey });
   }
   if (p === "taldev" && m === "DELETE") {   // borrar todas las pruebas internas
     await DBq.batch([DBq.prepare("DELETE FROM tcvf WHERE id IN (SELECT id FROM tcand WHERE dev = 1)"), DBq.prepare("DELETE FROM tcand WHERE dev = 1")]);
+    try { await talVidSweep(env, now); } catch (e) {}
     return json({ ok: true });
   }
   const tj = /^taljob\/([a-z]{3,20})$/.exec(p);
@@ -273,13 +348,31 @@ async function talApi(req, env, p, ctx) {
     const o = parse(await getMeta(env, "tal_open"), {}) || {}; o[tj[1]] = !!b.open; await setMeta(env, "tal_open", JSON.stringify(o));
     return json({ ok: true, open: await talOpen(env) });
   }
-  const q = /^tal\/(T[A-Za-z0-9_-]{8,16})(?:\/(ai|cv|msg))?$/.exec(p); if (!q) return bad("missing", 404);
+  const q = /^tal\/(T[A-Za-z0-9_-]{8,16})(?:\/(ai|cv|msg|video))?$/.exec(p); if (!q) return bad("missing", 404);
   let c = await DBq.prepare("SELECT * FROM tcand WHERE id = ?1").bind(q[1]).first(); if (!c) return bad("missing", 404);
   const j = talJob(c.job);
   if (q[2] === "cv" && m === "GET") {
     const f = await DBq.prepare("SELECT data FROM tcvf WHERE id = ?1").bind(c.id).first(); if (!f) return bad("missing", 404);
     const name = "CV " + String(c.name).replace(/[^\p{L}\p{N} ._-]/gu, "").slice(0, 60) + ".pdf";
     return new Response(f.data instanceof Uint8Array ? f.data : new Uint8Array(f.data), { headers: Object.assign({ "content-type": "application/pdf", "content-disposition": "inline; filename*=UTF-8''" + encodeURIComponent(name), "cache-control": "private, no-store" }, SEC) });
+  }
+  if (q[2] === "video" && m === "GET") {   // the selfie video, with byte ranges (Safari needs them to play it)
+    const v = (parse(c.data, {}) || {}).vid; if (!v || !v.k || !env.TV) return bad("missing", 404);
+    const hd = await env.TV.head(v.k); if (!hd) return bad("missing", 404);
+    const size = hd.size, type = (hd.httpMetadata && hd.httpMetadata.contentType) || v.type || "video/mp4";
+    let a = 0, z = size - 1, part = false;
+    const rg = /^bytes=(\d*)-(\d*)$/.exec(req.headers.get("range") || "");
+    if (rg && (rg[1] || rg[2])) {
+      if (rg[1]) { a = Number(rg[1]); z = rg[2] ? Math.min(Number(rg[2]), size - 1) : size - 1; } else { a = Math.max(0, size - Number(rg[2])); }
+      if (a > z || a >= size) return new Response(null, { status: 416, headers: { "content-range": "bytes */" + size } });
+      part = true;
+    }
+    const obj = await env.TV.get(v.k, part ? { range: { offset: a, length: z - a + 1 } } : undefined); if (!obj) return bad("missing", 404);
+    const ext = /quicktime/.test(type) ? "mov" : /webm/.test(type) ? "webm" : "mp4";
+    const hh = Object.assign({ "content-type": type, "accept-ranges": "bytes", "content-length": String(z - a + 1), "cache-control": "private, max-age=3600" }, SEC);
+    if (part) hh["content-range"] = "bytes " + a + "-" + z + "/" + size;
+    if (new URL(req.url).searchParams.get("dl")) hh["content-disposition"] = "attachment; filename*=UTF-8''" + encodeURIComponent("Vídeo " + String(c.name).replace(/[^\p{L}\p{N} ._-]/gu, "").slice(0, 60) + "." + ext);
+    return new Response(obj.body, { status: part ? 206 : 200, headers: hh });
   }
   if (q[2] === "ai" && m === "POST") { const ai = await talScore(env, c.id, true); return json({ ok: true, ai }); }
   if (q[2] === "msg" && m === "POST") {
@@ -294,7 +387,7 @@ async function talApi(req, env, p, ctx) {
       links: { test: j && j.test ? talLink(c, "prueba") : "", meet: talLink(c, "entrevista") } }),
       qs: j ? talQs(j).map((x) => ({ id: x.id, label: x.label, type: x.type })) : [], job: j ? { slug: j.slug, title: j.title, short: j.short, test: j.test ? { title: j.test.title, days: j.test.days, hours: j.test.hours } : null, rubric: j.rubric.map((r) => ({ id: r.id, name: r.name, w: r.w })) } : null });
   }
-  if (!q[2] && m === "DELETE") { await DBq.batch([DBq.prepare("DELETE FROM tcvf WHERE id = ?1").bind(c.id), DBq.prepare("DELETE FROM tcand WHERE id = ?1").bind(c.id)]); return json({ ok: true }); }
+  if (!q[2] && m === "DELETE") { await DBq.batch([DBq.prepare("DELETE FROM tcvf WHERE id = ?1").bind(c.id), DBq.prepare("DELETE FROM tcand WHERE id = ?1").bind(c.id)]); try { await talVidSweep(env, now); } catch (e) {} return json({ ok: true }); }
   if (!q[2] && m === "POST") {
     const b = await body(req, 20000); if (!b) return bad("body");
     const st = [], set = (sql, ...v) => st.push(DBq.prepare(sql).bind(...v));

@@ -33,7 +33,7 @@ D.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest(
 var cfgEl=$('#eqcfg'),CFG=cfgEl?JSON.parse(cfgEl.textContent):null;
 if($('[data-job]')||CFG)fetch('/l/jobs').then(function(r){return r.ok?r.json():null}).then(function(j){if(!j||!j.open)return;
   $$('[data-job]').forEach(function(a){var off=j.open[a.getAttribute('data-job')]===false;a.classList.toggle('off',off);var em=$('.k em',a);if(em)em.textContent=off?'Cerrado':'Abierto'});
-  if(CFG&&j.open[CFG.slug]===false)closed()}).catch(function(){});
+  if(CFG&&j.open[CFG.slug]===false)closed();if(CFG&&j.vid===false&&W.__eqNoVid)W.__eqNoVid()}).catch(function(){});
 function closed(){var f=$('#fm');if(!f)return;f.innerHTML='<div class="closed"><p><b>Este puesto está cerrado ahora mismo.</b></p><p>Si quieres que te tengamos en cuenta para cuando lo volvamos a abrir, déjanos tu <a href="/equipo/abierta/#aplicar">candidatura abierta</a> y te escribimos los primeros.</p></div>';
   $$('[data-apply]').forEach(function(a){a.textContent='Puesto cerrado';a.setAttribute('href','/equipo/abierta/')})}
 
@@ -59,19 +59,90 @@ if(fm&&CFG){
     if(q.type==='text'&&need)return v.length>=2;
     return true};
   var mark=function(id,bad){var f=$('[data-f="'+id+'"]',fm);if(f)f.classList.toggle('err',!!bad)};
+  /* ---------- el vídeo selfie: grabarlo aquí (cámara del navegador) o subirlo de la galería; va a R2 por partes mientras siguen con el formulario ---------- */
+  var V=(function(){
+    var box=$('[data-vbox]',fm),lnk=$('[data-vlink]',fm),NOOP={ok:function(){return check(Q.video||{id:'video',type:'url'})},need:function(){},draft:function(){return null},restore:function(){},reset:function(){},wait:function(){return Promise.resolve('')}};
+    if(!box||!Q.video)return NOOP;
+    var pick=$('[data-vpick]',box),cam=$('[data-vcam]',box),dn=$('[data-vdone]',box),er=$('.verr',box),live=$('.vlive',box),prev=$('.vprev',box),tm=$('.vtime',box),bar=$('.vbar',box),go1=$('[data-vgo]',box),
+      st=$('.vst',box),pb=$('.vpr i',box),sub=$('.vsub',box),fin=$('#f-vfile',box),cap=$('#f-vcap',box),MAX=CFG.vmax||157286400,LIM=60,
+      S={st:'',vk:'',gen:0,k:'',t:'',size:0,name:'',src:'',pct:0,p:null,url:''},stream=null,rec=null,chunks=[],t0=0,tick=null,on=true;
+    var fmt=function(x){x=Math.max(0,Math.round(x));return Math.floor(x/60)+':'+('0'+x%60).slice(-2)};
+    var mb=function(b){return (b/1048576).toFixed(b<1048576*10?1:0).replace('.',',')+' MB'};
+    var say=function(m){er.innerHTML=m||'';box.classList.toggle('bad',!!m)};
+    var show=function(w){pick.hidden=w!=='pick';cam.hidden=w!=='cam';dn.hidden=w!=='done'};
+    var stopCam=function(){if(tick){clearInterval(tick);tick=null}if(stream){stream.getTracks().forEach(function(x){x.stop()});stream=null}live.srcObject=null};
+    var canRec=function(){return !!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia&&W.MediaRecorder)};
+    var mime=function(){var ts=['video/mp4;codecs=avc1.42E01E,mp4a.40.2','video/mp4;codecs=avc1,mp4a','video/mp4','video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'];for(var i=0;i<ts.length;i++){try{if(MediaRecorder.isTypeSupported(ts[i]))return ts[i]}catch(e){}}return ''};
+    var setP=function(p){S.pct=p;pb.style.width=p+'%';if(S.st==='up')st.textContent='Subiendo tu vídeo… '+p+' %'};
+    var status=function(){if(S.st==='ok'){st.textContent='Vídeo listo'+(S.size?' · '+mb(S.size):'');sub.textContent='Ya está subido. Si quieres, puedes cambiarlo.';pb.style.width='100%';dn.classList.add('ok')}else dn.classList.remove('ok')};
+    /* subir: /l/jobv (empezar) → /l/jobvp (cada parte de 8 MiB, con 3 intentos) → /l/jobv (terminar) */
+    var putPart=function(n,blob,onp){return new Promise(function(res,rej){var x=new XMLHttpRequest();x.open('PUT','/l/jobvp?k='+encodeURIComponent(S.k)+'&t='+S.t+'&n='+n);x.upload.onprogress=function(e){if(e.lengthComputable)onp(e.loaded)};
+      x.onload=function(){var j={};try{j=JSON.parse(x.responseText)}catch(e){}if(x.status>=200&&x.status<300&&j.etag)res(j.etag);else{var e2=new Error(j.error||'net');e2.code=j.error||'net';rej(e2)}};x.onerror=function(){var e3=new Error('net');e3.code='net';rej(e3)};x.send(blob)})};
+    var upload=function(blob,type,src,dur){var g=++S.gen;S.st='up';S.vk='';S.size=blob.size;S.src=src;setP(0);status();save();
+      S.p=post('jobv',{a:'start',job:CFG.slug,size:blob.size,type:type,dur:dur||0,src:src}).then(function(r){if(g!==S.gen)throw 0;S.k=r.k;S.t=r.t;var ps=r.ps,n=Math.ceil(blob.size/ps),parts=[],done=0,i=0;
+        var one=function(){if(g!==S.gen)throw 0;if(i>=n)return post('jobv',{a:'done',k:S.k,t:S.t,parts:parts});var a=i*ps,part=blob.slice(a,Math.min(blob.size,a+ps)),num=i+1,tries=0;
+          var tryIt=function(){return putPart(num,part,function(l){setP(Math.min(99,Math.floor((done+l)/blob.size*100)))}).catch(function(e){if(++tries<3&&g===S.gen)return new Promise(function(r2){setTimeout(r2,1200*tries)}).then(tryIt);throw e})};
+          return tryIt().then(function(et){parts.push({n:num,etag:et});done+=part.size;i++;return one()})};
+        return one()}).then(function(r){if(g!==S.gen)return '';S.st='ok';S.vk=r.vk;S.size=r.size||S.size;setP(100);status();say('');save();return S.vk},
+        function(e){if(g!==S.gen||e===0)return '';S.st='err';status();
+          if(e&&e.code==='novid'){noVid('Ahora mismo no podemos recibir vídeos aquí. Súbelo a YouTube, Google Drive o Loom y pega el enlace.');return ''}
+          st.textContent='No se ha podido subir';sub.textContent='';say(({big:'El vídeo pesa más de '+mb(MAX)+'.',type:'Ese archivo no es un vídeo.',slow:'Has subido muchos vídeos hoy desde esta conexión. Prueba mañana.',closed:'Este puesto está cerrado.'})[e&&e.code]||'Se cortó la subida. Revisa la conexión y pulsa «Grabar o elegir otro» para intentarlo de nuevo.');throw Object.assign(new Error('vid'),{code:'vid'})});
+      S.p.catch(function(){});return S.p};
+    var abort=function(){if(S.k&&S.t)post('jobv',{a:'abort',k:S.k,t:S.t}).catch(function(){})};
+    var reset=function(){S.gen++;if(S.st==='up'||S.st==='ok')abort();S.st='';S.vk='';S.k='';S.t='';S.p=null;if(S.url){URL.revokeObjectURL(S.url);S.url=''}prev.removeAttribute('src');prev.hidden=false;show('pick');save()};
+    var useBlob=function(blob,type,src,dur,name){stopCam();if(S.url)URL.revokeObjectURL(S.url);S.url=URL.createObjectURL(blob);prev.src=S.url;prev.hidden=false;S.name=name||'';show('done');say('');upload(blob,type,src,dur)};
+    /* grabar en la página */
+    var openCam=function(){say('');
+      if(!canRec()){cap.click();return}
+      navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true},video:{facingMode:'user',width:{ideal:1280},height:{ideal:720},frameRate:{ideal:30,max:30}}}).then(function(s){stream=s;live.srcObject=s;show('cam');
+        go1.classList.remove('rec');$('span',go1).textContent='Empezar a grabar';tm.textContent='0:00 / '+fmt(LIM);bar.style.width='0';var pl=live.play();if(pl&&pl.catch)pl.catch(function(){});
+        live.onloadedmetadata=function(){if(live.videoWidth&&live.videoHeight)live.parentNode.style.aspectRatio=live.videoWidth+' / '+live.videoHeight}},
+        function(e){say((e&&e.name==='NotAllowedError'?'No tenemos permiso para usar la cámara. Dáselo en el navegador o ':'No hemos podido abrir la cámara aquí. ')+'<label for="f-vcap">ábrela desde tu móvil</label> o súbelo de la galería.')})};
+    var startRec=function(){var t=mime();chunks=[];try{rec=new MediaRecorder(stream,t?{mimeType:t,videoBitsPerSecond:1600000,audioBitsPerSecond:96000}:{videoBitsPerSecond:1600000})}catch(e){try{rec=new MediaRecorder(stream)}catch(e2){say('Tu navegador no deja grabar aquí. <label for="f-vcap">Ábrelo desde la cámara</label> o súbelo de la galería.');return}}
+      rec.ondataavailable=function(e){if(e.data&&e.data.size)chunks.push(e.data)};
+      rec.onstop=function(){var secs=(Date.now()-t0)/1000,type=(rec.mimeType||t||'video/webm').split(';')[0],blob=new Blob(chunks,{type:type});rec=null;
+        if(secs<10){stopCam();show('pick');say('Ha durado '+Math.round(secs)+' segundos: cuéntanos un poco más (de 30 a 60 segundos).');return}
+        useBlob(blob,type,'rec',Math.round(secs))};
+      rec.start(1000);t0=Date.now();go1.classList.add('rec');$('span',go1).textContent='Parar';
+      tick=setInterval(function(){var x=(Date.now()-t0)/1000;tm.textContent=fmt(x)+' / '+fmt(LIM);bar.style.width=Math.min(100,x/LIM*100)+'%';if(x>=LIM&&rec&&rec.state==='recording')rec.stop()},250)};
+    /* subir de la galería: tamaño y duración */
+    var dur=function(f){return new Promise(function(res){var v=D.createElement('video'),u=URL.createObjectURL(f),k=false,end=function(d){if(k)return;k=true;URL.revokeObjectURL(u);res(d)};v.preload='metadata';v.muted=true;
+      v.onloadedmetadata=function(){end(isFinite(v.duration)?v.duration:0)};v.onerror=function(){end(0)};setTimeout(function(){end(0)},5000);v.src=u})};
+    var takeFile=function(f){if(!f)return;say('');
+      if(!/^video\//.test(f.type||'')&&!/\.(mp4|mov|m4v|webm|3gp|avi|mkv)$/i.test(f.name||'')){say('Ese archivo no es un vídeo.');return}
+      if(f.size>MAX){say('Ese vídeo pesa '+mb(f.size)+' y el máximo es '+mb(MAX)+'. Grábalo aquí con «Grabar ahora» o recórtalo.');return}
+      dur(f).then(function(d){if(d>75){say('Ese vídeo dura '+fmt(d)+' y el máximo es 1 minuto. Recórtalo o grábalo aquí con «Grabar ahora».');return}
+        useBlob(f,(f.type||'video/mp4').split(';')[0],'file',Math.round(d),f.name)})};
+    $('[data-vrec]',box).addEventListener('click',openCam);
+    $('[data-vcancel]',box).addEventListener('click',function(){if(rec&&rec.state==='recording'){rec.onstop=null;rec.stop();rec=null}stopCam();show('pick')});
+    go1.addEventListener('click',function(){if(rec&&rec.state==='recording')rec.stop();else if(stream)startRec()});
+    $('[data-vredo]',box).addEventListener('click',function(){reset();say('')});
+    [fin,cap].forEach(function(x){x.addEventListener('change',function(){var f=x.files&&x.files[0];x.value='';takeFile(f)})});
+    W.addEventListener('pagehide',stopCam);
+    var noVid=function(m){on=false;S.gen++;stopCam();box.hidden=true;lnk.open=true;lnk.classList.add('only');if(m)setTimeout(function(){var h=$('[data-f=video] .hp',fm);if(h)h.textContent=m},0)};
+    W.__eqNoVid=function(){noVid('')};
+    return {
+      ok:function(){if(on&&(S.st==='up'||S.st==='ok'))return true;var v=val('video');return v?okUrl(v):!(CFG.video==='req')},
+      need:function(m){if(!on){mark('video',true);return}say(m||(S.st==='err'?er.innerHTML:'Graba tu vídeo aquí mismo o súbelo de la galería para seguir.'))},
+      draft:function(){return S.st==='ok'?{vk:S.vk,size:S.size,src:S.src}:null},
+      restore:function(d){if(!d||!d.vk)return;S.st='ok';S.vk=d.vk;S.size=d.size||0;S.src=d.src||'';prev.hidden=true;show('done');status()},
+      reset:reset,
+      wait:function(onp){if(!on||!S.st)return Promise.resolve('');if(S.st==='ok')return Promise.resolve(S.vk);if(S.st==='err')return Promise.reject(Object.assign(new Error('vid'),{code:'vid'}));
+        var iv2=setInterval(function(){onp(S.pct)},400);onp(S.pct);return S.p.then(function(v){clearInterval(iv2);return v},function(e){clearInterval(iv2);throw e})}};
+  })();
   var pr=$('.fm-pr i',fm),lab=$('.fm-top span',fm),ttl=$('.fm-top b',fm);
-  var go=function(n,focus){cur=Math.max(1,Math.min(N,n));steps.forEach(function(s,i){s.classList.toggle('on',i===cur-1)});
+  var go=function(n,focus){cur=Math.max(1,Math.min(N,n));var ap=fm.closest('.apl');if(ap)ap.scrollLeft=0;steps.forEach(function(s,i){s.classList.toggle('on',i===cur-1)});
     if(pr)pr.style.width=(cur/N*100)+'%';if(lab)lab.textContent='Paso '+cur+' de '+N;if(ttl)ttl.textContent=CFG.steps[cur-1];
     $('[data-prev]',fm).hidden=cur===1;$('[data-next]',fm).hidden=cur===N;$('[data-send]',fm).hidden=cur!==N;
-    if(focus){var top=fm.getBoundingClientRect().top+W.scrollY-90;if(Math.abs(W.scrollY-top)>40)W.scrollTo({top:top,behavior:'smooth'});var first=$('.fs.on input:not([type=hidden]),.fs.on textarea',fm);if(first)setTimeout(function(){try{first.focus({preventScroll:true})}catch(e){}},250)}
+    if(focus){var top=fm.getBoundingClientRect().top+W.scrollY-90;if(Math.abs(W.scrollY-top)>40)W.scrollTo({top:top,behavior:'smooth'});var first=$('.fs.on input:not([type=hidden]):not(.vhid),.fs.on textarea',fm);if(first)setTimeout(function(){try{first.focus({preventScroll:true})}catch(e){}},250)}
     save()};
-  var stepOk=function(n){var bad=null;CFG.qs.forEach(function(q){if(q.step!==n)return;var ok=check(q);mark(q.id,!ok);if(!ok&&!bad)bad=q.id});return bad};
-  var save=function(){ls.set(KEY,{a:answers(),s:cur,keep:!!($('[name=keep]',fm)||{}).checked,at:Date.now()})};
+  var stepOk=function(n){var bad=null;CFG.qs.forEach(function(q){if(q.step!==n)return;var ok=q.id==='video'?V.ok():check(q);mark(q.id,q.id==='video'?(!ok&&!!val(q.id)):!ok);if(q.id==='video'&&!ok)V.need();if(!ok&&!bad)bad=q.id});return bad};
+  var save=function(){ls.set(KEY,{a:answers(),s:cur,keep:!!($('[name=keep]',fm)||{}).checked,v:V.draft(),at:Date.now()})};
   /* el borrador: lo que llevaba escrito, si vuelve en menos de 14 días */
-  var dr=ls.get(KEY);if(dr&&dr.a&&Date.now()-(dr.at||0)<14*864e5){Object.keys(dr.a).forEach(function(k){var q=Q[k];if(!q)return;if(q.type==='choice'||q.type==='yesno'){var r=$('input[name="'+k+'"][value="'+String(dr.a[k]).replace(/"/g,'')+'"]',fm);if(r)r.checked=true}else{var x=$('[name="'+k+'"]',fm);if(x)x.value=dr.a[k]}});if(dr.keep&&$('[name=keep]',fm))$('[name=keep]',fm).checked=true}
+  var dr=ls.get(KEY);if(dr&&dr.a&&Date.now()-(dr.at||0)<14*864e5){Object.keys(dr.a).forEach(function(k){var q=Q[k];if(!q)return;if(q.type==='choice'||q.type==='yesno'){var r=$('input[name="'+k+'"][value="'+String(dr.a[k]).replace(/"/g,'')+'"]',fm);if(r)r.checked=true}else{var x=$('[name="'+k+'"]',fm);if(x)x.value=dr.a[k]}});if(dr.keep&&$('[name=keep]',fm))$('[name=keep]',fm).checked=true;if(dr.v)V.restore(dr.v)}
   var cnt=function(t){var c=t.parentNode.querySelector('.cnt');if(c)c.textContent=t.value.length+' / '+t.maxLength};$$('textarea',fm).forEach(cnt);
   fm.addEventListener('input',function(e){var t=e.target;if(t.tagName==='TEXTAREA')cnt(t);var f=t.closest('.fd');if(f&&f.classList.contains('err')){var q=Q[f.getAttribute('data-f')];if(q&&check(q))f.classList.remove('err')}save()});
-  fm.addEventListener('change',function(e){var t=e.target;if(t.type==='file'){var f=t.files&&t.files[0];file=f||null;var fn=$('.fn',t.closest('.fd'));if(fn)fn.textContent=f?f.name+' · '+(f.size/1048576).toFixed(1).replace('.',',')+' MB':'Ningún archivo';mark('cv',f&&!check(Q.cv));return}
+  fm.addEventListener('change',function(e){var t=e.target;if(t.classList.contains('vhid'))return;if(t.type==='file'){var f=t.files&&t.files[0];file=f||null;var fn=$('.fn',t.closest('.fd'));if(fn)fn.textContent=f?f.name+' · '+(f.size/1048576).toFixed(1).replace('.',',')+' MB':'Ningún archivo';mark('cv',f&&!check(Q.cv));return}
     var fd=t.closest('.fd');if(fd&&fd.classList.contains('err')){var q=Q[fd.getAttribute('data-f')];if(q&&check(q))fd.classList.remove('err')}if(t.name==='consent'&&t.checked){$('.cks .c1',fm).classList.remove('err');$('.fmsg',fm).textContent=''}save()});
   fm.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
     if(b.hasAttribute('data-next')){e.preventDefault();var bad=stepOk(cur);if(bad){var el=$('[data-f="'+bad+'"] input,[data-f="'+bad+'"] textarea',fm);if(el)el.focus();return}go(cur+1,true)}
@@ -80,12 +151,13 @@ if(fm&&CFG){
     for(var n=1;n<=N;n++){var bad=stepOk(n);if(bad){go(n,true);msg.textContent='Revisa lo que está marcado en rojo.';return}}
     var c1=$('[name=consent]',fm);if(!c1.checked){$('.cks .c1',fm).classList.add('err');msg.textContent='Marca la casilla de la privacidad para poder enviarla.';return}
     busy=true;var btn=$('[data-send]',fm);btn.disabled=true;btn.textContent='Enviando…';
-    var body={job:CFG.slug,dev:DEV?1:0,a:answers(),consent:true,keep:!!($('[name=keep]',fm)||{}).checked,web:($('[name=web]',fm)||{}).value||'',utm:ss.get('eq:utm')||{},ref:ss.get('eq:ref')||''};
-    post('job',body).then(function(r){var name=(body.a.name||'').split(/\s+/)[0];
+    V.wait(function(p){btn.textContent='Terminando de subir tu vídeo… '+p+' %'}).then(function(vk){
+    var body={job:CFG.slug,dev:DEV?1:0,a:answers(),vk:vk||undefined,consent:true,keep:!!($('[name=keep]',fm)||{}).checked,web:($('[name=web]',fm)||{}).value||'',utm:ss.get('eq:utm')||{},ref:ss.get('eq:ref')||''};
+    btn.textContent='Enviando…';return post('job',body).then(function(r){var name=(body.a.name||'').split(/\s+/)[0];
       var fin=function(cvOk){ls.del(KEY);fm.innerHTML='<div class="done" role="status"><div class="tick">'+TICK+'</div><h3>Recibida, '+esc(name)+'.</h3><p>Gracias por tu tiempo. Te contestamos en menos de 24 horas'+(CFG.test?'. Si encajas, el siguiente paso es una videollamada de 30 minutos con Christian, el día y la hora que tú elijas.':'.')+'</p>'+(cvOk===false?'<p>Tu CV no se pudo subir. No pasa nada: si te interesa que lo veamos, mándalo respondiendo al correo que te escribamos.</p>':'')+'<p class="mut">Mientras, puedes ver <a href="/equipo/">los demás puestos</a> o cómo trabajamos en <a href="/">404growth.com</a>.</p></div>';fm.scrollIntoView({behavior:'smooth',block:'center'})};
-      if(file&&r.cvt)post('jobcv?c='+encodeURIComponent(r.cvt),null,file).then(function(){fin(true)},function(){fin(false)});else fin()},
-    function(err){busy=false;btn.disabled=false;btn.textContent='Enviar candidatura';
-      if(err.code==='fields'&&err.data&&err.data.fields){var f=err.data.fields,st=N;f.forEach(function(id){mark(id,true);if(Q[id]&&Q[id].step<st)st=Q[id].step});go(st,true);msg.textContent='Revisa lo que está marcado en rojo.';return}
+      if(file&&r.cvt)post('jobcv?c='+encodeURIComponent(r.cvt),null,file).then(function(){fin(true)},function(){fin(false)});else fin()})}).catch(function(err){busy=false;btn.disabled=false;btn.textContent='Enviar candidatura';
+      if(err.code==='vid'){go(Q.video.step,true);msg.textContent='No se pudo subir tu vídeo: vuelve a intentarlo.';return}
+      if(err.code==='fields'&&err.data&&err.data.fields){var f=err.data.fields,st=N;f.forEach(function(id){if(id==='video'){V.reset();V.need('Vuelve a grabar o subir tu vídeo: el anterior ya no está.')}else mark(id,true);if(Q[id]&&Q[id].step<st)st=Q[id].step});go(st,true);msg.textContent='Revisa lo que está marcado en rojo.';return}
       if(err.code==='closed'){closed();return}
       msg.textContent=({dup:'Ya tenemos una candidatura tuya para este puesto: te contestamos en menos de 24 horas.',slow:'Se han enviado varias candidaturas hoy desde esta conexión. Prueba mañana o escríbenos.',consent:'Marca la casilla de la privacidad para poder enviarla.'})[err.code]||'No se ha podido enviar. Revisa la conexión e inténtalo otra vez: no se ha perdido nada.'})});
   go(dr&&dr.s?Math.min(dr.s,N):1,false);
