@@ -693,31 +693,37 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Revisadas en hojas de contacto (`sheet39.py`). Se rehicieron 5 (`flow/q39r.json`): el todoterreno de Juguetes Duba se parecía a un Jeep (ahora carrocería genérica), el papel de Scrapa2 llevaba título y marca, la tienda de Only Today tenía arcos (nada que recuerde a lo árabe) y la caja de sobres de Nexus salía vacía.
 - Revisadas con Playwright a 360, 390 y 1280 px (las 60 páginas): sin scroll lateral, sin fotos rotas ni errores. En local el iframe de la propuesta da 404 porque pide la dirección sin `.html` (Cloudflare sí la sirve).
 
-## Lote 40 (18–19/11/2026): propuesta nueva con el aspecto del admin (pendiente del visto bueno de Chris)
+## Lote 40 (18–19/11/2026): propuesta nueva (pendiente del visto bueno de Chris)
 
 - Lo que pidió Chris (18/11/2026):
-  - «mismo lettering, colores y estructuras que nuestro admin»;
-  - **sin precio**, y la garantía: «retorno de la inversión en 90 días o trabajamos gratis hasta conseguirlo»;
+  - sin precio y con la garantía: «retorno de la inversión en 90 días o trabajamos gratis hasta conseguirlo»;
   - **sin testimonios de clientes**: sus webs aún no están listas y no se menciona nada de eso;
-  - se mantiene la agenda dentro;
-  - todas las fotos con Google Flow;
+  - la agenda dentro, las fotos con Google Flow;
   - **solo para las propuestas nuevas**: las ya enviadas no se tocan (siguen con `gen33v.py`).
-- Primero una de referencia (Ooh la la, Antequera) y, cuando Chris la apruebe, las otras 34 del `SEED4`.
-- Generador `prospeccion/l33/gen40.py <slug> [--local]` → `out/p-<slug>.html`:
-  - la tienda es la «Editorial» de `gen37a.py`, metida en un navegador y un móvil (`?tour=1`);
-  - los textos de cada tienda van en `prop40.json`: sus palabras (cita de una publicación suya), cómo venden hoy paso a paso, sus envíos y sus señales;
-  - tema v34 del admin: fondo #F6F7F3 con salvia, tarjetas de cristal blanco de 28 px, negro para lo que manda, SF Pro con cifras a 300 y anillos (`ring`, como `.k4-ring`). Con la SF Pro, los títulos grandes van a `-.034em` (con `-.048em` las letras se tocan).
-- Estructura, como el Inicio del admin:
-  1. saludo según la hora de España («Buenas tardes, Ooh la la.» y «Vuestra tienda online ya está hecha.») con la fecha;
-  2. cuatro anillos: 15 días, 24/7 (en negro), 90 días y «3 cosas»;
-  3. su tienda (en el móvil va lo primero, antes de los anillos) y la garantía en negro;
-  4. «Lo decís vosotras» y «Del «me lo guardas» al pedido» (pasos de hoy frente a los de la tienda);
-  5. los 15 días en barras y «Por qué ahora»: el lunes siguiente y el día 15 se calculan al abrirla, con la siguiente fecha fuerte (Navidad, Reyes, rebajas…);
-  6. «Vuestro trabajo: 3 cosas»;
-  7. dudas (una abierta a la vez) y respuestas rápidas por WhatsApp con el mensaje escrito;
-  8. la agenda (`AG.block`, la misma `/agenda.js`), la nota de Christian y el pie, que dice que las fotos son de IA.
-- Fotos de Ooh la la: 13 trabajos en Flow (`flow/q40.json`, referencias `nooh-la-la-NN.jpg` con la cara tapada), Nano Banana 2.1. Pro estaba sin cupo en la cuenta personal.
-- Revisión: `revision-l40/` en `404growth-subir` (no en `web117`, para que no se publique), con la propuesta en un solo archivo (`inline37.py`, con `agenda.js` metido dentro) y las capturas del Playwright del Mac.
+- **La primera versión, con el aspecto del admin (tarjetas, anillos, texto alineado a la izquierda), no le gustó.** Lo que pidió después (18/11/2026, 22:00):
+  - volver a la de antes (cristal líquido, la tienda entera en móvil y en ordenador, la página de producto), quedándose solo con la letra del admin (SF Pro, títulos a 400 y una segunda línea fina en verde gris #7C8B74) y un poco de sus colores (#F6F7F3 con salvia);
+  - **todo centrado**: textos, títulos, botones y la tienda;
+  - **casi sin texto**: que se entienda de un vistazo, sobre todo la garantía y el «por qué ahora»;
+  - pensada para el móvil, que es de donde llegan casi todas las visitas;
+  - la agenda y el «¿lo hablamos?» más arriba;
+  - **la tienda se ve entera dentro de la página, sin botón para abrirla fuera**.
+- Generador `prospeccion/l33/gen40.py <slug>` → `out/p-<slug>.html` (versión 2). La tienda es la «Editorial» de `gen37a.py`. Los textos de cada tienda van en `prop40.json` (su frase de Instagram, `quote` y `quote_when`).
+- Orden de la versión 2:
+  1. cabecera en píldora de cristal;
+  2. su frase de Instagram como un comentario;
+  3. «Ooh la la, abierta 24 horas.», 3 píldoras (15 días, garantía 90 días, toda España) y Reservar / WhatsApp;
+  4. **la tienda entera**: en el móvil, un móvil con toda la tienda de arriba abajo (iframe `?embed=1` al alto que dice la tienda con `h404`) y un botón Móvil / Ordenador; en el ordenador, el navegador entero y al lado un móvil fijo con el recorrido (`?tour=1`);
+  5. la ficha de producto (`?embed=1&at=destacado`);
+  6. «¿Lo hablamos?»: respuestas rápidas por WhatsApp y la agenda (`AG.block`, sin su párrafo);
+  7. «Menos mensajes, más pedidos.»: 5 iconos hoy frente a 3 con la tienda;
+  8. la garantía en un gráfico: la línea de la inversión, la de las ventas que la cruza antes del día 90 y «Recuperáis la inversión o trabajamos gratis»;
+  9. «Abierta antes de Navidad»: hoy → día 15 → la siguiente fecha fuerte, todo calculado al abrirla;
+  10. 4 anuncios;
+  11. el cierre.
+- En el móvil va una barra fija abajo con «Reservar 30 min» y WhatsApp. Tiene la clase `wa-fab` para que `agenda.js` la esconda en la agenda.
+- Ojo: los marcos `.fr` llevan `aspect-ratio` solo hasta que llega el alto. Si no se quita (`aspectRatio='auto'`), el ancho crece con el alto y la página se sale por la derecha en el móvil.
+- Fotos de Ooh la la: 13 trabajos en Flow (`flow/q40.json`, referencias `nooh-la-la-NN.jpg` con la cara tapada), con Nano Banana 2.1 porque Pro estaba sin cupo en la cuenta personal.
+- Revisión en `404growth-subir/revision-l40/` (no en `web117`, para que no se publique): la propuesta en un solo archivo (`inline37.py` con `agenda.js` metido dentro) y capturas por pantallas del Playwright del Mac. La captura de página entera falla con iframes, así que se hace pantalla a pantalla, con la cabecera y la barra escondidas, y se une después.
 
 ## Agenda dentro de cada propuesta (admin v76, 18/11/2026)
 
