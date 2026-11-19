@@ -1,6 +1,6 @@
 #!/bin/bash
 # 404 Growth · sube a Cloudflare con wrangler, la herramienta oficial de Cloudflare. Doble clic.
-#   1) la web (la carpeta que dice wrangler.jsonc), 2) el admin y el CRM (admin/), 3) Partner 404 (partner/), 4) el contador de visitas (visitas/).
+#   1) la web (la carpeta que dice wrangler.jsonc), 2) el admin y el CRM (admin/), 3) 404 Content (partner/, en la cuenta de Javier), 4) el contador de visitas (visitas/).
 #   Los Workers que no han cambiado desde su última subida buena no se vuelven a subir (archivo .subido de cada carpeta).
 # La primera vez instala Node.js en ~/.404node (solo si no lo tienes) y te pide entrar en Cloudflare en el navegador.
 cd "$(dirname "$0")" || exit 1
@@ -89,7 +89,7 @@ if [ -f admin/wrangler.jsonc ] && grep -q '"r2_buckets"' admin/wrangler.jsonc; t
 fi
 [ -f admin/wrangler.jsonc ] && paso "el admin y el CRM" "$ADMCFG" admin/worker.js
 if [ -f partner/wrangler.jsonc ]; then
-  paso "Partner 404 (app.404growth.com)" partner/wrangler.jsonc partner/worker.js
+  paso "404 Content (404-content.com, cuenta de Javier)" partner/wrangler.jsonc partner/worker.js   # 19/11/2026: desde mover-404content.command está en la cuenta de Cloudflare de Javier; app.404growth.com es solo un puente (partner-puente/)
   # la clave que cifra las claves de Stripe, Anthropic y Meta: se crea una sola vez y se queda en Cloudflare
   # solo si Cloudflare contesta bien y la lista no la trae: si «secret list» falla (como el 11/11/2026), nunca se crea otra clave
   # (una clave nueva dejaría ilegibles las claves de Stripe, Anthropic y Meta guardadas)
@@ -102,5 +102,5 @@ fi
 [ -f visitas/wrangler.jsonc ] && paso "el contador de visitas" visitas/wrangler.jsonc visitas/worker.js   # el último: casi nunca cambia
 if [ -n "$FALLOS" ]; then echo; echo "  Faltó por subir$FALLOS. Haz una captura de esta ventana para Claude."; fin 1; fi
 echo
-echo "  Listo: todo subido. La web está en https://404growth.com y Partner 404 en https://app.404growth.com"
+echo "  Listo: todo subido. La web está en https://404growth.com y 404 Content en https://404-content.com"
 fin 0
