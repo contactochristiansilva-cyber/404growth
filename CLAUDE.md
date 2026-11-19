@@ -808,7 +808,8 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - **DNS en Cloudflare** (todos «DNS only»):
   - TXT `resend._domainkey.m` (DKIM);
   - CNAME `rsend.m` → `rsend-euw1.forge.rmta.net` y CNAME `send.m` → `send.forge.rmta.net` (envío y return-path);
-  - TXT `m` → `google-site-verification=…` (Postmaster Tools).
+  - TXT `m` → `google-site-verification=…` (Postmaster Tools);
+  - TXT `_dmarc.m` → `v=DMARC1; p=quarantine; adkim=s; aspf=r; rua=mailto:hola@404growth.com` (19/11/2026). Con `aspf=r`, el return-path `rsend.m.404growth.com` también cuenta como alineado, así que pasan el SPF y el DKIM. Sin este registro, mail-tester decía «We could not verify your DMARC record» (Gmail sí miraba el del dominio).
 - **Ojo con el DMARC del dominio:** `p=quarantine; adkim=s; aspf=s` (estricto). El remitente tiene que ser exactamente `@m.404growth.com`, porque el DKIM firma con `d=m.404growth.com`. Un remitente `@404growth.com` enviado por Resend no está verificado y falla.
 - **Google Postmaster Tools:** m.404growth.com verificado con la cuenta personal de Chris. Enseña datos cuando haya volumen hacia Gmail.
 - **Admin v79** (`tools/email/patch_v79.py <worker> <salida>`):
@@ -817,7 +818,10 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - newsletter con `List-Unsubscribe-Post: List-Unsubscribe=One-Click`, y `POST /nl/baja?t=<token>` da de baja sin abrir la página (RFC 8058).
   - Prueba: `tools/email/test/t_v79.mjs` (16 comprobaciones) con `d1shim.mjs` y `w79mod.mjs` (copia del worker con `export { sendMail, nlSend, mailFrom, VSL_FROM, VSL_REPLY, DDL, getMeta, setMeta };` al final).
   - Instalado en el Mac el 19/11/2026 (huella c83d79e714fa67f8; copia de antes en `anterior/worker-l40-19nov-antes-email-v79.js`, fuentes en `fuentes-v79/`).
-- **La clave de Resend (`nl_key`) se pega en admin › Ajustes › Newsletter después de subir la v79.** Antes, la v78 enviaría desde hola@404growth.com y fallaría.
+- **La clave de Resend (`nl_key`) está puesta en admin › Ajustes › Newsletter (19/11/2026, después de subir la v79).** Antes, la v78 enviaría desde hola@404growth.com y fallaría.
+- **Pie de la newsletter** (Ajustes › Newsletter, `cfg.nlFooter`; sin él `nlSend` no envía): «Recibes este email porque te diste de alta en 404growth.com. 404 Growth · Christian Silva · hola@404growth.com».
+- **Prueba de envío (19/11/2026):** borrador de newsletter + `POST /admin/api/nl/campaigns/<id>/test {to}` (asunto con «[Prueba] »), y después se borra el borrador. mail-tester.com: 10/10, SpamAssassin −0,1, SPF, DKIM y DMARC correctos y en ninguna lista negra. Gmail (contactochristiansilva@): en Recibidos, SPF, DKIM y DMARC en PASS, remitente christian@m.404growth.com y respuesta a hola@. Falta probarlo en Outlook y en Yahoo.
+  - Desde el admin no se puede hacer `fetch` a dns.google (lo bloquea su CSP): las consultas DNS se hacen desde otra pestaña, por ejemplo la de mail-tester.
 - Google Workspace se suspendió el 6/11/2026 por no tener método de pago; el 19/11/2026 hola@ ya recibía correo.
 
 ## Talento: el sistema de contratación (admin v77, 18/11/2026)
