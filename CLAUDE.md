@@ -1072,3 +1072,14 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Datos en claro en `assets/intenso-eqn.json` (103 marcas con alias y 464 perfumes con su número); lógica en `assets/intenso-eq.js` (la lista flota sobre la página, `.eqs-abs`, porque la portada corta lo que sobresale). El índice con huellas de la primera versión (`intenso-eq.json`) se borró.
   - Se genera con `tools/intenso-eq/build2.py` desde su catálogo (`catalogo.json`, campo `ref`, uso interno, no está en el repositorio) y el de la tienda; prueba `test2.mjs`. Al copiarlo al tema se comprueba con sumas por trozos con `awk` en `theme_bash`. Ojo: en los scripts que se pasan a `theme_bash` no usar `\u…` ni `\b` (llegan convertidos); sí funcionan `\p{M}`, `\d` y `\+`.
   - Aviso dado a Chris (dos veces): usar nombres de marca para llevar a equivalencias tiene riesgo legal en la UE (TJUE, L'Oréal contra Bellure, 2009), y con las sugerencias la lista de equivalencias se ve y se puede descargar; lo decide Intenso.
+
+## Merch 404 Growth en Printful (19/11/2026)
+
+- Diseños en el lienzo de Claude Design «404 Growth · Colección merch»: solo «404GROWTH.COM» delante (SF Pro 900), espalda lisa; cambian los colores de prenda y letras.
+- Archivos de impresión (PNG transparentes, SF Pro sacada con el Playwright del Mac) en `~/Downloads/404 merch/archivos/` (`404growth-<menta|bosque|verde|lima|crema|hilo-blanco|hilo-kelly>.png`).
+- Cuenta de Printful de Chris (entra con Google), 6 plantillas en Mis productos, todas fabricadas en la UE:
+  - Sudadera Bosque y Crema: Bella+Canvas 4719 Oversized Heavyweight (339 g/m²), bordado centro pecho 4" (hilo blanco y Kelly Green 1751; los hilos estándar no tienen menta ni verde bosque);
+  - Camiseta Hueso (Ivory, verde #2E7A64) y Noche (Black, lima #D4F27A): Comfort Colors 1717, DTFlex de 9" en el pecho;
+  - Gorra Crema (Oyster, verde) y Negra (menta): Econscious EC7000 (algodón orgánico), bordado «color ilimitado» (+3,25 €) con el color exacto, 5,5". La Comfort Colors Rope Cap es de poliéster: descartada.
+- Pedido de una unidad de cada (tallas M) montado en `printful.com/es/dashboard/order/update`: 155,75 € más envío e IVA (incluye 17,25 € de digitalización de los 3 bordados, que se paga una vez). Falta que Chris ponga la dirección y la tarjeta.
+- Ojo en el diseñador de Printful: el `file-input` del diálogo «Tus archivos» no sube; usa el oculto del área de diseño y luego abre «Subidas». En las gorras, los campos de ancho y alto no van enlazados y el botón «−» salta a otro tamaño: deja el tamaño por defecto o deshaz.
