@@ -802,6 +802,24 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   3. `python3 tools/og/wa_og.py meta <web117-404growth>` cambia `og:title`, `og:description` y `og:image`, solo en las que ya tienen su `--wa.jpg`. Con `--forzar` no lo mira, para la copia del repo, cuyas fotos están en el Mac.
 - **Hecho el 18/11/2026** en las 443 propuestas con agenda del Mac (copia de antes en `anterior/propuestas-antes-miniatura-18nov/`) y en las 224 de `prospeccion/l33/out`. Las propuestas nuevas necesitan los pasos 1–3 antes de enviarse; si no, salen con la miniatura vieja.
 
+## Emails desde m.404growth.com (admin v79, 19/11/2026)
+
+- **Resend:** la cuenta es de hola@404growth.com (equipo «404growth»). Envía desde el subdominio **m.404growth.com**, región Irlanda (eu-west-1), sin seguimiento de clics ni de aperturas. Verificado el 19/11/2026. Si algo sale mal, no se mancha ni 404growth.com ni hola@.
+- **DNS en Cloudflare** (todos «DNS only»):
+  - TXT `resend._domainkey.m` (DKIM);
+  - CNAME `rsend.m` → `rsend-euw1.forge.rmta.net` y CNAME `send.m` → `send.forge.rmta.net` (envío y return-path);
+  - TXT `m` → `google-site-verification=…` (Postmaster Tools).
+- **Ojo con el DMARC del dominio:** `p=quarantine; adkim=s; aspf=s` (estricto). El remitente tiene que ser exactamente `@m.404growth.com`, porque el DKIM firma con `d=m.404growth.com`. Un remitente `@404growth.com` enviado por Resend no está verificado y falla.
+- **Google Postmaster Tools:** m.404growth.com verificado con la cuenta personal de Chris. Enseña datos cuando haya volumen hacia Gmail.
+- **Admin v79** (`tools/email/patch_v79.py <worker> <salida>`):
+  - `VSL_FROM` = «Christian · 404 Growth <christian@m.404growth.com>» (confirmación, recordatorios de 24 h y 1 h, no-show y Talento), siempre con respuesta a hola@404growth.com;
+  - la newsletter y el informe semanal usan el «Remitente» de Ajustes solo si es de m.404growth.com (`mailFrom`); si no, `VSL_FROM`. Ya no hace falta rellenarlo;
+  - newsletter con `List-Unsubscribe-Post: List-Unsubscribe=One-Click`, y `POST /nl/baja?t=<token>` da de baja sin abrir la página (RFC 8058).
+  - Prueba: `tools/email/test/t_v79.mjs` (16 comprobaciones) con `d1shim.mjs` y `w79mod.mjs` (copia del worker con `export { sendMail, nlSend, mailFrom, VSL_FROM, VSL_REPLY, DDL, getMeta, setMeta };` al final).
+  - Instalado en el Mac el 19/11/2026 (huella c83d79e714fa67f8; copia de antes en `anterior/worker-l40-19nov-antes-email-v79.js`, fuentes en `fuentes-v79/`).
+- **La clave de Resend (`nl_key`) se pega en admin › Ajustes › Newsletter después de subir la v79.** Antes, la v78 enviaría desde hola@404growth.com y fallaría.
+- Google Workspace se suspendió el 6/11/2026 por no tener método de pago; el 19/11/2026 hola@ ya recibía correo.
+
 ## Talento: el sistema de contratación (admin v77, 18/11/2026)
 
 - Chris: «crear este sistema de captación lo más bueno posible para siempre tener talento disponible que entre al equipo conforme crezca la empresa». Los anuncios los publica él en su LinkedIn, enlazando a las páginas de empleo. Plan de equipo y pilares: doc «404 Growth · Pilares, equipo y primeras contrataciones».
