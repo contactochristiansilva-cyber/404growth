@@ -680,6 +680,22 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Copia de la v78 en `anterior/worker-v78-18nov-antes-seed19.js`.
 - **Webs con r.jina.ai:** da error 429 con más de unas 20 peticiones por minuto, así que hay que esperar 3–4 s entre una y otra. Con `Accept: application/json` el JSON viene escapado dentro de `data.text`: hay que buscar `\"products\"`.
 
+## Scrapeo del 19/11 para el 20 y el 21/11 (`seed_20261120`)
+
+- Son 29 tiendas con los filtros del 18/11: 25 de moda y 4 zapaterías. 15 van al lote del 20/11 y 14 al del 21/11, y nunca hay dos del mismo pueblo el mismo día.
+- Todo está en `prospeccion/scrapeo-19nov/`:
+  - `leads.json`, con el campo `day` de cada una;
+  - `revision.md`, con lo descartado y por qué;
+  - `mkrows.py`, `patch_s20.py` y la prueba `t_s20.mjs` (25 comprobaciones).
+- En el CRM entran como quinta lista de `seedOnce` (`SEED5`), **sin propuesta**. Hay 14 con `waOk: false`.
+- El admin del Mac quedó con la huella c3d473bdb90474a0. La copia de antes está en `anterior/worker-v80-19nov-antes-seed20.js`. Falta que Chris ejecute `subir.command`.
+- Lo aprendido:
+  - `navigate` sin `tabId` se lleva la pestaña de Instagram y se pierde lo que había en memoria;
+  - «moda mujer <pueblo>» da 0 resultados: usa búsquedas de 2 palabras;
+  - r.jina.ai no funciona desde instagram.com (lo bloquea su CSP): hay que usar una pestaña propia de r.jina.ai;
+  - las pestañas en segundo plano van lentas porque Chrome frena sus temporizadores. Para que el motor no se pare, la de Instagram tiene que estar delante;
+  - el cruce con el CRM se hace al final, por Instagram y por número, contra `crm/state`. Así salió La Cañada, que ya estaba en el lote 38.
+
 ## Lote 39 (17/11/2026): 30 propuestas sin moda ni comida, fotos de Google Flow
 
 - Las 30 del scrapeo del 17/11 (arriba), con la tienda «Editorial» del lote 37 (`gen37a.py`) y la propuesta de siempre (`gen33v.py`). Publicadas en el Mac (`web117-404growth`, con sus `p/<slug>/index.html`), a falta de `subir-web.command` y `subir.command`.
