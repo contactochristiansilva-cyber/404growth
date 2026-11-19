@@ -778,6 +778,22 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Ojo: en las propuestas `html` lleva la clase `sk` y la regla `.sk p{margin:0;font-size:15.5px}`. Los párrafos de la agenda llevan por eso `.ag .ag-…` (más fuerza), o pierden su tamaño y su margen.
 - **Admin (v76 y v76b):** `vslBook` acepta `p` (slug) y, solo cuando viene `p`, reservas sin inversión: en el lead queda «Sin preguntar (propuesta)», nota B, y el aviso no dice cuánto invierte. Sin `p`, la inversión sigue siendo obligatoria y «Menos de 1.500 €» se rechaza siempre. La nota dice «Reservada en su propuesta: 404growth.com/p/<slug>/», el aviso al móvil empieza por «Desde su propuesta», y `crmFromProposal` pasa el contacto del CRM con ese `slug` a «Pendiente de reunión» (con las fechas de las etapas anteriores, como al moverlo a mano) y le añade una línea en las notas con el día y la hora. Un cliente cerrado o perdido no cambia de etapa. Prueba: `tools/agenda/t_v76.mjs` (13 comprobaciones). Copias en `anterior/worker-v75b-18nov-antes-agenda.js`, `anterior/worker-v76-18nov-con-inversion.js` y `anterior/agenda-18nov-con-inversion.js`.
 
+## «Hasta dónde ha llegado» en cada propuesta (admin v80, 19/11/2026)
+
+- Chris: «cuando 404 me notifica de actividad de un prospecto en la propuesta me dice que va por CRM IA… siendo nuevas».
+- **Por qué pasaba:** el tipo de propuesta se adivinaba por el nicho del lead, no por la página.
+  - En la visita (`whoOf`), solo moda y joyería eran «tienda». Cosmética, suplementos, ópticas, sneakers, deco, mercería… salían como la oferta antigua de los concesionarios (`dx`: web, vídeo, WhatsApp + IA, CRM). Al llegar a la tienda decía «WhatsApp + IA» y en captación, «CRM».
+  - En la ficha del CRM (`vPart`), todas las de tienda salían como la oferta de contenido (`es`): «llegó a la web», «llegó al asistente».
+- **Ahora lo dice la página** (`scOf`): las secciones en las que han estado sus visitas (`ss` del contador).
+  - `es`: la oferta de contenido (`p-contenido`, `reels`, `p-asistente`…);
+  - `t4`: las del lote 40 (`gen40.py`: `producto`, `pedido`, `ahora`, `anuncios`). Sus pasos son Portada, La tienda, La ficha, La agenda, Menos mensajes, La garantía, Antes de Navidad, Los anuncios y Final, y el punto al que llegó sale de esas secciones (`dep()`), porque la página solo manda la profundidad 0, 3 o 9;
+  - `tv`: las de tienda de los lotes 30–39 (`diagnostico`, `captacion`, `plan`…).
+  - Si aún no hay secciones, lo dice el lead: nichos antiguos → `es`; concesionarios o sin nicho → `dx`; las de tienda → `t4` si su `lotDay` es del 19/11/2026 o después (`T4_FROM`), si no `tv`. Sin lead (Kiss of Life, Antequera…): sin pasos.
+  - En la ficha del CRM, las de tienda usan `VPART_TV` (tienda, captación, plan, final), también en el título de la temperatura.
+  - `SEC` tiene ya nombre para las secciones de las tiendas (La tienda, La agenda, Captación, El cierre…).
+- Si sale una plantilla de propuesta nueva, sus `id` de sección van en `SC_*` y sus pasos en `PART_*`/`REACH_*`.
+- Fuentes en `tools/propuestas-partes/` (`patch_v80.py <worker v79> <salida>`) y prueba `t_v80.mjs <copia v80 con export { whoOf, scOf, partOf, PAGES, parse }> <copia v79 con export { PAGES }>` (31 comprobaciones). En el Mac, en `404growth-subir/fuentes-v80/`. Instalado en el Mac el 19/11/2026 (huella 530a6ead8b3375f1; copia de antes en `anterior/worker-v79-19nov-antes-partes-propuesta.js`). La copia de `404growth-subir/admin/worker.js` del repositorio no está al día: la buena es la del Mac.
+
 ## Miniatura del enlace de las propuestas en WhatsApp (18/11/2026)
 
 - Chris eligió la **opción C** de 3 («A · su tienda en el móvil», «B · etiqueta de envío», «C · foto y titular»). Es la foto de la portada de su tienda a todo el ancho, oscurecida a la izquierda, y encima:
