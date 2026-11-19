@@ -729,7 +729,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - En el móvil va una barra fija abajo con «Reservar 30 min» y WhatsApp. Tiene la clase `wa-fab` para que `agenda.js` la esconda en la agenda.
 - Ojo: los marcos `.fr` llevan `aspect-ratio` solo hasta que llega el alto. Si no se quita (`aspectRatio='auto'`), el ancho crece con el alto y la página se sale por la derecha en el móvil.
 - Fotos de Ooh la la: 13 trabajos en Flow (`flow/q40.json`, referencias `nooh-la-la-NN.jpg` con la cara tapada), con Nano Banana 2.1 porque Pro estaba sin cupo en la cuenta personal.
-- Revisión en `404growth-subir/revision-l40/` (no en `web117`, para que no se publique): la propuesta en un solo archivo (`inline37.py` con `agenda.js` metido dentro) y capturas por pantallas del Playwright del Mac. La captura de página entera falla con iframes, así que se hace pantalla a pantalla, con la cabecera y la barra escondidas, y se une después.
+- Revisión en `404growth-subir/revision-l40/` (no en `web117`, para que no se publique): la propuesta en un solo archivo (`inline40.py <out> tools/agenda/agenda.js <carpeta> <slugs…>`: `inline37.py` con `agenda.js` y la foto de Christian dentro, unos 3 MB cada una) y capturas por pantallas del Playwright del Mac. La captura de página entera falla con iframes, así que se hace pantalla a pantalla, con la cabecera y la barra escondidas, y se une después.
 - **Todas (18–19/11/2026, Chris: «me encanta, ahora sí vamos con todas»).** De las 35 del scrapeo del 18/11:
   - **29 hechas** y en el Mac (`web117-404growth`, con su miniatura de WhatsApp `--wa.jpg`), a falta de `subir-web.command`.
   - **Vichy Motril fuera:** vichymotril.com ya es una tienda con categorías y carrito.
