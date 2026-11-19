@@ -78,7 +78,9 @@ paso "la web" wrangler.jsonc   # primero la web, para que se publique aunque fal
 # Se crea solo la primera vez. Si R2 no está activado en la cuenta de Cloudflare, el admin se sube sin él y las páginas piden el enlace del vídeo, como antes.
 ADMCFG=admin/wrangler.jsonc
 if [ -f admin/wrangler.jsonc ] && grep -q '"r2_buckets"' admin/wrangler.jsonc; then
-  if $W r2 bucket list 2>/dev/null | grep -q '404growth-talento' || $W r2 bucket create 404growth-talento >/dev/null 2>&1; then
+  # 19/11/2026: wrangler ve dos cuentas (la de Chris y la de Javier). Sin decirle cuál, «r2 bucket list» fallaba y el admin se subía sin R2.
+  R2ACC=d59d5d5e6d9dba65f2a977ef91ab2840
+  if CLOUDFLARE_ACCOUNT_ID=$R2ACC $W r2 bucket list 2>/dev/null | grep -q '404growth-talento' || CLOUDFLARE_ACCOUNT_ID=$R2ACC $W r2 bucket create 404growth-talento 2>&1 | grep -q -E 'Created|already exists'; then
     echo; echo "  ✓ Almacén de los vídeos de las candidaturas (R2) listo"
   else
     grep -v '"r2_buckets"' admin/wrangler.jsonc > admin/wrangler-sin-r2.jsonc; ADMCFG=admin/wrangler-sin-r2.jsonc
