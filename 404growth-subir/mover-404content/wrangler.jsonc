@@ -1,0 +1,24 @@
+// 404 Content · la plataforma en 404-content.com, en la cuenta de Cloudflare de Javier desde el 19/11/2026 (mover-404content.command).
+// Su propia base D1 («404content», solo las tablas p_* y users/attempts vacías). Las claves de Stripe, Anthropic y Meta se ponen en
+// 404-content.com/admin → Claves (no van aquí); el secreto P404_KEY que las cifra lo puso el traslado.
+// app.404growth.com sigue en la cuenta de Chris como puente hacia aquí (partner-puente/).
+// "ai": Workers AI de Cloudflare, para pasar a texto lo que se dice en los vídeos de 404 Content.
+{
+  "name": "404content",
+  "account_id": "__JAVIER__",
+  "main": "worker.js",
+  "compatibility_date": "2025-09-01",
+  "no_bundle": true,
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "404-content.com", "custom_domain": true },
+    { "pattern": "www.404-content.com", "custom_domain": true }
+  ],
+  "triggers": { "crons": ["*/5 * * * *"] },
+  "observability": { "enabled": true },
+  "ai": { "binding": "AI" },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "404content", "database_id": "__DBID__" }
+  ]
+}

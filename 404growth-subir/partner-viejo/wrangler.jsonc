@@ -1,0 +1,21 @@
+// 19/11/2026 · traslado de 404 Content: el Worker viejo («404growth-partner», cuenta de Chris) un momento antes de ser el puente.
+// Sin 404-content.com (ya está en la cuenta de Javier), sin cron (para que no cambie nada mientras se copian los datos) y con
+// /__reseal (reseal_patch.py), que vuelve a cifrar las claves y las conexiones con la clave nueva. Solo lo usa mover-404content.command.
+{
+  "name": "404growth-partner",
+  "account_id": "d59d5d5e6d9dba65f2a977ef91ab2840",
+  "main": "worker.js",
+  "compatibility_date": "2025-09-01",
+  "no_bundle": true,
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "app.404growth.com", "custom_domain": true }
+  ],
+  "triggers": { "crons": [] },
+  "observability": { "enabled": true },
+  "ai": { "binding": "AI" },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "404growth-admin", "database_id": "e5f69c5d-afe8-42f0-a0db-a4cb096df0c3" }
+  ]
+}

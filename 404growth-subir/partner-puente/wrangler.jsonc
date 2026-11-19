@@ -1,0 +1,16 @@
+// 404 Growth · «404growth-partner» en la cuenta de Chris, desde el 19/11/2026 solo el puente de app.404growth.com a 404-content.com
+// (404 Content está ahora en la cuenta de Cloudflare de Javier: ver partner/wrangler.jsonc). Sin base de datos y sin cron.
+{
+  "name": "404growth-partner",
+  "account_id": "d59d5d5e6d9dba65f2a977ef91ab2840",
+  "main": "worker.js",
+  "compatibility_date": "2025-09-01",
+  "no_bundle": true,
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "app.404growth.com", "custom_domain": true }
+  ],
+  "triggers": { "crons": [] },
+  "observability": { "enabled": true }
+}

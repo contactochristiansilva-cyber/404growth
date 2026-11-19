@@ -1,0 +1,14 @@
+import P from './puente.mjs';
+let ok=0, ko=0; const t=(c,m)=>{ if(c) ok++; else { ko++; console.log('FALLO:', m); } };
+const seen=[]; globalThis.fetch = async (url, o) => { seen.push({url, o, body: o.body ? Buffer.from(o.body).toString() : null}); return new Response('{"x":1}', { status: 201, headers: { 'content-type': 'application/json', 'set-cookie': 'a=b' } }); };
+let r = await P.fetch(new Request('https://app.404growth.com/panel?x=1'));
+t(r.status === 301 && r.headers.get('location') === 'https://404-content.com/panel?x=1', 'página → 301');
+r = await P.fetch(new Request('https://app.404growth.com/api/me', { headers: { cookie: 'k=v', 'cf-connecting-ip': '1.2.3.4', 'x-forwarded-for': '1.2.3.4' } }));
+t(r.status === 201 && seen[0].url === 'https://404-content.com/api/me', 'API GET → reenviada');
+t(seen[0].o.headers.get('cookie') === 'k=v' && !seen[0].o.headers.get('cf-connecting-ip') && !seen[0].o.headers.get('x-forwarded-for'), 'cabeceras: sí cookie, no cf-*');
+r = await P.fetch(new Request('https://app.404growth.com/wa/webhook?hub=1', { method: 'POST', body: '{"entry":[1]}', headers: { 'x-hub-signature-256': 'sha256=abc', 'content-type': 'application/json' } }));
+t(seen[1].url === 'https://404-content.com/wa/webhook?hub=1' && seen[1].o.method === 'POST' && seen[1].body === '{"entry":[1]}' && seen[1].o.headers.get('x-hub-signature-256') === 'sha256=abc', 'webhook POST → mismo cuerpo y firma');
+t(r.headers.get('set-cookie') === 'a=b', 'la respuesta pasa tal cual');
+r = await P.fetch(new Request('https://app.404growth.com/api/stripe/webhook', { method: 'POST', body: 'raw-body', headers: { 'stripe-signature': 't=1,v1=x' } }));
+t(seen[2].body === 'raw-body' && seen[2].o.headers.get('stripe-signature') === 't=1,v1=x', 'Stripe: cuerpo y firma intactos');
+console.log(ok+' bien, '+ko+' mal'); process.exit(ko?1:0);
