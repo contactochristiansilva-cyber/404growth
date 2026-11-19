@@ -1,0 +1,6 @@
+// Solo para que wrangler cree y busque la base «404content» en la cuenta de Javier (mover-404content.command).
+{
+  "name": "404content",
+  "account_id": "a78e09fb957fd8c5bd1a88468bdf2a10",
+  "compatibility_date": "2025-09-01"
+}

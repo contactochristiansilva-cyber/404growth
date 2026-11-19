@@ -25,7 +25,29 @@ echo "  404 Content · traslado a la cuenta de Cloudflare de Javier"
 echo
 WHO=$($W whoami 2>&1)
 if printf '%s' "$WHO" | grep -qi "not authenticated"; then para "No estás dentro de Cloudflare: abre antes subir.command (te pide entrar) y vuelve a abrir este."; fi
-printf '%s' "$WHO" | grep -q "$JV" || para "Tu usuario de Cloudflare todavía no ve la cuenta de Javier. Acepta la invitación del correo de Cloudflare y vuelve a abrir este."
+# el permiso que diste a wrangler en su día solo vale para las cuentas que había entonces: si no ve la de Javier, se pide otra vez
+login_chrome() {
+  LOG=$(mktemp -t 404login); $W login --browser=false >"$LOG" 2>&1 & PID=$!
+  URL=""
+  for i in $(seq 1 90); do
+    URL=$(grep -o 'https://dash\.cloudflare\.com/oauth2/auth[^[:space:]]*' "$LOG" | head -1)
+    [ -n "$URL" ] && break; kill -0 $PID 2>/dev/null || break; sleep 1
+  done
+  if [ -n "$URL" ]; then
+    if [ -d "/Applications/Google Chrome.app" ]; then open -a "Google Chrome" "$URL"; else open "$URL"; fi
+  fi
+  wait $PID; R=$?; rm -f "$LOG"; return $R
+}
+if ! printf '%s' "$WHO" | grep -q "$JV"; then
+  echo "  Wrangler todavía no tiene permiso para la cuenta de Javier. Hay que darle permiso otra vez:"
+  echo "  se abre Cloudflare en Chrome. Si te deja elegir cuentas, marca las dos (o «todas»), baja hasta el final"
+  echo "  y pulsa el botón azul «Allow». Cuando salga «Authorization granted», vuelve a esta ventana."
+  echo
+  $W logout >/dev/null 2>&1
+  login_chrome || $W login --device || para "No se pudo entrar en Cloudflare."
+  WHO=$($W whoami 2>&1)
+  printf '%s' "$WHO" | grep -q "$JV" || para "Wrangler sigue sin ver la cuenta de Javier."
+fi
 echo "  ✓ Tu usuario ve tu cuenta y la de Javier"
 
 # 1) la clave nueva
@@ -76,20 +98,30 @@ if ! hecho export; then
   marca export
 fi
 if ! hecho base; then
-  DBID=$(CLOUDFLARE_ACCOUNT_ID=$JV $W d1 list --json 2>/dev/null | node "$S/sql.mjs" dbid "$DBN")
+  # 19/11/2026: con CLOUDFLARE_ACCOUNT_ID wrangler seguía usando la cuenta del wrangler.jsonc de esta carpeta (la tuya) y la base se
+  # creó allí. Con -c y un archivo que dice la cuenta de Javier, va a la suya.
+  JC="$S/cuenta-javier.jsonc"
+  DBID=$($W d1 list --json -c "$JC" 2>/dev/null | node "$S/sql.mjs" dbid "$DBN")
   if [ -z "$DBID" ]; then
-    CLOUDFLARE_ACCOUNT_ID=$JV $W d1 create "$DBN" --location weur < /dev/null || para "No se pudo crear la base en la cuenta de Javier."
-    DBID=$(CLOUDFLARE_ACCOUNT_ID=$JV $W d1 list --json 2>/dev/null | node "$S/sql.mjs" dbid "$DBN")
+    $W d1 create "$DBN" --location weur -c "$JC" < /dev/null || para "No se pudo crear la base en la cuenta de Javier."
+    DBID=$($W d1 list --json -c "$JC" 2>/dev/null | node "$S/sql.mjs" dbid "$DBN")
   fi
   [ -n "$DBID" ] || para "No encuentro la base nueva en la cuenta de Javier."
   [ -f "$M/partner-wrangler-cuenta-chris.jsonc" ] || cp partner/wrangler.jsonc "$M/partner-wrangler-cuenta-chris.jsonc"
   sed -e "s/__JAVIER__/$JV/" -e "s/__DBID__/$DBID/" "$S/wrangler.jsonc" > partner/wrangler.jsonc
   grep -v '"triggers"' partner/wrangler.jsonc > partner/wrangler-sin-cron.jsonc
-  echo "  ✓ Base «$DBN» en la cuenta de Javier ($DBID)"
+  echo "  ✓ Base «${DBN}» en la cuenta de Javier (${DBID})"
   marca base
 fi
 if ! hecho import; then
-  N=$($W d1 execute "$DBN" --remote --json -c partner/wrangler-sin-cron.jsonc --command "SELECT count(*) AS n FROM sqlite_master WHERE name = 'p_tenants'" 2>/dev/null | grep -o '"n": *[0-9]*' | grep -o '[0-9]*$')
+  # una base recién creada tarda unos segundos en estar disponible (19/11/2026: «could not be found [code: 7404]»)
+  N=""
+  for i in $(seq 1 24); do
+    N=$($W d1 execute "$DBN" --remote --json -c partner/wrangler-sin-cron.jsonc --command "SELECT count(*) AS n FROM sqlite_master WHERE name = 'p_tenants'" 2>/dev/null | grep -o '"n": *[0-9]*' | grep -o '[0-9]*$')
+    [ -n "$N" ] && break
+    echo "  Esperando a que la base nueva esté lista… ($i)"; sleep 5
+  done
+  [ -n "$N" ] || para "La base nueva no responde todavía. Vuelve a abrir este archivo en unos minutos."
   [ "$N" = "0" ] || para "La base nueva ya tiene datos de un intento anterior a medias. No sigo para no mezclar nada."
   $W d1 execute "$DBN" --remote -c partner/wrangler-sin-cron.jsonc --file "$M/p404.sql" --yes || para "No se pudieron cargar los datos en la base nueva."
   $W d1 execute "$DBN" --remote -c partner/wrangler-sin-cron.jsonc --file "$M/admins.sql" --yes || para "No se pudieron cargar los admins."
