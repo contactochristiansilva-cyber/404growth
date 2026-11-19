@@ -822,6 +822,13 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - **Pie de la newsletter** (Ajustes › Newsletter, `cfg.nlFooter`; sin él `nlSend` no envía): «Recibes este email porque te diste de alta en 404growth.com. 404 Growth · Christian Silva · hola@404growth.com».
 - **Prueba de envío (19/11/2026):** borrador de newsletter + `POST /admin/api/nl/campaigns/<id>/test {to}` (asunto con «[Prueba] »), y después se borra el borrador. mail-tester.com: 10/10, SpamAssassin −0,1, SPF, DKIM y DMARC correctos y en ninguna lista negra. Gmail (contactochristiansilva@): en Recibidos, SPF, DKIM y DMARC en PASS, remitente christian@m.404growth.com y respuesta a hola@. Falta probarlo en Outlook y en Yahoo.
   - Desde el admin no se puede hacer `fetch` a dns.google (lo bloquea su CSP): las consultas DNS se hacen desde otra pestaña, por ejemplo la de mail-tester.
+
+## Plan de escalado: el calendario hasta febrero (19/11/2026)
+
+- El plan es el doc «Plan de escalado 404 · 30k MRR» (claude.ai/artifact/R3icgq1oZdE6eQExqLdj2R). Chris pidió ver solo el calendario, con solo lo que queda: la primera pestaña, «Calendario», tiene el gantt y la tabla «Fecha a fecha»; el resto está en «Plan completo». Ya fuera del calendario: el email (Resend, prueba 10/10) y publicar las ofertas de /equipo (el 19/11 ya había 3 candidaturas).
+- Los mismos puntos están en admin › Calendario (`POST /admin/api/cal`): 22 eventos de todo el día y 3 semanales (lunes: YouTube y cuadro de mando; viernes: revisión de tiendas), con `busy: false` para que no quiten huecos de /book, un color por área y en las notas el detalle y «Plan de escalado 404 · 30k MRR: <enlace>» (así se encuentran para cambiarlos). Suben solos a su Google Calendar (el 19/11, `up: 25`).
+- En la vista de mes del admin, un evento de varios días ocupa cada día y tapa lo demás: lo que dura más de 3 días va como un solo día al empezar, con «· hasta el …» en el título. En el doc se ven como barras.
+- Cuando algo se haga: quitarlo de la pestaña Calendario (fila del gantt y de la tabla) y su evento del admin.
 - Google Workspace se suspendió el 6/11/2026 por no tener método de pago; el 19/11/2026 hola@ ya recibía correo.
 
 ## Talento: el sistema de contratación (admin v77, 18/11/2026)
