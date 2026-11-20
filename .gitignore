@@ -13,6 +13,8 @@ _to_delete/
 *.pdf
 # vídeos de /metodo en HLS (240 MB): se quedan en el Mac
 web117-404growth/v/metodo/
+# el VSL de /book en HLS (81 MB): se queda en el Mac
+web117-404growth/v/book/
 
 # clave de Apimart (nunca al repositorio)
 .ak

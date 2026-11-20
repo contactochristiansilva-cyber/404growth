@@ -71,12 +71,19 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 
 ## Formulario de /book (landing VSL)
 
-- **Desde el 13/11/2026, /book va sin vídeo** (Chris: «sea ADS, sin VSL; mantenemos copy y todo pero quitamos vídeo»).
-  - En el héroe quedan el aviso de facturación, el titular, el botón «Quiero mi tienda online» (a `#reservar`), los tres checks y las cintas. Justo debajo, el calendario.
-  - Se quitaron el hueco del vídeo (`.stage`, `figure#vsl`) y el aviso «El vídeo llega en unos días». La meta descripción y la de Open Graph ya no dicen «Mira el vídeo». El WhatsApp dice «he visto tu web».
-  - El código del vídeo sigue en el script (`VSL`), pero solo se usa si vuelve el `<figure id="vsl">`.
-  - Sin vídeo ya no salen los eventos `VSLPlay`, `ViewContent` ni `VSL25…95` del píxel. `Lead` y `Schedule` al reservar siguen igual.
-  - Copia de la versión con vídeo en `~/Downloads/404growth-subir/anterior/book-con-vsl-13nov.html`.
+- **Desde el 20/11/2026, /book lleva otra vez el VSL** (Chris: «primer scroll se debe ver el h1, el vídeo y el botón de agendar llamada debajo del VSL; estos 3 sí o sí»). Del 13 al 20/11 fue sin vídeo; esa versión está en `~/Downloads/404growth-subir/anterior/book-sin-vsl-20nov.html`, y la primera con vídeo en `anterior/book-con-vsl-13nov.html`.
+  - **El vídeo:** `~/Contenidos/VSL 404 Def.mov` (el montaje final de Chris, 1920×1080, 3:48). Publicado en HLS en `web117-404growth/v/book/` como los de /metodo: `1080/` (CRF 21) y `720/` (1280×720, CRF 22), la lista maestra con la 720 primero y `poster.jpg` (el fotograma de 3 s). SSIM 0,994; 81 MB en total (no va al repositorio). Los trozos intermedios están en `~/Contenidos/VSL edición/_render/web/`.
+  - **Orden del héroe:** aviso de facturación, titular, vídeo, botón «Quiero mi tienda online» (a `#reservar`) y los tres checks. Las cintas, debajo.
+  - **Los tres caben siempre en la primera pantalla.** El ancho del vídeo sale de la altura que queda: en el ordenador, `100vh − 255px − 2,92 × la letra del titular`; en el móvil, `100svh − 372px` (con `svh` cuenta la pantalla con las barras del navegador puestas). En pantallas muy bajas (móvil tumbado, menos de 540 px de alto) se quita el aviso y el titular va en pequeño. Si se cambia el titular, el aviso o el botón, hay que volver a medir.
+  - **Cómo se comporta** (`VSL` y el bloque «el vídeo» del script):
+    - arranca solo, sin sonido y en bucle. Mientras carga se ve un fotograma borroso que va dentro de la página (`.vlq`, 96×54 en base64, 733 bytes); el vídeo aparece encima cuando de verdad se mueve (`.screen.vp`);
+    - en el centro está siempre el botón blanco «Reproducir con audio». Al pulsarlo vuelve al segundo 0, suena y salen los controles; al terminar, vuelve el botón;
+    - de fondo se para cuando sale de pantalla y sigue al volver. Con audio no se para al bajar al calendario;
+    - con «reducir movimiento» o ahorro de datos no arranca solo: se ve `poster.jpg` nítido y el botón funciona igual. Lo mismo si el navegador no deja arrancar.
+  - **Solo cuenta lo que se ve con el audio activado:** las estadísticas del admin (`VS`) y los eventos del píxel `VSLPlay`, `ViewContent` (50 %) y `VSL25`, `VSL75` y `VSL95` salen solo después de pulsar el botón. `Lead` y `Schedule` al reservar siguen igual.
+  - La meta descripción y la de Open Graph vuelven a decir «Mira el vídeo», y el WhatsApp, «he visto el vídeo».
+  - Se hace con `python3 tools/book/patch_vsl.py <book sin vídeo> tools/book/lq.b64 <salida>` (en el Mac, en `404growth-subir/fuentes-book-vsl/`). Pruebas con Playwright en `tools/book/test/`: `fold.js` (que el botón quede dentro de la pantalla en 23 tamaños, de 320×568 a 1920×1080) y `beh.js` (11 comprobaciones del vídeo). Necesitan la página servida en local con `v/book/`.
+  - Chrome ya reproduce HLS sin `hls.js`; `/v/hls.light.min.js` solo se carga si el navegador no puede.
 - **Menos huecos a la vista (13/11/2026, Chris: «demasiados huecos disponibles»):** el calendario enseña 5 días y en cada uno solo 3, 4 o 5 horas. Antes eran 6 días y unas 13 horas por día.
   - Las horas de cada día son siempre las mismas: las de mejor «número» (`hsh`) de cada hueco. Si una se ocupa, sale la siguiente.
   - El servidor (`gbSlots`) sigue teniendo todos los huecos y comprueba la hora al reservar. Para cambiar cuántas se ven: `3+hsh('d'+k)%3` y `G.order.slice(0,5)` en `book.html`.

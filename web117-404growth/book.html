@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Tu tienda física, vendiendo online en toda España en 15 días | 404 Growth</title>
-<meta name="description" content="Para dueños de tiendas físicas: en 15 días añadimos a tu tienda una tienda online que vende en toda España, con tu stock y tu marca. Reserva una llamada de 30 minutos.">
+<meta name="description" content="Para dueños de tiendas físicas: en 15 días añadimos a tu tienda una tienda online que vende en toda España, con tu stock y tu marca. Mira el vídeo y reserva 30 minutos.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#040706">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="404 Growth">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Añadimos a tu tienda física una tienda online que vende en toda España en 15 días · 404 Growth">
-<meta property="og:description" content="Tu tienda física, vendiendo online en toda España en 15 días. Reserva una llamada de 30 minutos.">
+<meta property="og:description" content="Tu tienda física, vendiendo online en toda España en 15 días. Mira el vídeo y reserva una llamada de 30 minutos.">
 <meta property="og:image" content="https://404growth.com/og-404-tiendas.jpg">
 <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -407,15 +407,54 @@ footer{position:relative;z-index:3;padding:20px 0 120px;font-size:13.5px;color:v
 footer nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 22px;margin-bottom:10px}
 footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 
-/* ordenador: H1 y primer botón caben en la primera pantalla (desde el 13/11/2026, sin vídeo) */
+/* VSL (20/11/2026): fotograma borroso mientras carga, el vídeo encima y el botón «Reproducir con audio» en el centro */
+.screen .vlq{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(16px);transform:scale(1.14)}
+.screen .vlq.ok{filter:none;transform:none}
+.screen video{position:relative;background:transparent;opacity:0;transition:opacity .45s}
+.screen.vp video{opacity:1}
+.vgo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;display:inline-flex;align-items:center;gap:13px;border:0;cursor:pointer;
+ font-family:inherit;font-size:17px;font-weight:600;letter-spacing:-.012em;color:#0B1512;background:#fff;padding:10px 24px 10px 10px;border-radius:99px;white-space:nowrap;
+ box-shadow:0 12px 44px rgba(0,0,0,.4);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.vgo i{width:46px;height:46px;border-radius:50%;background:#0B1512;display:grid;place-items:center;flex:none}
+.vgo svg{width:18px;height:18px;color:#fff;margin-left:3px}
+@media (hover:hover){.vgo:hover{transform:translate(-50%,-50%) scale(1.045)}}.vgo:active{transform:translate(-50%,-50%) scale(.97)}
+.vgo:focus-visible{outline:2px solid var(--t2);outline-offset:4px}
+.screen.aud .vgo{display:none}
+@media (prefers-reduced-motion:reduce){.screen video,.vgo{transition:none}}
+/* el titular, el vídeo y el botón caben siempre en la primera pantalla: el vídeo se encoge si la pantalla es baja */
+@media (max-width:900px){
+ .hero .wrap{padding-left:16px;padding-right:16px}
+ .hero h1{margin-top:12px}
+ .eyebrow{margin-top:12px}
+ .stage{margin-top:18px;padding-bottom:0}
+ .device{max-width:min(100%,max(240px,calc((100svh - 372px) * 16 / 9 + 14px)))}
+ .hero .cta{margin-top:16px;gap:12px}
+ .vgo{font-size:15px;gap:10px;padding:8px 18px 8px 8px}.vgo i{width:38px;height:38px}.vgo svg{width:15px;height:15px}
+}
+@media (max-width:560px){.top{padding-top:16px}}
+
+/* ordenador: H1, vídeo y primer botón caben en la primera pantalla */
 @media (min-width:901px){
  .top{padding-top:16px}
  .hero h1{font-size:clamp(40px,min(4.5vw,7vh),66px);margin-top:12px}
  .eyebrow{margin-top:14px}
- .stage{margin-top:24px;max-width:1140px}
- .device{max-width:min(1080px,max(480px,calc((100vh - 470px) * 16 / 9 + 24px)));padding:10px;border-radius:28px}
+ .stage{margin-top:22px;max-width:1140px;padding-bottom:0}
+ .device{max-width:min(1080px,max(360px,calc((100vh - 255px - 2.92 * clamp(40px,min(4.5vw,7vh),66px)) * 16 / 9 + 20px)));padding:10px;border-radius:28px}
  .screen{border-radius:20px}
- .hero .cta{margin-top:34px;gap:12px}
+ .hero .cta{margin-top:20px;gap:12px}
+}
+/* pantallas muy bajas (móvil tumbado): sin el aviso de arriba y con el titular en pequeño */
+@media (max-height:540px) and (min-width:561px){
+ .top{padding-top:10px}.top:after{display:none}
+ .eyebrow{display:none}
+ .hero h1{font-size:clamp(19px,6vh,32px);line-height:1.04;margin-top:8px;max-width:none}
+ .hero h1>span{display:inline}.hero h1 .ha{font-size:1em;margin:0}
+ .stage{margin-top:10px}
+ .device{max-width:max(190px,calc((100vh - 168px - 2.2 * clamp(19px,6vh,32px)) * 16 / 9 + 12px));padding:6px;border-radius:18px}
+ .screen{border-radius:13px}
+ .hero .cta{margin-top:10px}
+ .hero .cta .btn{font-size:15px;padding:5px 5px 5px 20px}
+ .vgo{font-size:14px;gap:9px;padding:6px 15px 6px 6px}.vgo i{width:32px;height:32px}.vgo svg{width:13px;height:13px}
 }
 
 /* v40: casos, cinta continua */
@@ -498,7 +537,6 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
  .eyebrow b{display:block}
  .eyebrow i{display:inline-block;vertical-align:middle;margin:-2px 8px 0 0;width:7px;height:7px}
  .logo{font-size:16px}
- .stage{margin-top:36px}
  .device{padding:7px;border-radius:24px}.screen{border-radius:18px}
  .play{width:70px;height:70px;margin:-35px 0 0 -35px}.play svg{width:22px;height:22px}
  .vtag{left:10px;top:10px;font-size:12px;padding:7px 11px}
@@ -566,6 +604,16 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
   <div class="wrap">
     <p class="eyebrow lg"><i aria-hidden="true"></i><span>Solo para tiendas físicas que facturan <b>más de 30.000€ al mes</b></span></p>
     <h1><span class="ha">Añadimos a tu <span class="gr">tienda física</span> una</span> <span class="hb">tienda online que vende</span> <span class="hc">en toda España en <span class="mk">15&nbsp;días.<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 17 C 70 7, 150 5, 296 12"/></svg></span></span></h1>
+    <div class="stage">
+      <div class="arc2" aria-hidden="true"></div><div class="arc" aria-hidden="true"></div>
+      <figure class="device" id="vsl" style="margin-top:0;margin-bottom:0">
+        <div class="screen" id="screen">
+          <img class="vlq" id="vlq" alt="" aria-hidden="true" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD//gARTGF2YzU4LjEzNC4xMDAA/9sAQwAIDAwODA4QEBAQEBATEhMUFBQTExMTFBQUFRUVGRkZFRUVFBQVFRgYGRkbHBsaGhkaHBweHh4kJCIiKiorMzM+/8QAcgAAAgMBAQEAAAAAAAAAAAAABAUGAgMHAAEBAAMBAQEBAAAAAAAAAAAAAAAEAwIBBQYQAAIBAgUEAwEBAQEAAAAAAAABAgQDMSESIhETMkEFcWFRM4HRIxEBAAMBAQEBAAAAAAAAAAAAAAIBETEDEiH/wAARCAA2AGADASIAAhEAAxEA/9oADAMBAAIRAxEAPwDGcJQBepmOL2aI6+4+c85XfXrekargvWVb5KJGiQyVC3HxmRWor2pNRJZeg3F/BErNJrk2/wBKxczWtivnzuRIoyU2mga561aOUvATT2nBJP8ACn4JRxppxA4rEbacmAxWTBgo43nxrcE6d5XjczoPlduTxbMtL1G9L/6RTGPSzFcxW70BpyNoxyGDtCmpqrdMtzN1WsXYjQnFkdSSuuK/RTf91LNQXBSmvdSSk5Fvm6djKtdCh2pPgH07iN1Ff0UtD5ZSm9qpS3mqjYnPbSdx2sXxWTG0ZK5b5XkCSyZxMoUdxTjcwtLczHLlgDmlWhyj+MbrESRlpvfI2Us0QbGzaUWzjHtal3L8lzknwdXrLvTsTf0cLvz1XG/sa86RmpiH2O5CxSDbSeI1iGnNRb2poXQW7HgPu3H0xFK42wwa6TRVT6ehZ8eRknJp/wDCK+mubnF+UTmKWli8lqJOJcvEBdu5JvPgeRWbMOM2T1vGtzKcX9jOLwFl3uj8jGPggoxrY67El9HJ79Np5fJ1uq/lL4OaVXbIYgnJE3kXUmijxPDhcytzbTTPWbKuz45MrWD+A6j/AKmZcdj1OvX0ULe7F8ElXaxdSdv+DFdrFLMgYYsw8sIhizDyzIf/2Q==">
+          <video id="vv" muted loop playsinline preload="auto" aria-label="Vídeo de Christian: cómo tu tienda física puede vender online"></video>
+          <button class="vgo" id="vgo" type="button"><i aria-hidden="true"><svg><use href="#i-play"/></svg></i>Reproducir con audio</button>
+        </div>
+      </figure>
+    </div>
     <div class="cta">
       <a class="btn dn" href="#reservar" data-cta="hero">Quiero mi tienda online <span class="ar"><svg><use href="#i-down"/></svg></span></a>
       <div class="micro"><span><svg><use href="#i-check"/></svg>30 minutos</span><span><svg><use href="#i-check"/></svg>Gratis</span><span><svg><use href="#i-check"/></svg>Precio cerrado</span></div>
@@ -621,7 +669,7 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
           </form>
         </div>
       </div>
-      <p class="alt">¿Prefieres escribir? <a href="https://wa.me/34610594450?text=Hola%20Christian%2C%20he%20visto%20tu%20web%20y%20quiero%20pasar%20mi%20tienda%20f%C3%ADsica%20a%20tienda%20online." target="_blank" rel="noopener" data-cta="whatsapp">Háblame por WhatsApp</a></p>
+      <p class="alt">¿Prefieres escribir? <a href="https://wa.me/34610594450?text=Hola%20Christian%2C%20he%20visto%20el%20v%C3%ADdeo%20y%20quiero%20pasar%20mi%20tienda%20f%C3%ADsica%20a%20tienda%20online." target="_blank" rel="noopener" data-cta="whatsapp">Háblame por WhatsApp</a></p>
     </div>
   </div>
 </section>
@@ -735,15 +783,15 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 (function(){
   /* ---------- lo que hay que rellenar ----------
      PIXEL:  id del píxel de Meta: se pone en el admin (Landing › Meta) y llega por /l/px.js. Vacío = sin píxel y sin aviso de cookies.
-     VSL:    desde el 13/11/2026 la página va sin vídeo (se quitó el hueco del héroe); esto solo vale si se vuelve a poner el <figure id="vsl">.
-             src = mp4 con subtítulos quemados; poster = foto fija; ratio "16/9" o "9/16". src vacío = el hueco con el botón de play.
+     VSL:    el vídeo del héroe (desde el 20/11/2026). src = lista HLS (o un mp4); poster = fotograma nítido por si el navegador no deja
+             arrancar solo. Arranca sin sonido y en bucle; con «Reproducir con audio» vuelve al segundo 0 y suena.
      AVATAR: foto pequeña de Christian (círculo del vídeo).
      PHOTO:  imagen final 16:9 (Christian con su nombre detrás, ya montada).
      CASES:  SOLO casos reales, con permiso del cliente (si está vacío se muestran las tiendas de demostración DEMOS):
              {tienda:'Nombre', sector:'Moda', ciudad:'Valencia', img:'/casos/x.webp', kpi:'+38 %', kpil:'ventas online en 3 meses', q:'cita literal', who:'Nombre, dueña'}
      Sector desde el anuncio: ?n=moda | joyeria | deporte | obrador | optica | deco (o utm_content con ese valor). */
   var PIXEL=(window.PX404&&/^\d{8,20}$/.test(window.PX404.id||'')&&window.PX404.id)||'';
-  var VSL={src:'',poster:'',ratio:'16/9'};
+  var VSL={src:'/v/book/index.m3u8',poster:'/v/book/poster.jpg',ratio:'16/9'};
   var AVATAR='/ind-me.webp';
   var PHOTO='/christian-404.webp';
   var CASES=[];
@@ -856,19 +904,34 @@ footer a{color:var(--mute);text-decoration:none}footer a:hover{color:var(--ink)}
 
   /* ---------- el vídeo ---------- */
   if(VSL.src&&$('vsl')){
-    var v=d.createElement('video');v.src=VSL.src;if(VSL.poster)v.poster=VSL.poster;v.controls=true;v.playsInline=true;v.preload='metadata';
-    v.setAttribute('aria-label','Vídeo de Christian: cómo tu tienda física puede vender online');
-    var dev=$('vsl');dev.style.setProperty('--ar',VSL.ratio||'16/9');if(VSL.ratio==='9/16')dev.style.maxWidth='min(100%,430px)';
-    var sc=$('screen');sc.innerHTML='';sc.appendChild(v);
-    var played=false,marks={},lastT=0,wasMuted=v.muted;
-    v.addEventListener('play',function(){VS.plays++;ev('vplay','',Math.round(v.currentTime));if(!played){played=true;px('VSLPlay',{},true)}});
-    v.addEventListener('pause',function(){if(!v.ended)ev('vpause','',Math.round(v.currentTime))});
-    v.addEventListener('ended',function(){VS.end=1;VS.max=100;ev('vend','',Math.round(v.duration||0));ping()});
-    v.addEventListener('seeked',function(){if(Math.abs(v.currentTime-lastT)>2)ev('vseek',Math.round(lastT)+'>'+Math.round(v.currentTime),Math.round(v.currentTime))});
-    v.addEventListener('volumechange',function(){if(v.muted!==wasMuted){wasMuted=v.muted;if(!v.muted)VS.unm=1;ev('vmute',v.muted?'on':'off',Math.round(v.currentTime))}});
-    v.addEventListener('ratechange',function(){ev('vrate',String(v.playbackRate),Math.round(v.currentTime))});
-    d.addEventListener('fullscreenchange',function(){if(d.fullscreenElement)ev('vfs','',Math.round(v.currentTime))});
-    v.addEventListener('timeupdate',function(){if(!v.duration)return;var t=v.currentTime,dt=t-lastT;if(dt>0&&dt<1.5&&!v.paused)VS.secs+=dt;lastT=t;VS.dur=Math.round(v.duration);
+    var sc=$('screen'),v=$('vv'),go=$('vgo'),lq=$('vlq'),aud=false,on=false,hl=null,tapT=0,want=false;
+    var calm=(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)||!!(navigator.connection&&navigator.connection.saveData);
+    function sharp(){var i=new Image();i.onload=function(){lq.src=VSL.poster;lq.classList.add('ok')};i.src=VSL.poster}
+    function go2(){var p=v.play();if(p&&p.catch)p.catch(function(){if(!aud)sharp()})}
+    function attach(){if(on)return;on=true;
+      if(/\.m3u8(\?|$)/.test(VSL.src)&&!v.canPlayType('application/vnd.apple.mpegurl')){
+        var s=d.createElement('script');s.src='/v/hls.light.min.js';
+        s.onload=function(){if(window.Hls&&Hls.isSupported()){hl=new Hls({capLevelToPlayerSize:false,abrEwmaDefaultEstimate:1e6});hl.loadSource(VSL.src);hl.attachMedia(v)}else v.src=VSL.src;if(aud||want)go2()};
+        s.onerror=sharp;d.head.appendChild(s)}
+      else{v.src=VSL.src;if(aud||want)go2()}}
+    /* de fondo: sin sonido, en bucle y solo mientras se ve */
+    if(calm)sharp();else{want=true;attach();
+      if('IntersectionObserver' in window)new IntersectionObserver(function(en){if(aud)return;if(en[0].isIntersecting){want=true;go2()}else{want=false;v.pause()}},{threshold:.15}).observe(sc)}
+    v.addEventListener('timeupdate',function(){if(v.currentTime>.05)sc.classList.add('vp')});
+    /* con audio: desde el segundo 0 */
+    go.addEventListener('click',function(){aud=true;tapT=Date.now();lastT=0;sc.classList.add('aud');v.loop=false;v.muted=false;v.volume=1;v.controls=true;
+      attach();try{v.currentTime=0}catch(e){}go2();
+      VS.plays++;VS.unm=1;ev('vplay','audio',0);if(!played){played=true;px('VSLPlay',{},true)}});
+    /* solo cuenta lo que se ve con el audio activado */
+    var played=false,marks={},lastT=0,wasMuted=true;
+    v.addEventListener('play',function(){if(!aud||Date.now()-tapT<900)return;VS.plays++;ev('vplay','',Math.round(v.currentTime))});
+    v.addEventListener('pause',function(){if(aud&&!v.ended&&Date.now()-tapT>900)ev('vpause','',Math.round(v.currentTime))});
+    v.addEventListener('ended',function(){if(!aud)return;VS.end=1;VS.max=100;ev('vend','',Math.round(v.duration||0));ping();aud=false;v.controls=false;sc.classList.remove('aud')});
+    v.addEventListener('seeked',function(){if(aud&&Date.now()-tapT>900&&Math.abs(v.currentTime-lastT)>2)ev('vseek',Math.round(lastT)+'>'+Math.round(v.currentTime),Math.round(v.currentTime))});
+    v.addEventListener('volumechange',function(){if(!aud){wasMuted=v.muted;return}if(v.muted!==wasMuted){wasMuted=v.muted;ev('vmute',v.muted?'on':'off',Math.round(v.currentTime))}});
+    v.addEventListener('ratechange',function(){if(aud)ev('vrate',String(v.playbackRate),Math.round(v.currentTime))});
+    d.addEventListener('fullscreenchange',function(){if(aud&&d.fullscreenElement)ev('vfs','',Math.round(v.currentTime))});
+    v.addEventListener('timeupdate',function(){if(!aud||!v.duration)return;var t=v.currentTime,dt=t-lastT;if(dt>0&&dt<1.5&&!v.paused)VS.secs+=dt;lastT=t;VS.dur=Math.round(v.duration);
       var p=t/v.duration*100;if(p>VS.max)VS.max=Math.min(100,Math.round(p));
       [10,25,50,75,95].forEach(function(m){if(p>=m&&!marks[m]){marks[m]=1;ev('vq','',m);if(m!==10)px(m===50?'ViewContent':'VSL'+m,{content_name:'VSL '+m+'%'},m!==50)}})});
   }
