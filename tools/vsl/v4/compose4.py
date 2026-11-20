@@ -34,6 +34,19 @@ for c in S['cut']:
 
 
 def zoom_at(t):
+    if t < S.get('intro_end', 0):
+        I = S['intro']
+        k = max(i for i, s in enumerate(I) if t >= s[0])
+        t0, a, b, snap = I[k]
+        t1 = I[k + 1][0] if k + 1 < len(I) else S['intro_end']
+        z = a + (b - a) * (t - t0) / max(t1 - t0, 0.01)
+        if snap and k and t - t0 < 0.2:          # acercamiento rápido desde el zoom del plano anterior
+            u = 1 - (1 - (t - t0) / 0.2) ** 3
+            z = I[k - 1][2] + (z - I[k - 1][2]) * u
+        bl = S.get('blur', 0)
+        if t < bl:                                # el vídeo empieza desenfocado y un poco más cerca
+            z *= 1 + 0.14 * (1 - t / bl) ** 2
+        return z
     k = 0
     for i, c in enumerate(cuts):
         if t >= c:
@@ -155,6 +168,10 @@ while n < B:
                 m = cv2.GaussianBlur(m, (0, 0), 1.2)[:, :, None]
                 img = img * (1 - m) + orig * m
         img = zoomed(img, z)
+        if t < S.get('blur', 0):
+            sg = 30.0 * (1 - t / S['blur']) ** 2
+            if sg > 0.3:
+                img = cv2.GaussianBlur(img, (0, 0), sg)
     fro = load(f'{FR}/front/{n:05d}.png')
     if fro is not None:
         over(img, fro)

@@ -54,3 +54,22 @@ Todo en `~/Contenidos/VSL edición/_render/v4/` (`pkg/` son estas fuentes más `
 Resultado: `~/Contenidos/VSL edición/VSL editado v4 (20 nov).mp4` (1920×1080, 25 fps, 3:48, 97 MB).
 
 Para cambiar algo: se toca `mkspec4.py` u `ov4.html`, se vuelven a capturar solo los fotogramas de ese tramo, se monta su `cNNNNN.mp4` y se repite el `concat`. En el Mac no se pueden borrar archivos: `compose4.py` solo usa las capturas de detrás que caen dentro de su tramo del guion, así que las viejas no molestan.
+
+## v5 (20/11/2026, mismas fuentes): inicio, tarjetas blancas y sonido
+
+La v4 le gustó «mucho más». Lo que pidió encima:
+
+- **El inicio le parecía soso.** Ahora el vídeo empieza desenfocado y un poco más cerca (0,9 s) y, hasta la primera escena, hay 12 planos con zoom (`INTRO` en `mkspec4.py`: zoom al empezar y al acabar cada plano, y si entra con un acercamiento rápido de 0,2 s o con corte seco). `compose4.py` los aplica en `zoom_at()` y desenfoca con `GaussianBlur`.
+- **«Subtítulos tipo Apple con fondo blanco», como en la v3.** No eran las píldoras: son tarjetas blancas a pantalla completa con su frase en grande, que pasa de gris a gris oscuro según la dice. Hay 9 (`card()` en `mkspec4.py`; `#card` en `ov4.html`): fondo #F2F2F2, línea fina de 62 px y línea gruesa de 116 px, entran subiendo desde abajo y se van con corte seco. Mientras hay tarjeta no sale el subtítulo de abajo. La de «tres razones» lleva las casillas 1 2 3.
+- **Sonido** (`mix5.py`). Primero dijo que la música y los efectos los ponía él; después pidió estos, y solo estos:
+  - clic de ratón en cada toque del calendario (10);
+  - disparo de cámara en cada cambio de plano o animación: 45 a −19 dB de pico (entra o sale una escena, una tarjeta o el calendario, o aparece algo por detrás) y 20 más flojos, a −25 dB, en los cortes de zoom;
+  - «ruleta» para las palabras: un tic por cada palabra que se enciende en las tarjetas blancas (99, a −25 dB). No se puso en los subtítulos de abajo: serían más de 900 tics debajo de la voz;
+  - música alegre sin voz, muy bajita: 24 LU por debajo de la voz (voz −21,9 LUFS, música −45,7), con 6 dB más en el cierre.
+  - La voz va con ganancia 1 y sin procesar. Lo añadido queda unos 21 dB por debajo de ella.
+- Los sonidos son grabaciones de Pixabay (licencia de Pixabay), bajadas con el Chrome del Mac porque el contenedor no llega a pixabay.com: en la página de búsqueda, `window.__BOOTSTRAP__.page.results` trae `sources.src` de cada pista; se bajan con `fetch` y se guardan juntas en un `.bin` con `a.download`.
+  - Música: «Acoustic Upbeat - Happy Strums» de Sonican (82 bpm, 2 min). Se alarga volviendo al mismo pasaje (de 107,915 s a 49,305 s, 80 pulsos) con un fundido cruzado de 1 s. Que no lleva voz se comprobó pasándole Parakeet: no saca ninguna palabra.
+  - Clic: «Mouse click» de MatthewVakaliuk. Disparo: «Camera Shutter» de Universfield. Tic: el último golpe de «Wheel Spin Click Slow Down» (freesound_community).
+  - En el Mac: `Música/Alegre/` (4 opciones, A1 es la usada) y `SFX/Reales (Pixabay)/`.
+- Resultado: `VSL editado v5 (20 nov).mp4` (con todo), `VSL editado v5 · solo voz (20 nov).mp4` y, en `v5 · sonido por separado/`, la música y los efectos en WAV ya al volumen de la mezcla, para moverlos en DaVinci.
+- `python3 mix5.py <vídeo original> spec4.json <carpeta audio> <salida>` escribe `mezcla.m4a`, `musica.wav`, `efectos.wav` y `eventos.json`. Se ejecuta en el Mac (decodifica y codifica con ffmpeg; solo necesita numpy).

@@ -153,6 +153,71 @@ for a_, b_ in zip(CUT, CUT[1:]):
     if 0 < b_['t0'] - a_['t1'] < 1.0:
         a_['t1'] = b_['t0']
 
+# ---------- 3b. Tarjetas blancas: su frase en grande, a pantalla completa, de gris a gris oscuro ----------
+CARD = []
+CT = {c['id']: c for c in CUT}
+
+
+def wl(phrase, after, cap):
+    a, b = idx(phrase, after)
+    out = [[W[i][0], round(W[i][1], 2)] for i in range(a, b + 1)]
+    out[-1][0] = re.sub(r',$', '', out[-1][0])
+    if cap:
+        out[0][0] = out[0][0][:1].upper() + out[0][0][1:]
+    return out
+
+
+def card(t0, t1, lines, **kw):
+    """lines: (clase, frase, mayúscula inicial); clase g = fina y gris, b = gruesa y oscura."""
+    CARD.append(dict(t0=round(t0, 2), t1=round(t1, 2),
+                     lines=[dict(c=c, w=wl(p, t0 - 0.3, cap)) for c, p, cap in lines], **kw))
+
+
+t = st('llevo más de seis años')
+card(t - 0.04, ep('proyectos y empresas', 0.15, t), [('b', 'más de seis años', True), ('g', 'cientos de proyectos y empresas', False)])
+t = st('sin límite de crecimiento')
+card(t - 0.04, ep('descaradamente más baja', 0.3, t),
+     [('b', 'sin límite de crecimiento', True), ('g', 'y con una inversión inicial', False), ('b', 'descaradamente más baja', False)])
+t = st('y cuando sucede')
+card(t - 0.04, CT['c4']['t0'], [('g', 'y cuando sucede es por', True), ('b', 'una de estas tres razones', False)],
+     nums=round(st('la razón número uno'), 2))
+t = st('y es que simplemente')
+card(t - 0.04, CT['c6']['t0'], [('g', 'y es que simplemente', True), ('b', 'la abren y esperan', False)])
+t = st('así que el problema')
+card(CT['c6']['t1'], ep('nunca fue lo online', 0.3, t), [('g', 'así que el problema', True), ('b', 'nunca fue lo online', False)])
+t = st('evitamos los tres errores')
+card(t - 0.04, ep('que vengo comentando', 0.2, t), [('b', 'evitamos los tres errores', True), ('g', 'que vengo comentando', False)])
+t = st('por supuesto faltaría')
+card(CT['c11']['t1'], ep('no te puedo prometer ventas', 0.3, t),
+     [('g', 'por supuesto faltaría decir que', True), ('b', 'no te puedo prometer ventas', False)])
+t = st('ya que si tu producto')
+card(t - 0.04, ep('esto no es para ti', 0.3, t),
+     [('g', 'si tu producto no se puede enviar', True), ('g', 'tu tienda no vende lo suficiente', False),
+      ('g', 'o no va a existir compromiso', False), ('b', 'esto no es para ti', False)])
+t = st('te lo haremos saber')
+card(t - 0.04, ep('el diagnóstico igual', 0.3, t), [('g', 'te lo haremos saber y', True), ('b', 'te llevarás el diagnóstico igual', False)])
+for c in CARD:
+    for o in CUT:
+        assert c['t1'] <= o['t0'] + 0.001 or c['t0'] >= o['t1'] - 0.001, (c['t0'], o['id'])
+
+# ---------- 3c. Inicio: desenfoque de entrada y zooms (hasta la primera escena) ----------
+# cada plano: [inicio, zoom al empezar, zoom al acabar, 1 = entra con un acercamiento rápido / 0 = corte seco]
+INTRO = [[0.0, 1.00, 1.035, 0],
+         [st('tarde o temprano') - 0.04, 1.13, 1.16, 0],
+         [st('pero antes de firmar') - 0.04, 1.00, 1.03, 0],
+         [st('dame un segundo') - 0.04, 1.20, 1.22, 1],
+         [st('porque estoy seguro') - 0.04, 1.08, 1.11, 0],
+         [st('no debería de ir') - 0.04, 1.00, 1.03, 0],
+         [st('sino en internet') - 0.04, 1.14, 1.16, 1],
+         [st('para quien no me conozca') - 0.04, 1.00, 1.02, 0],
+         [st('soy christian silva') - 0.04, 1.12, 1.14, 0],
+         [st('en la vertical online') - 0.04, 1.05, 1.06, 0],
+         [st('para ir entrando') - 0.04, 1.00, 1.03, 0],
+         [st('quiero que pienses') - 0.04, 1.12, 1.17, 1]]
+INTRO = [[round(a, 2), b, c, d] for a, b, c, d in INTRO]
+INTRO_END = CT['c1a']['t0']
+BLUR = 0.9   # segundos de desenfoque al empezar
+
 # ---------- 4. Calendario de /book ----------
 CAL = [dict(kind='cal1', t0=round(st('aquí abajo tienes el calendario'), 2), t1=round(en('decidimos juntos') + 0.2, 2)),
        dict(kind='cal2', t0=round(st('elige día y hora'), 2), t1=round(DUR, 2))]
@@ -170,9 +235,11 @@ for i in range(1, len(W)):
         if W[i][1] - cuts[-1] > 2.0:
             cuts.append(round(W[i][1] - 0.04, 2))
 
-S = dict(dur=DUR, voice=VOICE, sub=SUB, cut=CUT, cal=CAL, float=FLOAT, bw=BW, topnum=TOPNUM, cuts=cuts)
+S = dict(dur=DUR, voice=VOICE, sub=SUB, cut=CUT, cal=CAL, float=FLOAT, bw=BW, topnum=TOPNUM, cuts=cuts,
+         card=CARD, intro=INTRO, intro_end=INTRO_END, blur=BLUR)
 json.dump(S, open(sys.argv[2], 'w'), ensure_ascii=False, indent=0)
 print(len(SUB), 'subtítulos,', sum(1 for s in SUB if s['key']), 'destacados,', len(CUT), 'escenas')
 for c in CUT + CAL: print('%-5s %6.2f-%6.2f  %.1f s' % (c.get('id', c.get('kind')), c['t0'], c['t1'], c['t1'] - c['t0']))
+for c in CARD: print('tarj  %6.2f-%6.2f  %.1f s  %s' % (c['t0'], c['t1'], c['t1'] - c['t0'], ' / '.join(' '.join(w[0] for w in l['w']) for l in c['lines'])))
 if '-v' in sys.argv:
     for s in SUB: print('%6.2f-%6.2f %s %s' % (s['t0'], s['t1'], '■' if s['key'] else ' ', ' '.join(w[0] for w in s['w'])))

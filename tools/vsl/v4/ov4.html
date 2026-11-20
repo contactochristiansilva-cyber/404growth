@@ -19,6 +19,19 @@ html,body{width:1920px;height:1080px;background:transparent;overflow:hidden;font
 #sub.pill{background:#fff;color:#A6A6AB;font-weight:600;text-shadow:none;box-shadow:0 6px 24px rgba(0,0,0,.12)}
 #sub.pill span{opacity:1}
 #sub.pill span.on{color:#1D1D1F}
+/* ---------- tarjetas blancas: su frase en grande, de gris a gris oscuro ---------- */
+#card{position:absolute;inset:0;background:#F2F2F2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 150px}
+#card .ln{display:block;max-width:1560px;text-wrap:balance}
+#card .ln span{color:#D1D1D6;margin:0 .03em;display:inline-block}
+#card .g{font-weight:400;font-size:62px;letter-spacing:-.015em;line-height:1.16;margin:8px 0}
+#card .b{font-weight:600;font-size:116px;letter-spacing:-.032em;line-height:1.05;margin:8px 0}
+#card .g span.on{color:#8E8E93}
+#card .b span.on{color:#111}
+#card.many .g{font-size:56px;margin:9px 0}
+#card.many .b{font-size:104px;margin-top:30px}
+#card .nums{display:flex;gap:36px;margin-top:54px}
+#card .nums div{width:210px;height:150px;border-radius:30px;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:200;font-size:92px;color:#D1D1D6}
+#card .nums div.on{background:#111;color:#fff}
 /* ---------- cifra arriba, como en los ads ---------- */
 #top{position:absolute;left:1230px;top:120px;width:560px;text-align:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.25);opacity:0}
 #top b{display:block;font-weight:200;font-size:112px;letter-spacing:-.03em;line-height:1}
@@ -58,6 +71,7 @@ html,body{width:1920px;height:1080px;background:transparent;overflow:hidden;font
     <div id="phone"><div id="scr"><img id="simg" alt=""><div id="tap"></div></div></div></div>
   <div id="top"><b>+30.000 €</b><i>al mes</i></div>
   <div id="sub" class="hide"></div>
+  <div id="card" class="hide"></div>
 </div>
 <div class="L" id="behind"></div>
 <script src="spec4.js"></script>
@@ -85,6 +99,24 @@ function drawSub(t){
   SUBEL.style.left=(cal?490:960)+'px';
   SUBEL.style.top=(cut?972:(cal?940:930))+'px';
   [...SUBEL.children].forEach((e,j)=>e.classList.toggle('on',t>=s.w[j][1]-0.03));
+  return true;
+}
+
+/* ---------- tarjetas blancas ---------- */
+const CARDEL=$('card');let cardIdx=-1;
+const esc=x=>x.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function drawCard(t){
+  const i=(S.card||[]).findIndex(c=>t>=c.t0&&t<c.t1);
+  CARDEL.classList.toggle('hide',i<0);
+  if(i<0){cardIdx=-1;return false}
+  const c=S.card[i];
+  if(i!==cardIdx){
+    CARDEL.innerHTML=c.lines.map(l=>`<div class="ln ${l.c}">${l.w.map(w=>`<span data-t="${w[1]}">${esc(w[0])}</span>`).join(' ')}</div>`).join('')+
+      (c.nums?`<div class="nums"><div data-t="${c.nums}">1</div><div>2</div><div>3</div></div>`:'');
+    CARDEL.classList.toggle('many',c.lines.length>3);cardIdx=i;
+  }
+  CARDEL.style.transform=`translateY(${((1-eo(P(t,c.t0,0.36)))*1080).toFixed(1)}px)`;
+  CARDEL.querySelectorAll('[data-t]').forEach(e=>e.classList.toggle('on',t>=+e.dataset.t-0.03));
   return true;
 }
 
@@ -135,7 +167,8 @@ window.R=function(t,layer){
  if(layer==='front'){
   const cal=inAny(S.cal,t);$('cal').classList.toggle('hide',!cal);if(cal){any=true;drawCal(cal,t)}
   const tn=inAny(S.topnum,t);$('top').style.opacity=tn?(eo(P(t,tn.t0,0.3))*(1-cl((t-tn.t1+0.25)/0.25))).toFixed(3):0;if(tn)any=true;
-  if(drawSub(t))any=true;
+  const cd=drawCard(t);if(cd)any=true;
+  if(cd&&t>=inAny(S.card,t).t0+0.2){SUBEL.classList.add('hide')}else if(drawSub(t))any=true;
  }else{
   S.float.forEach(s=>{const on=t>=s.t0&&t<s.t1;s._g.classList.toggle('hide',!on);if(on){any=true;drawFloat(s,t)}});
  }

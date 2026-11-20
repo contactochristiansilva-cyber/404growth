@@ -1073,17 +1073,19 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Se genera con `tools/intenso-eq/build2.py` desde su catálogo (`catalogo.json`, campo `ref`, uso interno, no está en el repositorio) y el de la tienda; prueba `test2.mjs`. Al copiarlo al tema se comprueba con sumas por trozos con `awk` en `theme_bash`. Ojo: en los scripts que se pasan a `theme_bash` no usar `\u…` ni `\b` (llegan convertidos); sí funcionan `\p{M}`, `\d` y `\+`.
   - Aviso dado a Chris (dos veces): usar nombres de marca para llevar a equivalencias tiene riesgo legal en la UE (TJUE, L'Oréal contra Bellure, 2009), y con las sugerencias la lista de equivalencias se ve y se puede descargar; lo decide Intenso.
 
-## VSL de 404 editado (v4, 20/11/2026)
+## VSL de 404 editado (v5, 20/11/2026)
 
-- `~/Contenidos/VSL edición/VSL editado v4 (20 nov).mp4` (3:48), hecho a partir de `~/Contenidos/VSL Recortado.mov`. Fuentes y cómo se hizo: `tools/vsl/v4/LEEME.md`. No le gustaron ni la demo del 19/11 (`tools/vsl/demo/`) ni la v3 (`tools/vsl/v3/`: piano, efectos, textos sueltos y gráficos blancos).
+- `~/Contenidos/VSL edición/VSL editado v5 (20 nov).mp4` (3:48), hecho a partir de `~/Contenidos/VSL Recortado.mov`. Al lado están la versión solo con su voz y, en `v5 · sonido por separado/`, la música y los efectos en WAV. Fuentes y cómo se hizo: `tools/vsl/v4/LEEME.md` (la v5 usa las mismas fuentes). No le gustaron ni la demo del 19/11 (`tools/vsl/demo/`) ni la v3 (`tools/vsl/v3/`); la v4 le gustó «mucho más» y la v5 son sus retoques.
 - **Lo que Chris quiere en sus vídeos de venta:**
-  - Sonido: **solo su voz, tal cual**. Ni música ni efectos de sonido nuestros: los pone él («ese woosh es malísimo»).
-  - Subtítulos **todo el rato**: una línea de 4 palabras como mucho, en SF Pro. Lo importante va sobre fondo blanco, con la letra de gris a gris oscuro según la dice (como los subtítulos de Apple).
+  - **Sonido:** su voz tal cual, sin procesar. Solo estos efectos, y flojos: clic de ratón en los toques de pantalla, disparo de cámara en cada cambio de plano o animación, y un tic de ruleta cuando se van encendiendo las palabras. Música alegre, sin cantante y muy bajita (24 LU por debajo de la voz). Nada de «whoosh», ni música electrónica («metálica»), ni piano de fondo. Los sonidos, grabaciones reales (Pixabay), no sintetizados.
+  - **Inicio con vida:** el vídeo entra desenfocado y con varios zooms en los primeros 20 s.
+  - **Subtítulos todo el rato:** una línea de 4 palabras como mucho, en SF Pro, blancos sobre él.
+  - **«Subtítulos tipo Apple con fondo blanco»** para dar énfasis: tarjetas blancas a pantalla completa con su frase en grande, que pasa de gris a gris oscuro según la dice (unas 9 en 4 minutos). Es lo que le gustó de la v3.
   - Cuando él no sale en pantalla, tiene que verse lo que está contando: **escenas de monigotes** como las de los Ads 2 y 4 (figuras blancas sin cara, tiendas en miniatura con toldo verde, móviles de cristal, mapa de España en relieve, fondo blanco), a pantalla completa y con corte seco.
     - Los anuncios en 9:16 son solo la referencia: las escenas se hacen nuevas, en horizontal, con Apimart (imagen con Nano Banana Pro y vídeo con Hailuo 2.3 Fast; unos 0,17 $ por escena).
   - Cuando nombra el calendario («elige día y hora»), sale un **recorrido del calendario de /book** con las selecciones, para que luego sepan usarlo. Las capturas son de la página real, sin enviar ninguna reserva.
   - Solo 2 o 3 elementos que pasan por detrás de él en todo el vídeo, y un corte de zoom en cada frase.
-- Las referencias que eligió antes están en el artifact «Referencias del VSL». Las 7 pistas de piano siguen en `~/Contenidos/VSL edición/Música/Piano/`, por si las quiere poner él.
+- Las referencias que eligió antes están en el artifact «Referencias del VSL». Música en `~/Contenidos/VSL edición/Música/` (`Alegre/` es la buena; las de `Piano/` y las electrónicas no le gustaron) y efectos en `SFX/Reales (Pixabay)/` (los `.wav` numerados de `SFX/` son los sintetizados que no le gustaron).
 
 ## Merch 404 Growth en Printful (19/11/2026)
 
