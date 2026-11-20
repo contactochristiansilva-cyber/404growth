@@ -1,0 +1,212 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<!-- VSL v3 (20/11/2026): capa de textos y gráficos. window.R(t, capa) deja la página en el segundo t.
+     capa 'front' = textos, gráficos y pantallas compartidas; capa 'behind' = elementos que pasan por detrás de Christian. -->
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;background:transparent;overflow:hidden;font-family:-apple-system,"SF Pro Display","SF Pro Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:#111}
+.L{position:absolute;inset:0}
+.hide{display:none!important}
+/* textos a su lado */
+.side{position:absolute;color:#fff;display:flex;flex-direction:column;gap:0;text-shadow:0 1px 2px rgba(0,0,0,.22);white-space:nowrap;opacity:0}
+.side .f{font-weight:300;font-size:38px;letter-spacing:-.003em;line-height:1.12}
+.side .k{font-weight:700;font-size:64px;letter-spacing:-.022em;line-height:1.04}
+.side.r{left:1400px;top:430px}
+.side.l{left:110px;top:400px}
+/* diapositivas (pantalla completa, estilo Apple) */
+.slide{position:absolute;inset:0;background:#F2F2F2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.g{color:#8E8E93;font-weight:400;letter-spacing:-.015em}
+.b{color:#111;font-weight:600;letter-spacing:-.03em}
+.it{display:inline-block;opacity:0}
+.hl{display:inline-block;color:#D1D1D6;transition:none}
+.hl.on{color:#111}
+.cap{color:#8E8E93;font-weight:400;font-size:30px;margin-top:26px}
+/* números */
+.nums{display:flex;gap:120px;margin-top:40px}
+.num{display:flex;flex-direction:column;align-items:center;opacity:0}
+.num .v{font-weight:200;font-size:200px;letter-spacing:-.05em;line-height:1;color:#111}
+.num .l{font-size:32px;color:#8E8E93;margin-top:8px}
+/* tarjetas */
+.cards{display:flex;gap:28px;margin-top:46px}
+.cardg{width:300px;height:220px;border-radius:32px;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:200;font-size:120px;color:#111;opacity:0;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+/* listas */
+.list{display:flex;flex-direction:column;gap:20px;margin-top:44px;align-items:flex-start}
+.li{display:flex;align-items:center;gap:22px;font-size:54px;font-weight:600;letter-spacing:-.025em;color:#C7C7CC;opacity:0}
+.li.on{color:#111}
+.li i{font-style:normal;width:56px;height:56px;border-radius:28px;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:600;background:#E5E5EA;color:#8E8E93;flex:none}
+.li.on i{background:#111;color:#fff}
+.li.x.on i{background:#E5E5EA;color:#111}
+/* barra */
+.track{width:1200px;height:90px;border-radius:45px;background:#E5E5EA;margin-top:60px;position:relative;overflow:hidden}
+.fill{position:absolute;left:0;top:0;bottom:0;border-radius:45px;background:#111;width:0}
+.blab{display:flex;justify-content:space-between;width:1200px;margin-top:18px;font-size:30px;color:#8E8E93}
+.blab b{color:#111;font-weight:600}
+/* pantalla compartida */
+.split{position:absolute;inset:0}
+.hole{position:absolute;left:60px;top:60px;width:860px;height:960px;border-radius:40px;box-shadow:0 0 0 2400px #F2F2F2}
+.panel{position:absolute;left:1000px;top:0;width:860px;height:1080px;display:flex;flex-direction:column;justify-content:center;gap:34px}
+.panel h3{font-weight:400;font-size:52px;letter-spacing:-.015em;color:#8E8E93;line-height:1.12}
+.panel h3 b{color:#111;font-weight:600}
+.rows{display:flex;flex-direction:column;gap:14px}
+.row{background:#fff;border-radius:22px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;font-size:32px;font-weight:500;color:#111;opacity:0}
+.chips{display:flex;gap:10px}
+.chip{font-size:23px;font-weight:500;padding:8px 16px;border-radius:999px;background:#F2F2F2;color:#111}
+.ok{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:500;color:#1F7A3D}
+.ok:before{content:"";width:12px;height:12px;border-radius:6px;background:#34C759}
+.ko{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:500;color:#B42318}
+.ko:before{content:"";width:12px;height:12px;border-radius:6px;background:#FF3B30}
+.mapw{position:relative;width:820px;height:631px}
+.mapw img{position:absolute;inset:0;width:100%;height:100%;opacity:.28;filter:grayscale(1) brightness(.2)}
+.mapw svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ord{position:absolute;padding:10px 14px;border-radius:14px;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.08);font-size:20px;font-weight:500;color:#111;white-space:nowrap;opacity:0}
+.ord span{color:#8E8E93;font-weight:400}
+/* elementos que flotan (capa de detrás) */
+.flt{position:absolute;opacity:0;will-change:transform,opacity}
+.phone{left:540px;top:120px;width:290px;height:540px;border-radius:46px;background:#fff;box-shadow:0 30px 60px rgba(0,0,0,.22);padding:22px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.phone .bar{height:10px;width:90px;border-radius:5px;background:#E5E5EA;margin:0 auto 4px}
+.phone .hero{height:200px;border-radius:24px;background:linear-gradient(160deg,#E9DCCB 0%,#C9AE8E 55%,#9C7B5C 100%);position:relative}
+.phone .hero:after{content:"Nueva colección";position:absolute;left:16px;bottom:14px;color:#fff;font-weight:600;font-size:20px}
+.phone .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.phone .grid div{height:96px;border-radius:16px;background:#F2F2F2}
+.phone .grid div:nth-child(2){background:#E8E2DA}.phone .grid div:nth-child(3){background:#DCD5CC}
+.phone .btn{margin-top:auto;height:58px;border-radius:29px;background:#111;color:#fff;font-weight:600;font-size:20px;display:flex;align-items:center;justify-content:center}
+.notif{left:500px;top:62px;width:370px;padding:16px 18px;border-radius:22px;background:rgba(255,255,255,.97);box-shadow:0 18px 40px rgba(0,0,0,.18);display:flex;gap:12px;align-items:center}
+.notif i{width:42px;height:42px;border-radius:11px;background:#111;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-weight:700;font-size:15px}
+.notif b{display:block;font-size:20px;font-weight:600;color:#111}
+.notif span{font-size:18px;color:#6E6E73}
+.n15{left:840px;width:860px;top:120px;text-align:center;color:#fff;line-height:.82}
+.n15 .v{font-weight:700;font-size:400px;letter-spacing:-.06em;display:block}
+.n15 .l{font-weight:300;font-size:96px;letter-spacing:-.02em;display:block;margin-top:10px}
+.cal{left:430px;top:250px;width:420px;padding:26px;border-radius:34px;background:#fff;box-shadow:0 30px 60px rgba(0,0,0,.22);display:flex;flex-direction:column;gap:16px}
+.cal h4{font-size:26px;font-weight:600;color:#111}
+.cal h4 span{display:block;font-size:18px;font-weight:400;color:#8E8E93;margin-top:2px}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.days div{height:62px;border-radius:14px;background:#F2F2F2;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:20px;font-weight:600;color:#111}
+.days div small{font-size:13px;font-weight:500;color:#8E8E93}
+.days div.s{background:#111;color:#fff}.days div.s small{color:#C7C7CC}
+.hours{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.hours div{height:48px;border-radius:12px;border:1.5px solid #E5E5EA;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:500;color:#111}
+.hours div.s{border-color:#111;background:#111;color:#fff}
+</style></head><body>
+<div class="L" id="front"></div>
+<div class="L" id="behind"></div>
+<script src="spec.js"></script>
+<script>
+const S=window.SPEC;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const eo=x=>1-Math.pow(1-cl(x),3);
+const P=(t,a,d)=>cl((t-a)/d);
+const F=document.getElementById('front'),B=document.getElementById('behind');
+const h=(tag,cls,html)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e};
+// aparece con fundido y un desplazamiento pequeño hacia arriba
+function rise(el,t,t0,d=0.35,dy=22){const e=eo(P(t,t0,d));el.style.opacity=e;el.style.transform=`translateY(${((1-e)*dy).toFixed(2)}px)`;}
+
+/* ---------- textos a su lado ---------- */
+const SIDES=S.side.map(s=>{const e=h('div','side '+s.side,`<span class="f">${s.f}</span><span class="k">${s.k}</span>`);F.appendChild(e);return [s,e]});
+function fitSide(e,side){const max=side==='r'?470:420;const k=e.querySelector('.k');let fs=64;k.style.fontSize=fs+'px';while(k.scrollWidth>max&&fs>44){fs-=2;k.style.fontSize=fs+'px'}const f=e.querySelector('.f');let ff=38;f.style.fontSize=ff+'px';while(f.scrollWidth>max&&ff>30){ff-=1;f.style.fontSize=ff+'px'}}
+SIDES.forEach(([s,e])=>fitSide(e,s.side));
+
+/* ---------- diapositivas ---------- */
+const SL={};
+function mkSlide(s){
+ const d=h('div','slide');let html='';
+ switch(s.kind){
+  case 'local':html=`<span class="g" style="font-size:56px">Abrir un nuevo local es</span>
+   <div class="b" style="font-size:90px;margin-top:8px" id="lc1"><span class="hl" data-h="${s.t0+0.3}">alquiler,</span> <span class="hl" data-h="${s.a}">obra,</span> <span class="hl" data-h="${s.b}">nómina</span> <span class="hl" data-h="${s.c}">y meses de espera.</span></div>
+   <div class="it cap" data-t="${s.d}" style="font-size:44px;color:#111;font-weight:500;margin-top:40px">Y solo vende a quien pasa por tu calle, en su horario.</div>`;break;
+  case 'nums':html=`<span class="g" style="font-size:56px">Una tienda online</span>
+   <div class="nums"><div class="num" data-t="${s.a}"><span class="v">0 €</span><span class="l">de alquiler</span></div><div class="num" data-t="${s.b}"><span class="v">24 h</span><span class="l">abierta</span></div><div class="num" data-t="${s.c}"><span class="v">365</span><span class="l">días al año</span></div></div>`;break;
+  case 'three':html=`<span class="g" style="font-size:56px">Cuando no vende, es por</span><span class="b" style="font-size:90px">una de tres razones.</span>
+   <div class="cards"><div class="cardg" data-t="${s.t0+0.5}">1</div><div class="cardg" data-t="${s.t0+0.7}">2</div><div class="cardg" data-t="${s.t0+0.9}">3</div></div>`;break;
+  case 'poligono':html=`<div id="pg1" style="display:flex;flex-direction:column;align-items:center"><span class="g" style="font-size:56px">Una tienda online sin anuncios</span><span class="b it" data-t="${s.a}" style="font-size:84px;margin-top:8px">es un local en un polígono sin cartel.</span></div>
+   <span class="b it" data-t="${s.b}" style="font-size:150px;margin-top:40px;font-weight:700">No entra nadie.</span>`;break;
+  case 'assets':html=`<span class="g" style="font-size:52px">Ya tienes lo que a una tienda online le cuesta años:</span>
+   <div class="list"><div class="li" data-t="${s.t0}"><i>✓</i>Un producto que vende</div><div class="li" data-t="${s.a}"><i>✓</i>Clientes que pagan y repiten</div><div class="li" data-t="${s.c}"><i>✓</i>Fotos y seguidores</div><div class="li" data-t="${s.e}"><i>✓</i>Una marca que tu zona conoce</div></div>`;break;
+  case 'bars':html=`<span class="g" style="font-size:56px">Anuncios y email marketing</span><span class="b it" data-t="${s.b}" style="font-size:84px">listos desde el primer día.</span>
+   <div class="track"><div class="fill" id="bf"></div></div><div class="blab"><span>Ventas de clientes que ya confían en tu marca</span><b class="it" data-t="${s.b}">20–30 %</b></div>`;break;
+  case 'x3':html=`<span class="b" id="x3v" style="font-size:300px;font-weight:200;letter-spacing:-.05em;line-height:.9">×3</span><span class="g" style="font-size:46px;margin-top:10px">lo que inviertes en tu tienda online, por contrato,</span>
+   <span class="b it" data-t="${s.a}" style="font-size:78px;margin-top:6px">o trabajamos gratis hasta conseguirlo.</span>`;break;
+  case 'notfor':html=`<span class="b" style="font-size:90px">No es para ti si…</span>
+   <div class="list"><div class="li x" data-t="${s.a}"><i>✕</i>Tu producto no se puede enviar</div><div class="li x" data-t="${s.b}"><i>✕</i>Tu tienda no vende lo suficiente</div><div class="li x" data-t="${s.c}"><i>✕</i>No habrá compromiso de tu equipo</div></div>`;break;
+  case 'fit':html=`<span class="b" style="font-size:90px">Es para ti si…</span>
+   <div class="list"><div class="li" data-t="${s.t0+0.3}"><i>✓</i>Facturas más de 30.000 € al mes</div><div class="li" data-t="${s.a}"><i>✓</i>Vendes algo que se puede enviar</div><div class="li" data-t="${s.b}"><i>✓</i>Quieres llegar a toda España y a Europa</div></div>`;break;
+ }
+ d.innerHTML=html;return d;
+}
+S.slide.forEach(s=>{const d=mkSlide(s);d.classList.add('hide');F.appendChild(d);SL[s.t0]=[s,d]});
+function drawSlide(s,d,t){
+ const e=eo(P(t,s.t0,0.5));d.style.transform=`translateY(${((1-e)*1080).toFixed(1)}px)`;
+ d.querySelectorAll('[data-t]').forEach(el=>{
+   const t0=+el.dataset.t; if(el.classList.contains('li')){const v=eo(P(t,t0-0.05,0.35));el.style.opacity=Math.max(v,0.0);el.style.transform=`translateY(${((1-v)*18).toFixed(1)}px)`;el.classList.toggle('on',t>=t0+0.15);}
+   else rise(el,t,t0);
+ });
+ d.querySelectorAll('.hl').forEach(el=>el.classList.toggle('on',t>=+el.dataset.h&&!(s.d&&t>=s.d)));
+ if(s.kind==='poligono'){const g=d.querySelector('#pg1');const v=eo(P(t,s.b,0.3));g.style.opacity=1-0.65*v;}
+ if(s.kind==='bars'){const v=eo(P(t,s.b-0.2,0.9));d.querySelector('#bf').style.width=(25*v).toFixed(2)+'%';}
+ if(s.kind==='x3'){const v=eo(P(t,s.t0+0.15,1.2));d.querySelector('#x3v').style.transform=`scale(${(0.86+0.14*v).toFixed(4)})`;}
+ if(s.kind==='local'){const v=eo(P(t,s.d,0.3));d.querySelectorAll('#lc1 .hl').forEach(el=>{if(v>0)el.style.color=`rgb(${Math.round(17+(142-17)*v)},${Math.round(17+(142-17)*v)},${Math.round(17+(147-17)*v)})`;else el.style.color='';});}
+}
+
+/* ---------- pantallas compartidas ---------- */
+const CITIES=[['Madrid',256.7,203.3],['Barcelona',488,140],['Valencia',400,250],['Sevilla',150,340],['Bilbao',262,52],['A Coruña',52,48],['Málaga',205,372]];
+function mkSplit(s){
+ const d=h('div','split');let p='';
+ if(s.kind==='map'){
+  const pins=CITIES.map((c,i)=>`<circle cx="${c[1]}" cy="${c[2]}" r="7" fill="#111" class="pin" data-t="${(s.a+0.25*i).toFixed(2)}"/>`).join('');
+  const ords=CITIES.slice(1,5).map((c,i)=>`<div class="ord" data-t="${(s.a+0.35+0.3*i).toFixed(2)}" style="left:${(c[1]/616*820+14).toFixed(0)}px;top:${(c[2]/474*631-52).toFixed(0)}px">Pedido <span>· ${c[0]}</span></div>`).join('');
+  p=`<h3>Le vende a<br><b>cualquiera en España.</b></h3><div class="mapw"><img src="../mapa-es.svg" alt=""><svg viewBox="0 0 616 474">${pins}</svg>${ords}</div>`;
+ } else if(s.kind==='broken'){
+  p=`<h3>Si no está conectada,<br><b>cada día es un lío.</b></h3><div class="rows">
+   <div class="row" data-t="${s.a}">Stock<span class="ko">No cuadra</span></div><div class="row" data-t="${s.b}">Envíos<span class="ko">A mano</span></div><div class="row" data-t="${s.c}">Cobros<span class="ko">Por separado</span></div></div>`;
+ } else if(s.kind==='store'){
+  p=`<h3>Tu tienda,<br><b>conectada a tu negocio.</b></h3><div class="rows">
+   <div class="row" data-t="${s.a}">Cobros<div class="chips"><span class="chip">Tarjeta</span><span class="chip">Bizum</span><span class="chip">Apple Pay</span></div></div>
+   <div class="row" data-t="${s.b}">Envíos a toda España<span class="ok">Activo</span></div>
+   <div class="row" data-t="${s.c}">Recogida en tienda<span class="ok">Activo</span></div>
+   <div class="row" data-t="${s.d}">Stock en tiempo real<span class="ok">Sincronizado</span></div></div>`;
+ }
+ d.innerHTML=`<div class="hole"></div><div class="panel">${p}</div>`;return d;
+}
+S.split.forEach(s=>{const d=mkSplit(s);d.classList.add('hide');F.appendChild(d);s._d=d});
+function drawSplit(s,d,t){
+ rise(d.querySelector('h3'),t,s.t0+0.05,0.4,16);
+ d.querySelectorAll('.row,.ord').forEach(el=>rise(el,t,+el.dataset.t,0.35,16));
+ d.querySelectorAll('.pin').forEach(el=>{const v=eo(P(t,+el.dataset.t,0.3));el.setAttribute('r',(7*v).toFixed(2))});
+ const m=d.querySelector('.mapw');if(m){m.style.opacity=eo(P(t,s.t0+0.15,0.5));}
+}
+
+/* ---------- elementos que flotan (detrás) ---------- */
+function mkFloat(s){
+ const g=h('div','L');
+ if(s.kind==='phone'){g.innerHTML=`<div class="flt phone" data-d="0"><div class="bar"></div><div class="hero"></div><div class="grid"><div></div><div></div><div></div><div></div></div><div class="btn">Añadir a la cesta</div></div>
+  <div class="flt notif" data-d="0.9"><i>404</i><div><b>Nuevo pedido</b><span>Valencia · 64,90 €</span></div></div>`;}
+ if(s.kind==='n15'){g.innerHTML=`<div class="flt n15" data-d="0"><span class="v">15</span><span class="l">días</span></div>`;}
+ if(s.kind==='cal'){g.innerHTML=`<div class="flt cal" data-d="0"><h4>Reunión con Christian<span>30 min · Google Meet</span></h4>
+  <div class="days"><div><small>LUN</small>23</div><div class="s"><small>MAR</small>24</div><div><small>MIÉ</small>25</div><div><small>JUE</small>26</div><div><small>VIE</small>27</div></div>
+  <div class="hours"><div>10:00</div><div class="s">11:30</div><div>13:00</div><div>16:00</div><div>17:30</div><div>19:00</div></div></div>`;}
+ return g;
+}
+S.float.forEach(s=>{const g=mkFloat(s);g.classList.add('hide');B.appendChild(g);s._g=g});
+function drawFloat(s,g,t){
+ g.querySelectorAll('.flt').forEach((el,i)=>{
+  const t0=s.t0+(+el.dataset.d);const v=eo(P(t,t0,0.6));const out=1-cl((t-s.t1+0.3)/0.3);
+  const drift=Math.sin((t-s.t0)*1.3+i)*6;const rot=s.kind==='n15'?0:(-7+Math.sin((t-s.t0)*0.8+i)*1.2);
+  const sc=s.kind==='n15'?(0.94+0.06*v+0.01*(t-s.t0)):(0.96+0.04*v);
+  el.style.opacity=(v*out).toFixed(3);
+  el.style.transform=`translateY(${((1-v)*60+drift).toFixed(2)}px) rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(4)})`;
+ });
+}
+
+/* ---------- R(t) ---------- */
+window.R=function(t,layer){
+ F.style.display=layer==='front'?'block':'none';B.style.display=layer==='behind'?'block':'none';
+ let any=false;
+ if(layer==='front'){
+  SIDES.forEach(([s,e])=>{if(t<s.t0-0.01||t>s.t1+0.25){e.style.opacity=0;return}any=true;const v=eo(P(t,s.t0,0.32));const out=1-cl((t-s.t1)/0.22);e.style.opacity=(v*out).toFixed(3);e.style.transform=`translateY(${((1-v)*16).toFixed(2)}px)`});
+  Object.values(SL).forEach(([s,d])=>{const on=t>=s.t0&&t<s.t1;d.classList.toggle('hide',!on);if(on){any=true;drawSlide(s,d,t)}});
+  S.split.forEach(s=>{const on=t>=s.t0&&t<s.t1;s._d.classList.toggle('hide',!on);if(on){any=true;drawSplit(s,s._d,t)}});
+ } else {
+  S.float.forEach(s=>{const on=t>=s.t0&&t<s.t1;s._g.classList.toggle('hide',!on);if(on){any=true;drawFloat(s,s._g,t)}});
+ }
+ return any;
+};
+</script></body></html>
