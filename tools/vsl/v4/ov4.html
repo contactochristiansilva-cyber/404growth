@@ -1,0 +1,145 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<!-- VSL v4 (20/11/2026). window.R(t, capa) deja la página en el segundo t.
+     'front': subtítulos de todo lo que dice (lo importante con fondo blanco y letra de gris a gris oscuro),
+              el recorrido del calendario de /book y la cifra «+30.000 €».
+     'behind': lo que pasa por detrás de Christian (móvil con la tienda y «15 días»). -->
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;background:transparent;overflow:hidden;font-family:-apple-system,"SF Pro Display","SF Pro Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:#111}
+.L{position:absolute;inset:0}
+.hide{display:none!important}
+/* ---------- subtítulos ---------- */
+#sub{position:absolute;left:960px;top:930px;transform:translate(-50%,-50%);white-space:nowrap;font-size:46px;font-weight:500;letter-spacing:-.012em;line-height:1;padding:15px 30px 17px;border-radius:20px}
+#sub span{margin:0 .13em}
+#sub.vid{color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.35)}
+#sub.vid span{opacity:.5}
+#sub.vid span.on{opacity:1}
+#sub.lite{color:#9C9CA1;background:rgba(255,255,255,.9);box-shadow:0 2px 12px rgba(0,0,0,.05)}
+#sub.lite span.on{color:#1D1D1F}
+#sub.pill{background:#fff;color:#A6A6AB;font-weight:600;text-shadow:none;box-shadow:0 6px 24px rgba(0,0,0,.12)}
+#sub.pill span{opacity:1}
+#sub.pill span.on{color:#1D1D1F}
+/* ---------- cifra arriba, como en los ads ---------- */
+#top{position:absolute;left:1230px;top:120px;width:560px;text-align:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.25);opacity:0}
+#top b{display:block;font-weight:200;font-size:112px;letter-spacing:-.03em;line-height:1}
+#top i{display:block;font-style:normal;font-weight:300;font-size:34px;margin-top:6px;opacity:.9}
+/* ---------- calendario de /book ---------- */
+#cal{position:absolute;inset:0}
+#hole{position:absolute;left:60px;top:60px;width:860px;height:960px;border-radius:40px;box-shadow:0 0 0 2400px #F2F2F2}
+#bgfull{position:absolute;inset:0;background:#F2F2F2}
+#phone{position:absolute;left:1219px;top:93px;width:422px;height:894px;border-radius:58px;background:#0B0D0C;padding:10px;box-shadow:0 30px 70px rgba(0,0,0,.22),0 0 0 2px #2a2d2c inset;transform:scale(1.12);transform-origin:50% 50%}
+#scr{position:relative;width:402px;height:874px;border-radius:48px;overflow:hidden;background:#050706}
+#scr img{position:absolute;left:0;top:0;width:402px;display:block}
+#tap{position:absolute;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;background:rgba(255,255,255,.5);box-shadow:0 0 0 2px rgba(255,255,255,.95),0 0 0 3px rgba(0,0,0,.25),0 4px 14px rgba(0,0,0,.35);opacity:0}
+#cta{position:absolute;left:60px;top:420px;width:1040px;text-align:center;color:#1D1D1F;line-height:1.05}
+#cta b{display:block;font-weight:700;font-size:96px;letter-spacing:-.035em}
+#cta i{display:block;font-style:normal;font-weight:300;font-size:44px;color:#86868B;margin-bottom:14px;letter-spacing:-.01em}
+/* ---------- elementos que pasan por detrás ---------- */
+.flt{position:absolute;opacity:0}
+.phone{left:540px;top:120px;width:290px;height:540px;border-radius:46px;background:#fff;box-shadow:0 30px 60px rgba(0,0,0,.22);padding:22px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.phone .bar{height:10px;width:90px;border-radius:5px;background:#E5E5EA;margin:0 auto 4px}
+.phone .hero{height:200px;border-radius:24px;background:linear-gradient(160deg,#E9DCCB 0%,#C9AE8E 55%,#9C7B5C 100%);position:relative}
+.phone .hero:after{content:"Nueva colección";position:absolute;left:16px;bottom:14px;color:#fff;font-weight:600;font-size:20px}
+.phone .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.phone .grid div{height:96px;border-radius:16px;background:#F2F2F2}
+.phone .grid div:nth-child(2){background:#E8E2DA}.phone .grid div:nth-child(3){background:#DCD5CC}
+.phone .btn{margin-top:auto;height:58px;border-radius:29px;background:#111;color:#fff;font-weight:600;font-size:20px;display:flex;align-items:center;justify-content:center}
+.notif{left:500px;top:62px;width:370px;padding:16px 18px;border-radius:22px;background:rgba(255,255,255,.97);box-shadow:0 18px 40px rgba(0,0,0,.18);display:flex;gap:12px;align-items:center}
+.notif i{width:42px;height:42px;border-radius:11px;background:#111;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-weight:700;font-size:15px}
+.notif b{display:block;font-size:20px;font-weight:600;color:#111}
+.notif span{font-size:18px;color:#6E6E73}
+.n15{left:900px;width:860px;top:120px;text-align:center;color:#fff;line-height:.82}
+.n15 .v{font-weight:700;font-size:400px;letter-spacing:-.06em;display:block}
+.n15 .l{font-weight:300;font-size:96px;letter-spacing:-.02em;display:block;margin-top:10px}
+</style></head><body>
+<div class="L" id="front">
+  <div id="cal" class="hide"><div id="bgfull" class="hide"></div><div id="hole"></div>
+    <div id="cta" class="hide"><i>Reunión gratuita · 30 min</i><b>Elige día y hora</b></div>
+    <div id="phone"><div id="scr"><img id="simg" alt=""><div id="tap"></div></div></div></div>
+  <div id="top"><b>+30.000 €</b><i>al mes</i></div>
+  <div id="sub" class="hide"></div>
+</div>
+<div class="L" id="behind"></div>
+<script src="spec4.js"></script>
+<script>
+const S=window.SPEC;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const eo=x=>1-Math.pow(1-cl(x),3);
+const eio=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const P=(t,a,d)=>cl((t-a)/d);
+const $=id=>document.getElementById(id);
+const F=$('front'),B=$('behind'),SUBEL=$('sub');
+const inAny=(l,t)=>l.find(s=>t>=s.t0&&t<s.t1);
+
+/* ---------- subtítulos ---------- */
+let subIdx=-2;
+function drawSub(t){
+  const i=t<S.voice?S.sub.findIndex(s=>t>=s.t0&&t<s.t1):-1;
+  if(i<0){SUBEL.classList.add('hide');subIdx=-1;return false}
+  const s=S.sub[i];
+  if(i!==subIdx){SUBEL.innerHTML=s.w.map(w=>`<span>${w[0].replace(/&/g,'&amp;').replace(/</g,'&lt;')}</span>`).join('');subIdx=i}
+  const cut=inAny(S.cut,t),cal=inAny(S.cal,t);
+  let mode='vid';
+  if(cut) mode=(s.key||cut.dark)?'pill':'lite'; else if(s.key) mode='pill';
+  SUBEL.className=mode;
+  SUBEL.style.left=(cal?490:960)+'px';
+  SUBEL.style.top=(cut?972:(cal?940:930))+'px';
+  [...SUBEL.children].forEach((e,j)=>e.classList.toggle('on',t>=s.w[j][1]-0.03));
+  return true;
+}
+
+/* ---------- calendario ---------- */
+// pasos: [segundo desde el inicio, imagen, [x,y] del toque que lleva a ese paso]
+const CALSEQ={
+ cal1:{scroll:[0,1.7,520],steps:[[1.7,'s0'],[2.5,'s1',[201,511]],[3.4,'s2',[201,770]],[4.3,'s3',[118,627]],[5.2,'s5',[200,797]],[6.1,'s6',[200,815]]]},
+ cal2:{steps:[[0,'s0'],[0.7,'s1',[201,511]],[1.5,'s2',[201,770]],[2.9,'s3',[118,627]],[3.7,'s5',[200,797]],[4.5,'s6',[200,815]],[5.3,'s7']]}
+};
+const IMG={};['long','s0','s1','s2','s3','s5','s6','s7'].forEach(n=>{const i=new Image();i.src='cal/'+n+'.png';IMG[n]=i});
+function drawCal(c,t){
+  const q=CALSEQ[c.kind],u=t-c.t0,img=$('simg'),tap=$('tap');
+  const outro=t>=S.voice;
+  $('bgfull').classList.toggle('hide',!outro);$('hole').classList.toggle('hide',outro);
+  $('cta').classList.toggle('hide',!outro);
+  let name='s0',top=0;
+  if(q.scroll&&u<q.scroll[1]){name='long';top=-q.scroll[2]*eio(P(u,q.scroll[0]+0.25,q.scroll[1]-0.35))}
+  else{for(const s of q.steps) if(u>=s[0]) name=s[1]}
+  if(img.dataset.n!==name){img.src=IMG[name].src;img.dataset.n=name}
+  img.style.top=top.toFixed(1)+'px';
+  // toque: aparece 0,28 s antes del cambio y se va justo después
+  let op=0,x=0,y=0,sc=1;
+  for(const s of q.steps){ if(!s[2])continue; const d=s[0]-u; if(d<=0.36&&d>0){x=s[2][0];y=s[2][1];op=eo((0.36-d)/0.1);sc=d>0.12?1.3-0.3*eo((0.36-d)/0.2):0.86}}
+  tap.style.opacity=op.toFixed(3);tap.style.left=x+'px';tap.style.top=y+'px';tap.style.transform=`scale(${sc.toFixed(3)})`;
+}
+
+/* ---------- elementos por detrás ---------- */
+function mkFloat(s){
+ const g=document.createElement('div');g.className='L';
+ if(s.kind==='phone')g.innerHTML=`<div class="flt phone" data-d="0"><div class="bar"></div><div class="hero"></div><div class="grid"><div></div><div></div><div></div><div></div></div><div class="btn">Añadir a la cesta</div></div><div class="flt notif" data-d="0.9"><i>404</i><div><b>Nuevo pedido</b><span>Valencia · 64,90 €</span></div></div>`;
+ if(s.kind==='n15')g.innerHTML=`<div class="flt n15" data-d="0"><span class="v">15</span><span class="l">días</span></div>`;
+ return g;
+}
+S.float.forEach(s=>{s._g=mkFloat(s);s._g.classList.add('hide');B.appendChild(s._g)});
+function drawFloat(s,t){
+ s._g.querySelectorAll('.flt').forEach((el,i)=>{
+  const t0=s.t0+(+el.dataset.d),v=eo(P(t,t0,0.6)),out=1-cl((t-s.t1+0.3)/0.3);
+  const drift=Math.sin((t-s.t0)*1.3+i)*6,rot=s.kind==='n15'?0:(-7+Math.sin((t-s.t0)*0.8+i)*1.2);
+  const sc=s.kind==='n15'?(0.94+0.06*v+0.01*(t-s.t0)):(0.96+0.04*v);
+  el.style.opacity=(v*out).toFixed(3);
+  el.style.transform=`translateY(${((1-v)*60+drift).toFixed(2)}px) rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(4)})`;
+ });
+}
+
+window.R=function(t,layer){
+ F.style.display=layer==='front'?'block':'none';B.style.display=layer==='behind'?'block':'none';
+ let any=false;
+ if(layer==='front'){
+  const cal=inAny(S.cal,t);$('cal').classList.toggle('hide',!cal);if(cal){any=true;drawCal(cal,t)}
+  const tn=inAny(S.topnum,t);$('top').style.opacity=tn?(eo(P(t,tn.t0,0.3))*(1-cl((t-tn.t1+0.25)/0.25))).toFixed(3):0;if(tn)any=true;
+  if(drawSub(t))any=true;
+ }else{
+  S.float.forEach(s=>{const on=t>=s.t0&&t<s.t1;s._g.classList.toggle('hide',!on);if(on){any=true;drawFloat(s,t)}});
+ }
+ return any;
+};
+window.READY=Promise.all(Object.values(IMG).map(i=>i.decode().catch(()=>{}))).then(()=>true);
+</script></body></html>

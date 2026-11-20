@@ -1073,20 +1073,17 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Se genera con `tools/intenso-eq/build2.py` desde su catálogo (`catalogo.json`, campo `ref`, uso interno, no está en el repositorio) y el de la tienda; prueba `test2.mjs`. Al copiarlo al tema se comprueba con sumas por trozos con `awk` en `theme_bash`. Ojo: en los scripts que se pasan a `theme_bash` no usar `\u…` ni `\b` (llegan convertidos); sí funcionan `\p{M}`, `\d` y `\+`.
   - Aviso dado a Chris (dos veces): usar nombres de marca para llevar a equivalencias tiene riesgo legal en la UE (TJUE, L'Oréal contra Bellure, 2009), y con las sugerencias la lista de equivalencias se ve y se puede descargar; lo decide Intenso.
 
-## VSL de 404 editado (v3, 20/11/2026)
+## VSL de 404 editado (v4, 20/11/2026)
 
-- `~/Contenidos/VSL edición/VSL editado v3 (20 nov).mp4`, hecho a partir de `~/Contenidos/VSL Recortado.mov`. Fuentes y cómo se hizo: `tools/vsl/v3/LEEME.md`. La demo del 19/11 (`tools/vsl/demo/`) no le gustó.
+- `~/Contenidos/VSL edición/VSL editado v4 (20 nov).mp4` (3:48), hecho a partir de `~/Contenidos/VSL Recortado.mov`. Fuentes y cómo se hizo: `tools/vsl/v4/LEEME.md`. No le gustaron ni la demo del 19/11 (`tools/vsl/demo/`) ni la v3 (`tools/vsl/v3/`: piano, efectos, textos sueltos y gráficos blancos).
 - **Lo que Chris quiere en sus vídeos de venta:**
-  - Sonido:
-    - su voz tal cual, sin procesar;
-    - piano solo muy bajo, nada electrónico ni «metálico»;
-    - efectos casi imperceptibles.
-  - Textos: SF Pro en blanco, a su lado y alternando de lado, con una frase fina y la palabra clave más grande en negrita.
-  - Gráficos: blancos estilo Apple (gris fino y negro grueso), a pantalla completa, uno por idea, que suben desde abajo y se van con corte seco.
-  - Pantalla compartida como la de Devin Jatho.
-  - Solo 2 o 3 elementos que pasan por detrás de él en todo el vídeo.
-  - Un corte de zoom en cada frase.
-- Referencias, guion y música, en el artifact «Referencias del VSL». Las 7 pistas de piano están en `~/Contenidos/VSL edición/Música/Piano/`.
+  - Sonido: **solo su voz, tal cual**. Ni música ni efectos de sonido nuestros: los pone él («ese woosh es malísimo»).
+  - Subtítulos **todo el rato**: una línea de 4 palabras como mucho, en SF Pro. Lo importante va sobre fondo blanco, con la letra de gris a gris oscuro según la dice (como los subtítulos de Apple).
+  - Cuando él no sale en pantalla, tiene que verse lo que está contando: **escenas de monigotes** como las de los Ads 2 y 4 (figuras blancas sin cara, tiendas en miniatura con toldo verde, móviles de cristal, mapa de España en relieve, fondo blanco), a pantalla completa y con corte seco.
+    - Los anuncios en 9:16 son solo la referencia: las escenas se hacen nuevas, en horizontal, con Apimart (imagen con Nano Banana Pro y vídeo con Hailuo 2.3 Fast; unos 0,17 $ por escena).
+  - Cuando nombra el calendario («elige día y hora»), sale un **recorrido del calendario de /book** con las selecciones, para que luego sepan usarlo. Las capturas son de la página real, sin enviar ninguna reserva.
+  - Solo 2 o 3 elementos que pasan por detrás de él en todo el vídeo, y un corte de zoom en cada frase.
+- Las referencias que eligió antes están en el artifact «Referencias del VSL». Las 7 pistas de piano siguen en `~/Contenidos/VSL edición/Música/Piano/`, por si las quiere poner él.
 
 ## Merch 404 Growth en Printful (19/11/2026)
 
