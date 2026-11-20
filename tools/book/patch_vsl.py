@@ -6,6 +6,7 @@ En la primera pantalla tienen que verse siempre el titular, el vídeo y el botó
 El vídeo arranca solo, sin sonido y en bucle; mientras carga se ve un fotograma borroso metido en la página
 (lq.b64: JPEG de 96x54 en base64). En el centro, siempre, el botón «Reproducir con audio»: al pulsarlo vuelve
 al segundo 0 y suena. Solo se cuenta (admin y píxel) lo que se ve con el audio activado.
+Las cintas que giran van debajo del calendario («Elige tu hora»), no en el héroe.
 """
 import sys
 
@@ -100,6 +101,19 @@ rep('''</span></span></h1>
       </figure>
     </div>
     <div class="cta">''' % lq)
+
+# ---------- las cintas: debajo del calendario (Chris, 20/11/2026), ya no al final del héroe ----------
+i = s.index('  <div class="strip" aria-hidden="true">')
+j = s.index('</section>', i)
+strip = s[i:j]
+assert strip.count('<div class="row') == 2 and strip.rstrip().endswith('</div>'), strip[-80:]
+s = s[:i] + s[j:]
+n += 1
+k = s.index('<section class="sec" id="reservar"')
+e = s.index('</section>', k)
+s = s[:e] + strip.replace('<div class="strip" aria-hidden="true">', '<div class="strip sb" aria-hidden="true">', 1) + s[e:]
+rep('.strip .row{overflow:hidden;padding:4px 0}',
+    '.strip.sb{margin-top:64px}\n@media (max-width:560px){.strip.sb{margin-top:44px}}\n.strip .row{overflow:hidden;padding:4px 0}')
 
 # ---------- el script ----------
 rep('''     VSL:    desde el 13/11/2026 la página va sin vídeo (se quitó el hueco del héroe); esto solo vale si se vuelve a poner el <figure id="vsl">.
