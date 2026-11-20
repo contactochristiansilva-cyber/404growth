@@ -108,3 +108,18 @@ La v6 le gustó «mucho». Pidió un «subtítulo a un lado», en SF Pro, en la 
 - En el Mac solo se rehicieron los fotogramas 518–1001 y los tramos `o3/c00400.mp4` y `o3/c00800.mp4`; `o3/list.txt` coge el resto de `../o2/`. Las fuentes de la v6 están en `_render/v4/pkg-v6/`. Los cambios se mandaron como un parche (`pkg/patch7.py`) y se comprobaron las huellas.
 
 Resultado: `VSL editado v7 (20 nov).mp4` y `v7 · sonido por separado/efectos (clics y tics).wav`.
+
+## v8 (20/11/2026): las cuentas sin recuadros, con cifras que giran
+
+La tarjeta de la v7 no le gustó: «quiero que todo sea original, con SF Pro, sin esos recuadros sino números que giran, sin bocadillos tan exagerados y tan Claude». Lo que cambia, solo del 0:20 al 0:40:
+
+- **Sin tarjeta, sin líneas y sin rótulos en mayúsculas.** Solo letra a la derecha de la escena (`#side` en `ov4.html`, x 1384): negra sobre las escenas claras y blanca sobre la de noche (`.dk`).
+- **Lo que dice sale en grande y su cifra gira como un contador** (`digits()`): cada dígito es una columna que da una vuelta y se para en su número, una detrás de otra (0,05 s de desfase, 0,8 s), con los bordes de arriba y abajo difuminados. Al pasar a lo siguiente, se queda arriba en pequeño («Alquiler 1.500 €/mes»).
+- **«Un local nuevo»:** Alquiler 1.500 €/mes, Obra 40.000 €, Una persona más 1.900 €/mes, Hasta que te conocen: Meses y, en «y aún así», El primer año 80.800 €.
+- **«Tu tienda online»:** empieza con las tres cifras del local y, al decir «no tiene alquiler», cada línea gira hasta «0 €» en verde (`pre` en `SIDE`, 0,25 s entre una y otra). Después, en grande: Abierta 24 horas, Al año 365 días y Vende en Toda España.
+- **El subtítulo de abajo va sin bocadillo en estas cuatro escenas** (modo `bare`: solo la letra, de gris a gris oscuro). En el resto del vídeo sigue como en la v6.
+- La escena del mapa (c3) va algo más pequeña para que las islas no queden debajo de la letra, y su borde se funde con su propio fondo desenfocado para que no se note el corte (`side_box` por escena: `[escala, x, y, 1 = fundir el borde]`). En la escena de noche no se funde, porque emborronaba la línea del suelo.
+- Las cifras y sus fuentes son las de la v7. El sonido, igual: un tic por cada cosa que aparece o gira (110 en total).
+- En el Mac: fotogramas 518–1001 otra vez, tramos `o4/c00400.mp4` y `o5/c00800.mp4`, y `o5/list.txt` (el resto, de `../o2/`). Las fuentes de la v7 están en `_render/v4/pkg-v7/`; los cambios fueron `pkg/patch8.py` y `pkg/patch9.py`.
+
+Resultado: `VSL editado v8 (20 nov).mp4` y `v8 · sonido por separado/efectos (clics y tics).wav`. Para poner su música: `mix6.py … <pista>` y el `ffmpeg -map 0:v -map 1:a -c copy` sobre `o5/video.mp4`.

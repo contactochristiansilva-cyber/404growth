@@ -19,6 +19,8 @@ html,body{width:1920px;height:1080px;background:transparent;overflow:hidden;font
 #sub.pill{background:#fff;color:#A6A6AB;font-weight:600;text-shadow:none;box-shadow:0 6px 24px rgba(0,0,0,.12)}
 #sub.pill span{opacity:1}
 #sub.pill span.on{color:#1D1D1F}
+#sub.bare{color:#A6A6AB;font-weight:500}
+#sub.bare span.on{color:#1D1D1F}
 /* ---------- tarjetas blancas: su frase en grande, de gris a gris oscuro ---------- */
 #card{position:absolute;inset:0;background:#F2F2F2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 150px}
 #card .ln{display:block;max-width:1560px;text-wrap:balance}
@@ -32,21 +34,24 @@ html,body{width:1920px;height:1080px;background:transparent;overflow:hidden;font
 #card .nums{display:flex;gap:36px;margin-top:54px}
 #card .nums div{width:210px;height:150px;border-radius:30px;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:200;font-size:92px;color:#D1D1D6}
 #card .nums div.on{background:#111;color:#fff}
-/* ---------- las cuentas, a un lado: lo que cuesta un local frente a la tienda online ---------- */
-#side{position:absolute;left:1392px;top:540px;width:472px;background:#fff;border-radius:42px;padding:40px 42px 34px;box-shadow:0 24px 70px rgba(0,0,0,.10),0 2px 8px rgba(0,0,0,.04)}
-#side .ti{font-size:24px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#86868B;margin-bottom:20px}
-#side .r{padding:13px 0 15px;border-top:1px solid #EDEDF0}
-#side .l{font-size:28px;font-weight:400;color:#C7C7CC;letter-spacing:-.008em;line-height:1.2}
-#side .v{font-size:62px;font-weight:700;letter-spacing:-.035em;line-height:1.08;color:#D1D1D6;white-space:nowrap}
-#side .v small{font-size:31px;font-weight:400;letter-spacing:-.01em;margin-left:7px}
-#side .v.x{font-size:47px;letter-spacing:-.03em;line-height:1.3}
-#side .r.on .l{color:#86868B}
-#side .r.on .v{color:#1D1D1F}
-#side.online .r.on .v.z{color:#2E7A64}
-#side .tot{border-top:2px solid #1D1D1F;padding-top:18px;margin-top:4px}
-#side .tot .v{font-size:86px;font-weight:800;letter-spacing:-.045em;color:#8E8E93}
-#side .tot .v small{font-size:44px;font-weight:600}
-#side .tot.on .v{color:#111}
+/* ---------- las cuentas, a un lado: solo letra, sin recuadros; las cifras giran como un contador ---------- */
+#side{position:absolute;left:1384px;top:0;width:500px;height:1080px;color:#1D1D1F;--g:#86868B;--z:#2E7A64}
+#side.dk{color:#fff;--g:rgba(255,255,255,.62);--z:#8FE3C5}
+#side div{position:absolute;left:0;white-space:nowrap}
+#side .hd{font-size:34px;font-weight:600;letter-spacing:-.012em}
+#side .sm{font-size:34px;font-weight:400;letter-spacing:-.012em;color:var(--g);height:46px;line-height:46px}
+#side .sm b{font-weight:600;color:inherit;margin-left:.3em}
+#side .sm b.k{color:#1D1D1F}
+#side.dk .sm b.k{color:#fff}
+#side .sm b.z{color:var(--z)}
+#side .roll{display:inline-block;position:relative;height:46px;overflow:hidden;vertical-align:top;-webkit-mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent)}
+#side .roll i{font-style:normal;display:block;height:46px}
+#side .lb{font-size:32px;font-weight:400;letter-spacing:-.01em;color:var(--g)}
+#side .bg{font-size:108px;font-weight:600;letter-spacing:-.045em;line-height:1;height:108px;font-variant-numeric:tabular-nums}
+#side .bg.x{font-size:76px;letter-spacing:-.04em;line-height:108px}
+#side .bg small{font-size:40px;font-weight:400;letter-spacing:-.015em;margin-left:10px;color:var(--g)}
+#side .dg{display:inline-block;height:1em;overflow:hidden;vertical-align:top;-webkit-mask-image:linear-gradient(transparent,#000 20%,#000 80%,transparent);mask-image:linear-gradient(transparent,#000 20%,#000 80%,transparent)}
+#side .dg i{font-style:normal;display:block;line-height:1em;white-space:pre}
 /* ---------- cifra arriba, como en los ads ---------- */
 #top{position:absolute;left:1230px;top:120px;width:560px;text-align:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.25);opacity:0}
 #top b{display:block;font-weight:200;font-size:112px;letter-spacing:-.03em;line-height:1}
@@ -111,6 +116,7 @@ function drawSub(t){
   const cut=inAny(S.cut,t),cal=inAny(S.cal,t);
   let mode='vid';
   if(cut) mode=(s.key||cut.dark)?'pill':'lite'; else if(s.key) mode='pill';
+  if(cut&&inAny(S.side||[],t)) mode='bare';   // con las cuentas al lado, sin bocadillo: solo la letra
   SUBEL.className=mode;
   SUBEL.style.left=(cal?490:(cut&&inAny(S.side||[],t)?766:960))+'px';
   SUBEL.style.top=(cut?972:(cal?940:930))+'px';
@@ -137,39 +143,41 @@ function drawCard(t){
 }
 
 /* ---------- las cuentas, a un lado ---------- */
-const SIDEEL=$('side');let sideIdx=-1;
-const mil=n=>String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+// Sin recuadros: una columna de letra a la derecha de la escena. Lo que dice sale en grande y sus cifras
+// giran como un contador; al pasar a lo siguiente se queda arriba, en pequeño.
+const SIDEEL=$('side'),SY=336,SROW=54;
+const STRIP='0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9';
+function digits(n,a){            // a = segundos desde que la dice
+  let j=0;
+  return [...n].map(ch=>{
+    if(!/\d/.test(ch)) return `<span style="opacity:${eo(P(a,0.1,0.3)).toFixed(3)}">${ch}</span>`;
+    const k=eo(P(a,j*0.05,0.8));j++;
+    return `<span class="dg"><i style="transform:translateY(${(-(10+ +ch)*k).toFixed(3)}em)">${STRIP}</i></span>`;
+  }).join('');
+}
+const val=(r,k)=>r.x?esc(r.x):`${r.n} ${esc(r.u)}`;
 function drawSide(t){
-  const i=(S.side||[]).findIndex(c=>t>=c.t0&&t<c.t1);
-  SIDEEL.classList.toggle('hide',i<0);
-  if(i<0){sideIdx=-1;return false}
-  const c=S.side[i];
-  if(i!==sideIdx){
-    SIDEEL.className=c.kind;
-    SIDEEL.innerHTML=`<div class="ti">${esc(c.title)}</div>`+c.rows.map(r=>`<div class="r"><div class="l">${esc(r.l)}</div><div class="v${r.x?' x':''}${r.v===0?' z':''}"></div></div>`).join('')+
-      (c.total?`<div class="r tot"><div class="l">${esc(c.total.l)}</div><div class="v"></div></div>`:'');
-    sideIdx=i;
-  }
-  const v=eo(P(t,c.t0,0.4));
-  SIDEEL.style.opacity=v.toFixed(3);
-  SIDEEL.style.transform=`translate(${((1-v)*70).toFixed(1)}px,-50%)`;
-  const R=SIDEEL.querySelectorAll('.r');let sum=0,any=false;
-  c.rows.forEach((r,j)=>{
-    const on=t>=r.t,k=eo(P(t,r.t,0.45)),el=R[j].querySelector('.v');
-    R[j].classList.toggle('on',on);
-    let h='—';
-    if(on){ if(r.x) h=esc(r.x)+(r.x2&&t>=r.t2?' · '+esc(r.x2):''); else h=mil(r.v*k)+`<small>${esc(r.u)}</small>`; }
-    if(el.dataset.h!==h){el.innerHTML=h;el.dataset.h=h}
-    if(on&&r.y){sum+=r.y*k;any=true}
+  const c=inAny(S.side||[],t);
+  SIDEEL.classList.toggle('hide',!c);
+  if(!c)return false;
+  const cut=inAny(S.cut,t);SIDEEL.classList.toggle('dk',!!(cut&&cut.dark));
+  let h=`<div class="hd" style="top:${SY-68}px;opacity:${eo(P(t,c.t0,0.3)).toFixed(3)}">${esc(c.title)}</div>`;
+  const pre=c.pre||[];
+  pre.forEach((r,s)=>{                       // lo que costaba el local: cada línea gira hasta «0 €»
+    const p=eio(P(t,r.t,0.5));
+    h+=`<div class="sm" style="top:${SY+s*SROW}px">${esc(r.l)}<b class="roll"><i class="k" style="transform:translateY(${(-p*46).toFixed(1)}px)">${val(r)}</i><i style="color:var(--z);transform:translateY(${(-p*46).toFixed(1)}px)">${esc(r.to)}</i></b></div>`;
   });
-  if(c.total){
-    const T=R[c.rows.length],el=T.querySelector('.v');
-    T.classList.toggle('on',t>=c.total.t);
-    const h=any?mil(sum)+`<small>${esc(c.total.u)}</small>`:'—';
-    if(el.dataset.h!==h){el.innerHTML=h;el.dataset.h=h}
-    const pop=t>=c.total.t?1+0.06*(1-eo(P(t,c.total.t,0.35))):1;
-    el.style.transform=`scale(${pop.toFixed(4)})`;el.style.transformOrigin='0 60%';
-  }
+  c.items.forEach((r,i)=>{
+    const a=t-r.t;if(a<0)return;
+    const s=pre.length+i,y=SY+s*SROW,nx=c.items[i+1],b=nx?t-nx.t:-1;
+    if(b<0.14){                               // en grande
+      const o=eo(P(a,0,0.25))*(1-cl(b/0.12)),dy=(1-eo(P(a,0,0.35)))*22-(b>0?eo(b/0.12)*18:0);
+      h+=`<div class="lb" style="top:${y+2}px;opacity:${o.toFixed(3)};transform:translateY(${dy.toFixed(1)}px)">${esc(r.l)}</div>`;
+      h+=`<div class="bg${r.x?' x':''}" style="top:${y+46}px;opacity:${o.toFixed(3)};transform:translateY(${dy.toFixed(1)}px)">${r.x?esc(r.x):digits(r.n,a)+`<small>${esc(r.u)}</small>`}</div>`;
+    }
+    if(b>=0.06) h+=`<div class="sm" style="top:${y}px;opacity:${eo(P(b,0.06,0.3)).toFixed(3)}">${esc(r.l)}<b class="k">${val(r)}</b></div>`;
+  });
+  SIDEEL.innerHTML=h;
   return true;
 }
 

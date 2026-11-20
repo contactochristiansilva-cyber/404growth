@@ -141,9 +141,18 @@ while n < B:
             clip = Clip(cut, n - cut['n0'])
         img = clip.read().astype(np.float32)
         if in_any(S.get('side', []), t):          # con las cuentas al lado, la escena va más pequeña y a la izquierda
-            k, sx, sy = S['side_box']
+            k, sx, sy, soft = (S['side_box'].get(cut['id'], S['side_box']['']) + [0])[:4]
             img = cv2.warpAffine(img, np.float32([[k, 0, sx], [0, k, sy]]), (W, H), flags=cv2.INTER_AREA,
                                  borderMode=cv2.BORDER_REPLICATE)
+            if soft:   # el borde de la escena se funde con su propio fondo desenfocado, para que no se note el corte
+                bl = cv2.resize(cv2.GaussianBlur(cv2.resize(img, (W // 8, H // 8), interpolation=cv2.INTER_AREA), (0, 0), 9),
+                                  (W, H), interpolation=cv2.INTER_CUBIC)
+                fx = np.clip((sx + k * W - np.arange(W, dtype=np.float32)) / 110.0, 0, 1)
+                yy = np.arange(H, dtype=np.float32)
+                fy = np.clip(np.minimum(yy - sy, sy + k * H - yy) / 70.0, 0, 1)
+                m = (fx[None, :] * fy[:, None])
+                m = (m * m * (3 - 2 * m))[:, :, None]
+                img = img * m + bl * (1 - m)
     elif fr is None:
         img = bg.copy()
     elif cal:
