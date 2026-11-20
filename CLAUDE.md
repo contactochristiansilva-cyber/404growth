@@ -1073,11 +1073,14 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Se genera con `tools/intenso-eq/build2.py` desde su catálogo (`catalogo.json`, campo `ref`, uso interno, no está en el repositorio) y el de la tienda; prueba `test2.mjs`. Al copiarlo al tema se comprueba con sumas por trozos con `awk` en `theme_bash`. Ojo: en los scripts que se pasan a `theme_bash` no usar `\u…` ni `\b` (llegan convertidos); sí funcionan `\p{M}`, `\d` y `\+`.
   - Aviso dado a Chris (dos veces): usar nombres de marca para llevar a equivalencias tiene riesgo legal en la UE (TJUE, L'Oréal contra Bellure, 2009), y con las sugerencias la lista de equivalencias se ve y se puede descargar; lo decide Intenso.
 
-## VSL de 404 editado (v5, 20/11/2026)
+## VSL de 404 editado (v6, 20/11/2026)
 
-- `~/Contenidos/VSL edición/VSL editado v5 (20 nov).mp4` (3:48), hecho a partir de `~/Contenidos/VSL Recortado.mov`. Al lado están la versión solo con su voz y, en `v5 · sonido por separado/`, la música y los efectos en WAV. Fuentes y cómo se hizo: `tools/vsl/v4/LEEME.md` (la v5 usa las mismas fuentes). No le gustaron ni la demo del 19/11 (`tools/vsl/demo/`) ni la v3 (`tools/vsl/v3/`); la v4 le gustó «mucho más» y la v5 son sus retoques.
+- `~/Contenidos/VSL edición/VSL editado v6 (20 nov).mp4` (3:48), hecho a partir de `~/Contenidos/VSL Recortado.mov`: la misma imagen que la v5, con su voz, los clics del calendario y los tics de las tarjetas; sin disparos de cámara y sin música. Los efectos van aparte en `v6 · sonido por separado/`. Fuentes y cómo se hizo: `tools/vsl/v4/LEEME.md` (v4, v5 y v6 usan las mismas fuentes). No le gustaron ni la demo del 19/11 (`tools/vsl/demo/`) ni la v3 (`tools/vsl/v3/`); la v4 le gustó «mucho más» y la v5 y la v6 son sus retoques.
 - **Lo que Chris quiere en sus vídeos de venta:**
-  - **Sonido:** su voz tal cual, sin procesar. Solo estos efectos, y flojos: clic de ratón en los toques de pantalla, disparo de cámara en cada cambio de plano o animación, y un tic de ruleta cuando se van encendiendo las palabras. Música alegre, sin cantante y muy bajita (24 LU por debajo de la voz). Nada de «whoosh», ni música electrónica («metálica»), ni piano de fondo. Los sonidos, grabaciones reales (Pixabay), no sintetizados.
+  - **Sonido:** su voz tal cual, sin procesar. Solo estos efectos, y flojos: clic de ratón en los toques de pantalla y un tic de ruleta cuando se van encendiendo las palabras. Los sonidos, grabaciones reales (Pixabay), no sintetizados.
+    - **Ningún disparo de cámara** (20/11/2026: «quita todos los shots de cámara, no quiero que uses ninguno»). En la v5 había 65: se hacían pesados y sonaban «súper digital». Tampoco «whoosh».
+    - **La música la elige él** («no me gusta nada la música de fondo, necesito elegir yo la música»): no pongas una elegida por nosotros. Ya rechazó la electrónica («metálica»), el piano y la acústica alegre de Pixabay. Cuando deje su pista en `Música/`, se mezcla muy bajita, 24 LU por debajo de la voz: `mix6.py … <pista>`.
+    - La que quiere es la de fondo del vídeo «Iman Gadzhi | Video Sales Letter» (youtube.com/watch?v=oj0lMQfti8E, canal AC-MEDIA, 54 s). La página no tiene descripción ni créditos de música, así que no se sabe qué pista es; y del vídeo no se puede sacar, porque va con la voz encima.
   - **Inicio con vida:** el vídeo entra desenfocado y con varios zooms en los primeros 20 s.
   - **Subtítulos todo el rato:** una línea de 4 palabras como mucho, en SF Pro, blancos sobre él.
   - **«Subtítulos tipo Apple con fondo blanco»** para dar énfasis: tarjetas blancas a pantalla completa con su frase en grande, que pasa de gris a gris oscuro según la dice (unas 9 en 4 minutos). Es lo que le gustó de la v3.
@@ -1085,7 +1088,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
     - Los anuncios en 9:16 son solo la referencia: las escenas se hacen nuevas, en horizontal, con Apimart (imagen con Nano Banana Pro y vídeo con Hailuo 2.3 Fast; unos 0,17 $ por escena).
   - Cuando nombra el calendario («elige día y hora»), sale un **recorrido del calendario de /book** con las selecciones, para que luego sepan usarlo. Las capturas son de la página real, sin enviar ninguna reserva.
   - Solo 2 o 3 elementos que pasan por detrás de él en todo el vídeo, y un corte de zoom en cada frase.
-- Las referencias que eligió antes están en el artifact «Referencias del VSL». Música en `~/Contenidos/VSL edición/Música/` (`Alegre/` es la buena; las de `Piano/` y las electrónicas no le gustaron) y efectos en `SFX/Reales (Pixabay)/` (los `.wav` numerados de `SFX/` son los sintetizados que no le gustaron).
+- Las referencias que eligió antes están en el artifact «Referencias del VSL». Música en `~/Contenidos/VSL edición/Música/` (ninguna le gustó: ni `Alegre/`, ni `Piano/`, ni las electrónicas) y efectos en `SFX/Reales (Pixabay)/` (los `.wav` numerados de `SFX/` son los sintetizados que no le gustaron).
 
 ## Merch 404 Growth en Printful (19/11/2026)
 

@@ -73,3 +73,20 @@ La v4 le gustó «mucho más». Lo que pidió encima:
   - En el Mac: `Música/Alegre/` (4 opciones, A1 es la usada) y `SFX/Reales (Pixabay)/`.
 - Resultado: `VSL editado v5 (20 nov).mp4` (con todo), `VSL editado v5 · solo voz (20 nov).mp4` y, en `v5 · sonido por separado/`, la música y los efectos en WAV ya al volumen de la mezcla, para moverlos en DaVinci.
 - `python3 mix5.py <vídeo original> spec4.json <carpeta audio> <salida>` escribe `mezcla.m4a`, `musica.wav`, `efectos.wav` y `eventos.json`. Se ejecuta en el Mac (decodifica y codifica con ffmpeg; solo necesita numpy).
+
+## v6 (20/11/2026, misma imagen): sin disparos de cámara y sin nuestra música
+
+Lo que dijo de la v5:
+
+- «No me gusta nada la música de fondo, necesito elegir yo la música.» Quiere la de fondo del vídeo «Iman Gadzhi | Video Sales Letter» (youtube.com/watch?v=oj0lMQfti8E, canal AC-MEDIA, 54 s). Su página no tiene descripción ni créditos de música: no se sabe qué pista es. Del vídeo no se puede sacar, porque lleva la voz encima.
+- El disparo de cámara se repetía muchísimo (65 veces) y sonaba «súper digital». Al momento: «quita todos los shots de cámara, no quiero que uses ninguno».
+
+Qué lleva la v6:
+
+- la imagen de la v5, sin tocar (`_render/v4/o2/video.mp4`);
+- su voz tal cual, los 10 clics del calendario y los 99 tics de las tarjetas blancas. Nada más: la mezcla mide lo mismo que la voz sola (−21,9 LUFS, pico −6,3 dBFS);
+- `mix6.py <vídeo original> spec4.json <carpeta audio> <salida> [música]`: es `mix5.py` sin disparos. La música es opcional: si se le pasa una pista, mide su volumen (`ebur128`), la deja 24 LU por debajo de la voz, la repite con un fundido cruzado de 2 s si dura menos que el vídeo, la sube 6 dB en el cierre y escribe también `musica.wav`.
+
+Resultado: `VSL editado v6 (20 nov).mp4` y `v6 · sonido por separado/efectos (clics y tics).wav`. En el Mac, la mezcla está en `_render/v6/snd/`.
+
+Cuando Chris deje su pista en `Música/`: `mix6.py` con ella y el mismo `ffmpeg -map 0:v -map 1:a -c copy` sobre `o2/video.mp4`.
