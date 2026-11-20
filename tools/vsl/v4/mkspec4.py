@@ -228,6 +228,29 @@ FLOAT = [dict(kind='phone', t0=round(st('no debería'), 2), t1=round(en('sino en
 BW = [[round(st('yo ya tengo web'), 2), round(en('en la tienda online', st('nadie entraba')) + 0.1, 2)]]
 TOPNUM = [dict(t0=round(st('si facturas más de'), 2), t1=round(st('vendes algo que se puede enviar') - 0.05, 2))]
 
+# ---------- 6. Las cuentas, a un lado (v7): lo que cuesta abrir un local frente a la tienda online ----------
+# Cifras orientativas de un local de unos 80 m² (fuentes en LEEME.md): alquiler 12-20 €/m² al mes,
+# obra 300-800 €/m² y una persona con el salario mínimo de 2026 (coste para la empresa).
+# Cada fila se enciende cuando lo dice. v = cifra (cuenta desde 0), y = lo que suma al primer año.
+t = CT['c1a']['t0']
+SIDE = [dict(kind='local', t0=t, t1=CT['c1b']['t1'], title='Abrir un local', rows=[
+            dict(l='Alquiler', v=1500, u='€/mes', y=18000, t=round(st('alquiler', t) - 0.03, 2)),
+            dict(l='Obra', v=40000, u='€', y=40000, t=round(st('obra', t) - 0.03, 2)),
+            dict(l='Una persona más', v=1900, u='€/mes', y=22800, t=round(st('persona más en nómina', t) - 0.03, 2)),
+            dict(l='Hasta que te conocen', x='Meses', t=round(st('meses hasta que', t) - 0.03, 2))],
+            total=dict(l='El primer año', u='€', t=round(st('y aún así', t) - 0.03, 2))),
+        dict(kind='online', t0=CT['c2']['t0'], t1=CT['c3']['t1'], title='Tienda online', rows=[
+            dict(l='Alquiler', v=0, u='€', t=round(st('alquiler', CT['c2']['t0']) - 0.03, 2)),
+            dict(l='Obra', v=0, u='€', t=round(st('alquiler', CT['c2']['t0']) + 0.22, 2)),
+            dict(l='Una persona más', v=0, u='€', t=round(st('alquiler', CT['c2']['t0']) + 0.47, 2)),
+            dict(l='Abierta', x='24 h', x2='365 días', t=round(st('24 horas', CT['c2']['t0']) - 0.03, 2),
+                 t2=round(st('365', CT['c2']['t0']) - 0.03, 2)),
+            dict(l='Vende en', x='Toda España', t=round(st('españa', CT['c3']['t0']) - 0.03, 2))])]
+for s in SIDE:
+    s['t0'], s['t1'] = round(s['t0'], 2), round(s['t1'], 2)
+# con las cuentas al lado, la escena va más pequeña y a la izquierda: [escala, x, y]
+SIDE_BOX = [0.86, -60, 76]
+
 cuts = [0.0]
 for i in range(1, len(W)):
     gap = W[i][1] - W[i - 1][2]
@@ -236,10 +259,11 @@ for i in range(1, len(W)):
             cuts.append(round(W[i][1] - 0.04, 2))
 
 S = dict(dur=DUR, voice=VOICE, sub=SUB, cut=CUT, cal=CAL, float=FLOAT, bw=BW, topnum=TOPNUM, cuts=cuts,
-         card=CARD, intro=INTRO, intro_end=INTRO_END, blur=BLUR)
+         card=CARD, intro=INTRO, intro_end=INTRO_END, blur=BLUR, side=SIDE, side_box=SIDE_BOX)
 json.dump(S, open(sys.argv[2], 'w'), ensure_ascii=False, indent=0)
 print(len(SUB), 'subtítulos,', sum(1 for s in SUB if s['key']), 'destacados,', len(CUT), 'escenas')
 for c in CUT + CAL: print('%-5s %6.2f-%6.2f  %.1f s' % (c.get('id', c.get('kind')), c['t0'], c['t1'], c['t1'] - c['t0']))
+for c in SIDE: print('lado  %6.2f-%6.2f ' % (c['t0'], c['t1']), c['title'], [(r['l'], r['t']) for r in c['rows']], c.get('total', {}).get('t'))
 for c in CARD: print('tarj  %6.2f-%6.2f  %.1f s  %s' % (c['t0'], c['t1'], c['t1'] - c['t0'], ' / '.join(' '.join(w[0] for w in l['w']) for l in c['lines'])))
 if '-v' in sys.argv:
     for s in SUB: print('%6.2f-%6.2f %s %s' % (s['t0'], s['t1'], '■' if s['key'] else ' ', ' '.join(w[0] for w in s['w'])))

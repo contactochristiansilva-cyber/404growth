@@ -140,6 +140,10 @@ while n < B:
             if clip: clip.close()
             clip = Clip(cut, n - cut['n0'])
         img = clip.read().astype(np.float32)
+        if in_any(S.get('side', []), t):          # con las cuentas al lado, la escena va más pequeña y a la izquierda
+            k, sx, sy = S['side_box']
+            img = cv2.warpAffine(img, np.float32([[k, 0, sx], [0, k, sy]]), (W, H), flags=cv2.INTER_AREA,
+                                 borderMode=cv2.BORDER_REPLICATE)
     elif fr is None:
         img = bg.copy()
     elif cal:

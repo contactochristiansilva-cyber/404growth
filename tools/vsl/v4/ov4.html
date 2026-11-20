@@ -32,6 +32,21 @@ html,body{width:1920px;height:1080px;background:transparent;overflow:hidden;font
 #card .nums{display:flex;gap:36px;margin-top:54px}
 #card .nums div{width:210px;height:150px;border-radius:30px;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:200;font-size:92px;color:#D1D1D6}
 #card .nums div.on{background:#111;color:#fff}
+/* ---------- las cuentas, a un lado: lo que cuesta un local frente a la tienda online ---------- */
+#side{position:absolute;left:1392px;top:540px;width:472px;background:#fff;border-radius:42px;padding:40px 42px 34px;box-shadow:0 24px 70px rgba(0,0,0,.10),0 2px 8px rgba(0,0,0,.04)}
+#side .ti{font-size:24px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#86868B;margin-bottom:20px}
+#side .r{padding:13px 0 15px;border-top:1px solid #EDEDF0}
+#side .l{font-size:28px;font-weight:400;color:#C7C7CC;letter-spacing:-.008em;line-height:1.2}
+#side .v{font-size:62px;font-weight:700;letter-spacing:-.035em;line-height:1.08;color:#D1D1D6;white-space:nowrap}
+#side .v small{font-size:31px;font-weight:400;letter-spacing:-.01em;margin-left:7px}
+#side .v.x{font-size:47px;letter-spacing:-.03em;line-height:1.3}
+#side .r.on .l{color:#86868B}
+#side .r.on .v{color:#1D1D1F}
+#side.online .r.on .v.z{color:#2E7A64}
+#side .tot{border-top:2px solid #1D1D1F;padding-top:18px;margin-top:4px}
+#side .tot .v{font-size:86px;font-weight:800;letter-spacing:-.045em;color:#8E8E93}
+#side .tot .v small{font-size:44px;font-weight:600}
+#side .tot.on .v{color:#111}
 /* ---------- cifra arriba, como en los ads ---------- */
 #top{position:absolute;left:1230px;top:120px;width:560px;text-align:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.25);opacity:0}
 #top b{display:block;font-weight:200;font-size:112px;letter-spacing:-.03em;line-height:1}
@@ -70,6 +85,7 @@ html,body{width:1920px;height:1080px;background:transparent;overflow:hidden;font
     <div id="cta" class="hide"><i>Reunión gratuita · 30 min</i><b>Elige día y hora</b></div>
     <div id="phone"><div id="scr"><img id="simg" alt=""><div id="tap"></div></div></div></div>
   <div id="top"><b>+30.000 €</b><i>al mes</i></div>
+  <div id="side" class="hide"></div>
   <div id="sub" class="hide"></div>
   <div id="card" class="hide"></div>
 </div>
@@ -96,7 +112,7 @@ function drawSub(t){
   let mode='vid';
   if(cut) mode=(s.key||cut.dark)?'pill':'lite'; else if(s.key) mode='pill';
   SUBEL.className=mode;
-  SUBEL.style.left=(cal?490:960)+'px';
+  SUBEL.style.left=(cal?490:(cut&&inAny(S.side||[],t)?766:960))+'px';
   SUBEL.style.top=(cut?972:(cal?940:930))+'px';
   [...SUBEL.children].forEach((e,j)=>e.classList.toggle('on',t>=s.w[j][1]-0.03));
   return true;
@@ -117,6 +133,43 @@ function drawCard(t){
   }
   CARDEL.style.transform=`translateY(${((1-eo(P(t,c.t0,0.36)))*1080).toFixed(1)}px)`;
   CARDEL.querySelectorAll('[data-t]').forEach(e=>e.classList.toggle('on',t>=+e.dataset.t-0.03));
+  return true;
+}
+
+/* ---------- las cuentas, a un lado ---------- */
+const SIDEEL=$('side');let sideIdx=-1;
+const mil=n=>String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+function drawSide(t){
+  const i=(S.side||[]).findIndex(c=>t>=c.t0&&t<c.t1);
+  SIDEEL.classList.toggle('hide',i<0);
+  if(i<0){sideIdx=-1;return false}
+  const c=S.side[i];
+  if(i!==sideIdx){
+    SIDEEL.className=c.kind;
+    SIDEEL.innerHTML=`<div class="ti">${esc(c.title)}</div>`+c.rows.map(r=>`<div class="r"><div class="l">${esc(r.l)}</div><div class="v${r.x?' x':''}${r.v===0?' z':''}"></div></div>`).join('')+
+      (c.total?`<div class="r tot"><div class="l">${esc(c.total.l)}</div><div class="v"></div></div>`:'');
+    sideIdx=i;
+  }
+  const v=eo(P(t,c.t0,0.4));
+  SIDEEL.style.opacity=v.toFixed(3);
+  SIDEEL.style.transform=`translate(${((1-v)*70).toFixed(1)}px,-50%)`;
+  const R=SIDEEL.querySelectorAll('.r');let sum=0,any=false;
+  c.rows.forEach((r,j)=>{
+    const on=t>=r.t,k=eo(P(t,r.t,0.45)),el=R[j].querySelector('.v');
+    R[j].classList.toggle('on',on);
+    let h='—';
+    if(on){ if(r.x) h=esc(r.x)+(r.x2&&t>=r.t2?' · '+esc(r.x2):''); else h=mil(r.v*k)+`<small>${esc(r.u)}</small>`; }
+    if(el.dataset.h!==h){el.innerHTML=h;el.dataset.h=h}
+    if(on&&r.y){sum+=r.y*k;any=true}
+  });
+  if(c.total){
+    const T=R[c.rows.length],el=T.querySelector('.v');
+    T.classList.toggle('on',t>=c.total.t);
+    const h=any?mil(sum)+`<small>${esc(c.total.u)}</small>`:'—';
+    if(el.dataset.h!==h){el.innerHTML=h;el.dataset.h=h}
+    const pop=t>=c.total.t?1+0.06*(1-eo(P(t,c.total.t,0.35))):1;
+    el.style.transform=`scale(${pop.toFixed(4)})`;el.style.transformOrigin='0 60%';
+  }
   return true;
 }
 
@@ -167,6 +220,7 @@ window.R=function(t,layer){
  if(layer==='front'){
   const cal=inAny(S.cal,t);$('cal').classList.toggle('hide',!cal);if(cal){any=true;drawCal(cal,t)}
   const tn=inAny(S.topnum,t);$('top').style.opacity=tn?(eo(P(t,tn.t0,0.3))*(1-cl((t-tn.t1+0.25)/0.25))).toFixed(3):0;if(tn)any=true;
+  if(drawSide(t))any=true;
   const cd=drawCard(t);if(cd)any=true;
   if(cd&&t>=inAny(S.card,t).t0+0.2){SUBEL.classList.add('hide')}else if(drawSub(t))any=true;
  }else{

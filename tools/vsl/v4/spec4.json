@@ -6422,5 +6422,89 @@
 ]
 ],
 "intro_end": 20.72,
-"blur": 0.9
+"blur": 0.9,
+"side": [
+{
+"kind": "local",
+"t0": 20.72,
+"t1": 30.96,
+"title": "Abrir un local",
+"rows": [
+{
+"l": "Alquiler",
+"v": 1500,
+"u": "€/mes",
+"y": 18000,
+"t": 21.01
+},
+{
+"l": "Obra",
+"v": 40000,
+"u": "€",
+"y": 40000,
+"t": 21.81
+},
+{
+"l": "Una persona más",
+"v": 1900,
+"u": "€/mes",
+"y": 22800,
+"t": 22.37
+},
+{
+"l": "Hasta que te conocen",
+"x": "Meses",
+"t": 23.65
+}
+],
+"total": {
+"l": "El primer año",
+"u": "€",
+"t": 25.89
+}
+},
+{
+"kind": "online",
+"t0": 30.96,
+"t1": 40.03,
+"title": "Tienda online",
+"rows": [
+{
+"l": "Alquiler",
+"v": 0,
+"u": "€",
+"t": 32.69
+},
+{
+"l": "Obra",
+"v": 0,
+"u": "€",
+"t": 32.94
+},
+{
+"l": "Una persona más",
+"v": 0,
+"u": "€",
+"t": 33.19
+},
+{
+"l": "Abierta",
+"x": "24 h",
+"x2": "365 días",
+"t": 33.88,
+"t2": 35.48
+},
+{
+"l": "Vende en",
+"x": "Toda España",
+"t": 38.12
+}
+]
+}
+],
+"side_box": [
+0.86,
+-60,
+76
+]
 }

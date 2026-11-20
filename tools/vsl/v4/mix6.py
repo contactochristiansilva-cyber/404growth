@@ -68,6 +68,12 @@ for c in S['card']:
     for t in ws:
         if not ticks or t - ticks[-1] > 0.07:
             ticks.append(t)
+for c in S.get('side', []):       # y en cada cifra de las cuentas que van a un lado
+    for r in c['rows']:
+        ticks += [r['t']] + ([r['t2']] if r.get('t2') else [])
+    if c.get('total'):
+        ticks.append(c['total']['t'])
+ticks = sorted(ticks)
 for t in ticks:
     put(TICK, t - 0.03, DB_TICK)
 

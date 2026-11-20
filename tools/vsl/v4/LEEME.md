@@ -89,4 +89,22 @@ Qué lleva la v6:
 
 Resultado: `VSL editado v6 (20 nov).mp4` y `v6 · sonido por separado/efectos (clics y tics).wav`. En el Mac, la mezcla está en `_render/v6/snd/`.
 
-Cuando Chris deje su pista en `Música/`: `mix6.py` con ella y el mismo `ffmpeg -map 0:v -map 1:a -c copy` sobre `o2/video.mp4`.
+Cuando Chris deje su pista en `Música/`: `mix6.py` con ella y el mismo `ffmpeg -map 0:v -map 1:a -c copy` sobre el vídeo (desde la v7, `o3/video.mp4`).
+
+## v7 (20/11/2026): las cuentas, a un lado
+
+La v6 le gustó «mucho». Pidió un «subtítulo a un lado», en SF Pro, en la parte de lo que supone abrir un local: que ponga en dinero lo que va diciendo (una inversión muy alta) y lo contrario cuando habla de la tienda online.
+
+- Va del 0:20 al 0:40, sobre las escenas c1a, c1b, c2 y c3. La escena se hace más pequeña y se va a la izquierda (`side_box` = escala 0,86, x −60, y 76, con el borde repetido) y a la derecha entra una tarjeta blanca (`#side` en `ov4.html`, `SIDE` en `mkspec4.py`).
+- **«Abrir un local»** (20,72–30,96): cada fila está en gris claro y se enciende cuando la dice, con la cifra contando desde 0. Alquiler 1.500 €/mes, Obra 40.000 €, Una persona más 1.900 €/mes, Hasta que te conocen: Meses. Abajo, «El primer año», que va sumando (18.000 + 40.000 + 22.800) y se pone en negro en «y aún así»: **80.800 €**.
+- **«Tienda online»** (30,96–40,03): Alquiler 0 €, Obra 0 €, Una persona más 0 € (en verde 404, se encienden seguidas en «no tiene alquiler»), Abierta 24 h · 365 días y Vende en: Toda España. **Sin precio nuestro**, como en la web.
+- Las cifras son orientativas, de un local de unos 80 m², y tienen fuente (consultadas el 20/11/2026):
+  - alquiler: 12–20 €/m² al mes de media en España (donpiso, en lexpress-franchise.com) → 960–2.000 €/mes;
+  - obra: 300–800 €/m², media 550 (habitissimo.es, actualizado el 16/9/2026) → 24.000–64.000 €;
+  - una persona con el salario mínimo de 2026: 1.882,50 €/mes de coste para la empresa (factorial.es).
+  Si Chris quiere otras, se cambian en `SIDE` (`v` es lo que se ve e `y` lo que suma al primer año).
+- Mientras está la tarjeta, el subtítulo de abajo se centra bajo la escena (x 766).
+- Sonido: un tic por cada cifra que se enciende (11 más; 110 tics en total), con el mismo `mix6.py`.
+- En el Mac solo se rehicieron los fotogramas 518–1001 y los tramos `o3/c00400.mp4` y `o3/c00800.mp4`; `o3/list.txt` coge el resto de `../o2/`. Las fuentes de la v6 están en `_render/v4/pkg-v6/`. Los cambios se mandaron como un parche (`pkg/patch7.py`) y se comprobaron las huellas.
+
+Resultado: `VSL editado v7 (20 nov).mp4` y `v7 · sonido por separado/efectos (clics y tics).wav`.
