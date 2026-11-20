@@ -1,0 +1,50 @@
+{
+ "slug": "luvi-modas",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "luvi-modas-18.jpg",
+    "luvi-modas-04.jpg",
+    "luvi-modas-10.jpg",
+    "luvi-modas-15.jpg",
+    "luvi-modas-11.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia luvi-modas-18.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a cream blazer over a white top with wide terracotta red trousers and white trainers from the reference, walking at a sunny street in the white village of Alhaurín el Grande, Málaga, Spain, with whitewashed houses and flower pots, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia luvi-modas-04.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a burgundy knit cardigan with gold buttons, worn with grey flared trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia luvi-modas-10.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a camel quilted padded gilet with a zip, worn over a white top from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia luvi-modas-15.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a cream and brown wide-striped knit sweater from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia luvi-modas-11.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a burgundy sweater with small embroidered motifs from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "luvi-modas-29.jpg",
+    "luvi-modas-16.jpg",
+    "luvi-modas-20.jpg",
+    "luvi-modas-22.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia luvi-modas-29.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a burgundy blouse with a tie neck and long sleeves from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia luvi-modas-16.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing dark blue flared high-waisted jeans with a black top from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia luvi-modas-20.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a red wrap top with dark blue flared jeans from the reference, candid and relaxed in a sunny street of Alhaurín el Grande, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia luvi-modas-22.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a white T-shirt with wide blue jeans from the reference, candid and relaxed in a sunny street of Alhaurín el Grande, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a bright fashion shop with white walls, light wooden shelves with folded jeans, rails of women's and men's clothes, a white perforated metal panel wall and green plants, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a cream blaz",
+  "p1": "hoto for a fashion boutique: a model wearing a burgundy knit",
+  "p2": "roduct photo for a fashion boutique: a model wearing a camel",
+  "p3": "roduct photo for a fashion boutique: a model wearing a cream",
+  "p4": "hoto for a fashion boutique: a model wearing a burgundy swea",
+  "p5": "hoto for a fashion boutique: a model wearing a burgundy blou",
+  "p6": "ce product photo for a fashion boutique: a model wearing dar",
+  "l1": "Lifestyle fashion photo: a model wearing a red wrap top with",
+  "l2": "Lifestyle fashion photo: a model wearing a white T-shirt wit",
+  "b": "Wide interior photo: the inside of a bright fashion shop wit"
+ }
+}

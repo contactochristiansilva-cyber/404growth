@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Merakih",
+ "ig": "merakih.shop",
+ "f": 9938,
+ "city": "Jerez de la Frontera",
+ "cityfull": "Jerez de la Frontera (Cádiz)",
+ "address": "C/ José Demaría Vázquez 7",
+ "logo": {
+  "text": "Merakih"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p3"
+  ],
+  [
+   "Vaqueros",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido de terciopelo"
+  },
+  {
+   "id": "p2",
+   "name": "Falda de cuadros"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey burdeos"
+  },
+  {
+   "id": "p4",
+   "name": "Chaleco de pelo"
+  },
+  {
+   "id": "p5",
+   "name": "Vaquero wide leg"
+  },
+  {
+   "id": "p6",
+   "name": "Camisa azul"
+  }
+ ],
+ "theme": {},
+ "domain": "merakihshop.com",
+ "web_note": "merakihshop.com tiene 12 productos: casi todo lo que enseñáis en Instagram y en los directos de los martes solo se puede pedir por WhatsApp."
+}

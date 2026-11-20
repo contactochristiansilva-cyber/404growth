@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Akira",
+ "ig": "akira_carballo",
+ "f": 7585,
+ "city": "Carballo",
+ "cityfull": "Carballo (A Coruña)",
+ "address": "Rúa Ponte 6",
+ "logo": {
+  "text": "Akira"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p2"
+  ],
+  [
+   "Chalecos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta de cuadros"
+  },
+  {
+   "id": "p2",
+   "name": "Jersey verde"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey gris con lazo"
+  },
+  {
+   "id": "p4",
+   "name": "Chaleco de leopardo"
+  },
+  {
+   "id": "p5",
+   "name": "Cazadora de piel"
+  },
+  {
+   "id": "p6",
+   "name": "Chaqueta bouclé marino"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "XS Accessories",
+ "ig": "xsaccessories",
+ "f": 7854,
+ "city": "Granada",
+ "cityfull": "Granada",
+ "address": "Av. de América 44, esquina Andrés Segovia",
+ "logo": {
+  "text": "XS Accessories"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p2"
+  ],
+  [
+   "Conjuntos",
+   "p3"
+  ],
+  [
+   "Botas",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Camisa azul oversize"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de camuflaje"
+  },
+  {
+   "id": "p3",
+   "name": "Conjunto satinado"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto verde militar"
+  },
+  {
+   "id": "p5",
+   "name": "Pantalón con raya"
+  },
+  {
+   "id": "p6",
+   "name": "Botas con hebillas"
+  }
+ ],
+ "theme": {},
+ "domain": "xsaccessories.es",
+ "web_note": "xsaccessories.es tiene 9 productos: lo que enseñáis en los directos del domingo solo se puede pedir por teléfono."
+}

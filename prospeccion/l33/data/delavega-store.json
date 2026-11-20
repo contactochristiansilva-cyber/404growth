@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Delavega Store",
+ "ig": "delavegastore",
+ "f": 4228,
+ "city": "San Fernando",
+ "cityfull": "San Fernando (Cádiz)",
+ "address": "C/ San Nicolás 14",
+ "logo": {
+  "text": "Delavega Store"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Conjuntos",
+   "p2"
+  ],
+  [
+   "Camisas",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Trench corta"
+  },
+  {
+   "id": "p2",
+   "name": "Conjunto de camuflaje"
+  },
+  {
+   "id": "p3",
+   "name": "Blusa de cuadros"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto de lunares"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta militar"
+  },
+  {
+   "id": "p6",
+   "name": "Camisa blanca"
+  }
+ ],
+ "theme": {},
+ "domain": "delavegastore.es",
+ "web_note": "delavegastore.es dice «Tienda no disponible»: hoy no vende. Quien os ve en los directos solo puede escribiros."
+}

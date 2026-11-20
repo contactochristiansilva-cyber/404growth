@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Embrujo Modas",
+ "ig": "embrujomodas",
+ "f": 5572,
+ "city": "La Carolina",
+ "cityfull": "La Carolina (Jaén)",
+ "address": "C/ Olavide 15A",
+ "logo": {
+  "text": "Embrujo Modas"
+ },
+ "cats": [
+  [
+   "Jerséis",
+   "p2"
+  ],
+  [
+   "Blusas",
+   "p3"
+  ],
+  [
+   "Fiesta",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Camiseta con encaje"
+  },
+  {
+   "id": "p2",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p3",
+   "name": "Blusa roja"
+  },
+  {
+   "id": "p4",
+   "name": "Body cruzado"
+  },
+  {
+   "id": "p5",
+   "name": "Jersey beige"
+  },
+  {
+   "id": "p6",
+   "name": "Blusa de fiesta"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,55 @@
+{
+ "niche": "calzado",
+ "name": "Violeta",
+ "ig": "violetacalzadosycomplementos",
+ "f": 11096,
+ "city": "Atarfe",
+ "cityfull": "Atarfe (Granada)",
+ "address": "Avenida de Andalucía 35",
+ "logo": {
+  "text": "Violeta"
+ },
+ "cats": [
+  [
+   "Botines",
+   "p1"
+  ],
+  [
+   "Mocasines",
+   "p2"
+  ],
+  [
+   "Bailarinas",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botines con hebilla"
+  },
+  {
+   "id": "p2",
+   "name": "Mocasines de charol"
+  },
+  {
+   "id": "p3",
+   "name": "Bailarinas burdeos"
+  },
+  {
+   "id": "p4",
+   "name": "Salones de charol"
+  },
+  {
+   "id": "p5",
+   "name": "Botines de flecos"
+  },
+  {
+   "id": "p6",
+   "name": "Merceditas de ante"
+  }
+ ],
+ "theme": {},
+ "domain": "violetacalzadosycomplementos.com",
+ "web_note": "violetacalzadosycomplementos.com no carga (da error de seguridad): quien os busca en Google hoy no puede comprar."
+}

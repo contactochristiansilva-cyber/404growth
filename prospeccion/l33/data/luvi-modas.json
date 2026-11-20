@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Luvi Modas",
+ "ig": "luvimodasycomplementos",
+ "f": 4018,
+ "city": "Alhaurín el Grande",
+ "cityfull": "Alhaurín el Grande (Málaga)",
+ "address": "Av. de la Constitución",
+ "logo": {
+  "text": "Luvi Modas"
+ },
+ "cats": [
+  [
+   "Punto",
+   "p1"
+  ],
+  [
+   "Chalecos",
+   "p2"
+  ],
+  [
+   "Vaqueros",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Cárdigan burdeos"
+  },
+  {
+   "id": "p2",
+   "name": "Chaleco acolchado"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p4",
+   "name": "Jersey bordado"
+  },
+  {
+   "id": "p5",
+   "name": "Blusa burdeos"
+  },
+  {
+   "id": "p6",
+   "name": "Vaquero flare"
+  }
+ ],
+ "theme": {},
+ "domain": "luvimodas.com",
+ "web_note": "luvimodas.com tiene 5 productos: lo que enseñáis cada día en Instagram solo se puede pedir por WhatsApp."
+}

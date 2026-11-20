@@ -1,0 +1,50 @@
+{
+ "slug": "aire-modas",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "aire-modas-12.jpg",
+    "aire-modas-08.jpg",
+    "aire-modas-17.jpg",
+    "aire-modas-24.jpg",
+    "aire-modas-33.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia aire-modas-12.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a burgundy faux-leather sleeveless top with a matching midi pencil skirt with a front slit, a thin belt, black knee boots and a black handbag from the reference, walking at a sunny street in Seville, Spain, with ochre walls, orange trees and an old wooden door, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia aire-modas-08.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown check short shirt dress with a belt from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia aire-modas-17.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown short dress with wide balloon sleeves from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia aire-modas-24.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a chocolate brown top with structured shoulders and a red asymmetric satin midi skirt from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia aire-modas-33.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a long burgundy and pink floral print mesh dress with long sleeves and ruching from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "aire-modas-25.jpg",
+    "aire-modas-14.jpg",
+    "aire-modas-15.jpg",
+    "aire-modas-13.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia aire-modas-25.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing an oversized blue denim shirt dress from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia aire-modas-14.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown check blazer over a white shirt with a brown leather-look midi skirt from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia aire-modas-15.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a navy cardigan with gold buttons, a black and white check mini skirt and taupe slouchy knee boots from the reference, candid and relaxed in a sunny street of Sevilla, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia aire-modas-13.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a red cropped jacket over a white shirt with camouflage cargo trousers from the reference, candid and relaxed in a sunny street of Sevilla, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of an elegant boutique with white panelled walls, a grey stone floor, black clothing rails with autumn clothes, a large mirror and green plants, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a burgundy f",
+  "p1": "hoto for a fashion boutique: a model wearing a brown check s",
+  "p2": "ct photo for a fashion boutique: a model wearing a brown sho",
+  "p3": "ce product photo for a fashion boutique: a model wearing a c",
+  "p4": "ce product photo for a fashion boutique: a model wearing a l",
+  "p5": "ce product photo for a fashion boutique: a model wearing an ",
+  "p6": "hoto for a fashion boutique: a model wearing a brown check b",
+  "l1": "Lifestyle fashion photo: a model wearing a navy cardigan wit",
+  "l2": "Lifestyle fashion photo: a model wearing a red cropped jacke",
+  "b": "Wide interior photo: the inside of an elegant boutique with "
+ }
+}

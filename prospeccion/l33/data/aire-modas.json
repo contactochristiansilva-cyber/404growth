@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Aire Modas",
+ "ig": "airemodas",
+ "f": 13321,
+ "city": "Sevilla",
+ "cityfull": "Sevilla",
+ "address": "C/ La Puebla del Río, local 12",
+ "logo": {
+  "text": "Aire Modas"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Invitada",
+   "p4"
+  ],
+  [
+   "Chaquetas",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido de cuadros"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido marrón"
+  },
+  {
+   "id": "p3",
+   "name": "Conjunto marrón y rojo"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido largo estampado"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido vaquero"
+  },
+  {
+   "id": "p6",
+   "name": "Blazer de cuadros"
+  }
+ ],
+ "theme": {},
+ "domain": "airemodas.com",
+ "web_note": "Vuestra bio dice «Web en mantenimiento» y airemodas.com no tiene tienda: quien os ve en los directos solo puede escribiros por privado."
+}

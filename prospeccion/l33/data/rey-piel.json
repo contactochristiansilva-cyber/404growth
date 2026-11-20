@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Rey Piel",
+ "ig": "reypiel_club",
+ "f": 7598,
+ "city": "Solares",
+ "cityfull": "Solares (Cantabria)",
+ "address": "Avenida de Calvo Sotelo 8",
+ "logo": {
+  "text": "Rey Piel"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Chaquetas",
+   "p2"
+  ],
+  [
+   "Camisas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Abrigo de cuadros"
+  },
+  {
+   "id": "p2",
+   "name": "Bomber bordada"
+  },
+  {
+   "id": "p3",
+   "name": "Poncho de flecos"
+  },
+  {
+   "id": "p4",
+   "name": "Camisa con cinturón"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta de pelo gris"
+  },
+  {
+   "id": "p6",
+   "name": "Blusa de flores"
+  }
+ ],
+ "theme": {},
+ "domain": "reypiel.com",
+ "web_note": "reypiel.com enseña quiénes sois, pero no tiene tienda ni carrito: quien os encuentra fuera de Solares solo puede escribiros."
+}

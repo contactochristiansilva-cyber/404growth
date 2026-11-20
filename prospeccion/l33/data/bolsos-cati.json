@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Bolsos Cati",
+ "ig": "bolsoscati",
+ "f": 7158,
+ "city": "L'Hospitalet de Llobregat",
+ "cityfull": "L'Hospitalet de Llobregat (Barcelona)",
+ "address": "Mercat de Collblanc, parada exterior 136",
+ "logo": {
+  "text": "Bolsos Cati"
+ },
+ "cats": [
+  [
+   "Bolsos",
+   "p1"
+  ],
+  [
+   "Bandoleras",
+   "p6"
+  ],
+  [
+   "Riñoneras",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Bolso de pana"
+  },
+  {
+   "id": "p2",
+   "name": "Bolso de pelo"
+  },
+  {
+   "id": "p3",
+   "name": "Shopper burdeos"
+  },
+  {
+   "id": "p4",
+   "name": "Bolso de charol"
+  },
+  {
+   "id": "p5",
+   "name": "Riñonera verde"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso de flecos"
+  }
+ ],
+ "theme": {}
+}

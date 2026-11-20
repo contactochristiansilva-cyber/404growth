@@ -779,6 +779,22 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - las 5 a medias, al 20/11 sin propuesta; Vichy, sin lote, prioridad 30 y «AVISO».
   - Instalado en el Mac (copia de antes en `anterior/worker-v78b-19nov-antes-l40.js`).
 
+## Lote 41 (20/11/2026): vuelta a la propuesta anterior y 13 tiendas nuevas
+
+- **Chris (20/11/2026): las propuestas de `gen40.py` (lote 40) retienen peor.** Con las de antes llegaban más abajo y había más interés. **Se vuelve a `gen33v.py`** (la de los lotes 33–39) con la tienda «Editorial» (`gen37a.py`): en el móvil se ve la tienda de ordenador entera al hacer scroll. `gen40.py` no se usa en propuestas nuevas.
+- Las 6 del lote 40 sin enviar (Cent-Vuit, Marga Piñeiro, Doble Ele, Casual Coria, Novojoya y Ooh la la) se rehicieron con `gen33v.py` (mismas fotos y misma dirección). Copia de las de `gen40.py` en `anterior/propuestas-l40-gen40-20nov/`. Las ya enviadas del lote 40 no se tocaron.
+- **13 nuevas** del scrapeo del 19/11 (`l33/sel41.json`, `specs41.py`): Akira, Rey Piel, Merakih, Nyc Store, Ana y Chica, Bolsos Cati, Embrujo Modas, Delavega Store, Aire Modas, Luvi Modas, XS Accessories, Violeta y El Vestidor (Baza). Criterio: primero las que anuncian en Meta y después las que ya intentaron tener web (cerrada, caída, en obras o casi vacía).
+- **Anuncios en Meta sin capturar consultas:** en la Biblioteca, una búsqueda por frase exacta del nombre (`search_type=keyword_exact_phrase&q="<nombre>"`) y se lee en la página el recuento y el nombre de cada anunciante (el lector va en `sessionStorage.r` y se llama con `eval`). 33 búsquedas, sin bloqueos. Con anuncios: Akira (más de 26), Rey Piel (22, «La Reyna by Rey Piel»), Merakih (21, el último del 5 al 8/11/2026), NYC store (16), Ana y Chica (9), Bolsos Cati (1) y Embrujo (1). Va en las notas del CRM. Los nombres comunes (Garate, Liquet, Mila García) no sirven: salen otros anunciantes.
+- **Flow (cuenta personal, Nano Banana 2.1): 158 fotos en unos 35 minutos, 1 rechazo.** Lo nuevo:
+  - Flow cambió la caja de peticiones: «+» en (422, 685), formato en (924, 685) y enviar en (1031, 685). En el desplegable: 16:9 (699, 461), 3:4 (867, 461) y 9:16 (924, 461).
+  - Las referencias van a la página en 2 archivos `.json` (nombre → base64, menos de 10 MB cada uno) con `file_upload` a un `input` propio; allí se convierten en `File` y se sueltan en la rejilla de 20 en 20. Así no hay que pasar 121 rutas.
+  - Con 2 o 3 referencias hay que esperar 1,1 s tras cada «Down Return» antes de abrir otra vez el selector (`__gk`). Si no, el segundo Return envía la petición a medias.
+  - Una referencia con el logo de la tienda encima (las botas de XS) se rechaza: se pidió solo con texto.
+  - Una bolsa con un monograma en la referencia (Bolsos Cati) lo copió como letras de marca en `hd` y `hm`: se rehicieron sin esa referencia y con «completely plain front with no lettering».
+- CRM: `slug`, `pageUrl`, notas y `lotDay` 2026-11-20 puestos con `POST /admin/api/crm/lead/<id>` desde la pestaña del admin (los leads ya estaban en vivo). El lote del 20/11 queda con **25 con propuesta y sin enviar**: 13 nuevas, 6 del lote 40 y 6 del lote 39 (Teixits Donna, Cast Tejidos, Sederías Natalia, Dmario, Factory Electrodomésticos y Esparto Antonio López). 8 llevan `waOk: false`.
+- Quedan 16 del scrapeo del 19/11 sin propuesta (Garate, Calzados J. Díaz, Mesa Calzados, Isabela Mendoza, Tacones Baza, Qué Locura, Ana Collado, Mariacaprichos, Liquet, Doble M, Samoa, Acaik, Mila García, Gothyka, Ooh Lala Peal y Abril). Sus referencias de Instagram no están bajadas, salvo las de Isabela Mendoza y Mesa Calzados (scratchpad `l41/rf/`).
+- Apimart tenía 6,8 $ el 20/11/2026: no da para un lote (unos 0,17 $ por foto a 2K).
+
 ## Agenda dentro de cada propuesta (admin v76, 18/11/2026)
 
 - Chris: «el calendario nativo ya dentro de cada propuesta para que sea súper sencillo agendar sin tener que preguntarme nada, y de ahí a la página de gracias».
