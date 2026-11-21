@@ -1166,7 +1166,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 
 - Generador `prospeccion/l33/gen42.py <slug>`: parte de la propuesta de `gen33v.py` (`out/p-<slug>.html`) y escribe `out42/p-<slug>.html`, su `--tienda.html` y las fotos en `.webp`. Con `--test <nombre>` saca una copia de prueba sin contador ni CRM (la primera: `404growth.com/p/merakih-shop-v42/`).
 - Orden (Chris, 21/11):
-  1. «Esto no es una web normal. Es la tienda <u>online</u> de X.», el recorrido de la tienda y «Reservar 30 min». Sin texto debajo ni cifras.
+  1. «Esto no es una web normal.» (fina, 300) «Es la tienda <u>online</u> de X.» (gruesa), el recorrido de la tienda y «Reservar 30 min». Sin texto debajo ni cifras.
   2. «Así se vería X online.» con la tienda grande.
   3. El vídeo: «¿Os preguntáis quién soy y por qué os he hecho esto?», Christian nítido y quieto (fotograma fijo, `v/propuesta/poster.jpg`, segundo 11,5 del VSL) y «Reproducir con audio». Justo debajo, «Elige día y hora.» (la agenda, sin más texto).
   4. «Cada prenda, lista para comprar.», la garantía ×3 (vendéis online el triple de lo que cuesta la tienda o trabajamos gratis hasta conseguirlo, por contrato), los anuncios y el plan de 15 días. Sin diagnóstico ni cierre. Todo centrado.

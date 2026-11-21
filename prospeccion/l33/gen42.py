@@ -35,6 +35,7 @@ CSS = r'''<style id="z42">
 /* v42: todo centrado */
 .hero h1{font-size:clamp(38px,6.2vw,82px);text-wrap:balance}
 .hero .hb{padding-bottom:84px}
+.hero h1 .z4-l{font-weight:300;letter-spacing:-.035em}
 .hero h1 u{text-decoration:underline;text-decoration-thickness:.075em;text-underline-offset:.12em;text-decoration-color:currentColor}
 .hero .lede{gap:0}
 .chap{justify-content:center}
@@ -162,7 +163,7 @@ def build(slug):
     h, k = re.subn(r'<div class="lk2">.*?</div>', '<div class="lk2"><a href="#tienda">Tienda</a><a href="#video">Vídeo</a><a href="#agenda">Agenda</a><a href="#garantia">Garantía</a></div>', h, count=1, flags=re.S); assert k == 1
 
     # portada: titular, recorrido y «Reservar 30 min»; sin el texto ni las cifras
-    h, k = re.subn(r'<h1>.*?</h1>', f'<h1>Esto no es una web normal.<br><span class="t">Es la tienda <u>online</u> de {E(name)}.</span></h1>', h, count=1, flags=re.S); assert k == 1
+    h, k = re.subn(r'<h1>.*?</h1>', f'<h1><span class="z4-l">Esto no es una web normal.</span><br><span class="t">Es la tienda <u>online</u> de {E(name)}.</span></h1>', h, count=1, flags=re.S); assert k == 1
     i = h.index('<div class="hb">'); j = h.index('</header>', i)
     h = h[:i] + ('<div class="hb"><div class="lede"><div class="btns"><a class="cta" href="#agenda" data-ag="1">Reservar 30 min<span>→</span></a>'
                  '<a class="cta ghost" href="#video">Ver el vídeo · 3 min</a></div></div></div>') + h[j:]
