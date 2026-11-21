@@ -1161,3 +1161,14 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Gorra Crema (Oyster, verde) y Negra (menta): Econscious EC7000 (algodón orgánico), bordado «color ilimitado» (+3,25 €) con el color exacto, 5,5". La Comfort Colors Rope Cap es de poliéster: descartada.
 - Pedido de una unidad de cada (tallas M) montado en `printful.com/es/dashboard/order/update`: 155,75 € más envío e IVA (incluye 17,25 € de digitalización de los 3 bordados, que se paga una vez). Falta que Chris ponga la dirección y la tarjeta.
 - Ojo en el diseñador de Printful: el `file-input` del diálogo «Tus archivos» no sube; usa el oculto del área de diseño y luego abre «Subidas». En las gorras, los campos de ancho y alto no van enlazados y el botón «−» salta a otro tamaño: deja el tamaño por defecto o deshaz.
+
+## Propuesta v42 (21/11/2026): vídeo arriba, menos texto y fluida
+
+- Generador `prospeccion/l33/gen42.py <slug>`: parte de la propuesta de `gen33v.py` (`out/p-<slug>.html`) y escribe `out42/p-<slug>.html`, su `--tienda.html` y las fotos en `.webp`. Con `--test <nombre>` saca una copia de prueba sin contador ni CRM (la primera: `404growth.com/p/merakih-shop-v42/`).
+- Orden (Chris, 21/11):
+  1. «Esto no es una web normal. Es la tienda <u>online</u> de X.», el recorrido de la tienda y «Reservar 30 min». Sin texto debajo ni cifras.
+  2. «Así se vería X online.» con la tienda grande.
+  3. El vídeo: «¿Os preguntáis quién soy y por qué os he hecho esto?», Christian nítido y quieto (fotograma fijo, `v/propuesta/poster.jpg`, segundo 11,5 del VSL) y «Reproducir con audio». Justo debajo, «Elige día y hora.» (la agenda, sin más texto).
+  4. «Cada prenda, lista para comprar.», la garantía ×3 (vendéis online el triple de lo que cuesta la tienda o trabajamos gratis hasta conseguirlo, por contrato), los anuncios y el plan de 15 días. Sin diagnóstico ni cierre. Todo centrado.
+- La simulación de pedido y la comparación con su web (primera versión) quedaron en el commit afa90b1, por si se recuperan.
+- **Fluidez, regla fija (Chris lo ha pedido muchas veces):** en las propuestas nada se inclina ni se endereza al bajar (ni el portátil del inicio ni la tienda grande: van planos desde el principio), nada de `filter:blur` ni `backdrop-filter` (la profundidad, con sombras quietas y un brillo ya difuminado dentro de la página), nada de apariciones con desenfoque o giro, los marcos de la tienda cargan con 2.500 px de margen y todos al terminar la carga, y las fotos van en webp (la mitad de peso). Medido con la CPU a 1/4: en el móvil, de 38 fotogramas lentos a 3.
