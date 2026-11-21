@@ -23,6 +23,8 @@ ap.add_argument('--vsl', default='/v/propuesta/index.m3u8')
 ap.add_argument('--poster', default='/v/propuesta/poster.jpg')
 ap.add_argument('--poster-file')
 ap.add_argument('--hls', default='/v/hls.light.min.js')
+ap.add_argument('--test', help='nombre de una copia de prueba (p-<test>.html): sin contador de visitas y sin tocar el CRM')
+ap.add_argument('--jpg', action='store_true', help='dejar las fotos en .jpg (por defecto, .webp: pesan la mitad)')
 A = ap.parse_args()
 POSTER = A.poster
 if A.poster_file: POSTER = 'data:image/jpeg;base64,' + base64.b64encode(open(A.poster_file, 'rb').read()).decode()
@@ -86,6 +88,18 @@ CSS = r'''<style id="z42">
  #ficha{padding-top:80px}
  #garantia .z4-ct{font-size:15.5px}
 }
+/* v42 · fluidez (Chris, 21/11: «va súper lagueada… viene como inclinada y se va poniendo recta»).
+   Nada inclinado ni que se enderece al bajar: la tienda aparece plana desde el principio. Sin desenfoques ni cristal
+   (backdrop-filter) en nada: con el dedo rápido el móvil tenía que volver a pintarlos en cada fotograma.
+   La profundidad, con sombras quietas detrás de los marcos. */
+.hero .stage{perspective:none!important}
+.hero .lap,.hero .stage .ph,.shopsec .bw,.sk-tilt{transform:none!important;opacity:1!important;transition:none!important;animation:none!important}
+.sk .rv{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+*,*:before,*:after{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.hero .stage:before,.sk-aur,.glow,.stage .glow{filter:none!important;animation:none!important}
+.nav .wrap,.wa-fab{background:rgba(36,36,36,.95)!important}
+.cta{backdrop-filter:none!important}
+.shopsec>.wrap>.bw,.pdpz .bw{box-shadow:0 1px 2px rgba(0,0,0,.05),0 30px 60px -24px rgba(var(--sh),.3),0 90px 160px -60px rgba(var(--sh),.45),0 0 0 1px rgba(0,0,0,.06)!important}
 </style>'''
 
 VID = '''</div></section>
@@ -178,9 +192,54 @@ def build(slug):
     h = re.sub(r'PARTS=\[\[.*?\]\]', 'PARTS=[["tienda", 2], ["video", 4], ["agenda", 5], ["ficha", 6], ["garantia", 7], ["captacion", 8], ["plan", 9]]', h, count=1)
     h = h.replace('</body>', VID_JS.replace('{src}', A.vsl).replace('{hls}', A.hls) + '</body>', 1)
 
+    # el brillo de color detrás de los marcos del inicio: antes era su foto con filter:blur(48px), que el móvil
+    # repintaba al bajar; ahora es la misma foto ya difuminada, pequeña y dentro de la página (unos KB)
+    from PIL import Image, ImageFilter, ImageEnhance, ImageDraw
+    import io
+    g = Image.open(os.path.join(A.src, f'p-{slug}--b--h.jpg')).convert('RGB').resize((200, 120), Image.LANCZOS)
+    g = ImageEnhance.Color(g.filter(ImageFilter.GaussianBlur(14))).enhance(1.3)
+    m = Image.new('L', (200, 120), 0); ImageDraw.Draw(m).ellipse((30, 22, 170, 98), fill=255); m = m.filter(ImageFilter.GaussianBlur(16))
+    g.putalpha(m); bb = io.BytesIO(); g.save(bb, 'WEBP', quality=70)
+    glow = 'data:image/webp;base64,' + base64.b64encode(bb.getvalue()).decode()
+    h = h.replace('</head>', '<style>.glow{background:url(' + glow + ') center/100% 100% no-repeat!important;border-radius:0!important;filter:none!important;left:-6%!important;right:-6%!important;top:-4%!important;bottom:-10%!important}</style></head>', 1)
+
+    # fuera la inclinación que se endereza al bajar (portátil del inicio y tienda grande)
+    rep("function frame(){tick=false;if(RM)return;", "function frame(){tick=false;return;")
+    rep("if(big)big.classList.add('sk-tilt');", "")
+    # los marcos de la tienda cargan antes (2.500 px de margen) y, al terminar de cargar la página, todos:
+    # al bajar rápido ya están pintados
+    rep("{rootMargin:'400px 0px'});F.forEach(function(f){io.observe(f)})}else F.forEach(L);",
+        "{rootMargin:'2500px 0px'});F.forEach(function(f){io.observe(f)});addEventListener('load',function(){setTimeout(function(){F.forEach(L)},900)})}else F.forEach(L);")
+
+    # la tienda de dentro: sin cristal ni desenfoques cuando va dentro de la propuesta (html.emb)
+    st = open(os.path.join(A.src, f'p-{slug}--tienda.html'), encoding='utf-8').read()
+    css = ('<style id="z42e">.emb *,.emb *:before,.emb *:after{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}'
+           '.emb .gl{background:rgba(255,255,255,.22)!important}.emb .gk{background:rgba(28,20,18,.66)!important}</style>')
+    assert st.count('</head>') == 1; st = st.replace('</head>', css + '</head>')
+    # dentro de la propuesta, el aviso de arriba no rota (repintaba la tienda cada 3 s)
+    if 'if(an.length>1)setInterval(' in st: st = st.replace('if(an.length>1)setInterval(', 'if(an.length>1&&!emb)setInterval(', 1)
+
+    # fotos en webp (la mitad de peso); la de la vista previa de WhatsApp sigue en jpg
+    if not A.jpg:
+        from PIL import Image
+        rx = re.compile(r'(/p-' + re.escape(slug) + r'--b--(?!og\.)[a-z0-9]+)\.jpg')
+        names = set(m.group(1) for m in rx.finditer(h + st))
+        h = rx.sub(r'\1.webp', h); st = rx.sub(r'\1.webp', st)
+        os.makedirs(A.out, exist_ok=True)
+        for n in sorted(names):
+            src = os.path.join(A.src, n.lstrip('/') + '.jpg'); dst = os.path.join(A.out, n.lstrip('/') + '.webp')
+            if not os.path.exists(dst): Image.open(src).convert('RGB').save(dst, 'WEBP', quality=72, method=6)
+
+    name_out = slug
+    if A.test:
+        name_out = A.test
+        h = h.replace(f'/p-{slug}--tienda', f'/p-{A.test}--tienda')
+        rep(f'var slug="{slug}"', 'var slug=""')
+        h = h.replace(f'data-slug="{slug}"', 'data-slug="prueba-v42"').replace(f'utm_campaign={slug}', 'utm_campaign=prueba-v42')
     os.makedirs(A.out, exist_ok=True)
-    out = os.path.join(A.out, f'p-{slug}.html')
+    out = os.path.join(A.out, f'p-{name_out}.html')
     open(out, 'w', encoding='utf-8').write(h)
+    open(os.path.join(A.out, f'p-{name_out}--tienda.html'), 'w', encoding='utf-8').write(st)
     print(slug, len(h), out)
 
 
