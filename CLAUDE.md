@@ -722,6 +722,12 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - las webs rotas de la bio son una buena fuente (certificado roto en dominios de Shopify, dominios muertos, Wix sin dominio, `negocio.site` cerrado);
   - en la Biblioteca, la búsqueda por palabra clave del nicho («mercería envíos», «zapatería whatsapp») da anunciantes del nicho para buscar después en Instagram.
 - Ojo: un `Worker` de blob para no frenar los temporizadores no funciona en instagram.com (su CSP lo bloquea sin avisar y los bucles se quedan parados). Usar `setTimeout`.
+- **Rehecho el 22/11/2026 (`seed_20261123b`, `prospeccion/scrapeo-22nov/`) antes de subirlo.** Chris lo concretó: moda de todo tipo, perfumería, joyería, suplementos y cosmética; **nada de mercerías, artesanía ni muebles**; mejor varias tiendas.
+  - Se quedan 19 del 21/11 (las A y B que no son mercerías) y entran 17 nuevas: 36 en total (18 A, 11 B, 7 C).
+  - Por nicho: 26 de moda, 7 de joyería y 3 de zapatería.
+  - Por día: 31 el lunes 23, 3 el 24 y 2 el 25 (nunca dos del mismo pueblo el mismo día: Vigo, Jerez y Plasencia).
+  - Sigue siendo `SEED6`, sin propuesta. `patch_s23b.py` cambia las dos líneas del SEED6; prueba `t_s23b.mjs`, 25 comprobaciones.
+  - Admin del Mac con la huella d9577e3d979769f1 (copia en `anterior/worker-seed23-22nov-antes-seed23b.js`). Falta `subir.command`.
 
 ## Lote 39 (17/11/2026): 30 propuestas sin moda ni comida, fotos de Google Flow
 
