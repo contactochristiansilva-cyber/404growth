@@ -704,6 +704,25 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - las pestañas en segundo plano van lentas porque Chrome frena sus temporizadores. Para que el motor no se pare, la de Instagram tiene que estar delante;
   - el cruce con el CRM se hace al final, por Instagram y por número, contra `crm/state`. Así salió La Cañada, que ya estaba en el lote 38.
 
+## Scrapeo del 21/11 para el lunes 23/11: por nivel de conciencia (`seed_20261123`)
+
+- Chris (21/11/2026): «un nivel de conciencia mayor no es lo mismo que tener muchos seguidores». Desde ahora los seguidores no filtran (1.500–200.000) y lo que más pesa es:
+  - que anuncien en Meta (Biblioteca, frase exacta del nombre);
+  - o que su web no venda (rota, caída, sin tienda, catálogo sin carrito, muy pocos productos).
+- Además: que ya vendan a distancia, que estén activas y que tengan móvil o WhatsApp. Nichos por este orden: mercería, calzado, cosmética y suplementos; después joyería; la moda solo con anuncios o web rota.
+- 40 tiendas en `prospeccion/scrapeo-21nov/` (`leads.json`, `revision.md`, `engine23.js`, `mkleads.py`, `mkrows.py`, `patch_s23.py` y la prueba `t_s23.mjs`, 23 comprobaciones):
+  - nivel A, 16: anuncian y no tienen tienda de verdad;
+  - nivel B, 11: web rota o sin tienda;
+  - nivel C, 13: relleno, venden a distancia sin anuncios ni web.
+  - Cada una lleva su puntuación de 0 a 100 en las notas.
+- En el CRM como sexta lista de `seedOnce` (`SEED6`), con `lotDay` 2026-11-23 y **sin propuesta**. 13 llevan `waOk: false`.
+- Admin del Mac con la huella 36f840f55427bc20 (copia de antes en `anterior/worker-v80b-21nov-antes-seed23.js`). Falta `subir.command`.
+- Lo aprendido:
+  - casi todas las que anuncian ya venden online;
+  - las webs rotas de la bio son una buena fuente (certificado roto en dominios de Shopify, dominios muertos, Wix sin dominio, `negocio.site` cerrado);
+  - en la Biblioteca, la búsqueda por palabra clave del nicho («mercería envíos», «zapatería whatsapp») da anunciantes del nicho para buscar después en Instagram.
+- Ojo: un `Worker` de blob para no frenar los temporizadores no funciona en instagram.com (su CSP lo bloquea sin avisar y los bucles se quedan parados). Usar `setTimeout`.
+
 ## Lote 39 (17/11/2026): 30 propuestas sin moda ni comida, fotos de Google Flow
 
 - Las 30 del scrapeo del 17/11 (arriba), con la tienda «Editorial» del lote 37 (`gen37a.py`) y la propuesta de siempre (`gen33v.py`). Publicadas en el Mac (`web117-404growth`, con sus `p/<slug>/index.html`), a falta de `subir-web.command` y `subir.command`.
