@@ -77,6 +77,29 @@ CSS = r'''<style id="z42">
 #garantia h2 span{display:block;color:var(--mute2);font-weight:400;margin-top:.12em}
 #garantia .z4-ct{margin:22px 0 0;font-size:17px;color:var(--mute2)}
 #garantia .btns{margin-top:40px}
+/* v42b (22/11): botón para bajar a la agenda, debajo del vídeo */
+.z4-dn{display:flex;justify-content:center;margin-top:30px}
+.z4-dn .cta span{display:inline-block;animation:z4b 1.8s ease-in-out infinite}
+@keyframes z4b{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@media (prefers-reduced-motion:reduce){.z4-dn .cta span{animation:none}}
+/* v42b: menos aire entre secciones (Chris, 22/11: «en algunas hay demasiado») */
+.sk .sec{padding-top:76px;padding-bottom:76px}
+.hero .hb{padding-bottom:36px}
+#tienda{padding-top:56px!important}
+#video{padding-top:64px!important;padding-bottom:40px!important}
+#video .ag.ag-in{padding-top:64px;padding-bottom:0}
+#video .ag h2{margin-bottom:28px}
+#ficha{padding-top:64px!important;padding-bottom:76px!important}
+#ficha .head.fh{margin-top:0!important}
+@media (max-width:760px){
+ .sk .sec{padding-top:56px;padding-bottom:56px}
+ .hero .hb{padding-bottom:24px!important}
+ #tienda{padding-top:40px!important}
+ #video{padding-top:48px!important;padding-bottom:28px!important}
+ #video .ag.ag-in{padding-top:48px!important}
+ #ficha{padding-top:48px!important;padding-bottom:56px!important}
+ .z4-dn{margin-top:22px}
+}
 @media (max-width:760px){
  .wrap{padding-left:20px;padding-right:20px}
  .hero .hb{padding-bottom:56px}
@@ -111,6 +134,7 @@ VID = '''</div></section>
 <video id="z4v" playsinline preload="none" aria-label="Vídeo de Christian · 404 Growth"></video>
 <button class="z4-go" id="z4go" type="button"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></i>Reproducir con audio</button>
 </div></div>
+<div class="z4-dn"><a class="cta" href="#agenda" data-ag="1">Agendar reunión gratuita<span>↓</span></a></div>
 {agenda}
 </div></section>
 <section class="sec" id="ficha" style="padding-bottom:100px"><div class="wrap">'''
