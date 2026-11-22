@@ -1,0 +1,49 @@
+{
+ "slug": "tacones-baza",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "tacones-baza-05.jpg",
+    "tacones-baza-09.jpg",
+    "tacones-baza-10.jpg",
+    "tacones-baza-14.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia tacones-baza-05.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing burgundy leather ankle boots with a block heel, with straight blue jeans from the reference, walking at a whitewashed street in the centre of Baza, Granada, Spain, with orange trees, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia tacones-baza-05.jpg, aplica la REGLA B): Footwear e-commerce photo of burgundy leather ankle boots with a square toe and a block heel from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 3 «p2» (formato 3:4, referencia tacones-baza-09.jpg, aplica la REGLA B): Footwear e-commerce photo of chocolate brown suede sock ankle boots with a pointed toe and a block heel from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 4 «p3» (formato 3:4, referencia tacones-baza-10.jpg, aplica la REGLA B): Footwear e-commerce photo of black leather pointed ankle boots with tan leopard print and gold polka-dot panels and a low block heel from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 5 «p4» (formato 3:4, referencia tacones-baza-14.jpg, aplica la REGLA B): Footwear e-commerce photo of black leather slouchy knee-high boots with a pointed toe and a kitten heel from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "tacones-baza-03.jpg",
+    "tacones-baza-29.jpg",
+    "tacones-baza-27.jpg",
+    "tacones-baza-18.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia tacones-baza-03.jpg, aplica la REGLA A): Footwear e-commerce photo of black velvet loafers with a gold chain detail from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 2 «p6» (formato 3:4, referencia tacones-baza-29.jpg, aplica la REGLA A): Footwear e-commerce photo of burgundy patent leather pointed pump shoes with a T-bar strap and a stiletto heel from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 3 «l1» (formato 3:4, referencia tacones-baza-27.jpg, aplica la REGLA A): Lifestyle photo: grey suede slouchy knee-high boots with a ruffled shaft, on a green carpet at an outdoor fashion show, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia tacones-baza-18.jpg, aplica la REGLA A): Lifestyle photo: a burgundy leather bucket bag next to burgundy ankle boots and burgundy sneakers on a mustard yellow velvet armchair, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a bright white women's shoe boutique with white shelves full of boots, heels and handbags, a mustard yellow velvet armchair and a glossy white floor, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing burgundy lea",
+  "p1": "Footwear e-commerce photo of burgundy leather ankle boots wi",
+  "p2": "Footwear e-commerce photo of chocolate brown suede sock ankl",
+  "p3": "Footwear e-commerce photo of black leather pointed ankle boo",
+  "p4": "Footwear e-commerce photo of black leather slouchy knee-high",
+  "p5": "Footwear e-commerce photo of black velvet loafers with a gol",
+  "p6": "Footwear e-commerce photo of burgundy patent leather pointed",
+  "l1": "Lifestyle photo: grey suede slouchy knee-high boots with a r",
+  "l2": "Lifestyle photo: a burgundy leather bucket bag next to burgu",
+  "b": "Wide interior photo: the inside of a bright white women's sh"
+ }
+}

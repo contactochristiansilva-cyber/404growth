@@ -1,0 +1,53 @@
+{
+ "niche": "calzado",
+ "name": "Tacones Baza",
+ "ig": "taconesbaza",
+ "f": 4257,
+ "city": "Baza",
+ "cityfull": "Baza (Granada)",
+ "address": "Calle Alamillos 8",
+ "logo": {
+  "text": "Tacones Baza"
+ },
+ "cats": [
+  [
+   "Botines",
+   "p1"
+  ],
+  [
+   "Botas",
+   "p4"
+  ],
+  [
+   "Salones",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botines burdeos"
+  },
+  {
+   "id": "p2",
+   "name": "Botines calcetín"
+  },
+  {
+   "id": "p3",
+   "name": "Botines de leopardo"
+  },
+  {
+   "id": "p4",
+   "name": "Botas altas"
+  },
+  {
+   "id": "p5",
+   "name": "Mocasines de terciopelo"
+  },
+  {
+   "id": "p6",
+   "name": "Salones burdeos"
+  }
+ ],
+ "theme": {}
+}
