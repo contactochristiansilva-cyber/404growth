@@ -68,7 +68,7 @@ S['mesa-calzados'] = dict(
            ('16', 'brown suede desert boots with laces and a crepe sole', 'Botines de ante marrón'),
            ('12', 'a bronze metallic faux leather crossbody bag with a flap', 'Bolso bandolera'),
            ('17', 'a dark grey suede hobo shoulder bag with a buckle strap', 'Bolso de ante')],
-    l1=('34', 'a pair of khaki suede retro sneakers with a cream chunky sole and no logo, on the light wooden floor of a shoe shop'),
+    l1=('34', 'a pair of plain khaki suede retro sneakers with a cream chunky sole, completely plain sides with no stripe, letter, V shape or logo, on the light wooden floor of a shoe shop'),
     l2=('26', 'a dark brown studded leather tote bag with two handles, held up in a shoe shop'),
     cats=[('Botines', 'p1'), ('Botas', 'p3'), ('Bolsos', 'p5')])
 
