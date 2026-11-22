@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Sevilla Flamenca",
+ "ig": "sevillaflamenca.oficial",
+ "f": 13573,
+ "city": "Sevilla",
+ "cityfull": "Sevilla",
+ "address": "Polígono La Chaparrilla, autovía Sevilla-Málaga km 3,2",
+ "logo": {
+  "text": "Sevilla Flamenca"
+ },
+ "cats": [
+  [
+   "Trajes de flamenca",
+   "p1"
+  ],
+  [
+   "Mantones",
+   "p4"
+  ],
+  [
+   "Complementos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Traje de flamenca"
+  },
+  {
+   "id": "p2",
+   "name": "Flamenca blanca"
+  },
+  {
+   "id": "p3",
+   "name": "Flamenca negra"
+  },
+  {
+   "id": "p4",
+   "name": "Mantón bordado"
+  },
+  {
+   "id": "p5",
+   "name": "Flores de flamenca"
+  },
+  {
+   "id": "p6",
+   "name": "Zapato flamenco"
+  }
+ ],
+ "theme": {}
+}

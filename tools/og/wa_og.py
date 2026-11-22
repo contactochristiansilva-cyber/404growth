@@ -28,7 +28,7 @@ def props(web, solo=None):
         if '<!--ag-->' not in h:
             continue
         t = html.unescape(re.search(r'<title>(.*?)</title>', h, re.S).group(1))
-        yield s, t.split(' × ')[0].strip(), h
+        yield s, re.sub(r' · vuestra tienda online$', '', t.split(' × ')[0].strip(), flags=re.I), h   # v42: «X · vuestra tienda online»
 
 
 def size(path):
@@ -47,9 +47,10 @@ def hero(web, s):
         w, h = size(os.path.join(web, f))
         return f, w / float(h)
     for k in ('b--hd', 'b--h'):
-        f = 'p-%s--%s.jpg' % (s, k)
-        if os.path.exists(os.path.join(web, f)):
-            return ok(f)
+        for ext in ('jpg', 'webp'):   # las propuestas v42 (gen42.py) solo llevan .webp
+            f = 'p-%s--%s.%s' % (s, k, ext)
+            if os.path.exists(os.path.join(web, f)):
+                return ok(f)
     vs = sorted((int(m.group(1)), f) for f in os.listdir(web) for m in [re.match(r'p-%s--v(\d+)--hero\.jpg$' % re.escape(s), f)] if m)
     if vs:
         return ok(vs[-1][1])

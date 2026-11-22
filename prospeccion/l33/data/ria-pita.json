@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Riá Pitá Moda Flamenca",
+ "ig": "riapita_modaflamenca",
+ "f": 1865,
+ "city": "Estepona",
+ "cityfull": "Estepona (Málaga)",
+ "address": "Calle de los Reyes, 34",
+ "logo": {
+  "text": "Riá Pitá Moda Flamenca"
+ },
+ "cats": [
+  [
+   "Trajes de flamenca",
+   "p1"
+  ],
+  [
+   "Mantones",
+   "p4"
+  ],
+  [
+   "Zapatos de baile",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Traje de volantes"
+  },
+  {
+   "id": "p2",
+   "name": "Flamenca menta"
+  },
+  {
+   "id": "p3",
+   "name": "Flamenca morada"
+  },
+  {
+   "id": "p4",
+   "name": "Mantón bordado"
+  },
+  {
+   "id": "p5",
+   "name": "Zapato de baile"
+  },
+  {
+   "id": "p6",
+   "name": "Zapato flamenco rojo"
+  }
+ ],
+ "theme": {},
+ "domain": "riapita.com",
+ "web_note": "riapita.com dice «Página bajo construcción»: los trajes, mantones y zapatos de baile no se pueden comprar online."
+}

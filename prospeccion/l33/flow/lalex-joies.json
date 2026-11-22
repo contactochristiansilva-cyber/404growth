@@ -1,0 +1,50 @@
+{
+ "slug": "lalex-joies",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "lalex-joies-01.jpg",
+    "lalex-joies-02.jpg",
+    "lalex-joies-15.jpg",
+    "lalex-joies-20.jpg",
+    "lalex-joies-03.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia lalex-joies-01.jpg, aplica la REGLA A): Luxury campaign still life of a round sterling silver pendant shaped like a gothic rose window on a fine silver ball chain from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia lalex-joies-02.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a wide sterling silver ring with a pierced architectural facade pattern from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia lalex-joies-15.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a sterling silver pendant shaped like a mountain ridge silhouette from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia lalex-joies-20.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a minimalist sterling silver cross pendant on a thin silver wire choker from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia lalex-joies-03.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a sterling silver ring shaped like a row of Gaudí-style catenary arches from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "lalex-joies-28.jpg",
+    "lalex-joies-17.jpg",
+    "lalex-joies-11.jpg",
+    "lalex-joies-10.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia lalex-joies-28.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a pair of yellow gold band rings with small notches from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia lalex-joies-17.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a sterling silver ring shaped like an organic wave from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia lalex-joies-11.jpg, aplica la REGLA A): Lifestyle photo: several sterling silver crown-shaped rings with arches on an old wooden workbench, warm light, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia lalex-joies-10.jpg, aplica la REGLA A): Lifestyle photo: a braided cord bracelet with a silver arches plaque among chestnuts and yellow gourds, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a silversmith's jewellery shop in Catalonia with a wooden workbench, small tools, white display cases with silver rings and pendants and a stone arch, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of a round sterling silver pendan",
+  "p1": "Luxury jewellery e-commerce photo of a wide sterling silver ",
+  "p2": "Luxury jewellery e-commerce photo of a sterling silver penda",
+  "p3": "Luxury jewellery e-commerce photo of a minimalist sterling s",
+  "p4": " e-commerce photo of a sterling silver ring shaped like a ro",
+  "p5": "Luxury jewellery e-commerce photo of a pair of yellow gold b",
+  "p6": " e-commerce photo of a sterling silver ring shaped like an o",
+  "l1": "Lifestyle photo: several sterling silver crown-shaped rings ",
+  "l2": "Lifestyle photo: a braided cord bracelet with a silver arche",
+  "b": "Wide interior photo: the inside of a silversmith's jewellery"
+ }
+}

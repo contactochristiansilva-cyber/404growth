@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Regala-T Complementos & Moda",
+ "ig": "regalat_complementos",
+ "f": 2180,
+ "city": "Palma del Río",
+ "cityfull": "Palma del Río (Córdoba)",
+ "address": "Calle Ancha, 56C",
+ "logo": {
+  "text": "Regala-T Complementos & Moda"
+ },
+ "cats": [
+  [
+   "Mujer",
+   "p1"
+  ],
+  [
+   "Hombre",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido de punto"
+  },
+  {
+   "id": "p2",
+   "name": "Blusa beige"
+  },
+  {
+   "id": "p3",
+   "name": "Sobrecamisa burdeos"
+  },
+  {
+   "id": "p4",
+   "name": "Jersey con cremallera"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta acolchada"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso marrón"
+  }
+ ],
+ "theme": {},
+ "domain": "regalat.es",
+ "web_note": "regalat.es está cerrada con contraseña («Muy pronto»): hoy no vende."
+}

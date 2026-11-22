@@ -1,0 +1,55 @@
+{
+ "niche": "calzado",
+ "name": "Jardilín",
+ "ig": "jardilin.bilbao",
+ "f": 5371,
+ "city": "Bilbao",
+ "cityfull": "Bilbao (Bizkaia)",
+ "address": "Doctor Achucarro, 2",
+ "logo": {
+  "text": "Jardilín"
+ },
+ "cats": [
+  [
+   "Merceditas",
+   "p1"
+  ],
+  [
+   "Sandalias",
+   "p3"
+  ],
+  [
+   "Zapatillas",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Merceditas metalizadas"
+  },
+  {
+   "id": "p2",
+   "name": "Menorquinas"
+  },
+  {
+   "id": "p3",
+   "name": "Sandalias de cuero"
+  },
+  {
+   "id": "p4",
+   "name": "Sandalias de montaña"
+  },
+  {
+   "id": "p5",
+   "name": "Bailarinas de lazo"
+  },
+  {
+   "id": "p6",
+   "name": "Zapatillas retro"
+  }
+ ],
+ "theme": {},
+ "domain": "jardilin.es",
+ "web_note": "jardilin.es enseña la zapatería, pero no tiene precios ni carrito: quien os encuentra fuera de Bilbao solo puede llamaros o escribiros."
+}

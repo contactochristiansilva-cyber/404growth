@@ -1,0 +1,55 @@
+{
+ "niche": "calzado",
+ "name": "Áine Shoes",
+ "ig": "aine_shoes",
+ "f": 1747,
+ "city": "A Coruña",
+ "cityfull": "A Coruña",
+ "address": "C/ Francisco Mariño, 12",
+ "logo": {
+  "text": "Áine Shoes"
+ },
+ "cats": [
+  [
+   "Botas y botines",
+   "p1"
+  ],
+  [
+   "Mocasines",
+   "p3"
+  ],
+  [
+   "Zapatillas",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botines de cordones"
+  },
+  {
+   "id": "p2",
+   "name": "Botas Chelsea"
+  },
+  {
+   "id": "p3",
+   "name": "Mocasines de borlas"
+  },
+  {
+   "id": "p4",
+   "name": "Mocasines marrones"
+  },
+  {
+   "id": "p5",
+   "name": "Botines fruncidos"
+  },
+  {
+   "id": "p6",
+   "name": "Zapatillas acolchadas"
+  }
+ ],
+ "theme": {},
+ "domain": "aineshoes.com",
+ "web_note": "aineshoes.com tiene muy pocos zapatos a la vista: casi todo lo que enseñáis en Instagram no se puede comprar online."
+}

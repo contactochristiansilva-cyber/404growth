@@ -1,0 +1,55 @@
+{
+ "niche": "joya",
+ "name": "La Casa de las Cuentas",
+ "ig": "lacasadelascuentass",
+ "f": 2008,
+ "city": "Huelva",
+ "cityfull": "Huelva",
+ "address": "Mercado del Carmen, puesto 169",
+ "logo": {
+  "text": "La Casa de las Cuentas"
+ },
+ "cats": [
+  [
+   "Pendientes",
+   "p1"
+  ],
+  [
+   "Collares",
+   "p4"
+  ],
+  [
+   "Flamenca",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Pendientes sol"
+  },
+  {
+   "id": "p2",
+   "name": "Pendientes de jade"
+  },
+  {
+   "id": "p3",
+   "name": "Pendientes morados"
+  },
+  {
+   "id": "p4",
+   "name": "Collar de cruz"
+  },
+  {
+   "id": "p5",
+   "name": "Gargantilla turquesa"
+  },
+  {
+   "id": "p6",
+   "name": "Peinas de flamenca"
+  }
+ ],
+ "theme": {
+  "acc": "#C0392B"
+ }
+}

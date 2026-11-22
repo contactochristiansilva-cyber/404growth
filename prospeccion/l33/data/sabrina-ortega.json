@@ -1,0 +1,55 @@
+{
+ "niche": "joya",
+ "name": "Sabrina Ortega Complementos",
+ "ig": "sabripontevedra_complemento",
+ "f": 2493,
+ "city": "Pontevedra",
+ "cityfull": "Pontevedra",
+ "address": "Rúa Conde San Román, 20",
+ "logo": {
+  "text": "Sabrina Ortega Complementos"
+ },
+ "cats": [
+  [
+   "Pendientes",
+   "p1"
+  ],
+  [
+   "Pulseras",
+   "p2"
+  ],
+  [
+   "Fulares",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Aros de plata"
+  },
+  {
+   "id": "p2",
+   "name": "Brazalete con cristal"
+  },
+  {
+   "id": "p3",
+   "name": "Collar largo"
+  },
+  {
+   "id": "p4",
+   "name": "Collar de eslabones"
+  },
+  {
+   "id": "p5",
+   "name": "Fular de flores"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso hobo"
+  }
+ ],
+ "theme": {
+  "acc": "#2E6F8E"
+ }
+}

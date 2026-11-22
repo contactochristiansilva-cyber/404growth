@@ -1,0 +1,55 @@
+{
+ "niche": "joya",
+ "name": "Joyería Molina Cuevas",
+ "ig": "joyeriamolinacuevas",
+ "f": 23007,
+ "city": "Madrid",
+ "cityfull": "Madrid",
+ "address": "Calle Hermosilla, 20",
+ "logo": {
+  "text": "Joyería Molina Cuevas"
+ },
+ "cats": [
+  [
+   "Pendientes",
+   "p4"
+  ],
+  [
+   "Anillos",
+   "p2"
+  ],
+  [
+   "Pulseras",
+   "p1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Pulsera de diamantes"
+  },
+  {
+   "id": "p2",
+   "name": "Anillo de aguamarina"
+  },
+  {
+   "id": "p3",
+   "name": "Collar de flores"
+  },
+  {
+   "id": "p4",
+   "name": "Pendientes de alas"
+  },
+  {
+   "id": "p5",
+   "name": "Anillo tú y yo"
+  },
+  {
+   "id": "p6",
+   "name": "Pendientes de cascada"
+  }
+ ],
+ "theme": {
+  "acc": "#7A1F2B"
+ }
+}

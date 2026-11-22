@@ -1,0 +1,49 @@
+{
+ "slug": "sevilla-flamenca",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "sevilla-flamenca-16.jpg",
+    "sevilla-flamenca-14.jpg",
+    "sevilla-flamenca-11.jpg",
+    "sevilla-flamenca-12.jpg",
+    "sevilla-flamenca-07.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia sevilla-flamenca-16.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing an orange flamenca dress with many ruffles and a teal embroidered fringed manila shawl with a red hair flower from the reference, walking at a sunny street in the Triana neighbourhood of Seville, Spain, with white and ochre houses and orange trees, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia sevilla-flamenca-14.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing an orange flamenca dress with layers of ruffles and a teal embroidered fringed shawl from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia sevilla-flamenca-11.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a white flamenca dress with black-trimmed ruffles and an embroidered shawl from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia sevilla-flamenca-12.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a black fitted flamenca dress with a red ruffle at the neck and a red shawl from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia sevilla-flamenca-07.jpg, aplica la REGLA B): E-commerce product photo of an orange silk manila shawl with colourful embroidered flowers and long fringes (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "sevilla-flamenca-04.jpg",
+    "sevilla-flamenca-10.jpg",
+    "sevilla-flamenca-05.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia sevilla-flamenca-04.jpg, aplica la REGLA A): E-commerce product photo of big flamenca hair flowers in turquoise, red, yellow and purple (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 2 «p6» (formato 3:4, sin referencia, aplica la REGLA A): Footwear e-commerce photo of red leather flamenco dance shoes with a strap and a wooden heel from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#ECE7E0) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 3 «l1» (formato 3:4, referencia sevilla-flamenca-10.jpg, aplica la REGLA B): Lifestyle fashion photo: a model wearing a white flamenca dress with black trim seen in a bright flamenca store from the reference, candid and relaxed in a sunny street of Sevilla, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle photo: a flamenca outfit flat lay with red coral earrings, a red hair flower, a fan and a fringed shawl, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia sevilla-flamenca-05.jpg, aplica la REGLA C): Wide interior photo: the inside of a huge flamenca fashion store with long rails packed with colourful ruffled flamenca dresses, a wall of flamenca hair flowers in every colour and a light grey floor, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing an orange fl",
+  "p1": "ce product photo for a fashion boutique: a model wearing an ",
+  "p2": "ce product photo for a fashion boutique: a model wearing a w",
+  "p3": "ce product photo for a fashion boutique: a model wearing a b",
+  "p4": "E-commerce product photo of an orange silk manila shawl with",
+  "p5": "E-commerce product photo of big flamenca hair flowers in tur",
+  "p6": "Footwear e-commerce photo of red leather flamenco dance shoe",
+  "l1": "Lifestyle fashion photo: a model wearing a white flamenca dr",
+  "l2": "Lifestyle photo: a flamenca outfit flat lay with red coral e",
+  "b": "Wide interior photo: the inside of a huge flamenca fashion s"
+ }
+}

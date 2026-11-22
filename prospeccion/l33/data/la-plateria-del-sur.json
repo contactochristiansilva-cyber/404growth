@@ -1,0 +1,55 @@
+{
+ "niche": "joya",
+ "name": "La Platería del Sur",
+ "ig": "laplateriadelsur",
+ "f": 12992,
+ "city": "Jerez de la Frontera",
+ "cityfull": "Jerez de la Frontera (Cádiz)",
+ "address": "C. Fresa, 2",
+ "logo": {
+  "text": "La Platería del Sur"
+ },
+ "cats": [
+  [
+   "Cruces",
+   "p1"
+  ],
+  [
+   "Pendientes",
+   "p3"
+  ],
+  [
+   "Plata",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Cruz roja"
+  },
+  {
+   "id": "p2",
+   "name": "Cruz turquesa"
+  },
+  {
+   "id": "p3",
+   "name": "Aros de coral"
+  },
+  {
+   "id": "p4",
+   "name": "Pendientes de lazo"
+  },
+  {
+   "id": "p5",
+   "name": "Cruz de plata"
+  },
+  {
+   "id": "p6",
+   "name": "Medallas de plata"
+  }
+ ],
+ "theme": {
+  "acc": "#9E2A2B"
+ }
+}

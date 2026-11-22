@@ -1,0 +1,49 @@
+{
+ "slug": "sabrina-ortega",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "sabrina-ortega-18.jpg",
+    "sabrina-ortega-04.jpg",
+    "sabrina-ortega-08.jpg",
+    "sabrina-ortega-23.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 4:3, referencia sabrina-ortega-18.jpg, aplica la REGLA A): Luxury campaign still life of chunky marble resin bangles in pink and turquoise with a natural stone set in gold from the reference, arranged on pale travertine stone with soft late-afternoon sunlight and delicate shadows, the piece filling the centre-right of the frame, warm ivory tones, macro-sharp detail. One single continuous photograph. IMAGEN 2 «p1» (formato 3:4, referencia sabrina-ortega-04.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a set of chunky gold-plated sterling silver hoop earrings from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia sabrina-ortega-08.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a sterling silver open bangle with a round blue crystal from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia sabrina-ortega-23.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a long gold and silver two-tone chain necklace with an oval pendant from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, sin referencia, aplica la REGLA A): Luxury jewellery e-commerce photo of a chunky gold chain necklace with a round gold pendant from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "sabrina-ortega-19.jpg",
+    "sabrina-ortega-12.jpg",
+    "sabrina-ortega-22.jpg",
+    "sabrina-ortega-10.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia sabrina-ortega-19.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a white silk scarf with a colourful floral print from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia sabrina-ortega-12.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a tan leather slouchy hobo bag from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia sabrina-ortega-22.jpg, aplica la REGLA A): Lifestyle photo: folded silk scarves with pink, teal and mint geometric fan prints, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia sabrina-ortega-10.jpg, aplica la REGLA B): Lifestyle photo: a gold bangle and a watch on a wrist among dried winter flowers, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA C): Wide interior photo: the inside of a small accessories and jewellery shop in the old town of Pontevedra with glass display cases full of jewellery, handbags on white shelves, silk scarves and dried flowers, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Luxury campaign still life of chunky marble resin bangles in",
+  "p1": "Luxury jewellery e-commerce photo of a set of chunky gold-pl",
+  "p2": "Luxury jewellery e-commerce photo of a sterling silver open ",
+  "p3": "Luxury jewellery e-commerce photo of a long gold and silver ",
+  "p4": "Luxury jewellery e-commerce photo of a chunky gold chain nec",
+  "p5": "Luxury jewellery e-commerce photo of a white silk scarf with",
+  "p6": "Luxury jewellery e-commerce photo of a tan leather slouchy h",
+  "l1": "Lifestyle photo: folded silk scarves with pink, teal and min",
+  "l2": "Lifestyle photo: a gold bangle and a watch on a wrist among ",
+  "b": "Wide interior photo: the inside of a small accessories and j"
+ }
+}

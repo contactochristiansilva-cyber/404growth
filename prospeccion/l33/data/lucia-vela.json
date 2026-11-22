@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Lucía Vela",
+ "ig": "lucia_vela_shop",
+ "f": 1748,
+ "city": "Úbeda",
+ "cityfull": "Úbeda (Jaén)",
+ "address": "Avda. Cristo Rey, 2",
+ "logo": {
+  "text": "Lucía Vela"
+ },
+ "cats": [
+  [
+   "Invitada",
+   "p1"
+  ],
+  [
+   "Chaquetas",
+   "p4"
+  ],
+  [
+   "Flamenca",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido de raso"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido lila"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido satinado"
+  },
+  {
+   "id": "p4",
+   "name": "Chaqueta jacquard"
+  },
+  {
+   "id": "p5",
+   "name": "Traje de flamenca"
+  },
+  {
+   "id": "p6",
+   "name": "Flamenca de lunares"
+  }
+ ],
+ "theme": {}
+}

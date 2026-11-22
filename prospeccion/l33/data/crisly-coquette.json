@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Crisly Coquette",
+ "ig": "crisly_coquette",
+ "f": 2040,
+ "city": "Motril",
+ "cityfull": "Motril (Granada)",
+ "address": "",
+ "logo": {
+  "text": "Crisly Coquette"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Chaquetas",
+   "p3"
+  ],
+  [
+   "Conjuntos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido corsé"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido corsé marrón"
+  },
+  {
+   "id": "p3",
+   "name": "Blazer gris"
+  },
+  {
+   "id": "p4",
+   "name": "Camisa de cuadros"
+  },
+  {
+   "id": "p5",
+   "name": "Body burdeos"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido sudadera"
+  }
+ ],
+ "theme": {},
+ "domain": "crislycoquette.es",
+ "web_note": "crislycoquette.es no carga (error de certificado): la web que estrenasteis en abril hoy no vende."
+}

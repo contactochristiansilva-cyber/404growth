@@ -1,0 +1,55 @@
+{
+ "niche": "calzado",
+ "name": "Lorma",
+ "ig": "lormastories",
+ "f": 4593,
+ "city": "Avilés",
+ "cityfull": "Avilés (Asturias)",
+ "address": "Avenida de Cervantes, 2",
+ "logo": {
+  "text": "Lorma"
+ },
+ "cats": [
+  [
+   "Botas y botines",
+   "p1"
+  ],
+  [
+   "Zapatillas",
+   "p3"
+  ],
+  [
+   "Térmicos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botines de cordones"
+  },
+  {
+   "id": "p2",
+   "name": "Mocasines de ante"
+  },
+  {
+   "id": "p3",
+   "name": "Zapatillas grises"
+  },
+  {
+   "id": "p4",
+   "name": "Botas Chelsea"
+  },
+  {
+   "id": "p5",
+   "name": "Camiseta térmica"
+  },
+  {
+   "id": "p6",
+   "name": "Calcetines de lana"
+  }
+ ],
+ "theme": {},
+ "domain": "lormastories.es",
+ "web_note": "lormastories.es da error («Esta página no funciona»): quien os encuentra fuera de Avilés solo puede escribiros."
+}

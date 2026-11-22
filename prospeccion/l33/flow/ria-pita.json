@@ -1,0 +1,50 @@
+{
+ "slug": "ria-pita",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "ria-pita-17.jpg",
+    "ria-pita-14.jpg",
+    "ria-pita-01.jpg",
+    "ria-pita-02.jpg",
+    "ria-pita-15.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia ria-pita-17.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a light blue flamenca dress with flounced sleeves and a long ruffled hem with a cream embroidered fringed shawl with pink flowers from the reference, walking at a whitewashed street in the old town of Estepona, Málaga, Spain, with flower pots on the walls, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia ria-pita-14.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a red flamenca dress with layers of ruffles and a cream embroidered shawl from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia ria-pita-01.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a mint and black flamenca dress with black ruffles and a black embroidered shawl from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia ria-pita-02.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a white and purple flamenca dress with purple ruffles from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia ria-pita-15.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a cream embroidered silk manila shawl with pink flowers and long fringes from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "ria-pita-19.jpg",
+    "ria-pita-11.jpg",
+    "ria-pita-13.jpg",
+    "ria-pita-20.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia ria-pita-19.jpg, aplica la REGLA A): Footwear e-commerce photo of black leather flamenco dance shoes with a double strap and a wooden heel from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#ECE7E0) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 2 «p6» (formato 3:4, referencia ria-pita-11.jpg, aplica la REGLA A): Footwear e-commerce photo of red glitter flamenco dance shoes with a strap from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#ECE7E0) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 3 «l1» (formato 3:4, referencia ria-pita-13.jpg, aplica la REGLA B): Lifestyle fashion photo: a model wearing a big pink and red flamenca hair flower and gold earrings on a mannequin from the reference, candid and relaxed in a sunny street of Estepona, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia ria-pita-20.jpg, aplica la REGLA A): Lifestyle photo: black and red leather flamenco shoes with laces on a red hat, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA C): Wide interior photo: the inside of an Andalusian flamenca fashion shop with rails packed with colourful flamenca dresses with ruffles, embroidered shawls, big hair flowers and flamenco shoes on a shelf, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a light blue",
+  "p1": "ce product photo for a fashion boutique: a model wearing a r",
+  "p2": "ce product photo for a fashion boutique: a model wearing a m",
+  "p3": "ce product photo for a fashion boutique: a model wearing a w",
+  "p4": "ce product photo for a fashion boutique: a model wearing a c",
+  "p5": "Footwear e-commerce photo of black leather flamenco dance sh",
+  "p6": "Footwear e-commerce photo of red glitter flamenco dance shoe",
+  "l1": "Lifestyle fashion photo: a model wearing a big pink and red ",
+  "l2": "Lifestyle photo: black and red leather flamenco shoes with l",
+  "b": "Wide interior photo: the inside of an Andalusian flamenca fa"
+ }
+}

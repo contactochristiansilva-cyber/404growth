@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Chabeli Modas",
+ "ig": "chabeli_modas",
+ "f": 2461,
+ "city": "Jerez de la Frontera",
+ "cityfull": "Jerez de la Frontera (Cádiz)",
+ "address": "Viveros Hermosín",
+ "logo": {
+  "text": "Chabeli Modas"
+ },
+ "cats": [
+  [
+   "Blusas",
+   "p1"
+  ],
+  [
+   "Chaquetas",
+   "p4"
+  ],
+  [
+   "Trajes",
+   "p1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Blusa de lazos"
+  },
+  {
+   "id": "p2",
+   "name": "Camisa de rayas"
+  },
+  {
+   "id": "p3",
+   "name": "Blusa con volantes"
+  },
+  {
+   "id": "p4",
+   "name": "Chaqueta acolchada"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta verde"
+  },
+  {
+   "id": "p6",
+   "name": "Merceditas con tachas"
+  }
+ ],
+ "theme": {},
+ "domain": "chabelimodas.com",
+ "web_note": "chabelimodas.com ya no existe: quien os encuentra fuera de Jerez solo puede escribiros."
+}

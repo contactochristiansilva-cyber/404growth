@@ -1,0 +1,57 @@
+{
+ "niche": "joya",
+ "name": "Sinu & Son",
+ "ig": "joyeriasinuandson",
+ "f": 18890,
+ "city": "Barcelona",
+ "cityfull": "Barcelona",
+ "address": "",
+ "logo": {
+  "text": "Sinu & Son"
+ },
+ "cats": [
+  [
+   "Colgantes",
+   "p1"
+  ],
+  [
+   "Cadenas",
+   "p3"
+  ],
+  [
+   "Anillos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Inicial gótica"
+  },
+  {
+   "id": "p2",
+   "name": "Colgante de número"
+  },
+  {
+   "id": "p3",
+   "name": "Cadena cubana"
+  },
+  {
+   "id": "p4",
+   "name": "Anillo con inicial"
+  },
+  {
+   "id": "p5",
+   "name": "Anillo estrella"
+  },
+  {
+   "id": "p6",
+   "name": "Alianza bicolor"
+  }
+ ],
+ "theme": {
+  "acc": "#1F6F6B"
+ },
+ "domain": "joyeriasinuandson.com",
+ "web_note": "joyeriasinuandson.com no funciona («Website unavailable»): quien os encuentra fuera de Barcelona solo puede escribiros."
+}

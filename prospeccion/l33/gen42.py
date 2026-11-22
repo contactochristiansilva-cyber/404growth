@@ -29,7 +29,7 @@ A = ap.parse_args()
 POSTER = A.poster
 if A.poster_file: POSTER = 'data:image/jpeg;base64,' + base64.b64encode(open(A.poster_file, 'rb').read()).decode()
 E = html.escape
-ITEMS = {'moda': 'prendas', 'sneakers': 'zapatos', 'joya': 'piezas', 'optica': 'gafas', 'cosmetica': 'productos', 'suplementos': 'productos'}
+ITEMS = {'moda': 'prendas', 'sneakers': 'zapatos', 'calzado': 'zapatos', 'joya': 'piezas', 'optica': 'gafas', 'cosmetica': 'productos', 'suplementos': 'productos'}
 
 CSS = r'''<style id="z42">
 /* v42: todo centrado */

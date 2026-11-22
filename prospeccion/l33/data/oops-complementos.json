@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Oops Complementos",
+ "ig": "oopscomplementos",
+ "f": 9536,
+ "city": "Vigo",
+ "cityfull": "Vigo (Pontevedra)",
+ "address": "Calle Urzáiz, 89",
+ "logo": {
+  "text": "Oops Complementos"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gabardina beige"
+  },
+  {
+   "id": "p2",
+   "name": "Chubasquero de lunares"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de rombos"
+  },
+  {
+   "id": "p4",
+   "name": "Parka acolchada"
+  },
+  {
+   "id": "p5",
+   "name": "Cazadora burdeos"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso gris"
+  }
+ ],
+ "theme": {}
+}

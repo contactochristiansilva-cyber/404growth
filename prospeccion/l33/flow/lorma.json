@@ -1,0 +1,43 @@
+{
+ "slug": "lorma",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, sin referencia, aplica la REGLA A): A stylish Spanish woman in her thirties wearing dark brown leather knee-high boots with a low block heel, with a camel coat and dark jeans from the reference, walking at a stone arcaded street in the old town of Avilés, Asturias, Spain, on a rainy-bright day, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, sin referencia, aplica la REGLA B): Footwear e-commerce photo of black leather lace-up comfort ankle boots with a chunky rubber sole from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 3 «p2» (formato 3:4, sin referencia, aplica la REGLA B): Footwear e-commerce photo of brown suede slip-on loafer shoes with a cushioned sole from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 4 «p3» (formato 3:4, sin referencia, aplica la REGLA B): Footwear e-commerce photo of grey suede sporty sneakers with a thick white sole from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 5 «p4» (formato 3:4, sin referencia, aplica la REGLA B): Footwear e-commerce photo of black leather Chelsea ankle boots with a low heel from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#EEE9E2) background with a soft floor shadow, crisp leather, suede and sole detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "lorma-05.jpg",
+    "lorma-04.jpg",
+    "lorma-07.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia lorma-05.jpg, aplica la REGLA A): E-commerce product photo of a black thermal long-sleeve top with a lace neckline (flat lay) from the reference, centred and large in the frame on a seamless light (#EEE9E2) background with a soft shadow, crisp detail. IMAGEN 2 «p6» (formato 3:4, referencia lorma-04.jpg, aplica la REGLA A): E-commerce product photo of two pairs of chunky ribbed wool socks in beige and charcoal (flat lay) from the reference, centred and large in the frame on a seamless light (#EEE9E2) background with a soft shadow, crisp detail. IMAGEN 3 «l1» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle photo: black leather ankle boots and a small crossbody bag on a white shelf in a bright shoe shop, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia lorma-07.jpg, aplica la REGLA B): Lifestyle fashion photo: a model wearing navy and black thermal long-sleeve tops with lace hanging on wooden hooks from the reference, candid and relaxed in a sunny street of Avilés, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA C): Wide interior photo: the inside of a busy shoe shop in Asturias with white shelves full of boots, ankle boots and sneakers, small handbags, a central table with shoe boxes and warm lights, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing dark brown l",
+  "p1": "Footwear e-commerce photo of black leather lace-up comfort a",
+  "p2": "Footwear e-commerce photo of brown suede slip-on loafer shoe",
+  "p3": "Footwear e-commerce photo of grey suede sporty sneakers with",
+  "p4": "Footwear e-commerce photo of black leather Chelsea ankle boo",
+  "p5": "E-commerce product photo of a black thermal long-sleeve top ",
+  "p6": "E-commerce product photo of two pairs of chunky ribbed wool ",
+  "l1": "Lifestyle photo: black leather ankle boots and a small cross",
+  "l2": "Lifestyle fashion photo: a model wearing navy and black ther",
+  "b": "Wide interior photo: the inside of a busy shoe shop in Astur"
+ }
+}

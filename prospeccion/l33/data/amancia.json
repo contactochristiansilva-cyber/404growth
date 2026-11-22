@@ -1,0 +1,55 @@
+{
+ "niche": "moda",
+ "name": "Amancia",
+ "ig": "amancia_shop",
+ "f": 2045,
+ "city": "Jerez de la Frontera",
+ "cityfull": "Jerez de la Frontera (Cádiz)",
+ "address": "C/ Consistorio, 2 · C/ Isabelita Ruiz",
+ "logo": {
+  "text": "Amancia"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p2"
+  ],
+  [
+   "Monos",
+   "p1"
+  ],
+  [
+   "Bisutería",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Mono marrón"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido fucsia"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido rojo"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido de terciopelo"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido esmeralda"
+  },
+  {
+   "id": "p6",
+   "name": "Brazaletes de resina"
+  }
+ ],
+ "theme": {},
+ "domain": "amancia.es",
+ "web_note": "amancia.es tiene solo 41 productos: casi todo lo que enseñáis en Instagram se sigue pidiendo por WhatsApp."
+}

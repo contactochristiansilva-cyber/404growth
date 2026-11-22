@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Tu Esencia",
+ "ig": "tuesencia_almansa",
+ "f": 3740,
+ "city": "Almansa",
+ "cityfull": "Almansa (Albacete)",
+ "address": "Calle Colón, 9",
+ "logo": {
+  "text": "Tu Esencia"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Conjuntos",
+   "p6"
+  ],
+  [
+   "Punto",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta peplum"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de tapiz"
+  },
+  {
+   "id": "p3",
+   "name": "Mono con encaje"
+  },
+  {
+   "id": "p4",
+   "name": "Polo de rayas"
+  },
+  {
+   "id": "p5",
+   "name": "Abrigo de leopardo"
+  },
+  {
+   "id": "p6",
+   "name": "Conjunto de cuadros"
+  }
+ ],
+ "theme": {}
+}

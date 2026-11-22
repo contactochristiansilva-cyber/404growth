@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Cambia-T Personal Shopper",
+ "ig": "cambiat_personalshopper",
+ "f": 2686,
+ "city": "Benidorm",
+ "cityfull": "Benidorm (Alicante)",
+ "address": "Av. Beniardá, 2",
+ "logo": {
+  "text": "Cambia-T Personal Shopper"
+ },
+ "cats": [
+  [
+   "Conjuntos",
+   "p1"
+  ],
+  [
+   "Blusas",
+   "p2"
+  ],
+  [
+   "Flamenca",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto oliva"
+  },
+  {
+   "id": "p2",
+   "name": "Blusa estampada"
+  },
+  {
+   "id": "p3",
+   "name": "Chaleco y falda"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto marino"
+  },
+  {
+   "id": "p5",
+   "name": "Traje de flamenca"
+  },
+  {
+   "id": "p6",
+   "name": "Flamenca de lunares"
+  }
+ ],
+ "theme": {}
+}

@@ -75,3 +75,9 @@ Ya venden online con una tienda de verdad, son franquicias, solo publican fijo o
 | `t_s23b.mjs` | 25 comprobaciones, con `d1shim.mjs` y `w23mod.mjs` (la copia del worker con `export {…}`) |
 
 Admin del Mac con la huella d9577e3d979769f1. La copia de antes está en `anterior/worker-seed23-22nov-antes-seed23b.js`.
+
+## Lote 42 (22/11/2026): propuestas
+
+- 33 con propuesta v42. Fuera: Más que Divas (réplicas), TJ Moda y Calzado (cierra) y Modas Carisma (ya vende en Shopify).
+- La Platería del Sur es de Jerez (C. Fresa, 2): pasa al jueves 26. Crisly Coquette es de Motril.
+- `mkrows.py leads.json rows42.js ../l33/sel42.json` y `patch_l42.py`; prueba `t_l42.mjs` (A y B).
