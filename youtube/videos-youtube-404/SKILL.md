@@ -61,6 +61,14 @@ Una dueña de boutique busca menos en YouTube que el cliente de Diego. El canal 
 
 Por eso cada idea dice también **en qué momento del seguimiento se mandaría**.
 
+**Cuánto se busca de verdad** (medido el 23/11/2026 con las sugerencias del buscador de YouTube y las visitas de los primeros resultados; señales, no volúmenes exactos):
+
+- **Tienda de barrio: casi nada.** «pasar mi tienda a online», «tienda online para mi tienda», «mi web no vende», «tienda online boutique» o «joyería»: YouTube no las sugiere. «pasar tienda física a online» trae unos cientos de visitas al año en todo YouTube en español (Juan Merodio, 913 en 5 años). «vender en Miravia»: 100–1.700 visitas por vídeo.
+- **Genérico, público equivocado:** «cómo hacer una tienda online», «vender ropa online», «shopify tienda de ropa» tienen 100.000–400.000 visitas, pero de dropshipping, marcas desde cero y Latinoamérica. No perseguirlas.
+- **Negocio grande o tienda online que no vende: poco volumen, muy cualificado.** Se sugieren y tienen poca competencia en español: «mi tienda online no vende» (Romuald Fons, 22.000 en 11 meses), «cómo mejorar mi tienda online / de Shopify» (9.000–70.000), «migrar de PrestaShop / WooCommerce a Shopify» (150–7.600, de consultores pequeños), «ecommerce B2B» (10.000–11.000).
+
+Consecuencia: los vídeos para la tienda de barrio se hacen para **mandarlos** en el seguimiento (el título responde a su objeción aunque nadie lo busque). Los vídeos para el negocio grande se titulan con lo que **sí se busca**, y sirven para probar si ese cliente está en YouTube: si traen llamadas desde la búsqueda, lo está. Al proponer un título, di siempre de cuál de los dos tipos es.
+
 ## 4. Las salidas de cada vídeo (CTA doble)
 
 - **Para quien aún duda: lead magnet de reflexión**, porque 404 hace la tienda por el cliente. El más fuerte: «te preparo gratis cómo quedaría tu tienda online» a cambio de su Instagram y su WhatsApp (es la propuesta que ya se fabrica cada noche). Otro: «Así pasamos 5 tiendas físicas a online: qué decidimos y por qué».
@@ -98,6 +106,10 @@ Cuando pidan varias ideas, que cada una filtre a un tipo de dueña distinto o re
 - «Somos pequeños»: por qué es el mejor momento
 - Lo que decidimos en los 15 días de una tienda online
 - Por qué tu tienda online no vende aunque la tengas
+- (búsqueda) Migrar de PrestaShop a Shopify sin perder ventas
+- (búsqueda) Mi tienda online no vende: lo que revisaría primero
+- (búsqueda) Cómo mejorar una tienda de Shopify que ya vende poco
+- (búsqueda) WooCommerce o Shopify para una marca con tiendas físicas
 
 Cuando un vídeo traiga llamadas o ventas, apúntalo aquí con su resultado.
 
