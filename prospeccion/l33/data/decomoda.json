@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Decomoda",
+ "ig": "decomodashop",
+ "f": 10964,
+ "city": "Sant Pere de Ribes",
+ "cityfull": "Sant Pere de Ribes (Barcelona)",
+ "address": "C/ Ildefons Cerdà, 15-17",
+ "logo": {
+  "text": "Decomoda"
+ },
+ "cats": [
+  [
+   "Punto",
+   "p1"
+  ],
+  [
+   "Camisas",
+   "p2"
+  ],
+  [
+   "Chaquetas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Jersey verde lima"
+  },
+  {
+   "id": "p2",
+   "name": "Camisa estampada"
+  },
+  {
+   "id": "p3",
+   "name": "Blusa burdeos"
+  },
+  {
+   "id": "p4",
+   "name": "Chaqueta de punto"
+  },
+  {
+   "id": "p5",
+   "name": "Camisa militar"
+  },
+  {
+   "id": "p6",
+   "name": "Bomber de leopardo"
+  }
+ ],
+ "theme": {}
+}

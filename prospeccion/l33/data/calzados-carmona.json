@@ -1,0 +1,53 @@
+{
+ "niche": "calzado",
+ "name": "Calzados Carmona",
+ "ig": "carmonacalzados",
+ "f": 1619,
+ "city": "Lebrija",
+ "cityfull": "Lebrija (Sevilla)",
+ "address": "C/ José Sánchez de Alva, 27",
+ "logo": {
+  "text": "Calzados Carmona"
+ },
+ "cats": [
+  [
+   "Botas",
+   "p1"
+  ],
+  [
+   "Sandalias",
+   "p3"
+  ],
+  [
+   "Cuñas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botas camperas"
+  },
+  {
+   "id": "p2",
+   "name": "Botines arrugados"
+  },
+  {
+   "id": "p3",
+   "name": "Sandalias plataforma"
+  },
+  {
+   "id": "p4",
+   "name": "Cuñas de esparto"
+  },
+  {
+   "id": "p5",
+   "name": "Sandalias de hebillas"
+  },
+  {
+   "id": "p6",
+   "name": "Sandalias de cuña"
+  }
+ ],
+ "theme": {}
+}

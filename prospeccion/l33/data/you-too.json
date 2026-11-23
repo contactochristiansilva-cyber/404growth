@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "You Too",
+ "ig": "you_too_moda_hombre",
+ "f": 2313,
+ "city": "Burgos",
+ "cityfull": "Burgos",
+ "address": "C/ Santiago Apóstol, 52",
+ "logo": {
+  "text": "You Too"
+ },
+ "cats": [
+  [
+   "Zapatillas",
+   "p1"
+  ],
+  [
+   "Sudaderas",
+   "p3"
+  ],
+  [
+   "Chaquetas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Zapatillas de ante"
+  },
+  {
+   "id": "p2",
+   "name": "Zapatillas marino"
+  },
+  {
+   "id": "p3",
+   "name": "Sudadera camel"
+  },
+  {
+   "id": "p4",
+   "name": "Bomber roja"
+  },
+  {
+   "id": "p5",
+   "name": "Camisa de cuadros"
+  },
+  {
+   "id": "p6",
+   "name": "Zapatillas trenzadas"
+  }
+ ],
+ "theme": {}
+}

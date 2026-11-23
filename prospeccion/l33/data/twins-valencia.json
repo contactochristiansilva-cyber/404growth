@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Twins",
+ "ig": "twinsvalencia",
+ "f": 13697,
+ "city": "Valencia",
+ "cityfull": "Valencia",
+ "address": "",
+ "logo": {
+  "text": "Twins"
+ },
+ "cats": [
+  [
+   "Fiesta",
+   "p1"
+  ],
+  [
+   "Invitada",
+   "p3"
+  ],
+  [
+   "Complementos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido burdeos"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido azul satén"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido verde azulado"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido limón"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido chocolate"
+  },
+  {
+   "id": "p6",
+   "name": "Sandalias doradas"
+  }
+ ],
+ "theme": {}
+}

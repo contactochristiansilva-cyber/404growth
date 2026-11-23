@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Marea Modas",
+ "ig": "mareamodas",
+ "f": 2097,
+ "city": "Málaga",
+ "cityfull": "Málaga",
+ "address": "Calle José Fernando Carvajal, 15 (Campanillas)",
+ "logo": {
+  "text": "Marea Modas"
+ },
+ "cats": [
+  [
+   "Jerséis",
+   "p1"
+  ],
+  [
+   "Faldas",
+   "p4"
+  ],
+  [
+   "Zapatillas",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Jersey bordado"
+  },
+  {
+   "id": "p2",
+   "name": "Top de encaje"
+  },
+  {
+   "id": "p3",
+   "name": "Pantalón cebra"
+  },
+  {
+   "id": "p4",
+   "name": "Falda de polipiel"
+  },
+  {
+   "id": "p5",
+   "name": "Sudadera de leopardo"
+  },
+  {
+   "id": "p6",
+   "name": "Zapatillas marrones"
+  }
+ ],
+ "theme": {}
+}

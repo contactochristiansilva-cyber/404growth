@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Pretty Rose Boutique",
+ "ig": "prettyroseboutique",
+ "f": 9706,
+ "city": "Zaragoza",
+ "cityfull": "Zaragoza",
+ "address": "Calle Delicias, 54",
+ "logo": {
+  "text": "Pretty Rose Boutique"
+ },
+ "cats": [
+  [
+   "Largos",
+   "p1"
+  ],
+  [
+   "Invitada",
+   "p3"
+  ],
+  [
+   "Trajes",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido azul corsé"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido burdeos"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido de lunares"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido bicolor"
+  },
+  {
+   "id": "p5",
+   "name": "Traje amarillo"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido con capa"
+  }
+ ],
+ "theme": {}
+}

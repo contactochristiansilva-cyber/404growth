@@ -1,0 +1,53 @@
+{
+ "niche": "joya",
+ "name": "Almer Joyas Madrid",
+ "ig": "almermadrid",
+ "f": 4505,
+ "city": "Madrid",
+ "cityfull": "Madrid",
+ "address": "C/ Hermosilla, 52",
+ "logo": {
+  "text": "Almer Joyas Madrid"
+ },
+ "cats": [
+  [
+   "Pendientes",
+   "p1"
+  ],
+  [
+   "Sortijas",
+   "p3"
+  ],
+  [
+   "Collares",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Pendientes esmeralda"
+  },
+  {
+   "id": "p2",
+   "name": "Pendientes granate"
+  },
+  {
+   "id": "p3",
+   "name": "Sortija de perlas barrocas"
+  },
+  {
+   "id": "p4",
+   "name": "Collar de perlas"
+  },
+  {
+   "id": "p5",
+   "name": "Sortijas de oro y piedras"
+  },
+  {
+   "id": "p6",
+   "name": "Colgante de diamante"
+  }
+ ],
+ "theme": {}
+}

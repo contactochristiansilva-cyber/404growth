@@ -1,0 +1,53 @@
+{
+ "niche": "calzado",
+ "name": "Calzados Santi",
+ "ig": "calzadossanti",
+ "f": 3157,
+ "city": "Jerez de la Frontera",
+ "cityfull": "Jerez de la Frontera (Cádiz)",
+ "address": "Parque Atlántico, bloque 13",
+ "logo": {
+  "text": "Calzados Santi"
+ },
+ "cats": [
+  [
+   "Botas",
+   "p1"
+  ],
+  [
+   "Bolsos",
+   "p4"
+  ],
+  [
+   "Zapatillas de casa",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botas altas de ante"
+  },
+  {
+   "id": "p2",
+   "name": "Botas camperas"
+  },
+  {
+   "id": "p3",
+   "name": "Botines negros"
+  },
+  {
+   "id": "p4",
+   "name": "Bolso de tachuelas"
+  },
+  {
+   "id": "p5",
+   "name": "Zapatillas de casa"
+  },
+  {
+   "id": "p6",
+   "name": "Botas de agua"
+  }
+ ],
+ "theme": {}
+}

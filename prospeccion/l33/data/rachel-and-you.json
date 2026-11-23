@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Rachel & You",
+ "ig": "_rachelandyou_",
+ "f": 11294,
+ "city": "Benicarló",
+ "cityfull": "Benicarló (Castellón)",
+ "address": "C/ Rei En Jaume, 51",
+ "logo": {
+  "text": "Rachel & You"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Trajes",
+   "p3"
+  ],
+  [
+   "Abrigos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido azul"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido camisero"
+  },
+  {
+   "id": "p3",
+   "name": "Traje marino"
+  },
+  {
+   "id": "p4",
+   "name": "Falda de cuadros"
+  },
+  {
+   "id": "p5",
+   "name": "Abrigo de ante"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido de fiesta"
+  }
+ ],
+ "theme": {}
+}

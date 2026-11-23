@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Carlos Boutique",
+ "ig": "carlosboutique03",
+ "f": 2640,
+ "city": "Madrid",
+ "cityfull": "Madrid",
+ "address": "Calle Teruel, 32",
+ "logo": {
+  "text": "Carlos Boutique"
+ },
+ "cats": [
+  [
+   "Sudaderas",
+   "p1"
+  ],
+  [
+   "Gorras",
+   "p4"
+  ],
+  [
+   "Abrigos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Sudadera roja y negra"
+  },
+  {
+   "id": "p2",
+   "name": "Sudadera azul y negra"
+  },
+  {
+   "id": "p3",
+   "name": "Sudadera rosa"
+  },
+  {
+   "id": "p4",
+   "name": "Gorra de ante"
+  },
+  {
+   "id": "p5",
+   "name": "Gorra negra"
+  },
+  {
+   "id": "p6",
+   "name": "Plumífero negro"
+  }
+ ],
+ "theme": {}
+}

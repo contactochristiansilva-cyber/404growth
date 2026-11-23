@@ -1,0 +1,53 @@
+{
+ "niche": "cosmetica",
+ "name": "Ládano Perfumería",
+ "ig": "ladano_perfumeria",
+ "f": 2296,
+ "city": "Vila-real",
+ "cityfull": "Vila-real (Castellón)",
+ "address": "C/ Colom, 14",
+ "logo": {
+  "text": "Ládano Perfumería"
+ },
+ "cats": [
+  [
+   "Para ella",
+   "p1"
+  ],
+  [
+   "Para él",
+   "p4"
+  ],
+  [
+   "Extraits",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Eau de parfum ámbar"
+  },
+  {
+   "id": "p2",
+   "name": "Eau de parfum verde"
+  },
+  {
+   "id": "p3",
+   "name": "Eau de parfum azul noche"
+  },
+  {
+   "id": "p4",
+   "name": "Eau de parfum madera"
+  },
+  {
+   "id": "p5",
+   "name": "Extrait dorado"
+  },
+  {
+   "id": "p6",
+   "name": "Eau de parfum vetiver"
+  }
+ ],
+ "theme": {}
+}

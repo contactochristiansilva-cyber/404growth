@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Fondo de Armario",
+ "ig": "fondodearmario_",
+ "f": 7157,
+ "city": "Estepona",
+ "cityfull": "Estepona (Málaga)",
+ "address": "Av. España, 140",
+ "logo": {
+  "text": "Fondo de Armario"
+ },
+ "cats": [
+  [
+   "Ponchos",
+   "p1"
+  ],
+  [
+   "Vestidos",
+   "p2"
+  ],
+  [
+   "Complementos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Poncho de flecos"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido largo de flores"
+  },
+  {
+   "id": "p3",
+   "name": "Chaqueta de pelo"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido burdeos"
+  },
+  {
+   "id": "p5",
+   "name": "Bolso de flecos"
+  },
+  {
+   "id": "p6",
+   "name": "Collar de coral"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "calzado",
+ "name": "Zapatillería Isabel",
+ "ig": "zapatilleriaisabelcarballo",
+ "f": 2052,
+ "city": "Carballo",
+ "cityfull": "Carballo (A Coruña)",
+ "address": "Rúa Camiño Novo, 9",
+ "logo": {
+  "text": "Zapatillería Isabel"
+ },
+ "cats": [
+  [
+   "Zapatillas de casa",
+   "p1"
+  ],
+  [
+   "Zuecos",
+   "p2"
+  ],
+  [
+   "Calzado",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Zuecos de borrego"
+  },
+  {
+   "id": "p2",
+   "name": "Zapatillas de borreguito"
+  },
+  {
+   "id": "p3",
+   "name": "Zapatillas de cuadros"
+  },
+  {
+   "id": "p4",
+   "name": "Chinelas de ante"
+  },
+  {
+   "id": "p5",
+   "name": "Calcetines de casa"
+  },
+  {
+   "id": "p6",
+   "name": "Merceditas de leopardo"
+  }
+ ],
+ "theme": {}
+}

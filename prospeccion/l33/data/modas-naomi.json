@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Modas Naomi",
+ "ig": "modanaomi",
+ "f": 2369,
+ "city": "Córdoba",
+ "cityfull": "Córdoba",
+ "address": "Av. El Cairo, 2 · Av. Almogávares, 38",
+ "logo": {
+  "text": "Modas Naomi"
+ },
+ "cats": [
+  [
+   "Flamenca",
+   "p1"
+  ],
+  [
+   "Fiesta",
+   "p5"
+  ],
+  [
+   "Todas las tallas",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Traje fucsia de lunares"
+  },
+  {
+   "id": "p2",
+   "name": "Traje azul con flecos"
+  },
+  {
+   "id": "p3",
+   "name": "Traje de lunares verdes"
+  },
+  {
+   "id": "p4",
+   "name": "Traje turquesa"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido rojo largo"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido de lentejuelas"
+  }
+ ],
+ "theme": {}
+}

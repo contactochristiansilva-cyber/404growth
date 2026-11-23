@@ -1,0 +1,49 @@
+{
+ "slug": "abigu-complementos",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "abigu-complementos-20.jpg",
+    "abigu-complementos-05.jpg",
+    "abigu-complementos-32.jpg",
+    "abigu-complementos-15.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia abigu-complementos-20.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing gold coin medallion necklaces on strands of blue lapis and tiger eye beads from the reference, walking at a pedestrian street in the centre of Vilagarcía de Arousa, Pontevedra, Galicia, Spain, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia abigu-complementos-05.jpg, aplica la REGLA B): Luxury jewellery e-commerce photo of gold puffed balloon letter pendant necklaces on fine gold chains from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «p2» (formato 3:4, referencia abigu-complementos-20.jpg, aplica la REGLA B): Luxury jewellery e-commerce photo of a gold coin medallion necklace on a strand of blue lapis lazuli beads from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 4 «p3» (formato 3:4, referencia abigu-complementos-32.jpg, aplica la REGLA B): Luxury jewellery e-commerce photo of chunky resin cocktail rings in red, olive green and amber with large gold-set coloured stones from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 5 «p4» (formato 3:4, referencia abigu-complementos-15.jpg, aplica la REGLA B): Luxury jewellery e-commerce photo of a mustard yellow suede slouchy hobo shoulder bag from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "abigu-complementos-25.jpg",
+    "abigu-complementos-10.jpg",
+    "abigu-complementos-21.jpg",
+    "abigu-complementos-29.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia abigu-complementos-25.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of a burgundy leather half-moon top handle bag from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 2 «p6» (formato 3:4, referencia abigu-complementos-10.jpg, aplica la REGLA A): Luxury jewellery e-commerce photo of gold ear cuffs and a small gold hoop earring with a red stone drop from the reference, centred on a seamless ivory (#F4EFE6) background with a soft natural shadow, the whole piece visible and large in the frame, macro-sharp metal and stone detail, soft diffused daylight. IMAGEN 3 «l1» (formato 3:4, referencia abigu-complementos-21.jpg, aplica la REGLA A): Lifestyle photo: a gold coin medallion necklace on a strand of brown tiger eye beads worn with a dark top, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia abigu-complementos-29.jpg, aplica la REGLA A): Lifestyle photo: a brown leather tote bag with long fringes on a cream stone surface, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a colourful accessories boutique with a turquoise and yellow painted wall, wooden shelves full of handbags and jewellery, a pink velvet stool, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing gold coin me",
+  "p1": "Luxury jewellery e-commerce photo of gold puffed balloon let",
+  "p2": "Luxury jewellery e-commerce photo of a gold coin medallion n",
+  "p3": "Luxury jewellery e-commerce photo of chunky resin cocktail r",
+  "p4": "Luxury jewellery e-commerce photo of a mustard yellow suede ",
+  "p5": "Luxury jewellery e-commerce photo of a burgundy leather half",
+  "p6": "Luxury jewellery e-commerce photo of gold ear cuffs and a sm",
+  "l1": "Lifestyle photo: a gold coin medallion necklace on a strand ",
+  "l2": "Lifestyle photo: a brown leather tote bag with long fringes ",
+  "b": "Wide interior photo: the inside of a colourful accessories b"
+ }
+}

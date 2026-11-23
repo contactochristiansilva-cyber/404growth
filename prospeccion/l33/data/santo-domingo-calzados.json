@@ -1,0 +1,53 @@
+{
+ "niche": "calzado",
+ "name": "Santo Domingo Calzados",
+ "ig": "s.d_calzados",
+ "f": 2352,
+ "city": "Sanlúcar de Barrameda",
+ "cityfull": "Sanlúcar de Barrameda (Cádiz)",
+ "address": "",
+ "logo": {
+  "text": "Santo Domingo Calzados"
+ },
+ "cats": [
+  [
+   "Botines",
+   "p1"
+  ],
+  [
+   "Botas altas",
+   "p3"
+  ],
+  [
+   "Sandalias",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botines calcetín"
+  },
+  {
+   "id": "p2",
+   "name": "Botines arrugados"
+  },
+  {
+   "id": "p3",
+   "name": "Botas altas arrugadas"
+  },
+  {
+   "id": "p4",
+   "name": "Botas altas marrones"
+  },
+  {
+   "id": "p5",
+   "name": "Sandalias doradas"
+  },
+  {
+   "id": "p6",
+   "name": "Cuñas negras"
+  }
+ ],
+ "theme": {}
+}

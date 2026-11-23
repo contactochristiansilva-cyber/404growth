@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Arena y Mar",
+ "ig": "arenaymarmoda",
+ "f": 4391,
+ "city": "Alicante",
+ "cityfull": "Alicante",
+ "address": "C/ del Teatro, 34",
+ "logo": {
+  "text": "Arena y Mar"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p4"
+  ],
+  [
+   "Vestidos",
+   "p3"
+  ],
+  [
+   "Conjuntos",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Camisa de cuadros"
+  },
+  {
+   "id": "p2",
+   "name": "Conjunto estampado"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido camisero"
+  },
+  {
+   "id": "p4",
+   "name": "Abrigo corto"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido de flores"
+  },
+  {
+   "id": "p6",
+   "name": "Traje de chaqueta"
+  }
+ ],
+ "theme": {}
+}

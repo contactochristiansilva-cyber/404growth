@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Son de Lunares",
+ "ig": "sondelunares_modaflamenca",
+ "f": 3199,
+ "city": "Valencia",
+ "cityfull": "Valencia",
+ "address": "C/ Balmes, 43",
+ "logo": {
+  "text": "Son de Lunares"
+ },
+ "cats": [
+  [
+   "Trajes",
+   "p1"
+  ],
+  [
+   "Romería",
+   "p4"
+  ],
+  [
+   "Baile",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Traje de flamenca rojo"
+  },
+  {
+   "id": "p2",
+   "name": "Traje de lunares verde"
+  },
+  {
+   "id": "p3",
+   "name": "Traje amarillo"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto de romería"
+  },
+  {
+   "id": "p5",
+   "name": "Zapatos de baile"
+  },
+  {
+   "id": "p6",
+   "name": "Pendientes de flamenca"
+  }
+ ],
+ "theme": {}
+}
