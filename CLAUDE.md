@@ -1113,6 +1113,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 ## EFAP Miami: propuesta de Meta Ads (23/11/2026)
 
 - Reparto (Chris, 23/11/2026): Carlos Fernández les lleva los creativos (grabación, edición) y la landing; Christian hace la estrategia de Meta en modo consultoría con Carlos, entra como partner de Meta, monta Meta Business y gestiona la campaña (métricas, cambios, informes). Serán 2 Open Day hacia el 20 y el 21 o 22/1/2027 (viajan el 18).
+- **Objetivo: 200 jugadores, 100 por Open Day** (Chris, 23/11/2026: «tenemos que conseguirlo como sea»). En la propuesta: unas 400 inscripciones para que vengan 200, repartidas entre los dos días, y se recomiendan unos 2.000 € de anuncios (con 1.000 € cada inscripción tendría que salir a unos 2,50 €).
 - **Precio: 640 € + IVA** (774,40 € con IVA), pago único por transferencia al aceptar (esto último lo propuse yo; Chris puede cambiarlo).
 - **Formato: PDF de una carilla** (Chris: «quiero que sea formato pdf 1 carilla»), firmado por **Christian Silva** (nunca «404 Growth») y **sin enlaces a WhatsApp en ningún sitio**. Con la marca de EFAP: negro, granate #5C0017, amarillo #FFD900, Bebas Neue + Inter, su escudo. Cuerpo a 10 pt para que quepa.
 - Fuente: `tools/propuestas-clientes/efap-miami/pdf.html` (`{{ESCUDO}}` = `tools/brief/efap-escudo.png` en base64), impreso con Playwright `page.pdf` A4 sin márgenes. Salida en el Mac: `~/Downloads/Propuesta EFAP Miami · Christian Silva.pdf`.
