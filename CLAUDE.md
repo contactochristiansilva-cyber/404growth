@@ -871,6 +871,13 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Si sale una plantilla de propuesta nueva, sus `id` de sección van en `SC_*` y sus pasos en `PART_*`/`REACH_*`.
 - Fuentes en `tools/propuestas-partes/` (`patch_v80.py <worker v79> <salida>`) y prueba `t_v80.mjs <copia v80 con export { whoOf, scOf, partOf, PAGES, parse }> <copia v79 con export { PAGES }>` (31 comprobaciones). En el Mac, en `404growth-subir/fuentes-v80/`. Instalado en el Mac el 19/11/2026 (huella 530a6ead8b3375f1; copia de antes en `anterior/worker-v79-19nov-antes-partes-propuesta.js`) y subido ese día a las 14:53, sin R2 (ver «404 Content en la cuenta de Cloudflare de Javier»). La copia de `404growth-subir/admin/worker.js` del repositorio no está al día: la buena es la del Mac.
 
+## Aviso cuando ven el vídeo de la propuesta (admin v81, 23/11/2026)
+
+- Chris: «necesito saber si cuando alguien de las nuevas propuestas reproduce el vídeo me llega notificación». Antes no: el contador guardaba `vplay`, `vprog` (25/50/75) y `vend`, que contaban para el interés y salían en la ficha de la visita, pero no avisaban al móvil.
+- Ahora `alertsRun` (cron, paso 2) avisa con el tipo `video`: «Ha empezado a ver el vídeo de su propuesta.» (`vplay`) y «Ha visto el vídeo de su propuesta hasta el final.» (`vend`). Hay un aviso de cada por visita (`dk` = `v<visita>:vplay|vend`) y solo de personas (`isHuman`). En la v42, el vídeo solo se reproduce al pulsar «Reproducir con audio», así que `vplay` es siempre una reproducción con sonido.
+- Interruptor en los avisos del CRM: «Si empieza a ver el vídeo de su propuesta o lo termina» (`ACFG.video`, encendido por defecto).
+- `tools/propuestas-partes/patch_v81.py <worker> <salida>`. Instalado en el Mac el 23/11/2026 (huella a49aaf52ca72fb3f; copia de antes en `anterior/worker-seed24-23nov-antes-aviso-video.js`, fuentes en `fuentes-v81/`). Falta `subir.command`.
+
 ## Miniatura del enlace de las propuestas en WhatsApp (18/11/2026)
 
 - Chris eligió la **opción C** de 3 («A · su tienda en el móvil», «B · etiqueta de envío», «C · foto y titular»). Es la foto de la portada de su tienda a todo el ancho, oscurecida a la izquierda, y encima:
