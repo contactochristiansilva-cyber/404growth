@@ -77,11 +77,12 @@ Consecuencia: los vídeos para la tienda de barrio se hacen para **mandarlos** e
 
 **Los enlaces (el mismo carril que los anuncios):**
 
-| Salida | En la descripción | En voz alta |
+| Salida | En la descripción y el comentario fijado | En voz alta |
 |---|---|---|
-| Tienda de ejemplo | `https://404growth.com/tu-tienda?utm_source=youtube&utm_medium=video&utm_campaign=<slug>` | 404growth.com/mitienda |
-| Llamada de 30 min | `https://404growth.com/book?utm_source=youtube&utm_medium=video&utm_campaign=<slug>` | 404growth.com/hablamos |
-| Comentario fijado | `https://404growth.com/tu-tienda?utm_source=youtube&utm_medium=comentario&utm_campaign=<slug>` | — |
+| Tienda de ejemplo | `404growth.com/mitienda/<código>` | 404growth.com/mitienda |
+| Llamada de 30 min | `404growth.com/hablamos/<código>` | 404growth.com/hablamos |
+
+El `<código>` es una palabra corta por vídeo, en minúsculas y sin tildes (por ejemplo `web` para «Tienes web pero nadie te compra»). El enlace corto redirige solo a la página con la UTM del vídeo (`utm_source=youtube&utm_medium=video&utm_campaign=<código>`), así se sabe qué vídeo trae cada petición y cada llamada. Los de voz (sin código) cuentan como `utm_medium=voz`. Propón siempre el código de cada vídeo.
 
 /tu-tienda es un formulario (nombre, tienda, Instagram, WhatsApp, ciudad, qué vende, si ya vende online): crea el lead en el CRM con prioridad 95, avisa a Chris y promete la tienda de ejemplo por WhatsApp en **2 días laborables**. La propuesta lleva su agenda, que reserva por el mismo /l/book que /book. Al terminar, ofrece reservar ya en /book con su UTM.
 
