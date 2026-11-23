@@ -729,6 +729,18 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Sigue siendo `SEED6`, sin propuesta. `patch_s23b.py` cambia las dos líneas del SEED6; prueba `t_s23b.mjs`, 25 comprobaciones.
   - Admin del Mac con la huella d9577e3d979769f1 (copia en `anterior/worker-seed23-22nov-antes-seed23b.js`). Falta `subir.command`.
 
+## Scrapeo del 23/11 para el 24 al 30/11: 50 más con los mismos filtros (`seed_20261124`)
+
+- Chris (23/11/2026): «scrapea 50 negocios más, mismas características de filtrado que las últimas 40». Filtros del lote del 23/11 (moda, joyería, perfumería y calzado; nada de mercerías, artesanía ni muebles; nivel de conciencia A/B/C; activas, con móvil o WhatsApp, fuera del CRM).
+- 50 en `prospeccion/scrapeo-23nov/` (`leads.json`, `revision.md`, `mkleads.py`, `mkrows.py`, `patch_s24.py` y la prueba `t_s24.mjs`, 16 comprobaciones): 18 A, 10 B y 22 C; 36 de moda, 7 de calzado, 6 de joyería y 1 perfumería. Días: 13 el 24, 12 el 25, 12 el 26, 12 el 27 y 1 el 30, sin dos del mismo pueblo el mismo día.
+- En el CRM como séptima lista de `seedOnce` (`SEED7`), **sin propuesta**. 32 con `waOk: false`; 4 solo con fijo (prioridad 50).
+- Admin del Mac con la huella 96bf88138ae323d8 (copia en `anterior/worker-l42-23nov-antes-seed24.js`, fuentes en `fuentes-seed24/`). Falta `subir.command`.
+- Lo aprendido:
+  - la Biblioteca de anuncios se consulta sin abrir páginas repitiendo `AdLibrarySearchPaginationQuery` con `fetch` desde su pestaña (frase exacta del nombre); de cada 2 que anuncian, una ya vende online;
+  - r.jina.ai da 429 enseguida con peticiones en paralelo: una cada 3 s;
+  - la ficha de Google Maps (`/search?tbm=map`) da la web que no ponen en Instagram: así se vieron webs cerradas con contraseña o sin tienda;
+  - desde Instagram, sin pestaña compartida, las listas pasan de una pestaña a otra a mano: conviene filtrar mucho antes (Latinoamérica, CRM) para pasar pocas.
+
 ## Lote 39 (17/11/2026): 30 propuestas sin moda ni comida, fotos de Google Flow
 
 - Las 30 del scrapeo del 17/11 (arriba), con la tienda «Editorial» del lote 37 (`gen37a.py`) y la propuesta de siempre (`gen33v.py`). Publicadas en el Mac (`web117-404growth`, con sus `p/<slug>/index.html`), a falta de `subir-web.command` y `subir.command`.
