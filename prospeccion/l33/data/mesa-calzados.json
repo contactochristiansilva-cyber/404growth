@@ -1,0 +1,53 @@
+{
+ "niche": "calzado",
+ "name": "Mesa Calzados",
+ "ig": "mesacalzados",
+ "f": 4664,
+ "city": "Montoro",
+ "cityfull": "Montoro (Córdoba)",
+ "address": "Calle Cervantes 16",
+ "logo": {
+  "text": "Mesa Calzados"
+ },
+ "cats": [
+  [
+   "Botines",
+   "p1"
+  ],
+  [
+   "Botas",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botines de ante"
+  },
+  {
+   "id": "p2",
+   "name": "Botines serpiente"
+  },
+  {
+   "id": "p3",
+   "name": "Botas de agua"
+  },
+  {
+   "id": "p4",
+   "name": "Botines de ante marrón"
+  },
+  {
+   "id": "p5",
+   "name": "Bolso bandolera"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso de ante"
+  }
+ ],
+ "theme": {}
+}

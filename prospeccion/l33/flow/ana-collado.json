@@ -1,0 +1,50 @@
+{
+ "slug": "ana-collado",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "ana-collado-20.jpg",
+    "ana-collado-04.jpg",
+    "ana-collado-14.jpg",
+    "ana-collado-31.jpg",
+    "ana-collado-33.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a elegant Spanish woman in her fifties). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia ana-collado-20.jpg, aplica la REGLA A): An elegant Spanish woman in her fifties wearing a chocolate brown leather sleeveless midi dress with a belt from the reference, walking at a pleasant pedestrian shopping street in Cerdanyola del Vallès, Barcelona, Spain, with trees, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia ana-collado-04.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown reversible shearling jacket with a cream fleece lining over a brown top, with dark jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia ana-collado-14.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a chocolate brown faux fur jacket over a blue shirt, with dark trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia ana-collado-31.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown and blue argyle knit cardigan over a white top, with blue jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia ana-collado-33.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a white and green ombre knit jumper, with light blue jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "ana-collado-34.jpg",
+    "ana-collado-36.jpg",
+    "ana-collado-03.jpg",
+    "ana-collado-09.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a elegant Spanish woman in her fifties). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia ana-collado-34.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing an orange and navy floral print bomber jacket over a navy top, with blue jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia ana-collado-36.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a beige suede blazer over a dark top, with dark brown trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia ana-collado-03.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a long taupe coat over a camel top with light blue jeans from the reference, candid and relaxed in a sunny street of Cerdanyola del Vallès, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia ana-collado-09.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a grey check fringed wool poncho over a black top with flared jeans from the reference, candid and relaxed in a sunny street of Cerdanyola del Vallès, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a bright minimalist white fashion boutique with floor-length white curtains, a tall mirror with a warm light frame, a white floor and a rail of clothes, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "An elegant Spanish woman in her fifties wearing a chocolate ",
+  "p1": "ct photo for a fashion boutique: a model wearing a brown rev",
+  "p2": "ce product photo for a fashion boutique: a model wearing a c",
+  "p3": "ct photo for a fashion boutique: a model wearing a brown and",
+  "p4": "ce product photo for a fashion boutique: a model wearing a w",
+  "p5": "ce product photo for a fashion boutique: a model wearing an ",
+  "p6": "roduct photo for a fashion boutique: a model wearing a beige",
+  "l1": "Lifestyle fashion photo: a model wearing a long taupe coat o",
+  "l2": "Lifestyle fashion photo: a model wearing a grey check fringe",
+  "b": "Wide interior photo: the inside of a bright minimalist white"
+ }
+}

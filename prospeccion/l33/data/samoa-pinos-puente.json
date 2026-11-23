@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Samoa",
+ "ig": "samoapinospuente",
+ "f": 4833,
+ "city": "Pinos Puente",
+ "cityfull": "Pinos Puente (Granada)",
+ "address": "",
+ "logo": {
+  "text": "Samoa"
+ },
+ "cats": [
+  [
+   "Conjuntos",
+   "p1"
+  ],
+  [
+   "Abrigos",
+   "p3"
+  ],
+  [
+   "Monos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto con puños de pelo"
+  },
+  {
+   "id": "p2",
+   "name": "Conjunto gris"
+  },
+  {
+   "id": "p3",
+   "name": "Plumífero rosa"
+  },
+  {
+   "id": "p4",
+   "name": "Mono ciruela"
+  },
+  {
+   "id": "p5",
+   "name": "Conjunto vaquero"
+  },
+  {
+   "id": "p6",
+   "name": "Jersey de pelo"
+  }
+ ],
+ "theme": {}
+}

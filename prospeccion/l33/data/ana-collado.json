@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Ana Collado",
+ "ig": "vasdecollado",
+ "f": 42616,
+ "city": "Cerdanyola del Vallès",
+ "cityfull": "Cerdanyola del Vallès (Barcelona)",
+ "address": "Carrer Francesc Layret 76B",
+ "logo": {
+  "text": "Ana Collado"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p3"
+  ],
+  [
+   "Blazers",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta de borreguito"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de pelo"
+  },
+  {
+   "id": "p3",
+   "name": "Cárdigan de rombos"
+  },
+  {
+   "id": "p4",
+   "name": "Jersey degradado"
+  },
+  {
+   "id": "p5",
+   "name": "Bomber de flores"
+  },
+  {
+   "id": "p6",
+   "name": "Blazer de ante"
+  }
+ ],
+ "theme": {}
+}

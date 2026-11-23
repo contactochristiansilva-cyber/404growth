@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Mila García",
+ "ig": "milagarcia.mg",
+ "f": 4603,
+ "city": "Écija",
+ "cityfull": "Écija (Sevilla)",
+ "address": "Av. Miguel de Cervantes 26",
+ "logo": {
+  "text": "Mila García"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p2"
+  ],
+  [
+   "Blusas",
+   "p1"
+  ],
+  [
+   "Conjuntos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Blusa fruncida"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de tapiz"
+  },
+  {
+   "id": "p3",
+   "name": "Chaleco de pelo"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto de cuadros"
+  },
+  {
+   "id": "p5",
+   "name": "Conjunto de rayas"
+  },
+  {
+   "id": "p6",
+   "name": "Conjunto satinado"
+  }
+ ],
+ "theme": {}
+}

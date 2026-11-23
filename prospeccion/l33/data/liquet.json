@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Liquet",
+ "ig": "liquet.almunia",
+ "f": 5353,
+ "city": "Granada",
+ "cityfull": "Granada",
+ "address": "C/ Periodista Eugenio Selles 19 (La Chana)",
+ "logo": {
+  "text": "Liquet"
+ },
+ "cats": [
+  [
+   "Camisas y blusas",
+   "p3"
+  ],
+  [
+   "Chaquetas",
+   "p2"
+  ],
+  [
+   "Conjuntos",
+   "p1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto satinado"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta militar"
+  },
+  {
+   "id": "p3",
+   "name": "Camisa estampada"
+  },
+  {
+   "id": "p4",
+   "name": "Cazadora vaquera"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta gabardina"
+  },
+  {
+   "id": "p6",
+   "name": "Blusa de lazada"
+  }
+ ],
+ "theme": {}
+}
