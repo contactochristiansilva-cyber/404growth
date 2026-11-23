@@ -1114,6 +1114,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 
 - Reparto (Chris, 23/11/2026): Carlos Fernández les lleva los creativos (grabación, edición) y la landing; 404 Growth hace la estrategia de Meta en modo consultoría con Carlos, entra como partner de Meta, monta Meta Business y gestiona la campaña (métricas, cambios, informes). Serán 2 Open Day hacia el 20 y el 21 o 22/1/2027 (viajan el 18).
 - **Precio: 640 € + IVA** (774,40 € con IVA), pago único por transferencia al aceptar (esto último lo propuse yo; Chris puede cambiarlo).
+- Firma «Christian Silva», nunca «404 Growth» (Chris, 23/11/2026); el botón de email dice «Escribir por email».
 - Página: `404growth.com/efap-miami/` = `web117-404growth/efap-miami/` (`index.html` + `escudo.png`), `noindex`, con la marca de EFAP (negro, granate #5C0017, amarillo #FFD900, Bebas Neue + Inter) y el contador de visitas con el slug `efap-miami` (avisa a Chris al abrirla).
 - Se genera con `python3 tools/propuestas-clientes/efap-miami/build.py web <web117>` (o `inline <salida.html>`, un solo archivo sin contador). Texto en `tpl.html`; el escudo sale de `tools/brief/efap-escudo.png`.
 
