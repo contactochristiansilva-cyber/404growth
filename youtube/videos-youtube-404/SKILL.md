@@ -75,7 +75,23 @@ Consecuencia: los vídeos para la tienda de barrio se hacen para **mandarlos** e
 - **Para quien lo tiene claro: la llamada de 30 minutos**, con la promesa: si podemos ayudarte te lo decimos, y si no, te decimos qué haríamos en tu lugar.
 - **Enlaces con UTM:** `404growth.com/book?utm_source=youtube&utm_medium=video&utm_campaign=<slug-del-vídeo>`. Así se sabe cuántas llamadas y ventas trae cada vídeo.
 
-Pendiente de montar (avísalo si un guion depende de ello): el formulario de «prepárame mi tienda», la secuencia de correos desde m.404growth.com (hoy sin seguimiento de aperturas ni clics) y las audiencias de retargeting.
+**Los enlaces (el mismo carril que los anuncios):**
+
+| Salida | En la descripción | En voz alta |
+|---|---|---|
+| Tienda de ejemplo | `https://404growth.com/tu-tienda?utm_source=youtube&utm_medium=video&utm_campaign=<slug>` | 404growth.com/mitienda |
+| Llamada de 30 min | `https://404growth.com/book?utm_source=youtube&utm_medium=video&utm_campaign=<slug>` | 404growth.com/hablamos |
+| Comentario fijado | `https://404growth.com/tu-tienda?utm_source=youtube&utm_medium=comentario&utm_campaign=<slug>` | — |
+
+/tu-tienda es un formulario (nombre, tienda, Instagram, WhatsApp, ciudad, qué vende, si ya vende online): crea el lead en el CRM con prioridad 95, avisa a Chris y promete la tienda de ejemplo por WhatsApp en **2 días laborables**. La propuesta lleva su agenda, que reserva por el mismo /l/book que /book. Al terminar, ofrece reservar ya en /book con su UTM.
+
+**Frases fijas:**
+- Al principio, antes del minuto 1: «Si tienes una tienda física y quieres ver cómo quedaría la tuya online, te la preparo gratis con tus productos. Tienes el enlace abajo, o entra en 404growth.com/mitienda.»
+- Al final: «Si aún no lo tienes claro, pídeme tu tienda de ejemplo en 404growth.com/mitienda: te la mando por WhatsApp en dos días. Y si ya lo tienes claro, reserva 30 minutos conmigo en 404growth.com/hablamos. Si puedo ayudarte, te lo digo; y si no, te digo qué haría yo en tu lugar.»
+
+**Descripción** (las dos primeras líneas se ven sin abrirla): primero el enlace de la tienda de ejemplo, después el de la llamada, luego 2–3 líneas del vídeo y «Soy Christian, de 404 Growth: pasamos tiendas físicas a tienda online en 15 días.» Entrega siempre la descripción y el comentario fijado ya escritos, con el `<slug>` del vídeo puesto.
+
+Pendiente de montar: la secuencia de correos desde m.404growth.com (hoy sin seguimiento de aperturas ni clics) y las audiencias de retargeting.
 
 ## 5. Cómo entregar una idea o un guion
 

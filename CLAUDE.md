@@ -909,6 +909,23 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - En el Mac: admin c8f15297f634a253, visitas 2dcb23e04fdc3e8c, `agenda.js` 4a65691258cb67aa. Copias de antes en `anterior/` (`*-23nov-antes-*`), fuentes en `fuentes-v82/`.
 - Falta `subir.command` (admin y contador) y `subir-web.command` (`agenda.js` y las propuestas).
 
+## YouTube: «Te preparo tu tienda» y los enlaces de los vídeos (admin v83, 23/11/2026)
+
+- Chris: los que vienen de YouTube entran «en el mismo carril» que los de los anuncios. Por eso cada vídeo tiene dos salidas:
+  - **la llamada:** `/book?utm_source=youtube&utm_medium=video&utm_campaign=<vídeo>`, la misma landing y agenda que los anuncios;
+  - **la tienda de ejemplo:** `404growth.com/tu-tienda` (`web117-404growth/tu-tienda.html`, `noindex`), un formulario con nombre, tienda, Instagram, WhatsApp, ciudad, qué vende y si ya vende online. Promete la tienda por WhatsApp en **2 días laborables**. Al terminar ofrece reservar ya en /book con su UTM (`utm_content=tu-tienda`).
+- **Enlaces para decirlos en voz alta** (en `_redirects`, 302): `/hablamos` → `/book?utm_source=youtube&utm_medium=voz` y `/mitienda` → `/tu-tienda?utm_source=youtube&utm_medium=voz`. Copia del `_redirects` anterior en `anterior/_redirects-2026-11-23-antes-youtube`.
+- **Servidor:** `POST /l/tt` (`ttApply` en el worker del admin, dentro de `llPublic`):
+  - crea el lead en el CRM con el id `<prefijo del nicho>-yt-<tienda>-<4>`, etapa `new`, prioridad 95, marca `pidio-tienda`, `waOk: true`, `lotDay` = mañana, su UTM en `ttUtm` y una nota con el origen y el contacto;
+  - si ya estaba en el CRM (por Instagram o teléfono), no lo duplica: le sube la prioridad a 95, le añade la marca y la nota;
+  - avisa a Chris al móvil («Pide su tienda de ejemplo · …»);
+  - freno: 3 por hora por conexión y un campo oculto para robots;
+  - con `?interno=1` (`c404int`) la página no envía nada.
+- **Los leads con `pidio-tienda` van los primeros en el lote de propuestas del día siguiente**, antes que los del scrapeo: lo prometido son 2 días laborables. Su propuesta lleva la agenda, que reserva por `/l/book` como todas.
+- Frases para el vídeo, descripción y comentario fijado: en el doc «YouTube que vende · método Diego Abreu (para 404 Growth)», sección «Después del vídeo», y en la skill `videos-youtube-404` (`youtube/videos-youtube-404/SKILL.md`).
+- Fuentes en `tools/youtube/` (`tt_server.js`, `patch_v83.py <worker v82> <salida>`, `web/tu-tienda.html`). Pruebas: `test/t_v83.mjs` (21 comprobaciones de la ruta) y `test/ui83.cjs` con `test/srv83.mjs` (28 en el navegador a 360, 390 y 1440 px). Las dos necesitan `w83mod.mjs`, una copia del worker con `export { ttApply, llPublic, TT_NICHE };` al final.
+- En el Mac: admin de232a4581bf75af (copia de antes en `anterior/worker-v82-23nov-antes-tutienda.js`, fuentes en `fuentes-v83/`). Falta `subir.command` (admin) y `subir-web.command` (`tu-tienda.html` y `_redirects`).
+
 ## Miniatura del enlace de las propuestas en WhatsApp (18/11/2026)
 
 - Chris eligió la **opción C** de 3 («A · su tienda en el móvil», «B · etiqueta de envío», «C · foto y titular»). Es la foto de la portada de su tienda a todo el ancho, oscurecida a la izquierda, y encima:
