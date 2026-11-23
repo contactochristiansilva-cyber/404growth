@@ -3,6 +3,9 @@
 
     python3 build.py web    <web117-404growth>   -> <web117>/efap-miami/index.html + escudo.png (con el contador de visitas, slug efap-miami)
     python3 build.py inline <salida.html>        -> un solo HTML con el escudo dentro y sin contador, para verlo o enviarlo
+
+La que se envía es el PDF de una carilla (Chris, 23/11/2026): pdf.html, sacado con Playwright (page.pdf A4, sin márgenes,
+con {{ESCUDO}} cambiado por el escudo en base64). Necesita Bebas Neue e Inter instaladas donde se imprima.
 """
 import base64
 import os

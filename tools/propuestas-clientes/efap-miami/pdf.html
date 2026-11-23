@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>EFAP Miami · Propuesta Meta Ads · Christian Silva</title>
+<style>
+@page{size:A4;margin:0}
+:root{--ink:#fff;--soft:#D4D4D8;--mute:#9A9AA2;--y:#FFD900;--bur:#5C0017;--line:rgba(255,255,255,.12);--card:#0D0D10;
+  --head:"Bebas Neue",Impact,sans-serif;--body:Inter,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:210mm;height:297mm;background:#000;color:var(--ink);font:400 10pt/1.38 var(--body);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;overflow:hidden;display:flex;flex-direction:column}
+h1,h2,h3{font-family:var(--head);font-weight:400;letter-spacing:.02em;line-height:.95}
+b{font-weight:600;color:var(--ink)}
+
+.hd{background:linear-gradient(180deg,var(--bur) 0%,#22000B 75%,#000 100%);padding:8mm 13mm 5mm;display:flex;gap:7mm;align-items:center}
+.hd img{width:17mm;height:auto;flex:none}
+.hd h1{font-size:28pt}
+.hd h1 em{font-style:normal;color:var(--y)}
+.hd .by{margin-top:1.5mm;color:var(--soft);font-size:10pt}
+.pills{display:flex;gap:2mm;margin-top:2.2mm;flex-wrap:wrap}
+.pill{border:1px solid var(--line);background:rgba(0,0,0,.4);border-radius:99px;padding:1.2mm 3.2mm;font:600 9pt/1.2 var(--body)}
+.pill b{color:var(--y);font-weight:700}
+
+.bd{flex:1;padding:4.5mm 13mm 0;display:flex;flex-direction:column;gap:5.2mm}
+.sh{display:flex;align-items:baseline;gap:2.5mm;margin-bottom:1.6mm}
+.sh span{font:400 12pt/1 var(--head);color:var(--y);letter-spacing:.06em}
+.sh h2{font-size:17pt}
+.row{display:grid;gap:3mm}
+.r3{grid-template-columns:repeat(3,1fr)}
+.r2{grid-template-columns:1fr 1fr}
+.c{background:var(--card);border:1px solid var(--line);border-radius:3mm;padding:2.6mm 3.4mm}
+.c h3{font-size:13pt;margin-bottom:1mm}
+.c p{color:var(--soft)}
+.c .who{font:700 8.5pt/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:1.4mm;display:block}
+.c.us{background:linear-gradient(160deg,var(--bur),#14000A);border-color:rgba(255,217,0,.4)}
+.c.us .who{color:var(--y)}
+.ph .d{font:400 10.5pt/1 var(--head);color:var(--y);letter-spacing:.06em}
+.ls{display:grid;grid-template-columns:24mm 1fr;gap:1.2mm 3mm;margin-top:2.4mm;color:var(--soft)}
+.ls dt{font:400 12pt/1.15 var(--head);color:var(--ink);letter-spacing:.03em}
+ul{list-style:none;display:grid;gap:.8mm}
+ul li{position:relative;padding-left:4mm;color:var(--soft)}
+ul li:before{content:"";position:absolute;left:0;top:1.6mm;width:1.8mm;height:1.8mm;border-radius:50%;background:var(--y)}
+
+.tl{display:grid;grid-template-columns:repeat(5,1fr);gap:2.5mm;position:relative;padding-top:4mm}
+.tl:before{content:"";position:absolute;left:1mm;right:1mm;top:1.3mm;height:.5mm;background:linear-gradient(90deg,var(--y),var(--bur))}
+.tl div{position:relative;color:var(--soft);font-size:9.5pt;line-height:1.3}
+.tl div:before{content:"";position:absolute;left:0;top:-4mm;width:3mm;height:3mm;border-radius:50%;background:#000;border:.6mm solid var(--y)}
+.tl div.k:before{background:var(--y)}
+.tl b{display:block;font:400 11pt/1.1 var(--head);color:var(--y);letter-spacing:.04em;margin-bottom:.6mm}
+
+.pr{display:grid;grid-template-columns:50mm 1fr;gap:5mm;background:linear-gradient(160deg,var(--bur),#12000A 75%);border:1px solid rgba(255,217,0,.4);border-radius:3.5mm;padding:3.4mm 5mm}
+.amt{font:400 44pt/.9 var(--head);color:var(--y)}
+.amt small{font-size:15pt;color:var(--ink);letter-spacing:.04em}
+.pr .iva{margin-top:1.6mm;color:var(--soft);font-size:9.5pt;line-height:1.35}
+.pr .cols{display:grid;grid-template-columns:1.25fr 1fr;gap:4mm}
+.pr h3{font-size:12pt;margin-bottom:1.2mm}
+.pr .no li:before{background:var(--mute);border-radius:0;height:.5mm;top:2.3mm}
+.note{color:var(--soft);font-size:9.5pt;line-height:1.35}
+.note b{color:var(--y)}
+.ft{display:flex;justify-content:space-between;align-items:center;padding:2.5mm 13mm 5mm;color:var(--mute);font-size:9pt}
+.ft b{color:var(--ink)}
+</style>
+</head>
+<body><div class="page">
+<header class="hd">
+  <img src="{{ESCUDO}}" alt="Escudo de EFAP Miami">
+  <div>
+    <h1>Open Day Miami. <em>Que se llene el campo.</em></h1>
+    <p class="by">Estrategia y Meta Ads · Propuesta de <b>Christian Silva</b> · 23/11/2026</p>
+    <div class="pills"><span class="pill"><b>2</b> Open Day · enero 2027</span><span class="pill">Anuncios: <b>1.000 €</b> en 30 días</span><span class="pill">Objetivo: <b>+100</b> jugadores</span></div>
+  </div>
+</header>
+
+<main class="bd">
+  <section>
+    <div class="sh"><span>01</span><h2>Quién hace qué</h2></div>
+    <div class="row r3">
+      <div class="c"><span class="who">EFAP</span><p>Datos del evento, aprobar las piezas, pagar los anuncios y atender a las familias.</p></div>
+      <div class="c"><span class="who">Carlos Fernández</span><p>Vídeos (grabación y edición), landing, formulario y mensajes.</p></div>
+      <div class="c us"><span class="who">Christian Silva</span><p><b>Estrategia con Carlos, Meta Business y gestión de la campaña</b> hasta el final.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><span>02</span><h2>La estrategia</h2></div>
+    <div class="row r3">
+      <div class="c ph"><span class="d">Días 30 a 15</span><h3>Darse a conocer</h3><p>Familias de Miami con hijos que juegan al fútbol.</p></div>
+      <div class="c ph"><span class="d">Días 15 a 5</span><h3>Recordar</h3><p>A quien vio los vídeos o la web y no se apuntó.</p></div>
+      <div class="c ph"><span class="d">Días 5 a 0</span><h3>Últimas plazas</h3><p>Plazas por edad, fecha y lugar.</p></div>
+    </div>
+    <dl class="ls">
+      <dt>A quién</dt><dd>Madres y padres de Miami y alrededores, en español e inglés; visitantes de la web, quien ve los vídeos y vuestros seguidores.</dd>
+      <dt>Qué contar</dt><dd>Guía de piezas para Carlos: el método de Barcelona, un entrenamiento real y qué pasa en el Open Day. En los dos idiomas.</dd>
+      <dt>Landing</dt><dd>Un solo objetivo, inscribirse: formulario corto y página de gracias con «añadir al calendario».</dd>
+      <dt>Hasta el día</dt><dd>Mensajes al inscribirse, 7 y 2 días antes, el día antes y esa mañana, para que vengan.</dd>
+    </dl>
+  </section>
+
+  <section class="row r2">
+    <div class="c"><h3>03 · Meta Business, listo</h3>
+      <ul><li>Acceso como partner, sin contraseñas.</li><li>Cuenta publicitaria, páginas y dominio listos.</li><li>Píxel y API de conversiones, probados.</li></ul></div>
+    <div class="c"><h3>04 · Durante la campaña</h3>
+      <ul><li><b>Cada día:</b> revisión y mejoras.</li><li><b>Cada semana:</b> informe para el club y Carlos.</li><li><b>Al final:</b> inscritos, asistentes y coste por jugador.</li></ul></div>
+  </section>
+
+  <section>
+    <div class="sh"><span>05</span><h2>Calendario</h2></div>
+    <div class="tl">
+      <div><b>Al aceptar</b>Llamada con el club y Carlos.</div>
+      <div><b>Inicio de diciembre</b>Estrategia cerrada.</div>
+      <div><b>Mediados de diciembre</b>Meta Business listo.</div>
+      <div class="k"><b>Hacia el 20 de diciembre</b>Lanzamiento.</div>
+      <div class="k"><b>20–22 de enero</b>Open Day e informe final.</div>
+    </div>
+  </section>
+
+  <section class="pr">
+    <div>
+      <div class="amt">640 € <small>+ IVA</small></div>
+      <p class="iva">774,40 € con IVA (21 %). Pago único por transferencia al aceptar la propuesta.</p>
+    </div>
+    <div class="cols">
+      <div><h3>Incluye</h3><ul><li>Estrategia con Carlos.</li><li>Montaje de Meta Business.</li><li>Gestión diaria e informes.</li></ul></div>
+      <div class="no"><h3>No incluye</h3><ul><li>Los 1.000 € de anuncios, que pagáis a Meta.</li><li>Vídeos, landing y mensajes (Carlos).</li></ul></div>
+    </div>
+  </section>
+
+  <p class="note"><b>Inversión en anuncios:</b> 1.000 € para 100 jugadores son unos 10 € por jugador, y coincide con Navidad. Tras la primera semana, con datos, os diremos si conviene subirla.</p>
+</main>
+
+<footer class="ft"><span>Si os encaja, respondedme y esa misma semana hacemos la llamada con Carlos.</span><span><b>Christian Silva</b></span></footer>
+</div></body>
+</html>

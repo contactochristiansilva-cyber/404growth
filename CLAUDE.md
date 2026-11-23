@@ -1112,11 +1112,11 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 
 ## EFAP Miami: propuesta de Meta Ads (23/11/2026)
 
-- Reparto (Chris, 23/11/2026): Carlos Fernández les lleva los creativos (grabación, edición) y la landing; 404 Growth hace la estrategia de Meta en modo consultoría con Carlos, entra como partner de Meta, monta Meta Business y gestiona la campaña (métricas, cambios, informes). Serán 2 Open Day hacia el 20 y el 21 o 22/1/2027 (viajan el 18).
+- Reparto (Chris, 23/11/2026): Carlos Fernández les lleva los creativos (grabación, edición) y la landing; Christian hace la estrategia de Meta en modo consultoría con Carlos, entra como partner de Meta, monta Meta Business y gestiona la campaña (métricas, cambios, informes). Serán 2 Open Day hacia el 20 y el 21 o 22/1/2027 (viajan el 18).
 - **Precio: 640 € + IVA** (774,40 € con IVA), pago único por transferencia al aceptar (esto último lo propuse yo; Chris puede cambiarlo).
-- Firma «Christian Silva», nunca «404 Growth» (Chris, 23/11/2026); el botón de email dice «Escribir por email».
-- Página: `404growth.com/efap-miami/` = `web117-404growth/efap-miami/` (`index.html` + `escudo.png`), `noindex`, con la marca de EFAP (negro, granate #5C0017, amarillo #FFD900, Bebas Neue + Inter) y el contador de visitas con el slug `efap-miami` (avisa a Chris al abrirla).
-- Se genera con `python3 tools/propuestas-clientes/efap-miami/build.py web <web117>` (o `inline <salida.html>`, un solo archivo sin contador). Texto en `tpl.html`; el escudo sale de `tools/brief/efap-escudo.png`.
+- **Formato: PDF de una carilla** (Chris: «quiero que sea formato pdf 1 carilla»), firmado por **Christian Silva** (nunca «404 Growth») y **sin enlaces a WhatsApp en ningún sitio**. Con la marca de EFAP: negro, granate #5C0017, amarillo #FFD900, Bebas Neue + Inter, su escudo. Cuerpo a 10 pt para que quepa.
+- Fuente: `tools/propuestas-clientes/efap-miami/pdf.html` (`{{ESCUDO}}` = `tools/brief/efap-escudo.png` en base64), impreso con Playwright `page.pdf` A4 sin márgenes. Salida en el Mac: `~/Downloads/Propuesta EFAP Miami · Christian Silva.pdf`.
+- Hubo antes una versión web (`tpl.html` + `build.py`, para `404growth.com/efap-miami/`). No se publica: se sacó de `web117-404growth` a `~/Downloads/_to_delete/efap-miami-web-23nov/` (copia en `404growth-subir/anterior/efap-miami-web-23nov/`).
 
 ## Open Fit: cartel de la nave (13/11/2026)
 
