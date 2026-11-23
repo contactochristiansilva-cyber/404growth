@@ -176,6 +176,7 @@ const EV = {
   sin: ["ord"], scr: [], exp: [], col: [], tab: [],
   vplay: [], vprog: [], vend: [], vpause: [],
   img: [], gal: [],
+  ag: [],
   form0: ["form"], form1: ["form"], copy: ["len"], print: [], share: ["ch"], dl: ["file"],
   resize: ["or"], fs: [], tick: [],
 };
@@ -208,7 +209,7 @@ async function events(req, env, origin) {
     .bind(b.k, x.i, x.y, x.ot, now, x.t, x.s, x.l, x.n, x.m));
   q.push(env.DB.prepare("UPDATE v SET evn = (SELECT COUNT(*) FROM e WHERE e.k = ?1), seen = ?2 WHERE k = ?1").bind(b.k, now));
   /* interaction after an entry «sin tocar»: the classification gets more sure (only upwards, and never over a manual one) */
-  if (list.some((x) => ["scr", "exp", "col", "tab", "vplay", "copy", "form0", "print", "sin"].includes(x.y)))
+  if (list.some((x) => ["scr", "exp", "col", "tab", "vplay", "copy", "form0", "print", "sin", "ag"].includes(x.y)))
     q.push(env.DB.prepare("UPDATE v SET tcc = MAX(COALESCE(tcc, 0), 90), tcw = CASE WHEN tcw LIKE '%sin tocar%' THEN 'ha interactuado con la página' ELSE tcw END WHERE k = ?1 AND tc = 'human_likely' AND tcm IS NULL").bind(b.k));
   await env.DB.batch(q);
   return json({ n: list.length }, origin);

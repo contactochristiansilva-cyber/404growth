@@ -495,7 +495,7 @@ window.addEventListener('load',fit);window.addEventListener('resize',fit);fit();
   var EP='https://404growth-visits.contactochristiansilva.workers.dev',key='',Q=[],seq=0,T0=Date.now(),act=0,last=0,it=0,maxs=0,ms={},SS={},cur=null,curT=0,seenS={},ord=0,idle=false,playing=0,errs=0,rerrs=0,sz=0,sentNav=false,iv;
   var rid=Math.random().toString(36).slice(2,8);
   function sec(){return Math.round((Date.now()-T0)/1000)}
-  function ev(y,o){o=o||{};o.y=y;o.i=rid+(seq++).toString(36);o.t=sec();o.ot=Date.now();Q.push(o);if(Q.length>200)Q.shift();if(Q.length>=20)flush()}
+  window.__c404ev=function(y,o){ev(y,o);flush()};function ev(y,o){o=o||{};o.y=y;o.i=rid+(seq++).toString(36);o.t=sec();o.ot=Date.now();Q.push(o);if(Q.length>200)Q.shift();if(Q.length>=20)flush()}
   function flush(beacon){if(!key||!Q.length)return;var b=JSON.stringify({k:key,ev:Q.splice(0,25)});
     try{if(beacon&&navigator.sendBeacon&&navigator.sendBeacon(EP+'/e',b)){}else fetch(EP+'/e',{method:'POST',body:b,keepalive:true}).catch(function(){})}catch(e){}if(Q.length)setTimeout(function(){flush(beacon)},300)}
   function txt(s,n){return String(s||'').replace(/\s+/g,' ').trim().slice(0,n||80)}

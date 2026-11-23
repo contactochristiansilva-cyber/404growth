@@ -106,6 +106,11 @@
     '<p class="ag-legal">Al confirmar aceptas la <a href="/legal" target="_blank" rel="noopener">política de privacidad</a>.</p></fieldset></form></div></div>' +
     '<p class="ag-alt">¿Prefieres escribir? <a href="https://wa.me/' + WA + '?text=' + encodeURIComponent('Hola Christian, he visto la propuesta de ' + (BIZ || 'mi tienda') + '. ') + '" target="_blank" rel="noopener">Háblame por WhatsApp</a></p>';
 
+  /* ---------- v82 (23/11/2026): cada paso de la agenda va al contador de la propuesta, para que el admin avise a Chris.
+     1 pulsa Reservar · 2 elige día · 3 elige hora · 4 pone su nombre · 5 pulsa Confirmar · 6 reservada · 7 le faltan datos · 8 hora ocupada · 9 falla.
+     Nunca va nada de lo que escribe: solo el paso y, como mucho, el día o la hora que elige. ---------- */
+  function T(n, l) { try { if (window.__c404ev) window.__c404ev('ag', { n: n, l: String(l || '').slice(0, 80) }); } catch (e) {} }
+
   /* ---------- los huecos: los mismos que /book ---------- */
   var SL = [], day = null, pick = null, loaded = false;
   var fD = new Intl.DateTimeFormat('es-ES', { timeZone: TZ, weekday: 'short', day: 'numeric', month: 'short' }), fT = new Intl.DateTimeFormat('es-ES', { timeZone: TZ, hour: '2-digit', minute: '2-digit' }),
@@ -124,14 +129,14 @@
     box.innerHTML = G.order.slice(0, 5).map(function (k) { var p = fD.formatToParts(new Date(G.g[k][0]));
       return '<button type="button" class="ag-day" role="option" aria-selected="false" data-k="' + k + '"><small>' + esc(part(p, 'weekday')) + '</small><b>' + esc(part(p, 'day')) + '</b><small>' + esc(part(p, 'month')) + '</small><i>' + G.g[k].length + ' libres</i></button>'; }).join('');
     [].forEach.call(box.children, function (b) { b.onclick = function () { choose(b.getAttribute('data-k')); }; }); $('ag-hrs').hidden = true; }
-  function choose(k) { day = k; var hr = $('ag-hrs'), first = hr.hidden, G = groups(), t = G.g[k] || []; hr.hidden = false;
+  function choose(k) { day = k; T(2, fD.format(new Date(k + 'T12:00:00Z')).replace('.', '')); var hr = $('ag-hrs'), first = hr.hidden, G = groups(), t = G.g[k] || []; hr.hidden = false;
     [].forEach.call($('ag-days').children, function (b) { b.setAttribute('aria-selected', b.getAttribute('data-k') === k); });
     $('ag-dl').textContent = 'Horas libres · ' + fD.format(new Date(t[0] || Date.now())).replace('.', '');
     $('ag-times').innerHTML = t.map(function (iso) { return '<button type="button" class="ag-time" role="option" aria-selected="false" data-t="' + iso + '">' + fT.format(new Date(iso)) + '</button>'; }).join('');
     [].forEach.call($('ag-times').children, function (b) { b.onclick = function () { time(b.getAttribute('data-t')); }; });
     if (first) setTimeout(function () { var r = hr.getBoundingClientRect(); if (r.bottom > innerHeight) scrollBy({ top: Math.min(r.bottom - innerHeight + 24, r.top - 80), behavior: 'smooth' }); }, 60); }
   function cap(t) { return t.charAt(0).toUpperCase() + t.slice(1); }
-  function time(iso) { pick = iso; $('ag-sel').innerHTML = '<b>' + esc(cap(fL.format(new Date(iso)))) + '</b>30 min · Google Meet · hora de España'; $('ag-sel').hidden = false;
+  function time(iso) { pick = iso; T(3, cap(fL.format(new Date(iso))));$('ag-sel').innerHTML = '<b>' + esc(cap(fL.format(new Date(iso)))) + '</b>30 min · Google Meet · hora de España'; $('ag-sel').hidden = false;
     $('ag-1').hidden = true; $('ag-2').hidden = false; $('ag-card').classList.add('s2'); q(1); top(); }
   /* sube lo justo para ver la pregunta: por debajo del menú fijo de la propuesta (en el móvil, la parte de las preguntas) */
   function top() { var nav = d.querySelector('.nav'), off = (nav && getComputedStyle(nav).position === 'fixed' ? nav.getBoundingClientRect().bottom : 0) + 14,
@@ -145,7 +150,7 @@
     if (n === 2) { var nm = ($('ag-name').value.trim().split(' ')[0] || ''); $('ag-q2').textContent = (nm ? 'Perfecto, ' + nm.charAt(0).toUpperCase() + nm.slice(1) + '. ' : 'Perfecto. ') + '¿Dónde te mando el enlace de la llamada?'; }
     var f = d.querySelector('.ag-q[data-q="' + n + '"] input'); if (f && innerWidth > 860) try { f.focus({ preventScroll: true }); } catch (e) {}
     if (n > 1) top(); }
-  function nx() { var n = $('ag-name'); if (n.value.trim().length < 2) { n.classList.add('bad'); return n.focus(); } q(2); }
+  function nx() { var n = $('ag-name'); if (n.value.trim().length < 2) { n.classList.add('bad'); return n.focus(); } T(4); q(2); }
   $('ag-nx').onclick = nx; $('ag-name').onkeydown = function (e) { if (e.key === 'Enter') { e.preventDefault(); nx(); } };
   $('ag-back').onclick = function () { if (Q > 1) q(Q - 1); else { $('ag-2').hidden = true; $('ag-1').hidden = false; $('ag-card').classList.remove('s2'); } };
   $('ag-2').addEventListener('input', function (e) { if (e.target.classList) e.target.classList.remove('bad'); if (!this.querySelector('.bad')) $('ag-err').hidden = true; });
@@ -154,24 +159,24 @@
     var ok = { name: v.name.length >= 2, email: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email), phone: /^\+?\d{9,15}$/.test(tel) }, all = true;
     Object.keys(ok).forEach(function (k) { f[k].classList.toggle('bad', !ok[k]); if (!ok[k]) all = false; });
     if (!ok.name) return q(1);
-    if (!all) { err.textContent = !ok.email && v.email ? 'Revisa el email.' : !ok.phone && v.phone ? 'Revisa el número de WhatsApp.' : 'Rellena el email y el WhatsApp, por favor.'; err.hidden = false; return; }
-    err.hidden = true; var go = $('ag-go'); go.disabled = true; go.firstChild.textContent = 'Reservando… ';
+    if (!all) { T(7, !ok.email && !ok.phone ? 'sin email ni WhatsApp' : !ok.email ? 'sin email válido' : 'sin WhatsApp válido'); err.textContent = !ok.email && v.email ? 'Revisa el email.' : !ok.phone && v.phone ? 'Revisa el número de WhatsApp.' : 'Rellena el email y el WhatsApp, por favor.'; err.hidden = false; return; }
+    err.hidden = true; T(5); var go = $('ag-go'); go.disabled = true; go.firstChild.textContent = 'Reservando… ';
     var body = { k: '', start: pick, name: v.name, email: v.email, phone: tel, biz: BIZ || 'Tienda de la propuesta ' + SLUG, bud: '', sec: SEC, n: SEC !== 'otro' ? SEC : 'tienda', p: SLUG,
       utm: { utm_source: 'propuesta', utm_medium: 'agenda', utm_campaign: SLUG, utm_content: 'agenda' }, tz: (Intl.DateTimeFormat().resolvedOptions().timeZone || TZ), mc: false, fbp: '', fbc: '', dry: INT ? 1 : 0 };
     var done = function (j) { go.disabled = false; go.firstChild.textContent = 'Confirmar llamada ';
-      if (j && j.ok) {
+      if (j && j.ok) { T(6, cap(fL.format(new Date(j.start || pick))));
         try { sessionStorage.setItem('c404bk', JSON.stringify({ c: j.id || '', name: v.name.split(' ')[0], email: v.email, start: j.start || pick, join: j.join || '', gcal: j.gcal || '', mailed: !!j.mailed, google: /meet\.google\.com/.test(j.join || ''), fresh: 1 })); } catch (x) {}
         go.disabled = true; go.firstChild.textContent = '¡Reservada! ';
         if (!PROD) { $('ag-2').innerHTML = '<div class="ag-ok"><b>¡Reservada! (prueba)</b><span>En la web real ahora pasaría a la página de gracias: /metodo?c=…</span></div>'; return; }
         setTimeout(function () { location.href = '/metodo' + (j.id ? '?c=' + encodeURIComponent(j.id) : ''); }, 350); return; }
-      if (j && j.error === 'taken') { SL = j.slots || SL; err.textContent = 'Esa hora se acaba de ocupar. Elige otra, por favor.'; err.hidden = false;
+      if (j && j.error === 'taken') { T(8, cap(fL.format(new Date(pick)))); SL = j.slots || SL; err.textContent = 'Esa hora se acaba de ocupar. Elige otra, por favor.'; err.hidden = false;
         setTimeout(function () { $('ag-2').hidden = true; $('ag-1').hidden = false; $('ag-card').classList.remove('s2'); drawDays(); }, 1400); return; }
-      err.innerHTML = 'No se ha podido reservar. <a href="https://wa.me/' + WA + '?text=' + encodeURIComponent('Hola Christian, he visto la propuesta de ' + (BIZ || 'mi tienda') + ' y quiero reservar la llamada para el ' + fL.format(new Date(pick))) + '" target="_blank" rel="noopener">Escríbeme por WhatsApp</a> y te la dejo hecha.'; err.hidden = false; };
+      T(9, j && j.error ? String(j.error) : 'sin respuesta'); err.innerHTML = 'No se ha podido reservar. <a href="https://wa.me/' + WA + '?text=' + encodeURIComponent('Hola Christian, he visto la propuesta de ' + (BIZ || 'mi tienda') + ' y quiero reservar la llamada para el ' + fL.format(new Date(pick))) + '" target="_blank" rel="noopener">Escríbeme por WhatsApp</a> y te la dejo hecha.'; err.hidden = false; };
     if (!PROD) { setTimeout(function () { done({ ok: true, id: 'Ldemo' }); }, 600); return; }
     fetch(API + 'book', { method: 'POST', body: JSON.stringify(body), headers: { 'content-type': 'application/json' } }).then(function (r) { return r.json(); }).then(done).catch(function () { done(null); }); };
 
   /* ---------- los botones de la propuesta bajan aquí; los huecos se cargan al acercarse ---------- */
-  d.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href="#agenda"]'); if (!a) return; e.preventDefault(); load();
+  d.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('a[href="#agenda"]'); if (!a) return; e.preventDefault(); load(); T(1, (a.textContent || '').replace(/[→↓]/g, '').trim());
     root.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
     var c = $('ag-card'); setTimeout(function () { c.classList.add('fl'); setTimeout(function () { c.classList.remove('fl'); }, 1400); }, 700);
     try { history.replaceState(null, '', '#agenda'); } catch (x) {} });

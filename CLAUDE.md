@@ -878,6 +878,37 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Interruptor en los avisos del CRM: «Si empieza a ver el vídeo de su propuesta o lo termina» (`ACFG.video`, encendido por defecto).
 - `tools/propuestas-partes/patch_v81.py <worker> <salida>`. Instalado en el Mac el 23/11/2026 (huella a49aaf52ca72fb3f; copia de antes en `anterior/worker-seed24-23nov-antes-aviso-video.js`, fuentes en `fuentes-v81/`). Falta `subir.command`.
 
+## Avisos de la agenda de las propuestas (admin v82, 23/11/2026)
+
+- Chris: «necesito notificaciones si le dan a reservar, si reservan, hasta dónde han llegado en el form». Antes, solo avisaba la reserva hecha («Llamada reservada · …», de `/l/book`). El botón «Reservar» (`#agenda`) no contaba como reunión para `clickKind`, y `agenda.js` no mandaba nada al contador.
+- **`agenda.js`** manda al contador el evento `ag` con el paso en `n`. En `l` va como mucho el botón, el día o la hora; nunca lo que escribe. Los pasos son:
+  - 1 pulsa Reservar;
+  - 2 día;
+  - 3 hora;
+  - 4 nombre (pasa al contacto);
+  - 5 pulsa Confirmar con los datos bien;
+  - 6 reservada;
+  - 7 le faltan el email o el WhatsApp;
+  - 8 la hora se acaba de ocupar;
+  - 9 falla la reserva.
+- **El contador de cada propuesta** expone `window.__c404ev(y, o)`, que mete el evento y lo envía al momento.
+  - `tools/agenda/patch_c404ev.py <carpeta o archivos>` lo añade antes de `function ev(y,o){`. Se puede pasar dos veces.
+  - El 23/11/2026 se aplicó a 747 `p-*.html` del Mac, entre ellas las 537 que llevan agenda. Copia en `anterior/propuestas-23nov-antes-c404ev.tgz`.
+  - Ya está en `prospeccion/l33/tpl/counter.html`, así que las propuestas nuevas lo llevan solas.
+  - El worker de visitas acepta `ag` (`EV`).
+- **Avisos del admin** (`alertsRun`, tipo `agenda`, interruptor «Si pulsa Reservar, avanza en la agenda, falla o se va a medias»):
+  - en cada pasada del cron, un aviso con el paso más avanzado de cada visita (del 1 al 4). No avisa si ya está confirmando o ha reservado: eso lo cubre «Llamada reservada»;
+  - aviso al momento de los fallos (7, 8 y 9);
+  - «Se fue sin reservar. Llegó hasta: …» cuando pasan 20 min desde su último paso, lleva 10 min sin moverse por la página y no ha reservado;
+  - un aviso de cada por visita (`dk` = `v<visita>:ag<n>` o `:agx`). En la ficha de la visita sale como «Agenda: elige hora …».
+- Fuentes en `tools/agenda/`:
+  - `patch_v82.py <admin v81> <salida> <visitas> <salida>`;
+  - `patch_agenda_v82.py`;
+  - `patch_c404ev.py`;
+  - prueba `t_v82.mjs`, 15 comprobaciones con `d1shim.mjs` y `w82mod.mjs`/`v82mod.mjs` (copias de los workers con `export`).
+- En el Mac: admin c8f15297f634a253, visitas 2dcb23e04fdc3e8c, `agenda.js` 4a65691258cb67aa. Copias de antes en `anterior/` (`*-23nov-antes-*`), fuentes en `fuentes-v82/`.
+- Falta `subir.command` (admin y contador) y `subir-web.command` (`agenda.js` y las propuestas).
+
 ## Miniatura del enlace de las propuestas en WhatsApp (18/11/2026)
 
 - Chris eligió la **opción C** de 3 («A · su tienda en el móvil», «B · etiqueta de envío», «C · foto y titular»). Es la foto de la portada de su tienda a todo el ancho, oscurecida a la izquierda, y encima:
