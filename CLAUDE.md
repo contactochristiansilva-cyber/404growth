@@ -1162,6 +1162,8 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Presupuestos desde el código: `Q_ADD` + `Q_ADD_KEY` en el worker del admin. Se añaden una sola vez al abrir Presupuestos, y nunca si ya hay uno con el mismo cliente. Así entró Intenso Fragancias (1.740 €).
 - Cambios a presupuestos que ya existen: `Q_SET` + `Q_SET_KEY` (por id o por nombre, una sola vez al abrir Presupuestos). El 13/11/2026 (`quotes_set_20261113`) Open Fit pasó a «Web (pago único, IVA incluido)», 2.050 €.
 
+- **Qué Locura (24/11/2026):** tras la llamada, la misma oferta que Kiss of Life: la tienda online con unos 30 básicos al abrir por **1.440 € IVA incluido** (pago único) y el plan semanal de novedades (subir lo nuevo, quitar lo agotado, lanzamientos, stories, lista de espera, email y retargeting) por **490 €/mes IVA incluido**, sin permanencia. PDF de una carilla con su marca (su logo de Instagram en `quelocura-logo-marco.png`, negro, blanco y la espiral gris): `prospeccion/propuestas-pdf/que-locura.html` (en el Mac, `404growth-subir/propuestas-pdf/`, con las fotos de su propuesta en `../../web117-404growth/` y el QR con qrcode-generator de cdnjs). Salida: `~/Downloads/Propuesta Qué Locura · 404 Growth.pdf`.
+
 ## Plantilla de factura de 404 Growth (admin v69, 12/11/2026)
 
 - Todas las facturas a clientes llevan el diseño de la 2026-151 de Kiss of Life: logo 404, SF Pro, gris verdoso y el recuadro de forma de pago. Espaciados, colores, los datos de Chris como emisor, la forma de pago y la nota del pie son siempre los mismos. Solo cambian el número, las fechas, el cliente, los conceptos y el concepto de la transferencia.
