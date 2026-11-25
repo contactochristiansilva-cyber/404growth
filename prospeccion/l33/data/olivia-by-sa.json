@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Olivia",
+ "ig": "olivia_by_sa",
+ "f": 1961,
+ "city": "Solares",
+ "cityfull": "Solares (Cantabria)",
+ "address": "Avda. Calvo Sotelo, 4-6",
+ "logo": {
+  "text": "Olivia"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Vestidos",
+   "p4"
+  ],
+  [
+   "Botas",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Abrigo de cuadros"
+  },
+  {
+   "id": "p2",
+   "name": "Cazadora marrón"
+  },
+  {
+   "id": "p3",
+   "name": "Falda de lentejuelas"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido de cuadros"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido burdeos"
+  },
+  {
+   "id": "p6",
+   "name": "Bota alta de ante"
+  }
+ ],
+ "theme": {}
+}

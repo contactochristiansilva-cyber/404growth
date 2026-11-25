@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Galerías Abreu",
+ "ig": "galeriasabreu",
+ "f": 2550,
+ "city": "Ayamonte",
+ "cityfull": "Ayamonte (Huelva)",
+ "address": "C/ Paseo de la Ribera, 4",
+ "logo": {
+  "text": "Galerías Abreu"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Bolsos",
+   "p2"
+  ],
+  [
+   "Sudaderas",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Plumífero negro"
+  },
+  {
+   "id": "p2",
+   "name": "Bolso shopper verde"
+  },
+  {
+   "id": "p3",
+   "name": "Bolso shopper ciruela"
+  },
+  {
+   "id": "p4",
+   "name": "Bandolera negra"
+  },
+  {
+   "id": "p5",
+   "name": "Forro polar chocolate"
+  },
+  {
+   "id": "p6",
+   "name": "Sudadera azul"
+  }
+ ],
+ "theme": {}
+}

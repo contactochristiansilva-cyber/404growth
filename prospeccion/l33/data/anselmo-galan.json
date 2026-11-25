@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Anselmo Galán",
+ "ig": "_anselmogalan_",
+ "f": 11944,
+ "city": "Lebrija",
+ "cityfull": "Lebrija (Sevilla)",
+ "address": "C/ Andrés Sánchez de Alba, 5",
+ "logo": {
+  "text": "Anselmo Galán"
+ },
+ "cats": [
+  [
+   "Conjuntos",
+   "p3"
+  ],
+  [
+   "Vestidos",
+   "p2"
+  ],
+  [
+   "Chaquetas",
+   "p1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta de jacquard"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido pata de gallo"
+  },
+  {
+   "id": "p3",
+   "name": "Conjunto teja"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto de satén"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta bordada"
+  },
+  {
+   "id": "p6",
+   "name": "Pantalón de cuadros"
+  }
+ ],
+ "theme": {}
+}

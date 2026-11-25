@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Hache Úbeda",
+ "ig": "hacheubeda",
+ "f": 2282,
+ "city": "Úbeda",
+ "cityfull": "Úbeda (Jaén)",
+ "address": "C/ Obispo Cobos, 20",
+ "logo": {
+  "text": "Hache Úbeda"
+ },
+ "cats": [
+  [
+   "Blusas",
+   "p1"
+  ],
+  [
+   "Faldas",
+   "p2"
+  ],
+  [
+   "Abrigos",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Blusa con lazada"
+  },
+  {
+   "id": "p2",
+   "name": "Falda plisada burdeos"
+  },
+  {
+   "id": "p3",
+   "name": "Abrigo camel"
+  },
+  {
+   "id": "p4",
+   "name": "Bomber de lunares"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta acolchada verde"
+  },
+  {
+   "id": "p6",
+   "name": "Plumífero teja"
+  }
+ ],
+ "theme": {}
+}

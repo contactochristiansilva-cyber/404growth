@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Bella89 Woman",
+ "ig": "bella89woman",
+ "f": 2690,
+ "city": "Arganda del Rey",
+ "cityfull": "Arganda del Rey (Madrid)",
+ "address": "Calle Santa Teresa, 6, local 1",
+ "logo": {
+  "text": "Bella89 Woman"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Monos",
+   "p3"
+  ],
+  [
+   "Botas",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido de encaje rojo"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido negro largo"
+  },
+  {
+   "id": "p3",
+   "name": "Mono negro"
+  },
+  {
+   "id": "p4",
+   "name": "Jersey rosa"
+  },
+  {
+   "id": "p5",
+   "name": "Botín cowboy marrón"
+  },
+  {
+   "id": "p6",
+   "name": "Bota cowboy vaquera"
+  }
+ ],
+ "theme": {}
+}

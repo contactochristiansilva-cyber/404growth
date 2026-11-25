@@ -507,18 +507,18 @@ h1,h2{letter-spacing:-.048em}
 #numeros .zn-cases{width:100%;max-width:820px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
 #numeros .zn-case{position:relative;aspect-ratio:1/1;border:0;padding:0;margin:0;border-radius:28px;overflow:hidden;cursor:pointer;background:#071A17;font:inherit;color:#fff;-webkit-tap-highlight-color:transparent;
  box-shadow:0 0 0 1px rgba(127,211,182,.14),0 2px 4px rgba(0,0,0,.35),0 24px 48px -16px rgba(0,0,0,.6),0 60px 110px -30px rgba(0,0,0,.65);transition:opacity .25s ease,box-shadow .25s ease}
-#numeros .zn-case img.zn-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;transition:opacity .3s ease}
-#numeros .zn-case:after{content:"";position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 50%,rgba(7,26,23,.35),rgba(7,26,23,.75))}
+#numeros .zn-case img.zn-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .3s ease}
+#numeros .zn-case:after{content:"";position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 50%,rgba(7,26,23,.12),rgba(7,26,23,.48))}
 #numeros .zn-in{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px}
-#numeros .zn-logo{display:block;width:auto}
+#numeros .zn-logo{display:block;width:auto;filter:drop-shadow(0 2px 14px rgba(0,0,0,.5))}
 #numeros .zn-logo.k{height:72px}#numeros .zn-logo.i{height:54px;margin-bottom:8px}
-#numeros .zn-what{font-size:14px;color:rgba(255,255,255,.8)}
+#numeros .zn-what{font-size:14px;color:rgba(255,255,255,.92);text-shadow:0 1px 8px rgba(0,0,0,.55)}
 #numeros .zn-more{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);z-index:1;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;border-radius:99px;padding:9px 16px;font-size:14px;font-weight:600;color:#fff;
  background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 8px 20px -8px rgba(0,0,0,.5)}
 #numeros .zn-more svg{width:16px;height:16px;transition:transform .3s ease}
-@media (hover:hover){#numeros .zn-case:hover img.zn-bg{opacity:.62}}
+@media (hover:hover){#numeros .zn-case:hover img.zn-bg{opacity:.95}}
 #numeros .zn-case[aria-expanded="true"]{box-shadow:0 0 0 2px var(--lime),0 2px 4px rgba(0,0,0,.35),0 24px 48px -16px rgba(0,0,0,.6)}
-#numeros .zn-case[aria-expanded="true"] img.zn-bg{opacity:.62}
+#numeros .zn-case[aria-expanded="true"] img.zn-bg{opacity:.95}
 #numeros .zn-case[aria-expanded="true"] .zn-more{background:var(--lime);color:#0B2B26;border-color:transparent}
 #numeros .zn-case[aria-expanded="true"] .zn-more svg{transform:rotate(180deg)}
 #numeros .zn-cases.on .zn-case[aria-expanded="false"]{opacity:.62}
@@ -537,7 +537,7 @@ h1,h2{letter-spacing:-.048em}
 #numeros ul.zn-b{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;max-width:560px}
 #numeros ul.zn-b li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:start;font-size:16px;line-height:1.5;color:rgba(255,255,255,.72);margin:0;padding:0}
 #numeros ul.zn-b li:before{display:none}
-#numeros ul.zn-b li b{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mint);padding-top:3px}
+#numeros ul.zn-b li b{align-self:start;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mint);padding-top:3px}
 #numeros .zn-k{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
 #numeros .zn-k>div{border-radius:18px;padding:14px 14px 12px;background:var(--card);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 12px 24px -12px rgba(0,0,0,.5);display:flex;flex-direction:column;gap:2px}
 #numeros .zn-k strong{font-size:24px;font-weight:700;letter-spacing:-.02em;color:#fff;font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -580,9 +580,9 @@ h1,h2{letter-spacing:-.048em}
 <article class="zn-st" data-s="kol" hidden>
 <div class="zn-shot"><div class="zn-ph"><img src="/casos/kol-movil.webp" alt="La tienda de Kiss of Life en el móvil" loading="lazy" decoding="async"></div></div>
 <div class="zn-tx"><span class="zn-who">Kiss of Life · moda</span>
-<h3 class="zn-h">Lo intentaron tres veces. <span>La cuarta, con lanzamientos.</span></h3>
+<h3 class="zn-h">Lo intentaron tres veces con otras agencias. <span>La cuarta vez vinieron a nosotros, con lanzamientos.</span></h3>
 <ul class="zn-b">
-<li><b>Antes</b><span>Lo que entraba en tienda se agotaba en días. Ya habían probado a vender online tres veces y no funcionó: nadie podía actualizar una web a diario.</span></li>
+<li><b>Antes</b><span>Lo que entraba en tienda se agotaba en días. Ya habían probado a vender online tres veces con otras agencias y no funcionó: nadie podía actualizar una web a diario.</span></li>
 <li><b>Qué hicimos</b><span>Una tienda a medida con lanzamientos cada martes y viernes a las 20:00, lista de espera para lo agotado y los básicos siempre a la venta. Ellas suben las prendas el lunes; el resto lo llevamos nosotros.</span></li>
 <li><b>Ahora</b><span>Dos lanzamientos por semana y envíos a toda España. El primer mes, 4.237 € facturados online.</span></li>
 </ul>
