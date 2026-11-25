@@ -22,9 +22,10 @@ img{display:block;max-width:100%}
 .nav{display:flex;align-items:center;justify-content:space-between;padding-block:18px}
 .logo{font-weight:900;font-stretch:condensed;font-size:28px;letter-spacing:-.01em;line-height:1;color:var(--ink)}
 .logo span{font-weight:600;font-stretch:normal;font-size:12px;letter-spacing:.16em;color:var(--mut);margin-left:10px;vertical-align:4px}
+.who{font-size:13px;color:var(--mut);text-align:right}
 .chip{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
 .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-block:28px 56px}
-h1{font-size:clamp(36px,5.6vw,64px);line-height:1.02;letter-spacing:-.035em;font-weight:800;color:var(--ink);margin-top:12px;text-wrap:balance}
+h1{font-size:clamp(34px,5vw,58px);line-height:1.03;letter-spacing:-.035em;font-weight:800;color:var(--ink);margin-top:0;text-wrap:balance}
 h1 em{font-style:normal;color:var(--red)}
 .lead{font-size:18px;margin-top:18px;max-width:520px}
 .pp{display:flex;align-items:baseline;gap:12px;margin-top:26px;flex-wrap:wrap}
@@ -74,6 +75,7 @@ section{padding-block:56px}
 .ft{padding-block:40px 60px;text-align:center;font-size:14px;color:var(--mut)}
 .end{text-align:center}
 .end .cta{justify-content:center}
+@media (max-width:560px){.who{display:none}}
 @media (max-width:860px){
  .hero{grid-template-columns:1fr;gap:28px;padding-block:12px 40px}
  .hi{aspect-ratio:4/5;max-height:72svh}
@@ -89,10 +91,9 @@ section{padding-block:56px}
 </style></head><body>
 <div class="band"></div>
 <div class="w">
- <nav class="nav"><div class="logo">UDALAITZ<span>× 404 GROWTH</span></div></nav>
+ <nav class="nav"><div class="logo">UDALAITZ<span>× 404 GROWTH</span></div><div class="who">Propuesta para Udalaitz · Vitoria-Gasteiz</div></nav>
  <header class="hero">
   <div>
-   <div class="chip">Propuesta para Udalaitz · Vitoria-Gasteiz</div>
    <h1>Vuestra marca, abierta a toda España. <em>Con vuestras primeras 30 prendas dentro.</em></h1>
    <p class="lead">Montamos vuestra tienda online desde cero: la marca, las fichas de cada prenda, los pagos y los envíos. Vosotros seguís diseñando y vendiendo en Postas; la tienda abre en 15 días.</p>
    <div class="pp"><div class="v">1.640 €</div><div class="iva">IVA incluido · pago único</div></div>
@@ -106,7 +107,6 @@ section{padding-block:56px}
 </div>
 
 <section id="prendas"><div class="w">
- <div class="k">Así se verían en la tienda</div>
  <h2 class="h2">Cada prenda con su ficha, <em>lista para comprar.</em></h2>
  <div class="gal">
   <figure><img src="/p-udalaitz--b--p1.webp" alt="" loading="lazy"><figcaption>Falda tafetán ciruela</figcaption></figure>
@@ -120,7 +120,6 @@ section{padding-block:56px}
 </div></section>
 
 <section id="incluye" style="padding-top:8px"><div class="w">
- <div class="k">Qué incluye la apertura</div>
  <h2 class="h2">Todo lo necesario para abrir y vender.</h2>
  <div class="inc">
   <div class="it"><div class="n">1</div><div><h3>Tienda Shopify con vuestra marca</h3><p>Logo, negro y rojo, pensada para el móvil y en vuestro dominio.</p></div></div>
@@ -135,7 +134,6 @@ section{padding-block:56px}
 </div></section>
 
 <section class="dark" id="plazos"><div class="w">
- <div class="k">El plan</div>
  <h2 class="h2">Abierta en 15 días.</h2>
  <div class="tl">
   <div class="st"><div class="d">Día 0</div><h3>Llamada de arranque</h3><p>Nos contáis la marca y nos pasáis las 30 prendas del lanzamiento.</p></div>
