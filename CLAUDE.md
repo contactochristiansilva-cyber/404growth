@@ -1337,3 +1337,10 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Miniaturas de WhatsApp: `wa_og45.py src ~/mnt/Downloads/web117-404growth og-wa47` escribe rutas `../../Downloads/web117…` que no existen desde `og-wa47` (salieron en negro). Pasar la carpeta web con la ruta relativa buena o corregir a `../../web117-404growth/` antes de sacar las fotos.
 - Publicadas en el Mac (`web117-404growth`, con `p/<slug>/index.html` y `--wa.jpg`). Revisadas con Playwright a 390 y 1440 px: las 35 sin scroll lateral, sin errores y con «Los números».
 - CRM: `SEED9_KEY = "seed_20261125b"` / `SEED9` (novena lista de `seedOnce`), con `slug`, `pageUrl`, `lotDay` 2026-11-25 y `order` 2001–2035 (`scrapeo-25nov/mkrows47.py`, `patch_s47.py`; en el Mac, `fuentes-s47/`). 12 con `waOk: false`. Admin del Mac con la huella a72d03bf2dcd3d54 (copia en `anterior/worker-seed25-25nov-antes-seed25b.js`). Cuando se metió, el lote del 25/11 ya estaba enviado (30 fuera, 8 en «Caliente»), así que con `lotCap` 35 el Lote de hoy enseña justo estas 35.
+
+## Udalaitz: presupuesto de 1.640 € (25/11/2026)
+
+- Udalaitz (Postas 5, Vitoria-Gasteiz, @udalaitzshop, marca vasca de fabricación propia) salió del lote 46. Chris les manda la apertura de la tienda online con unas 30 prendas al empezar por **1.640 €** (pago único, puesto como IVA incluido, como Qué Locura), sin plan mensual.
+- Dos formatos, con su marca (UDALAITZ en negro muy grueso, rojo #D3261C y beige) y las fotos de su propuesta del lote 46:
+  - **PDF de una carilla:** `tools/propuestas-clientes/udalaitz/pdf.html` (en el Mac, `404growth-subir/propuestas-pdf/udalaitz.html`), impreso con el Playwright del Mac. Salida: `~/Downloads/Propuesta Udalaitz · 404 Growth.pdf`.
+  - **Landing:** `404growth.com/udalaitz/` = `web117-404growth/udalaitz/index.html` (`noindex`), hecha con `python3 tools/propuestas-clientes/udalaitz/build.py <salida>` (`landing.html` + el contador con el slug `udalaitz-presupuesto`, que avisa al abrirla). Botones: WhatsApp a Christian («queremos empezar») y su tienda de ejemplo `/p/udalaitz/`. Falta `subir-web.command`.

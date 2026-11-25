@@ -1,0 +1,125 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<title>Propuesta · Udalaitz · 404 Growth</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+/* Propuesta de una carilla para Udalaitz (25/11/2026). Se imprime en el Mac (SF Pro) desde 404growth-subir/propuestas-pdf/,
+   con las fotos de su propuesta en ../../web117-404growth/. Marca: negro, rojo y beige, como su Instagram. */
+@page{size:A4;margin:0}
+:root{--ink:#111;--txt:#3A3734;--mut:#6A635C;--red:#D3261C;--beige:#EFE6DB;--line:#E4DCD2;--soft:#F6F1EB;
+--f:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:210mm;height:297mm;background:#fff}
+body{font-family:var(--f);color:var(--txt);-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:8.6pt;line-height:1.4;-webkit-font-smoothing:antialiased}
+b{font-weight:600;color:var(--ink)}
+ul{list-style:none}
+.pg{position:relative;width:210mm;height:297mm;overflow:hidden;display:flex;flex-direction:column}
+.band{position:absolute;left:0;top:0;width:100%;height:3mm;background:var(--red)}
+.hd{padding:11mm 13mm 0}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.logo{font-family:"SF Pro Display",var(--f);font-weight:900;font-stretch:condensed;font-size:27pt;line-height:.9;letter-spacing:-.01em;color:var(--ink)}
+.logo small{display:block;font-size:6.8pt;font-weight:600;letter-spacing:.16em;color:var(--mut);margin-top:1.6mm;font-stretch:normal}
+.meta{text-align:right;font-size:7.8pt;line-height:1.5;color:var(--mut);padding-top:.6mm}
+.meta b{font-size:8.4pt}
+h1{font-size:23pt;line-height:1.06;letter-spacing:-.03em;font-weight:700;color:var(--ink);margin-top:6mm;max-width:180mm}
+h1 em{font-style:normal;color:var(--red)}
+.sub{margin-top:3mm;font-size:9.6pt;line-height:1.45;max-width:172mm}
+.ph{margin:5mm 13mm 0;display:grid;grid-template-columns:repeat(6,1fr);gap:2mm}
+.ph img{width:100%;aspect-ratio:5/6;object-fit:cover;border-radius:2mm;display:block;background:var(--soft)}
+.cap{margin:1.8mm 13mm 0;font-size:7pt;color:var(--mut)}
+.main{margin:4.6mm 13mm 0;border-radius:3mm;background:var(--ink);color:#E8E4DF;display:grid;grid-template-columns:58mm 1fr;overflow:hidden}
+.main .l{padding:5.4mm 5.4mm 5mm;border-right:.25mm solid #2E2C2A;display:flex;flex-direction:column}
+.k{font-size:7pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A39C94}
+h2{font-size:13.5pt;line-height:1.15;letter-spacing:-.02em;font-weight:700;color:#fff;margin-top:1.6mm}
+.v{font-size:30pt;font-weight:800;letter-spacing:-.04em;line-height:1;color:#fff;margin-top:5mm;font-variant-numeric:tabular-nums}
+.iva{font-size:8pt;font-weight:600;color:#CFC9C2;margin-top:1.6mm}
+.l .note{margin-top:auto;padding-top:4mm;font-size:7.6pt;color:#A39C94;line-height:1.45}
+.l .note b{color:#fff}
+.main .r{padding:5mm 5.4mm 4.6mm}
+.main .r ul{display:grid;grid-template-columns:1fr 1fr;column-gap:5mm;row-gap:2.1mm;margin-top:2mm}
+.main li{position:relative;padding-left:3.6mm;font-size:8.1pt;line-height:1.38}
+.main li b{color:#fff}
+.main li:before{content:"";position:absolute;left:.2mm;top:1.5mm;width:1.4mm;height:1.4mm;border-radius:50%;background:var(--red)}
+.tl{margin:4.6mm 13mm 0;display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.st{background:var(--beige);border-radius:2.6mm;padding:3.4mm 3.8mm 3.6mm}
+.st .d{font-size:7pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.st h3{font-size:10pt;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-top:.8mm}
+.st p{font-size:7.8pt;margin-top:.8mm;line-height:1.4}
+.std{margin:4.6mm 13mm 0;border-top:.25mm solid var(--line);padding-top:3.4mm;display:grid;grid-template-columns:auto 1fr;column-gap:6mm;align-items:start}
+.std h4{font-size:7pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);padding-top:.4mm;width:28mm}
+.std ul{display:grid;grid-template-columns:1fr 1fr;column-gap:6mm;row-gap:1.3mm}
+.std li{display:flex;gap:1.8mm;align-items:flex-start}
+.std li svg{width:3.1mm;height:3.1mm;flex:none;margin-top:.2mm}
+.std .ap{grid-column:2;margin-top:2.6mm;font-size:7.6pt;color:var(--mut)}
+.ft{margin:auto 13mm 9mm;padding-top:3.4mm;border-top:.25mm solid var(--line);display:flex;align-items:center;gap:4.5mm}
+#qr{width:15mm;height:15mm;flex:none}
+#qr svg{width:100%;height:100%;display:block}
+.ft .t{flex:1;font-size:7.8pt;line-height:1.5}
+.ft .t b{font-size:8.6pt}
+.ft .r{text-align:right;font-size:7.8pt;line-height:1.5}
+.ft .r b{font-size:8.6pt}
+</style></head><body><div class="pg">
+<div class="band"></div>
+<header class="hd">
+ <div class="top">
+  <div class="logo">UDALAITZ<small>× 404 GROWTH</small></div>
+  <div class="meta"><b>Propuesta para Udalaitz</b><br>Postas 5, Vitoria-Gasteiz<br>25 de noviembre de 2026</div>
+ </div>
+ <h1>Vuestra marca, abierta a toda España.<br><em>Con vuestras primeras 30 prendas dentro.</em></h1>
+ <p class="sub">Montamos vuestra tienda online desde cero: la marca, las fichas de cada prenda, los pagos y los envíos. Vosotros seguís diseñando y vendiendo en Postas; la tienda abre en 15 días y vende sola, también de noche.</p>
+</header>
+<div class="ph">
+ <img src="../../web117-404growth/p-udalaitz--b--p1.webp" alt="">
+ <img src="../../web117-404growth/p-udalaitz--b--p2.webp" alt="">
+ <img src="../../web117-404growth/p-udalaitz--b--p3.webp" alt="">
+ <img src="../../web117-404growth/p-udalaitz--b--p4.webp" alt="">
+ <img src="../../web117-404growth/p-udalaitz--b--p5.webp" alt="">
+ <img src="../../web117-404growth/p-udalaitz--b--p6.webp" alt="">
+</div>
+<p class="cap">Fotos de muestra de vuestra propuesta online, hechas a partir de vuestras prendas.</p>
+<section class="main">
+ <div class="l">
+  <div class="k">Apertura de la tienda</div>
+  <h2>Todo lo necesario para abrir y vender</h2>
+  <div class="v">1.640 €</div>
+  <div class="iva">IVA incluido · pago único</div>
+  <p class="note"><b>Abierta en 15 días</b> desde la llamada de arranque. Sin cuotas nuestras después.</p>
+ </div>
+ <div class="r">
+  <div class="k">Qué incluye</div>
+  <ul>
+   <li><b>Tienda Shopify con vuestra marca:</b> logo, negro y rojo, pensada para el móvil y en vuestro dominio.</li>
+   <li><b>Unas 30 prendas dentro al abrir,</b> con fotos, descripción, tejido, tallas, colores, precio y stock.</li>
+   <li><b>Colecciones por temporada,</b> como en vuestro Instagram, y la historia de vuestra marca vasca de fabricación propia.</li>
+   <li><b>Pagos</b> con tarjeta, Apple Pay y Google Pay (Bizum o PayPal si los queréis), <b>envíos a toda España</b> y recogida en Postas.</li>
+   <li><b>Stock y pedidos conectados:</b> lo vendido se descuenta solo y lo lleváis desde la app de Shopify en el móvil.</li>
+   <li><b>Lista de espera</b> de lo agotado y correos automáticos: bienvenida y recordatorio de la compra sin terminar.</li>
+   <li><b>Políticas legales,</b> Instagram y Facebook Shopping y píxel de Meta, listos desde el primer pedido.</li>
+   <li><b>Os enseñamos a subir prendas</b> vosotros: 9 guías paso a paso y un chat para dudas.</li>
+  </ul>
+ </div>
+</section>
+<div class="tl">
+ <div class="st"><div class="d">Día 0</div><h3>Llamada de arranque</h3><p>Nos contáis la marca y nos pasáis las 30 prendas del lanzamiento.</p></div>
+ <div class="st"><div class="d">Días 1 a 14</div><h3>Montamos la tienda</h3><p>Fotos, fichas, colecciones, pagos y envíos. Lo vais viendo en vuestro portal.</p></div>
+ <div class="st"><div class="d">Día 15</div><h3>Abierta a toda España</h3><p>Lista para el primer pedido, con todo probado de principio a fin.</p></div>
+</div>
+<div class="std">
+ <h4>Y además</h4>
+ <ul>
+  <li><svg viewBox="0 0 12 12"><path d="M2.5 6.3l2.3 2.3 4.7-5" fill="none" stroke="#D3261C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Vuestro portal: avance, contrato y facturas</span></li>
+  <li><svg viewBox="0 0 12 12"><path d="M2.5 6.3l2.3 2.3 4.7-5" fill="none" stroke="#D3261C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Todo a vuestro nombre: tienda, dominio y pagos</span></li>
+  <li><svg viewBox="0 0 12 12"><path d="M2.5 6.3l2.3 2.3 4.7-5" fill="none" stroke="#D3261C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Habláis conmigo, Christian, no con un bot</span></li>
+  <li><svg viewBox="0 0 12 12"><path d="M2.5 6.3l2.3 2.3 4.7-5" fill="none" stroke="#D3261C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Precio cerrado, sin sorpresas</span></li>
+ </ul>
+ <p class="ap">Aparte y a vuestro nombre: los envíos (según transportista) y los anuncios. Os detallamos cualquier coste antes de empezar.</p>
+</div>
+<footer class="ft">
+ <div id="qr"></div>
+ <div class="t"><b>Mirad cómo quedaría vuestra tienda</b><br>404growth.com/p/udalaitz</div>
+ <div class="r"><b>Christian · fundador de 404 Growth</b><br>WhatsApp 610 594 450 · hola@404growth.com</div>
+</footer>
+</div>
+<script>
+try{var q=qrcode(0,'M');q.addData('https://404growth.com/p/udalaitz/');q.make();document.getElementById('qr').innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true})}catch(e){}
+</script>
+</body></html>
