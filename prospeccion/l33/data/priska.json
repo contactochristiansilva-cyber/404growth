@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Priska",
+ "ig": "priska_caldas",
+ "f": 7156,
+ "city": "Caldas de Reis",
+ "cityfull": "Caldas de Reis (Pontevedra)",
+ "address": "",
+ "logo": {
+  "text": "Priska"
+ },
+ "cats": [
+  [
+   "Zapatos",
+   "p1"
+  ],
+  [
+   "Abrigos",
+   "p3"
+  ],
+  [
+   "Bolsos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Bailarina de hebilla"
+  },
+  {
+   "id": "p2",
+   "name": "Deportiva de ante"
+  },
+  {
+   "id": "p3",
+   "name": "Abrigo largo"
+  },
+  {
+   "id": "p4",
+   "name": "Botín de tachuelas"
+  },
+  {
+   "id": "p5",
+   "name": "Bolso de borrego"
+  },
+  {
+   "id": "p6",
+   "name": "Chaleco de perrito"
+  }
+ ],
+ "theme": {}
+}

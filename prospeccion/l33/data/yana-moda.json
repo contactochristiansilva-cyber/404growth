@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Yana Moda",
+ "ig": "yana.modaa",
+ "f": 2935,
+ "city": "Andújar",
+ "cityfull": "Andújar (Jaén)",
+ "address": "",
+ "logo": {
+  "text": "Yana Moda"
+ },
+ "cats": [
+  [
+   "Pantalones",
+   "p1"
+  ],
+  [
+   "Blazers",
+   "p2"
+  ],
+  [
+   "Calzado",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Pantalón de cuadros"
+  },
+  {
+   "id": "p2",
+   "name": "Blazer de cuadros"
+  },
+  {
+   "id": "p3",
+   "name": "Rebeca de rayas"
+  },
+  {
+   "id": "p4",
+   "name": "Blusa de flores"
+  },
+  {
+   "id": "p5",
+   "name": "Zapatilla de pelo"
+  },
+  {
+   "id": "p6",
+   "name": "Chaleco bordado"
+  }
+ ],
+ "theme": {}
+}

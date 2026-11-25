@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Digna's Closet",
+ "ig": "dignascloset",
+ "f": 8878,
+ "city": "Los Palacios y Villafranca",
+ "cityfull": "Los Palacios y Villafranca (Sevilla)",
+ "address": "DOCTOR MOREDA JIMENEZ, 19",
+ "logo": {
+  "text": "Digna's Closet"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Abrigos",
+   "p5"
+  ],
+  [
+   "Punto",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido rojo"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido largo burdeos"
+  },
+  {
+   "id": "p3",
+   "name": "Chaqueta bordada"
+  },
+  {
+   "id": "p4",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p5",
+   "name": "Abrigo burdeos"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido de flores"
+  }
+ ],
+ "theme": {}
+}

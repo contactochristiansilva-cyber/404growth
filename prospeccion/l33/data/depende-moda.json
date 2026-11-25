@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Depende Modas",
+ "ig": "dependemoda",
+ "f": 2842,
+ "city": "Fuengirola",
+ "cityfull": "Fuengirola (Málaga)",
+ "address": "Avd. Estacion 5 fuengirola y Avd. Constitucion 8 Arroyo de la Miel",
+ "logo": {
+  "text": "Depende Modas"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p2"
+  ],
+  [
+   "Faldas",
+   "p3"
+  ],
+  [
+   "Chalecos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Blusa asimétrica"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido de punto"
+  },
+  {
+   "id": "p3",
+   "name": "Falda evasé"
+  },
+  {
+   "id": "p4",
+   "name": "Falda efecto piel"
+  },
+  {
+   "id": "p5",
+   "name": "Chaleco militar"
+  },
+  {
+   "id": "p6",
+   "name": "Pantalón de cuadros"
+  }
+ ],
+ "theme": {}
+}

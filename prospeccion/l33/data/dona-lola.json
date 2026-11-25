@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Doña Lola",
+ "ig": "dona_lola_boutique",
+ "f": 6546,
+ "city": "Lucena",
+ "cityfull": "Lucena (Córdoba)",
+ "address": "",
+ "logo": {
+  "text": "Doña Lola"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p2"
+  ],
+  [
+   "Blusas",
+   "p3"
+  ],
+  [
+   "Pelo",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Blazer de terciopelo"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta animal print"
+  },
+  {
+   "id": "p3",
+   "name": "Blusa de volantes"
+  },
+  {
+   "id": "p4",
+   "name": "Camisa de flores"
+  },
+  {
+   "id": "p5",
+   "name": "Chaleco de pelo"
+  },
+  {
+   "id": "p6",
+   "name": "Chaqueta de cuadros"
+  }
+ ],
+ "theme": {}
+}

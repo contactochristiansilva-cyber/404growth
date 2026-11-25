@@ -1,0 +1,53 @@
+{
+ "niche": "joya",
+ "name": "Joyería Marina",
+ "ig": "joyeriamarina.albox",
+ "f": 2086,
+ "city": "Albox",
+ "cityfull": "Albox (Almería)",
+ "address": "",
+ "logo": {
+  "text": "Joyería Marina"
+ },
+ "cats": [
+  [
+   "Collares",
+   "p1"
+  ],
+  [
+   "Relojes",
+   "p2"
+  ],
+  [
+   "Pendientes",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Collar de diamante"
+  },
+  {
+   "id": "p2",
+   "name": "Reloj de malla"
+  },
+  {
+   "id": "p3",
+   "name": "Pulsera de charms"
+  },
+  {
+   "id": "p4",
+   "name": "Pendientes verdes"
+  },
+  {
+   "id": "p5",
+   "name": "Colgante de aros"
+  },
+  {
+   "id": "p6",
+   "name": "Collar de perlas"
+  }
+ ],
+ "theme": {}
+}

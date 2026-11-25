@@ -1,0 +1,53 @@
+{
+ "niche": "calzado",
+ "name": "Zapatería Isabel",
+ "ig": "zapateriaisabel",
+ "f": 3304,
+ "city": "Las Cabezas de San Juan",
+ "cityfull": "Las Cabezas de San Juan (Sevilla)",
+ "address": "Maestro Juan Marín de Vargas, 2",
+ "logo": {
+  "text": "Zapatería Isabel"
+ },
+ "cats": [
+  [
+   "Botines",
+   "p4"
+  ],
+  [
+   "Deportivas",
+   "p2"
+  ],
+  [
+   "Sandalias",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Zapato de hebillas"
+  },
+  {
+   "id": "p2",
+   "name": "Deportiva blanca"
+  },
+  {
+   "id": "p3",
+   "name": "Deportiva retro"
+  },
+  {
+   "id": "p4",
+   "name": "Botín chelsea"
+  },
+  {
+   "id": "p5",
+   "name": "Sandalia de hebillas"
+  },
+  {
+   "id": "p6",
+   "name": "Cuña de esparto"
+  }
+ ],
+ "theme": {}
+}

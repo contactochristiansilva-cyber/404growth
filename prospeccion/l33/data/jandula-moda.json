@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Jándula Moda",
+ "ig": "jandulamodautrera",
+ "f": 24099,
+ "city": "Utrera",
+ "cityfull": "Utrera (Sevilla)",
+ "address": "",
+ "logo": {
+  "text": "Jándula Moda"
+ },
+ "cats": [
+  [
+   "Fiesta",
+   "p4"
+  ],
+  [
+   "Abrigos",
+   "p2"
+  ],
+  [
+   "Trajes",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Gabardina negra"
+  },
+  {
+   "id": "p2",
+   "name": "Abrigo pata de gallo"
+  },
+  {
+   "id": "p3",
+   "name": "Traje de terciopelo"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido de flores"
+  },
+  {
+   "id": "p5",
+   "name": "Trench camel"
+  },
+  {
+   "id": "p6",
+   "name": "Cinturón de flecos"
+  }
+ ],
+ "theme": {}
+}

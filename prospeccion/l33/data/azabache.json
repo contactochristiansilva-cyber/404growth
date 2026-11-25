@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Azabache",
+ "ig": "azabache.chiclana",
+ "f": 6377,
+ "city": "Chiclana de la Frontera",
+ "cityfull": "Chiclana de la Frontera (Cádiz)",
+ "address": "Calle Nuestra Señora de los Remedios , 7",
+ "logo": {
+  "text": "Azabache"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Invitada",
+   "p5"
+  ],
+  [
+   "Tocados",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido satinado"
+  },
+  {
+   "id": "p2",
+   "name": "Conjunto estampado"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido rojo"
+  },
+  {
+   "id": "p4",
+   "name": "Jersey de lunares"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido de invitada"
+  },
+  {
+   "id": "p6",
+   "name": "Tocado de plumas"
+  }
+ ],
+ "theme": {}
+}

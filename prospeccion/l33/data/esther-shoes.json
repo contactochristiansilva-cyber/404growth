@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Esther Shoes",
+ "ig": "esthershoesycomplementos",
+ "f": 8313,
+ "city": "Mérida",
+ "cityfull": "Mérida (Badajoz)",
+ "address": "",
+ "logo": {
+  "text": "Esther Shoes"
+ },
+ "cats": [
+  [
+   "Blusas",
+   "p1"
+  ],
+  [
+   "Botines",
+   "p2"
+  ],
+  [
+   "Vestidos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Blusa satinada"
+  },
+  {
+   "id": "p2",
+   "name": "Botín slouchy"
+  },
+  {
+   "id": "p3",
+   "name": "Botín con tachuelas"
+  },
+  {
+   "id": "p4",
+   "name": "Mono burdeos"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido de leopardo"
+  },
+  {
+   "id": "p6",
+   "name": "Blusa de lunares"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Meliflua",
+ "ig": "melifluamodaycomplementos",
+ "f": 5073,
+ "city": "Montoro",
+ "cityfull": "Montoro (Córdoba)",
+ "address": "Calle El Santo N43",
+ "logo": {
+  "text": "Meliflua"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Vestidos",
+   "p2"
+  ],
+  [
+   "Punto",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Abrigo burdeos"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido de leopardo"
+  },
+  {
+   "id": "p3",
+   "name": "Cazadora roja"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido de terciopelo"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido de punto"
+  },
+  {
+   "id": "p6",
+   "name": "Jersey de rayas"
+  }
+ ],
+ "theme": {}
+}

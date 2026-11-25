@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "London Shoes",
+ "ig": "londonshoeselche",
+ "f": 4564,
+ "city": "Elche",
+ "cityfull": "Elche (Alicante)",
+ "address": "Avenida de novelda 45",
+ "logo": {
+  "text": "London Shoes"
+ },
+ "cats": [
+  [
+   "Punto",
+   "p1"
+  ],
+  [
+   "Botas",
+   "p3"
+  ],
+  [
+   "Chaquetas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Polo de rayas"
+  },
+  {
+   "id": "p2",
+   "name": "Jersey y falda plisada"
+  },
+  {
+   "id": "p3",
+   "name": "Bota alta"
+  },
+  {
+   "id": "p4",
+   "name": "Bomber satinada"
+  },
+  {
+   "id": "p5",
+   "name": "Top lencero"
+  },
+  {
+   "id": "p6",
+   "name": "Look de rayas"
+  }
+ ],
+ "theme": {}
+}

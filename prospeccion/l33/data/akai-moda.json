@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Akai Moda",
+ "ig": "akaimodaoviedo",
+ "f": 2259,
+ "city": "Oviedo",
+ "cityfull": "Oviedo (Asturias)",
+ "address": "",
+ "logo": {
+  "text": "Akai Moda"
+ },
+ "cats": [
+  [
+   "Punto",
+   "p1"
+  ],
+  [
+   "Chaquetas",
+   "p2"
+  ],
+  [
+   "Blusas",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Jersey de rombos"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de cuadros"
+  },
+  {
+   "id": "p3",
+   "name": "Pulsera leopardo"
+  },
+  {
+   "id": "p4",
+   "name": "Jersey de cuello alto"
+  },
+  {
+   "id": "p5",
+   "name": "Blusa vichy"
+  },
+  {
+   "id": "p6",
+   "name": "Top de leopardo"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Chiochic Modas",
+ "ig": "chiochic.modas",
+ "f": 4042,
+ "city": "Málaga",
+ "cityfull": "Málaga",
+ "address": "",
+ "logo": {
+  "text": "Chiochic Modas"
+ },
+ "cats": [
+  [
+   "Trajes",
+   "p1"
+  ],
+  [
+   "Jerséis",
+   "p2"
+  ],
+  [
+   "Vaqueros",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Traje de brillos"
+  },
+  {
+   "id": "p2",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p3",
+   "name": "Vaquero recto"
+  },
+  {
+   "id": "p4",
+   "name": "Blazer marrón"
+  },
+  {
+   "id": "p5",
+   "name": "Falda de polipiel"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso bandolera"
+  }
+ ],
+ "theme": {}
+}

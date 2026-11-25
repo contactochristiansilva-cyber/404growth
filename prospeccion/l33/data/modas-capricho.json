@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Modas Capricho",
+ "ig": "modascapricho13",
+ "f": 4926,
+ "city": "Villaverde del Río",
+ "cityfull": "Villaverde del Río (Sevilla)",
+ "address": "",
+ "logo": {
+  "text": "Modas Capricho"
+ },
+ "cats": [
+  [
+   "Conjuntos",
+   "p1"
+  ],
+  [
+   "Blusas",
+   "p2"
+  ],
+  [
+   "Vestidos",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto de punto"
+  },
+  {
+   "id": "p2",
+   "name": "Blusa de volantes"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido de gasa"
+  },
+  {
+   "id": "p4",
+   "name": "Look de rayas"
+  },
+  {
+   "id": "p5",
+   "name": "Sobrecamisa de polipiel"
+  },
+  {
+   "id": "p6",
+   "name": "Camiseta de rayas"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "María Chic",
+ "ig": "bymariachic",
+ "f": 14335,
+ "city": "Almerimar",
+ "cityfull": "Almerimar (Almería)",
+ "address": "",
+ "logo": {
+  "text": "María Chic"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Chaquetas",
+   "p3"
+  ],
+  [
+   "Conjuntos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Abrigo de cuadros"
+  },
+  {
+   "id": "p2",
+   "name": "Abrigo militar"
+  },
+  {
+   "id": "p3",
+   "name": "Chaqueta pata de gallo"
+  },
+  {
+   "id": "p4",
+   "name": "Blazer gris"
+  },
+  {
+   "id": "p5",
+   "name": "Conjunto burdeos"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido plisado"
+  }
+ ],
+ "theme": {}
+}

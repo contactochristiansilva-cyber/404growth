@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "LIBE Moda",
+ "ig": "libemoda_denia",
+ "f": 1596,
+ "city": "Dénia",
+ "cityfull": "Dénia (Alicante)",
+ "address": "Calle Colon, 43",
+ "logo": {
+  "text": "LIBE Moda"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Trajes",
+   "p2"
+  ],
+  [
+   "Abrigos",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido vaquero"
+  },
+  {
+   "id": "p2",
+   "name": "Traje verde menta"
+  },
+  {
+   "id": "p3",
+   "name": "Gabardina negra"
+  },
+  {
+   "id": "p4",
+   "name": "Pantalón de rayas"
+  },
+  {
+   "id": "p5",
+   "name": "Falda militar"
+  },
+  {
+   "id": "p6",
+   "name": "Sandalia de cadena"
+  }
+ ],
+ "theme": {}
+}

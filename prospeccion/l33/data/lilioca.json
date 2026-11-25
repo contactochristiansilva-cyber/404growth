@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Lilioca",
+ "ig": "lilioca923",
+ "f": 2525,
+ "city": "Adamuz",
+ "cityfull": "Adamuz (Córdoba)",
+ "address": "",
+ "logo": {
+  "text": "Lilioca"
+ },
+ "cats": [
+  [
+   "Conjuntos",
+   "p1"
+  ],
+  [
+   "Jerséis",
+   "p2"
+  ],
+  [
+   "Camisas",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto de punto"
+  },
+  {
+   "id": "p2",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p3",
+   "name": "Camisa vaquera"
+  },
+  {
+   "id": "p4",
+   "name": "Blusa estampada"
+  },
+  {
+   "id": "p5",
+   "name": "Chaleco de punto"
+  },
+  {
+   "id": "p6",
+   "name": "Rebeca burdeos"
+  }
+ ],
+ "theme": {}
+}
