@@ -1,0 +1,50 @@
+{
+ "slug": "divina-shop",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "divina-shop-05.jpg",
+    "divina-shop-04.jpg",
+    "divina-shop-07.jpg",
+    "divina-shop-08.jpg",
+    "divina-shop-10.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia divina-shop-05.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a burgundy double-breasted short coat with a belt and a high collar from the reference, walking at a sunny white street in Bollullos de la Mitación, Sevilla, Spain, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia divina-shop-04.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a burgundy sequin keyhole top with black wide trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia divina-shop-07.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a taupe wrap top with brown wide trousers with a gold belt from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia divina-shop-08.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a black blouse with sheer balloon sleeves and black wide trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia divina-shop-10.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a grey corset top with brown culotte trousers and black ankle boots from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "divina-shop-18.jpg",
+    "divina-shop-20.jpg",
+    "divina-shop-12.jpg",
+    "divina-shop-03.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia divina-shop-18.jpg, aplica la REGLA A): E-commerce product photo of fluffy faux fur slippers in cream, black, pink and blue (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 2 «p6» (formato 3:4, referencia divina-shop-20.jpg, aplica la REGLA B): E-commerce product photo for a fashion boutique: a model wearing navy and pink striped cotton pyjamas with buttons from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia divina-shop-12.jpg, aplica la REGLA B): Lifestyle photo: a woman in a brown blazer, beige trousers and a fluffy cream bag in a bright shop, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia divina-shop-03.jpg, aplica la REGLA B): Lifestyle photo: a woman in a tartan wrap, a cream top, black culottes and black boots in a bright shop, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA C): Wide interior photo: the inside of a bright small fashion and shoe shop with white walls, rails of blouses and trousers and shelves of boots, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a burgundy d",
+  "p1": "roduct photo for a fashion boutique: a model wearing a burgu",
+  "p2": "ce product photo for a fashion boutique: a model wearing a t",
+  "p3": "roduct photo for a fashion boutique: a model wearing a black",
+  "p4": "ce product photo for a fashion boutique: a model wearing a g",
+  "p5": "E-commerce product photo of fluffy faux fur slippers in crea",
+  "p6": "ce product photo for a fashion boutique: a model wearing nav",
+  "l1": "Lifestyle photo: a woman in a brown blazer, beige trousers a",
+  "l2": "Lifestyle photo: a woman in a tartan wrap, a cream top, blac",
+  "b": "Wide interior photo: the inside of a bright small fashion an"
+ }
+}

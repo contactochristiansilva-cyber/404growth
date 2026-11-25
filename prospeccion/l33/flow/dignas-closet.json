@@ -1,0 +1,50 @@
+{
+ "slug": "dignas-closet",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "dignas-closet-09.jpg",
+    "dignas-closet-01.jpg",
+    "dignas-closet-04.jpg",
+    "dignas-closet-05.jpg",
+    "dignas-closet-11.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia dignas-closet-09.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a brown satin bomber jacket and matching satin wide trousers set with a cream clutch from the reference, walking at a sunny white street in Los Palacios y Villafranca, Sevilla, Spain, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia dignas-closet-01.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a red draped mini dress with long sleeves and a sequin waist from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia dignas-closet-04.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a burgundy long-sleeved fitted maxi dress from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia dignas-closet-05.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a dark grey jacket with gold embroidered frog closures and dark trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia dignas-closet-11.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown and rust striped knit jumper from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "dignas-closet-16.jpg",
+    "dignas-closet-18.jpg",
+    "dignas-closet-13.jpg",
+    "dignas-closet-10.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia dignas-closet-16.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a long burgundy double-breasted wool coat from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia dignas-closet-18.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a navy floral print smocked midi dress with long sleeves from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia dignas-closet-13.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a woman in a cream bomber jacket with a red silk scarf and dark wide trousers from the reference, candid and relaxed in a sunny street of Los Palacios y Villafranca, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia dignas-closet-10.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing sequin shirts and trousers in burgundy and silver on hangers from the reference, candid and relaxed in a sunny street of Los Palacios y Villafranca, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a minimalist boutique with white walls, pampas grass in vases, a white chair and rails of knitwear and dresses, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a brown sati",
+  "p1": "ce product photo for a fashion boutique: a model wearing a r",
+  "p2": "roduct photo for a fashion boutique: a model wearing a burgu",
+  "p3": "ce product photo for a fashion boutique: a model wearing a d",
+  "p4": "roduct photo for a fashion boutique: a model wearing a brown",
+  "p5": "ce product photo for a fashion boutique: a model wearing a l",
+  "p6": "ce product photo for a fashion boutique: a model wearing a n",
+  "l1": "Lifestyle fashion photo: a model wearing a woman in a cream ",
+  "l2": "Lifestyle fashion photo: a model wearing sequin shirts and t",
+  "b": "Wide interior photo: the inside of a minimalist boutique wit"
+ }
+}

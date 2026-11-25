@@ -1,0 +1,50 @@
+{
+ "slug": "otero",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "otero-06.jpg",
+    "otero-12.jpg",
+    "otero-19.jpg",
+    "otero-15.jpg",
+    "otero-16.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia otero-06.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a purple wool jumper with an orange quilted vest and a grey knit beanie from the reference, walking at a street in the centre of A Coruña, Spain, with glass balconies, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia otero-12.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a mustard hooded parka over a checked shirt and dark jeans on a mannequin from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia otero-19.jpg, aplica la REGLA B): E-commerce product photo of a dark brown quilted leather biker jacket (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 4 «p3» (formato 3:4, referencia otero-15.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a green knit jumper with red embroidered flowers on the sleeves on a mannequin from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia otero-16.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a stack of chunky knit jumpers in cream, burgundy and mustard from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "otero-01.jpg",
+    "otero-14.jpg",
+    "otero-08.jpg",
+    "otero-10.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia otero-01.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a long navy quilted hooded puffer coat from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia otero-14.jpg, aplica la REGLA B): Product photo of a dark grey wool flat cap from the reference, three-quarter front view, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp embroidery and fabric detail. IMAGEN 3 «l1» (formato 3:4, referencia otero-08.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a man in a checked overshirt and khaki trousers in a multibrand shop from the reference, candid and relaxed in a sunny street of A Coruña, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia otero-10.jpg, aplica la REGLA A): Lifestyle photo: a woman in a black wool cap and a multicoloured checked jacket in a shop, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA C): Wide interior photo: the inside of a classic men and women multibrand shop with dark wooden floors, shelves of folded jumpers, rails of jackets and caps, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a purple woo",
+  "p1": "ce product photo for a fashion boutique: a model wearing a m",
+  "p2": "E-commerce product photo of a dark brown quilted leather bik",
+  "p3": "ce product photo for a fashion boutique: a model wearing a g",
+  "p4": "ce product photo for a fashion boutique: a model wearing a s",
+  "p5": "ce product photo for a fashion boutique: a model wearing a l",
+  "p6": "Product photo of a dark grey wool flat cap from the referenc",
+  "l1": "Lifestyle fashion photo: a model wearing a man in a checked ",
+  "l2": "Lifestyle photo: a woman in a black wool cap and a multicolo",
+  "b": "Wide interior photo: the inside of a classic men and women m"
+ }
+}

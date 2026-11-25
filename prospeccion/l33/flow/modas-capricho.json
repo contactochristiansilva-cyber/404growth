@@ -1,0 +1,50 @@
+{
+ "slug": "modas-capricho",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "modas-capricho-06.jpg",
+    "modas-capricho-02.jpg",
+    "modas-capricho-05.jpg",
+    "modas-capricho-07.jpg",
+    "modas-capricho-11.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia modas-capricho-06.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a burgundy satin blouse with big balloon sleeves and burgundy wide trousers, with a small gold clutch from the reference, walking at a sunny white street in Villaverde del Río, Sevilla, Spain, with orange trees, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia modas-capricho-02.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a cream knit jumper with a wide brown belt and a cream knit midi skirt, with a brown suede bag from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia modas-capricho-05.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown satin blouse with ruffles and brown wide trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia modas-capricho-07.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a burgundy sheer ruched midi dress with long sleeves from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia modas-capricho-11.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown and cream striped jumper with brown wide trousers and a woven brown bag (still life on a mannequin) from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "modas-capricho-13.jpg",
+    "modas-capricho-21.jpg",
+    "modas-capricho-09.jpg",
+    "modas-capricho-15.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia modas-capricho-13.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a black faux leather shirt jacket with a leopard print midi skirt from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia modas-capricho-21.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a pink and brown striped oversized long-sleeved t-shirt on a hanger from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia modas-capricho-09.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a woman in a blue and brown striped jumper and brown wide trousers in a changing room with grey curtains from the reference, candid and relaxed in a sunny street of Villaverde del Río, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia modas-capricho-15.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a rail of brown and beige knitwear with a round cream tag in a boutique from the reference, candid and relaxed in a sunny street of Villaverde del Río, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a small fashion boutique with grey curtained changing rooms, rails of blouses and knitwear, dried flowers and a light floor, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a burgundy s",
+  "p1": "ce product photo for a fashion boutique: a model wearing a c",
+  "p2": "ct photo for a fashion boutique: a model wearing a brown sat",
+  "p3": "roduct photo for a fashion boutique: a model wearing a burgu",
+  "p4": "ct photo for a fashion boutique: a model wearing a brown and",
+  "p5": "roduct photo for a fashion boutique: a model wearing a black",
+  "p6": "ce product photo for a fashion boutique: a model wearing a p",
+  "l1": "Lifestyle fashion photo: a model wearing a woman in a blue a",
+  "l2": "Lifestyle fashion photo: a model wearing a rail of brown and",
+  "b": "Wide interior photo: the inside of a small fashion boutique "
+ }
+}

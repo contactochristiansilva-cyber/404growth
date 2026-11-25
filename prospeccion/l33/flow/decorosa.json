@@ -1,0 +1,50 @@
+{
+ "slug": "decorosa",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "decorosa-12.jpg",
+    "decorosa-07.jpg",
+    "decorosa-15.jpg",
+    "decorosa-16.jpg",
+    "decorosa-18.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a elegant Spanish woman in her fifties). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia decorosa-12.jpg, aplica la REGLA A): An elegant Spanish woman in her fifties wearing a colourful orange and blue printed shirt jacket with a white top from the reference, walking at a street in the old town of Zamora, Spain, with stone buildings, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia decorosa-07.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a green, burgundy and blue fair isle knit jumper with jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia decorosa-15.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a pink and green rose print midi dress on a mannequin from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia decorosa-16.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing chunky bead necklaces in mustard, pink, blue and red on display busts from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia decorosa-18.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a white t-shirt with red, blue and white printed wide trousers on a mannequin from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "decorosa-19.jpg",
+    "decorosa-21.jpg",
+    "decorosa-03.jpg",
+    "decorosa-20.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a elegant Spanish woman in her fifties). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia decorosa-19.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a long tropical print maxi dress and a red fitted maxi dress on mannequins from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia decorosa-21.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a yellow balloon skirt and jacket with wide jeans on mannequins from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia decorosa-03.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a woman in a yellow faux fur jacket and black jeans sitting on a motorbike from the reference, candid and relaxed in a sunny street of Zamora, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia decorosa-20.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a shop window with mannequins in a denim jacket, a red ruffled top and a red striped skirt from the reference, candid and relaxed in a sunny street of Zamora, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a stylish boutique with mannequins in the window, rails of jackets and dresses, an oval mirror and a patterned rug, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "An elegant Spanish woman in her fifties wearing a colourful ",
+  "p1": "ce product photo for a fashion boutique: a model wearing a g",
+  "p2": "ce product photo for a fashion boutique: a model wearing a p",
+  "p3": "ce product photo for a fashion boutique: a model wearing chu",
+  "p4": "ce product photo for a fashion boutique: a model wearing a w",
+  "p5": "ce product photo for a fashion boutique: a model wearing a l",
+  "p6": "ce product photo for a fashion boutique: a model wearing a y",
+  "l1": "Lifestyle fashion photo: a model wearing a woman in a yellow",
+  "l2": "Lifestyle fashion photo: a model wearing a shop window with ",
+  "b": "Wide interior photo: the inside of a stylish boutique with m"
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "slug": "akai-moda",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "akai-moda-16.jpg",
+    "akai-moda-01.jpg",
+    "akai-moda-07.jpg",
+    "akai-moda-09.jpg",
+    "akai-moda-13.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia akai-moda-16.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a brown tweed bomber jacket with matching trousers from the reference, walking at a street in the old town of Oviedo, Spain, with stone arcades, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia akai-moda-01.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown and pink argyle knit jumper from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia akai-moda-07.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a dark green checked wool jacket with a brown corduroy collar from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia akai-moda-09.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a leopard print bangle with gold details (still life) from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia akai-moda-13.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a camel ribbed knit high neck jumper over a striped shirt from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "akai-moda-19.jpg",
+    "akai-moda-20.jpg",
+    "akai-moda-17.jpg",
+    "akai-moda-21.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia akai-moda-19.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a black and white gingham blouse with a pussy bow from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia akai-moda-20.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a leopard print sheer mesh top with blue jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia akai-moda-17.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a woman in a long black coat and black dress walking down stone steps in an old town from the reference, candid and relaxed in a sunny street of Oviedo, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia akai-moda-21.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing patterned knit cardigans in cream, pink and leopard hanging on a wooden rail outdoors from the reference, candid and relaxed in a sunny street of Oviedo, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a multibrand fashion shop in Oviedo with a decorated branch with lights, rails of coats and puffer jackets and shelves of knitwear, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a brown twee",
+  "p1": "roduct photo for a fashion boutique: a model wearing a brown",
+  "p2": "ce product photo for a fashion boutique: a model wearing a d",
+  "p3": " for a fashion boutique: a model wearing a leopard print ban",
+  "p4": "ce product photo for a fashion boutique: a model wearing a c",
+  "p5": "roduct photo for a fashion boutique: a model wearing a black",
+  "p6": " for a fashion boutique: a model wearing a leopard print she",
+  "l1": "Lifestyle fashion photo: a model wearing a woman in a long b",
+  "l2": "Lifestyle fashion photo: a model wearing patterned knit card",
+  "b": "Wide interior photo: the inside of a multibrand fashion shop"
+ }
+}

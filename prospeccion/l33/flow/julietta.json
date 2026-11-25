@@ -1,0 +1,50 @@
+{
+ "slug": "julietta",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "julietta-09.jpg",
+    "julietta-03.jpg",
+    "julietta-05.jpg",
+    "julietta-06.jpg",
+    "julietta-11.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia julietta-09.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a long grey wool coat with a fuchsia velvet lapel on a hanger from the reference, walking at the Plaça d'Espanya in Alcoi, Alicante, Spain, with old buildings, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia julietta-03.jpg, aplica la REGLA B): E-commerce product photo of a pink knit jumper with a ruffled hem (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 3 «p2» (formato 3:4, referencia julietta-05.jpg, aplica la REGLA B): E-commerce product photo of a beige knit vest over a white shirt with brown trousers (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 4 «p3» (formato 3:4, referencia julietta-06.jpg, aplica la REGLA B): E-commerce product photo of a white and blue striped knit jumper with flared jeans (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 5 «p4» (formato 3:4, referencia julietta-11.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a burgundy satin slip midi dress with orange lace trim from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "julietta-13.jpg",
+    "julietta-14.jpg",
+    "julietta-19.jpg",
+    "julietta-21.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia julietta-13.jpg, aplica la REGLA A): E-commerce product photo of a purple and brown plaid blouse with a ruffled collar (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 2 «p6» (formato 3:4, referencia julietta-14.jpg, aplica la REGLA B): E-commerce product photo for a fashion boutique: a model wearing a long velvet dress in burgundy and dark red from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia julietta-19.jpg, aplica la REGLA A): Lifestyle photo: a navy gingham blouse, a navy jumper, a polo knit, jeans and a scarf laid out (flat lay), like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia julietta-21.jpg, aplica la REGLA B): Lifestyle photo: a pink and burgundy striped cosmetic bag held in a hand, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA C): Wide interior photo: the inside of a calm boutique with light wooden walls, rails of knitwear, dried flowers and a wooden counter, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a long grey ",
+  "p1": "E-commerce product photo of a pink knit jumper with a ruffle",
+  "p2": "E-commerce product photo of a beige knit vest over a white s",
+  "p3": "E-commerce product photo of a white and blue striped knit ju",
+  "p4": "ce product photo for a fashion boutique: a model wearing a b",
+  "p5": "E-commerce product photo of a purple and brown plaid blouse ",
+  "p6": "ce product photo for a fashion boutique: a model wearing a l",
+  "l1": "Lifestyle photo: a navy gingham blouse, a navy jumper, a pol",
+  "l2": "Lifestyle photo: a pink and burgundy striped cosmetic bag he",
+  "b": "Wide interior photo: the inside of a calm boutique with ligh"
+ }
+}
