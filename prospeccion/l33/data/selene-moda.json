@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Selene Moda",
+ "ig": "selene.moda",
+ "f": 14446,
+ "city": "Gernika",
+ "cityfull": "Gernika (Bizkaia)",
+ "address": "Andra Mari 1",
+ "logo": {
+  "text": "Selene Moda"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Chalecos",
+   "p4"
+  ],
+  [
+   "Abrigos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta crema"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de pelo"
+  },
+  {
+   "id": "p3",
+   "name": "Chaqueta de pana"
+  },
+  {
+   "id": "p4",
+   "name": "Chaleco acolchado"
+  },
+  {
+   "id": "p5",
+   "name": "Bermuda de cuadros"
+  },
+  {
+   "id": "p6",
+   "name": "Plumífero azul"
+  }
+ ],
+ "theme": {}
+}

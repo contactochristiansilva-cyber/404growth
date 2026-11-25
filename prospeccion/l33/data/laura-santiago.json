@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Modas Laura Santiago",
+ "ig": "modaslaurasantiago",
+ "f": 30292,
+ "city": "Andalucía",
+ "cityfull": "Andalucía",
+ "address": "",
+ "logo": {
+  "text": "Modas Laura Santiago"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Trajes",
+   "p3"
+  ],
+  [
+   "Complementos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta de polipiel"
+  },
+  {
+   "id": "p2",
+   "name": "Abrigo de pata de gallo"
+  },
+  {
+   "id": "p3",
+   "name": "Traje morado"
+  },
+  {
+   "id": "p4",
+   "name": "Camisa satinada"
+  },
+  {
+   "id": "p5",
+   "name": "Pañuelo de flecos"
+  },
+  {
+   "id": "p6",
+   "name": "Abriguito de pelo"
+  }
+ ],
+ "theme": {}
+}

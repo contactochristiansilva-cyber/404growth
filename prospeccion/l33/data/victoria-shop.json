@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Victoria Shop",
+ "ig": "victoria_shopmoda",
+ "f": 12215,
+ "city": "Cantillana",
+ "cityfull": "Cantillana (Sevilla)",
+ "address": "Avda. Nuestra Señora de la Soledad 87",
+ "logo": {
+  "text": "Victoria Shop"
+ },
+ "cats": [
+  [
+   "Conjuntos",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p3"
+  ],
+  [
+   "Botas",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto de polipiel"
+  },
+  {
+   "id": "p2",
+   "name": "Sobrecamisa de cuadros"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p4",
+   "name": "Bota alta de coco"
+  },
+  {
+   "id": "p5",
+   "name": "Botín arrugado"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido largo de flores"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Presintown",
+ "ig": "presintown_lorca",
+ "f": 7102,
+ "city": "Lorca",
+ "cityfull": "Lorca (Murcia)",
+ "address": "Calle Corredera 27",
+ "logo": {
+  "text": "Presintown"
+ },
+ "cats": [
+  [
+   "Americanas",
+   "p1"
+  ],
+  [
+   "Camisas",
+   "p2"
+  ],
+  [
+   "Punto",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Americana azul"
+  },
+  {
+   "id": "p2",
+   "name": "Camisa Oxford"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de ochos"
+  },
+  {
+   "id": "p4",
+   "name": "Chino beige"
+  },
+  {
+   "id": "p5",
+   "name": "Mocasín de ante"
+  },
+  {
+   "id": "p6",
+   "name": "Chaleco acolchado"
+  }
+ ],
+ "theme": {}
+}

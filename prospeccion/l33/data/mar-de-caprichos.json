@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Mar de Caprichos",
+ "ig": "mardecapriichos",
+ "f": 11179,
+ "city": "La Unión",
+ "cityfull": "La Unión (Murcia)",
+ "address": "Calle Mayor 85",
+ "logo": {
+  "text": "Mar de Caprichos"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p4"
+  ],
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaleco vaquero"
+  },
+  {
+   "id": "p2",
+   "name": "Blusa de volantes"
+  },
+  {
+   "id": "p3",
+   "name": "Chaqueta militar"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido de volante"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido burdeos"
+  },
+  {
+   "id": "p6",
+   "name": "Jersey de rayas"
+  }
+ ],
+ "theme": {}
+}

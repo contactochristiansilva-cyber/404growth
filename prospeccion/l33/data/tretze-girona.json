@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Tretze Girona",
+ "ig": "tretze_girona_",
+ "f": 16219,
+ "city": "Girona",
+ "cityfull": "Girona",
+ "address": "Santa Clara 24 · Argenteria 31",
+ "logo": {
+  "text": "Tretze Girona"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p2"
+  ],
+  [
+   "Calzado",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Blazer marrón"
+  },
+  {
+   "id": "p2",
+   "name": "Jersey mostaza"
+  },
+  {
+   "id": "p3",
+   "name": "Mocasín forrado"
+  },
+  {
+   "id": "p4",
+   "name": "Rebeca crema"
+  },
+  {
+   "id": "p5",
+   "name": "Abrigo mostaza"
+  },
+  {
+   "id": "p6",
+   "name": "Top de terciopelo"
+  }
+ ],
+ "theme": {}
+}

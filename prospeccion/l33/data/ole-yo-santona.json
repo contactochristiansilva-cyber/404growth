@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Olé Yo",
+ "ig": "oleyosantona",
+ "f": 3539,
+ "city": "Santoña",
+ "cityfull": "Santoña (Cantabria)",
+ "address": "Calle Santander 2",
+ "logo": {
+  "text": "Olé Yo"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p2"
+  ],
+  [
+   "Punto",
+   "p4"
+  ],
+  [
+   "Complementos",
+   "p1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Bufanda burdeos"
+  },
+  {
+   "id": "p2",
+   "name": "Chaquetón acolchado"
+  },
+  {
+   "id": "p3",
+   "name": "Rebeca mostaza"
+  },
+  {
+   "id": "p4",
+   "name": "Jersey de rombos"
+  },
+  {
+   "id": "p5",
+   "name": "Jersey nórdico"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso burdeos"
+  }
+ ],
+ "theme": {}
+}

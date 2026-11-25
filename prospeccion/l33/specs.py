@@ -1009,3 +1009,4 @@ exec(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'specs44.p
 exec(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'specs45.py'), encoding='utf-8').read())
 exec(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'specs46.py'), encoding='utf-8').read())
 exec(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'specs47.py'), encoding='utf-8').read())
+exec(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'specs48.py'), encoding='utf-8').read())

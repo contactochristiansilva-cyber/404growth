@@ -1,0 +1,53 @@
+{
+ "niche": "joya",
+ "name": "Caruncho Kodina",
+ "ig": "carunchoykodina",
+ "f": 29167,
+ "city": "Pontevedra",
+ "cityfull": "Pontevedra",
+ "address": "C/ Michelena",
+ "logo": {
+  "text": "Caruncho Kodina"
+ },
+ "cats": [
+  [
+   "Anillos",
+   "p1"
+  ],
+  [
+   "Pendientes",
+   "p2"
+  ],
+  [
+   "Pulseras",
+   "p3"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Anillo de zafiros"
+  },
+  {
+   "id": "p2",
+   "name": "Pendientes de topacio"
+  },
+  {
+   "id": "p3",
+   "name": "Pulsera de nudos"
+  },
+  {
+   "id": "p4",
+   "name": "Sortija de brillantes"
+  },
+  {
+   "id": "p5",
+   "name": "Anillo de turquesa"
+  },
+  {
+   "id": "p6",
+   "name": "Brazalete grabado"
+  }
+ ],
+ "theme": {}
+}

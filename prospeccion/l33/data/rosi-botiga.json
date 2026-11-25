@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Rosi Botiga",
+ "ig": "rosi_botiga",
+ "f": 4034,
+ "city": "Girona",
+ "cityfull": "Girona",
+ "address": "C/ Nou 10, Girona · C/ Santa Anna 3, l'Estartit",
+ "logo": {
+  "text": "Rosi Botiga"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p2"
+  ],
+  [
+   "Vestidos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Abrigo gris largo"
+  },
+  {
+   "id": "p2",
+   "name": "Jersey lima"
+  },
+  {
+   "id": "p3",
+   "name": "Kimono estampado"
+  },
+  {
+   "id": "p4",
+   "name": "Abrigo crema"
+  },
+  {
+   "id": "p5",
+   "name": "Abrigo marrón"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido camisero"
+  }
+ ],
+ "theme": {}
+}

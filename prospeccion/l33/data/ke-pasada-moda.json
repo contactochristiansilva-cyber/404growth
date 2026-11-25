@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Ke Pasada Moda",
+ "ig": "ke_pasada_moda",
+ "f": 31547,
+ "city": "Palma",
+ "cityfull": "Palma (Baleares)",
+ "address": "C/ Cardenal Rosell 33 (Coll d'en Rabassa) · C/ Joan Crespí 21 (Palma)",
+ "logo": {
+  "text": "Ke Pasada Moda"
+ },
+ "cats": [
+  [
+   "Conjuntos",
+   "p1"
+  ],
+  [
+   "Chaquetas",
+   "p3"
+  ],
+  [
+   "Vestidos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto negro"
+  },
+  {
+   "id": "p2",
+   "name": "Conjunto crema"
+  },
+  {
+   "id": "p3",
+   "name": "Conjunto de polipiel"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido de cuadros"
+  },
+  {
+   "id": "p5",
+   "name": "Chándal marrón"
+  },
+  {
+   "id": "p6",
+   "name": "Top de encaje"
+  }
+ ],
+ "theme": {}
+}

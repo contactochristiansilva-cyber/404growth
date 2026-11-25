@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "María Palmero",
+ "ig": "mariapalmerozgz",
+ "f": 10363,
+ "city": "Zaragoza",
+ "cityfull": "Zaragoza",
+ "address": "Calle Hernán Cortés 7",
+ "logo": {
+  "text": "María Palmero"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Punto",
+   "p2"
+  ],
+  [
+   "Trajes",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Sobrecamisa de cuadros"
+  },
+  {
+   "id": "p2",
+   "name": "Jersey de rayas"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey morado"
+  },
+  {
+   "id": "p4",
+   "name": "Traje de raya diplomática"
+  },
+  {
+   "id": "p5",
+   "name": "Jersey con alamares"
+  },
+  {
+   "id": "p6",
+   "name": "Conjunto de cuadros"
+  }
+ ],
+ "theme": {}
+}

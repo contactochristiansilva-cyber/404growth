@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Naif Cuir",
+ "ig": "naifcuir",
+ "f": 14331,
+ "city": "Alto Tajo",
+ "cityfull": "Alto Tajo (Guadalajara)",
+ "address": "",
+ "logo": {
+  "text": "Naif Cuir"
+ },
+ "cats": [
+  [
+   "Bolsos",
+   "p1"
+  ],
+  [
+   "Monederos",
+   "p2"
+  ],
+  [
+   "Bandoleras",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Bolso media luna"
+  },
+  {
+   "id": "p2",
+   "name": "Monedero de colores"
+  },
+  {
+   "id": "p3",
+   "name": "Bolso plateado"
+  },
+  {
+   "id": "p4",
+   "name": "Bandolera de rayas"
+  },
+  {
+   "id": "p5",
+   "name": "Bolso de leopardo"
+  },
+  {
+   "id": "p6",
+   "name": "Bolso con borla"
+  }
+ ],
+ "theme": {}
+}

@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Mandarina",
+ "ig": "mandarina.palencia",
+ "f": 15334,
+ "city": "Palencia",
+ "cityfull": "Palencia",
+ "address": "Calle Don Sancho 2",
+ "logo": {
+  "text": "Mandarina"
+ },
+ "cats": [
+  [
+   "Conjuntos",
+   "p1"
+  ],
+  [
+   "Abrigos",
+   "p3"
+  ],
+  [
+   "Blusas",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto verde"
+  },
+  {
+   "id": "p2",
+   "name": "Conjunto beige"
+  },
+  {
+   "id": "p3",
+   "name": "Abrigo de ante"
+  },
+  {
+   "id": "p4",
+   "name": "Rebeca de zigzag"
+  },
+  {
+   "id": "p5",
+   "name": "Blusa de cebra"
+  },
+  {
+   "id": "p6",
+   "name": "Blusa roja"
+  }
+ ],
+ "theme": {}
+}

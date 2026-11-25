@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Fran Gámez",
+ "ig": "fran_gamez_",
+ "f": 12629,
+ "city": "Écija",
+ "cityfull": "Écija (Sevilla)",
+ "address": "Avda. Doctor Fleming 41",
+ "logo": {
+  "text": "Fran Gámez"
+ },
+ "cats": [
+  [
+   "Lunares",
+   "p1"
+  ],
+  [
+   "Lisos",
+   "p3"
+  ],
+  [
+   "Bordados",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Traje rojo y rosa"
+  },
+  {
+   "id": "p2",
+   "name": "Traje rojo"
+  },
+  {
+   "id": "p3",
+   "name": "Traje blanco"
+  },
+  {
+   "id": "p4",
+   "name": "Traje rojo y lila"
+  },
+  {
+   "id": "p5",
+   "name": "Traje bordado"
+  },
+  {
+   "id": "p6",
+   "name": "Traje azul marino"
+  }
+ ],
+ "theme": {}
+}

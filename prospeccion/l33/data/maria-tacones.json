@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "María Tacones Shop",
+ "ig": "mariataconesshop",
+ "f": 13456,
+ "city": "Morón de la Frontera",
+ "cityfull": "Morón de la Frontera (Sevilla)",
+ "address": "C/ Almería 30 · Pza. de las Flores, local 1 (flamenca)",
+ "logo": {
+  "text": "María Tacones Shop"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Conjuntos",
+   "p2"
+  ],
+  [
+   "Punto",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Capa gris"
+  },
+  {
+   "id": "p2",
+   "name": "Traje estampado"
+  },
+  {
+   "id": "p3",
+   "name": "Conjunto de cuadros"
+  },
+  {
+   "id": "p4",
+   "name": "Jersey burdeos"
+  },
+  {
+   "id": "p5",
+   "name": "Rebeca de rayas"
+  },
+  {
+   "id": "p6",
+   "name": "Vaquero ancho"
+  }
+ ],
+ "theme": {}
+}

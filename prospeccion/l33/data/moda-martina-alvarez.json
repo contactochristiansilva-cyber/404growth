@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Moda Martina Álvarez",
+ "ig": "moda_martinaalvarez",
+ "f": 6132,
+ "city": "A Coruña",
+ "cityfull": "A Coruña",
+ "address": "C/ Teresa Herrera 6 · C/ Barcelona 29",
+ "logo": {
+  "text": "Moda Martina Álvarez"
+ },
+ "cats": [
+  [
+   "Blusas",
+   "p1"
+  ],
+  [
+   "Abrigos",
+   "p3"
+  ],
+  [
+   "Vestidos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Blusa de leopardo"
+  },
+  {
+   "id": "p2",
+   "name": "Falda plisada dorada"
+  },
+  {
+   "id": "p3",
+   "name": "Plumífero negro"
+  },
+  {
+   "id": "p4",
+   "name": "Abrigo de borreguito"
+  },
+  {
+   "id": "p5",
+   "name": "Rebeca beige"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido largo de flores"
+  }
+ ],
+ "theme": {}
+}
