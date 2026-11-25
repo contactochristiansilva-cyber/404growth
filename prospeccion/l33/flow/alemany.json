@@ -1,0 +1,50 @@
+{
+ "slug": "alemany",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "alemany-15.jpg",
+    "alemany-07.jpg",
+    "alemany-12.jpg",
+    "alemany-04.jpg",
+    "alemany-19.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a elegant Spanish woman in her fifties). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia alemany-15.jpg, aplica la REGLA A): Boutique campaign still life of a brown leather hobo handbag with a front pocket and a matching tan leather crossbody bag from the reference. The product sits in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm natural light, soft textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia alemany-07.jpg, aplica la REGLA A): E-commerce product photo of a tan leather crossbody bag with a front zip pocket (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 3 «p2» (formato 3:4, referencia alemany-12.jpg, aplica la REGLA A): E-commerce product photo of a navy blue laptop backpack with a front zip pocket, plain without logos (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 4 «p3» (formato 3:4, referencia alemany-04.jpg, aplica la REGLA B): E-commerce product photo for a fashion boutique: a model wearing a lilac hard-shell cabin suitcase with four wheels, plain without logos from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia alemany-19.jpg, aplica la REGLA A): E-commerce product photo of a petrol blue nylon tote bag with leather handles (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "alemany-10.jpg",
+    "alemany-13.jpg",
+    "alemany-18.jpg",
+    "alemany-05.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a elegant Spanish woman in her fifties). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia alemany-10.jpg, aplica la REGLA A): E-commerce product photo of a big rainbow coloured umbrella open on a street from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 2 «p6» (formato 3:4, referencia alemany-13.jpg, aplica la REGLA A): E-commerce product photo of a dark green silk scarf with a colourful floral print (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 3 «l1» (formato 3:4, sin referencia, aplica la REGLA B): Lifestyle photo: a woman holding a brown leather shoulder bag in a bright accessories shop full of handbags, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia alemany-18.jpg, aplica la REGLA A): Lifestyle photo: a black silk scarf with a colourful paisley pattern, close up, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia alemany-05.jpg, aplica la REGLA C): Wide interior photo: the inside of a bag and accessories shop with shelves full of leather handbags in brown, burgundy and black, a colourful painting on the wall and warm lights, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Boutique campaign still life of a brown leather hobo handbag",
+  "p1": "E-commerce product photo of a tan leather crossbody bag with",
+  "p2": "E-commerce product photo of a navy blue laptop backpack with",
+  "p3": "E-commerce product photo for a fashion boutique: a model wea",
+  "p4": "E-commerce product photo of a petrol blue nylon tote bag wit",
+  "p5": "E-commerce product photo of a big rainbow coloured umbrella ",
+  "p6": "E-commerce product photo of a dark green silk scarf with a c",
+  "l1": "Lifestyle photo: a woman holding a brown leather shoulder ba",
+  "l2": "Lifestyle photo: a black silk scarf with a colourful paisley",
+  "b": "Wide interior photo: the inside of a bag and accessories sho"
+ }
+}

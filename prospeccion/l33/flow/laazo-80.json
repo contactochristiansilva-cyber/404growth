@@ -1,0 +1,51 @@
+{
+ "slug": "laazo-80",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "laazo-80-16.jpg",
+    "laazo-80-05.jpg",
+    "laazo-80-08.jpg",
+    "laazo-80-14.jpg",
+    "laazo-80-15.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia laazo-80-16.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a burgundy faux fur coat over a burgundy dress from the reference, walking at a sunny street in the centre of Murcia, Spain, with elegant buildings and palm trees, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia laazo-80-05.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a burgundy and cream striped satin blouse with burgundy trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia laazo-80-08.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a burgundy and white floral print wrap midi dress from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia laazo-80-14.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a cream faux fur jacket with a brown belt over a brown lace midi dress from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia laazo-80-15.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown jumper with white floral embroidery and brown trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "laazo-80-17.jpg",
+    "laazo-80-06.jpg",
+    "laazo-80-02.jpg",
+    "laazo-80-19.jpg",
+    "laazo-80-04.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia laazo-80-17.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a beige corduroy overshirt jacket with buttons on a man from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia laazo-80-06.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a navy cable-knit turtleneck jumper on a man from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia laazo-80-02.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a man in a navy suit and light blue shirt in a menswear shop with blazers on display from the reference, candid and relaxed in a sunny street of Murcia, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia laazo-80-19.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a woman in a long brown faux fur coat in a bright boutique from the reference, candid and relaxed in a sunny street of Murcia, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia laazo-80-04.jpg, aplica la REGLA B): Wide interior photo: the inside of a big bright fashion boutique for women and men in Murcia with white walls, rails of coats and shirts, tables with folded jumpers in many colours, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a burgundy f",
+  "p1": " for a fashion boutique: a model wearing a burgundy and crea",
+  "p2": " for a fashion boutique: a model wearing a burgundy and whit",
+  "p3": "ce product photo for a fashion boutique: a model wearing a c",
+  "p4": "roduct photo for a fashion boutique: a model wearing a brown",
+  "p5": "roduct photo for a fashion boutique: a model wearing a beige",
+  "p6": "ce product photo for a fashion boutique: a model wearing a n",
+  "l1": "Lifestyle fashion photo: a model wearing a man in a navy sui",
+  "l2": "Lifestyle fashion photo: a model wearing a woman in a long b",
+  "b": "Wide interior photo: the inside of a big bright fashion bout"
+ }
+}

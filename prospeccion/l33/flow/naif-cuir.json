@@ -1,0 +1,51 @@
+{
+ "slug": "naif-cuir",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "naif-cuir-13.jpg",
+    "naif-cuir-01.jpg",
+    "naif-cuir-03.jpg",
+    "naif-cuir-08.jpg",
+    "naif-cuir-12.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia naif-cuir-13.jpg, aplica la REGLA A): Boutique campaign still life of a big olive green leather half-moon bag with a red and orange ruffled leather trim, on a rustic wooden bench from the reference. The product sits in the right third of the frame and the scene continues to the left, softly out of focus and calm, with room for a headline. Warm natural light, soft textures. One single continuous photograph, never a split screen or collage. IMAGEN 2 «p1» (formato 3:4, referencia naif-cuir-01.jpg, aplica la REGLA A): E-commerce product photo of a black leather half-moon bag with a multicoloured striped leather trim (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 3 «p2» (formato 3:4, referencia naif-cuir-03.jpg, aplica la REGLA A): E-commerce product photo of small round leather pouches in bright colour blocks with ruffled trims (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 4 «p3» (formato 3:4, referencia naif-cuir-08.jpg, aplica la REGLA A): E-commerce product photo of silver metallic and black and white striped leather clutch bags (flat lay) from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 5 «p4» (formato 3:4, referencia naif-cuir-12.jpg, aplica la REGLA A): E-commerce product photo of a small red and cream striped leather crossbody bag from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "naif-cuir-22.jpg",
+    "naif-cuir-21.jpg",
+    "naif-cuir-19.jpg",
+    "naif-cuir-05.jpg",
+    "naif-cuir-04.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA C: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia naif-cuir-22.jpg, aplica la REGLA A): E-commerce product photo of a leopard print leather clutch bag with a ruched top from the reference, centred and large in the frame on a seamless light (#ECE7E0) background with a soft shadow, crisp detail. IMAGEN 2 «p6» (formato 3:4, referencia naif-cuir-21.jpg, aplica la REGLA B): E-commerce product photo for a fashion boutique: a model wearing three leather half-moon bags with ruffled trims and long leather tassels hanging on a wooden beam from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia naif-cuir-19.jpg, aplica la REGLA B): Lifestyle photo: a woman in a khaki jacket holding a red checked leather bag with a striped lining, close up, like in the reference, soft natural light, editorial, warm and inviting, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia naif-cuir-05.jpg, aplica la REGLA B): Lifestyle fashion photo: a model wearing a leather sewing machine in a rustic artisan workshop, close up from the reference, candid and relaxed in a sunny street of Alto Tajo, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia naif-cuir-04.jpg, aplica la REGLA C): Wide interior photo: a rustic leather artisan atelier with a sewing machine, colourful leather pieces, stone walls and wooden beams, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "Boutique campaign still life of a big olive green leather ha",
+  "p1": "E-commerce product photo of a black leather half-moon bag wi",
+  "p2": "E-commerce product photo of small round leather pouches in b",
+  "p3": "E-commerce product photo of silver metallic and black and wh",
+  "p4": "E-commerce product photo of a small red and cream striped le",
+  "p5": "E-commerce product photo of a leopard print leather clutch b",
+  "p6": "E-commerce product photo for a fashion boutique: a model wea",
+  "l1": "Lifestyle photo: a woman in a khaki jacket holding a red che",
+  "l2": "Lifestyle fashion photo: a model wearing a leather sewing ma",
+  "b": "Wide interior photo: a rustic leather artisan atelier with a"
+ }
+}

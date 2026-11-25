@@ -1,0 +1,51 @@
+{
+ "slug": "moda-sabana",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "moda-sabana-03.jpg",
+    "moda-sabana-02.jpg",
+    "moda-sabana-14.jpg",
+    "moda-sabana-16.jpg",
+    "moda-sabana-22.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia moda-sabana-03.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a teal green draped wrap midi party dress from the reference, walking at a sunny street in Sant Andreu de la Barca, Barcelona, Spain, with modern buildings and trees, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia moda-sabana-02.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a fuchsia backless satin evening dress from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «p2» (formato 3:4, referencia moda-sabana-14.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a black and white striped knit jumper with blue jeans from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia moda-sabana-16.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a cream long trench coat with a black panel collar from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia moda-sabana-22.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a brown chiffon cape top with matching wide trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "moda-sabana-23.jpg",
+    "moda-sabana-24.jpg",
+    "moda-sabana-20.jpg",
+    "moda-sabana-15.jpg",
+    "moda-sabana-02.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia moda-sabana-23.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a black cropped jacket with gold buttons over a white top from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia moda-sabana-24.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a taupe suede jacket with a faux fur collar from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia moda-sabana-20.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a woman in a cream knit two-piece set of cardigan and wide trousers with white trainers from the reference, candid and relaxed in a sunny street of Sant Andreu de la Barca, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, referencia moda-sabana-15.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a brown knit jumper with bow details on the sleeves, close up from the reference, candid and relaxed in a sunny street of Sant Andreu de la Barca, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, referencia moda-sabana-02.jpg, aplica la REGLA B): Wide interior photo: the inside of a fashion and party dress shop with shelves full of handbags, rails of colourful evening dresses and pink curtains, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a teal green",
+  "p1": "ce product photo for a fashion boutique: a model wearing a f",
+  "p2": "ct photo for a fashion boutique: a model wearing a black and",
+  "p3": "ce product photo for a fashion boutique: a model wearing a c",
+  "p4": "roduct photo for a fashion boutique: a model wearing a brown",
+  "p5": "ct photo for a fashion boutique: a model wearing a black cro",
+  "p6": "ce product photo for a fashion boutique: a model wearing a t",
+  "l1": "Lifestyle fashion photo: a model wearing a woman in a cream ",
+  "l2": "Lifestyle fashion photo: a model wearing a brown knit jumper",
+  "b": "Wide interior photo: the inside of a fashion and party dress"
+ }
+}
