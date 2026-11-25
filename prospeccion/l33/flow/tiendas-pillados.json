@@ -1,0 +1,49 @@
+{
+ "slug": "tiendas-pillados",
+ "msgs": [
+  {
+   "ids": [
+    "h",
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "refs": [
+    "tiendas-pillados-22.jpg",
+    "tiendas-pillados-03.jpg",
+    "tiendas-pillados-05.jpg",
+    "tiendas-pillados-09.jpg",
+    "tiendas-pillados-10.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Reproduce the EXACT product from the reference image: identical shape, proportions, materials, colours, stones and details; do not redesign it. Leave out any hands, price tags, stickers, shop text and the original background. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «h» (formato 16:9, referencia tiendas-pillados-22.jpg, aplica la REGLA A): A stylish Spanish woman in her thirties wearing a charcoal grey zip-up short jacket with wide sleeves over a black top and black trousers from the reference, walking at a seaside street in Boiro, Galicia, Spain, with granite houses, golden hour. One single continuous photograph, never a split screen, diptych, panel or collage. The subject stands in the right third of the frame and the same scene continues to the left, softly out of focus and calm, with room for a headline. Wide editorial campaign image, cinematic natural light. IMAGEN 2 «p1» (formato 3:4, referencia tiendas-pillados-03.jpg, aplica la REGLA B): Footwear e-commerce photo of a navy and red tartan asymmetric midi skirt with brown cowboy boots from the reference, a pair shown at a three-quarter angle, centred and large in the frame on a seamless light (#ECE7E0) background with a soft floor shadow, crisp leather, suede and sole detail. IMAGEN 3 «p2» (formato 3:4, referencia tiendas-pillados-05.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a lilac and navy striped shirt with a stand collar from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 4 «p3» (formato 3:4, referencia tiendas-pillados-09.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing an olive gold velvet short-sleeved top with a keyhole neck, with wide brown trousers from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 5 «p4» (formato 3:4, referencia tiendas-pillados-10.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a beige short wool jacket with a stand collar from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left."
+  },
+  {
+   "ids": [
+    "p5",
+    "p6",
+    "l1",
+    "l2",
+    "b"
+   ],
+   "refs": [
+    "tiendas-pillados-14.jpg",
+    "tiendas-pillados-24.jpg",
+    "tiendas-pillados-15.jpg"
+   ],
+   "text": "Genera 5 imágenes separadas con Nano Banana 2.1, cada una en su formato y con su referencia (las referencias están adjuntas). Usa los textos tal cual, sin reescribirlos ni añadir nada. REGLA A: Use the EXACT garment(s) and accessories from the reference image: identical cut, length, fabric, colour, print, buttons, trims and details. Do not redesign, recolour or add garments. Show the clothes on a professional female fashion model (a woman). If the reference is a mirror selfie, the new photo has no phone, no mirror and no selfie pose. Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. REGLA B: Photorealistic, high-end commercial photography, natural skin texture, crisp material detail, no text, no letters, no watermark, no logos, no brand names, no frames, no collage, no words or labels anywhere in the image. IMAGEN 1 «p5» (formato 3:4, referencia tiendas-pillados-14.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a black and cream argyle fluffy V-neck sweater from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 2 «p6» (formato 3:4, referencia tiendas-pillados-24.jpg, aplica la REGLA A): E-commerce product photo for a fashion boutique: a model wearing a camel zip-up short jacket with wide sleeves from the reference, standing naturally, framed from just above the lips (face cropped at the mouth) down to the shoes so the whole outfit is visible, centred, on a seamless warm light (#ECE7E0) studio background with a soft natural floor shadow, soft diffused daylight from the left. IMAGEN 3 «l1» (formato 3:4, referencia tiendas-pillados-15.jpg, aplica la REGLA A): Lifestyle fashion photo: a model wearing a grey and black argyle sweater with blue jeans from the reference, candid and relaxed in a sunny street of Boiro, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 4 «l2» (formato 3:4, sin referencia, aplica la REGLA A): Lifestyle fashion photo: a model wearing a street of granite houses in a Galician seaside town with a modern fashion shop window at dusk from the reference, candid and relaxed in a sunny street of Boiro, Spain, natural light, framed from the knees up, editorial, shallow depth of field. IMAGEN 5 «b» (formato 16:9, sin referencia, aplica la REGLA B): Wide interior photo: the inside of a bright modern multibrand fashion shop with long rails of colourful jackets and knitwear, white walls, a light wooden floor and a large shop window, no people, no text, inspired by the reference, photographed like a design magazine, beautiful natural light, inviting and tidy. One single continuous photograph, never a split screen or collage."
+  }
+ ],
+ "K": {
+  "h": "A stylish Spanish woman in her thirties wearing a charcoal g",
+  "p1": "Footwear e-commerce photo of a navy and red tartan asymmetri",
+  "p2": "ce product photo for a fashion boutique: a model wearing a l",
+  "p3": "ce product photo for a fashion boutique: a model wearing an ",
+  "p4": "roduct photo for a fashion boutique: a model wearing a beige",
+  "p5": "roduct photo for a fashion boutique: a model wearing a black",
+  "p6": "ce product photo for a fashion boutique: a model wearing a c",
+  "l1": "Lifestyle fashion photo: a model wearing a grey and black ar",
+  "l2": "Lifestyle fashion photo: a model wearing a street of granite",
+  "b": "Wide interior photo: the inside of a bright modern multibran"
+ }
+}

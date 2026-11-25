@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Gloss",
+ "ig": "glossriveira",
+ "f": 8344,
+ "city": "Ribeira",
+ "cityfull": "Ribeira (A Coruña)",
+ "address": "C/ Alcalde Fernández Bermúdez, 13",
+ "logo": {
+  "text": "Gloss"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p1"
+  ],
+  [
+   "Calzado",
+   "p3"
+  ],
+  [
+   "Cinturones",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Abrigo verde lima"
+  },
+  {
+   "id": "p2",
+   "name": "Abrigo de tweed"
+  },
+  {
+   "id": "p3",
+   "name": "Merceditas de tachas"
+  },
+  {
+   "id": "p4",
+   "name": "Cinturón de tachas"
+  },
+  {
+   "id": "p5",
+   "name": "Conjunto crudo"
+  },
+  {
+   "id": "p6",
+   "name": "Conjunto de punto"
+  }
+ ],
+ "theme": {}
+}

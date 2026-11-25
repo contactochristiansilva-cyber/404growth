@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Modas Ilusión",
+ "ig": "modas_ilusion",
+ "f": 7887,
+ "city": "Pizarra",
+ "cityfull": "Pizarra (Málaga)",
+ "address": "Avda. de la Constitución, 3",
+ "logo": {
+  "text": "Modas Ilusión"
+ },
+ "cats": [
+  [
+   "Trajes",
+   "p1"
+  ],
+  [
+   "Americanas",
+   "p3"
+  ],
+  [
+   "Punto",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Traje teja"
+  },
+  {
+   "id": "p2",
+   "name": "Traje azul"
+  },
+  {
+   "id": "p3",
+   "name": "Americana de tweed"
+  },
+  {
+   "id": "p4",
+   "name": "Jersey de cremallera"
+  },
+  {
+   "id": "p5",
+   "name": "Abrigo acolchado"
+  },
+  {
+   "id": "p6",
+   "name": "Zapatillas running"
+  }
+ ],
+ "theme": {}
+}

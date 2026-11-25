@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Bechi Collection",
+ "ig": "bechi_modas",
+ "f": 8544,
+ "city": "Ciudad Real",
+ "cityfull": "Ciudad Real",
+ "address": "C/ Lanza, 3",
+ "logo": {
+  "text": "Bechi Collection"
+ },
+ "cats": [
+  [
+   "Fiesta",
+   "p1"
+  ],
+  [
+   "Conjuntos",
+   "p3"
+  ],
+  [
+   "Chaquetas",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido de satén burdeos"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido de volantes teja"
+  },
+  {
+   "id": "p3",
+   "name": "Conjunto vaquero"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto efecto piel"
+  },
+  {
+   "id": "p5",
+   "name": "Bomber cebra"
+  },
+  {
+   "id": "p6",
+   "name": "Conjunto azul noche"
+  }
+ ],
+ "theme": {}
+}

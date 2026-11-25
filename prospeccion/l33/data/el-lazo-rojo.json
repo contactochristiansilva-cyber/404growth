@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "El Lazo Rojo",
+ "ig": "ellazorojo",
+ "f": 3448,
+ "city": "Cartagena",
+ "cityfull": "Cartagena (Murcia)",
+ "address": "C/ Jiménez de la Espada, 9",
+ "logo": {
+  "text": "El Lazo Rojo"
+ },
+ "cats": [
+  [
+   "Chaquetas",
+   "p1"
+  ],
+  [
+   "Pantalones",
+   "p3"
+  ],
+  [
+   "Abrigos",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta de corazones"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta de lazos"
+  },
+  {
+   "id": "p3",
+   "name": "Pantalón de cuadros"
+  },
+  {
+   "id": "p4",
+   "name": "Abrigo camel"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta escocesa"
+  },
+  {
+   "id": "p6",
+   "name": "Pantalón de lentejuelas"
+  }
+ ],
+ "theme": {}
+}
