@@ -7,12 +7,14 @@
 #   4. «Cada prenda, lista para comprar.» (la ficha y los cuatro puntos).
 #   5. la garantía del vídeo: vendéis online el triple de lo que os cuesta la tienda o trabajamos gratis hasta conseguirlo.
 #   6. las ideas de anuncios y el plan de 15 días. Y ya: sin diagnóstico ni cierre.
+#   (25/11) Entre 2 y 3, «Los números»: los casos de Kiss of Life e Intenso (numeros42.py).
 #   Todo centrado y con los márgenes de la página.
 # La simulación de pedido y la comparación con su web de la primera versión están en el commit afa90b1.
 # Parte de la propuesta hecha con gen33v.py (out/p-<slug>.html):
 # python3 gen42.py <slug> [...] [--out out42] [--vsl /v/propuesta/index.m3u8] [--poster /v/propuesta/poster.jpg]
 #                  [--poster-file poster.jpg (lo mete dentro, para verla sin publicar)] [--hls /v/hls.light.min.js]
 import os, re, json, html, base64, argparse
+import numeros42 as N42
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ap = argparse.ArgumentParser()
@@ -127,7 +129,7 @@ CSS = r'''<style id="z42">
 </style>'''
 
 VID = '''</div></section>
-<section class="sec" id="video"><div class="wrap">
+{numeros}<section class="sec" id="video"><div class="wrap">
 <div class="chap"><span class="num">02</span><span class="lb">Si no me conocéis</span></div>
 <div class="z4-h"><h2>¿Os preguntáis quién soy y por qué os he hecho esto?</h2><p>3 minutos. <b>Ponedlo con sonido.</b></p></div>
 <div class="z4-vd"><div class="z4-scn" id="z4scn" style="background-image:url('{poster}')">
@@ -181,7 +183,7 @@ def build(slug):
     h = re.sub(r'<title>[^<]*</title>', f'<title>{E(name)} · vuestra tienda online</title>', h, count=1)
     h = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{E(name)}, vuestra tienda online ya puede cobrar">', h, count=1)
     h = re.sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="No es una web: aquí eligen, pagan y os llega el pedido. Os la he preparado con vuestras {items}.">', h, count=1)
-    h = h.replace('</head>', CSS + '</head>', 1)
+    h = h.replace('</head>', CSS + N42.CSS + '</head>', 1)
 
     # menú
     h, k = re.subn(r'<div class="lk2">.*?</div>', '<div class="lk2"><a href="#tienda">Tienda</a><a href="#video">Vídeo</a><a href="#agenda">Agenda</a><a href="#garantia">Garantía</a></div>', h, count=1, flags=re.S); assert k == 1
@@ -198,7 +200,7 @@ def build(slug):
 
     # la agenda sale de donde estaba y va debajo del vídeo, solo con «Elige día y hora.»
     a = h.index('<!--ag-->'); b = h.index('<!--/ag-->') + len('<!--/ag-->')
-    ag = h[a:b]; h = h[:a] + VID.replace('{poster}', POSTER) + h[b:]
+    ag = h[a:b]; h = h[:a] + VID.replace('{poster}', POSTER).replace('{numeros}', N42.HTML) + h[b:]
     ag, k = re.subn(r'<span class="ag-eb">[^<]*</span><h2>.*?</h2><p class="ag-sub">.*?</p>', '<span class="ag-eb">Videollamada · 30 minutos</span><h2>Elige día y hora.</h2>', ag, count=1, flags=re.S); assert k == 1, ag[:400]
     h = h.replace('{agenda}', ag, 1)
 
@@ -214,8 +216,8 @@ def build(slug):
         h, k = re.subn(r'(<section class="sec[^"]*" id="' + sid + r'"[^>]*>.*?<div class="head"><h2>.*?</h2>)<p>.*?</p>', r'\1', h, count=1, flags=re.S); assert k == 1, sid
 
     # contador: partes de la página
-    h = re.sub(r'PARTS=\[\[.*?\]\]', 'PARTS=[["tienda", 2], ["video", 4], ["agenda", 5], ["ficha", 6], ["garantia", 7], ["captacion", 8], ["plan", 9]]', h, count=1)
-    h = h.replace('</body>', VID_JS.replace('{src}', A.vsl).replace('{hls}', A.hls) + '</body>', 1)
+    h = re.sub(r'PARTS=\[\[.*?\]\]', 'PARTS=[["tienda", 2], ["numeros", 3], ["video", 4], ["agenda", 5], ["ficha", 6], ["garantia", 7], ["captacion", 8], ["plan", 9]]', h, count=1)
+    h = h.replace('</body>', VID_JS.replace('{src}', A.vsl).replace('{hls}', A.hls) + N42.JS + '</body>', 1)
 
     # el brillo de color detrás de los marcos del inicio: antes era su foto con filter:blur(48px), que el móvil
     # repintaba al bajar; ahora es la misma foto ya difuminada, pequeña y dentro de la página (unos KB)
