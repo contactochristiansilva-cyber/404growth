@@ -132,7 +132,7 @@ def page(title, body, pre=""):
 
 
 def items_table(loop="subtotal_line_items", price="line.final_line_price"):
-    return (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0">{{% for line in {loop} %}}'
+    return (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0">{{% for line in {loop} %}}{{% if line.product.type == \'Regalo\' %}}{{% continue %}}{{% endif %}}'
             f'<tr><td width="76" style="padding:0 0 14px;border-bottom:1px solid {LINE}"><img src="{{{{ line | img_url: \'144x180\', crop: \'center\' }}}}" width="64" alt="" style="display:block;width:64px;height:80px;border-radius:10px;background:{CREAM}"></td>'
             f'<td style="padding:0 0 14px 12px;border-bottom:1px solid {LINE}"><b style="font-size:15px;color:{INK}">{{{{ line.product.title | default: line.title }}}}</b><br>'
             f'<span style="font-size:13px;color:{MUTED}">{{% if line.product.type != blank %}}{{{{ line.product.type }}}} · {{% endif %}}{{% if line.variant.title != \'Default Title\' %}}{{{{ line.variant.title }}}} · {{% endif %}}{{{{ line.quantity }}}} ud.</span></td>'
