@@ -1346,6 +1346,29 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Publicadas en el Mac (`web117-404growth`, con `p/<slug>/index.html` y `--wa.jpg`). Revisadas con Playwright a 390 y 1440 px: las 35 sin scroll lateral, sin errores y con «Los números».
 - CRM: `SEED9_KEY = "seed_20261125b"` / `SEED9` (novena lista de `seedOnce`), con `slug`, `pageUrl`, `lotDay` 2026-11-25 y `order` 2001–2035 (`scrapeo-25nov/mkrows47.py`, `patch_s47.py`; en el Mac, `fuentes-s47/`). 12 con `waOk: false`. Admin del Mac con la huella a72d03bf2dcd3d54 (copia en `anterior/worker-seed25-25nov-antes-seed25b.js`). Cuando se metió, el lote del 25/11 ya estaba enviado (30 fuera, 8 en «Caliente»), así que con `lotCap` 35 el Lote de hoy enseña justo estas 35.
 
+## Lote 48 (25-26/11/2026, de noche): 70 tiendas más grandes y 8 propuestas
+
+- Chris (25/11, 23:39): «scrapea las 70 de mañana… negocios un poquito más grandes, que ya tengan varios negocios físicos abiertos, pero sobre todo que no tengan tienda online» y genera en Flow todas las propuestas que se pueda. Me dejó trabajando toda la noche sin poder preguntarle.
+- **Scrapeo** en `prospeccion/scrapeo-26nov/`:
+  - archivos: `engine48.js` (motor de Instagram), `webchk48.js` (webs desde una pestaña de r.jina.ai), `rf48.js` (referencias), `qs48.json` (940 búsquedas) y `mkleads48.py` → `leads.json` (70) y `../l33/sel48.json` (44 con fotos preparadas);
+  - niveles: A, 18 con varias tiendas físicas y sin tienda online; B, tienda grande sin tienda online; C, relleno que vende a distancia;
+  - cruzado con el CRM: 27 ya estaban y se quitaron;
+  - solo 1 de cada 12 perfiles tiene varias tiendas, y la mayoría de esas ya vende online.
+- **Flow (cuenta personal, proyecto `60c98d3b-…`, sin otra cuenta disponible).** De las 484 fotos (`l33/flow/q48.json`) salieron unas 110, en tres fases:
+  - Hasta las 06:00 tuvo un freno de «actividad inusual»: dejaba unas 20 seguidas y después solo 2 cada ~25 minutos. Si se insiste mientras está frenado, el freno se alarga.
+  - De 05:30 a 06:05 dejó otra vez a ritmo normal (1 cada ~30 s), hasta que salió «Has alcanzado tu límite de uso» (cupo diario de Nano Banana 2.1).
+  - Nano Banana Pro dio unas 20 más con 0 puntos. Su menú de formato sale más abajo: en la altura 508 y no en la 463.
+- **Las otras cuentas de Google de este Chrome:** `/u/1` es hola@ (suspendida) y `/u/2` es la de Kiss of Life (nunca se usa). El Chrome con christiansilvaaguilar15 no estaba conectado a la extensión.
+- **Herramientas** en el scratchpad de la sesión: `drv.py`, `auto.py` y `mb.py` (cola de trabajos con lotes que caben en el tiempo de `browser_batch`), y `__chk`/`__skip` en la página (detectan el aviso de la última tarjeta y saltan el resto).
+  - En el repositorio: `l33/unflow48.py` (pasa el `.json` de fotos a `<slug>/<id>.jpg`, con `h.jpg` = `hd.jpg`) y `l33/flow/flow48.js`.
+- **8 propuestas v42b con «Los números»**, en el Mac (`web117-404growth`, con `p/<slug>/index.html` y `--wa.jpg` de `og-wa48/`) y revisadas con Playwright a 390 y 1440 px: Ke Pasada Moda, Doble G Barcelona, Boutique Maribel Fernández, Nuria Roig, Tribeca Store, Le Coquett, María Tacones y Laazo 80. Rosi Botiga tiene 5 de sus 11 fotos.
+- **CRM:** `SEED10_KEY = "seed_20261126"` / `SEED10` (décima lista de `seedOnce`), con las 70, `lotDay` 2026-11-26 y `order` 3001–3070 (primero las 8 con propuesta, luego por nicho y puntuación).
+  - Solo las 8 llevan `slug`/`pageUrl`. 
+  - Las que solo publican fijo van con prioridad 50 y «AVISO».
+  - Archivos: `scrapeo-26nov/mkrows48.py leads.json publicadas.txt rows48.js`, `patch_s48.py` y la prueba `t_s48.mjs` (14 comprobaciones; en el Mac, `fuentes-s48/`).
+  - Admin del Mac con la huella 80055e22ea5c14de (copia en `anterior/worker-seed25b-26nov-antes-seed26.js`). Falta `subir.command` y `subir-web.command`.
+- Para seguir: las 36 de `sel48.json` sin propuesta tienen sus referencias ya subidas al proyecto de Flow y `drv.json` guarda la cola. Cuando se acaben, se añade `slug`/`pageUrl` por la API del CRM.
+
 ## Udalaitz: presupuesto de 1.640 € (25/11/2026)
 
 - Udalaitz (Postas 5, Vitoria-Gasteiz, @udalaitzshop, marca vasca de fabricación propia) salió del lote 46. Chris les manda la apertura de la tienda online con unas 30 prendas al empezar por **1.640 €** (pago único, puesto como IVA incluido, como Qué Locura), sin plan mensual.
