@@ -1380,6 +1380,12 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Archivos: `scrapeo-26nov/mkrows48.py leads.json publicadas.txt rows48.js`, `patch_s48.py` y la prueba `t_s48.mjs` (14 comprobaciones; en el Mac, `fuentes-s48/`).
   - Admin del Mac con la huella 80055e22ea5c14de (copia en `anterior/worker-seed25b-26nov-antes-seed26.js`). Falta `subir.command` y `subir-web.command`.
 - Para seguir: las 36 de `sel48.json` sin propuesta tienen sus referencias ya subidas al proyecto de Flow y `drv.json` guarda la cola. Cuando se acaben, se añade `slug`/`pageUrl` por la API del CRM.
+- **26/11 (día):** Chris subió el admin por la mañana, así que el `SEED10` ya está en vivo y cada propuesta nueva se marca desde la pestaña del admin con `POST /admin/api/crm/lead/<id>` (`{patch:{slug, pageUrl, notes}}`; en las notas, «Sin propuesta todavía.» pasa a «Propuesta (lote 48, v42b con «Los números»): 404growth.com/p/<slug>/»). Los ids salen de `scrapeo-26nov/rows48.js`, buscando por Instagram.
+  - **38 de 44 propuestas** en el Mac y en el CRM (lista en `404growth-subir/l48up/publicadas.txt`). Faltan Mandarina Palencia (solo su `hm`), Selene Moda, Naif Cuir, La Piconela, Deluxe Fashion y Olé Yo Santoña.
+  - Flow con dos cuentas: la personal («Browser 3») y christiansilvaaguilar15. Nano Banana 2.1 se acabó en las dos; Pro da unas 20 por cuenta y día. El cupo vuelve hacia las 11:00 (hora de Turquía).
+  - Ventana de 1470×801: enviar en (1032, 741), chip de formato en (866, 741) y opciones en la altura 515 (16:9 699, 3:4 867, 9:16 924). Con Pro el desplegable de modelo está en (810, 613) y el de formato a la altura 563.
+  - En el perfil personal, la recogida desde el visor con `ArrowRight` sintético sí funciona.
+  - «Actividad inusual» volvió a salir a mediodía tras unas 40 seguidas: esperar media hora sin insistir.
 
 ## Udalaitz: presupuesto de 1.640 € (25/11/2026)
 
