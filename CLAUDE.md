@@ -1117,6 +1117,7 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - **Precio: 640 € + IVA** (774,40 € con IVA), pago único por transferencia al aceptar (esto último lo propuse yo; Chris puede cambiarlo).
 - **Formato: PDF de una carilla** (Chris: «quiero que sea formato pdf 1 carilla»), firmado por **Christian Silva** (nunca «404 Growth») y **sin enlaces a WhatsApp en ningún sitio**. Con la marca de EFAP: negro, granate #5C0017, amarillo #FFD900, Bebas Neue + Inter, su escudo. Cuerpo a 10 pt para que quepa.
 - Fuente: `tools/propuestas-clientes/efap-miami/pdf.html` (`{{ESCUDO}}` = `tools/brief/efap-escudo.png` en base64), impreso con Playwright `page.pdf` A4 sin márgenes. Salida en el Mac: `~/Downloads/Propuesta EFAP Miami · Christian Silva.pdf`.
+- **En Presupuestos (26/11/2026):** `Q_ADD_KEY = "quotes_add_20261126"` mete una sola vez `q_efapmiami` («EFAP Miami», pago único 774,40 € = 640 € + IVA, enviado el 23/11, pendiente). Al aceptarlo pasa a Facturación por 774,40 €. Admin del Mac con la huella 38b51364cdcb1ae3 (copia de antes en `anterior/worker-seed26-26nov-antes-presupuesto-efap.js`). Falta `subir.command`.
 - Hubo antes una versión web (`tpl.html` + `build.py`, para `404growth.com/efap-miami/`). No se publica: se sacó de `web117-404growth` a `~/Downloads/_to_delete/efap-miami-web-23nov/` (copia en `404growth-subir/anterior/efap-miami-web-23nov/`).
 
 ## Open Fit: cartel de la nave (13/11/2026)
