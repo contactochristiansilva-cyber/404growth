@@ -1,0 +1,53 @@
+{
+ "niche": "joya",
+ "name": "La Nena",
+ "ig": "lanenashop",
+ "f": 36066,
+ "city": "Villaviciosa",
+ "cityfull": "Villaviciosa (Asturias)",
+ "address": "Calle Sol 18",
+ "logo": {
+  "text": "La Nena"
+ },
+ "cats": [
+  [
+   "Collares",
+   "p1"
+  ],
+  [
+   "Pulseras",
+   "p2"
+  ],
+  [
+   "Brazaletes",
+   "p4"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Collar verde"
+  },
+  {
+   "id": "p2",
+   "name": "Pulseras de cristal"
+  },
+  {
+   "id": "p3",
+   "name": "Collar de cristal"
+  },
+  {
+   "id": "p4",
+   "name": "Brazalete dorado"
+  },
+  {
+   "id": "p5",
+   "name": "Collar de perlas"
+  },
+  {
+   "id": "p6",
+   "name": "Pulseras de color"
+  }
+ ],
+ "theme": {}
+}

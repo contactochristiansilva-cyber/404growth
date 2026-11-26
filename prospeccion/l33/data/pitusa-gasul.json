@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Pitusa Gasul",
+ "ig": "pitusagasul.modaflamenca",
+ "f": 6611,
+ "city": "Andalucía",
+ "cityfull": "Andalucía",
+ "address": "",
+ "logo": {
+  "text": "Pitusa Gasul"
+ },
+ "cats": [
+  [
+   "Mantoncillos",
+   "p1"
+  ],
+  [
+   "Lunares",
+   "p4"
+  ],
+  [
+   "Colores",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Mantoncillo blanco"
+  },
+  {
+   "id": "p2",
+   "name": "Mantoncillo fucsia"
+  },
+  {
+   "id": "p3",
+   "name": "Mantoncillo azul"
+  },
+  {
+   "id": "p4",
+   "name": "Mantoncillo de lunares"
+  },
+  {
+   "id": "p5",
+   "name": "Mantoncillo melocotón"
+  },
+  {
+   "id": "p6",
+   "name": "Mantón de mesa"
+  }
+ ],
+ "theme": {}
+}

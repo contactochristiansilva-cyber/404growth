@@ -1397,11 +1397,17 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
   - Admin del Mac con la huella 80055e22ea5c14de (copia en `anterior/worker-seed25b-26nov-antes-seed26.js`). Falta `subir.command` y `subir-web.command`.
 - Para seguir: las 36 de `sel48.json` sin propuesta tienen sus referencias ya subidas al proyecto de Flow y `drv.json` guarda la cola. Cuando se acaben, se añade `slug`/`pageUrl` por la API del CRM.
 - **26/11 (día):** Chris subió el admin por la mañana, así que el `SEED10` ya está en vivo y cada propuesta nueva se marca desde la pestaña del admin con `POST /admin/api/crm/lead/<id>` (`{patch:{slug, pageUrl, notes}}`; en las notas, «Sin propuesta todavía.» pasa a «Propuesta (lote 48, v42b con «Los números»): 404growth.com/p/<slug>/»). Los ids salen de `scrapeo-26nov/rows48.js`, buscando por Instagram.
-  - **38 de 44 propuestas** en el Mac y en el CRM (lista en `404growth-subir/l48up/publicadas.txt`). Faltan Mandarina Palencia (solo su `hm`), Selene Moda, Naif Cuir, La Piconela, Deluxe Fashion y Olé Yo Santoña.
+  - Lista de publicadas en `404growth-subir/l48up/publicadas.txt`.
   - Flow con dos cuentas: la personal («Browser 3») y christiansilvaaguilar15. Nano Banana 2.1 se acabó en las dos; Pro da unas 20 por cuenta y día. El cupo vuelve hacia las 11:00 (hora de Turquía).
   - Ventana de 1470×801: enviar en (1032, 741), chip de formato en (866, 741) y opciones en la altura 515 (16:9 699, 3:4 867, 9:16 924). Con Pro el desplegable de modelo está en (810, 613) y el de formato a la altura 563.
   - En el perfil personal, la recogida desde el visor con `ArrowRight` sintético sí funciona.
   - «Actividad inusual» volvió a salir a mediodía tras unas 40 seguidas: esperar media hora sin insistir.
+- **26-27/11 (noche): el lote 48 completo, 69 propuestas** (las 44 de `sel48.json` y 25 de las 26 que no tenían fotos, `l33/sel48b.json`, `specs48b.py`, `flow/q48b.json`). Todas en el Mac con su `p/<slug>/index.html` y su miniatura de WhatsApp (`og-wa48b/`, `og-wa48d/`), y en el CRM con `slug`, `pageUrl` y la línea de la propuesta en las notas.
+  - **Modas O'hara (Crevillent) fuera:** modasohara.com es un WooCommerce con carrito y precios. En el CRM, sin `lotDay`, prioridad 20 y «AVISO (26/11): ya vende online…».
+  - Flow con la cuenta christiansilvaaguilar15 (proyecto `e5adf926-…`): la personal seguía con «actividad inusual». Unas 360 fotos en la noche, con 9 s entre envíos; aun así salieron unos 20 errores de «actividad inusual» sueltos, que se repitieron después.
+  - **Ojo con el menú de formato con Nano Banana 2.1:** lleva la fila «Nivel de razonamiento», así que los formatos van más arriba que con Pro: en esa ventana, a la altura **524** (16:9 en 698, 3:4 en 868, 9:16 en 924). Al principio se pulsó a 567 (la altura con Pro), que cae en el desplegable de modelo: todas las `b`, `hd` y `hm` salieron en 3:4 y hubo que rehacerlas (81 fotos). Antes de lanzar un lote, abrir el menú, hacer una captura y comprobar dónde están los formatos. Y comprobar las medidas de las fotos recogidas (`b`/`hd` apaisadas, `hm` 9:16).
+  - `gen42.py` no rehace los `.webp` que ya existen en `out42/`: si se cambia una foto, borrar antes su `.webp`.
+  - Las dos fotos de novia de Lenana (`l1`, `l2`) fallaron tres veces con «actividad inusual»; salieron al cambiar «bride»/«wedding dress» por «white lace gown» / «white satin gown». La `b` de Dizeño se rehízo «sin arcos».
 
 ## Udalaitz: presupuesto de 1.640 € (25/11/2026)
 

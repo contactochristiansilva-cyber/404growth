@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Lenana",
+ "ig": "lenana_novias",
+ "f": 9360,
+ "city": "Huelva",
+ "cityfull": "Huelva",
+ "address": "Calle Bocas 13",
+ "logo": {
+  "text": "Lenana"
+ },
+ "cats": [
+  [
+   "Novias",
+   "p1"
+  ],
+  [
+   "Madrinas",
+   "p2"
+  ],
+  [
+   "Fiesta",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Novia de satén"
+  },
+  {
+   "id": "p2",
+   "name": "Vestido de madrina"
+  },
+  {
+   "id": "p3",
+   "name": "Vestido fucsia"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido azul noche"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido verde"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido de fiesta rojo"
+  }
+ ],
+ "theme": {}
+}

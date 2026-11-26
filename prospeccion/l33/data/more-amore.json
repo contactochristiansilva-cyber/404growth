@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "More Amore Store",
+ "ig": "moreamorestoree",
+ "f": 7317,
+ "city": "El Pajar",
+ "cityfull": "El Pajar (Las Palmas)",
+ "address": "C/ Carmen Jorge Artiles 4",
+ "logo": {
+  "text": "More Amore Store"
+ },
+ "cats": [
+  [
+   "Vestidos",
+   "p1"
+  ],
+  [
+   "Pantalones",
+   "p2"
+  ],
+  [
+   "Bolsos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Vestido satinado"
+  },
+  {
+   "id": "p2",
+   "name": "Pantalón cebra"
+  },
+  {
+   "id": "p3",
+   "name": "Falda satinada"
+  },
+  {
+   "id": "p4",
+   "name": "Top de encaje"
+  },
+  {
+   "id": "p5",
+   "name": "Bermuda de piel"
+  },
+  {
+   "id": "p6",
+   "name": "Bolsos de punto"
+  }
+ ],
+ "theme": {}
+}

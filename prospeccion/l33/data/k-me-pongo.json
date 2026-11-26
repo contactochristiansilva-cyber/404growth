@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "K Me Pongo",
+ "ig": "k_me_pongo",
+ "f": 2875,
+ "city": "Casas-Ibáñez",
+ "cityfull": "Casas-Ibáñez (Albacete)",
+ "address": "Calle Tercia 26",
+ "logo": {
+  "text": "K Me Pongo"
+ },
+ "cats": [
+  [
+   "Mujer",
+   "p1"
+  ],
+  [
+   "Hombre",
+   "p3"
+  ],
+  [
+   "Chaquetas",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chaqueta de lunares"
+  },
+  {
+   "id": "p2",
+   "name": "Chaqueta acolchada"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de ochos"
+  },
+  {
+   "id": "p4",
+   "name": "Cazadora de borreguito"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta de ante"
+  },
+  {
+   "id": "p6",
+   "name": "Americana verde"
+  }
+ ],
+ "theme": {}
+}

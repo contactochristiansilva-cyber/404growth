@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "BS Moda",
+ "ig": "bsmoda_sharo",
+ "f": 7263,
+ "city": "El Puerto de Santa María",
+ "cityfull": "El Puerto de Santa María (Cádiz)",
+ "address": "Calle Ganado 30",
+ "logo": {
+  "text": "BS Moda"
+ },
+ "cats": [
+  [
+   "Blusas",
+   "p2"
+  ],
+  [
+   "Punto",
+   "p4"
+  ],
+  [
+   "Chaquetas",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto marrón"
+  },
+  {
+   "id": "p2",
+   "name": "Blusa burdeos"
+  },
+  {
+   "id": "p3",
+   "name": "Top drapeado"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto de rayas"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta de pelo"
+  },
+  {
+   "id": "p6",
+   "name": "Traje beige"
+  }
+ ],
+ "theme": {}
+}

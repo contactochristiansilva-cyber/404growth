@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Complementos Motril",
+ "ig": "complementos_motril",
+ "f": 9036,
+ "city": "Motril",
+ "cityfull": "Motril (Granada)",
+ "address": "",
+ "logo": {
+  "text": "Complementos Motril"
+ },
+ "cats": [
+  [
+   "Botines",
+   "p1"
+  ],
+  [
+   "Bolsos",
+   "p3"
+  ],
+  [
+   "Conjuntos",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Botín de ante negro"
+  },
+  {
+   "id": "p2",
+   "name": "Botín beige"
+  },
+  {
+   "id": "p3",
+   "name": "Bolso con tachuelas"
+  },
+  {
+   "id": "p4",
+   "name": "Top de cebra"
+  },
+  {
+   "id": "p5",
+   "name": "Chándal rosa"
+  },
+  {
+   "id": "p6",
+   "name": "Pantalón de piel"
+  }
+ ],
+ "theme": {}
+}

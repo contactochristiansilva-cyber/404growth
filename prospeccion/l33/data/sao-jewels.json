@@ -1,0 +1,53 @@
+{
+ "niche": "joya",
+ "name": "Saó Jewels",
+ "ig": "saobymedialdea",
+ "f": 3454,
+ "city": "Sant Feliu de Guíxols",
+ "cityfull": "Sant Feliu de Guíxols (Girona)",
+ "address": "Carrer Major 43",
+ "logo": {
+  "text": "Saó Jewels"
+ },
+ "cats": [
+  [
+   "Pulseras",
+   "p1"
+  ],
+  [
+   "Anillos",
+   "p2"
+  ],
+  [
+   "Collares",
+   "p5"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Collar de cuerno"
+  },
+  {
+   "id": "p2",
+   "name": "Anillos dorados"
+  },
+  {
+   "id": "p3",
+   "name": "Colgantes de números"
+  },
+  {
+   "id": "p4",
+   "name": "Aros con colgante"
+  },
+  {
+   "id": "p5",
+   "name": "Collar de eslabones"
+  },
+  {
+   "id": "p6",
+   "name": "Collares de cuentas"
+  }
+ ],
+ "theme": {}
+}

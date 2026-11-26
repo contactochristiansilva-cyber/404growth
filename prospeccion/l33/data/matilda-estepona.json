@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Matilda",
+ "ig": "matildaestepona",
+ "f": 2671,
+ "city": "Estepona",
+ "cityfull": "Estepona (Málaga)",
+ "address": "C/ Santa Ana 22",
+ "logo": {
+  "text": "Matilda"
+ },
+ "cats": [
+  [
+   "Punto",
+   "p1"
+  ],
+  [
+   "Chaquetas",
+   "p5"
+  ],
+  [
+   "Complementos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Jersey con lazo"
+  },
+  {
+   "id": "p2",
+   "name": "Chaleco de punto"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey mostaza"
+  },
+  {
+   "id": "p4",
+   "name": "Jersey con flecos"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta estampada"
+  },
+  {
+   "id": "p6",
+   "name": "Pañuelo de seda"
+  }
+ ],
+ "theme": {}
+}

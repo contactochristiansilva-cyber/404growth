@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Dizeño",
+ "ig": "dizenocordoba",
+ "f": 6168,
+ "city": "Córdoba",
+ "cityfull": "Córdoba",
+ "address": "",
+ "logo": {
+  "text": "Dizeño"
+ },
+ "cats": [
+  [
+   "Blusas",
+   "p3"
+  ],
+  [
+   "Vestidos",
+   "p4"
+  ],
+  [
+   "Punto",
+   "p2"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Chal verde"
+  },
+  {
+   "id": "p2",
+   "name": "Jersey estampado"
+  },
+  {
+   "id": "p3",
+   "name": "Blusa estampada"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido camisero"
+  },
+  {
+   "id": "p5",
+   "name": "Chaleco acolchado"
+  },
+  {
+   "id": "p6",
+   "name": "Vestido rojo"
+  }
+ ],
+ "theme": {}
+}

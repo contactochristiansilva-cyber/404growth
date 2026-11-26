@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Antonio Rivas",
+ "ig": "antoniorivas_boutique",
+ "f": 6454,
+ "city": "Madrid",
+ "cityfull": "Madrid",
+ "address": "",
+ "logo": {
+  "text": "Antonio Rivas"
+ },
+ "cats": [
+  [
+   "Abrigos",
+   "p2"
+  ],
+  [
+   "Fiesta",
+   "p5"
+  ],
+  [
+   "Calzado",
+   "p1"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Bota de ante"
+  },
+  {
+   "id": "p2",
+   "name": "Abrigo de lana"
+  },
+  {
+   "id": "p3",
+   "name": "Jersey de punto"
+  },
+  {
+   "id": "p4",
+   "name": "Vestido de tul"
+  },
+  {
+   "id": "p5",
+   "name": "Vestido de fiesta"
+  },
+  {
+   "id": "p6",
+   "name": "Cazadora de piel"
+  }
+ ],
+ "theme": {}
+}

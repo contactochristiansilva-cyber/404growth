@@ -1,0 +1,53 @@
+{
+ "niche": "moda",
+ "name": "Benoît Madrid",
+ "ig": "benoitmadrid_",
+ "f": 7692,
+ "city": "Madrid",
+ "cityfull": "Madrid",
+ "address": "Plaza Marqués de Camarines 1, Aravaca",
+ "logo": {
+  "text": "Benoît Madrid"
+ },
+ "cats": [
+  [
+   "Trajes",
+   "p3"
+  ],
+  [
+   "Conjuntos",
+   "p1"
+  ],
+  [
+   "Complementos",
+   "p6"
+  ]
+ ],
+ "prods": [
+  {
+   "id": "p1",
+   "name": "Conjunto rojo"
+  },
+  {
+   "id": "p2",
+   "name": "Conjunto de ante"
+  },
+  {
+   "id": "p3",
+   "name": "Traje de tweed"
+  },
+  {
+   "id": "p4",
+   "name": "Conjunto estampado"
+  },
+  {
+   "id": "p5",
+   "name": "Chaqueta de ante"
+  },
+  {
+   "id": "p6",
+   "name": "Estola de terciopelo"
+  }
+ ],
+ "theme": {}
+}
