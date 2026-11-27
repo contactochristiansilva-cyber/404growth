@@ -1,0 +1,12 @@
+function cbBase(x){var r=Number(x.rate)||0;return r?Math.round(x.total*100/(100+r)):x.total}
+  function cbIn(s,R){return !!s&&s>=R.from&&s<=R.to}
+/* v84: lo facturado = las facturas (generador y hechas fuera) y cada cobro ya cobrado que no tenga su factura (mismo cliente e importe); sin factura se calcula con IVA del 21 % */
+  function cbFac(d,cur){var used={},L=[],nm=function(t){return String(t||'').toLowerCase().normalize('NFD').replace(/[^a-z0-9]/g,'')},P=d.pays.filter(function(p){return p.cur===cur&&p.paid});var take=function(cl,who,tot){for(var i=0;i<P.length;i++){var p=P[i];if(!used[p.id]&&p.amount===tot&&((cl&&p.client_id===cl)||(who&&nm(p.client)===nm(who)))){used[p.id]=1;return p}}return null};d.inv.forEach(function(x){if(x.cur!==cur)return;take(x.client_id,x.client,x.total);L.push({date:x.date,total:x.total,sub:x.sub,tax:x.tax})});d.items.forEach(function(x){if(x.cur!==cur||x.kind!=='in')return;var b=cbBase(x);take('',x.who,x.total);L.push({date:x.date,total:x.total,sub:b,tax:x.total-b})});P.forEach(function(p){if(used[p.id])return;var b=Math.round(p.amount*100/121);L.push({date:p.paid,total:p.amount,sub:b,tax:p.amount-b,pay:1})});return L}
+  function cbCalc(d,cur,R,today){var s=function(a,f){return a.reduce(function(t,x){return t+f(x)},0)},am=function(x){return x.amount},tt=function(x){return x.total};
+    var P=d.pays.filter(function(x){return x.cur===cur}),paid=P.filter(function(x){return cbIn(x.paid,R)}),pend=P.filter(function(x){return !x.paid});
+    var I=d.items.filter(function(x){return x.cur===cur}),out=I.filter(function(x){return x.kind==='out'&&cbIn(x.date,R)}),inU=I.filter(function(x){return x.kind==='in'&&cbIn(x.date,R)});
+    var G=cbFac(d,cur).filter(function(x){return cbIn(x.date,R)}),ing=s(paid,am),gas=s(out,tt),fij=s(out.filter(function(x){return x.rec}),tt);
+    return {paid:paid,pend:pend,out:out,inU:inU,G:G,ing:ing,gas:gas,fij:fij,pun:gas-fij,ben:ing-gas,fac:s(G,tt),facB:s(G,function(x){return x.sub}),nFac:G.length,
+      porC:s(pend,am),late:s(pend.filter(function(x){return x.due&&x.due<=today}),am),sinF:out.filter(function(x){return !x.fname}).length}}
+  /* VAT: what your invoices charge minus what your expenses carry, in one quarter (an estimate: the 303 is your gestor's) */
+  function cbIva(d,cur,Q){var rep=0,sop=0;cbFac(d,cur).forEach(function(x){if(cbIn(x.date,Q))rep+=x.tax});d.items.forEach(function(x){if(x.cur!==cur||x.kind!=='out'||!cbIn(x.date,Q))return;sop+=x.total-cbBase(x)});return {rep:rep,sop:sop,net:rep-sop}}

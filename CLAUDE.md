@@ -451,6 +451,15 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - Se genera con `patch_v67.py` (con `cb_server.js` y `cb_client.js`) en el scratchpad de la sesión del 9/11/2026 (`fin68/`). Prueba: `t_v67.mjs` (37 comprobaciones con node:sqlite) y `ui67.cjs` (Playwright: apuntar, subir PDF, gasto mensual, editar, filtro y móvil). `t_v66.mjs` sigue pasando.
 - Copia del worker anterior en `~/Downloads/404growth-subir/anterior/worker-v66b.js`.
 
+## Contabilidad: lo cobrado cuenta como facturado (admin v84, 27/11/2026)
+
+- Chris: «todo lo que cobro debe aparecer como facturado nada más le doy a cobrado hoy». Antes, «Facturado» solo sumaba las facturas del generador y las de ingresos hechas fuera: Kiss of Life salía (tiene la 2026-151 en el admin) e Intenso no (su 2026-152 se hizo fuera del admin).
+- Ahora «Facturado» (Contabilidad y la tarjeta de Facturación) suma las facturas y cada cobro marcado como cobrado (fecha de cobro) que no tenga ya su factura. Una factura corresponde a un cobro si tienen el mismo importe y el mismo cliente (`client_id`, o el nombre sin tildes ni espacios); así no se cuenta dos veces. Un cobro sin factura cuenta con IVA del 21 % para «sin IVA» y para el IVA del trimestre.
+- El flujo completo: «Aceptado» en Presupuestos → cobro sin cobrar en Facturación → «Cobrado hoy» → suma en ingresos cobrados y en facturado.
+- `cbFac` en `PAGES.admin` (lo usan `cbCalc` y `cbIva`); `finState` manda ya `client_id` de facturas y cobros. `tools/contabilidad/v84/patch_v84.py <worker> <salida>` y prueba `t_v84.mjs` (14 comprobaciones, con `client_fns.js`, las funciones sacadas del worker).
+- En el Mac: admin e6148b6a0f148456 (copia de antes en `anterior/worker-efap-27nov-antes-facturado-cobros.js`, fuentes en `fuentes-v84/`). Falta `subir.command`.
+- El 27/11/2026, en vivo (sin subir nada): Udalaitz (1.640 €), Open Fit (2.050 €, pago único a la entrega del 1 al 4/12, sin cobrar) y la mensualidad de Kiss of Life (490 €/mes, presupuesto aparte) en Presupuestos › Pendientes. El presupuesto de la tienda de Kiss of Life sigue aceptado, ya sin la cuota.
+
 ## Contabilidad › Archivos (admin v70, 13/11/2026)
 
 - Chris pidió «una carpeta donde suba archivos de mi ordenador importantes a tener ahí siempre guardados». Es la cuarta pestaña de Contabilidad, «Archivos» (`/admin#archivos`).
