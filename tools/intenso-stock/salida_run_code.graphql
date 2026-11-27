@@ -1,0 +1,4 @@
+"Perfumes del pedido y sus ml"
+type Output { updates: [Update!]! }
+type Update { productId: ID! titulo: String! linea: String! ml: Int! antes: Int! vendido: Int! aviso: Boolean! pct: Int! items: [Item!]! }
+type Item { id: ID! qty: Int! }

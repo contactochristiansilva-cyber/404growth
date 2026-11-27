@@ -1,0 +1,17 @@
+query {
+  order {
+    lineItems {
+      quantity
+      variantTitle
+      product { productType title }
+      customAttributes { key value }
+    }
+  }
+  getProductData {
+    id
+    title
+    productType
+    mlEnStock { value }
+    variants { title inventoryItem { id } }
+  }
+}
