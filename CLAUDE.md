@@ -460,6 +460,18 @@ Cualquier animación, título o gráfico con fondo transparente se entrega SIEMP
 - En el Mac: admin e6148b6a0f148456 (copia de antes en `anterior/worker-efap-27nov-antes-facturado-cobros.js`, fuentes en `fuentes-v84/`). Falta `subir.command`.
 - El 27/11/2026, en vivo (sin subir nada): Udalaitz (1.640 €), Open Fit (2.050 €, pago único a la entrega del 1 al 4/12, sin cobrar) y la mensualidad de Kiss of Life (490 €/mes, presupuesto aparte) en Presupuestos › Pendientes. El presupuesto de la tienda de Kiss of Life sigue aceptado, ya sin la cuota.
 
+## Avisos de las mensualidades al móvil (admin v85, 27/11/2026)
+
+- Chris: «con cada cliente el cual cobre la primera mensualidad se tiene que activar de manera automática el que todos los meses me llegue una notificación del día de antes y del día exacto en el que hay que cobrarle».
+- `billRemind` (cron, justo después de `callCron`): cada cuota mensual (`pay.kind = 'rec'`) sin cobrar de un plan activo que ya tenga alguna cuota cobrada avisa dos veces, desde las 9:00 de Madrid (`BR_HOUR`):
+  - el día antes: «Mañana toca cobrar · <cliente>» («… hay que cobrarle la mensualidad a <cliente> (490 €). Manda hoy la factura para poder cobrarla.»);
+  - el mismo día: «Hoy toca cobrar · <cliente>» («… Cuando la cobres, pulsa «Cobrado hoy» en Facturación.»).
+  - Una sola vez cada uno (meta `brem:<cobro>:p|d`). Llevan a `/admin#facturacion`. Un plan sin ninguna cuota cobrada, o parado, no avisa. Llama a `plansRun` para que la cuota del mes exista.
+- Kiss of Life: Chris aceptó la mensualidad el 27/11 y su «Cobrado hoy» cayó en la cuota de diciembre (la de noviembre no estaba). `BR_FIX_KEY = brfix_20261127` crea una vez la de noviembre (`p_fjP5H1zNFLdt_0`, cobrada el 27/11) y deja la de diciembre sin cobrar. Avisos: 26/12 y 27/12, y así cada mes.
+- `BR_TEST_KEY = brtest_20261127`: al subir el admin salen una vez los dos avisos de prueba («Prueba · Mañana toca cobrar · Kiss of Life» y «Prueba · Hoy toca cobrar · Kiss of Life»).
+- `tools/cobros/v85/` (`br_server.js`, `patch_v85.py <worker> <salida>`) y prueba `test/t_v85.mjs` (17 comprobaciones; necesita `w85mod.mjs` = el worker + `export { billRemind, brParts, DDL, getMeta, setMeta };`).
+- En el Mac: admin c67935043609c38b (copia de antes en `anterior/worker-v84-27nov-antes-avisos-mensualidades.js`, fuentes en `fuentes-v85/`). Falta `subir.command`.
+
 ## Contabilidad › Archivos (admin v70, 13/11/2026)
 
 - Chris pidió «una carpeta donde suba archivos de mi ordenador importantes a tener ahí siempre guardados». Es la cuarta pestaña de Contabilidad, «Archivos» (`/admin#archivos`).
